@@ -56,14 +56,14 @@ To run only the IPv6 compressed formatter suite:
 ./scripts/benchmarks.sh update --filter '^formatter\.ipv6\.compressed\..*$'
 ```
 
-## CPU Comparison Benchmarks
+## CPU Benchmarks
 
-`CIDRCPUComparisonBenchmarkTarget` is a research-only target for fixed-loop batch CPU comparisons. It reports only `Time (user CPU)` and is intentionally not part of the default threshold gate.
+`CIDRCPUBenchmarkTarget` is a research-only target for fixed-loop batch CPU measurements. It reports only `Time (user CPU)` and is intentionally not part of the default threshold gate.
 
 ```bash
-CIDR_BENCHMARK_TARGET=CIDRCPUComparisonBenchmarkTarget ./scripts/benchmarks.sh build
-CIDR_BENCHMARK_TARGET=CIDRCPUComparisonBenchmarkTarget ./scripts/benchmarks.sh run
-CIDR_BENCHMARK_TARGET=CIDRCPUComparisonBenchmarkTarget ./scripts/benchmarks.sh run --filter '^formatter\.cpu\.ipv6\.compressed\.swift\.middleCompressed2\.4M$'
+CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh build
+CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh run
+CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh run --filter '^formatter\.cpu\.ipv6\.compressed\.swift\.middleCompressed2\.4M$'
 ```
 
 The default benchmark commands remain unchanged:
@@ -91,7 +91,8 @@ swift build --target CIDRProfileTarget
   - parser benchmarks are allowed to allocate, but regressions beyond the configured thresholds should fail
 - `formatter.*`
   - tracks formatter regressions in wall-clock time, throughput, malloc counts, and ARC traffic
-  - formatter benchmarks may allocate because they return `String`; compare `formatter.ipv6.compressed.swift.*` against matching `formatter.ipv6.compressed.inet_ntop.*` baselines
+  - formatter benchmarks return `String`; on current Swift runtimes, ASCII output longer than the small-string inline capacity, typically 15 UTF-8 bytes, is expected to allocate once
+  - IPv6 formatter allocations should be interpreted as `String` storage cost, not currency-type allocation; compare `formatter.ipv6.compressed.swift.*` against matching `formatter.ipv6.compressed.inet_ntop.*` baselines
 - `currency.*`
   - must stay at zero mallocs, zero object allocations, and zero ARC traffic
   - any nonzero `mallocCount*`, `objectAllocCount`, `retainCount`, `releaseCount`, or `retainReleaseDelta` is a failure

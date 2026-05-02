@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 PACKAGE_ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
 BENCHMARK_PACKAGE_ROOT="${PACKAGE_ROOT}/Benchmarks"
 TARGET="CIDRBenchmarkTarget"
-FILTER='^parser\.'
+FILTER='^parser\..*'
 
 if ! command -v swift >/dev/null 2>&1; then
     echo "error: swift is not available in PATH" >&2
@@ -44,6 +44,12 @@ run_graph() {
             --no-progress >"${output_file}"
     ); then
         cat "${output_file}" >&2
+        rm -f "${output_file}"
+        return 1
+    fi
+
+    if [[ ! -s "${output_file}" ]]; then
+        echo "error: benchmark export was empty for filter '${FILTER}' and metric '${metric}'" >&2
         rm -f "${output_file}"
         return 1
     fi

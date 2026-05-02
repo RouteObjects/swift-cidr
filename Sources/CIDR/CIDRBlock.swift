@@ -44,6 +44,21 @@ public extension CIDRBlock {
         other.prefixLength >= prefixLength && contains(other.firstAddress)
     }
 
+    /// Returns whether this block fully contains a network prefix.
+    ///
+    /// This is useful when a neutral allocation or delegation block is being used as the parent
+    /// boundary for ordinary network construction. The check is pure CIDR containment: it verifies
+    /// that the network is not less-specific than the block and that the network boundary falls
+    /// inside the block.
+    ///
+    /// This method does not imply that the network has been allocated, assigned, routed, or
+    /// approved by an IPAM database. Higher-layer systems such as RouteObjects remain responsible
+    /// for policy rules like requiring a stored parent, denying overlaps, or disallowing direct use
+    /// of the delegated parent block.
+    func contains(_ network: IPNetwork<Family>) -> Bool {
+        network.prefixLength >= prefixLength && contains(network.networkAddress)
+    }
+
     func overlaps(_ other: CIDRBlock<Family>) -> Bool {
         firstAddress.address <= other.lastAddress.address && other.firstAddress.address <= lastAddress.address
     }

@@ -18,7 +18,7 @@ private func systemInetPton6(_ string: String) -> CInt {
 @MainActor
 let benchmarks = {
     func cpuConfiguration() -> Benchmark.Configuration {
-        // Use fixed-loop user CPU measurements for batch performance comparisons.
+        // Use fixed-loop user CPU measurements for batch performance analysis.
         .init(
             metrics: [.cpuUser],
             warmupIterations: 5,

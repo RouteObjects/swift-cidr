@@ -40,14 +40,14 @@ let package = Package(
             ]
         ),
         .executableTarget(
-            name: "CIDRCPUComparisonBenchmarkTarget",
+            name: "CIDRCPUBenchmarkTarget",
             dependencies: [
                 .product(name: "CIDR", package: "swift-cidr"),
                 .product(name: "Benchmark", package: "package-benchmark"),
             ],
-            path: "CIDRCPUComparisonBenchmarkTarget",
+            path: "CIDRCPUBenchmarkTarget",
             plugins: [
-                // Keep fixed-loop CPU batch comparisons isolated from the default threshold-gated target.
+                // Keep fixed-loop CPU batch measurements isolated from the default threshold-gated target.
                 .plugin(name: "BenchmarkPlugin", package: "package-benchmark"),
             ]
         ),

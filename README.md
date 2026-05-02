@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="Documentation/Assets/swift-cidr-icon.png" alt="swift-cidr icon" width="160">
+</p>
+
 # CIDR
 
 `CIDR` provides value-semantic IP types for Swift packages that need stable
@@ -167,10 +171,18 @@ From the repository root:
 
 ```bash
 ./scripts/benchmarks.sh build
+./scripts/benchmarks.sh test
 ./scripts/benchmarks.sh run
 ./scripts/benchmarks.sh check
 ./scripts/benchmarks.sh update
 ./scripts/benchmarks.sh graph
+```
+
+The wrapper defaults to `CIDRBenchmarkTarget`. For fixed-loop research
+benchmarks that report only user CPU time, select `CIDRCPUBenchmarkTarget`:
+
+```bash
+CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh run
 ```
 
 Open `Benchmarks/Package.swift` separately in Xcode if you want the benchmark

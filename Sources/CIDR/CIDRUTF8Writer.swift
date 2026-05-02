@@ -47,7 +47,7 @@ extension CIDRUTF8Writer {
             let bytes = addressBytes.baseAddress!.assumingMemoryBound(to: UInt8.self)
             let zeroRun = IPv6ZeroSequenceFinder.longestZeroSequenceRange(inIPv6Bytes: bytes)
             return withUnsafeTemporaryAllocation(of: UInt8.self, capacity: maximumCompressedIPv6AddressLiteralUTF8Count) { buffer in
-                // CHANGE: Bind network-order storage once and keep the hot formatter path off raw-buffer subscripts.
+                // Bind network-order storage once and keep the hot formatter path off raw-buffer subscripts.
                 let written = writeCompressedIPv6AddressLiteral(bytes, zeroRun: zeroRun, into: buffer)
                 return String(decoding: UnsafeBufferPointer(start: buffer.baseAddress!, count: written), as: UTF8.self)
             }

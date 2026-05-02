@@ -6,6 +6,31 @@ PACKAGE_ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
 BENCHMARK_PACKAGE_ROOT="${PACKAGE_ROOT}/Benchmarks"
 TARGET="${CIDR_BENCHMARK_TARGET:-CIDRBenchmarkTarget}"
 
+swift_test_flags=()
+
+append_swift_testing_flags_for_command_line_tools() {
+    local developer_dir
+    developer_dir="${DEVELOPER_DIR:-$(xcode-select -p 2>/dev/null || true)}"
+
+    local testing_framework_dir="${developer_dir}/Library/Developer/Frameworks"
+    local testing_interop_dir="${developer_dir}/Library/Developer/usr/lib"
+
+    if [[ "${developer_dir}" == "/Library/Developer/CommandLineTools" \
+        && -d "${testing_framework_dir}/Testing.framework" \
+        && -f "${testing_interop_dir}/lib_TestingInterop.dylib" ]]; then
+        # CHANGE: Standalone Command Line Tools 26.4.1 installs Swift Testing
+        # outside SwiftPM's default search paths; full Xcode does not need this.
+        swift_test_flags+=(
+            -Xswiftc -F
+            -Xswiftc "${testing_framework_dir}"
+            -Xlinker -rpath
+            -Xlinker "${testing_framework_dir}"
+            -Xlinker -rpath
+            -Xlinker "${testing_interop_dir}"
+        )
+    fi
+}
+
 usage() {
     cat <<EOF
 Usage: ./scripts/benchmarks.sh <command> [swift-package-benchmark args...]
@@ -43,7 +68,8 @@ build)
     exec swift build -c release --package-path "${BENCHMARK_PACKAGE_ROOT}" --target "${TARGET}" "$@"
     ;;
 test)
-    exec swift test --package-path "${BENCHMARK_PACKAGE_ROOT}" "$@"
+    append_swift_testing_flags_for_command_line_tools
+    exec swift test --package-path "${BENCHMARK_PACKAGE_ROOT}" "${swift_test_flags[@]}" "$@"
     ;;
 run)
     exec swift package --package-path "${BENCHMARK_PACKAGE_ROOT}" benchmark --target "${TARGET}" "$@"

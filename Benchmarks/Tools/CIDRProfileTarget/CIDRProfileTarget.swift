@@ -1,5 +1,27 @@
 @_spi(NIO) import CIDR
 
+/// A focused profiling executable for the IPv6 compressed formatter hot path.
+///
+/// `CIDRProfileTarget` is intentionally not a `package-benchmark` benchmark
+/// suite. It exists for Instruments and `xctrace` sessions that need a tight,
+/// repeatable loop around one formatter scenario without the benchmark harness
+/// in the sample stack.
+///
+/// Use this target when you need to answer where formatter time is spent:
+///
+/// ```bash
+/// CIDRProfileTarget --case middleCompressed2 --mode string --iterations 100000000
+/// CIDRProfileTarget --case middleCompressed2 --mode bytes --iterations 100000000
+/// ```
+///
+/// The `string` mode measures the realistic public formatter path, including
+/// zero-run detection, UTF-8 byte writing, `String` construction, allocation,
+/// and wrapper overhead.
+///
+/// The `bytes` mode measures the lower-level formatter engine by writing UTF-8
+/// directly into caller-provided storage. It excludes `String` construction so
+/// profiler traces can separate Swift `String` cost from CIDR's zero-run finder
+/// and ASCII writer.
 @main
 struct CIDRProfileTarget {
     static func main() throws {
@@ -151,7 +173,18 @@ private enum ProfileCase: String, CaseIterable {
 }
 
 private enum ProfileMode: String, CaseIterable {
+    /// Measures direct UTF-8 output into caller-provided storage.
+    ///
+    /// This mode is useful for isolating the formatter engine and for evaluating
+    /// future direct-byte integrations such as NIO `ByteBuffer` output or
+    /// logging paths that do not need an intermediate `String`.
     case bytes
+
+    /// Measures the public compressed formatter path that returns `String`.
+    ///
+    /// This mode represents the cost a normal library caller pays when asking
+    /// an IPv6 address for `.formatted(.compressed)`, including the unavoidable
+    /// `String` construction and allocation behavior.
     case string
 
     static var allowedValues: String {

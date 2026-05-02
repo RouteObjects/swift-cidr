@@ -21,6 +21,23 @@ struct IPv6ParsingTests {
         #expect(network.formatted(.ipv4Mapped) == "::ffff:192.0.2.1")
     }
 
+    @Test("Mixed IPv4 notation is accepted in the low 32 IPv6 bits")
+    func parsesMixedIPv4NotationInLowBits() {
+        let expectedDocumentationAddress = (UInt128(0x20010DB8) << 96) | UInt128(0xC0000201)
+        let expectedPrivateAddress = (UInt128(0xFFFF) << 32) | UInt128(0x0A000001)
+
+        #expect(AF.V6.parseAddress("2001:db8::192.0.2.1") == expectedDocumentationAddress)
+        #expect(AF.V6.parseAddress("::ffff:10.0.0.1") == expectedPrivateAddress)
+    }
+
+    @Test("Embedded IPv4 notation follows IPv4 octet parsing rules")
+    func embeddedIPv4NotationRejectsMalformedOctets() {
+        #expect(AF.V6.parseAddress("::ffff:0001.2.3.4") == nil)
+        #expect(AF.V6.parseAddress("::ffff:1.0002.3.4") == nil)
+        #expect(AF.V6.parseAddress("::ffff:1a2.0.0.1") == nil)
+        #expect(AF.V6.parseAddress("::ffff:256.0.0.1") == nil)
+    }
+
     @Test("IPv6 parser rejects hextets above ffff")
     func rejectsOversizedHextets() {
         #expect(IPAddress<V6>.v6("2001:db8::10000:1") == nil)

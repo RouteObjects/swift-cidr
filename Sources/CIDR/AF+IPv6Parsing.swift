@@ -52,9 +52,10 @@ extension AF {
             return true
         }
 
-        while index < count {
+        parseLoop: while index < count {
             let byte = bytes[index]
-            if byte == 58 {
+            switch byte {
+            case 58:
                 let nextIndex = index + 1
                 if nextIndex < count && bytes[nextIndex] == 58 {
                     guard doubleColonIndex == -1 else { return nil }
@@ -76,48 +77,27 @@ extension AF {
                 wordCount += 1
                 currentWord = 0
                 hasDigits = false
-            } else if byte == 46 {
+            case 46:
                 seenDot = true
-                break
-            } else {
+                break parseLoop
+            default:
                 guard consumeHexDigit(byte) else { return nil }
             }
             index += 1
         }
 
         if seenDot {
+            guard wordCount < 7 else { return nil }
+
             var dotStart = index
             while dotStart > 0 && bytes[dotStart - 1] != 58 {
                 dotStart -= 1
             }
 
-            var v4Value: UInt32 = 0
-            var octet: UInt32 = 0
-            var dotCount = 0
-            var hasOctetDigits = false
-            var v4Index = dotStart
+            let baseAddress = bytes.baseAddress!
+            let v4Bytes = UnsafeBufferPointer(start: baseAddress + dotStart, count: count - dotStart)
+            guard let v4Value = _parseIPv4TextCore(v4Bytes) else { return nil }
 
-            while v4Index < count {
-                let byte = bytes[v4Index]
-                if byte == 46 {
-                    guard hasOctetDigits && dotCount < 3 else { return nil }
-                    v4Value = (v4Value << 8) | octet
-                    octet = 0
-                    dotCount += 1
-                    hasOctetDigits = false
-                } else if byte >= 48 && byte <= 57 {
-                    octet = (octet * 10) + UInt32(byte - 48)
-                    guard octet <= 255 else { return nil }
-                    hasOctetDigits = true
-                } else {
-                    return nil
-                }
-                v4Index += 1
-            }
-
-            guard dotCount == 3 && hasOctetDigits else { return nil }
-            v4Value = (v4Value << 8) | octet
-            guard wordCount < 7 else { return nil }
             words[wordCount] = UInt16((v4Value >> 16) & 0xFFFF)
             words[wordCount + 1] = UInt16(v4Value & 0xFFFF)
             wordCount += 2

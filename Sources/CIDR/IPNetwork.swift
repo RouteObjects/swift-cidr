@@ -86,6 +86,38 @@ extension IPNetwork {
 
         self.init(address: address, prefixLength: prefixLength)
     }
+
+    /// Creates a canonical network from CIDR notation only when it is contained by a parent block.
+    ///
+    /// Use this initializer when the caller already has a neutral `CIDRBlock` representing a
+    /// delegation, allocation, or other parent range and wants construction to fail unless the
+    /// requested network fits inside that range.
+    ///
+    /// The containment check is intentionally limited to CIDR math. It does not prove that the
+    /// parent exists in a database, that the child has been allocated, that the child does not
+    /// overlap another assignment, or that assigning the exact parent block is allowed by local
+    /// policy.
+    public init?(_ description: String, within parent: CIDRBlock<Family>) {
+        guard let network = Self(description),
+              parent.contains(network)
+        else {
+            return nil
+        }
+
+        self = network
+    }
+
+    /// Creates a canonical network from raw prefix bits only when contained by a parent block.
+    ///
+    /// Any host bits present in `prefix` are cleared by the normal `IPNetwork` initializer before
+    /// containment is checked. This makes the initializer useful for UI and database workflows that
+    /// already hold parsed prefix components but still need to verify that the resulting network is
+    /// inside a known delegated block.
+    public init?(prefix: Family.Storage, prefixLength: PrefixLength<Family>, within parent: CIDRBlock<Family>) {
+        let network = Self(prefix: prefix, prefixLength: prefixLength)
+        guard parent.contains(network) else { return nil }
+        self = network
+    }
 }
 
 extension IPNetwork {

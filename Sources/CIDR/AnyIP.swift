@@ -513,7 +513,7 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         case (.v6(let range), .v6(let group)):
             return range.contains(group)
         default:
-            // CHANGE: Mixed-family multicast containment stays false instead of coercing families.
+            // Mixed-family multicast containment stays false instead of coercing families.
             return false
         }
     }
@@ -525,7 +525,7 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         case (.v6(let lhs), .v6(let rhs)):
             return lhs.contains(rhs)
         default:
-            // CHANGE: Multicast range containment is meaningful only within the same address family.
+            // Multicast range containment is meaningful only within the same address family.
             return false
         }
     }

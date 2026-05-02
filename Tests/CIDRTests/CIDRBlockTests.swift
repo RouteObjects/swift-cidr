@@ -10,6 +10,7 @@ struct CIDRBlockTests {
         let child = try #require(CIDRBlock<V4>("192.0.2.128/25"))
         let overlap = try #require(CIDRBlock<V4>("192.0.2.192/26"))
         let outside = try #require(CIDRBlock<V4>("192.0.3.0/24"))
+        let network = try #require(IPv4Network("192.0.2.64/26"))
         let address = try #require(IPv4Address("192.0.2.42"))
 
         #expect(block.prefix == 0xC0000200)
@@ -19,10 +20,47 @@ struct CIDRBlockTests {
         #expect(block.rangeSizeIfRepresentable == 256)
         #expect(block.contains(address))
         #expect(block.contains(child))
+        #expect(block.contains(network))
         #expect(block.overlaps(overlap))
         #expect(child.isWithin(block))
         #expect(!block.contains(outside))
         #expect(!block.overlaps(outside))
+    }
+
+    @Test("IPNetwork construction can be bounded by a parent CIDRBlock")
+    func ipNetworkConstructionWithinCIDRBlock() throws {
+        let parent = try #require(CIDRBlock<V4>("198.51.100.0/24"))
+        let child = try #require(IPv4Network("198.51.100.4/30", within: parent))
+        let equal = try #require(IPv4Network("198.51.100.0/24", within: parent))
+        let rawPrefix = try #require(IPv4Address("198.51.100.77"))
+        let rawPrefixLength = try #require(IPv4PrefixLength(30))
+        let rawChild = try #require(IPv4Network(prefix: rawPrefix.address, prefixLength: rawPrefixLength, within: parent))
+
+        #expect(child.description == "198.51.100.4/30")
+        #expect(equal.description == "198.51.100.0/24")
+        #expect(rawChild.description == "198.51.100.76/30")
+        #expect(parent.contains(child))
+        #expect(parent.contains(equal))
+        #expect(IPv4Network("198.51.101.0/24", within: parent) == nil)
+        #expect(IPv4Network("198.51.100.0/23", within: parent) == nil)
+    }
+
+    @Test("IPv6 networks can be bounded by a parent CIDRBlock")
+    func ipv6NetworkConstructionWithinCIDRBlock() throws {
+        let parent = try #require(CIDRBlock<V6>("2001:db8::/32"))
+        let child = try #require(IPv6Network("2001:db8:1::/48", within: parent))
+        let equal = try #require(IPv6Network("2001:db8::/32", within: parent))
+        let rawPrefix = try #require(IPv6Address("2001:db8:abcd::1"))
+        let rawPrefixLength = try #require(IPv6PrefixLength(48))
+        let rawChild = try #require(IPv6Network(prefix: rawPrefix.address, prefixLength: rawPrefixLength, within: parent))
+
+        #expect(child.description == "2001:db8:1:0:0:0:0:0/48")
+        #expect(equal.description == "2001:db8:0:0:0:0:0:0/32")
+        #expect(rawChild.description == "2001:db8:abcd:0:0:0:0:0/48")
+        #expect(parent.contains(child))
+        #expect(parent.contains(equal))
+        #expect(IPv6Network("2001:db9::/32", within: parent) == nil)
+        #expect(IPv6Network("2001:db8::/31", within: parent) == nil)
     }
 
     @Test("CIDRBlock reports range sizes when UInt128 can represent the count")
