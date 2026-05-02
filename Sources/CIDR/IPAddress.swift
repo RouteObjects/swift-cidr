@@ -29,7 +29,7 @@ public struct IPAddress<Family: AddressFamily>: Addressable, CIDR, Hashable, Com
     public let address: Family.Storage
     public let prefixLength: PrefixLength<Family>
 
-    public var block: Family.Storage { address }
+    public var storage: Family.Storage { address }
 
     public init(address: Family.Storage, prefixLength: PrefixLength<Family>) {
         self.address = address

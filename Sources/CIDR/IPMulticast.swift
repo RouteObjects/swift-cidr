@@ -111,7 +111,7 @@ public struct IPMulticastGroupRange<Family: MulticastAddressSpace>: CIDR, Hashab
     public let prefix: Family.Storage
     public let prefixLength: PrefixLength<Family>
 
-    public var block: Family.Storage {
+    public var storage: Family.Storage {
         prefix
     }
 

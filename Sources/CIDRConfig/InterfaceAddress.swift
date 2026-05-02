@@ -15,7 +15,7 @@ import CIDR
 public struct InterfaceAddress<Family: AddressFamily>: CIDR, Hashable {
     public let address: Family.Storage
     public let prefixLength: PrefixLength<Family>
-    public var block: Family.Storage { address }
+    public var storage: Family.Storage { address }
 
     /// Creates an interface address from raw address bits and explicit subnet context.
     public init(address: Family.Storage, prefixLength: PrefixLength<Family>) {

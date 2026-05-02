@@ -8,7 +8,7 @@ struct IPAddressParsingTests {
         let host = try #require(IPAddress<V4>("192.0.2.1"))
 
         #expect(host.address == 0xC0000201)
-        #expect(host.block == host.address)
+        #expect(host.storage == host.address)
         #expect(host.prefixLength.intValue == 32)
         #expect(host.description == "192.0.2.1/32")
     }
@@ -58,7 +58,7 @@ struct IPAddressParsingTests {
 
         #expect(host.prefixLength.intValue == 128)
         #expect(host.address == (UInt128(0x20010DB8) << 96) | 1)
-        #expect(host.block == host.address)
+        #expect(host.storage == host.address)
     }
 
     @Test("IPv6 CIDR-qualified parsing preserves the explicit prefix")

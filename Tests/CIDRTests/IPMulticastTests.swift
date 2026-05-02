@@ -81,7 +81,7 @@ struct IPMulticastTests {
         let range = try #require(IPv4MulticastGroupRange("239.1.2.0/24"))
 
         #expect(group.description == "239.1.2.3")
-        #expect(range.block == range.prefix)
+        #expect(range.storage == range.prefix)
         #expect(range.description == "239.1.2.0/24")
         #expect(range.formatted(.cidrNotation) == "239.1.2.0/24")
         #expect(range.formatted(.addressOnly) == "239.1.2.0")

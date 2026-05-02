@@ -9,7 +9,7 @@ public protocol IPPrefix: CIDR {
 }
 
 public extension IPPrefix {
-    var block: Family.Storage { prefix }
+    var storage: Family.Storage { prefix }
 
     init(address: IPAddress<Family>, prefixLength: PrefixLength<Family>) {
         self.init(

@@ -10,7 +10,7 @@ public struct CIDRBlock<Family: AddressFamily>: CIDR, Hashable, LosslessStringCo
     public let prefix: Family.Storage
     public let prefixLength: PrefixLength<Family>
 
-    public var block: Family.Storage { prefix }
+    public var storage: Family.Storage { prefix }
 
     public init(prefix: Family.Storage, prefixLength: PrefixLength<Family>) {
         self.prefix = prefix & Family.Storage.networkMask(for: prefixLength.intValue)

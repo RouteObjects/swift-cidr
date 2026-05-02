@@ -10,12 +10,12 @@ struct InterfaceAddressTests {
         let interfaceAddress = InterfaceAddress<V4>(address: 0xC0000201, prefixLength: prefix)
 
         #expect(interfaceAddress.address == 0xC0000201)
-        #expect(interfaceAddress.block == interfaceAddress.address)
+        #expect(interfaceAddress.storage == interfaceAddress.address)
         #expect(interfaceAddress.prefixLength == prefix)
         #expect(interfaceAddress.host.description == "192.0.2.1/24")
         #expect(interfaceAddress.network.description == "192.0.2.0/24")
         #expect(interfaceAddress.network.prefix == 0xC0000200)
-        #expect(interfaceAddress.network.block == interfaceAddress.network.prefix)
+        #expect(interfaceAddress.network.storage == interfaceAddress.network.prefix)
     }
 
     @Test("Host-based initialization preserves CIDR context")
@@ -24,7 +24,7 @@ struct InterfaceAddressTests {
         let interfaceAddress = InterfaceAddress<V6>(host: host)
 
         #expect(interfaceAddress.address == host.address)
-        #expect(interfaceAddress.block == interfaceAddress.address)
+        #expect(interfaceAddress.storage == interfaceAddress.address)
         #expect(interfaceAddress.prefixLength == host.prefixLength)
         #expect(interfaceAddress.host == host)
         #expect(interfaceAddress.network.description == "2001:db8:0:0:0:0:0:0/64")

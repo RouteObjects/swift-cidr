@@ -55,7 +55,7 @@ struct IPSummarizationTests {
         #expect(result.count == 1)
         #expect(result[0].prefixLength.intValue == 0)
         #expect(result[0].prefix == 0)
-        #expect(result[0].block == result[0].prefix)
+        #expect(result[0].storage == result[0].prefix)
     }
 
     @Test("Full IPv6 space summarizes to a single /0")
@@ -67,7 +67,7 @@ struct IPSummarizationTests {
         #expect(result.count == 1)
         #expect(result[0].prefixLength.intValue == 0)
         #expect(result[0].prefix == 0)
-        #expect(result[0].block == result[0].prefix)
+        #expect(result[0].storage == result[0].prefix)
     }
 
     @Test("IPv4 address and mask style stays vendor-friendly")

@@ -4,13 +4,15 @@
 /// described in [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632). It covers both
 /// host-oriented values that carry prefix context and canonical aligned prefixes.
 ///
-/// `block` is the generic CIDR term shared across address, network, and interface contexts. For
-/// host-oriented types, it may contain host bits and is not required to be network-aligned.
+/// `storage` is the raw address-family storage for the value. It is not allocation state, not an
+/// RIR delegation block, and not necessarily a network-aligned prefix. Concrete types give those
+/// bits their domain meaning: an address, a network prefix, a neutral `CIDRBlock`, or another
+/// CIDR-qualified context.
 public protocol CIDR: Sendable, CustomStringConvertible, CustomDebugStringConvertible {
     associatedtype Family: AddressFamily
 
-    /// The stored address bits for this CIDR value.
-    var block: Family.Storage { get }
+    /// The raw address-family storage for this CIDR value.
+    var storage: Family.Storage { get }
 
     /// The prefix length that gives the stored bits their CIDR context.
     var prefixLength: PrefixLength<Family> { get }
@@ -28,12 +30,12 @@ public extension CIDR {
     var mask: Family.Storage { Family.Storage.networkMask(for: prefixBits) }
     var inverseMask: Family.Storage { ~mask }
     
-    var first: IPAddress<Family> { IPAddress(address: block & mask) }
-    var last: IPAddress<Family> { IPAddress(address: block | inverseMask) }
+    var first: IPAddress<Family> { IPAddress(address: storage & mask) }
+    var last: IPAddress<Family> { IPAddress(address: storage | inverseMask) }
     var range: ClosedRange<IPAddress<Family>> { first...last }
 
     var addressLiteral: String {
-        Family.formatAddress(block)
+        Family.formatAddress(storage)
     }
 
     var description: String {
@@ -70,9 +72,9 @@ public extension CIDR where Family == AF.V6 {
         case .preferred:
             return addressLiteral
         case .ipv4Mapped:
-            return AF.formatV6Mapped(block) ?? addressLiteral
+            return AF.formatV6Mapped(storage) ?? addressLiteral
         case .compressed:
-            return AF.formatV6Compressed(block)
+            return AF.formatV6Compressed(storage)
         }
     }
 }
