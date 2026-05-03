@@ -76,15 +76,25 @@ extension IPNetwork {
     /// The address portion may include host bits; the resulting `IPNetwork` stores the canonical
     /// prefix boundary.
     public init?(_ string: String) {
-        let parts = string.split(separator: "/", maxSplits: 1, omittingEmptySubsequences: false)
-        guard parts.count == 2,
-              let prefixLength = PrefixLength<Family>(String(parts[1])),
-              let address = IPAddress<Family>(String(parts[0]))
+        guard let slashIndex = string.firstIndex(of: "/") else {
+            return nil
+        }
+
+        let prefixStart = string.index(after: slashIndex)
+        let addressText = string[..<slashIndex]
+        let prefixText = string[prefixStart...]
+
+        guard !addressText.isEmpty,
+              !prefixText.isEmpty,
+              prefixText.firstIndex(of: "/") == nil,
+              let rawPrefix = Int(prefixText),
+              let prefixLength = PrefixLength<Family>(rawPrefix),
+              let prefix = Family.parseAddress(String(addressText))
         else {
             return nil
         }
 
-        self.init(address: address, prefixLength: prefixLength)
+        self.init(prefix: prefix, prefixLength: prefixLength)
     }
 
     /// Creates a canonical network from CIDR notation only when it is contained by a parent block.

@@ -53,21 +53,27 @@ public struct IPAddress<Family: AddressFamily>: Addressable, CIDR, Hashable, Com
 
 extension IPAddress {
     public init?(_ string: String) {
-        let parts = string.split(separator: "/", omittingEmptySubsequences: false)
-        switch parts.count {
-        case 1:
-            guard let val = Family.parseAddress(string) else { return nil }
-            self.init(address: val)
-        case 2:
-            guard !parts[0].isEmpty, !parts[1].isEmpty else { return nil }
-            guard let rawPrefix = Int(parts[1]),
-                  let prefixLength = PrefixLength<Family>(rawPrefix),
-                  let val = Family.parseAddress(String(parts[0]))
-            else { return nil }
-            self.init(address: val, prefixLength: prefixLength)
-        default:
+        guard let slashIndex = string.firstIndex(of: "/") else {
+            guard let address = Family.parseAddress(string) else { return nil }
+            self.init(address: address)
+            return
+        }
+
+        let prefixStart = string.index(after: slashIndex)
+        let addressText = string[..<slashIndex]
+        let prefixText = string[prefixStart...]
+
+        guard !addressText.isEmpty,
+              !prefixText.isEmpty,
+              prefixText.firstIndex(of: "/") == nil,
+              let rawPrefix = Int(prefixText),
+              let prefixLength = PrefixLength<Family>(rawPrefix),
+              let address = Family.parseAddress(String(addressText))
+        else {
             return nil
         }
+
+        self.init(address: address, prefixLength: prefixLength)
     }
 }
 

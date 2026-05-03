@@ -38,6 +38,16 @@ struct LosslessStringConvertibleTests {
         #expect(IPNetwork<V6>(ipv6Network.description) == ipv6Network)
     }
 
+    @Test("IPNetwork rejects malformed CIDR notation")
+    func ipNetworkRejectsMalformedCIDRNotation() {
+        #expect(IPv4Network("192.0.2.0") == nil)
+        #expect(IPv4Network("192.0.2.0/") == nil)
+        #expect(IPv4Network("/24") == nil)
+        #expect(IPv4Network("192.0.2.0/24/extra") == nil)
+        #expect(IPv6Network("2001:db8::/129") == nil)
+        #expect(IPv6Network("2001:db8::/64/extra") == nil)
+    }
+
     @Test("AnyPrefixLength stays a projection rather than a lossless string form")
     func anyPrefixLengthRemainsProjectionShaped() throws {
         let any = AnyPrefixLength(try #require(IPv4PrefixLength(24)))

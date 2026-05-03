@@ -152,6 +152,10 @@ let benchmarks = {
     let ipv6MiddleCompressed = "2001:db8:85a3::8a2e:370:7334"
     let ipv6Full = "2001:0db8:0000:0000:0000:ff00:0042:8329"
     let ipv6Mapped = "::ffff:192.0.2.1"
+    let ipv4AddressCIDR = "192.0.2.1/24"
+    let ipv6AddressCIDR = "2001:db8::1/64"
+    let ipv4NetworkCIDR = "198.51.100.4/30"
+    let ipv6NetworkCIDR = "2001:db8:1::/48"
 
     let ipv4Prefix = IPv4PrefixLength(24)!
     let ipv6Prefix = IPv6PrefixLength(64)!
@@ -470,6 +474,42 @@ let benchmarks = {
     ) { benchmark in
         for _ in benchmark.scaledIterations {
             blackHole(systemInetPton6(ipv6Mapped))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipAddress.v4",
+        configuration: parserConfiguration(tags: ["family": "v4", "kind": "ipAddress"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(IPv4Address(ipv4AddressCIDR))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipAddress.v6",
+        configuration: parserConfiguration(tags: ["family": "v6", "kind": "ipAddress"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(IPv6Address(ipv6AddressCIDR))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipNetwork.v4",
+        configuration: parserConfiguration(tags: ["family": "v4", "kind": "ipNetwork"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(IPv4Network(ipv4NetworkCIDR))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipNetwork.v6",
+        configuration: parserConfiguration(tags: ["family": "v6", "kind": "ipNetwork"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(IPv6Network(ipv6NetworkCIDR))
         }
     }
 
