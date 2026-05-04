@@ -1,19 +1,39 @@
-/// A canonical aligned IP prefix that supports network-level operations.
+/// A canonical, aligned IP prefix that supports network-level operations.
 ///
 /// `IPPrefix` is the structural refinement of `CIDR` used for values whose stored bits are meant to
 /// represent a formal prefix boundary. This is the level where containment, subnetting, and prefix
 /// summarization become rational operations.
+///
+/// Conforming types own their stored prefix bits, so they also own enforcement of canonical
+/// alignment. Implementations of ``init(prefix:prefixLength:)`` must clear any host bits below the
+/// prefix boundary before storage. Protocol extension initializers and helpers adapt inputs and
+/// share behavior, but they do not replace the conforming type's storage-boundary invariant.
 public protocol IPPrefix: CIDR {
+    /// The canonical prefix boundary for this value.
+    ///
+    /// Host bits below ``prefixLength`` are expected to be cleared by the conforming type's
+    /// ``init(prefix:prefixLength:)`` implementation.
     var prefix: Family.Storage { get }
+
+    /// Creates a canonical prefix value from raw prefix bits and a prefix length.
+    ///
+    /// Conforming implementations must normalize `prefix` by clearing host bits below
+    /// `prefixLength` before storing it. This keeps construction through concrete initializers and
+    /// protocol extension convenience initializers consistent.
     init(prefix: Family.Storage, prefixLength: PrefixLength<Family>)
 }
 
 public extension IPPrefix {
     var storage: Family.Storage { prefix }
 
+    /// Creates a prefix value from address-shaped input.
+    ///
+    /// This convenience initializer adapts an `IPAddress` into the required
+    /// `init(prefix:prefixLength:)` initializer. The conforming concrete type remains responsible
+    /// for enforcing canonical prefix alignment at its storage boundary.
     init(address: IPAddress<Family>, prefixLength: PrefixLength<Family>) {
         self.init(
-            prefix: address.address & Family.Storage.networkMask(for: prefixLength.intValue),
+            prefix: address.address,
             prefixLength: prefixLength
         )
     }

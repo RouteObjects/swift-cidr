@@ -77,6 +77,30 @@ extension IPAddress {
     }
 }
 
+public extension IPAddress where Family == AF.V4 {
+    init?(_ string: String) {
+        guard let result = AF.parseIPv4CIDRTextSuffix(string, requiresPrefix: false),
+              let prefixLength = PrefixLength<Family>(rawValue: result.prefixLength)
+        else {
+            return nil
+        }
+
+        self.init(address: result.address, prefixLength: prefixLength)
+    }
+}
+
+public extension IPAddress where Family == AF.V6 {
+    init?(_ string: String) {
+        guard let result = AF.parseIPv6CIDRTextSuffix(string, requiresPrefix: false),
+              let prefixLength = PrefixLength<Family>(rawValue: result.prefixLength)
+        else {
+            return nil
+        }
+
+        self.init(address: result.address, prefixLength: prefixLength)
+    }
+}
+
 extension IPAddress {
     public init(from decoder: any Decoder) throws {
         let container = try decoder.singleValueContainer()

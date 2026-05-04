@@ -73,7 +73,7 @@ Companion package:
 ## Toolchains and Platforms
 
 - Swift 6.3
-- Xcode 26.4 for local macOS development and `swift test`
+- Swift 6.3 Command Line Tools for command-line and editor-based workflows
 - Minimum Apple deployment targets:
   - macOS 15
   - iOS 18
@@ -81,18 +81,15 @@ Companion package:
 The Apple platform minimums come from this toolchain's built-in `UInt128`
 availability. Linux validation is handled in CI.
 
-Before running `swift test` on macOS, make sure the active developer tools point
-at Xcode rather than Command Line Tools:
+On macOS with standalone Command Line Tools, use the repository test wrapper:
 
 ```bash
-xcode-select -p
+./scripts/test.sh
 ```
 
-Expected path:
-
-```text
-/Applications/Xcode-26.4.0.app/Contents/Developer
-```
+The wrapper still runs SwiftPM tests. It only adds the Swift Testing framework
+and runtime paths needed by standalone Command Line Tools installations where
+plain `swift test` cannot locate `Testing.framework`.
 
 ## Examples
 
@@ -156,7 +153,7 @@ Common local commands:
 swift build --target CIDR
 swift build --target CIDRConfig
 swift build --target CIDRPOSIX
-swift test
+./scripts/test.sh
 ./scripts/benchmarks.sh build
 ./scripts/benchmarks.sh check
 ```

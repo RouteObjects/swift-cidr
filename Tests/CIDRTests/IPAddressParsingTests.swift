@@ -16,10 +16,13 @@ struct IPAddressParsingTests {
     @Test("IPv4 CIDR-qualified parsing preserves the explicit prefix")
     func parsesIPv4CIDRQualifiedAddress() throws {
         let host = try #require(IPAddress<V4>("192.0.2.1/24"))
+        let maxLengthHost = try #require(IPAddress<V4>("255.255.255.255/32"))
 
         #expect(host.address == 0xC0000201)
         #expect(host.prefixLength.intValue == 24)
         #expect(host.network.description == "192.0.2.0/24")
+        #expect(maxLengthHost.address == UInt32.max)
+        #expect(maxLengthHost.prefixLength.intValue == 32)
     }
 
     @Test("IPv4 malformed CIDR-qualified address input is rejected")
@@ -27,7 +30,11 @@ struct IPAddressParsingTests {
         #expect(IPAddress<V4>("192.0.2.1/") == nil)
         #expect(IPAddress<V4>("/24") == nil)
         #expect(IPAddress<V4>("192.0.2.1/33") == nil)
+        #expect(IPAddress<V4>("192.0.2.1/+24") == nil)
+        #expect(IPAddress<V4>("192.0.2.1/-1") == nil)
+        #expect(IPAddress<V4>("192.0.2.1/032") == nil)
         #expect(IPAddress<V4>("192.0.2.1/24/extra") == nil)
+        #expect(IPAddress<V4>("192.0.2.1/24/1") == nil)
     }
 
     @Test("Selected IPv4 parser matches valid literals and rejects malformed input")
@@ -64,9 +71,12 @@ struct IPAddressParsingTests {
     @Test("IPv6 CIDR-qualified parsing preserves the explicit prefix")
     func parsesIPv6CIDRQualifiedAddress() throws {
         let host = try #require(IPAddress<V6>("2001:db8::1/64"))
+        let maxLengthHost = try #require(IPAddress<V6>("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128"))
 
         #expect(host.prefixLength.intValue == 64)
         #expect(host.address == (UInt128(0x20010DB8) << 96) | 1)
+        #expect(maxLengthHost.address == UInt128.max)
+        #expect(maxLengthHost.prefixLength.intValue == 128)
     }
 
     @Test("IPv4-mapped IPv6 CIDR-qualified parsing preserves the explicit prefix")
@@ -82,7 +92,11 @@ struct IPAddressParsingTests {
         #expect(IPAddress<V6>("2001:db8::1/129") == nil)
         #expect(IPAddress<V6>("2001:db8::1/") == nil)
         #expect(IPAddress<V6>("/64") == nil)
+        #expect(IPAddress<V6>("2001:db8::1/+64") == nil)
+        #expect(IPAddress<V6>("2001:db8::1/-1") == nil)
+        #expect(IPAddress<V6>("2001:db8::1/064") == nil)
         #expect(IPAddress<V6>("2001:db8::1/64/extra") == nil)
+        #expect(IPAddress<V6>("2001:db8::1/64/1") == nil)
     }
 
     @Test("IPAddress description round-trips through the string parser")

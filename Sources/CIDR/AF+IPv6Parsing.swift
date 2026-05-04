@@ -1,4 +1,27 @@
+@_spi(Benchmark)
+public struct IPv6CIDRParseResult: Sendable, Equatable {
+    public let address: UInt128
+    public let prefixLength: UInt8
+    public let hasExplicitPrefix: Bool
+
+    internal init(address: UInt128, prefixLength: UInt8, hasExplicitPrefix: Bool) {
+        self.address = address
+        self.prefixLength = prefixLength
+        self.hasExplicitPrefix = hasExplicitPrefix
+    }
+}
+
 extension AF {
+    private static let ipv6CIDRSlashASCII = UInt8(ascii: "/")
+    private static let ipv6CIDRZeroASCII = UInt8(ascii: "0")
+    private static let ipv6CIDRSlashVector = SIMD16<UInt8>(repeating: UInt8(ascii: "/"))
+    private static let ipv6CIDRSlashBitWeights = SIMD16<Int16>(
+        -1, -2, -4, -8,
+        -16, -32, -64, -128,
+        -256, -512, -1024, -2048,
+        -4096, -8192, -16384, Int16.min
+    )
+
     /// The selected production IPv6 text parser.
     internal static func parseIPv6Text(_ string: String) -> UInt128? {
         if let result = string.utf8.withContiguousStorageIfAvailable({ bytes -> UInt128? in
@@ -11,6 +34,176 @@ extension AF {
         return fallback.withUnsafeBufferPointer { bytes in
             _parseIPv6TextCore(bytes)
         }
+    }
+
+    @_spi(Benchmark)
+    public static func parseIPv6CIDRTextScalar(
+        _ string: String,
+        requiresPrefix: Bool
+    ) -> IPv6CIDRParseResult? {
+        var string = string
+
+        return string.withUTF8 { bytes in
+            _parseIPv6CIDRTextCore(
+                bytes,
+                slashIndex: _firstIPv6CIDRSlashIndexScalar(in: bytes),
+                requiresPrefix: requiresPrefix
+            )
+        }
+    }
+
+    @_spi(Benchmark)
+    public static func parseIPv6CIDRTextSIMDSlash(
+        _ string: String,
+        requiresPrefix: Bool
+    ) -> IPv6CIDRParseResult? {
+        var string = string
+
+        return string.withUTF8 { bytes in
+            _parseIPv6CIDRTextCore(
+                bytes,
+                slashIndex: _firstIPv6CIDRSlashIndexSIMD(in: bytes),
+                requiresPrefix: requiresPrefix
+            )
+        }
+    }
+
+    @_spi(Benchmark)
+    public static func parseIPv6CIDRTextSuffix(
+        _ string: String,
+        requiresPrefix: Bool
+    ) -> IPv6CIDRParseResult? {
+        var string = string
+
+        return string.withUTF8 { bytes in
+            _parseIPv6CIDRTextCore(
+                bytes,
+                slashIndex: _firstIPv6CIDRSlashIndexSuffix(in: bytes),
+                requiresPrefix: requiresPrefix
+            )
+        }
+    }
+
+    @inline(__always)
+    private static func _parseIPv6CIDRTextCore(
+        _ bytes: UnsafeBufferPointer<UInt8>,
+        slashIndex: Int?,
+        requiresPrefix: Bool
+    ) -> IPv6CIDRParseResult? {
+        guard let slashIndex else {
+            guard !requiresPrefix,
+                  let address = _parseIPv6TextCore(bytes)
+            else {
+                return nil
+            }
+
+            return IPv6CIDRParseResult(address: address, prefixLength: 128, hasExplicitPrefix: false)
+        }
+
+        let prefixStart = slashIndex + 1
+        guard slashIndex > 0,
+              prefixStart < bytes.count,
+              let baseAddress = bytes.baseAddress
+        else {
+            return nil
+        }
+
+        let addressBytes = UnsafeBufferPointer(start: baseAddress, count: slashIndex)
+        guard let address = _parseIPv6TextCore(addressBytes),
+              let prefixLength = _parseStrictIPv6PrefixLength(bytes, start: prefixStart, end: bytes.count)
+        else {
+            return nil
+        }
+
+        return IPv6CIDRParseResult(address: address, prefixLength: prefixLength, hasExplicitPrefix: true)
+    }
+
+    @inline(__always)
+    private static func _parseStrictIPv6PrefixLength(
+        _ bytes: UnsafeBufferPointer<UInt8>,
+        start: Int,
+        end: Int
+    ) -> UInt8? {
+        let count = end - start
+        guard (1...3).contains(count) else { return nil }
+        guard count == 1 || bytes[start] != ipv6CIDRZeroASCII else { return nil }
+
+        var value = UInt16.zero
+        var index = start
+        while index < end {
+            let digit = bytes[index] &- ipv6CIDRZeroASCII
+            guard digit <= 9 else { return nil }
+            value = (value &* 10) &+ UInt16(digit)
+            index &+= 1
+        }
+
+        guard value <= 128 else { return nil }
+        return UInt8(value)
+    }
+
+    @inline(__always)
+    private static func _firstIPv6CIDRSlashIndexScalar(in bytes: UnsafeBufferPointer<UInt8>) -> Int? {
+        var index = 0
+        while index < bytes.count {
+            if bytes[index] == ipv6CIDRSlashASCII {
+                return index
+            }
+
+            index &+= 1
+        }
+
+        return nil
+    }
+
+    @inline(__always)
+    private static func _firstIPv6CIDRSlashIndexSIMD(in bytes: UnsafeBufferPointer<UInt8>) -> Int? {
+        var chunkStart = 0
+        while chunkStart < bytes.count {
+            let laneCount = min(bytes.count - chunkStart, 16)
+            var input = SIMD16<UInt8>(repeating: 0)
+            var lane = 0
+            while lane < laneCount {
+                input[lane] = bytes[chunkStart &+ lane]
+                lane &+= 1
+            }
+
+            // This is the same lane-to-bitmask strategy as the IPv4 CIDR scanner.
+            // Each SIMD lane maps to the same-numbered bit, so trailingZeroBitCount
+            // returns the slash's byte index within this 16-byte chunk.
+            let matches = (input .== ipv6CIDRSlashVector)._storage
+            let matchBits = UInt16(bitPattern: (SIMD16<Int16>(truncatingIfNeeded: matches) &* ipv6CIDRSlashBitWeights).wrappedSum())
+            if matchBits != 0 {
+                return chunkStart &+ matchBits.trailingZeroBitCount
+            }
+
+            chunkStart &+= 16
+        }
+
+        return nil
+    }
+
+    @inline(__always)
+    private static func _firstIPv6CIDRSlashIndexSuffix(in bytes: UnsafeBufferPointer<UInt8>) -> Int? {
+        let count = bytes.count
+
+        // A valid IPv6 CIDR prefix is 0...128, so the slash can only appear
+        // immediately before a one-, two-, or three-digit suffix.
+        let oneDigitPrefixSlashIndex = count &- 2
+        if count >= 2, oneDigitPrefixSlashIndex > 0, bytes[oneDigitPrefixSlashIndex] == ipv6CIDRSlashASCII {
+            return oneDigitPrefixSlashIndex
+        }
+
+        let twoDigitPrefixSlashIndex = count &- 3
+        if count >= 3, twoDigitPrefixSlashIndex > 0, bytes[twoDigitPrefixSlashIndex] == ipv6CIDRSlashASCII {
+            return twoDigitPrefixSlashIndex
+        }
+
+        let threeDigitPrefixSlashIndex = count &- 4
+        if count >= 4, threeDigitPrefixSlashIndex > 0, bytes[threeDigitPrefixSlashIndex] == ipv6CIDRSlashASCII {
+            return threeDigitPrefixSlashIndex
+        }
+
+        return nil
     }
 
     private static func _parseIPv6TextCore(_ bytes: UnsafeBufferPointer<UInt8>) -> UInt128? {

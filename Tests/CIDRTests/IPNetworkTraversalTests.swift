@@ -61,10 +61,14 @@ struct IPNetworkTraversalTests {
 
     @Test("IPPrefix canonicalizes host bits when initialized from an address")
     func ipPrefixAddressInitializerCanonicalizesHostBits() throws {
-        let host = try #require(IPAddress<V4>("192.0.2.129/24"))
-        let network = IPNetwork<V4>(address: host, prefixLength: try #require(PrefixLength<V4>(24)))
+        let ipv4Host = try #require(IPAddress<V4>("192.0.2.129/24"))
+        let ipv4Network = IPNetwork<V4>(address: ipv4Host, prefixLength: try #require(PrefixLength<V4>(24)))
+        let ipv6Host = try #require(IPAddress<V6>("2001:db8::1/64"))
+        let ipv6Network = IPNetwork<V6>(address: ipv6Host, prefixLength: try #require(PrefixLength<V6>(64)))
 
-        #expect(network.prefix == 0xC0000200)
-        #expect(network.description == "192.0.2.0/24")
+        #expect(ipv4Network.prefix == 0xC0000200)
+        #expect(ipv4Network.description == "192.0.2.0/24")
+        #expect(ipv6Network.prefix == UInt128(0x20010DB8) << 96)
+        #expect(ipv6Network.description == "2001:db8:0:0:0:0:0:0/64")
     }
 }

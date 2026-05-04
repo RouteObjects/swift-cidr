@@ -97,6 +97,28 @@ extension IPNetwork {
         self.init(prefix: prefix, prefixLength: prefixLength)
     }
 
+    /// Creates a canonical IPv4 network from CIDR notation using the IPv4 CIDR suffix scanner.
+    public init?(_ string: String) where Family == AF.V4 {
+        guard let result = AF.parseIPv4CIDRTextSuffix(string, requiresPrefix: true),
+              let prefixLength = PrefixLength<Family>(rawValue: result.prefixLength)
+        else {
+            return nil
+        }
+
+        self.init(prefix: result.address, prefixLength: prefixLength)
+    }
+
+    /// Creates a canonical IPv6 network from CIDR notation using the IPv6 CIDR suffix scanner.
+    public init?(_ string: String) where Family == AF.V6 {
+        guard let result = AF.parseIPv6CIDRTextSuffix(string, requiresPrefix: true),
+              let prefixLength = PrefixLength<Family>(rawValue: result.prefixLength)
+        else {
+            return nil
+        }
+
+        self.init(prefix: result.address, prefixLength: prefixLength)
+    }
+
     /// Creates a canonical network from CIDR notation only when it is contained by a parent block.
     ///
     /// Use this initializer when the caller already has a neutral `CIDRBlock` representing a

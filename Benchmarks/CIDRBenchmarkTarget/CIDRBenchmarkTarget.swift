@@ -1,5 +1,5 @@
 import Benchmark
-import CIDR
+@_spi(Benchmark) import CIDR
 import ParserBenchSupport
 #if canImport(Darwin)
 import Darwin
@@ -156,6 +156,8 @@ let benchmarks = {
     let ipv6AddressCIDR = "2001:db8::1/64"
     let ipv4NetworkCIDR = "198.51.100.4/30"
     let ipv6NetworkCIDR = "2001:db8:1::/48"
+    let ipv4MaxLengthCIDR = "255.255.255.255/32"
+    let ipv6MaxLengthCIDR = "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128"
 
     let ipv4Prefix = IPv4PrefixLength(24)!
     let ipv6Prefix = IPv6PrefixLength(64)!
@@ -510,6 +512,114 @@ let benchmarks = {
     ) { benchmark in
         for _ in benchmark.scaledIterations {
             blackHole(IPv6Network(ipv6NetworkCIDR))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipv4.scalar",
+        configuration: parserConfiguration(tags: ["family": "v4", "kind": "experiment"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AF.parseIPv4CIDRTextScalar(ipv4AddressCIDR, requiresPrefix: false))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipv4.simdSlash",
+        configuration: parserConfiguration(tags: ["family": "v4", "kind": "experiment"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AF.parseIPv4CIDRTextSIMDSlash(ipv4AddressCIDR, requiresPrefix: false))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipv4.suffix",
+        configuration: parserConfiguration(tags: ["family": "v4", "kind": "experiment"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AF.parseIPv4CIDRTextSuffix(ipv4AddressCIDR, requiresPrefix: false))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipv4.scalar.maxLength",
+        configuration: parserConfiguration(tags: ["family": "v4", "kind": "experiment"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AF.parseIPv4CIDRTextScalar(ipv4MaxLengthCIDR, requiresPrefix: false))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipv4.simdSlash.maxLength",
+        configuration: parserConfiguration(tags: ["family": "v4", "kind": "experiment"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AF.parseIPv4CIDRTextSIMDSlash(ipv4MaxLengthCIDR, requiresPrefix: false))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipv4.suffix.maxLength",
+        configuration: parserConfiguration(tags: ["family": "v4", "kind": "experiment"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AF.parseIPv4CIDRTextSuffix(ipv4MaxLengthCIDR, requiresPrefix: false))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipv6.scalar",
+        configuration: parserConfiguration(tags: ["family": "v6", "kind": "experiment"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AF.parseIPv6CIDRTextScalar(ipv6AddressCIDR, requiresPrefix: false))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipv6.simdSlash",
+        configuration: parserConfiguration(tags: ["family": "v6", "kind": "experiment"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AF.parseIPv6CIDRTextSIMDSlash(ipv6AddressCIDR, requiresPrefix: false))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipv6.suffix",
+        configuration: parserConfiguration(tags: ["family": "v6", "kind": "experiment"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AF.parseIPv6CIDRTextSuffix(ipv6AddressCIDR, requiresPrefix: false))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipv6.scalar.maxLength",
+        configuration: parserConfiguration(tags: ["family": "v6", "kind": "experiment"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AF.parseIPv6CIDRTextScalar(ipv6MaxLengthCIDR, requiresPrefix: false))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipv6.simdSlash.maxLength",
+        configuration: parserConfiguration(tags: ["family": "v6", "kind": "experiment"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AF.parseIPv6CIDRTextSIMDSlash(ipv6MaxLengthCIDR, requiresPrefix: false))
+        }
+    }
+
+    Benchmark(
+        "parser.cidr.ipv6.suffix.maxLength",
+        configuration: parserConfiguration(tags: ["family": "v6", "kind": "experiment"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AF.parseIPv6CIDRTextSuffix(ipv6MaxLengthCIDR, requiresPrefix: false))
         }
     }
 
