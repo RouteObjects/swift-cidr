@@ -22,6 +22,17 @@ struct AnyIPTests {
         #expect(AnyIPAddress(ipv6.description) == ipv6)
     }
 
+    @Test("AnyIPAddress parse order changes first attempt only")
+    func anyIPAddressParseOrderIsAHint() throws {
+        let ipv6First = try #require(AnyIPAddress("2001:db8::1/64", parseOrder: .ipv6ThenIPv4))
+        let ipv4Fallback = try #require(AnyIPAddress("192.0.2.1/24", parseOrder: .ipv6ThenIPv4))
+
+        #expect(ipv6First.isIPv6)
+        #expect(ipv6First.description == "2001:db8:0:0:0:0:0:1/64")
+        #expect(ipv4Fallback.isIPv4)
+        #expect(ipv4Fallback.description == "192.0.2.1/24")
+    }
+
     @Test("AnyIPAddress exposes wrapped network and formatting behavior")
     func anyIPAddressDelegatesNetworkAndFormatting() throws {
         let mapped = try #require(AnyIPAddress("::ffff:192.0.2.1/96"))
@@ -51,6 +62,17 @@ struct AnyIPTests {
         #expect(ipv6.isIPv6)
         #expect(ipv6.first.description == "2001:db8:0:0:0:0:0:0/128")
         #expect(ipv6.last.description == "2001:db8:0:0:0:0:0:3/128")
+    }
+
+    @Test("AnyIPNetwork parse order changes first attempt only")
+    func anyIPNetworkParseOrderIsAHint() throws {
+        let ipv6First = try #require(AnyIPNetwork("2001:db8::/64", parseOrder: .ipv6ThenIPv4))
+        let ipv4Fallback = try #require(AnyIPNetwork("192.0.2.0/24", parseOrder: .ipv6ThenIPv4))
+
+        #expect(ipv6First.isIPv6)
+        #expect(ipv6First.description == "2001:db8:0:0:0:0:0:0/64")
+        #expect(ipv4Fallback.isIPv4)
+        #expect(ipv4Fallback.description == "192.0.2.0/24")
     }
 
     @Test("AnyIPNetwork containment is family-aware")

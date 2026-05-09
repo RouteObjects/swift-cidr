@@ -52,7 +52,7 @@ public extension CIDRBlock {
     /// inside the block.
     ///
     /// This method does not imply that the network has been allocated, assigned, routed, or
-    /// approved by an IPAM database. Higher-layer systems such as RouteObjects remain responsible
+    /// approved by an IPAM database. Higher-layer systems remain responsible
     /// for policy rules like requiring a stored parent, denying overlaps, or disallowing direct use
     /// of the delegated parent block.
     func contains(_ network: IPNetwork<Family>) -> Bool {

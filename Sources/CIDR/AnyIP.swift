@@ -1,35 +1,83 @@
-/// A mixed-family IP address wrapper for public APIs that may carry either IPv4 or IPv6.
+/// The address-family order used by mixed-family text parsers.
 ///
-/// `AnyIPAddress` is intentionally a concrete tagged union rather than an
-/// existential. It keeps the family-bound CIDR engine intact while giving
-/// boundary APIs one value type for "IPv4 or IPv6".
-/// mixed-family addresses can serialize losslessly as their canonical CIDR strings.
+/// `AddressFamilyParseOrder` is a performance hint, not a validation rule. Mixed-family wrappers
+/// still try both address families before failing; the order only controls which family-specific
+/// parser receives the first attempt.
+public enum AddressFamilyParseOrder: Sendable, Hashable, Codable {
+    /// Try IPv4 first, then IPv6.
+    case ipv4ThenIPv6
+
+    /// Try IPv6 first, then IPv4.
+    case ipv6ThenIPv4
+}
+
+/// A family-erased IP address wrapper that stores either an IPv4 or IPv6 address.
+///
+/// `AnyIPAddress` is a concrete tagged union rather than an existential. It keeps the
+/// family-bound CIDR currency types intact while giving boundary APIs one value type for
+/// "IPv4 or IPv6."
+///
+/// Use this type when the address family is not known until runtime, such as parsing imported text,
+/// displaying mixed-family UI rows, serializing user data, or storing mixed-family collections.
+/// `AnyIPAddress` does not infer multicast semantics; `AnyIPAddress("239.1.2.3")` is an ordinary
+/// IPv4 address wrapper.
 public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDebugStringConvertible, LosslessStringConvertible, Codable {
+    /// An IPv4 address.
     case v4(IPv4Address)
+
+    /// An IPv6 address.
     case v6(IPv6Address)
 
+    /// Wraps an IPv4 address.
     public init(_ address: IPv4Address) {
         self = .v4(address)
     }
 
+    /// Wraps an IPv6 address.
     public init(_ address: IPv6Address) {
         self = .v6(address)
     }
 
+    /// Parses a mixed-family address from canonical or accepted address text.
+    ///
+    /// This initializer satisfies `LosslessStringConvertible` and uses the default IPv4-then-IPv6
+    /// parse order.
     public init?(_ description: String) {
-        if let address = IPv4Address(description) {
-            self = .v4(address)
-            return
-        }
+        self.init(description, parseOrder: .ipv4ThenIPv6)
+    }
 
-        if let address = IPv6Address(description) {
-            self = .v6(address)
-            return
+    /// Parses a mixed-family address using the requested family parse order.
+    ///
+    /// The parse order is only a performance hint for workloads that know which family is likely to
+    /// appear first. Both families are still attempted before this initializer returns `nil`.
+    public init?(_ description: String, parseOrder: AddressFamilyParseOrder = .ipv4ThenIPv6) {
+        switch parseOrder {
+        case .ipv4ThenIPv6:
+            if let address = IPv4Address(description) {
+                self = .v4(address)
+                return
+            }
+
+            if let address = IPv6Address(description) {
+                self = .v6(address)
+                return
+            }
+        case .ipv6ThenIPv4:
+            if let address = IPv6Address(description) {
+                self = .v6(address)
+                return
+            }
+
+            if let address = IPv4Address(description) {
+                self = .v4(address)
+                return
+            }
         }
 
         return nil
     }
 
+    /// The IANA address-family number for the wrapped address.
     public var ianaValue: Int32 {
         switch self {
         case .v4:
@@ -39,6 +87,7 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// The human-readable address-family name for the wrapped address.
     public var familyName: String {
         switch self {
         case .v4:
@@ -48,16 +97,19 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// A Boolean value indicating whether the wrapper stores an IPv4 address.
     public var isIPv4: Bool {
         if case .v4 = self { return true }
         return false
     }
 
+    /// A Boolean value indicating whether the wrapper stores an IPv6 address.
     public var isIPv6: Bool {
         if case .v6 = self { return true }
         return false
     }
 
+    /// The formatted address literal without CIDR prefix notation.
     public var addressLiteral: String {
         switch self {
         case .v4(let address):
@@ -67,6 +119,7 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// The wrapped address's family-erased prefix length.
     public var prefixLength: AnyPrefixLength {
         switch self {
         case .v4(let address):
@@ -76,6 +129,7 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// The family-erased network containing the wrapped address.
     public var network: AnyIPNetwork {
         switch self {
         case .v4(let address):
@@ -85,16 +139,19 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// The wrapped IPv4 address, or `nil` when this value stores IPv6.
     public var v4: IPv4Address? {
         guard case .v4(let address) = self else { return nil }
         return address
     }
 
+    /// The wrapped IPv6 address, or `nil` when this value stores IPv4.
     public var v6: IPv6Address? {
         guard case .v6(let address) = self else { return nil }
         return address
     }
 
+    /// Formats the wrapped address using the requested text style.
     public func formatted(_ style: CIDRTextStyle) -> String {
         switch self {
         case .v4(let address):
@@ -104,6 +161,7 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// The canonical CIDR text for the wrapped address.
     public var description: String {
         switch self {
         case .v4(let address):
@@ -113,6 +171,7 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// A debug representation that includes the erased family case.
     public var debugDescription: String {
         switch self {
         case .v4(let address):
@@ -123,34 +182,68 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
     }
 }
 
-/// A mixed-family network wrapper for public APIs that may carry either IPv4 or IPv6.
-/// mixed-family networks can serialize losslessly as their canonical CIDR strings.
+/// A family-erased IP network wrapper that stores either an IPv4 or IPv6 network.
+///
+/// `AnyIPNetwork` is a concrete tagged union for APIs that accept "IPv4 network or IPv6 network"
+/// while preserving the family-bound `IPNetwork` value inside. Mixed-family networks serialize
+/// losslessly as canonical CIDR strings.
 public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDebugStringConvertible, LosslessStringConvertible, Codable {
+    /// An IPv4 network.
     case v4(IPv4Network)
+
+    /// An IPv6 network.
     case v6(IPv6Network)
 
+    /// Wraps an IPv4 network.
     public init(_ network: IPv4Network) {
         self = .v4(network)
     }
 
+    /// Wraps an IPv6 network.
     public init(_ network: IPv6Network) {
         self = .v6(network)
     }
 
+    /// Parses a mixed-family network from CIDR text.
+    ///
+    /// This initializer satisfies `LosslessStringConvertible` and uses the default IPv4-then-IPv6
+    /// parse order.
     public init?(_ description: String) {
-        if let network = IPv4Network(description) {
-            self = .v4(network)
-            return
-        }
+        self.init(description, parseOrder: .ipv4ThenIPv6)
+    }
 
-        if let network = IPv6Network(description) {
-            self = .v6(network)
-            return
+    /// Parses a mixed-family network using the requested family parse order.
+    ///
+    /// The parse order is only a performance hint. Both families are still attempted before this
+    /// initializer returns `nil`.
+    public init?(_ description: String, parseOrder: AddressFamilyParseOrder = .ipv4ThenIPv6) {
+        switch parseOrder {
+        case .ipv4ThenIPv6:
+            if let network = IPv4Network(description) {
+                self = .v4(network)
+                return
+            }
+
+            if let network = IPv6Network(description) {
+                self = .v6(network)
+                return
+            }
+        case .ipv6ThenIPv4:
+            if let network = IPv6Network(description) {
+                self = .v6(network)
+                return
+            }
+
+            if let network = IPv4Network(description) {
+                self = .v4(network)
+                return
+            }
         }
 
         return nil
     }
 
+    /// The IANA address-family number for the wrapped network.
     public var ianaValue: Int32 {
         switch self {
         case .v4:
@@ -160,6 +253,7 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// The human-readable address-family name for the wrapped network.
     public var familyName: String {
         switch self {
         case .v4:
@@ -169,16 +263,19 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// A Boolean value indicating whether the wrapper stores an IPv4 network.
     public var isIPv4: Bool {
         if case .v4 = self { return true }
         return false
     }
 
+    /// A Boolean value indicating whether the wrapper stores an IPv6 network.
     public var isIPv6: Bool {
         if case .v6 = self { return true }
         return false
     }
 
+    /// The formatted network prefix literal without CIDR prefix notation.
     public var addressLiteral: String {
         switch self {
         case .v4(let network):
@@ -188,6 +285,7 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// The wrapped network's family-erased prefix length.
     public var prefixLength: AnyPrefixLength {
         switch self {
         case .v4(let network):
@@ -197,6 +295,7 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// The first address in the wrapped network.
     public var first: AnyIPAddress {
         switch self {
         case .v4(let network):
@@ -206,6 +305,7 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// The last address in the wrapped network.
     public var last: AnyIPAddress {
         switch self {
         case .v4(let network):
@@ -215,6 +315,7 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// The next adjacent network with the same prefix length, if representable.
     public var nextNetwork: AnyIPNetwork? {
         switch self {
         case .v4(let network):
@@ -224,16 +325,19 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// The wrapped IPv4 network, or `nil` when this value stores IPv6.
     public var v4: IPv4Network? {
         guard case .v4(let network) = self else { return nil }
         return network
     }
 
+    /// The wrapped IPv6 network, or `nil` when this value stores IPv4.
     public var v6: IPv6Network? {
         guard case .v6(let network) = self else { return nil }
         return network
     }
 
+    /// Formats the wrapped network using the requested text style.
     public func formatted(_ style: CIDRTextStyle) -> String {
         switch self {
         case .v4(let network):
@@ -243,6 +347,10 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// Returns whether this network contains the supplied address.
+    ///
+    /// Containment is meaningful only within the same address family. Mixed-family comparisons
+    /// return `false`.
     public func contains(_ address: AnyIPAddress) -> Bool {
         switch (self, address) {
         case (.v4(let network), .v4(let address)):
@@ -255,6 +363,10 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// Returns whether this network fully contains another network.
+    ///
+    /// Containment is meaningful only within the same address family. Mixed-family comparisons
+    /// return `false`.
     public func contains(_ other: AnyIPNetwork) -> Bool {
         switch (self, other) {
         case (.v4(let lhs), .v4(let rhs)):
@@ -267,6 +379,7 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// The canonical CIDR text for the wrapped network.
     public var description: String {
         switch self {
         case .v4(let network):
@@ -276,6 +389,7 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
+    /// A debug representation that includes the erased family case.
     public var debugDescription: String {
         switch self {
         case .v4(let network):
@@ -292,17 +406,26 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
 /// Use this type when an input must be validated as a multicast group destination identifier rather
 /// than accepted as an ordinary IP address.
 public enum AnyIPMulticastGroup: Sendable, Hashable, CustomStringConvertible, CustomDebugStringConvertible, LosslessStringConvertible, Codable {
+    /// An IPv4 multicast group destination identifier.
     case v4(IPv4MulticastGroup)
+
+    /// An IPv6 multicast group destination identifier.
     case v6(IPv6MulticastGroup)
 
+    /// Wraps an IPv4 multicast group.
     public init(_ group: IPv4MulticastGroup) {
         self = .v4(group)
     }
 
+    /// Wraps an IPv6 multicast group.
     public init(_ group: IPv6MulticastGroup) {
         self = .v6(group)
     }
 
+    /// Parses a mixed-family multicast group destination identifier.
+    ///
+    /// The input must be a multicast group address, not ordinary unicast address text and not CIDR
+    /// range text.
     public init?(_ description: String) {
         if let group = IPv4MulticastGroup(description) {
             self = .v4(group)
@@ -317,6 +440,7 @@ public enum AnyIPMulticastGroup: Sendable, Hashable, CustomStringConvertible, Cu
         return nil
     }
 
+    /// The IANA address-family number for the wrapped multicast group.
     public var ianaValue: Int32 {
         switch self {
         case .v4:
@@ -326,6 +450,7 @@ public enum AnyIPMulticastGroup: Sendable, Hashable, CustomStringConvertible, Cu
         }
     }
 
+    /// The human-readable address-family name for the wrapped multicast group.
     public var familyName: String {
         switch self {
         case .v4:
@@ -335,16 +460,19 @@ public enum AnyIPMulticastGroup: Sendable, Hashable, CustomStringConvertible, Cu
         }
     }
 
+    /// A Boolean value indicating whether the wrapper stores an IPv4 multicast group.
     public var isIPv4: Bool {
         if case .v4 = self { return true }
         return false
     }
 
+    /// A Boolean value indicating whether the wrapper stores an IPv6 multicast group.
     public var isIPv6: Bool {
         if case .v6 = self { return true }
         return false
     }
 
+    /// The formatted multicast group address literal.
     public var addressLiteral: String {
         switch self {
         case .v4(let group):
@@ -354,16 +482,19 @@ public enum AnyIPMulticastGroup: Sendable, Hashable, CustomStringConvertible, Cu
         }
     }
 
+    /// The wrapped IPv4 multicast group, or `nil` when this value stores IPv6.
     public var v4: IPv4MulticastGroup? {
         guard case .v4(let group) = self else { return nil }
         return group
     }
 
+    /// The wrapped IPv6 multicast group, or `nil` when this value stores IPv4.
     public var v6: IPv6MulticastGroup? {
         guard case .v6(let group) = self else { return nil }
         return group
     }
 
+    /// The canonical text for the wrapped multicast group.
     public var description: String {
         switch self {
         case .v4(let group):
@@ -373,6 +504,7 @@ public enum AnyIPMulticastGroup: Sendable, Hashable, CustomStringConvertible, Cu
         }
     }
 
+    /// A debug representation that includes the erased family case.
     public var debugDescription: String {
         switch self {
         case .v4(let group):
@@ -389,17 +521,25 @@ public enum AnyIPMulticastGroup: Sendable, Hashable, CustomStringConvertible, Cu
 /// address family. Use this type when CIDR-looking input must be interpreted as multicast
 /// group-address range math rather than ordinary `IPNetwork` subnet semantics.
 public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertible, CustomDebugStringConvertible, LosslessStringConvertible, Codable {
+    /// An IPv4 multicast group-address range.
     case v4(IPv4MulticastGroupRange)
+
+    /// An IPv6 multicast group-address range.
     case v6(IPv6MulticastGroupRange)
 
+    /// Wraps an IPv4 multicast group-address range.
     public init(_ range: IPv4MulticastGroupRange) {
         self = .v4(range)
     }
 
+    /// Wraps an IPv6 multicast group-address range.
     public init(_ range: IPv6MulticastGroupRange) {
         self = .v6(range)
     }
 
+    /// Parses a mixed-family multicast group-address range from CIDR text.
+    ///
+    /// The input is interpreted as multicast group-range math, not unicast subnet semantics.
     public init?(_ description: String) {
         if let range = IPv4MulticastGroupRange(description) {
             self = .v4(range)
@@ -414,6 +554,7 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         return nil
     }
 
+    /// The IANA address-family number for the wrapped multicast range.
     public var ianaValue: Int32 {
         switch self {
         case .v4:
@@ -423,6 +564,7 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// The human-readable address-family name for the wrapped multicast range.
     public var familyName: String {
         switch self {
         case .v4:
@@ -432,16 +574,19 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// A Boolean value indicating whether the wrapper stores an IPv4 multicast range.
     public var isIPv4: Bool {
         if case .v4 = self { return true }
         return false
     }
 
+    /// A Boolean value indicating whether the wrapper stores an IPv6 multicast range.
     public var isIPv6: Bool {
         if case .v6 = self { return true }
         return false
     }
 
+    /// The formatted multicast range prefix literal without CIDR prefix notation.
     public var addressLiteral: String {
         switch self {
         case .v4(let range):
@@ -451,6 +596,7 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// The wrapped multicast range's family-erased prefix length.
     public var prefixLength: AnyPrefixLength {
         switch self {
         case .v4(let range):
@@ -460,6 +606,7 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// The first multicast group address in the wrapped range.
     public var firstGroup: AnyIPMulticastGroup {
         switch self {
         case .v4(let range):
@@ -469,6 +616,7 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// The last multicast group address in the wrapped range.
     public var lastGroup: AnyIPMulticastGroup {
         switch self {
         case .v4(let range):
@@ -478,6 +626,7 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// The number of multicast group addresses in the wrapped range, if representable.
     public var rangeSizeIfRepresentable: UInt128? {
         switch self {
         case .v4(let range):
@@ -487,16 +636,19 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// The wrapped IPv4 multicast range, or `nil` when this value stores IPv6.
     public var v4: IPv4MulticastGroupRange? {
         guard case .v4(let range) = self else { return nil }
         return range
     }
 
+    /// The wrapped IPv6 multicast range, or `nil` when this value stores IPv4.
     public var v6: IPv6MulticastGroupRange? {
         guard case .v6(let range) = self else { return nil }
         return range
     }
 
+    /// Formats the wrapped multicast range using the requested text style.
     public func formatted(_ style: CIDRTextStyle) -> String {
         switch self {
         case .v4(let range):
@@ -506,6 +658,10 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// Returns whether this multicast range contains the supplied multicast group.
+    ///
+    /// Containment is meaningful only within the same address family. Mixed-family comparisons
+    /// return `false`.
     public func contains(_ group: AnyIPMulticastGroup) -> Bool {
         switch (self, group) {
         case (.v4(let range), .v4(let group)):
@@ -518,6 +674,10 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// Returns whether this multicast range fully contains another multicast range.
+    ///
+    /// Containment is meaningful only within the same address family. Mixed-family comparisons
+    /// return `false`.
     public func contains(_ other: AnyIPMulticastGroupRange) -> Bool {
         switch (self, other) {
         case (.v4(let lhs), .v4(let rhs)):
@@ -530,6 +690,10 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// Returns whether this multicast range overlaps another multicast range.
+    ///
+    /// Overlap is meaningful only within the same address family. Mixed-family comparisons return
+    /// `false`.
     public func overlaps(_ other: AnyIPMulticastGroupRange) -> Bool {
         switch (self, other) {
         case (.v4(let lhs), .v4(let rhs)):
@@ -541,6 +705,10 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// Returns whether this multicast range is fully contained by another multicast range.
+    ///
+    /// The relationship is meaningful only within the same address family. Mixed-family comparisons
+    /// return `false`.
     public func isWithin(_ other: AnyIPMulticastGroupRange) -> Bool {
         switch (self, other) {
         case (.v4(let lhs), .v4(let rhs)):
@@ -552,6 +720,7 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// The canonical CIDR text for the wrapped multicast range.
     public var description: String {
         switch self {
         case .v4(let range):
@@ -561,6 +730,7 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
         }
     }
 
+    /// A debug representation that includes the erased family case.
     public var debugDescription: String {
         switch self {
         case .v4(let range):
@@ -571,19 +741,29 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
     }
 }
 
-/// A mixed-family prefix-length wrapper for public APIs that may carry either IPv4 or IPv6.
-public enum AnyPrefixLength: Sendable, Hashable, CustomStringConvertible, Codable { // erased prefixes need an explicit family-preserving Codable shape even though their display text stays family-erasing.
+/// A family-erased prefix-length wrapper that stores either an IPv4 or IPv6 prefix length.
+///
+/// `AnyPrefixLength` preserves the address family because the text `"24"` alone cannot say whether
+/// it means IPv4 `/24` or IPv6 `/24`. The display text stays family-erasing, but Codable uses an
+/// explicit tagged object to preserve the family.
+public enum AnyPrefixLength: Sendable, Hashable, CustomStringConvertible, Codable {
+    /// An IPv4 prefix length.
     case v4(IPv4PrefixLength)
+
+    /// An IPv6 prefix length.
     case v6(IPv6PrefixLength)
 
+    /// Wraps an IPv4 prefix length.
     public init(_ prefixLength: IPv4PrefixLength) {
         self = .v4(prefixLength)
     }
 
+    /// Wraps an IPv6 prefix length.
     public init(_ prefixLength: IPv6PrefixLength) {
         self = .v6(prefixLength)
     }
 
+    /// The IANA address-family number for the wrapped prefix length.
     public var ianaValue: Int32 {
         switch self {
         case .v4:
@@ -593,6 +773,7 @@ public enum AnyPrefixLength: Sendable, Hashable, CustomStringConvertible, Codabl
         }
     }
 
+    /// The human-readable address-family name for the wrapped prefix length.
     public var familyName: String {
         switch self {
         case .v4:
@@ -602,16 +783,19 @@ public enum AnyPrefixLength: Sendable, Hashable, CustomStringConvertible, Codabl
         }
     }
 
+    /// A Boolean value indicating whether the wrapper stores an IPv4 prefix length.
     public var isIPv4: Bool {
         if case .v4 = self { return true }
         return false
     }
 
+    /// A Boolean value indicating whether the wrapper stores an IPv6 prefix length.
     public var isIPv6: Bool {
         if case .v6 = self { return true }
         return false
     }
 
+    /// The validated slash number stored by the wrapped prefix length.
     public var rawValue: UInt8 {
         switch self {
         case .v4(let prefixLength):
@@ -621,6 +805,7 @@ public enum AnyPrefixLength: Sendable, Hashable, CustomStringConvertible, Codabl
         }
     }
 
+    /// The wrapped prefix length as an `Int`.
     public var intValue: Int {
         switch self {
         case .v4(let prefixLength):
@@ -630,16 +815,19 @@ public enum AnyPrefixLength: Sendable, Hashable, CustomStringConvertible, Codabl
         }
     }
 
+    /// The wrapped IPv4 prefix length, or `nil` when this value stores IPv6.
     public var v4: IPv4PrefixLength? {
         guard case .v4(let prefixLength) = self else { return nil }
         return prefixLength
     }
 
+    /// The wrapped IPv6 prefix length, or `nil` when this value stores IPv4.
     public var v6: IPv6PrefixLength? {
         guard case .v6(let prefixLength) = self else { return nil }
         return prefixLength
     }
 
+    /// Decimal text for the wrapped prefix length without the slash or family.
     public var description: String {
         switch self {
         case .v4(let prefixLength):
@@ -656,6 +844,7 @@ private enum AnyIPCodableFamily: String, Codable {
 }
 
 extension AnyIPAddress {
+    /// Decodes a mixed-family address from canonical CIDR string text.
     public init(from decoder: any Decoder) throws {
         let container = try decoder.singleValueContainer()
         let description = try container.decode(String.self)
@@ -666,6 +855,7 @@ extension AnyIPAddress {
         self = address
     }
 
+    /// Encodes the wrapped address as canonical CIDR string text.
     public func encode(to encoder: any Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(description)
@@ -673,6 +863,7 @@ extension AnyIPAddress {
 }
 
 extension AnyIPNetwork {
+    /// Decodes a mixed-family network from canonical CIDR string text.
     public init(from decoder: any Decoder) throws {
         let container = try decoder.singleValueContainer()
         let description = try container.decode(String.self)
@@ -682,6 +873,7 @@ extension AnyIPNetwork {
         self = network
     }
 
+    /// Encodes the wrapped network as canonical CIDR string text.
     public func encode(to encoder: any Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(description)
@@ -689,6 +881,7 @@ extension AnyIPNetwork {
 }
 
 extension AnyIPMulticastGroup {
+    /// Decodes a mixed-family multicast group from canonical string text.
     public init(from decoder: any Decoder) throws {
         let container = try decoder.singleValueContainer()
         let description = try container.decode(String.self)
@@ -698,6 +891,7 @@ extension AnyIPMulticastGroup {
         self = group
     }
 
+    /// Encodes the wrapped multicast group as canonical string text.
     public func encode(to encoder: any Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(description)
@@ -705,6 +899,7 @@ extension AnyIPMulticastGroup {
 }
 
 extension AnyIPMulticastGroupRange {
+    /// Decodes a mixed-family multicast group-address range from canonical CIDR string text.
     public init(from decoder: any Decoder) throws {
         let container = try decoder.singleValueContainer()
         let description = try container.decode(String.self)
@@ -714,6 +909,7 @@ extension AnyIPMulticastGroupRange {
         self = range
     }
 
+    /// Encodes the wrapped multicast group-address range as canonical CIDR string text.
     public func encode(to encoder: any Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(description)
@@ -726,6 +922,9 @@ extension AnyPrefixLength {
         case prefixLength
     }
 
+    /// Decodes a family-erased prefix length from a tagged object.
+    ///
+    /// The expected shape is `{ "family": "ipv4" | "ipv6", "prefixLength": number }`.
     public init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let family = try container.decode(AnyIPCodableFamily.self, forKey: .family)
@@ -746,6 +945,7 @@ extension AnyPrefixLength {
         }
     }
 
+    /// Encodes the prefix length as a tagged object that preserves the address family.
     public func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
 

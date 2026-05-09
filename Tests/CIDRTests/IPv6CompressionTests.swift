@@ -5,7 +5,7 @@ import Testing
 struct IPv6CompressionTests {
     @Test("Compressed formatter shortens a middle zero run")
     func compressesMiddleRun() throws {
-        let host = try #require(IPAddress<V6>.v6("2001:db8:0:0:0:0:0:1"))
+        let host = try #require(IPv6Address("2001:db8:0:0:0:0:0:1"))
         let network = IPNetwork<V6>(host: host)
 
         #expect(network.formatted(.compressed) == "2001:db8::1")
@@ -13,7 +13,7 @@ struct IPv6CompressionTests {
 
     @Test("Compressed formatter preserves a single zero hextet")
     func preservesSingleZeroHextet() throws {
-        let host = try #require(IPAddress<V6>.v6("2001:db8:0:1:2:3:4:5"))
+        let host = try #require(IPv6Address("2001:db8:0:1:2:3:4:5"))
         let network = IPNetwork<V6>(host: host)
 
         #expect(network.formatted(.compressed) == "2001:db8:0:1:2:3:4:5")
@@ -21,7 +21,7 @@ struct IPv6CompressionTests {
 
     @Test("Compressed formatter prefers the leftmost longest zero run")
     func prefersLeftmostLongestRun() throws {
-        let host = try #require(IPAddress<V6>.v6("2001:0:0:1:0:0:1:1"))
+        let host = try #require(IPv6Address("2001:0:0:1:0:0:1:1"))
         let network = IPNetwork<V6>(host: host)
 
         #expect(network.formatted(.compressed) == "2001::1:0:0:1:1")
@@ -29,7 +29,7 @@ struct IPv6CompressionTests {
 
     @Test("Compressed formatter handles all-zero IPv6")
     func compressesAllZeroIPv6() throws {
-        let host = try #require(IPAddress<V6>.v6("0:0:0:0:0:0:0:0"))
+        let host = try #require(IPv6Address("0:0:0:0:0:0:0:0"))
         let network = IPNetwork<V6>(host: host)
 
         #expect(network.formatted(.compressed) == "::")
@@ -37,7 +37,7 @@ struct IPv6CompressionTests {
 
     @Test("Compressed formatter handles a trailing zero run")
     func compressesTrailingRun() throws {
-        let host = try #require(IPAddress<V6>.v6("2001:db8:1:0:0:0:0:0"))
+        let host = try #require(IPv6Address("2001:db8:1:0:0:0:0:0"))
         let network = IPNetwork<V6>(host: host)
 
         #expect(network.formatted(.compressed) == "2001:db8:1::")

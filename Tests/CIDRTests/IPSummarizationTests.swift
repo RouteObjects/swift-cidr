@@ -6,8 +6,8 @@ import Testing
 struct IPSummarizationTests {
     @Test("Summarize complex IPv6 range")
     func complexIPv6Summarization() throws {
-        let start = try #require(IPAddress<V6>.v6("2001:db8:0:0:0:0:0:1"))
-        let end = try #require(IPAddress<V6>.v6("2001:db8:0:0:0:0:0:f"))
+        let start = try #require(IPv6Address("2001:db8:0:0:0:0:0:1"))
+        let end = try #require(IPv6Address("2001:db8:0:0:0:0:0:f"))
 
         let result = IPNetwork<V6>.summarize(from: start, to: end)
 
@@ -24,8 +24,8 @@ struct IPSummarizationTests {
 
     @Test("Summarize adjacent IPv4 hosts")
     func simpleIPv4Summarization() throws {
-        let start = try #require(IPAddress<V4>.v4("192.168.1.1"))
-        let end = try #require(IPAddress<V4>.v4("192.168.1.2"))
+        let start = try #require(IPv4Address("192.168.1.1"))
+        let end = try #require(IPv4Address("192.168.1.2"))
 
         let result = IPNetwork<V4>.summarize(from: start, to: end)
 
@@ -38,7 +38,7 @@ struct IPSummarizationTests {
 
     @Test("Single address range results in one /32")
     func singleAddressSummarization() throws {
-        let addr = try #require(IPAddress<V4>.v4("10.0.0.1"))
+        let addr = try #require(IPv4Address("10.0.0.1"))
         let result = IPNetwork<V4>.summarize(from: addr, to: addr)
 
         #expect(result.count == 1)
@@ -72,7 +72,7 @@ struct IPSummarizationTests {
 
     @Test("IPv4 address and mask style stays vendor-friendly")
     func ipv4AddressAndMaskFormatting() throws {
-        let host = try #require(IPAddress<V4>.v4("192.168.1.1"))
+        let host = try #require(IPv4Address("192.168.1.1"))
         let network = IPNetwork<V4>(host: host)
 
         #expect(network.formatted(.addressAndNetmask) == "192.168.1.1 255.255.255.255")
@@ -80,7 +80,7 @@ struct IPSummarizationTests {
 
     @Test("IPv6 preferred style uses the current full-text formatter")
     func ipv6PreferredFormatting() throws {
-        let host = try #require(IPAddress<V6>.v6("2001:db8:0:0:0:0:0:1"))
+        let host = try #require(IPv6Address("2001:db8:0:0:0:0:0:1"))
         let network = IPNetwork<V6>(host: host)
 
         #expect(network.formatted(.preferred) == "2001:db8:0:0:0:0:0:1")
@@ -109,7 +109,7 @@ struct IPSummarizationTests {
 
     @Test("Non-mapped IPv6 style falls back to normal address text")
     func nonMappedIPv6FormattingFallsBack() throws {
-        let host = try #require(IPAddress<V6>.v6("2001:db8:0:0:0:0:0:1"))
+        let host = try #require(IPv6Address("2001:db8:0:0:0:0:0:1"))
         let network = IPNetwork<V6>(host: host)
 
         #expect(network.formatted(.ipv4Mapped) == "2001:db8:0:0:0:0:0:1")

@@ -7,9 +7,16 @@ CIDR is commonly written as an address plus a slash prefix length:
 2001:db8::1/64
 ```
 
-The slash is not just formatting. It gives the address bits prefix context.
-`swift-cidr` models that context explicitly so APIs can distinguish an address,
-a network boundary, a neutral delegated block, and a multicast group range.
+The slash is not just formatting. It gives the address bits mathematical prefix
+context: enough information to calculate containment, ranges, canonical network
+boundaries, summarization, and related CIDR operations.
+
+That is still not the full operational context. A CIDR prefix takes on
+additional meaning when it is used somewhere: configured on an interface,
+advertised by a routing protocol, installed in a routing table, matched by an
+access-list filter, delegated by a registry, or interpreted as a multicast group
+range. `swift-cidr` models the typed CIDR math underneath those uses; the
+higher-level system decides what the prefix means operationally.
 
 ## Address Family
 
@@ -117,20 +124,34 @@ prefix-shaped range of address space, but that delegation is not itself an
 interface address, a LAN subnet, or a BGP route until some other system gives it
 that context.
 
+[RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632) uses `allocate` and
+`assign` with registry-specific meaning. To allocate address space is to
+delegate a block to an organization that may perform further sub-delegation. To
+assign address space is to provide a block to a site for direct use, such as
+numbering hosts or building site subnets.
+
 ```swift
 import CIDR
 
-let delegated = CIDRBlock<AF.V4>("198.51.100.0/24")!
-let customerSlice = CIDRBlock<AF.V4>("198.51.100.64/26")!
+let allocation = CIDRBlock<V4>("198.51.100.0/24")!
 
-print(delegated.contains(customerSlice))
+let assignedSubnet1 = IPv4Network("198.51.100.64/26", within: allocation)!
+let assignedSubnet2 = IPv4Network("198.51.100.128/28", within: allocation)!
+
+print(allocation.contains(assignedSubnet1))
+print(allocation.contains(assignedSubnet2))
 ```
 
 Output:
 
 ```text
 true
+true
 ```
+
+The `within:` initializer verifies CIDR containment inside the allocation. It
+does not track registry authority, assignment records, overlap policy, or
+database state.
 
 The examples use documentation prefixes, but the model is the same for real
 authority-backed allocation data.

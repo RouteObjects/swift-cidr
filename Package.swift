@@ -16,6 +16,17 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
+// Copyright (c) 2026 Craig A. Munro
+//
+// SPDX-License-Identifier: Apache-2.0
+
+// Copyright (c) 2026 Craig A. Munro
+//
+// Licensed under the Apache License, Version 2.0.
+// See LICENSE for details.
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import PackageDescription
 
 let package = Package(

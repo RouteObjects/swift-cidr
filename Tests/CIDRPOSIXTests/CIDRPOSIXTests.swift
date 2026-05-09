@@ -45,7 +45,7 @@ struct IPCorePOSIXTests {
         }
 
         let decoded = IPAddress<V6>(sockaddr: address)
-        let expected = try #require(IPAddress<V6>.v6("2001:db8:0:0:0:0:0:1"))
+        let expected = try #require(IPv6Address("2001:db8:0:0:0:0:0:1"))
 
         #expect(decoded.address == expected.address)
         #expect(decoded.prefixLength.intValue == 128)
