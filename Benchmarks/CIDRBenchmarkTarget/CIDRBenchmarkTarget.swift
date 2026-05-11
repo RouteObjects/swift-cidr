@@ -28,6 +28,7 @@ private func systemInetNtop6(_ address: UInt128) -> String {
     var storage = in6_addr()
     var networkOrder = address.bigEndian
 
+    // SAFETY: Both values are local fixed-size address buffers and remain alive during the copy.
     withUnsafeMutableBytes(of: &storage) { destination in
         withUnsafeBytes(of: &networkOrder) { source in
             // Keep the platform baseline allocation-free before the required Swift String result.
@@ -35,8 +36,10 @@ private func systemInetNtop6(_ address: UInt128) -> String {
         }
     }
 
+    // SAFETY: `INET6_ADDRSTRLEN` is the POSIX-required output capacity for `inet_ntop`.
     return withUnsafeTemporaryAllocation(of: CChar.self, capacity: Int(INET6_ADDRSTRLEN)) { output in
         guard let baseAddress = output.baseAddress else { return "" }
+        // SAFETY: `storage` is initialized above and remains alive for the duration of the C call.
         let result = withUnsafePointer(to: &storage) { source in
             inet_ntop(AF_INET6, source, baseAddress, socklen_t(INET6_ADDRSTRLEN))
         }
@@ -44,6 +47,14 @@ private func systemInetNtop6(_ address: UInt128) -> String {
         guard let result else { return "" }
         return String(cString: result)
     }
+}
+
+private func benchmarkPrefixLength<Family: AddressFamily>(_ value: Int) -> PrefixLength<Family> {
+    guard let prefixLength = PrefixLength<Family>(value) else {
+        preconditionFailure("Benchmark fixture uses invalid \(Family.familyName) prefix length \(value).")
+    }
+
+    return prefixLength
 }
 
 @MainActor
@@ -159,8 +170,8 @@ let benchmarks = {
     let ipv4MaxLengthCIDR = "255.255.255.255/32"
     let ipv6MaxLengthCIDR = "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128"
 
-    let ipv4Prefix = IPv4PrefixLength(24)!
-    let ipv6Prefix = IPv6PrefixLength(64)!
+    let ipv4Prefix: IPv4PrefixLength = benchmarkPrefixLength(24)
+    let ipv6Prefix: IPv6PrefixLength = benchmarkPrefixLength(64)
 
     let ipv4HostStorage: UInt32 = 0xC0000201
     let ipv4CompareStorage: UInt32 = 0xC0000202
@@ -180,7 +191,7 @@ let benchmarks = {
     let formatterIPv4MixedStorage: UInt32 = 0xC0A80101
     let formatterIPv4MaxStorage = UInt32.max
 
-    let ipv6HostPrefix = IPv6PrefixLength(128)!
+    let ipv6HostPrefix = IPv6PrefixLength.maximum
     let formatterIPv6SimpleStorage = (UInt128(0x20010DB8) << 96) | 1
     let formatterIPv6MiddleCompressedStorage =
         (UInt128(0x20010DB8) << 96)

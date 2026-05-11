@@ -6,6 +6,11 @@
 - `formatter.*` measures bits-to-string formatter cost and includes platform `inet_ntop` baselines where useful.
 - `currency.*` measures already-constructed value operations to validate the currency-type claim for `PrefixLength`, `IPAddress`, `IPNetwork`, and the `Any*` wrappers.
 
+`CIDRNIOBenchmarkTarget` is an opt-in adapter benchmark target for SwiftNIO
+bridges. It is intentionally separate from the default threshold-gated target so
+`NIOCore` measurements do not add noise to core CIDR parser, formatter, or
+currency-type tracking.
+
 The versioned parser benchmarks use a stable naming scheme:
 
 - `parser.pton4v1` through `parser.pton4v4`
@@ -71,6 +76,17 @@ The default benchmark commands remain unchanged:
 ```bash
 ./scripts/benchmarks.sh run
 ./scripts/benchmarks.sh check
+```
+
+## SwiftNIO Adapter Benchmarks
+
+`CIDRNIOBenchmarkTarget` measures `ByteBuffer`, direct IPv6 literal formatting,
+and `SocketAddress` adapter operations. It is research-oriented initially and is
+not included in the default threshold gate.
+
+```bash
+CIDR_BENCHMARK_TARGET=CIDRNIOBenchmarkTarget ./scripts/benchmarks.sh build
+CIDR_BENCHMARK_TARGET=CIDRNIOBenchmarkTarget ./scripts/benchmarks.sh run
 ```
 
 ## Profiling Target

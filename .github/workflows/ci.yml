@@ -25,9 +25,10 @@ jobs:
           swift build --target CIDR
           swift build --target CIDRConfig
           swift build --target CIDRPOSIX
+          swift build --target CIDRNIO
 
       - name: Run test suite
-        run: swift test
+        run: ./scripts/test.sh
 
   build-and-test-linux:
     runs-on: ubuntu-latest
@@ -44,9 +45,10 @@ jobs:
           swift build --target CIDR
           swift build --target CIDRConfig
           swift build --target CIDRPOSIX
+          swift build --target CIDRNIO
 
       - name: Run test suite
-        run: swift test
+        run: ./scripts/test.sh
 
   benchmark-thresholds:
     if: github.event_name == 'workflow_dispatch'

@@ -1,9 +1,9 @@
-/// Low-level UTF-8 formatting hooks for companion packages.
+/// Low-level UTF-8 formatting hooks for adapter modules.
 ///
-/// This SPI keeps NIO-specific formatting out of the core package while still letting trusted
-/// adapters write CIDR text directly into byte-oriented sinks.
-@_spi(NIO)
-public enum CIDRUTF8Writer {
+/// Package-level access keeps these byte-oriented formatter hooks out of the public `CIDR` API
+/// while still letting sibling adapter targets, such as `CIDRNIO`, write CIDR text directly into
+/// their native buffers.
+package enum CIDRUTF8Writer {
     /// The longest possible output from ``writeCompressedIPv6AddressLiteral(_:into:)``.
     ///
     /// This is the pure hexadecimal IPv6 form without a C NUL terminator:

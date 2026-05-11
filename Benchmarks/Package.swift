@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.1
 
 import PackageDescription
 
@@ -13,6 +13,7 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "swift-cidr", path: ".."),
+        .package(url: "https://github.com/apple/swift-nio.git", from: "2.81.0"),
         .package(url: "https://github.com/ordo-one/package-benchmark.git", from: "1.31.0"),
     ],
     targets: [
@@ -48,6 +49,20 @@ let package = Package(
             path: "CIDRCPUBenchmarkTarget",
             plugins: [
                 // Keep fixed-loop CPU batch measurements isolated from the default threshold-gated target.
+                .plugin(name: "BenchmarkPlugin", package: "package-benchmark"),
+            ]
+        ),
+        .executableTarget(
+            name: "CIDRNIOBenchmarkTarget",
+            dependencies: [
+                .product(name: "CIDR", package: "swift-cidr"),
+                .product(name: "CIDRNIO", package: "swift-cidr"),
+                .product(name: "NIOCore", package: "swift-nio"),
+                .product(name: "Benchmark", package: "package-benchmark"),
+            ],
+            path: "CIDRNIOBenchmarkTarget",
+            plugins: [
+                // CHANGE: Keep NIO adapter measurements isolated from the default threshold-gated target.
                 .plugin(name: "BenchmarkPlugin", package: "package-benchmark"),
             ]
         ),

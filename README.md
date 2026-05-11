@@ -23,10 +23,11 @@ without falling back to loosely typed strings or POSIX-shaped state.
 - `IPNetwork` is first-class, so CIDR prefixes can participate directly in
   containment checks, subnet traversal, summarization, and mixed-family API
   boundaries.
-- The core package stays pure Swift and dependency-light. POSIX and SwiftNIO
-  support live at adapter boundaries instead of shaping the core type system.
+- The core `CIDR` module stays pure Swift and dependency-free. POSIX and
+  SwiftNIO support live at adapter boundaries instead of shaping the core type
+  system.
 - The API is designed for Swift on Server: small value types, explicit family
-  metadata, predictable formatting/parsing, and optional `swift-cidr-nio`
+  metadata, predictable formatting/parsing, and optional `CIDRNIO`
   interoperability.
 - Performance work is measured with benchmark coverage against Swift and system
   baselines such as `inet_pton` and `inet_ntop`.
@@ -60,15 +61,13 @@ configuration context, and multicast group ranges into distinct types.
   core CIDR model.
 - `CIDRPOSIX`: POSIX interoperability helpers for address families and
   `sockaddr` conversion.
+- `CIDRNIO`: SwiftNIO adapters for `ByteBuffer` and `SocketAddress`. Importing
+  `CIDRNIO` is explicit, and the core `CIDR` target does not import `NIOCore`.
 
 Companion package:
 
 - `swift-cidr-registry` with `import CIDRRegistry` for authority-backed
   registry datasets such as `IPv4SpecialPurpose`.
-- `swift-cidr-nio` with `import CIDRNIO` for SwiftNIO adapters.
-  `CIDRNIO` currently provides strict `ByteBuffer` and `SocketAddress`
-  conversions while the core package intentionally stays independent of
-  SwiftNIO.
 
 ## Toolchains and Platforms
 
@@ -154,6 +153,7 @@ Common local commands:
 swift build --target CIDR
 swift build --target CIDRConfig
 swift build --target CIDRPOSIX
+swift build --target CIDRNIO
 ./scripts/test.sh
 ./scripts/benchmarks.sh build
 ./scripts/benchmarks.sh check
@@ -181,6 +181,12 @@ benchmarks that report only user CPU time, select `CIDRCPUBenchmarkTarget`:
 
 ```bash
 CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh run
+```
+
+For opt-in SwiftNIO adapter benchmarks, select `CIDRNIOBenchmarkTarget`:
+
+```bash
+CIDR_BENCHMARK_TARGET=CIDRNIOBenchmarkTarget ./scripts/benchmarks.sh run
 ```
 
 Open `Benchmarks/Package.swift` separately in Xcode if you want the benchmark

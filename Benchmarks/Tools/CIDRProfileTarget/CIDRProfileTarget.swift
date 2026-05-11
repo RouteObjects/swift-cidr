@@ -55,10 +55,12 @@ struct CIDRProfileTarget {
     private static func runBytesMode(address: UInt128, iterations: Int) -> UInt64 {
         var checksum: UInt64 = 0
 
+        // SAFETY: The scratch buffer is sized for the maximum compressed IPv6 literal and stays local.
         return withUnsafeTemporaryAllocation(
             of: UInt8.self,
             capacity: CIDRUTF8Writer.maximumCompressedIPv6AddressLiteralUTF8Count
         ) { buffer in
+            // SAFETY: Rebinding the temporary UInt8 allocation as raw bytes is needed by the formatter API.
             let rawBuffer = UnsafeMutableRawBufferPointer(buffer)
 
             for _ in 0..<iterations {
@@ -168,7 +170,7 @@ private enum ProfileCase: String, CaseIterable {
     }
 
     var address: IPv6Address {
-        IPv6Address(address: storage, prefixLength: IPv6PrefixLength(128)!)
+        IPv6Address(address: storage, prefixLength: .maximum)
     }
 }
 
