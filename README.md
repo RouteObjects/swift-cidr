@@ -98,17 +98,18 @@ plain `swift test` cannot locate `Testing.framework`.
 ```swift
 import CIDR
 
-let host = IPv4Address("192.0.2.1/24")!
-let endpoint = IPEndpoint(address: host, port: TransportPort(53))
+if let host = IPv4Address("192.0.2.1/24") {
+    let endpoint = IPEndpoint(address: host, port: TransportPort(53))
 
-print(host.description)
-// 192.0.2.1/24
+    print(host.description)
+    // 192.0.2.1/24
 
-print(host.network.description)
-// 192.0.2.0/24
+    print(host.network.description)
+    // 192.0.2.0/24
 
-print(endpoint.description)
-// 192.0.2.1/24:53
+    print(endpoint.description)
+    // 192.0.2.1/24:53
+}
 ```
 
 ### Subnet Math
@@ -116,18 +117,18 @@ print(endpoint.description)
 ```swift
 import CIDR
 
-let network = IPv4Network("192.0.2.0/24")!
-let subnets = Array(network.subnets(prefixLength: 26)).map(\.description)
-let summary = IPv4Network.summarize(
-    from: IPv4Address("192.0.2.0")!,
-    to: IPv4Address("192.0.2.255")!
-).map(\.description)
+if let network = IPv4Network("192.0.2.0/24"),
+   let start = IPv4Address("192.0.2.0"),
+   let end = IPv4Address("192.0.2.255") {
+    let subnets = Array(network.subnets(prefixLength: 26)).map(\.description)
+    let summary = IPv4Network.summarize(from: start, to: end).map(\.description)
 
-print(subnets)
-// ["192.0.2.0/26", "192.0.2.64/26", "192.0.2.128/26", "192.0.2.192/26"]
+    print(subnets)
+    // ["192.0.2.0/26", "192.0.2.64/26", "192.0.2.128/26", "192.0.2.192/26"]
 
-print(summary)
-// ["192.0.2.0/24"]
+    print(summary)
+    // ["192.0.2.0/24"]
+}
 ```
 
 ### Mixed-Family Boundary APIs
@@ -135,13 +136,13 @@ print(summary)
 ```swift
 import CIDR
 
-let addresses = [
-    AnyIPAddress("192.0.2.1/24")!,
-    AnyIPAddress("2001:db8::1/64")!
-]
+if let v4 = AnyIPAddress("192.0.2.1/24"),
+   let v6 = AnyIPAddress("2001:db8::1/64") {
+    let addresses = [v4, v6]
 
-for address in addresses {
-    print(address.familyName, address.network.description)
+    for address in addresses {
+        print(address.familyName, address.network.description)
+    }
 }
 ```
 

@@ -14,11 +14,12 @@ attached subnet.
 import CIDR
 import CIDRConfig
 
-let configured = IPv4Address("192.0.2.10/24")!
-let interface = InterfaceAddress(host: configured)
+if let configured = IPv4Address("192.0.2.10/24") {
+    let interface = InterfaceAddress(host: configured)
 
-print(interface.host.description)
-print(interface.network.description)
+    print(interface.host.description)
+    print(interface.network.description)
+}
 ```
 
 Output:
@@ -46,10 +47,10 @@ A routing table entry stores a prefix boundary. In `swift-cidr`, that is an
 ```swift
 import CIDR
 
-let advertisedRoute = IPv4Network("203.0.113.0/24")!
-let coveringAggregate = IPv4Network("203.0.112.0/23")!
-
-print(coveringAggregate.contains(advertisedRoute))
+if let advertisedRoute = IPv4Network("203.0.113.0/24"),
+   let coveringAggregate = IPv4Network("203.0.112.0/23") {
+    print(coveringAggregate.contains(advertisedRoute))
+}
 ```
 
 Output:
@@ -78,11 +79,11 @@ automatically a route, an interface, or a LAN subnet.
 ```swift
 import CIDR
 
-let rirDelegation = CIDRBlock<AF.V4>("198.51.100.0/24")!
-let downstreamAssignment = CIDRBlock<AF.V4>("198.51.100.128/25")!
-
-print(rirDelegation.contains(downstreamAssignment))
-print(downstreamAssignment.isWithin(rirDelegation))
+if let rirDelegation = CIDRBlock<AF.V4>("198.51.100.0/24"),
+   let downstreamAssignment = CIDRBlock<AF.V4>("198.51.100.128/25") {
+    print(rirDelegation.contains(downstreamAssignment))
+    print(downstreamAssignment.isWithin(rirDelegation))
+}
 ```
 
 Output:
@@ -104,10 +105,10 @@ Multicast group ranges also use CIDR notation, but they are not subnets.
 ```swift
 import CIDR
 
-let administrativelyScoped = IPv4MulticastGroupRange("239.0.0.0/8")!
-let group = IPv4MulticastGroup("239.1.2.3")!
-
-print(administrativelyScoped.contains(group))
+if let administrativelyScoped = IPv4MulticastGroupRange("239.0.0.0/8"),
+   let group = IPv4MulticastGroup("239.1.2.3") {
+    print(administrativelyScoped.contains(group))
+}
 ```
 
 Output:

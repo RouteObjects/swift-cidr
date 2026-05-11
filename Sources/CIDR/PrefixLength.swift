@@ -77,6 +77,31 @@ public struct PrefixLength<Family: AddressFamily>: RawRepresentable, Sendable, H
 }
 
 extension PrefixLength {
+    /// Creates a prefix length from a value the implementation has already proven valid.
+    ///
+    /// Use the failable public initializers for external input. This initializer is for internal CIDR
+    /// math where failure would indicate a programmer error or a violated address-family invariant.
+    internal init(preconditioned value: Int) {
+        precondition(value >= 0, "Prefix length must not be negative.")
+        precondition(value <= Family.bitWidth, "Prefix length must not exceed the address-family width.")
+        precondition(value <= Int(UInt8.max), "Prefix length must fit in UInt8 storage.")
+        self.rawValue = UInt8(truncatingIfNeeded: value)
+    }
+
+    /// The `/0` prefix length for this address family.
+    public static var zero: Self {
+        Self(preconditioned: 0)
+    }
+
+    /// The maximum prefix length for this address family.
+    ///
+    /// This is `/32` for IPv4 and `/128` for IPv6.
+    public static var maximum: Self {
+        Self(preconditioned: Family.bitWidth)
+    }
+}
+
+extension PrefixLength {
     /// Decodes a prefix length from a numeric scalar.
     ///
     /// Decoding fails when the value is outside the valid range for the address family.

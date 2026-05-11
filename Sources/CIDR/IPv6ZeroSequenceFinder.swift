@@ -6,6 +6,7 @@ internal enum IPv6ZeroSequenceFinder {
         scanLongestCompressibleZeroRun(in: words)
     }
 
+    // SAFETY: `bytes` must point to 16 network-order IPv6 bytes for the duration of the call.
     internal static func longestZeroSequenceRange(inIPv6Bytes bytes: UnsafePointer<UInt8>) -> Range<Int>? {
         var bestStart = -1
         var bestCount = 0

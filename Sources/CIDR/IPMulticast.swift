@@ -22,7 +22,7 @@ extension AF.V4: MulticastAddressSpace {
     /// The IPv4 multicast address space, `224.0.0.0/4`.
     public static let multicastAddressSpace = CIDRBlock(
         prefix: UInt32(0xE0000000),
-        prefixLength: PrefixLength<AF.V4>(4)!
+        prefixLength: PrefixLength<AF.V4>(preconditioned: 4)
     )
 }
 
@@ -30,7 +30,7 @@ extension AF.V6: MulticastAddressSpace {
     /// The IPv6 multicast address space, `ff00::/8`.
     public static let multicastAddressSpace = CIDRBlock(
         prefix: UInt128(0xFF) << 120,
-        prefixLength: PrefixLength<AF.V6>(8)!
+        prefixLength: PrefixLength<AF.V6>(preconditioned: 8)
     )
 }
 
@@ -209,11 +209,13 @@ public struct IPMulticastGroupRange<Family: MulticastAddressSpace>: CIDR, Hashab
 
     /// The first multicast group destination identifier in the range.
     public var firstGroup: IPMulticastGroup<Family> {
+        // Force unwrap is safe: range initialization guarantees every endpoint is multicast.
         IPMulticastGroup(cidrBlock.firstAddress)!
     }
 
     /// The last multicast group destination identifier in the range.
     public var lastGroup: IPMulticastGroup<Family> {
+        // Force unwrap is safe: range initialization guarantees every endpoint is multicast.
         IPMulticastGroup(cidrBlock.lastAddress)!
     }
 

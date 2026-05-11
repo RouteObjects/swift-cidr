@@ -30,11 +30,14 @@ This is intentionally different from POSIX-style code, where `AF_INET` and
 ```swift
 import CIDR
 
-let v4 = IPv4Address("192.0.2.1/24")!
-let v6 = IPv6Address("2001:db8::1/64")!
+if let v4 = IPv4Address("192.0.2.1/24"),
+   let v6 = IPv6Address("2001:db8::1/64") {
+    print(v4.description)
+    print(v6.description)
 
-print(AF.V4.familyName)
-print(AF.V6.familyName)
+    print(AF.V4.familyName)
+    print(AF.V6.familyName)
+}
 ```
 
 That type boundary prevents accidentally mixing IPv4 and IPv6 values in generic
@@ -49,11 +52,15 @@ code unless the API explicitly accepts a mixed-family wrapper such as
 ```swift
 import CIDR
 
-let v4Prefix = IPv4PrefixLength(24)!
-let v6Prefix = IPv6PrefixLength(64)!
+if let v4Prefix = IPv4PrefixLength(24),
+   let v6Prefix = IPv6PrefixLength(64) {
+    print(v4Prefix)
+    print(v6Prefix)
+}
 
-print(v4Prefix)
-print(v6Prefix)
+print(IPv4PrefixLength.zero)     // /0
+print(IPv4PrefixLength.maximum)  // /32
+print(IPv6PrefixLength.maximum)  // /128
 ```
 
 The family-bound prefix type makes invalid combinations unrepresentable in
@@ -76,10 +83,10 @@ it.
 ```swift
 import CIDR
 
-let host = IPv4Address("192.0.2.1/24")!
-
-print(host.description)
-print(host.network.description)
+if let host = IPv4Address("192.0.2.1/24") {
+    print(host.description)
+    print(host.network.description)
+}
 ```
 
 Output:
@@ -99,9 +106,10 @@ observed or configured within.
 ```swift
 import CIDR
 
-let network = IPv4Network("192.0.2.123/24")!
+if let network = IPv4Network("192.0.2.123/24") {
+    print(network.description)
+}
 
-print(network.description)
 ```
 
 Output:
@@ -133,13 +141,12 @@ numbering hosts or building site subnets.
 ```swift
 import CIDR
 
-let allocation = CIDRBlock<V4>("198.51.100.0/24")!
-
-let assignedSubnet1 = IPv4Network("198.51.100.64/26", within: allocation)!
-let assignedSubnet2 = IPv4Network("198.51.100.128/28", within: allocation)!
-
-print(allocation.contains(assignedSubnet1))
-print(allocation.contains(assignedSubnet2))
+if let allocation = CIDRBlock<V4>("198.51.100.0/24"),
+   let assignedSubnet1 = IPv4Network("198.51.100.64/26", within: allocation),
+   let assignedSubnet2 = IPv4Network("198.51.100.128/28", within: allocation) {
+    print(allocation.contains(assignedSubnet1))
+    print(allocation.contains(assignedSubnet2))
+}
 ```
 
 Output:
@@ -165,10 +172,10 @@ identifiers. It is not a LAN subnet with usable hosts or a broadcast address.
 ```swift
 import CIDR
 
-let range = IPv4MulticastGroupRange("239.1.2.0/24")!
-let group = IPv4MulticastGroup("239.1.2.3")!
-
-print(range.contains(group))
+if let range = IPv4MulticastGroupRange("239.1.2.0/24"),
+   let group = IPv4MulticastGroup("239.1.2.3") {
+    print(range.contains(group))
+}
 ```
 
 Output:

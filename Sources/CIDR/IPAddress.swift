@@ -68,7 +68,7 @@ public struct IPAddress<Family: AddressFamily>: Addressable, CIDR, Hashable, Com
     /// one address. IPv4 addresses therefore receive `/32` context and IPv6 addresses receive `/128`
     /// context.
     public init(address: Family.Storage) {
-        self.init(address: address, prefixLength: PrefixLength<Family>(Family.bitWidth)!)
+        self.init(address: address, prefixLength: .maximum)
     }
 
     /// The canonical network boundary that contains this address.
@@ -181,12 +181,16 @@ extension IPAddress: Strideable {
     /// The calculation compares only address bits. Prefix context is ignored for distance
     /// measurement.
     public func distanceIfRepresentable(to other: IPAddress) -> Int128? {
-        let lhs = UInt128(exactly: self.address)!, rhs = UInt128(exactly: other.address)!
+        // Force unwrap is safe: supported CIDR address-family storage is unsigned and fits in UInt128.
+        let lhs = UInt128(exactly: self.address)!
+        // Force unwrap is safe: supported CIDR address-family storage is unsigned and fits in UInt128.
+        let rhs = UInt128(exactly: other.address)!
         if rhs >= lhs {
             return Int128(exactly: rhs - lhs)
         }
         let magnitude = lhs - rhs
         if let positive = Int128(exactly: magnitude) { return -positive }
+        // Force unwrap is safe: Int128.max is positive and always representable as UInt128.
         let minMagnitude = UInt128(exactly: Int128.max)! + 1
         guard magnitude == minMagnitude else { return nil }
         return Int128.min
@@ -198,13 +202,21 @@ extension IPAddress: Strideable {
     /// trapping when the move would underflow, overflow, or exceed the family storage width.
     public func advancedIfRepresentable(by n: Int128) -> IPAddress? {
         if n >= 0 {
+            // Force unwrap is safe: this branch only converts non-negative Int128 values to UInt128.
             let magnitude = UInt128(exactly: n)!
             guard let step = Family.Storage(exactly: magnitude) else { return nil }
             let (next, overflow) = address.addingReportingOverflow(step)
             guard !overflow else { return nil }
             return IPAddress(address: next, prefixLength: prefixLength)
         }
-        let magnitude = n == Int128.min ? (UInt128(exactly: Int128.max)! + 1) : UInt128(exactly: -n)!
+        let magnitude: UInt128
+        if n == Int128.min {
+            // Force unwrap is safe: Int128.max is positive; adding 1 gives Int128.min's magnitude.
+            magnitude = UInt128(exactly: Int128.max)! + 1
+        } else {
+            // Force unwrap is safe: negative values other than Int128.min are negated before conversion.
+            magnitude = UInt128(exactly: -n)!
+        }
         guard let step = Family.Storage(exactly: magnitude) else { return nil }
         let (next, overflow) = address.subtractingReportingOverflow(step)
         guard !overflow else { return nil }

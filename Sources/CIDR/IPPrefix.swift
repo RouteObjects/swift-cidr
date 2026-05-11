@@ -102,12 +102,12 @@ public extension IPPrefix {
     /// Example:
     ///
     /// ```swift
-    /// let summary = IPv4Network.summarize(
-    ///     from: IPv4Address("192.168.1.1")!,
-    ///     to: IPv4Address("192.168.1.189")!
-    /// ).map(\.description)
+    /// if let start = IPv4Address("192.168.1.1"),
+    ///    let end = IPv4Address("192.168.1.189") {
+    ///     let summary = IPv4Network.summarize(from: start, to: end).map(\.description)
     ///
-    /// print(summary)
+    ///     print(summary)
+    /// }
     /// ```
     ///
     /// Output:
@@ -142,7 +142,7 @@ public extension IPPrefix {
         let bitWidth = Family.bitWidth
         let one: Family.Storage = 1
         if start.address == 0, end.address == Family.Storage.max {
-            let prefix = PrefixLength<Family>(0)!
+            let prefix = PrefixLength<Family>.zero
             return [Self(address: IPAddress(address: 0), prefixLength: prefix)]
         }
         var current = start.address
@@ -152,7 +152,7 @@ public extension IPPrefix {
             let remaining = endAddr - current + 1
             let maxBlockShift = bitWidth - remaining.leadingZeroBitCount - 1
             let shift = min(maxBlockShift, current.trailingZeroBitCount)
-            let length = PrefixLength<Family>(bitWidth - shift)!
+            let length = PrefixLength<Family>(preconditioned: bitWidth - shift)
             result.append(Self(prefix: current, prefixLength: length))
             let (next, overflow) = current.addingReportingOverflow(one << shift)
             if overflow { break }

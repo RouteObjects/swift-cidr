@@ -25,6 +25,15 @@ struct LosslessStringConvertibleTests {
         #expect(PrefixLength<V6>("abc") == nil)
     }
 
+    @Test("PrefixLength exposes named family boundary constants")
+    func prefixLengthBoundaryConstants() {
+        #expect(IPv4PrefixLength.zero.intValue == 0)
+        #expect(IPv4PrefixLength.maximum.intValue == 32)
+        #expect(IPv6PrefixLength.zero.intValue == 0)
+        #expect(IPv6PrefixLength.maximum.intValue == 128)
+        #expect(PrefixLength<V4>(preconditioned: 24).intValue == 24)
+    }
+
     @Test("IPAddress and IPNetwork round-trip canonical CIDR text")
     func familyBoundCIDRTypesRoundTrip() throws {
         let ipv4Address = try #require(IPAddress<V4>("192.0.2.1/24"))

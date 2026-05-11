@@ -42,6 +42,7 @@ extension AF {
     private static let asciiZero = UInt8(ascii: "0")
 
     @inline(__always)
+    // SAFETY: The caller provides a buffer large enough for the fixed IPv4-mapped IPv6 prefix.
     private static func writeIPv4MappedIPv6Prefix(
         into buffer: UnsafeMutableBufferPointer<UInt8>,
         at writeIndex: inout Int
@@ -54,6 +55,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: The caller provides a buffer large enough for the maximum IPv4 literal length.
     private static func writeIPv4AddressLiteral(
         _ address: UInt32,
         into buffer: UnsafeMutableBufferPointer<UInt8>,
@@ -69,6 +71,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: The caller provides writable capacity for one ASCII dot at `writeIndex`.
     private static func writeDot(
         into buffer: UnsafeMutableBufferPointer<UInt8>,
         at writeIndex: inout Int
@@ -78,6 +81,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: The caller provides writable capacity for the maximum three decimal octet digits.
     private static func writeDecimalOctet(
         _ value: UInt8,
         into buffer: UnsafeMutableBufferPointer<UInt8>,

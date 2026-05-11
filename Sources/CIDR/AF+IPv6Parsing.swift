@@ -31,6 +31,7 @@ extension AF {
         }
 
         let fallback = Array(string.utf8)
+        // SAFETY: The fallback array owns contiguous storage for the duration of this closure.
         return fallback.withUnsafeBufferPointer { bytes in
             _parseIPv6TextCore(bytes)
         }
@@ -85,6 +86,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: `bytes` is borrowed for the call; derived slices are validated to remain within it.
     private static func _parseIPv6CIDRTextCore(
         _ bytes: UnsafeBufferPointer<UInt8>,
         slashIndex: Int?,
@@ -108,6 +110,7 @@ extension AF {
             return nil
         }
 
+        // SAFETY: `slashIndex` was validated inside `bytes`, and the rebased buffer does not escape.
         let addressBytes = UnsafeBufferPointer(start: baseAddress, count: slashIndex)
         guard let address = _parseIPv6TextCore(addressBytes),
               let prefixLength = _parseStrictIPv6PrefixLength(bytes, start: prefixStart, end: bytes.count)
@@ -119,6 +122,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: `start` and `end` are produced from validated slash positions within `bytes`.
     private static func _parseStrictIPv6PrefixLength(
         _ bytes: UnsafeBufferPointer<UInt8>,
         start: Int,
@@ -142,6 +146,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: `bytes` is a borrowed UTF-8 view and is only indexed while `index < bytes.count`.
     private static func _firstIPv6CIDRSlashIndexScalar(in bytes: UnsafeBufferPointer<UInt8>) -> Int? {
         var index = 0
         while index < bytes.count {
@@ -156,6 +161,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: SIMD lanes are populated only for valid byte indices; padded lanes cannot match real input.
     private static func _firstIPv6CIDRSlashIndexSIMD(in bytes: UnsafeBufferPointer<UInt8>) -> Int? {
         var chunkStart = 0
         while chunkStart < bytes.count {
@@ -183,6 +189,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: Candidate suffix indices are checked against `bytes.count` before each subscript.
     private static func _firstIPv6CIDRSlashIndexSuffix(in bytes: UnsafeBufferPointer<UInt8>) -> Int? {
         let count = bytes.count
 
@@ -206,6 +213,7 @@ extension AF {
         return nil
     }
 
+    // SAFETY: `bytes` is a borrowed UTF-8 view that is never escaped; subscripts are guarded by `count`.
     private static func _parseIPv6TextCore(_ bytes: UnsafeBufferPointer<UInt8>) -> UInt128? {
         let count = bytes.count
         guard count > 0 else { return nil }
@@ -287,7 +295,9 @@ extension AF {
                 dotStart -= 1
             }
 
+            // SAFETY: `count > 0` was validated before this path, so `bytes.baseAddress` is non-nil.
             let baseAddress = bytes.baseAddress!
+            // SAFETY: `dotStart` is found within `bytes`, and the derived IPv4 tail buffer does not escape.
             let v4Bytes = UnsafeBufferPointer(start: baseAddress + dotStart, count: count - dotStart)
             guard let v4Value = _parseIPv4TextCore(v4Bytes) else { return nil }
 
@@ -323,6 +333,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: The canonical parser first checks the exact 39-byte length before fixed subscripts.
     private static func _parseCanonicalIPv6Text(_ bytes: UnsafeBufferPointer<UInt8>) -> UInt128? {
         let hextetCount = 8
         let hexDigitsPerHextet = 4

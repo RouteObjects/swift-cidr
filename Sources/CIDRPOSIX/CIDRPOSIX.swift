@@ -56,6 +56,7 @@ public extension IPAddress where Family == AF.V6 {
     /// `sin6_family`, port values, flow information, scope ID, socket state, interface binding, or
     /// routing metadata.
     init(sockaddr: sockaddr_in6) {
+        // SAFETY: `sin6_addr` is a fixed 16-byte POSIX value; the raw view is local to this closure.
         let address = withUnsafeBytes(of: sockaddr.sin6_addr) { rawBuffer -> UInt128 in
             // in6_addr is 16 bytes in network byte order. Use an unaligned load because the
             // buffer is not guaranteed to have UInt128 alignment on every platform.

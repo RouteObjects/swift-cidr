@@ -91,6 +91,7 @@ struct IPv6CompressionTests {
     func zeroFinderIPv6BytesPath() {
         let address: UInt128 = 0x2001_0db8_0000_0000_0000_0000_0000_0001
         var networkOrder = address.bigEndian
+        // SAFETY: `networkOrder` is a local UInt128, so the byte view is 16 bytes and non-empty.
         let range = withUnsafeBytes(of: &networkOrder) { rawBuffer in
             let bytes = rawBuffer.baseAddress!.assumingMemoryBound(to: UInt8.self)
             return IPv6ZeroSequenceFinder.longestZeroSequenceRange(inIPv6Bytes: bytes)

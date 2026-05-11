@@ -18,8 +18,8 @@ postfix operator ^-
 /// A candidate prefix matches when it is contained by `network` and its prefix length is inside the
 /// closed interval `lowerPrefixLength...upperPrefixLength`.
 ///
-/// For example, `IPv4Network("203.0.113.0/24")! ^ 26` represents every `/26` contained by
-/// `203.0.113.0/24`.
+/// For example, applying `^ 26` to `IPv4Network("203.0.113.0/24")` represents every
+/// `/26` contained by `203.0.113.0/24`.
 ///
 /// The textual form follows the RPSL operators:
 ///
@@ -121,16 +121,12 @@ public extension IPPrefix {
     ///
     /// The result is `nil` for a host-length prefix because no more-specific prefix length exists.
     func moreSpecificsExcludingSelf() -> NetworkPrefixRange<Family>? {
-        guard let nextLength = PrefixLength<Family>(prefixLength.intValue + 1),
-              let maxLength = PrefixLength<Family>(Family.bitWidth)
-        else {
-            return nil
-        }
+        guard let nextLength = PrefixLength<Family>(prefixLength.intValue + 1) else { return nil }
 
         return NetworkPrefixRange(
             network: canonicalNetwork,
             lowerPrefixLength: nextLength,
-            upperPrefixLength: maxLength
+            upperPrefixLength: .maximum
         )
     }
 
@@ -139,11 +135,11 @@ public extension IPPrefix {
     /// This is the method form of the RPSL `^+` operator. In RFC 2622 terms, `prefix/l^+` is
     /// equivalent to `prefix/l^l-max`, where `max` is `32` for IPv4 and `128` for IPv6`.
     func moreSpecificsIncludingSelf() -> NetworkPrefixRange<Family> {
-        let maxLength = PrefixLength<Family>(Family.bitWidth)!
+        // Force unwrap is safe: these bounds satisfy NetworkPrefixRange invariants by construction.
         return NetworkPrefixRange(
             network: canonicalNetwork,
             lowerPrefixLength: prefixLength,
-            upperPrefixLength: maxLength
+            upperPrefixLength: .maximum
         )!
     }
 

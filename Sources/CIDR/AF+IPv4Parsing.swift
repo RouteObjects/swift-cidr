@@ -80,6 +80,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: `bytes` is a borrowed UTF-8 view that is never escaped; all indexing is bounded by iteration.
     internal static func _parseIPv4TextCore(_ bytes: UnsafeBufferPointer<UInt8>) -> UInt32? {
         // Share exact IPv4 dotted-quad rules between standalone IPv4 and IPv6 mixed-notation parsing.
         guard bytes.count >= 7 && bytes.count <= 15 else { return nil }
@@ -112,6 +113,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: `bytes` is borrowed for the call; derived slices are validated to remain within it.
     private static func _parseIPv4CIDRTextCore(
         _ bytes: UnsafeBufferPointer<UInt8>,
         slashIndex: Int?,
@@ -135,6 +137,7 @@ extension AF {
             return nil
         }
 
+        // SAFETY: `slashIndex` was validated inside `bytes`, and the rebased buffer does not escape.
         let addressBytes = UnsafeBufferPointer(start: baseAddress, count: slashIndex)
         guard let address = _parseIPv4TextCore(addressBytes),
               let prefixLength = _parseStrictIPv4PrefixLength(bytes, start: prefixStart, end: bytes.count)
@@ -146,6 +149,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: `start` and `end` are produced from validated slash positions within `bytes`.
     private static func _parseStrictIPv4PrefixLength(
         _ bytes: UnsafeBufferPointer<UInt8>,
         start: Int,
@@ -169,6 +173,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: `bytes` is a borrowed UTF-8 view and is only indexed while `index < bytes.count`.
     private static func _firstSlashIndexScalar(in bytes: UnsafeBufferPointer<UInt8>) -> Int? {
         var index = 0
         while index < bytes.count {
@@ -183,6 +188,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: SIMD lanes are populated only for valid byte indices; padded lanes cannot match real input.
     private static func _firstSlashIndexSIMD(in bytes: UnsafeBufferPointer<UInt8>) -> Int? {
         let laneCount = min(bytes.count, 16)
         guard laneCount > 0 else { return nil }
@@ -243,6 +249,7 @@ extension AF {
     }
 
     @inline(__always)
+    // SAFETY: Candidate suffix indices are checked against `bytes.count` before each subscript.
     private static func _firstSlashIndexSuffix(in bytes: UnsafeBufferPointer<UInt8>) -> Int? {
         let count = bytes.count
 

@@ -18,10 +18,11 @@ A subnet is a more-specific prefix inside a larger prefix.
 ```swift
 import CIDR
 
-let parent = IPv4Network("192.0.2.0/24")!
-let subnets = Array(parent.subnets(prefixLength: 26)).map(\.description)
+if let parent = IPv4Network("192.0.2.0/24") {
+    let subnets = Array(parent.subnets(prefixLength: 26)).map(\.description)
 
-print(subnets)
+    print(subnets)
+}
 ```
 
 Output:
@@ -42,12 +43,12 @@ routes with a shorter prefix when the ranges align.
 ```swift
 import CIDR
 
-let summary = IPv4Network.summarize(
-    from: IPv4Address("192.0.2.0")!,
-    to: IPv4Address("192.0.3.255")!
-).map(\.description)
+if let start = IPv4Address("192.0.2.0"),
+   let end = IPv4Address("192.0.3.255") {
+    let summary = IPv4Network.summarize(from: start, to: end).map(\.description)
 
-print(summary)
+    print(summary)
+}
 ```
 
 Output:
@@ -67,9 +68,9 @@ are zeroed when constructing an `IPNetwork`.
 ```swift
 import CIDR
 
-let network = IPv4Network("192.0.2.77/24")!
-
-print(network.description)
+if let network = IPv4Network("192.0.2.77/24") {
+    print(network.description)
+}
 ```
 
 Output:
@@ -89,12 +90,12 @@ Containment answers whether an address or prefix is inside another prefix.
 ```swift
 import CIDR
 
-let aggregate = IPv4Network("192.0.2.0/23")!
-let route = IPv4Network("192.0.3.0/24")!
-let host = IPv4Address("192.0.3.10")!
-
-print(aggregate.contains(route))
-print(aggregate.contains(host))
+if let aggregate = IPv4Network("192.0.2.0/23"),
+   let route = IPv4Network("192.0.3.0/24"),
+   let host = IPv4Address("192.0.3.10") {
+    print(aggregate.contains(route))
+    print(aggregate.contains(host))
+}
 ```
 
 Output:

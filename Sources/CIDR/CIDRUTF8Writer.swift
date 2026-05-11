@@ -14,7 +14,8 @@ public enum CIDRUTF8Writer {
     /// Writes an RFC 5952-style compressed IPv6 address literal into a caller-provided buffer.
     ///
     /// The buffer must contain at least ``maximumCompressedIPv6AddressLiteralUTF8Count`` writable bytes.
-    /// The return value is the exact number of bytes initialized.
+    /// The return value is the exact number of bytes initialized. The raw buffer is used only for the
+    /// duration of this call and is never stored.
     public static func writeCompressedIPv6AddressLiteral(
         _ address: UInt128,
         into rawBuffer: UnsafeMutableRawBufferPointer
@@ -44,11 +45,13 @@ extension CIDRUTF8Writer {
         if address == 0 { return "::" }
 
         return withIPv6Bytes(address) { addressBytes in
+            // SAFETY: `withIPv6Bytes` provides a 16-byte, non-empty UInt128 byte view for this closure.
             let bytes = addressBytes.baseAddress!.assumingMemoryBound(to: UInt8.self)
             let zeroRun = IPv6ZeroSequenceFinder.longestZeroSequenceRange(inIPv6Bytes: bytes)
             return withUnsafeTemporaryAllocation(of: UInt8.self, capacity: maximumCompressedIPv6AddressLiteralUTF8Count) { buffer in
                 // Bind network-order storage once and keep the hot formatter path off raw-buffer subscripts.
                 let written = writeCompressedIPv6AddressLiteral(bytes, zeroRun: zeroRun, into: buffer)
+                // SAFETY: The temporary allocation capacity is positive and `written` is within that capacity.
                 return String(decoding: UnsafeBufferPointer(start: buffer.baseAddress!, count: written), as: UTF8.self)
             }
         }
@@ -60,6 +63,7 @@ extension CIDRUTF8Writer {
         _ body: (UnsafeRawBufferPointer) -> Result
     ) -> Result {
         var networkOrder = address.bigEndian
+        // SAFETY: `networkOrder` remains alive for the duration of `body`; the buffer must not escape.
         return withUnsafeBytes(of: &networkOrder, body)
     }
 
@@ -68,6 +72,7 @@ extension CIDRUTF8Writer {
         into buffer: UnsafeMutableBufferPointer<UInt8>
     ) -> Int {
         withIPv6Bytes(address) { addressBytes in
+            // SAFETY: `withIPv6Bytes` provides a 16-byte, non-empty UInt128 byte view for this closure.
             let bytes = addressBytes.baseAddress!.assumingMemoryBound(to: UInt8.self)
             return writeCompressedIPv6AddressLiteral(
                 bytes,
@@ -82,11 +87,13 @@ extension CIDRUTF8Writer {
         into buffer: UnsafeMutableBufferPointer<UInt8>
     ) -> Int {
         withIPv6Bytes(address) { addressBytes in
+            // SAFETY: `withIPv6Bytes` provides a 16-byte, non-empty UInt128 byte view for this closure.
             let bytes = addressBytes.baseAddress!.assumingMemoryBound(to: UInt8.self)
             return writeFullIPv6AddressLiteral(bytes, into: buffer)
         }
     }
 
+    // SAFETY: `addressBytes` must point to 16 network-order IPv6 bytes for the duration of the call.
     internal static func writeFullIPv6AddressLiteral(
         _ addressBytes: UnsafePointer<UInt8>,
         into buffer: UnsafeMutableBufferPointer<UInt8>
@@ -107,6 +114,7 @@ extension CIDRUTF8Writer {
         return writeIndex
     }
 
+    // SAFETY: `addressBytes` must point to 16 network-order IPv6 bytes for the duration of the call.
     internal static func writeCompressedIPv6AddressLiteral(
         _ addressBytes: UnsafePointer<UInt8>,
         zeroRun: Range<Int>?,
@@ -147,6 +155,7 @@ extension CIDRUTF8Writer {
     private static let lowercaseHexDigits: StaticString = "0123456789abcdef"
 
     @inline(__always)
+    // SAFETY: The caller tracks `writeIndex` and supplies capacity for the maximum IPv6 literal length.
     private static func writeHextet(
         left: UInt8,
         right: UInt8,

@@ -40,6 +40,7 @@ struct IPCorePOSIXTests {
             0x00, 0x00, 0x00, 0x01,
         ]
 
+        // SAFETY: `sin6_addr` is fixed-size storage and `bytes` is exactly its 16-byte payload.
         withUnsafeMutableBytes(of: &address.sin6_addr) { rawBuffer in
             rawBuffer.copyBytes(from: bytes)
         }
