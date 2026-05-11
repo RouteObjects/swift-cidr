@@ -83,7 +83,7 @@ SwiftNIO dependency.
 - Policy decisions, overlap rules, and authority-backed registry data belong in
   higher-level packages or applications.
 - POSIX interop belongs in `CIDRPOSIX`.
-- SwiftNIO interop belongs in the companion NIO adapter package.
+- SwiftNIO interop belongs in the `CIDRNIO` target.
 - Registry datasets belong in the registry package, not the core math module.
 
 The core package should remain pure Swift, dependency-light, and value-semantic.
