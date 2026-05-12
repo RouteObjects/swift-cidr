@@ -53,11 +53,8 @@ extension CIDRUTF8Writer {
             // SAFETY: `withIPv6Bytes` provides a 16-byte, non-empty UInt128 byte view for this closure.
             let bytes = addressBytes.baseAddress!.assumingMemoryBound(to: UInt8.self)
             let zeroRun = IPv6ZeroSequenceFinder.longestZeroSequenceRange(inIPv6Bytes: bytes)
-            return withUnsafeTemporaryAllocation(of: UInt8.self, capacity: maximumCompressedIPv6AddressLiteralUTF8Count) { buffer in
-                // Bind network-order storage once and keep the hot formatter path off raw-buffer subscripts.
-                let written = writeCompressedIPv6AddressLiteralBytes(bytes, zeroRun: zeroRun, into: buffer)
-                // SAFETY: The temporary allocation capacity is positive and `written` is within that capacity.
-                return String(decoding: UnsafeBufferPointer(start: buffer.baseAddress!, count: written), as: UTF8.self)
+            return String(unsafeUninitializedCapacity: maximumCompressedIPv6AddressLiteralUTF8Count) { buffer in
+                writeCompressedIPv6AddressLiteralBytes(bytes, zeroRun: zeroRun, into: buffer)
             }
         }
     }
