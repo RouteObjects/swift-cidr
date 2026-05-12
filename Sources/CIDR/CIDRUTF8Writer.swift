@@ -25,7 +25,12 @@ package enum CIDRUTF8Writer {
             "IPv6 formatter buffer must have enough writable bytes for the maximum compressed IPv6 literal."
         )
         let buffer = rawBuffer.bindMemory(to: UInt8.self)
-        return writeCompressedIPv6AddressLiteral(address, into: buffer)
+        return withIPv6Bytes(address) { addressBytes in
+            // SAFETY: `withIPv6Bytes` provides a 16-byte, non-empty UInt128 byte view for this closure.
+            let bytes = addressBytes.baseAddress!.assumingMemoryBound(to: UInt8.self)
+            let zeroRun = IPv6ZeroSequenceFinder.longestZeroSequenceRange(inIPv6Bytes: bytes)
+            return writeCompressedIPv6AddressLiteralBytes(bytes, zeroRun: zeroRun, into: buffer)
+        }
     }
 }
 
@@ -50,7 +55,7 @@ extension CIDRUTF8Writer {
             let zeroRun = IPv6ZeroSequenceFinder.longestZeroSequenceRange(inIPv6Bytes: bytes)
             return withUnsafeTemporaryAllocation(of: UInt8.self, capacity: maximumCompressedIPv6AddressLiteralUTF8Count) { buffer in
                 // Bind network-order storage once and keep the hot formatter path off raw-buffer subscripts.
-                let written = writeCompressedIPv6AddressLiteral(bytes, zeroRun: zeroRun, into: buffer)
+                let written = writeCompressedIPv6AddressLiteralBytes(bytes, zeroRun: zeroRun, into: buffer)
                 // SAFETY: The temporary allocation capacity is positive and `written` is within that capacity.
                 return String(decoding: UnsafeBufferPointer(start: buffer.baseAddress!, count: written), as: UTF8.self)
             }
@@ -65,21 +70,6 @@ extension CIDRUTF8Writer {
         var networkOrder = address.bigEndian
         // SAFETY: `networkOrder` remains alive for the duration of `body`; the buffer must not escape.
         return withUnsafeBytes(of: &networkOrder, body)
-    }
-
-    internal static func writeCompressedIPv6AddressLiteral(
-        _ address: UInt128,
-        into buffer: UnsafeMutableBufferPointer<UInt8>
-    ) -> Int {
-        withIPv6Bytes(address) { addressBytes in
-            // SAFETY: `withIPv6Bytes` provides a 16-byte, non-empty UInt128 byte view for this closure.
-            let bytes = addressBytes.baseAddress!.assumingMemoryBound(to: UInt8.self)
-            return writeCompressedIPv6AddressLiteral(
-                bytes,
-                zeroRun: IPv6ZeroSequenceFinder.longestZeroSequenceRange(inIPv6Bytes: bytes),
-                into: buffer
-            )
-        }
     }
 
     internal static func writeFullIPv6AddressLiteral(
@@ -115,7 +105,7 @@ extension CIDRUTF8Writer {
     }
 
     // SAFETY: `addressBytes` must point to 16 network-order IPv6 bytes for the duration of the call.
-    internal static func writeCompressedIPv6AddressLiteral(
+    internal static func writeCompressedIPv6AddressLiteralBytes(
         _ addressBytes: UnsafePointer<UInt8>,
         zeroRun: Range<Int>?,
         into buffer: UnsafeMutableBufferPointer<UInt8>
@@ -164,6 +154,7 @@ extension CIDRUTF8Writer {
     ) {
         // Combine into a single 16-bit word
         let hextet = (UInt16(left) &<< 8) | UInt16(right)
+        // -------------------------------------------------
         // Derive the exact digit count from the UInt16 leading-zero count, avoiding the nibble-by-nibble branch ladder.
         // Branchless math to find exact digit count (1, 2, 3, or 4)
         // - .leadingZeroBitCount returns 0 to 16.
@@ -171,7 +162,9 @@ extension CIDRUTF8Writer {
         // - Subtract from 4 to get digits to write.
         // - Use max(1, ...) to ensure "0x0000" writes at least one "0".
         // Swift's max() compiles to a branchless CSEL (Conditional Select) instruction on ARM64!
+        // -------------------------------------------------
         let digitsToWrite = max(1, 4 &- (hextet.leadingZeroBitCount &>> 2))
+
         let table = lowercaseHexDigits.utf8Start
 
         switch digitsToWrite {
