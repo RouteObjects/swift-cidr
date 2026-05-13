@@ -310,7 +310,6 @@ extension AF {
             wordCount += 1
         }
 
-        // TODO: Optimize
         if doubleColonIndex >= 0 {
             let rightCount = wordCount - doubleColonIndex
             if rightCount > 0 {

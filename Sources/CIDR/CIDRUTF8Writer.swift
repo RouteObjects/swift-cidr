@@ -34,6 +34,30 @@ package enum CIDRUTF8Writer {
     }
 }
 
+/// SPI-only formatter hooks for benchmark and profiling tools.
+///
+/// This wrapper intentionally exposes only the narrow byte-writing surface needed by
+/// out-of-package benchmark utilities. It keeps ``CIDRUTF8Writer`` package-scoped for
+/// normal library users and sibling targets while still allowing profiling tools to
+/// isolate the formatter engine from `String` construction.
+@_spi(Benchmark)
+public enum CIDRBenchmarkUTF8Writer {
+    /// The longest possible output from ``writeCompressedIPv6AddressLiteral(_:into:)``.
+    public static let maximumCompressedIPv6AddressLiteralUTF8Count =
+        CIDRUTF8Writer.maximumCompressedIPv6AddressLiteralUTF8Count
+
+    /// Writes an RFC 5952-style compressed IPv6 address literal into caller-provided storage.
+    ///
+    /// The buffer must contain at least ``maximumCompressedIPv6AddressLiteralUTF8Count``
+    /// writable bytes. The return value is the exact number of bytes initialized.
+    public static func writeCompressedIPv6AddressLiteral(
+        _ address: UInt128,
+        into rawBuffer: UnsafeMutableRawBufferPointer
+    ) -> Int {
+        CIDRUTF8Writer.writeCompressedIPv6AddressLiteral(address, into: rawBuffer)
+    }
+}
+
 extension CIDRUTF8Writer {
     private static let ipv6HextetCount = 8
     private static let maximumHexDigitsPerIPv6Hextet = 4

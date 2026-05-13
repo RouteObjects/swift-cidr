@@ -1,4 +1,4 @@
-@_spi(NIO) import CIDR
+@_spi(Benchmark) import CIDR
 
 /// A focused profiling executable for the IPv6 compressed formatter hot path.
 ///
@@ -58,13 +58,13 @@ struct CIDRProfileTarget {
         // SAFETY: The scratch buffer is sized for the maximum compressed IPv6 literal and stays local.
         return withUnsafeTemporaryAllocation(
             of: UInt8.self,
-            capacity: CIDRUTF8Writer.maximumCompressedIPv6AddressLiteralUTF8Count
+            capacity: CIDRBenchmarkUTF8Writer.maximumCompressedIPv6AddressLiteralUTF8Count
         ) { buffer in
             // SAFETY: Rebinding the temporary UInt8 allocation as raw bytes is needed by the formatter API.
             let rawBuffer = UnsafeMutableRawBufferPointer(buffer)
 
             for _ in 0..<iterations {
-                let written = CIDRUTF8Writer.writeCompressedIPv6AddressLiteral(address, into: rawBuffer)
+                let written = CIDRBenchmarkUTF8Writer.writeCompressedIPv6AddressLiteral(address, into: rawBuffer)
                 // Touch output-derived state so the optimizer cannot discard the formatting work.
                 checksum &+= UInt64(written)
                 checksum &+= UInt64(buffer[0])

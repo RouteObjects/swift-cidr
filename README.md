@@ -64,10 +64,9 @@ configuration context, and multicast group ranges into distinct types.
 - `CIDRNIO`: SwiftNIO adapters for `ByteBuffer` and `SocketAddress`. Importing
   `CIDRNIO` is explicit, and the core `CIDR` target does not import `NIOCore`.
 
-Companion package:
-
-- `swift-cidr-registry` with `import CIDRRegistry` for authority-backed
-  registry datasets such as `IPv4SpecialPurpose`.
+Registry datasets are intentionally outside the core package. A separate
+`swift-cidr-registry` package is being prepared for authority-backed datasets
+such as IANA special-purpose and multicast registries.
 
 ## Toolchains and Platforms
 
@@ -89,6 +88,26 @@ On macOS with standalone Command Line Tools, use the repository test wrapper:
 The wrapper still runs SwiftPM tests. It only adds the Swift Testing framework
 and runtime paths needed by standalone Command Line Tools installations where
 plain `swift test` cannot locate `Testing.framework`.
+
+For local Linux validation with Docker Desktop, use the Linux wrapper:
+
+```bash
+./scripts/linux-test.sh
+```
+
+The wrapper uses the official `swift:6.3` image and defaults to `linux/amd64` to
+match GitHub Actions. On Apple Silicon, a faster architecture-native smoke test
+is available with:
+
+```bash
+CIDR_LINUX_PLATFORM=linux/arm64 ./scripts/linux-test.sh
+```
+
+Use the interactive Linux shell when diagnosing platform-specific failures:
+
+```bash
+./scripts/linux-test.sh shell
+```
 
 ## Examples
 
@@ -155,6 +174,7 @@ swift build --target CIDRConfig
 swift build --target CIDRPOSIX
 swift build --target CIDRNIO
 ./scripts/test.sh
+./scripts/linux-test.sh
 ./scripts/benchmarks.sh build
 ./scripts/benchmarks.sh check
 ```

@@ -141,6 +141,18 @@ The wrapper runs SwiftPM tests and adds the framework paths needed by standalone
 Command Line Tools installations where plain `swift test` cannot locate
 `Testing.framework`.
 
+Run the Docker-based Linux validation before changes that affect portability,
+POSIX interop, SwiftNIO adapters, package manifests, or release readiness:
+
+```bash
+./scripts/linux-test.sh
+```
+
+The Linux wrapper uses the official Swift Docker image and defaults to
+`linux/amd64` for GitHub Actions parity. On Apple Silicon, contributors may use
+`CIDR_LINUX_PLATFORM=linux/arm64 ./scripts/linux-test.sh` as a faster local
+smoke test, but `linux/amd64` remains the closer CI match.
+
 Documentation-only, comments-only, example-only, and learning-material changes
 do not require benchmark evidence.
 
@@ -172,6 +184,17 @@ Use the CPU benchmark target for fixed-loop research and comparison work:
 ```bash
 CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh run
 ```
+
+Linux benchmark target compilation can be checked without treating Docker
+Desktop timings as authoritative performance evidence:
+
+```bash
+./scripts/linux-test.sh benchmark-build
+```
+
+This benchmark build mode installs the Linux `jemalloc` development headers
+inside the ephemeral Docker container because `package-benchmark` uses them for
+allocation metrics on Linux.
 
 Threshold updates MUST be intentional and reviewed. If a change deliberately
 trades performance for correctness, portability, or API clarity, explain that

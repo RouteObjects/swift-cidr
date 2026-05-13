@@ -9,7 +9,7 @@ import CIDR
 import CIDRPOSIX
 
 @Suite("CIDR POSIX Adapter Tests")
-struct IPCorePOSIXTests {
+struct CIDRPOSIXTests {
     @Test("POSIX family constants are exposed by concrete adapter extensions")
     func posixFamilyValues() {
         #expect(AF.V4.posixValue == CInt(AF_INET))
