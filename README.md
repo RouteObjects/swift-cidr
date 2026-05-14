@@ -1,8 +1,7 @@
-<p align="center">
-  <img src="Documentation/Assets/swift-cidr-icon.png" alt="swift-cidr icon" width="160">
-</p>
-
-# CIDR
+<h1 align="left">
+  <img src="Documentation/Assets/swift-cidr-icon.png" alt="swift-cidr icon" width="75" height="75" valign="middle">
+  &nbsp;CIDR
+</h1>
 
 `CIDR` provides value-semantic IP types for Swift packages that need stable
 address, network, and endpoint modeling across configuration, server, and POSIX
@@ -10,10 +9,11 @@ boundaries.
 The core models are currency types: public value types intended to be
 stored, passed, and composed throughout networking code.
 
-`swift-cidr` gives Swift server code native CIDR currency types. It is not just
-another IP address parser: it is a typed, pure Swift foundation for carrying
-addresses, prefixes, networks, and endpoint values through networking systems
-without falling back to loosely typed strings or POSIX-shaped state.
+`swift-cidr` brings native CIDR currency types to Swift on Server, apps,
+services, and tooling. It is not just another IP address parser: it is a typed,
+pure Swift foundation for carrying addresses, prefixes, networks, and endpoint
+values through networking systems without falling back to loosely typed strings
+or POSIX-shaped state.
 
 ## Why CIDR
 
@@ -31,20 +31,23 @@ without falling back to loosely typed strings or POSIX-shaped state.
 - The core `CIDR` module stays pure Swift and dependency-free. POSIX and
   SwiftNIO support live at adapter boundaries instead of shaping the core type
   system.
-- The API is designed for Swift on Server: small value types, explicit family
-  metadata, predictable formatting/parsing, and optional `CIDRNIO`
-  interoperability.
+- The API is designed for Swift on Server, apps, services, and tooling: small
+  value types, explicit family metadata, predictable formatting/parsing, and
+  optional `CIDRNIO` interoperability for SwiftNIO users.
 - Performance work is measured with benchmark coverage against Swift public APIs
   and system baselines, including IPv4/IPv6 `inet_pton` parser baselines and
   IPv4/IPv6 `inet_ntop` formatter baselines.
 
 The package is organized around a family-bound core:
 
+- `AddressFamily` is the compile-time trait that binds storage width, parsing,
+   formatting, and IANA family metadata to IPv4 or IPv6. `AF.V4` and `AF.V6`
+   are the concrete family marker types.
 - `IPAddress<Family>` stores an IP address together with its prefix context.
 - `IPNetwork<Family>` stores a canonical network boundary.
 - `PrefixLength<Family>` validates CIDR prefix lengths per family.
 - `AnyIPAddress`, `AnyIPNetwork`, and `AnyPrefixLength` provide mixed-family
-  wrappers for boundary APIs.
+   wrappers for boundary APIs.
 - `TransportPort` and `IPEndpoint` model transport endpoints.
 
 ## Standards Grounding

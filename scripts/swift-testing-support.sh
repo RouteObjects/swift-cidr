@@ -10,7 +10,7 @@ append_swift_testing_flags_for_command_line_tools() {
     if [[ "${developer_dir}" == "/Library/Developer/CommandLineTools" \
         && -d "${testing_framework_dir}/Testing.framework" \
         && -f "${testing_interop_dir}/lib_TestingInterop.dylib" ]]; then
-        # CHANGE: Standalone Command Line Tools 26.4.1 installs Swift Testing
+        # Standalone Command Line Tools 26.4.1 installs Swift Testing
         # outside the default paths used by SwiftPM's test compile and launch.
         swift_test_flags+=(
             -Xswiftc -F

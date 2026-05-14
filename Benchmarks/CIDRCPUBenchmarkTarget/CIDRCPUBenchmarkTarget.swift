@@ -29,6 +29,16 @@ let benchmarks = {
     let ipv6HostPrefix = IPv6PrefixLength(128)!
     let middleCompressedText = "2001:0db8:85a3::8a2e:0370:7334"
 
+    // CHANGE: mirror swift-endpoint's fixed-loop IPv4 formatter cases so CPU comparisons are apples-to-apples.
+    let formatterIPv4ZeroStorage: UInt32 = 0
+    let formatterIPv4LoopbackStorage: UInt32 = 0x7F00_0001
+    let formatterIPv4LocalBroadcastStorage = UInt32.max
+    let formatterIPv4MixedStorage: UInt32 = 0x7B2D_0600
+    let formatterIPv4Zero = IPv4Address(address: formatterIPv4ZeroStorage)
+    let formatterIPv4Loopback = IPv4Address(address: formatterIPv4LoopbackStorage)
+    let formatterIPv4LocalBroadcast = IPv4Address(address: formatterIPv4LocalBroadcastStorage)
+    let formatterIPv4Mixed = IPv4Address(address: formatterIPv4MixedStorage)
+
     let formatterIPv6MiddleCompressed2Storage: UInt128 = 0x85a0_850a_8500_0000_0000_00af_805a_085a
     let formatterIPv6MiddleCompressedStorage: UInt128 =
         (UInt128(0x20010DB8) << 96)
@@ -51,6 +61,78 @@ let benchmarks = {
     let formatterIPv6Max = IPv6Address(address: formatterIPv6MaxStorage, prefixLength: ipv6HostPrefix)
     let formatterIPv6Loopback = IPv6Address(address: formatterIPv6LoopbackStorage, prefixLength: ipv6HostPrefix)
     let formatterIPv6AllZero = IPv6Address(address: formatterIPv6AllZeroStorage, prefixLength: ipv6HostPrefix)
+
+    Benchmark(
+        "formatter.cpu.ipv4.public.zero.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        for _ in 0..<15_000_000 {
+            blackHole(formatterIPv4Zero.formatted(.addressOnly))
+        }
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv4.public.loopback.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        for _ in 0..<15_000_000 {
+            blackHole(formatterIPv4Loopback.formatted(.addressOnly))
+        }
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv4.public.localBroadcast.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        for _ in 0..<15_000_000 {
+            blackHole(formatterIPv4LocalBroadcast.formatted(.addressOnly))
+        }
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv4.public.mixed.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        for _ in 0..<15_000_000 {
+            blackHole(formatterIPv4Mixed.formatted(.addressOnly))
+        }
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv4.engine.zero.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        for _ in 0..<15_000_000 {
+            blackHole(AF.V4.formatAddress(formatterIPv4ZeroStorage))
+        }
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv4.engine.loopback.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        for _ in 0..<15_000_000 {
+            blackHole(AF.V4.formatAddress(formatterIPv4LoopbackStorage))
+        }
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv4.engine.localBroadcast.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        for _ in 0..<15_000_000 {
+            blackHole(AF.V4.formatAddress(formatterIPv4LocalBroadcastStorage))
+        }
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv4.engine.mixed.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        for _ in 0..<15_000_000 {
+            blackHole(AF.V4.formatAddress(formatterIPv4MixedStorage))
+        }
+    }
 
     Benchmark(
         "formatter.cpu.ipv6.compressed.swift.middleCompressed2.4M",

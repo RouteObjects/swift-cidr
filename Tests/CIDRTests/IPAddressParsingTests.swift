@@ -59,6 +59,18 @@ struct IPAddressParsingTests {
         #expect(AF.V4.formatAddress(UInt32.max) == "255.255.255.255")
     }
 
+    @Test("IPv4 formatter covers every decimal octet value in every position")
+    func selectedIPv4FormatterCoversAllOctetValuesByPosition() {
+        for octet in UInt32(0)...UInt32(255) {
+            let text = String(octet)
+
+            #expect(AF.V4.formatAddress((octet << 24) | 0x0001_0203) == "\(text).1.2.3")
+            #expect(AF.V4.formatAddress(0x0100_0203 | (octet << 16)) == "1.\(text).2.3")
+            #expect(AF.V4.formatAddress(0x0102_0003 | (octet << 8)) == "1.2.\(text).3")
+            #expect(AF.V4.formatAddress(0x0102_0300 | octet) == "1.2.3.\(text)")
+        }
+    }
+
     @Test("IPv6 address-only parsing keeps the full-width fallback prefix")
     func parsesIPv6AddressOnly() throws {
         let host = try #require(IPAddress<V6>("2001:db8::1"))

@@ -40,6 +40,10 @@ extension AF {
 
     private static let asciiDot = UInt8(ascii: ".")
     private static let asciiZero = UInt8(ascii: "0")
+    private static let ipv4SingleDecimalDigitOctetMask: UInt32 = 0xF0F0_F0F0
+    private static let ipv4DecimalDigitCarryBias: UInt32 = 0x0606_0606
+    private static let ipv4DecimalDigitCarryMask: UInt32 = 0x1010_1010
+    private static let decimalOctetTriplets: StaticString = "000001002003004005006007008009010011012013014015016017018019020021022023024025026027028029030031032033034035036037038039040041042043044045046047048049050051052053054055056057058059060061062063064065066067068069070071072073074075076077078079080081082083084085086087088089090091092093094095096097098099100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216217218219220221222223224225226227228229230231232233234235236237238239240241242243244245246247248249250251252253254255"
 
     @inline(__always)
     // SAFETY: The caller provides a buffer large enough for the fixed IPv4-mapped IPv6 prefix.
@@ -61,13 +65,39 @@ extension AF {
         into buffer: UnsafeMutableBufferPointer<UInt8>,
         at writeIndex: inout Int
     ) {
-        writeDecimalOctet(UInt8(truncatingIfNeeded: address >> 24), into: buffer, at: &writeIndex)
+        // Fast-path 0...9 octets; the first mask proves each byte is < 16, then adding
+        // 6 exposes decimal values 10...15 as a 0x10 carry bit in each byte.
+        if (address & ipv4SingleDecimalDigitOctetMask) == 0,
+           ((address &+ ipv4DecimalDigitCarryBias) & ipv4DecimalDigitCarryMask) == 0 {
+            writeSingleDigitIPv4AddressLiteral(address, into: buffer, at: &writeIndex)
+            return
+        }
+
+        writeDecimalOctet((address &>> 24) & 0xFF, into: buffer, at: &writeIndex)
         writeDot(into: buffer, at: &writeIndex)
-        writeDecimalOctet(UInt8(truncatingIfNeeded: address >> 16), into: buffer, at: &writeIndex)
+        writeDecimalOctet((address &>> 16) & 0xFF, into: buffer, at: &writeIndex)
         writeDot(into: buffer, at: &writeIndex)
-        writeDecimalOctet(UInt8(truncatingIfNeeded: address >> 8), into: buffer, at: &writeIndex)
+        writeDecimalOctet((address &>> 8) & 0xFF, into: buffer, at: &writeIndex)
         writeDot(into: buffer, at: &writeIndex)
-        writeDecimalOctet(UInt8(truncatingIfNeeded: address), into: buffer, at: &writeIndex)
+        writeDecimalOctet(address & 0xFF, into: buffer, at: &writeIndex)
+    }
+
+    @inline(__always)
+    // SAFETY: The caller has proven all four IPv4 octets are decimal single digits.
+    private static func writeSingleDigitIPv4AddressLiteral(
+        _ address: UInt32,
+        into buffer: UnsafeMutableBufferPointer<UInt8>,
+        at writeIndex: inout Int
+    ) {
+        // Keep all-single-digit IPv4 literals on a compact no-table path for zero/simple cases.
+        buffer[writeIndex] = asciiZero &+ UInt8((address &>> 24) & 0xFF)
+        buffer[writeIndex &+ 1] = asciiDot
+        buffer[writeIndex &+ 2] = asciiZero &+ UInt8((address &>> 16) & 0xFF)
+        buffer[writeIndex &+ 3] = asciiDot
+        buffer[writeIndex &+ 4] = asciiZero &+ UInt8((address &>> 8) & 0xFF)
+        buffer[writeIndex &+ 5] = asciiDot
+        buffer[writeIndex &+ 6] = asciiZero &+ UInt8(address & 0xFF)
+        writeIndex &+= 7
     }
 
     @inline(__always)
@@ -83,31 +113,29 @@ extension AF {
     @inline(__always)
     // SAFETY: The caller provides writable capacity for the maximum three decimal octet digits.
     private static func writeDecimalOctet(
-        _ value: UInt8,
+        _ value: UInt32,
         into buffer: UnsafeMutableBufferPointer<UInt8>,
         at writeIndex: inout Int
     ) {
-        let digitsToWrite = decimalDigitCount(value)
-
-        switch digitsToWrite {
-        case 3:
-            buffer[writeIndex] = asciiZero &+ (value / 100)
-            buffer[writeIndex &+ 1] = asciiZero &+ ((value / 10) % 10)
-            buffer[writeIndex &+ 2] = asciiZero &+ (value % 10)
-        case 2:
-            buffer[writeIndex] = asciiZero &+ (value / 10)
-            buffer[writeIndex &+ 1] = asciiZero &+ (value % 10)
-        default:
-            buffer[writeIndex] = asciiZero &+ value
+        if value < 10 {
+            buffer[writeIndex] = asciiZero &+ UInt8(value)
+            writeIndex &+= 1
+            return
         }
 
-        writeIndex &+= digitsToWrite
-    }
+        let offset = Int(value &* 3)
+        let table = decimalOctetTriplets.utf8Start
 
-    @inline(__always)
-    private static func decimalDigitCount(_ value: UInt8) -> Int {
-        if value >= 100 { return 3 }
-        if value >= 10 { return 2 }
-        return 1
+        // Use fixed-width decimal triplet lookup for multi-digit octets to avoid divide/modulo.
+        if value >= 100 {
+            buffer[writeIndex] = table[offset]
+            buffer[writeIndex &+ 1] = table[offset &+ 1]
+            buffer[writeIndex &+ 2] = table[offset &+ 2]
+            writeIndex &+= 3
+        } else {
+            buffer[writeIndex] = table[offset &+ 1]
+            buffer[writeIndex &+ 1] = table[offset &+ 2]
+            writeIndex &+= 2
+        }
     }
 }
