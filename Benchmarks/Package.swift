@@ -13,14 +13,10 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "swift-cidr", path: ".."),
-        .package(url: "https://github.com/apple/swift-nio.git", from: "2.81.0"),
-        .package(url: "https://github.com/ordo-one/package-benchmark.git", from: "1.31.0"),
+        .package(url: "https://github.com/apple/swift-nio.git", from: "2.89.0"),
+        .package(url: "https://github.com/ordo-one/package-benchmark.git", from: "1.32.0"),
     ],
     targets: [
-        .target(
-            name: "ParserBenchSupport",
-            path: "ParserBenchSupport"
-        ),
         .executableTarget(
             name: "CIDRProfileTarget",
             dependencies: [
@@ -32,11 +28,22 @@ let package = Package(
             name: "CIDRBenchmarkTarget",
             dependencies: [
                 .product(name: "CIDR", package: "swift-cidr"),
-                "ParserBenchSupport",
                 .product(name: "Benchmark", package: "package-benchmark"),
             ],
             path: "CIDRBenchmarkTarget",
             plugins: [
+                .plugin(name: "BenchmarkPlugin", package: "package-benchmark"),
+            ]
+        ),
+        .executableTarget(
+            name: "CIDRParserExperimentBenchmarkTarget",
+            dependencies: [
+                .product(name: "CIDR", package: "swift-cidr"),
+                .product(name: "Benchmark", package: "package-benchmark"),
+            ],
+            path: "CIDRParserExperimentBenchmarkTarget",
+            plugins: [
+                // Keep SPI parser-engine experiments out of the public/API-facing default target.
                 .plugin(name: "BenchmarkPlugin", package: "package-benchmark"),
             ]
         ),
@@ -65,11 +72,6 @@ let package = Package(
                 // CHANGE: Keep NIO adapter measurements isolated from the default threshold-gated target.
                 .plugin(name: "BenchmarkPlugin", package: "package-benchmark"),
             ]
-        ),
-        .testTarget(
-            name: "ParserBenchSupportTests",
-            dependencies: ["ParserBenchSupport"],
-            path: "Tests/ParserBenchSupportTests"
         ),
     ]
 )

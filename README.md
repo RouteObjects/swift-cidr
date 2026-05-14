@@ -20,17 +20,23 @@ without falling back to loosely typed strings or POSIX-shaped state.
 - Family-safe APIs make IPv4 and IPv6 boundaries explicit with
   `IPAddress<AF.V4>`, `IPAddress<AF.V6>`, `IPNetwork<AF.V4>`, and
   `IPNetwork<AF.V6>`.
+- `AddressFamily` models IPv4 and IPv6 as compile-time traits instead of
+  runtime tags, carrying storage width, parser, formatter, and IANA family
+  metadata in the type system.
 - `IPNetwork` is first-class, so CIDR prefixes can participate directly in
   containment checks, subnet traversal, summarization, and mixed-family API
   boundaries.
+- RPSL-style prefix-range operators model route-policy prefix selection with
+  `^+`, `^-`, `^n`, and `^n-m` forms.
 - The core `CIDR` module stays pure Swift and dependency-free. POSIX and
   SwiftNIO support live at adapter boundaries instead of shaping the core type
   system.
 - The API is designed for Swift on Server: small value types, explicit family
   metadata, predictable formatting/parsing, and optional `CIDRNIO`
   interoperability.
-- Performance work is measured with benchmark coverage against Swift and system
-  baselines such as `inet_pton` and `inet_ntop`.
+- Performance work is measured with benchmark coverage against Swift public APIs
+  and system baselines, including IPv4/IPv6 `inet_pton` parser baselines and
+  IPv4/IPv6 `inet_ntop` formatter baselines.
 
 The package is organized around a family-bound core:
 
@@ -40,6 +46,25 @@ The package is organized around a family-bound core:
 - `AnyIPAddress`, `AnyIPNetwork`, and `AnyPrefixLength` provide mixed-family
   wrappers for boundary APIs.
 - `TransportPort` and `IPEndpoint` model transport endpoints.
+
+## Standards Grounding
+
+`swift-cidr` is built around established Internet standards and registry
+terminology rather than package-specific interpretations:
+
+- [RFC 791](https://datatracker.ietf.org/doc/html/rfc791) grounds IPv4 as a
+  32-bit Internet address family.
+- [RFC 4291](https://datatracker.ietf.org/doc/html/rfc4291) grounds IPv6 as a
+  128-bit address family and defines conventional IPv6 text forms.
+- [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632) defines Classless
+  Inter-Domain Routing notation, aggregation context, and the registry
+  distinction between allocation and assignment.
+- [RFC 5952](https://datatracker.ietf.org/doc/html/rfc5952) guides compressed
+  IPv6 text formatting.
+- [RFC 2622](https://datatracker.ietf.org/doc/html/rfc2622#section-2) defines
+  the RPSL address-prefix-range operators modeled by `NetworkPrefixRange`.
+- [RFC 6308](https://datatracker.ietf.org/doc/html/rfc6308) informs the
+  multicast address allocation and assignment model used by multicast types.
 
 ## Learning Guides
 
@@ -181,6 +206,24 @@ swift build --target CIDRNIO
 
 ## Benchmarking
 
+### TL;DR
+
+Build, test, and run the primary public/API-facing benchmarks from the repository
+root:
+
+```bash
+./scripts/test.sh
+./scripts/benchmarks.sh run --no-progress --scale --time-units nanoseconds
+./scripts/benchmarks.sh check
+```
+
+`./scripts/benchmarks.sh run` defaults to `CIDRBenchmarkTarget`, which exercises
+the normal public APIs such as `IPv4Address`, `IPv6Address`, `IPNetwork`, and
+formatting paths. Deeper benchmark targets for parser experiments, fixed-loop CPU
+research, and SwiftNIO adapters are documented below.
+
+### Benchmark Details
+
 Benchmark tooling lives in the separate `Benchmarks/` package rather than the
 root library package, so contributors may not see it when opening only the root
 `Package.swift` in Xcode.
@@ -189,15 +232,22 @@ From the repository root:
 
 ```bash
 ./scripts/benchmarks.sh build
-./scripts/benchmarks.sh test
 ./scripts/benchmarks.sh run
 ./scripts/benchmarks.sh check
 ./scripts/benchmarks.sh update
 ./scripts/benchmarks.sh graph
 ```
 
-The wrapper defaults to `CIDRBenchmarkTarget`. For fixed-loop research
-benchmarks that report only user CPU time, select `CIDRCPUBenchmarkTarget`:
+The wrapper defaults to `CIDRBenchmarkTarget`, the public/API-facing benchmark
+target. Parser-engine experiments that require benchmark SPI live in
+`CIDRParserExperimentBenchmarkTarget`:
+
+```bash
+CIDR_BENCHMARK_TARGET=CIDRParserExperimentBenchmarkTarget ./scripts/benchmarks.sh run
+```
+
+For fixed-loop research benchmarks that report only user CPU time, select
+`CIDRCPUBenchmarkTarget`:
 
 ```bash
 CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh run

@@ -172,6 +172,14 @@ From the repository root:
 ./scripts/benchmarks.sh check
 ```
 
+The default target, `CIDRBenchmarkTarget`, is the public/API-facing regression
+suite. Parser-engine experiments that require benchmark SPI belong in
+`CIDRParserExperimentBenchmarkTarget`:
+
+```bash
+CIDR_BENCHMARK_TARGET=CIDRParserExperimentBenchmarkTarget ./scripts/benchmarks.sh run
+```
+
 Use targeted benchmark runs when the change affects a specific area:
 
 ```bash

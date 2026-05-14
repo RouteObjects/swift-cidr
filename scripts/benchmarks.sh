@@ -25,6 +25,7 @@ Commands:
 Examples:
   ./scripts/benchmarks.sh build
   ./scripts/benchmarks.sh run --filter '^parser\\.pton6v4\\.'
+  CIDR_BENCHMARK_TARGET=CIDRParserExperimentBenchmarkTarget ./scripts/benchmarks.sh run
   ./scripts/benchmarks.sh check
   ./scripts/benchmarks.sh update --filter '^parser\\.'
   ./scripts/benchmarks.sh graph
@@ -46,6 +47,15 @@ build)
     exec swift build -c release --package-path "${BENCHMARK_PACKAGE_ROOT}" --target "${TARGET}" "$@"
     ;;
 test)
+    benchmark_test_file=""
+    if [[ -d "${BENCHMARK_PACKAGE_ROOT}/Tests" ]]; then
+        benchmark_test_file="$(find "${BENCHMARK_PACKAGE_ROOT}/Tests" -type f -name '*.swift' -print -quit)"
+    fi
+
+    if [[ -z "${benchmark_test_file}" ]]; then
+        echo "No benchmark package tests are currently defined."
+        exit 0
+    fi
     append_swift_testing_flags_for_command_line_tools
     exec swift test --package-path "${BENCHMARK_PACKAGE_ROOT}" "${swift_test_flags[@]}" "$@"
     ;;

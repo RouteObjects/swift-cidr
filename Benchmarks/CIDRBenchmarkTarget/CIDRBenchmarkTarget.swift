@@ -1,6 +1,5 @@
 import Benchmark
-@_spi(Benchmark) import CIDR
-import ParserBenchSupport
+import CIDR
 #if canImport(Darwin)
 import Darwin
 #elseif canImport(Glibc)
@@ -20,6 +19,24 @@ private func systemInetPton6(_ string: String) -> CInt {
     var storage = in6_addr()
     return string.withCString { source in
         inet_pton(AF_INET6, source, &storage)
+    }
+}
+
+@inline(never)
+private func systemInetNtop4(_ address: UInt32) -> String {
+    var storage = in_addr()
+    storage.s_addr = address.bigEndian
+
+    // SAFETY: `INET_ADDRSTRLEN` is the POSIX-required output capacity for `inet_ntop`.
+    return withUnsafeTemporaryAllocation(of: CChar.self, capacity: Int(INET_ADDRSTRLEN)) { output in
+        guard let baseAddress = output.baseAddress else { return "" }
+        // SAFETY: `storage` is initialized above and remains alive for the duration of the C call.
+        let result = withUnsafePointer(to: &storage) { source in
+            inet_ntop(AF_INET, source, baseAddress, socklen_t(INET_ADDRSTRLEN))
+        }
+
+        guard let result else { return "" }
+        return String(cString: result)
     }
 }
 
@@ -60,7 +77,6 @@ private func benchmarkPrefixLength<Family: AddressFamily>(_ value: Int) -> Prefi
 @MainActor
 let benchmarks = {
     let parserMetrics: [BenchmarkMetric] = [
-        .throughput,
         .wallClock,
         .mallocCountSmall,
         .mallocCountLarge,
@@ -72,7 +88,6 @@ let benchmarks = {
     ]
 
     let currencyMetrics: [BenchmarkMetric] = [
-        .throughput,
         .wallClock,
         .mallocCountSmall,
         .mallocCountLarge,
@@ -99,7 +114,6 @@ let benchmarks = {
     )
 
     let parserThresholds: [BenchmarkMetric: BenchmarkThresholds] = [
-        .throughput: parserTimeThreshold,
         .wallClock: parserTimeThreshold,
         .mallocCountSmall: parserCountThreshold,
         .mallocCountLarge: parserCountThreshold,
@@ -111,7 +125,6 @@ let benchmarks = {
     ]
 
     let currencyThresholds: [BenchmarkMetric: BenchmarkThresholds] = [
-        .throughput: currencyTimeThreshold,
         .wallClock: currencyTimeThreshold,
         .mallocCountSmall: zeroCountThreshold,
         .mallocCountLarge: zeroCountThreshold,
@@ -167,8 +180,6 @@ let benchmarks = {
     let ipv6AddressCIDR = "2001:db8::1/64"
     let ipv4NetworkCIDR = "198.51.100.4/30"
     let ipv6NetworkCIDR = "2001:db8:1::/48"
-    let ipv4MaxLengthCIDR = "255.255.255.255/32"
-    let ipv6MaxLengthCIDR = "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128"
 
     let ipv4Prefix: IPv4PrefixLength = benchmarkPrefixLength(24)
     let ipv6Prefix: IPv6PrefixLength = benchmarkPrefixLength(64)
@@ -190,6 +201,10 @@ let benchmarks = {
     let formatterIPv4SimpleStorage: UInt32 = 0x01020304
     let formatterIPv4MixedStorage: UInt32 = 0xC0A80101
     let formatterIPv4MaxStorage = UInt32.max
+    let formatterIPv4Zero = IPv4Address(address: formatterIPv4ZeroStorage)
+    let formatterIPv4Simple = IPv4Address(address: formatterIPv4SimpleStorage)
+    let formatterIPv4Mixed = IPv4Address(address: formatterIPv4MixedStorage)
+    let formatterIPv4Max = IPv4Address(address: formatterIPv4MaxStorage)
 
     let ipv6HostPrefix = IPv6PrefixLength.maximum
     let formatterIPv6SimpleStorage = (UInt128(0x20010DB8) << 96) | 1
@@ -219,60 +234,6 @@ let benchmarks = {
 
     let anyIPv4Address = AnyIPAddress(ipv4Host)
     let anyIPv4Network = AnyIPNetwork(ipv4Network)
-
-    Benchmark(
-        "parser.pton4v1.simple",
-        configuration: parserConfiguration(tags: ["family": "v4", "variant": "simple"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv4TextV1(ipv4Simple))
-        }
-    }
-
-    Benchmark(
-        "parser.pton4v1.edge",
-        configuration: parserConfiguration(tags: ["family": "v4", "variant": "edge"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv4TextV1(ipv4Edge))
-        }
-    }
-
-    Benchmark(
-        "parser.pton4v2.simple",
-        configuration: parserConfiguration(tags: ["family": "v4", "variant": "simple"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv4TextV2(ipv4Simple))
-        }
-    }
-
-    Benchmark(
-        "parser.pton4v2.edge",
-        configuration: parserConfiguration(tags: ["family": "v4", "variant": "edge"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv4TextV2(ipv4Edge))
-        }
-    }
-
-    Benchmark(
-        "parser.pton4v3.simple",
-        configuration: parserConfiguration(tags: ["family": "v4", "variant": "simple"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv4TextV3(ipv4Simple))
-        }
-    }
-
-    Benchmark(
-        "parser.pton4v3.edge",
-        configuration: parserConfiguration(tags: ["family": "v4", "variant": "edge"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv4TextV3(ipv4Edge))
-        }
-    }
 
     Benchmark(
         "parser.pton4v4.simple",
@@ -307,114 +268,6 @@ let benchmarks = {
     ) { benchmark in
         for _ in benchmark.scaledIterations {
             blackHole(systemInetPton4(ipv4Edge))
-        }
-    }
-
-    Benchmark(
-        "parser.pton6v1.simple",
-        configuration: parserConfiguration(tags: ["family": "v6", "variant": "simple"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv6TextV1(ipv6Simple))
-        }
-    }
-
-    Benchmark(
-        "parser.pton6v1.full",
-        configuration: parserConfiguration(tags: ["family": "v6", "variant": "full"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv6TextV1(ipv6Full))
-        }
-    }
-
-    Benchmark(
-        "parser.pton6v1.middleCompressed",
-        configuration: parserConfiguration(tags: ["family": "v6", "variant": "middleCompressed"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv6TextV1(ipv6MiddleCompressed))
-        }
-    }
-
-    Benchmark(
-        "parser.pton6v1.mapped",
-        configuration: parserConfiguration(tags: ["family": "v6", "variant": "mapped"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv6TextV1(ipv6Mapped)) // mapped mixed notation exercises the dotted-quad tail path inside the IPv6 parser.
-        }
-    }
-
-    Benchmark(
-        "parser.pton6v2.simple",
-        configuration: parserConfiguration(tags: ["family": "v6", "variant": "simple"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv6TextV2(ipv6Simple))
-        }
-    }
-
-    Benchmark(
-        "parser.pton6v2.full",
-        configuration: parserConfiguration(tags: ["family": "v6", "variant": "full"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv6TextV2(ipv6Full))
-        }
-    }
-
-    Benchmark(
-        "parser.pton6v2.middleCompressed",
-        configuration: parserConfiguration(tags: ["family": "v6", "variant": "middleCompressed"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv6TextV2(ipv6MiddleCompressed))
-        }
-    }
-
-    Benchmark(
-        "parser.pton6v2.mapped",
-        configuration: parserConfiguration(tags: ["family": "v6", "variant": "mapped"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv6TextV2(ipv6Mapped))
-        }
-    }
-
-    Benchmark(
-        "parser.pton6v3.simple",
-        configuration: parserConfiguration(tags: ["family": "v6", "variant": "simple"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv6TextV3(ipv6Simple)) // keep the GeminiPro IPv6 parser in the same parser benchmark matrix as the other IPv6 implementations.
-        }
-    }
-
-    Benchmark(
-        "parser.pton6v3.full",
-        configuration: parserConfiguration(tags: ["family": "v6", "variant": "full"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv6TextV3(ipv6Full))
-        }
-    }
-
-    Benchmark(
-        "parser.pton6v3.middleCompressed",
-        configuration: parserConfiguration(tags: ["family": "v6", "variant": "middleCompressed"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv6TextV3(ipv6MiddleCompressed))
-        }
-    }
-
-    Benchmark(
-        "parser.pton6v3.mapped",
-        configuration: parserConfiguration(tags: ["family": "v6", "variant": "mapped"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(HistoricalParsers.parseIPv6TextV3(ipv6Mapped))
         }
     }
 
@@ -527,119 +380,20 @@ let benchmarks = {
     }
 
     Benchmark(
-        "parser.cidr.ipv4.scalar",
-        configuration: parserConfiguration(tags: ["family": "v4", "kind": "experiment"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(AF.parseIPv4CIDRTextScalar(ipv4AddressCIDR, requiresPrefix: false))
-        }
-    }
-
-    Benchmark(
-        "parser.cidr.ipv4.simdSlash",
-        configuration: parserConfiguration(tags: ["family": "v4", "kind": "experiment"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(AF.parseIPv4CIDRTextSIMDSlash(ipv4AddressCIDR, requiresPrefix: false))
-        }
-    }
-
-    Benchmark(
-        "parser.cidr.ipv4.suffix",
-        configuration: parserConfiguration(tags: ["family": "v4", "kind": "experiment"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(AF.parseIPv4CIDRTextSuffix(ipv4AddressCIDR, requiresPrefix: false))
-        }
-    }
-
-    Benchmark(
-        "parser.cidr.ipv4.scalar.maxLength",
-        configuration: parserConfiguration(tags: ["family": "v4", "kind": "experiment"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(AF.parseIPv4CIDRTextScalar(ipv4MaxLengthCIDR, requiresPrefix: false))
-        }
-    }
-
-    Benchmark(
-        "parser.cidr.ipv4.simdSlash.maxLength",
-        configuration: parserConfiguration(tags: ["family": "v4", "kind": "experiment"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(AF.parseIPv4CIDRTextSIMDSlash(ipv4MaxLengthCIDR, requiresPrefix: false))
-        }
-    }
-
-    Benchmark(
-        "parser.cidr.ipv4.suffix.maxLength",
-        configuration: parserConfiguration(tags: ["family": "v4", "kind": "experiment"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(AF.parseIPv4CIDRTextSuffix(ipv4MaxLengthCIDR, requiresPrefix: false))
-        }
-    }
-
-    Benchmark(
-        "parser.cidr.ipv6.scalar",
-        configuration: parserConfiguration(tags: ["family": "v6", "kind": "experiment"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(AF.parseIPv6CIDRTextScalar(ipv6AddressCIDR, requiresPrefix: false))
-        }
-    }
-
-    Benchmark(
-        "parser.cidr.ipv6.simdSlash",
-        configuration: parserConfiguration(tags: ["family": "v6", "kind": "experiment"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(AF.parseIPv6CIDRTextSIMDSlash(ipv6AddressCIDR, requiresPrefix: false))
-        }
-    }
-
-    Benchmark(
-        "parser.cidr.ipv6.suffix",
-        configuration: parserConfiguration(tags: ["family": "v6", "kind": "experiment"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(AF.parseIPv6CIDRTextSuffix(ipv6AddressCIDR, requiresPrefix: false))
-        }
-    }
-
-    Benchmark(
-        "parser.cidr.ipv6.scalar.maxLength",
-        configuration: parserConfiguration(tags: ["family": "v6", "kind": "experiment"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(AF.parseIPv6CIDRTextScalar(ipv6MaxLengthCIDR, requiresPrefix: false))
-        }
-    }
-
-    Benchmark(
-        "parser.cidr.ipv6.simdSlash.maxLength",
-        configuration: parserConfiguration(tags: ["family": "v6", "kind": "experiment"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(AF.parseIPv6CIDRTextSIMDSlash(ipv6MaxLengthCIDR, requiresPrefix: false))
-        }
-    }
-
-    Benchmark(
-        "parser.cidr.ipv6.suffix.maxLength",
-        configuration: parserConfiguration(tags: ["family": "v6", "kind": "experiment"])
-    ) { benchmark in
-        for _ in benchmark.scaledIterations {
-            blackHole(AF.parseIPv6CIDRTextSuffix(ipv6MaxLengthCIDR, requiresPrefix: false))
-        }
-    }
-
-    Benchmark(
         "formatter.ipv4.swift.zero",
         configuration: formatterConfiguration(tags: ["family": "v4", "style": "addressOnly"])
     ) { benchmark in
         for _ in benchmark.scaledIterations {
-            blackHole(AF.V4.formatAddress(formatterIPv4ZeroStorage)) // Isolate the production IPv4 formatter from IPAddress/prefix overhead.
+            blackHole(formatterIPv4Zero.formatted(.addressOnly))
+        }
+    }
+
+    Benchmark(
+        "formatter.ipv4.inet_ntop.zero",
+        configuration: formatterConfiguration(tags: ["family": "v4", "style": "addressOnly"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(systemInetNtop4(formatterIPv4ZeroStorage))
         }
     }
 
@@ -648,7 +402,16 @@ let benchmarks = {
         configuration: formatterConfiguration(tags: ["family": "v4", "style": "addressOnly"])
     ) { benchmark in
         for _ in benchmark.scaledIterations {
-            blackHole(AF.V4.formatAddress(formatterIPv4SimpleStorage))
+            blackHole(formatterIPv4Simple.formatted(.addressOnly))
+        }
+    }
+
+    Benchmark(
+        "formatter.ipv4.inet_ntop.simple",
+        configuration: formatterConfiguration(tags: ["family": "v4", "style": "addressOnly"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(systemInetNtop4(formatterIPv4SimpleStorage))
         }
     }
 
@@ -657,7 +420,16 @@ let benchmarks = {
         configuration: formatterConfiguration(tags: ["family": "v4", "style": "addressOnly"])
     ) { benchmark in
         for _ in benchmark.scaledIterations {
-            blackHole(AF.V4.formatAddress(formatterIPv4MixedStorage))
+            blackHole(formatterIPv4Mixed.formatted(.addressOnly))
+        }
+    }
+
+    Benchmark(
+        "formatter.ipv4.inet_ntop.mixed",
+        configuration: formatterConfiguration(tags: ["family": "v4", "style": "addressOnly"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(systemInetNtop4(formatterIPv4MixedStorage))
         }
     }
 
@@ -666,7 +438,16 @@ let benchmarks = {
         configuration: formatterConfiguration(tags: ["family": "v4", "style": "addressOnly"])
     ) { benchmark in
         for _ in benchmark.scaledIterations {
-            blackHole(AF.V4.formatAddress(formatterIPv4MaxStorage))
+            blackHole(formatterIPv4Max.formatted(.addressOnly))
+        }
+    }
+
+    Benchmark(
+        "formatter.ipv4.inet_ntop.max",
+        configuration: formatterConfiguration(tags: ["family": "v4", "style": "addressOnly"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(systemInetNtop4(formatterIPv4MaxStorage))
         }
     }
 

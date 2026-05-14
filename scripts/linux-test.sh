@@ -66,6 +66,7 @@ benchmark-build)
         rm -rf /var/lib/apt/lists/*
         swift build --package-path Benchmarks --product CIDRProfileTarget
         ./scripts/benchmarks.sh build
+        CIDR_BENCHMARK_TARGET=CIDRParserExperimentBenchmarkTarget ./scripts/benchmarks.sh build
         CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh build
         CIDR_BENCHMARK_TARGET=CIDRNIOBenchmarkTarget ./scripts/benchmarks.sh build
     '

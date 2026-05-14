@@ -1,22 +1,22 @@
 # CIDR Benchmarks
 
-`CIDRBenchmarkTarget` is split into three benchmark suites with different goals.
+`CIDRBenchmarkTarget` is the default public/API-facing benchmark target. It is
+split into three benchmark suites with different goals.
 
-- `parser.*` measures string-to-bits parser cost for the historical parser implementations in `ParserBenchSupport` and the current production parser path exposed through `AddressFamily.parseAddress(_:)`.
-- `formatter.*` measures bits-to-string formatter cost and includes platform `inet_ntop` baselines where useful.
+- `parser.*` measures string-to-bits parser cost through public entry points such as `IPv4Address(...)`, `IPv6Address(...)`, `IPNetwork(...)`, and `AddressFamily.parseAddress(_:)`.
+- `formatter.*` measures bits-to-string formatter cost through public formatting APIs and includes platform `inet_ntop` baselines where useful.
 - `currency.*` measures already-constructed value operations to validate the currency-type claim for `PrefixLength`, `IPAddress`, `IPNetwork`, and the `Any*` wrappers.
+
+`CIDRParserExperimentBenchmarkTarget` is a research-only target for SPI
+parser-engine experiments such as scalar, SIMD slash-scan, and suffix-based CIDR
+parsing. It is intentionally separate from the default public/API-facing target.
+Historical parser implementations were removed from the release benchmark
+package and archived outside the repository for future writing/reference work.
 
 `CIDRNIOBenchmarkTarget` is an opt-in adapter benchmark target for SwiftNIO
 bridges. It is intentionally separate from the default threshold-gated target so
 `NIOCore` measurements do not add noise to core CIDR parser, formatter, or
 currency-type tracking.
-
-The versioned parser benchmarks use a stable naming scheme:
-
-- `parser.pton4v1` through `parser.pton4v4`
-- `parser.pton6v1` through `parser.pton6v4`
-
-`v4` is the parser currently selected by CIDR itself. Earlier versions stay benchmark-local so the library API surface does not carry historical implementations.
 
 ## Standard Commands
 
@@ -51,6 +51,16 @@ To graph the parser suite for wall-clock time, mallocs, and ARC retains in one p
 
 ```bash
 ./scripts/benchmark-parser-graphs.sh
+```
+
+## Parser Experiment Benchmarks
+
+`CIDRParserExperimentBenchmarkTarget` isolates SPI parser-engine experiments from
+the public/API-facing default benchmark target.
+
+```bash
+CIDR_BENCHMARK_TARGET=CIDRParserExperimentBenchmarkTarget ./scripts/benchmarks.sh build
+CIDR_BENCHMARK_TARGET=CIDRParserExperimentBenchmarkTarget ./scripts/benchmarks.sh run
 ```
 
 To run only the IPv6 compressed formatter suite:
@@ -103,12 +113,14 @@ swift build --target CIDRProfileTarget
 ## Threshold Policy
 
 - `parser.*`
-  - tracks regressions in wall-clock time, throughput, malloc counts, and ARC traffic
+  - tracks regressions in wall-clock time, malloc counts, and ARC traffic
+  - omits throughput from the threshold-gated target because wall-clock already gates the same timing behavior with less reciprocal-metric noise
   - parser benchmarks are allowed to allocate, but regressions beyond the configured thresholds should fail
 - `formatter.*`
-  - tracks formatter regressions in wall-clock time, throughput, malloc counts, and ARC traffic
+  - tracks formatter regressions in wall-clock time, malloc counts, and ARC traffic
+  - omits throughput from the threshold-gated target because `String`-returning formatter runs showed noisy reciprocal throughput checks
   - formatter benchmarks return `String`; on current Swift runtimes, ASCII output longer than the small-string inline capacity, typically 15 UTF-8 bytes, is expected to allocate once
-  - IPv6 formatter allocations should be interpreted as `String` storage cost, not currency-type allocation; compare `formatter.ipv6.compressed.swift.*` against matching `formatter.ipv6.compressed.inet_ntop.*` baselines
+  - formatter allocations should be interpreted as `String` storage cost, not currency-type allocation; compare Swift formatter cases against matching `formatter.*.inet_ntop.*` baselines where present
 - `currency.*`
   - must stay at zero mallocs, zero object allocations, and zero ARC traffic
   - any nonzero `mallocCount*`, `objectAllocCount`, `retainCount`, `releaseCount`, or `retainReleaseDelta` is a failure

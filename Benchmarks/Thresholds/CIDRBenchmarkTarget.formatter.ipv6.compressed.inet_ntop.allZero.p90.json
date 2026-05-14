@@ -6,6 +6,5 @@
   "releaseCount" : 0,
   "retainCount" : 0,
   "retainReleaseDelta" : 0,
-  "throughput" : 16383,
-  "wallClock" : 65055
+  "wallClock" : 63295
 }
