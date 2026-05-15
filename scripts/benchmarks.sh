@@ -25,7 +25,6 @@ Commands:
 Examples:
   ./scripts/benchmarks.sh build
   ./scripts/benchmarks.sh run --filter '^parser\\.pton6v4\\.'
-  CIDR_BENCHMARK_TARGET=CIDRParserExperimentBenchmarkTarget ./scripts/benchmarks.sh run
   ./scripts/benchmarks.sh check
   ./scripts/benchmarks.sh update --filter '^parser\\.'
   ./scripts/benchmarks.sh graph

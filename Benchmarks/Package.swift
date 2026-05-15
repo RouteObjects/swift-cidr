@@ -5,6 +5,8 @@ import PackageDescription
 let package = Package(
     name: "swift-cidr-benchmarks",
     platforms: [
+        // Benchmark executables are a macOS/Linux command-line workflow. iOS is declared so
+        // SwiftPM/Xcode resolve this nested package with the same Apple platform floor as CIDR.
         .iOS(.v18),
         .macOS(.v15),
     ],
@@ -32,18 +34,6 @@ let package = Package(
             ],
             path: "CIDRBenchmarkTarget",
             plugins: [
-                .plugin(name: "BenchmarkPlugin", package: "package-benchmark"),
-            ]
-        ),
-        .executableTarget(
-            name: "CIDRParserExperimentBenchmarkTarget",
-            dependencies: [
-                .product(name: "CIDR", package: "swift-cidr"),
-                .product(name: "Benchmark", package: "package-benchmark"),
-            ],
-            path: "CIDRParserExperimentBenchmarkTarget",
-            plugins: [
-                // Keep SPI parser-engine experiments out of the public/API-facing default target.
                 .plugin(name: "BenchmarkPlugin", package: "package-benchmark"),
             ]
         ),

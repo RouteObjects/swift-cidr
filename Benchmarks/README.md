@@ -7,16 +7,20 @@ split into three benchmark suites with different goals.
 - `formatter.*` measures bits-to-string formatter cost through public formatting APIs and includes platform `inet_ntop` baselines where useful.
 - `currency.*` measures already-constructed value operations to validate the currency-type claim for `PrefixLength`, `IPAddress`, `IPNetwork`, and the `Any*` wrappers.
 
-`CIDRParserExperimentBenchmarkTarget` is a research-only target for SPI
-parser-engine experiments such as scalar, SIMD slash-scan, and suffix-based CIDR
-parsing. It is intentionally separate from the default public/API-facing target.
-Historical parser implementations were removed from the release benchmark
+Historical parser-engine experiments were removed from the release benchmark
 package and archived outside the repository for future writing/reference work.
 
 `CIDRNIOBenchmarkTarget` is an opt-in adapter benchmark target for SwiftNIO
 bridges. It is intentionally separate from the default threshold-gated target so
 `NIOCore` measurements do not add noise to core CIDR parser, formatter, or
 currency-type tracking.
+
+## Platform Notes
+
+Benchmarks are intended for macOS and Linux command-line workflows. The nested
+benchmark package still declares the same Apple platform minimums as the root
+package so SwiftPM and Xcode resolve dependencies consistently. The iOS
+declaration is not a supported execution path for benchmark binaries.
 
 ## Standard Commands
 
@@ -51,16 +55,6 @@ To graph the parser suite for wall-clock time, mallocs, and ARC retains in one p
 
 ```bash
 ./scripts/benchmark-parser-graphs.sh
-```
-
-## Parser Experiment Benchmarks
-
-`CIDRParserExperimentBenchmarkTarget` isolates SPI parser-engine experiments from
-the public/API-facing default benchmark target.
-
-```bash
-CIDR_BENCHMARK_TARGET=CIDRParserExperimentBenchmarkTarget ./scripts/benchmarks.sh build
-CIDR_BENCHMARK_TARGET=CIDRParserExperimentBenchmarkTarget ./scripts/benchmarks.sh run
 ```
 
 To run only the IPv6 compressed formatter suite:

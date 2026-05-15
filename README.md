@@ -242,12 +242,7 @@ From the repository root:
 ```
 
 The wrapper defaults to `CIDRBenchmarkTarget`, the public/API-facing benchmark
-target. Parser-engine experiments that require benchmark SPI live in
-`CIDRParserExperimentBenchmarkTarget`:
-
-```bash
-CIDR_BENCHMARK_TARGET=CIDRParserExperimentBenchmarkTarget ./scripts/benchmarks.sh run
-```
+target.
 
 For fixed-loop research benchmarks that report only user CPU time, select
 `CIDRCPUBenchmarkTarget`:
