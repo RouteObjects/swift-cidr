@@ -1,3 +1,16 @@
+//===----------------------------------------------------------------------===//
+//
+// This source file is part of the swift-cidr project.
+//
+// Copyright (c) 2026 Craig A. Munro
+//
+// Licensed under the Apache License, Version 2.0.
+// See the LICENSE file for details.
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+//===----------------------------------------------------------------------===//
+
 /// A family-bound Classless Inter-Domain Routing (CIDR) value with stored bits and prefix length.
 ///
 /// `CIDR` is the broad structural protocol for IP values that participate in the CIDR model

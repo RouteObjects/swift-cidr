@@ -1,3 +1,16 @@
+//===----------------------------------------------------------------------===//
+//
+// This source file is part of the swift-cidr project.
+//
+// Copyright (c) 2026 Craig A. Munro
+//
+// Licensed under the Apache License, Version 2.0.
+// See the LICENSE file for details.
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+//===----------------------------------------------------------------------===//
+
 /// Family-neutral textual representations for CIDR values.
 public enum CIDRTextStyle: Sendable, Hashable {
     /// `192.168.1.1/32` or `2001:db8:0:0:0:0:0:1/128`

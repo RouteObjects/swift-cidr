@@ -1,3 +1,16 @@
+//===----------------------------------------------------------------------===//
+//
+// This source file is part of the swift-cidr project.
+//
+// Copyright (c) 2026 Craig A. Munro
+//
+// Licensed under the Apache License, Version 2.0.
+// See the LICENSE file for details.
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+//===----------------------------------------------------------------------===//
+
 /// A canonical, prefix-aligned CIDR range without subnet or host semantics.
 ///
 /// `CIDRBlock` is the neutral range form: it knows the address family, prefix bits, first address,

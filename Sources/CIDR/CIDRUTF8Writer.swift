@@ -1,3 +1,16 @@
+//===----------------------------------------------------------------------===//
+//
+// This source file is part of the swift-cidr project.
+//
+// Copyright (c) 2026 Craig A. Munro
+//
+// Licensed under the Apache License, Version 2.0.
+// See the LICENSE file for details.
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+//===----------------------------------------------------------------------===//
+
 /// Low-level UTF-8 formatting hooks for adapter modules.
 ///
 /// Package-level access keeps these byte-oriented formatter hooks out of the public `CIDR` API

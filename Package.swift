@@ -1,10 +1,16 @@
 // swift-tools-version: 6.1
+//===----------------------------------------------------------------------===//
+//
+// This source file is part of the swift-cidr project.
+//
 // Copyright (c) 2026 Craig A. Munro
 //
 // Licensed under the Apache License, Version 2.0.
-// See LICENSE for details.
+// See the LICENSE file for details.
 //
 // SPDX-License-Identifier: Apache-2.0
+//
+//===----------------------------------------------------------------------===//
 
 import PackageDescription
 

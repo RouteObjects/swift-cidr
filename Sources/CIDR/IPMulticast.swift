@@ -1,3 +1,16 @@
+//===----------------------------------------------------------------------===//
+//
+// This source file is part of the swift-cidr project.
+//
+// Copyright (c) 2026 Craig A. Munro
+//
+// Licensed under the Apache License, Version 2.0.
+// See the LICENSE file for details.
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+//===----------------------------------------------------------------------===//
+
 /// An address family that contains a multicast address space.
 ///
 /// IANA defines IPv4 and IPv6 as address families. Multicast is not a separate address family; it

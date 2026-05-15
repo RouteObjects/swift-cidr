@@ -1,3 +1,16 @@
+//===----------------------------------------------------------------------===//
+//
+// This source file is part of the swift-cidr project.
+//
+// Copyright (c) 2026 Craig A. Munro
+//
+// Licensed under the Apache License, Version 2.0.
+// See the LICENSE file for details.
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+//===----------------------------------------------------------------------===//
+
 /// CIDR-oriented helpers for unsigned fixed-width address storage.
 ///
 /// `AddressFamily.Storage` is an unsigned fixed-width integer (`UInt32` for IPv4 and `UInt128` for

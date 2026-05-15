@@ -1,4 +1,16 @@
 #!/usr/bin/env bash
+#===----------------------------------------------------------------------===#
+#
+# This source file is part of the swift-cidr project.
+#
+# Copyright (c) 2026 Craig A. Munro
+#
+# Licensed under the Apache License, Version 2.0.
+# See the LICENSE file for details.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+#===----------------------------------------------------------------------===#
 
 append_swift_testing_flags_for_command_line_tools() {
     local developer_dir
