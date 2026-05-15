@@ -28,6 +28,9 @@ or POSIX-shaped state.
   boundaries.
 - RPSL-style prefix-range operators model route-policy prefix selection with
   `^+`, `^-`, `^n`, and `^n-m` forms.
+- Multicast group addresses and group-address ranges are modeled explicitly, so
+  multicast CIDR notation does not inherit unicast subnet, host, or broadcast
+  semantics.
 - The core `CIDR` module stays pure Swift and dependency-free. POSIX and
   SwiftNIO support live at adapter boundaries instead of shaping the core type
   system.
@@ -46,6 +49,9 @@ The package is organized around a family-bound core:
 - `IPAddress<Family>` stores an IP address together with its prefix context.
 - `IPNetwork<Family>` stores a canonical network boundary.
 - `PrefixLength<Family>` validates CIDR prefix lengths per family.
+- `IPMulticastGroup<Family>` and `IPMulticastGroupRange<Family>` model multicast
+   destination identifiers and group-address ranges, with aliases such as
+   `IPv4MulticastGroup` and `IPv6MulticastGroup`.
 - `AnyIPAddress`, `AnyIPNetwork`, and `AnyPrefixLength` provide mixed-family
    wrappers for boundary APIs.
 - `TransportPort` and `IPEndpoint` model transport endpoints.
