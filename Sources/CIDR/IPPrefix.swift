@@ -24,7 +24,7 @@
 public protocol IPPrefix: CIDR {
     /// The canonical prefix boundary for this value.
     ///
-    /// Host bits below ``prefixLength`` are expected to be cleared by the conforming type's
+    /// Host bits below `prefixLength` are expected to be cleared by the conforming type's
     /// ``init(prefix:prefixLength:)`` implementation.
     var prefix: Family.Storage { get }
 

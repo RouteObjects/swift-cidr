@@ -165,7 +165,7 @@ extension IPMulticastGroup {
 public struct IPMulticastGroupRange<Family: MulticastAddressSpace>: CIDR, Hashable, LosslessStringConvertible, Codable {
     /// The canonical multicast range prefix.
     ///
-    /// Host bits below ``prefixLength`` are required to be clear.
+    /// Host bits below `prefixLength` are required to be clear.
     public let prefix: Family.Storage
 
     /// The prefix length for the multicast group-address range.
