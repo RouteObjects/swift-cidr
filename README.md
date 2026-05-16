@@ -3,9 +3,9 @@
   &nbsp;CIDR
 </h1>
 
-`CIDR` provides value-semantic IP types for Swift packages that need stable
-address, network, and endpoint modeling across configuration, server, and POSIX
-boundaries.
+`CIDR` provides value-semantic Swift types for classless Internet Protocol
+addressing: addresses, prefix lengths, networks, and endpoints that need stable
+modeling across configuration, server, and POSIX boundaries.
 The core models are currency types: public value types intended to be
 stored, passed, and composed throughout networking code.
 
