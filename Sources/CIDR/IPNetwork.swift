@@ -29,7 +29,7 @@ public typealias IPv6Network = IPNetwork<V6>
 ///
 /// By conforming to `IPPrefix`, `IPNetwork` gets the shared aligned-prefix operations such as
 /// containment, subnet traversal, next-prefix calculation, and summarization.
-public struct IPNetwork<Family: AddressFamily>: IPPrefix, Hashable, LosslessStringConvertible, Codable {
+public struct IPNetwork<Family: IPAddressFamily>: IPPrefix, Hashable, LosslessStringConvertible, Codable {
     /// The canonical prefix boundary for this network.
     ///
     /// The stored value is always masked by `prefixLength`, so host bits below the prefix boundary

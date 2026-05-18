@@ -30,7 +30,7 @@ public typealias IPv6PrefixLength = PrefixLength<V6>
 ///
 /// In swift-cidr terminology, `PrefixLength` is a core currency type: a compact, value-semantic
 /// representation used by addresses, networks, multicast ranges, and neutral CIDR blocks.
-public struct PrefixLength<Family: AddressFamily>: RawRepresentable, Sendable, Hashable, Comparable, CustomStringConvertible, LosslessStringConvertible, Codable {
+public struct PrefixLength<Family: IPAddressFamily>: RawRepresentable, Sendable, Hashable, Comparable, CustomStringConvertible, LosslessStringConvertible, Codable {
     /// The validated slash number stored as compact unsigned integer storage.
     ///
     /// This value is guaranteed to be in `0...Family.bitWidth`.

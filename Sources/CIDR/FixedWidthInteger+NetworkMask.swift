@@ -13,9 +13,9 @@
 
 /// CIDR-oriented helpers for unsigned fixed-width address storage.
 ///
-/// `AddressFamily.Storage` is an unsigned fixed-width integer (`UInt32` for IPv4 and `UInt128` for
-/// IPv6). This extension centralizes the bit-mask operations shared by family-bound CIDR values so
-/// address and prefix types can ask their storage type for masks directly.
+/// `IPAddressFamily.Storage` is an unsigned fixed-width integer (`UInt32` for IPv4 and `UInt128`
+/// for IPv6). This extension centralizes the bit-mask operations shared by family-bound CIDR values
+/// so address and prefix types can ask their storage type for masks directly.
 extension FixedWidthInteger where Self: UnsignedInteger {
     /// Returns a high-bit network mask for a CIDR prefix length.
     ///

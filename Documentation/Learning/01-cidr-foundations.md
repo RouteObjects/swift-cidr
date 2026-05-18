@@ -20,12 +20,14 @@ higher-level system decides what the prefix means operationally.
 
 ## Address Family
 
-`AddressFamily` is the type-system boundary between IPv4 and IPv6. Each family
-defines its storage width, parser, formatter, and POSIX address-family value.
+`AddressFamily` is the type-system boundary for selected IANA address-family
+values. Each family defines its storage width, parser, formatter, and IANA
+address-family value.
 
-This is intentionally different from POSIX-style code, where `AF_INET` and
-`AF_INET6` are often runtime constants stored beside untyped buffers.
-`swift-cidr` moves the family into the type:
+For IP-specific CIDR math, `IPAddressFamily` narrows that model to Internet
+Protocol address families. This is intentionally different from POSIX-style
+code, where `AF_INET` and `AF_INET6` are often runtime constants stored beside
+untyped buffers. `swift-cidr` moves the IP family into the type:
 
 ```swift
 import CIDR

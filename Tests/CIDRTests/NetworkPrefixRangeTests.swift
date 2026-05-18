@@ -113,7 +113,7 @@ struct NetworkPrefixRangeTests {
 
     @Test("IPPrefix operators work for generic conformers beyond IPNetwork")
     func genericIPPrefixConformerUsesSameOperatorSurface() throws {
-        struct Route<Family: AddressFamily>: IPPrefix {
+        struct Route<Family: IPAddressFamily>: IPPrefix {
             let prefix: Family.Storage
             let prefixLength: PrefixLength<Family>
 

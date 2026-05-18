@@ -23,7 +23,7 @@
 /// registries for the terminology split. See
 /// [RFC 6308](https://datatracker.ietf.org/doc/html/rfc6308) for an overview of multicast address
 /// allocation and assignment architecture.
-public protocol MulticastAddressSpace: AddressFamily {
+public protocol MulticastAddressSpace: IPAddressFamily {
     /// The top-level multicast address space for this address family.
     ///
     /// The returned block is the family-wide container for all valid multicast group destination

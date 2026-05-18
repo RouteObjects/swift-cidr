@@ -78,7 +78,7 @@ private func systemInetNtop6(_ address: UInt128) -> String {
     }
 }
 
-private func benchmarkPrefixLength<Family: AddressFamily>(_ value: Int) -> PrefixLength<Family> {
+private func benchmarkPrefixLength<Family: IPAddressFamily>(_ value: Int) -> PrefixLength<Family> {
     guard let prefixLength = PrefixLength<Family>(value) else {
         preconditionFailure("Benchmark fixture uses invalid \(Family.familyName) prefix length \(value).")
     }

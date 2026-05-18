@@ -33,7 +33,7 @@ public struct TransportPort: Sendable, Hashable, Codable {
 ///
 /// IPv4 endpoints format as `192.0.2.1/24:53`.
 /// IPv6 endpoints format as `[2001:db8:0:0:0:0:0:1/64]:443`.
-public struct IPEndpoint<Family: AddressFamily>: Sendable, Hashable, Codable, CustomStringConvertible, LosslessStringConvertible {
+public struct IPEndpoint<Family: IPAddressFamily>: Sendable, Hashable, Codable, CustomStringConvertible, LosslessStringConvertible {
     public let address: IPAddress<Family>
     public let port: TransportPort
 

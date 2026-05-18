@@ -19,7 +19,7 @@
 ///
 /// See [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632) for Classless Inter-Domain
 /// Routing notation and aggregation context.
-public struct CIDRBlock<Family: AddressFamily>: CIDR, Hashable, LosslessStringConvertible, Codable {
+public struct CIDRBlock<Family: IPAddressFamily>: CIDR, Hashable, LosslessStringConvertible, Codable {
     public let prefix: Family.Storage
     public let prefixLength: PrefixLength<Family>
 

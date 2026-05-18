@@ -40,7 +40,7 @@ postfix operator ^-
 /// - `^-`: more specifics excluding the base prefix
 /// - `^n`: specifics with exactly prefix length `n`
 /// - `^n-m`: specifics with prefix lengths from `n` through `m`
-public struct NetworkPrefixRange<Family: AddressFamily>: Sendable, Hashable, CustomStringConvertible, CustomDebugStringConvertible {
+public struct NetworkPrefixRange<Family: IPAddressFamily>: Sendable, Hashable, CustomStringConvertible, CustomDebugStringConvertible {
     /// The base network whose contained prefixes are selected.
     public let network: IPNetwork<Family>
 

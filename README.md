@@ -20,9 +20,9 @@ or POSIX-shaped state.
 - Family-safe APIs make IPv4 and IPv6 boundaries explicit with
   `IPAddress<AF.V4>`, `IPAddress<AF.V6>`, `IPNetwork<AF.V4>`, and
   `IPNetwork<AF.V6>`.
-- `AddressFamily` models IPv4 and IPv6 as compile-time traits instead of
-  runtime tags, carrying storage width, parser, formatter, and IANA family
-  metadata in the type system.
+- `AddressFamily` models selected IANA address-family values as compile-time
+  traits instead of runtime tags, carrying storage width, parser, formatter, and
+  IANA family metadata in the type system.
 - `IPNetwork` is first-class, so CIDR prefixes can participate directly in
   containment checks, subnet traversal, summarization, and mixed-family API
   boundaries.
@@ -44,8 +44,9 @@ or POSIX-shaped state.
 The package is organized around a family-bound core:
 
 - `AddressFamily` is the compile-time trait that binds storage width, parsing,
-   formatting, and IANA family metadata to IPv4 or IPv6. `AF.V4` and `AF.V6`
-   are the concrete family marker types.
+   formatting, and IANA family metadata to selected registry families.
+   `IPAddressFamily` narrows that surface to IP address families, with `AF.V4`
+   and `AF.V6` as the concrete IPv4 and IPv6 marker types.
 - `IPAddress<Family>` stores an IP address together with its prefix context.
 - `IPNetwork<Family>` stores a canonical network boundary.
 - `PrefixLength<Family>` validates CIDR prefix lengths per family.
@@ -61,6 +62,9 @@ The package is organized around a family-bound core:
 `swift-cidr` is built around established Internet standards and registry
 terminology rather than package-specific interpretations:
 
+- The [IANA Address Family Numbers registry](https://www.iana.org/assignments/address-family-numbers/address-family-numbers.xhtml)
+  grounds `AddressFamily.ianaValue` and the selected registry families modeled by
+  `AF`, including IPv4, IPv6, AS Number, 48-bit MAC, and 64-bit MAC.
 - [RFC 791](https://datatracker.ietf.org/doc/html/rfc791) grounds IPv4 as a
   32-bit Internet address family.
 - [RFC 4291](https://datatracker.ietf.org/doc/html/rfc4291) grounds IPv6 as a
@@ -74,6 +78,10 @@ terminology rather than package-specific interpretations:
   the RPSL address-prefix-range operators modeled by `NetworkPrefixRange`.
 - [RFC 6308](https://datatracker.ietf.org/doc/html/rfc6308) informs the
   multicast address allocation and assignment model used by multicast types.
+- [RFC 1930](https://datatracker.ietf.org/doc/html/rfc1930) defines the
+  Autonomous System concept used by `AF.ASN`.
+- [RFC 6793](https://datatracker.ietf.org/doc/html/rfc6793) defines four-octet
+  AS numbers, matching `AF.ASN`'s 32-bit storage.
 
 ## Learning Guides
 

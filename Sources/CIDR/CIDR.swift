@@ -22,7 +22,7 @@
 /// bits their domain meaning: an address, a network prefix, a neutral `CIDRBlock`, or another
 /// CIDR-qualified context.
 public protocol CIDR: Sendable, CustomStringConvertible, CustomDebugStringConvertible {
-    associatedtype Family: AddressFamily
+    associatedtype Family: IPAddressFamily
 
     /// The raw address-family storage for this CIDR value.
     var storage: Family.Storage { get }

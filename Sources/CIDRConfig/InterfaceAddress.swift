@@ -25,7 +25,7 @@ import CIDR
 ///
 /// The type lives in `CIDRConfig` rather than `CIDR` because interface
 /// assignments are configuration semantics layered on top of the CIDR block engine.
-public struct InterfaceAddress<Family: AddressFamily>: CIDR, Hashable {
+public struct InterfaceAddress<Family: IPAddressFamily>: CIDR, Hashable {
     public let address: Family.Storage
     public let prefixLength: PrefixLength<Family>
     public var storage: Family.Storage { address }

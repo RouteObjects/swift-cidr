@@ -25,7 +25,7 @@
 /// Both expose one family-bound `address`, but neither statement implies that every `Addressable`
 /// value has subnet, route, allocation, or host semantics.
 public protocol Addressable: Sendable {
-    associatedtype Family: AddressFamily
+    associatedtype Family: IPAddressFamily
 
     /// The raw address bits for this value's address family.
     var address: Family.Storage { get }
@@ -47,7 +47,7 @@ public typealias IPv6Address = IPAddress<V6>
 /// intended to move between parsing, formatting, containment, and endpoint APIs.
 ///
 /// Use ``network`` when you need the containing ``IPNetwork`` prefix boundary.
-public struct IPAddress<Family: AddressFamily>: Addressable, CIDR, Hashable, Comparable, LosslessStringConvertible, Codable {
+public struct IPAddress<Family: IPAddressFamily>: Addressable, CIDR, Hashable, Comparable, LosslessStringConvertible, Codable {
     /// The address component of this CIDR value.
     ///
     /// `address` identifies the concrete IP address being described. Together with

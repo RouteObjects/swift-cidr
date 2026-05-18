@@ -3,7 +3,7 @@
 `CIDRBenchmarkTarget` is the default public/API-facing benchmark target. It is
 split into three benchmark suites with different goals.
 
-- `parser.*` measures string-to-bits parser cost through public entry points such as `IPv4Address(...)`, `IPv6Address(...)`, `IPNetwork(...)`, and `AddressFamily.parseAddress(_:)`.
+- `parser.*` measures string-to-bits parser cost through public IP entry points such as `IPv4Address(...)`, `IPv6Address(...)`, `IPNetwork(...)`, and `IPAddressFamily.parseAddress(_:)`.
 - `formatter.*` measures bits-to-string formatter cost through public formatting APIs and includes platform `inet_ntop` baselines where useful.
 - `currency.*` measures already-constructed value operations to validate the currency-type claim for `PrefixLength`, `IPAddress`, `IPNetwork`, and the `Any*` wrappers.
 
