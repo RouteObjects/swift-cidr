@@ -81,7 +81,7 @@ Output:
 
 This is correct for `IPNetwork`, because the type represents the boundary.
 If you need to preserve the configured host address and its subnet context, use
-`IPAddress` or `CIDRConfig.InterfaceAddress`.
+`IPAddress`.
 
 ## Containment
 

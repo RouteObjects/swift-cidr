@@ -49,6 +49,82 @@ struct IPSummarizationTests {
         #expect(result[1].formatted(.addressOnly) == "192.168.1.2")
     }
 
+    @Test("Ordered summarization returns empty for reversed ranges")
+    func orderedSummarizationRejectsReversedRange() throws {
+        let low = try #require(IPv4Address("192.168.1.1"))
+        let high = try #require(IPv4Address("192.168.1.189"))
+
+        let result = IPNetwork<V4>.summarize(from: high, to: low)
+
+        #expect(result.isEmpty)
+    }
+
+    @Test("Endpoint-pair summarization normalizes reversed IPv4 endpoints")
+    func endpointPairSummarizationNormalizesReversedIPv4Endpoints() throws {
+        let low = try #require(IPv4Address("192.168.1.1"))
+        let high = try #require(IPv4Address("192.168.1.189"))
+
+        let ordered = IPNetwork<V4>.summarize(from: low, to: high).map(\.description)
+        let unordered = IPNetwork<V4>.summarize(between: high, and: low).map(\.description)
+
+        #expect(unordered == ordered)
+    }
+
+    @Test("Endpoint-pair summarization normalizes reversed IPv6 endpoints")
+    func endpointPairSummarizationNormalizesReversedIPv6Endpoints() throws {
+        let low = try #require(IPv6Address("2001:db8:0:0:0:0:0:1"))
+        let high = try #require(IPv6Address("2001:db8:0:0:0:0:0:f"))
+
+        let ordered = IPNetwork<V6>.summarize(from: low, to: high).map(\.description)
+        let unordered = IPNetwork<V6>.summarize(between: high, and: low).map(\.description)
+
+        #expect(unordered == ordered)
+    }
+
+    @Test("Network summarization covers adjacent IPv4 networks")
+    func networkSummarizationCoversAdjacentIPv4Networks() throws {
+        let first = try #require(IPv4Network("192.0.2.0/24"))
+        let second = try #require(IPv4Network("192.0.3.0/24"))
+
+        let result = IPv4Network.summarize(covering: first, and: second).map(\.description)
+
+        #expect(result == ["192.0.2.0/23"])
+    }
+
+    @Test("Network summarization is independent of argument order")
+    func networkSummarizationIsIndependentOfArgumentOrder() throws {
+        let first = try #require(IPv4Network("192.0.2.0/24"))
+        let second = try #require(IPv4Network("192.0.3.0/24"))
+
+        let ordered = IPv4Network.summarize(covering: first, and: second).map(\.description)
+        let reversed = IPv4Network.summarize(covering: second, and: first).map(\.description)
+
+        #expect(reversed == ordered)
+    }
+
+    @Test("Network summarization covers nested IPv4 networks")
+    func networkSummarizationCoversNestedIPv4Networks() throws {
+        let outer = try #require(IPv4Network("10.0.0.0/24"))
+        let inner = try #require(IPv4Network("10.0.0.0/25"))
+
+        let result = IPv4Network.summarize(covering: outer, and: inner).map(\.description)
+
+        #expect(result == ["10.0.0.0/24"])
+    }
+
+    @Test("Network summarization covers adjacent IPv6 networks")
+    func networkSummarizationCoversAdjacentIPv6Networks() throws {
+        let first = try #require(IPv6Network("2001:db8::/127"))
+        let second = try #require(IPv6Network("2001:db8::2/127"))
+
+        let result = IPv6Network.summarize(covering: first, and: second)
+
+        #expect(result.count == 1)
+        #expect(result[0].prefixLength.intValue == 126)
+        #expect(result[0].first.address == first.first.address)
+        #expect(result[0].last.address == second.last.address)
+    }
+
     @Test("Single address range results in one /32")
     func singleAddressSummarization() throws {
         let addr = try #require(IPv4Address("10.0.0.1"))

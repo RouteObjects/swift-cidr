@@ -12,13 +12,10 @@ attached subnet.
 
 ```swift
 import CIDR
-import CIDRConfig
 
 if let configured = IPv4Address("192.0.2.10/24") {
-    let interface = InterfaceAddress(host: configured)
-
-    print(interface.host.description)
-    print(interface.network.description)
+    print(configured.description)
+    print(configured.network.description)
 }
 ```
 
@@ -126,8 +123,7 @@ Choose the type that matches the context:
 
 | Context | Type |
 | --- | --- |
-| Host address with prefix context | `IPAddress<Family>` |
-| Interface assignment | `CIDRConfig.InterfaceAddress<Family>` |
+| Host or interface address with prefix context | `IPAddress<Family>` |
 | Route prefix or subnet boundary | `IPNetwork<Family>` |
 | RIR-style delegated/address-space block | `CIDRBlock<Family>` |
 | Multicast group destination | `IPMulticastGroup<Family>` |

@@ -5,15 +5,28 @@
 
 `CIDR` provides value-semantic Swift types for classless Internet Protocol
 addressing: addresses, prefix lengths, networks, and endpoints that need stable
-modeling across configuration, server, and POSIX boundaries.
+modeling across routing, addressing, policy, validation, configuration, server,
+and POSIX boundaries.
 The core models are currency types: public value types intended to be
-stored, passed, and composed throughout networking code.
+stored, passed, and composed throughout network infrastructure software.
+
+**Swift for Network Control.** `swift-cidr` is a foundation for Swift
+applications that model, validate, and control IP networks. Built from the
+network model outward, it provides type-safe foundations for IP infrastructure
+software: routing, addressing, policy, validation, configuration, and
+control-plane data.
 
 `swift-cidr` brings native CIDR currency types to Swift on Server, apps,
-services, and tooling. It is not just another IP address parser: it is a typed,
-pure Swift foundation for carrying addresses, prefixes, networks, and endpoint
-values through networking systems without falling back to loosely typed strings
-or POSIX-shaped state.
+services, tooling, and network control-plane systems. It is not "Swift
+networking" in the URLSession or socket-adapter sense, and it is not just
+another IP address parser: it is a typed, pure Swift foundation for carrying
+addresses, prefixes, networks, and endpoint values through network
+infrastructure software without falling back to loosely typed strings or
+POSIX-shaped state.
+
+That scope includes routing protocols, RPKI validation, access-list builders,
+IPAM systems, NETCONF/SSH configuration tooling, ping and diagnostic utilities,
+and other systems that process high-volume IP data or control-plane state.
 
 ## Why CIDR
 
@@ -34,9 +47,10 @@ or POSIX-shaped state.
 - The core `CIDR` module stays pure Swift and dependency-free. POSIX and
   SwiftNIO support live at adapter boundaries instead of shaping the core type
   system.
-- The API is designed for Swift on Server, apps, services, and tooling: small
-  value types, explicit family metadata, predictable formatting/parsing, and
-  optional `CIDRNIO` interoperability for SwiftNIO users.
+- The API is designed for network infrastructure software: routing, addressing,
+  policy, validation, configuration, and control-plane data pipelines that need
+  small value types, explicit family metadata, predictable formatting/parsing,
+  and optional `CIDRNIO` interoperability for SwiftNIO users.
 - Performance work is measured with benchmark coverage against Swift public APIs
   and system baselines, including IPv4/IPv6 `inet_pton` parser baselines and
   IPv4/IPv6 `inet_ntop` formatter baselines.
@@ -93,14 +107,13 @@ not have deep network-architecture background:
 - [CIDR Context Use Cases](Documentation/Learning/03-cidr-context-use-cases.md)
 
 These guides explain why `swift-cidr` separates host addresses, network
-prefixes, Regional Internet Registry-style delegated CIDR blocks, interface
-configuration context, and multicast group ranges into distinct types.
+prefixes, Regional Internet Registry-style delegated CIDR blocks, and multicast
+group ranges into distinct types while leaving operational context to higher
+layers.
 
 ## Modules
 
 - `CIDR`: Core address, network, prefix, mixed-family, and endpoint types.
-- `CIDRConfig`: Interface-address configuration semantics layered on top of the
-  core CIDR model.
 - `CIDRPOSIX`: POSIX interoperability helpers for address families and
   `sockaddr` conversion.
 - `CIDRNIO`: SwiftNIO adapters for `ByteBuffer` and `SocketAddress`. Importing
@@ -212,7 +225,6 @@ Common local commands:
 
 ```bash
 swift build --target CIDR
-swift build --target CIDRConfig
 swift build --target CIDRPOSIX
 swift build --target CIDRNIO
 ./scripts/test.sh

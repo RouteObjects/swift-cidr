@@ -22,7 +22,6 @@ let package = Package(
     ],
     products: [
         .library(name: "CIDR", targets: ["CIDR"]),
-        .library(name: "CIDRConfig", targets: ["CIDRConfig"]),
         .library(name: "CIDRPOSIX", targets: ["CIDRPOSIX"]),
         .library(name: "CIDRNIO", targets: ["CIDRNIO"]),
     ],
@@ -31,10 +30,6 @@ let package = Package(
     ],
     targets: [
         .target(name: "CIDR"),
-        .target(
-            name: "CIDRConfig",
-            dependencies: ["CIDR"]
-        ),
         .target(
             name: "CIDRPOSIX",
             dependencies: ["CIDR"]
@@ -50,10 +45,6 @@ let package = Package(
         .testTarget(
             name: "CIDRTests",
             dependencies: ["CIDR"]
-        ),
-        .testTarget(
-            name: "CIDRConfigTests",
-            dependencies: ["CIDR", "CIDRConfig"]
         ),
         .testTarget(
             name: "CIDRPOSIXTests",

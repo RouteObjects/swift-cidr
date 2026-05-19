@@ -21,6 +21,11 @@
 /// alignment. Implementations of ``init(prefix:prefixLength:)`` must clear any host bits below the
 /// prefix boundary before storage. Protocol extension initializers and helpers adapt inputs and
 /// share behavior, but they do not replace the conforming type's storage-boundary invariant.
+///
+/// Because `IPPrefix` requires a canonical `Self` initializer, shared extension algorithms can
+/// construct aligned prefix results without knowing the concrete type. This is why prefix
+/// summarization lives at this abstraction level: the algorithm decomposes address ranges into
+/// canonical prefixes of the conforming type.
 public protocol IPPrefix: CIDR {
     /// The canonical prefix boundary for this value.
     ///
@@ -36,6 +41,11 @@ public protocol IPPrefix: CIDR {
     init(prefix: Family.Storage, prefixLength: PrefixLength<Family>)
 }
 
+/// Shared default operations for canonical prefix types.
+///
+/// These extension members are not protocol requirements. They are reusable algorithms and
+/// convenience factories built from the invariants required by `IPPrefix`, especially
+/// ``init(prefix:prefixLength:)``.
 public extension IPPrefix {
     var storage: Family.Storage { prefix }
 
@@ -108,9 +118,11 @@ public extension IPPrefix {
     /// result is pure CIDR math; whether any returned prefix is actually installed in a routing
     /// table or advertised by BGP is higher-layer context.
     ///
-    /// Each returned value is initialized through `Self`, so the operation preserves the concrete
-    /// `IPPrefix` type chosen by the caller. For example, calling `IPv4Network.summarize` returns
-    /// `[IPv4Network]`, not an erased or loosely typed representation.
+    /// The input parameters are addresses by design: this operation starts with an address interval,
+    /// not two pre-existing prefixes. Each returned value is initialized through `Self`, so the
+    /// operation preserves the concrete `IPPrefix` type chosen by the caller. For example, calling
+    /// `IPv4Network.summarize` returns `[IPv4Network]`, not an erased or loosely typed
+    /// representation.
     ///
     /// Example:
     ///
@@ -144,13 +156,15 @@ public extension IPPrefix {
     ///
     /// The first prefix is a `/32` because `192.168.1.1` is not aligned on a larger boundary. As
     /// the current address advances, the algorithm chooses the largest aligned prefix that does not
-    /// exceed `end`.
+    /// exceed `end`. Use `summarize(covering:and:)` when the inputs are whole network prefixes
+    /// rather than address endpoints.
     ///
     /// - Parameters:
     ///   - start: The first address in the inclusive range.
     ///   - end: The last address in the inclusive range.
-    /// - Returns: A minimal ordered list of canonical prefixes covering `start...end`, or an empty
-    ///   list when `start` is greater than `end`.
+    /// - Returns: A minimal ordered list of canonical prefixes covering `start...end`. When `start` is
+    ///   greater than `end`, the ordered range is empty, so the result is an empty list rather than an
+    ///   error.
     static func summarize(from start: IPAddress<Family>, to end: IPAddress<Family>) -> [Self] {
         let bitWidth = Family.bitWidth
         let one: Family.Storage = 1
@@ -172,5 +186,47 @@ public extension IPPrefix {
             current = next
         }
         return result
+    }
+
+    /// Summarizes two unordered endpoint addresses into the smallest set of aligned prefixes.
+    ///
+    /// Use this convenience API when the caller has two address endpoint values but does not want
+    /// endpoint order to matter, such as UI selections, imported ranges, or user-entered address
+    /// pairs. The inputs are still addresses because the operation summarizes the inclusive interval
+    /// between two endpoints.
+    ///
+    /// This method sorts by raw address storage and delegates to ``summarize(from:to:)``. The ordered
+    /// `from:to:` overload remains strict range math: `start` is the first address, `end` is the last
+    /// address, and reversed input returns an empty list.
+    ///
+    /// - Parameters:
+    ///   - first: One endpoint of the inclusive address range.
+    ///   - second: The other endpoint of the inclusive address range.
+    /// - Returns: A minimal ordered list of canonical prefixes covering the inclusive range between
+    ///   `first` and `second`.
+    static func summarize(between first: IPAddress<Family>, and second: IPAddress<Family>) -> [Self] {
+        if first.address <= second.address {
+            return summarize(from: first, to: second)
+        }
+
+        return summarize(from: second, to: first)
+    }
+
+    /// Summarizes the envelope covering two whole network prefixes.
+    ///
+    /// Use this API when the caller is aggregating existing network prefixes rather than arbitrary
+    /// host endpoints. The summarized range starts at the lower first address and ends at the higher
+    /// last address, so nested, overlapping, and reversed network arguments still cover both complete
+    /// input networks. The `covering` label is intentional: it makes clear that the full envelope of
+    /// both prefixes is summarized, not just their prefix addresses.
+    ///
+    /// - Parameters:
+    ///   - first: One network prefix to cover.
+    ///   - second: The other network prefix to cover.
+    /// - Returns: A minimal ordered list of canonical prefixes covering both complete networks.
+    static func summarize(covering first: IPNetwork<Family>, and second: IPNetwork<Family>) -> [Self] {
+        let start = first.first.address <= second.first.address ? first.first : second.first
+        let end = first.last.address >= second.last.address ? first.last : second.last
+        return summarize(from: start, to: end)
     }
 }
