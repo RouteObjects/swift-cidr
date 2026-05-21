@@ -11,15 +11,18 @@
 //
 //===----------------------------------------------------------------------===//
 
-/// A transport-layer port number stored independently from registry metadata.
+/// A transport-layer numeric port number.
 ///
-/// The name stays `TransportPort` rather than `ServicePort` because the value is the numeric port
-/// itself, not an IANA service-name record. The
+/// `Port` stores only the 16-bit numeric port value used by transport protocols such as TCP and
+/// UDP. It does not model an IANA service-name registration, transport protocol selection, socket
+/// metadata, or a physical/interface port. The
 /// [IANA Service Name and Port Number registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)
-/// is useful reference data layered on top of this scalar value.
-public struct TransportPort: Sendable, Hashable, Codable {
+/// is useful reference data layered above this core currency type.
+public struct Port: Sendable, Hashable, Codable {
+    /// The raw 16-bit numeric port value.
     public let rawValue: UInt16
 
+    /// Creates a port from a raw 16-bit numeric value.
     public init(_ rawValue: UInt16) {
         self.rawValue = rawValue
     }
@@ -27,17 +30,17 @@ public struct TransportPort: Sendable, Hashable, Codable {
 
 /// A transport-agnostic IP endpoint composed from an IP address and port.
 ///
-/// `IPEndpoint` intentionally models only `IPAddress + TransportPort`. It does not include a
-/// transport protocol such as TCP or UDP, because that choice belongs one layer above this
-/// transport-neutral currency type.
+/// `IPEndpoint` intentionally models only `IPAddress + Port`. It does not include a transport
+/// protocol such as TCP or UDP, because that choice belongs one layer above this transport-neutral
+/// currency type.
 ///
 /// IPv4 endpoints format as `192.0.2.1/24:53`.
 /// IPv6 endpoints format as `[2001:db8:0:0:0:0:0:1/64]:443`.
 public struct IPEndpoint<Family: IPAddressFamily>: Sendable, Hashable, Codable, CustomStringConvertible, LosslessStringConvertible {
     public let address: IPAddress<Family>
-    public let port: TransportPort
+    public let port: Port
 
-    public init(address: IPAddress<Family>, port: TransportPort) {
+    public init(address: IPAddress<Family>, port: Port) {
         self.address = address
         self.port = port
     }
@@ -95,8 +98,8 @@ public struct IPEndpoint<Family: IPAddressFamily>: Sendable, Hashable, Codable, 
 }
 
 private extension IPEndpoint {
-    static func parsePort(_ description: Substring) -> TransportPort? {
+    static func parsePort(_ description: Substring) -> Port? {
         guard let rawValue = UInt16(String(description)) else { return nil }
-        return TransportPort(rawValue)
+        return Port(rawValue)
     }
 }

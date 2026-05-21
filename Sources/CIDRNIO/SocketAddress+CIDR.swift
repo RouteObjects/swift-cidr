@@ -38,7 +38,7 @@ public enum NIOSocketAddressConversionError: Error, Sendable, Equatable {
     case unsupportedIPv6Metadata(flowInfo: UInt32, scopeID: UInt32)
 }
 
-public extension TransportPort {
+public extension Port {
     init?(nioPort: Int) {
         guard let rawValue = UInt16(exactly: nioPort) else { return nil }
         self.init(rawValue)
@@ -57,7 +57,7 @@ public extension IPEndpoint where Family == AF.V4 {
         case .v4(let address):
             self.init(
                 address: IPAddress(address: address.address.sin_addr.s_addr.bigEndian),
-                port: transportPort(fromNetworkByteOrder: address.address.sin_port)
+                port: decodePort(fromNetworkByteOrder: address.address.sin_port)
             )
         case .v6:
             throw NIOSocketAddressConversionError.notIPv4SocketAddress
@@ -109,7 +109,7 @@ public extension IPEndpoint where Family == AF.V6 {
 
             self.init(
                 address: IPAddress(address: decodeIPv6(sockaddr.sin6_addr)),
-                port: transportPort(fromNetworkByteOrder: sockaddr.sin6_port)
+                port: decodePort(fromNetworkByteOrder: sockaddr.sin6_port)
             )
         case .unixDomainSocket:
             throw NIOSocketAddressConversionError.unixDomainSocketUnsupported
@@ -166,9 +166,9 @@ private func validateIPv4SocketProjection(_ address: IPAddress<AF.V4>) throws {
     }
 }
 
-private func transportPort(fromNetworkByteOrder networkByteOrder: in_port_t) -> TransportPort {
+private func decodePort(fromNetworkByteOrder networkByteOrder: in_port_t) -> Port {
     let rawPort = Int(in_port_t(bigEndian: networkByteOrder))
-    guard let port = TransportPort(nioPort: rawPort) else {
+    guard let port = Port(nioPort: rawPort) else {
         preconditionFailure("NIO SocketAddress produced an out-of-range port: \(rawPort)")
     }
     return port

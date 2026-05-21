@@ -42,7 +42,7 @@ import NIOCore
 if let address = IPv4Address("192.0.2.10/24") {
     let endpoint = IPEndpoint(
         address: address,
-        port: TransportPort(443)
+        port: Port(443)
     )
 
     let socketAddress = try SocketAddress(ipEndpoint: endpoint)
@@ -91,7 +91,7 @@ import CIDRNIO
 if let address = IPv4Address("192.0.2.0/24") {
     let endpoint = IPEndpoint(
         address: address,
-        port: TransportPort(53)
+        port: Port(53)
     )
 
     do {

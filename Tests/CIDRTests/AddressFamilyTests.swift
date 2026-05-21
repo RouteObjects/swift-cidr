@@ -28,6 +28,18 @@ struct AddressFamilyTests {
         assertIPAddressFamily(AF.V6.self)
     }
 
+    @Test("shorthand aliases expose supported address family markers")
+    func exposesShorthandAliases() {
+        assertAddressFamily(V4.self, ianaValue: 1, bitWidth: 32, familyName: "IPv4")
+        assertAddressFamily(V6.self, ianaValue: 2, bitWidth: 128, familyName: "IPv6")
+        assertAddressFamily(ASN.self, ianaValue: 18, bitWidth: 32, familyName: "AS Number")
+        assertAddressFamily(MAC48.self, ianaValue: 16389, bitWidth: 48, familyName: "48-bit MAC")
+        assertAddressFamily(MAC64.self, ianaValue: 16390, bitWidth: 64, familyName: "64-bit MAC")
+
+        assertIPAddressFamily(V4.self)
+        assertIPAddressFamily(V6.self)
+    }
+
     @Test("AS number family parses and formats unsigned 32-bit decimal text")
     func parsesAndFormatsASNumbers() {
         #expect(AF.ASN.parseAddress("0") == 0)

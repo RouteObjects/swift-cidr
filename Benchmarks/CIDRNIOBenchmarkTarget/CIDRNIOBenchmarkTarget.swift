@@ -42,8 +42,8 @@ let benchmarks = {
     let ipv4Address = IPv4Address("192.0.2.1")!
     let ipv6Address = IPv6Address("2001:db8:0:0:0:0:0:1")!
     let ipv6CompressedAddress = IPv6Address("85a0:850a:8500:0:0:af:805a:85a")!
-    let ipv4Endpoint = IPEndpoint(address: ipv4Address, port: TransportPort(443))
-    let ipv6Endpoint = IPEndpoint(address: ipv6Address, port: TransportPort(853))
+    let ipv4Endpoint = IPEndpoint(address: ipv4Address, port: Port(443))
+    let ipv6Endpoint = IPEndpoint(address: ipv6Address, port: Port(853))
     let ipv4SocketAddress = try! SocketAddress(ipEndpoint: ipv4Endpoint)
     let ipv6SocketAddress = try! SocketAddress(ipEndpoint: ipv6Endpoint)
 

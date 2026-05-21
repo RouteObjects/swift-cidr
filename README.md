@@ -69,7 +69,8 @@ The package is organized around a family-bound core:
    `IPv4MulticastGroup` and `IPv6MulticastGroup`.
 - `AnyIPAddress`, `AnyIPNetwork`, and `AnyPrefixLength` provide mixed-family
    wrappers for boundary APIs.
-- `TransportPort` and `IPEndpoint` model transport endpoints.
+- `Port` stores numeric transport-layer port values, and `IPEndpoint` combines
+   an IP address with a port.
 
 ## Standards Grounding
 
@@ -119,9 +120,8 @@ layers.
 - `CIDRNIO`: SwiftNIO adapters for `ByteBuffer` and `SocketAddress`. Importing
   `CIDRNIO` is explicit, and the core `CIDR` target does not import `NIOCore`.
 
-Registry datasets are intentionally outside the core package. A separate
-`swift-cidr-registry` package is being prepared for authority-backed datasets
-such as IANA special-purpose and multicast registries.
+IANA registry datasets are intentionally outside the core `CIDR` package,
+keeping this package focused on value types, parsing, formatting, and CIDR math.
 
 ## Toolchains and Platforms
 
@@ -172,7 +172,7 @@ Use the interactive Linux shell when diagnosing platform-specific failures:
 import CIDR
 
 if let host = IPv4Address("192.0.2.1/24") {
-    let endpoint = IPEndpoint(address: host, port: TransportPort(53))
+    let endpoint = IPEndpoint(address: host, port: Port(53))
 
     print(host.description)
     // 192.0.2.1/24

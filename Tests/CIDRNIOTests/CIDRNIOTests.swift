@@ -24,15 +24,15 @@ import NIOCore
 
 @Suite("CIDR NIO Adapter Tests")
 struct CIDRNIOTests {
-    @Test("TransportPort nioPort conversion is lossless within UInt16 bounds")
-    func transportPortNIOConversion() {
-        let port = TransportPort(443)
+    @Test("Port nioPort conversion is lossless within UInt16 bounds")
+    func portNIOConversion() {
+        let port = Port(443)
 
         #expect(port.nioPort == 443)
-        #expect(TransportPort(nioPort: 0) == TransportPort(0))
-        #expect(TransportPort(nioPort: 65535) == TransportPort(65535))
-        #expect(TransportPort(nioPort: -1) == nil)
-        #expect(TransportPort(nioPort: 65536) == nil)
+        #expect(Port(nioPort: 0) == Port(0))
+        #expect(Port(nioPort: 65535) == Port(65535))
+        #expect(Port(nioPort: -1) == nil)
+        #expect(Port(nioPort: 65536) == nil)
     }
 
     @Test("IPv4 ByteBuffer bridge round-trips")
@@ -89,7 +89,7 @@ struct CIDRNIOTests {
     func ipv4SocketAddressBridge() throws {
         let original = IPEndpoint(
             address: try #require(IPAddress<V4>("192.0.2.1")),
-            port: TransportPort(443)
+            port: Port(443)
         )
 
         let socketAddress = try SocketAddress(ipEndpoint: original)
@@ -102,7 +102,7 @@ struct CIDRNIOTests {
     func ipv4PrefixedHostProjection() throws {
         let original = IPEndpoint(
             address: try #require(IPAddress<V4>("192.0.2.1/24")),
-            port: TransportPort(443)
+            port: Port(443)
         )
 
         let socketAddress = try SocketAddress(ipEndpoint: original)
@@ -117,7 +117,7 @@ struct CIDRNIOTests {
     func ipv6SocketAddressBridge() throws {
         let original = IPEndpoint(
             address: try #require(IPAddress<V6>("2001:db8::1")),
-            port: TransportPort(853)
+            port: Port(853)
         )
 
         let socketAddress = try SocketAddress(ipEndpoint: original)
@@ -130,7 +130,7 @@ struct CIDRNIOTests {
     func ipv6PrefixedHostProjection() throws {
         let endpoint = IPEndpoint(
             address: try #require(IPAddress<V6>("2001:db8::1/64")),
-            port: TransportPort(53)
+            port: Port(53)
         )
 
         let socketAddress = try SocketAddress(ipEndpoint: endpoint)
@@ -145,7 +145,7 @@ struct CIDRNIOTests {
     func ipv4NetworkBoundaryRejection() throws {
         let endpoint = IPEndpoint(
             address: try #require(IPAddress<V4>("192.0.2.0/24")),
-            port: TransportPort(53)
+            port: Port(53)
         )
 
         do {
@@ -160,7 +160,7 @@ struct CIDRNIOTests {
     func ipv4DirectedBroadcastRejection() throws {
         let endpoint = IPEndpoint(
             address: try #require(IPAddress<V4>("192.0.2.255/24")),
-            port: TransportPort(53)
+            port: Port(53)
         )
 
         do {
