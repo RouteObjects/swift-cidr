@@ -1,0 +1,129 @@
+/// Canonical alias for an IPv4 network in the family-bound CIDR engine.
+public typealias IPv4Network = IPNetwork<V4>
+
+/// Canonical alias for an IPv6 network in the family-bound CIDR engine.
+public typealias IPv6Network = IPNetwork<V6>
+
+/// A family-bound, prefix-aligned IP network boundary.
+///
+/// `IPNetwork` is the concrete `IPPrefix` type for ordinary unicast-style network prefixes. It
+/// stores a canonical prefix boundary: any host bits below `prefixLength` are cleared during
+/// initialization.
+///
+/// A network value describes CIDR prefix math, not operational routing state. A prefix may later be
+/// installed in a routing table, advertised by BGP, assigned to an interface context, or referenced
+/// by policy, but those are higher-layer interpretations built on top of this boundary value.
+///
+/// By conforming to `IPPrefix`, `IPNetwork` gets the shared aligned-prefix operations such as
+/// containment, subnet traversal, next-prefix calculation, and summarization.
+public struct IPNetwork<Family: AddressFamily>: IPPrefix, Hashable, LosslessStringConvertible, Codable {
+    /// The canonical prefix boundary for this network.
+    ///
+    /// The stored value is always masked by `prefixLength`, so host bits below the prefix boundary
+    /// are zero.
+    public let prefix: Family.Storage
+
+    /// The number of leading bits that identify the network prefix.
+    public let prefixLength: PrefixLength<Family>
+
+    /// Creates a canonical network from raw prefix bits and a prefix length.
+    ///
+    /// Any host bits present in `prefix` are cleared before storage. This makes
+    /// `IPNetwork(prefix: 192.0.2.77, prefixLength: 24)` equivalent to `192.0.2.0/24`.
+    public init(prefix: Family.Storage, prefixLength: PrefixLength<Family>) {
+        self.prefix = prefix & Family.Storage.networkMask(for: prefixLength.intValue)
+        self.prefixLength = prefixLength
+    }
+
+    /// Creates a canonical network from an address and raw prefix-length value.
+    ///
+    /// Returns `nil` when `rawValue` is outside the valid prefix range for `Family`.
+    public init?(address: IPAddress<Family>, prefixLength rawValue: UInt8) {
+        guard let prefix = PrefixLength<Family>(rawValue: rawValue) else { return nil }
+        self.init(address: address, prefixLength: prefix)
+    }
+
+    /// Creates the network that contains a CIDR-qualified address.
+    ///
+    /// The address value supplies both the address bits and the prefix context. The resulting
+    /// network is the canonical boundary containing that address.
+    public init(host address: IPAddress<Family>) {
+        self.init(address: address, prefixLength: address.prefixLength)
+    }
+}
+
+public extension IPNetwork where Family == AF.V4 {
+    /// Creates an IPv4 network from address text and dotted-decimal netmask text.
+    ///
+    /// This initializer accepts vendor-friendly IPv4 configuration notation such as
+    /// `address: "192.0.2.77", netmask: "255.255.255.0"` and canonicalizes the result to
+    /// `192.0.2.0/24`.
+    init?(address: String, netmask: String) {
+        guard let address = IPAddress<Family>(address),
+              let rawLength = AF.V4.prefixLength(fromNetmask: netmask),
+              let prefixLength = PrefixLength<Family>(rawLength)
+        else {
+            return nil
+        }
+
+        self.init(address: address, prefixLength: prefixLength)
+    }
+}
+
+extension IPNetwork {
+    /// Creates a canonical network from CIDR notation.
+    ///
+    /// The address portion may include host bits; the resulting `IPNetwork` stores the canonical
+    /// prefix boundary.
+    public init?(_ string: String) {
+        let parts = string.split(separator: "/", maxSplits: 1, omittingEmptySubsequences: false)
+        guard parts.count == 2,
+              let prefixLength = PrefixLength<Family>(String(parts[1])),
+              let address = IPAddress<Family>(String(parts[0]))
+        else {
+            return nil
+        }
+
+        self.init(address: address, prefixLength: prefixLength)
+    }
+}
+
+extension IPNetwork {
+    public init(from decoder: any Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let description = try container.decode(String.self)
+        guard let network = Self(description) else {
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid \(Family.familyName) network '\(description)'.")
+        }
+        self = network
+    }
+
+    public func encode(to encoder: any Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(description)
+    }
+}
+
+extension IPNetwork: Sequence {
+    /// The address type yielded when iterating every address in the represented range.
+    public typealias Element = IPAddress<Family>
+
+    /// Returns an iterator over every address in the network range.
+    ///
+    /// Iteration walks from `first` through `last`. Large networks may contain many addresses, so
+    /// prefer containment or subnet operations when enumeration is not explicitly required.
+    public func makeIterator() -> AnyIterator<Element> {
+        var current = first.address
+        let end = last.address
+        var finished = false
+        return AnyIterator {
+            guard !finished else { return nil }
+            let element = Element(address: current)
+            if current == end { finished = true; return element }
+            let (next, overflow) = current.addingReportingOverflow(1)
+            precondition(!overflow)
+            current = next
+            return element
+        }
+    }
+}

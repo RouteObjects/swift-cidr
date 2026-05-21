@@ -1,0 +1,77 @@
+/// A canonical, prefix-aligned CIDR range without subnet or host semantics.
+///
+/// `CIDRBlock` is the neutral range form: it knows the address family, prefix bits, first address,
+/// last address, containment, and overlap. It intentionally does not model operational network
+/// concepts such as broadcast addresses, usable hosts, gateways, or subnet allocation policy.
+///
+/// See [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632) for Classless Inter-Domain
+/// Routing notation and aggregation context.
+public struct CIDRBlock<Family: AddressFamily>: CIDR, Hashable, LosslessStringConvertible, Codable {
+    public let prefix: Family.Storage
+    public let prefixLength: PrefixLength<Family>
+
+    public var block: Family.Storage { prefix }
+
+    public init(prefix: Family.Storage, prefixLength: PrefixLength<Family>) {
+        self.prefix = prefix & Family.Storage.networkMask(for: prefixLength.intValue)
+        self.prefixLength = prefixLength
+    }
+}
+
+public extension CIDRBlock {
+    /// The first address in the represented range.
+    var firstAddress: IPAddress<Family> {
+        first
+    }
+
+    /// The last address in the represented range.
+    var lastAddress: IPAddress<Family> {
+        last
+    }
+
+    /// The number of addresses in the represented range when it fits in `UInt128`.
+    var rangeSizeIfRepresentable: UInt128? {
+        let hostBits = Family.bitWidth - prefixBits
+        guard hostBits < UInt128.bitWidth else { return nil }
+        return UInt128(1) << hostBits
+    }
+
+    func contains(_ address: IPAddress<Family>) -> Bool {
+        (address.address & mask) == prefix
+    }
+
+    func contains(_ other: CIDRBlock<Family>) -> Bool {
+        other.prefixLength >= prefixLength && contains(other.firstAddress)
+    }
+
+    func overlaps(_ other: CIDRBlock<Family>) -> Bool {
+        firstAddress.address <= other.lastAddress.address && other.firstAddress.address <= lastAddress.address
+    }
+
+    func isWithin(_ other: CIDRBlock<Family>) -> Bool {
+        other.contains(self)
+    }
+}
+
+extension CIDRBlock {
+    public init?(_ description: String) {
+        guard let address = IPAddress<Family>(description) else { return nil }
+        self.init(prefix: address.address, prefixLength: address.prefixLength)
+    }
+}
+
+extension CIDRBlock {
+    public init(from decoder: any Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let description = try container.decode(String.self)
+        guard let block = Self(description) else {
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid \(Family.familyName) CIDR block '\(description)'.")
+        }
+        self = block
+    }
+
+    public func encode(to encoder: any Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(description)
+    }
+}

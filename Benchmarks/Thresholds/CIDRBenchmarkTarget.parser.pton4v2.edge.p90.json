@@ -1,0 +1,11 @@
+{
+  "mallocCountLarge" : 0,
+  "mallocCountSmall" : 4000,
+  "mallocCountTotal" : 4000,
+  "objectAllocCount" : 4000,
+  "releaseCount" : 6000,
+  "retainCount" : 0,
+  "retainReleaseDelta" : 2000,
+  "throughput" : 1601,
+  "wallClock" : 664575
+}
