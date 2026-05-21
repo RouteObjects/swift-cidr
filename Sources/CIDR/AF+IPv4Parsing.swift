@@ -11,11 +11,16 @@
 //
 //===----------------------------------------------------------------------===//
 
+@usableFromInline
 struct IPv4CIDRParseResult: Sendable, Equatable {
+    @usableFromInline
     let address: UInt32
+    @usableFromInline
     let prefixLength: UInt8
+    @usableFromInline
     let hasExplicitPrefix: Bool
 
+    @usableFromInline
     init(address: UInt32, prefixLength: UInt8, hasExplicitPrefix: Bool) {
         self.address = address
         self.prefixLength = prefixLength
@@ -36,6 +41,7 @@ extension AF {
         }
     }
 
+    @usableFromInline
     internal static func parseIPv4CIDRTextSuffix(
         _ string: String,
         requiresPrefix: Bool

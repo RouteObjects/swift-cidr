@@ -154,7 +154,8 @@ The Linux wrapper uses the official Swift Docker image and defaults to
 smoke test, but `linux/amd64` remains the closer CI match.
 
 Documentation-only, comments-only, example-only, and learning-material changes
-do not require benchmark evidence.
+do not require benchmark evidence when they do not also change Swift source,
+package manifests, target organization, or benchmark configuration.
 
 ## Performance Requirements
 
@@ -162,8 +163,16 @@ Performance is part of the public contract for `swift-cidr`.
 
 Benchmark evidence is REQUIRED for changes that affect parser paths, formatter
 paths, currency-type operations, allocation behavior, low-level byte handling,
-or other hot-path code. The benchmark result should show the same or better
-performance, or no regression beyond configured thresholds.
+or other hot-path code. Benchmark evidence is also required for changes that
+affect generic protocols or protocol extensions, public API shape, access
+control, `@inlinable`, `@usableFromInline`, SPI, hot-path value types such as
+`IPAddress`, `IPNetwork`, and `PrefixLength`, package or module boundaries, or
+benchmark target organization. The benchmark result should show the same or
+better performance, or no regression beyond configured thresholds.
+
+The source-level dependency graph is not always the compiler optimization
+dependency graph. A change that looks unrelated to a benchmarked line of code
+can still alter specialization, inlining, or code layout in the compiled module.
 
 From the repository root:
 

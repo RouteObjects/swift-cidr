@@ -96,6 +96,8 @@ public struct IPAddress<Family: IPAddressFamily>: Addressable, CIDR, Hashable, C
     ///
     /// This makes sorting stable when two values contain the same address but carry different
     /// prefix lengths.
+    @inlinable
+    @inline(__always)
     public static func < (lhs: IPAddress, rhs: IPAddress) -> Bool {
         lhs.address == rhs.address
         ? lhs.prefixLength < rhs.prefixLength
