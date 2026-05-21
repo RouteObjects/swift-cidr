@@ -65,7 +65,6 @@ test)
         set -euo pipefail
         swift --version
         swift build --target CIDR
-        swift build --target CIDRConfig
         swift build --target CIDRPOSIX
         swift build --target CIDRNIO
         ./scripts/test.sh

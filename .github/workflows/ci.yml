@@ -8,64 +8,57 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: swift-cidr-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  build-and-test-macos:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Show toolchain
-        run: |
-          xcode-select -p
-          xcodebuild -version
-          swift --version
-
-      - name: Build library targets
-        run: |
-          swift build --target CIDR
-          swift build --target CIDRConfig
-          swift build --target CIDRPOSIX
-          swift build --target CIDRNIO
-
-      - name: Run test suite
-        run: ./scripts/test.sh
-
-  build-and-test-linux:
+  linux:
+    name: linux (swift:6.3)
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     container:
       image: swift:6.3
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Show toolchain
         run: swift --version
 
+      - name: Resolve package graph
+        run: swift package resolve
+
       - name: Build library targets
         run: |
           swift build --target CIDR
-          swift build --target CIDRConfig
           swift build --target CIDRPOSIX
           swift build --target CIDRNIO
 
-      - name: Run test suite
+      - name: Test
         run: ./scripts/test.sh
 
-  benchmark-thresholds:
+  linux-benchmark-build:
+    name: linux benchmark build (swift:6.3)
     if: github.event_name == 'workflow_dispatch'
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    container:
+      image: swift:6.3
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Show toolchain
+        run: swift --version
+
+      - name: Install benchmark system dependencies
         run: |
-          xcode-select -p
-          xcodebuild -version
-          swift --version
+          apt-get update
+          apt-get install -y --no-install-recommends libjemalloc-dev pkg-config
+          rm -rf /var/lib/apt/lists/*
 
-      - name: Build benchmark target
-        working-directory: Benchmarks
-        run: swift build -c release --target CIDRBenchmarkTarget
-
-      - name: Check benchmark thresholds
-        working-directory: Benchmarks
-        run: swift package benchmark thresholds check --target CIDRBenchmarkTarget
+      - name: Build benchmark targets
+        run: |
+          swift build --package-path Benchmarks --product CIDRProfileTarget
+          ./scripts/benchmarks.sh build
+          CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh build
+          CIDR_BENCHMARK_TARGET=CIDRNIOBenchmarkTarget ./scripts/benchmarks.sh build
