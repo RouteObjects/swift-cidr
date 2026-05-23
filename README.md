@@ -3,6 +3,9 @@
   &nbsp;CIDR
 </h1>
 
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FRouteObjects%2Fswift-cidr%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/RouteObjects/swift-cidr)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FRouteObjects%2Fswift-cidr%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/RouteObjects/swift-cidr)
+
 `CIDR` provides value-semantic Swift types for classless Internet Protocol
 addressing: addresses, prefix lengths, networks, and endpoints that need stable
 modeling across routing, addressing, policy, validation, configuration, server,

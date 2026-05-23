@@ -1,0 +1,10 @@
+# Swift Package Index manifest.
+# This opts into SPI-hosted DocC documentation for the public package targets.
+version: 1
+builder:
+  configs:
+    - documentation_targets:
+        # The first target is the documentation landing target.
+        - CIDR
+        - CIDRPOSIX
+        - CIDRNIO
