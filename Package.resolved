@@ -1,5 +1,5 @@
 {
-  "originHash" : "f9ff494d203886a9b6ebb88d9f28f8cbf79c9fc98b6c76351e5463727ae4e6af",
+  "originHash" : "889431d6d7c6eec406f4dc76523d9b19e034da7a10266001bfea25f35be36182",
   "pins" : [
     {
       "identity" : "swift-atomics",
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-nio.git",
       "state" : {
-        "revision" : "f71c8d2a5e74a2c6d11a0fbe324774b5d6084237",
-        "version" : "2.99.0"
+        "revision" : "77b84ac2cd2ac9e4ac67d19f045fd5b434f56967",
+        "version" : "2.101.0"
       }
     },
     {
