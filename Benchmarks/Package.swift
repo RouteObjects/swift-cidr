@@ -28,7 +28,7 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "swift-cidr", path: ".."),
-        .package(url: "https://github.com/apple/swift-nio.git", from: "2.89.0"),
+        .package(url: "https://github.com/apple/swift-nio.git", from: "2.100.0"),
         .package(url: "https://github.com/ordo-one/package-benchmark.git", from: "1.32.0"),
     ],
     targets: [

@@ -26,7 +26,7 @@ let package = Package(
         .library(name: "CIDRNIO", targets: ["CIDRNIO"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-nio.git", from: "2.81.0"),
+        .package(url: "https://github.com/apple/swift-nio.git", from: "2.100.0"),
     ],
     targets: [
         .target(name: "CIDR"),
