@@ -13,11 +13,11 @@ and POSIX boundaries.
 The core models are currency types: public value types intended to be
 stored, passed, and composed throughout network infrastructure software.
 
-**Swift for Network Control.** `swift-cidr` is a foundation for Swift
-applications that model, validate, and control IP networks. Built from the
-network model outward, it provides type-safe foundations for IP infrastructure
-software: routing, addressing, policy, validation, configuration, and
-control-plane data.
+**Swift for Network Infrastructure.** `swift-cidr` is a foundation for Swift
+applications that model, validate, configure, and operate on IP networks. Built
+from the network model outward, it provides type-safe foundations for IP
+infrastructure software: routing, addressing, policy, validation,
+configuration, and control-plane data.
 
 `swift-cidr` brings native CIDR currency types to Swift on Server, apps,
 services, tooling, and network control-plane systems. It is not "Swift
@@ -33,9 +33,9 @@ and other systems that process high-volume IP data or control-plane state.
 
 ## Why CIDR
 
-- Family-safe APIs make IPv4 and IPv6 boundaries explicit with
-  `IPAddress<AF.V4>`, `IPAddress<AF.V6>`, `IPNetwork<AF.V4>`, and
-  `IPNetwork<AF.V6>`.
+- Family-safe APIs expose familiar IPv4 and IPv6 names like `IPv4Address`,
+  `IPv6Address`, `IPv4Network`, and `IPv6Network`, while keeping
+  address-family boundaries explicit in the type system.
 - `AddressFamily` models selected IANA address-family values as compile-time
   traits instead of runtime tags, carrying storage width, parser, formatter, and
   IANA family metadata in the type system.
@@ -90,6 +90,11 @@ terminology rather than package-specific interpretations:
 - [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632) defines Classless
   Inter-Domain Routing notation, aggregation context, and the registry
   distinction between allocation and assignment.
+- [RFC 7020](https://datatracker.ietf.org/doc/html/rfc7020) describes the
+  Internet Numbers Registry System for globally unique IP address space and AS
+  numbers; that registry and delegation context is why `CIDRBlock` exists as a
+  neutral address-space block separate from host addresses and configured
+  network prefixes.
 - [RFC 5952](https://datatracker.ietf.org/doc/html/rfc5952) guides compressed
   IPv6 text formatting.
 - [RFC 2622](https://datatracker.ietf.org/doc/html/rfc2622#section-2) defines
