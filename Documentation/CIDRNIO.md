@@ -10,6 +10,8 @@ The module currently provides:
 - Direct IPv6 address-literal formatting into `ByteBuffer`.
 - `IPEndpoint` <-> `SocketAddress` bridges using explicit socket-identity
   projection rules.
+- `AnyIPAddress` construction from `SocketAddress` for mixed-family admission
+  and policy code.
 
 `CIDRNIO` is intentionally strict. It rejects conversions that would silently
 ignore IPv4 network or directed-broadcast boundaries, or IPv6 socket metadata
@@ -66,6 +68,20 @@ print(endpoint.description)
 `SocketAddress` does not carry CIDR prefix context. Outbound conversion
 therefore projects only address bits plus port, and inbound conversion
 materializes `/32` for IPv4 or `/128` for IPv6.
+
+## SocketAddress To AnyIPAddress
+
+```swift
+import CIDR
+import CIDRNIO
+import NIOCore
+
+let socketAddress = try SocketAddress(ipAddress: "192.0.2.10", port: 443)
+let address = try AnyIPAddress(socketAddress: socketAddress)
+
+print(address.description)
+// 192.0.2.10/32
+```
 
 ## Direct IPv6 Formatting To ByteBuffer
 

@@ -149,6 +149,24 @@ public extension SocketAddress {
     }
 }
 
+public extension AnyIPAddress {
+    /// Creates a family-erased IP address from a `SocketAddress`.
+    ///
+    /// `SocketAddress` does not carry CIDR prefix context, so IPv4 socket identities are
+    /// materialized as `/32` and IPv6 socket identities are materialized as `/128`.
+    init(socketAddress: SocketAddress) throws {
+        // CHANGE: reuse the existing endpoint bridges so SocketAddress metadata validation stays centralized.
+        switch socketAddress {
+        case .v4:
+            self = .v4(try IPEndpoint<AF.V4>(socketAddress: socketAddress).address)
+        case .v6:
+            self = .v6(try IPEndpoint<AF.V6>(socketAddress: socketAddress).address)
+        case .unixDomainSocket:
+            throw NIOSocketAddressConversionError.unixDomainSocketUnsupported
+        }
+    }
+}
+
 private func validateIPv4SocketProjection(_ address: IPAddress<AF.V4>) throws {
     guard address.prefixLength.intValue < AF.V4.bitWidth else { return }
 

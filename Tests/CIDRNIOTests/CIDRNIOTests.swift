@@ -98,6 +98,14 @@ struct CIDRNIOTests {
         #expect(roundTrip == original)
     }
 
+    @Test("IPv4 SocketAddress converts to family-erased address")
+    func ipv4SocketAddressToAnyIPAddress() throws {
+        let socketAddress = try SocketAddress(ipAddress: "192.0.2.1", port: 443)
+        let address = try AnyIPAddress(socketAddress: socketAddress)
+
+        #expect(address == AnyIPAddress(try #require(IPv4Address("192.0.2.1/32"))))
+    }
+
     @Test("Prefixed IPv4 host addresses project to SocketAddress and round-trip as /32")
     func ipv4PrefixedHostProjection() throws {
         let original = IPEndpoint(
@@ -124,6 +132,14 @@ struct CIDRNIOTests {
         let roundTrip = try IPEndpoint<V6>(socketAddress: socketAddress)
 
         #expect(roundTrip == original)
+    }
+
+    @Test("IPv6 SocketAddress converts to family-erased address")
+    func ipv6SocketAddressToAnyIPAddress() throws {
+        let socketAddress = try SocketAddress(ipAddress: "2001:db8::1", port: 443)
+        let address = try AnyIPAddress(socketAddress: socketAddress)
+
+        #expect(address == AnyIPAddress(try #require(IPv6Address("2001:db8::1/128"))))
     }
 
     @Test("Prefixed IPv6 host addresses project to SocketAddress and round-trip as /128")
@@ -205,6 +221,13 @@ struct CIDRNIOTests {
         } catch let error as NIOSocketAddressConversionError {
             #expect(error == .unixDomainSocketUnsupported)
         }
+
+        do {
+            _ = try AnyIPAddress(socketAddress: socketAddress)
+            Issue.record("Expected Unix domain socket address conversion to throw.")
+        } catch let error as NIOSocketAddressConversionError {
+            #expect(error == .unixDomainSocketUnsupported)
+        }
     }
 
     @Test("IPv6 scope ID metadata is rejected")
@@ -215,6 +238,13 @@ struct CIDRNIOTests {
         do {
             _ = try IPEndpoint<V6>(socketAddress: socketAddress)
             Issue.record("Expected IPv6 scope ID metadata to be rejected.")
+        } catch let error as NIOSocketAddressConversionError {
+            #expect(error == .unsupportedIPv6Metadata(flowInfo: 0, scopeID: 7))
+        }
+
+        do {
+            _ = try AnyIPAddress(socketAddress: socketAddress)
+            Issue.record("Expected IPv6 scope ID metadata to be rejected for erased addresses.")
         } catch let error as NIOSocketAddressConversionError {
             #expect(error == .unsupportedIPv6Metadata(flowInfo: 0, scopeID: 7))
         }
