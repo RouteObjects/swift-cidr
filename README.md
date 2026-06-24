@@ -298,10 +298,10 @@ Benchmark details live in [Benchmarks/README.md](Benchmarks/README.md), and the
 root wrapper script lives at [scripts/benchmarks.sh](scripts/benchmarks.sh).
 Benchmark tooling is intentionally isolated in the nested `Benchmarks` package
 so normal library builds, tests, and non-macOS Apple destinations do not pull
-in `package-benchmark`.
-Linux remains part of normal build/test CI, but benchmark-threshold validation is
-currently treated as a macOS workflow because `package-benchmark` relies on ARC
-hooks that are fragile on Linux with Swift 6.3.
+in Benchmark.
+Linux remains part of normal build/test CI, and the opt-in Linux benchmark job
+checks benchmark target compilation. Benchmark-threshold validation remains a
+local/macOS workflow unless it is explicitly run on Linux.
 
 ## License
 

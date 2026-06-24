@@ -24,7 +24,7 @@ source "${SCRIPT_DIR}/swift-testing-support.sh"
 
 usage() {
     cat <<EOF
-Usage: ./scripts/benchmarks.sh <command> [swift-package-benchmark args...]
+Usage: ./scripts/benchmarks.sh <command> [swift package benchmark args...]
 
 Commands:
   build    Build the benchmark target in release mode

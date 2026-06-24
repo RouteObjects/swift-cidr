@@ -73,9 +73,6 @@ test)
 benchmark-build)
     exec docker "${docker_args[@]}" bash -lc '
         set -euo pipefail
-        apt-get update
-        apt-get install -y --no-install-recommends libjemalloc-dev pkg-config
-        rm -rf /var/lib/apt/lists/*
         swift build --package-path Benchmarks --product CIDRProfileTarget
         ./scripts/benchmarks.sh build
         CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh build

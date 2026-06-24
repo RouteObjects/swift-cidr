@@ -209,9 +209,9 @@ Desktop timings as authoritative performance evidence:
 ./scripts/linux-test.sh benchmark-build
 ```
 
-This benchmark build mode installs the Linux `jemalloc` development headers
-inside the ephemeral Docker container because `package-benchmark` uses them for
-allocation metrics on Linux.
+This benchmark build mode uses Benchmark 1.35+'s malloc interposer for
+allocation metrics and should not need benchmark-specific system packages in
+the ephemeral Docker container.
 
 Threshold updates MUST be intentional and reviewed. If a change deliberately
 trades performance for correctness, portability, or API clarity, explain that
