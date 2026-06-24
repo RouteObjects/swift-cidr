@@ -50,12 +50,6 @@ jobs:
       - name: Show toolchain
         run: swift --version
 
-      - name: Install benchmark system dependencies
-        run: |
-          apt-get update
-          apt-get install -y --no-install-recommends libjemalloc-dev pkg-config
-          rm -rf /var/lib/apt/lists/*
-
       - name: Build benchmark targets
         run: |
           swift build --package-path Benchmarks --product CIDRProfileTarget

@@ -1,6 +1,15 @@
 {
-  "originHash" : "c3044102756bf1e3a2ec2c1cc68d39d9ca290320dfb69d308df49080169b5569",
+  "originHash" : "15732820017cbe15f0003121efe6adfd86fb8ba918f8ae66ffb9878582ac50c4",
   "pins" : [
+    {
+      "identity" : "benchmark",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ordo-one/benchmark.git",
+      "state" : {
+        "revision" : "4b9ef5663e9c270419351a20392bf77b007f37f6",
+        "version" : "1.35.0"
+      }
+    },
     {
       "identity" : "hdrhistogram-swift",
       "kind" : "remoteSourceControl",
@@ -11,21 +20,12 @@
       }
     },
     {
-      "identity" : "package-benchmark",
+      "identity" : "malloc-interposer",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ordo-one/package-benchmark.git",
+      "location" : "https://github.com/ordo-one/malloc-interposer.git",
       "state" : {
-        "revision" : "873f6fd4c3ccbbe6e6f43626c0189c8e68368db6",
-        "version" : "1.32.0"
-      }
-    },
-    {
-      "identity" : "package-jemalloc",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ordo-one/package-jemalloc.git",
-      "state" : {
-        "revision" : "e8a5db026963f5bfeac842d9d3f2cc8cde323b49",
-        "version" : "1.0.0"
+        "revision" : "8ce418ba70e494577fdc046be8c8ddb5216f16e5",
+        "version" : "1.3.1"
       }
     },
     {
@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-argument-parser.git",
       "state" : {
-        "revision" : "011f0c765fb46d9cac61bca19be0527e99c98c8b",
-        "version" : "1.5.1"
+        "revision" : "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+        "version" : "1.8.2"
       }
     },
     {

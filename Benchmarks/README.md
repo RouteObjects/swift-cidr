@@ -95,7 +95,7 @@ CIDR_BENCHMARK_TARGET=CIDRNIOBenchmarkTarget ./scripts/benchmarks.sh run
 
 ## Profiling Target
 
-`CIDRProfileTarget` is a profiling CLI, not a `package-benchmark` suite. It
+`CIDRProfileTarget` is a profiling CLI, not a Benchmark suite. It
 lives under `Tools/` so `swift package benchmark` does not auto-discover it as a
 benchmark target.
 

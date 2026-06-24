@@ -14,7 +14,7 @@
 
 /// A focused profiling executable for the IPv6 compressed formatter hot path.
 ///
-/// `CIDRProfileTarget` is intentionally not a `package-benchmark` benchmark
+/// `CIDRProfileTarget` is intentionally not a `swift package benchmark`
 /// suite. It exists for Instruments and `xctrace` sessions that need a tight,
 /// repeatable loop around one formatter scenario without the benchmark harness
 /// in the sample stack.

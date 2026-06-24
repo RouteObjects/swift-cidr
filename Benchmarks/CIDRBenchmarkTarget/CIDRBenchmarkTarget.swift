@@ -152,7 +152,7 @@ let benchmarks = {
     func parserConfiguration(tags _: [String: String] = [:]) -> Benchmark.Configuration {
         .init(
             metrics: parserMetrics,
-            tags: [:], // package-benchmark threshold files are read back by target+name only, so benchmark tags must stay empty to keep threshold filenames discoverable.
+            tags: [:], // Benchmark threshold files are read back by target+name only, so benchmark tags must stay empty to keep threshold filenames discoverable.
             warmupIterations: 3,
             scalingFactor: .kilo,
             maxDuration: .seconds(2),
