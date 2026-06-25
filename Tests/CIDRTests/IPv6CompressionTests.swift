@@ -119,4 +119,33 @@ struct IPv6CompressionTests {
 
         #expect(IPv6ZeroSequenceFinder.longestZeroSequenceRange(in: words) == nil)
     }
+
+    @Test("Raw UTF-8 compressed writer emits expected IPv6 literals")
+    func rawUTF8CompressedWriterMatchesExpectedLiterals() throws {
+        let mappedAddress = (UInt128(0xFFFF) << 32) | UInt128(0xC0000201)
+        let cases: [(UInt128, String)] = [
+            (0, "::"),
+            (1, "::1"),
+            (UInt128.max, "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff"),
+            (0x85a0_850a_8500_0000_0000_00af_805a_085a, "85a0:850a:8500::af:805a:85a"),
+            ((UInt128(0x20010DB8) << 96) | (UInt128(1) << 80), "2001:db8:1::"),
+            (mappedAddress, "::ffff:c000:201"),
+        ]
+
+        for (address, expected) in cases {
+            #expect(rawCompressedIPv6Literal(address) == expected)
+        }
+    }
+
+    private func rawCompressedIPv6Literal(_ address: UInt128) -> String {
+        var storage = [UInt8](
+            repeating: 0,
+            count: CIDRUTF8Writer.maximumCompressedIPv6AddressLiteralUTF8Count
+        )
+        let written = storage.withUnsafeMutableBytes { rawBuffer in
+            CIDRUTF8Writer.writeCompressedIPv6AddressLiteral(address, into: rawBuffer)
+        }
+
+        return String(decoding: storage.prefix(written), as: UTF8.self)
+    }
 }

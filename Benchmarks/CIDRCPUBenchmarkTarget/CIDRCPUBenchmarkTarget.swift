@@ -11,7 +11,7 @@
 //
 //===----------------------------------------------------------------------===//
 import Benchmark
-import CIDR
+@_spi(Benchmark) import CIDR
 
 #if canImport(Darwin)
 import Darwin
@@ -24,6 +24,23 @@ private func systemInetPton6(_ string: String) -> CInt {
     var storage = in6_addr()
     return string.withCString { source in
         inet_pton(AF_INET6, source, &storage)
+    }
+}
+
+@inline(never)
+private func benchmarkRawCompressedIPv6Formatter(_ address: UInt128, iterations: Int) {
+    // CHANGE: Measure the UTF-8 writer directly so hextet extraction changes are not hidden by String allocation.
+    withUnsafeTemporaryAllocation(
+        of: UInt8.self,
+        capacity: CIDRBenchmarkUTF8Writer.maximumCompressedIPv6AddressLiteralUTF8Count
+    ) { buffer in
+        let rawBuffer = UnsafeMutableRawBufferPointer(buffer)
+
+        for _ in 0..<iterations {
+            let written = CIDRBenchmarkUTF8Writer.writeCompressedIPv6AddressLiteral(address, into: rawBuffer)
+            blackHole(written)
+            blackHole(buffer[0])
+        }
     }
 }
 
@@ -189,6 +206,41 @@ let benchmarks = {
         for _ in 0..<20_000_000 {
             blackHole(formatterIPv6AllZero.formatted(.compressed))
         }
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv6.compressed.raw.middleCompressed2.4M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkRawCompressedIPv6Formatter(formatterIPv6MiddleCompressed2Storage, iterations: 4_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv6.compressed.raw.middleCompressed.4M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkRawCompressedIPv6Formatter(formatterIPv6MiddleCompressedStorage, iterations: 4_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv6.compressed.raw.max.4M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkRawCompressedIPv6Formatter(formatterIPv6MaxStorage, iterations: 4_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv6.compressed.raw.loopback.10M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkRawCompressedIPv6Formatter(formatterIPv6LoopbackStorage, iterations: 10_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv6.compressed.raw.allZero.20M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkRawCompressedIPv6Formatter(formatterIPv6AllZeroStorage, iterations: 20_000_000)
     }
 
     Benchmark(

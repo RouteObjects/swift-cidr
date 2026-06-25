@@ -38,6 +38,13 @@ package enum CIDRUTF8Writer {
             "IPv6 formatter buffer must have enough writable bytes for the maximum compressed IPv6 literal."
         )
         let buffer = rawBuffer.bindMemory(to: UInt8.self)
+        if address == 0 {
+            // CHANGE: Preserve the String formatter's all-zero fast path for direct UTF-8 writers too.
+            buffer[0] = asciiColon
+            buffer[1] = asciiColon
+            return 2
+        }
+
         return withIPv6Bytes(address) { addressBytes in
             // SAFETY: `withIPv6Bytes` provides a 16-byte, non-empty UInt128 byte view for this closure.
             let bytes = addressBytes.baseAddress!.assumingMemoryBound(to: UInt8.self)
@@ -186,8 +193,8 @@ extension CIDRUTF8Writer {
         into buffer: UnsafeMutableBufferPointer<UInt8>,
         at writeIndex: inout Int
     ) {
-        // Combine into a single 16-bit word
         let hextet = (UInt16(left) &<< 8) | UInt16(right)
+
         // -------------------------------------------------
         // Derive the exact digit count from the UInt16 leading-zero count, avoiding the nibble-by-nibble branch ladder.
         // Branchless math to find exact digit count (1, 2, 3, or 4)
@@ -200,22 +207,23 @@ extension CIDRUTF8Writer {
         let digitsToWrite = max(1, 4 &- (hextet.leadingZeroBitCount &>> 2))
 
         let table = lowercaseHexDigits.utf8Start
+        let value = Int(hextet)
 
         switch digitsToWrite {
         case 4:
-            buffer[writeIndex] = table[Int(hextet &>> 12)]
-            buffer[writeIndex &+ 1] = table[Int((hextet &>> 8) & 0x0F)]
-            buffer[writeIndex &+ 2] = table[Int((hextet &>> 4) & 0x0F)]
-            buffer[writeIndex &+ 3] = table[Int(hextet & 0x0F)]
+            buffer[writeIndex] = table[value >> 12]
+            buffer[writeIndex &+ 1] = table[(value >> 8) & 0x0F]
+            buffer[writeIndex &+ 2] = table[(value >> 4) & 0x0F]
+            buffer[writeIndex &+ 3] = table[value & 0x0F]
         case 3:
-            buffer[writeIndex] = table[Int((hextet &>> 8) & 0x0F)]
-            buffer[writeIndex &+ 1] = table[Int((hextet &>> 4) & 0x0F)]
-            buffer[writeIndex &+ 2] = table[Int(hextet & 0x0F)]
+            buffer[writeIndex] = table[(value >> 8) & 0x0F]
+            buffer[writeIndex &+ 1] = table[(value >> 4) & 0x0F]
+            buffer[writeIndex &+ 2] = table[value & 0x0F]
         case 2:
-            buffer[writeIndex] = table[Int((hextet &>> 4) & 0x0F)]
-            buffer[writeIndex &+ 1] = table[Int(hextet & 0x0F)]
+            buffer[writeIndex] = table[(value >> 4) & 0x0F]
+            buffer[writeIndex &+ 1] = table[value & 0x0F]
         default:
-            buffer[writeIndex] = table[Int(hextet & 0x0F)]
+            buffer[writeIndex] = table[value & 0x0F]
         }
 
         writeIndex &+= digitsToWrite
