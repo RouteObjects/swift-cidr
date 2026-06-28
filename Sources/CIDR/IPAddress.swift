@@ -256,3 +256,28 @@ extension IPAddress: Strideable {
         return advanced
     }
 }
+
+extension IPAddress {
+    @inlinable
+    @inline(__always)
+    public var addressLiteral: String {
+        Family.formatAddress(address)
+    }
+
+    @inlinable
+    @inline(__always)
+    public var description: String {
+        "\(addressLiteral)/\(prefixLength)"
+    }
+
+    @inlinable
+    @inline(__always)
+    public func formatted(_ style: CIDRTextStyle) -> String {
+        switch style {
+        case .cidrNotation:
+            return description
+        case .addressOnly:
+            return addressLiteral
+        }
+    }
+}

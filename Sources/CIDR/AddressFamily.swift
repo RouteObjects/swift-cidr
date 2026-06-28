@@ -70,6 +70,8 @@ public enum AF {
             AF.parseIPv4Text(string)
         }
 
+        @inlinable
+        @inline(__always)
         public static func formatAddress(_ address: UInt32) -> String {
             AF.formatV4(address)
         }

@@ -30,7 +30,6 @@ struct IPv4CIDRParseResult: Sendable, Equatable {
 
 extension AF {
     private static let asciiSlash = UInt8(ascii: "/")
-    private static let asciiZero = UInt8(ascii: "0")
 
     internal static func parseIPv4Text(_ string: String) -> UInt32? {
         // Copying into a var and forcing withUTF8 keeps the hot path on contiguous bytes.
