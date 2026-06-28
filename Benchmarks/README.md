@@ -31,6 +31,7 @@ From the repository root:
 
 ```bash
 ./scripts/benchmarks.sh build
+./scripts/benchmarks.sh list
 ./scripts/benchmarks.sh run
 ./scripts/benchmarks.sh check
 ./scripts/benchmarks.sh update
@@ -54,6 +55,30 @@ package so library users do not resolve benchmark-only dependencies. Raw
 root. The repository-root `./scripts/benchmarks.sh` wrapper remains the
 recommended convenience path when working from the `swift-cidr` root.
 
+## Filter Semantics
+
+Benchmark filters are Swift `Regex` whole-match patterns. They are not substring
+searches. Use `./scripts/benchmarks.sh list` to inspect exact benchmark names
+before writing a filter.
+
+Exact names work as-is:
+
+```bash
+CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh run \
+  --filter 'formatter.cpu.ipv4.raw.mixed.15M'
+```
+
+Prefix-style filters need a trailing `.*`, and contains-style filters need both
+leading and trailing `.*`:
+
+```bash
+./scripts/benchmarks.sh run --filter '^formatter\.ipv6\.compressed\..*$'
+CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh run --filter '.*bulk.*'
+```
+
+Filters such as `raw` or `^formatter\.cpu\.ipv6\.compressed\.raw\.` match
+nothing because they do not match the entire benchmark name.
+
 To graph the parser suite for wall-clock time, mallocs, and ARC retains in one pass:
 
 ```bash
@@ -74,8 +99,10 @@ To run only the IPv6 compressed formatter suite:
 
 ```bash
 CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh build
+CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh list
 CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh run
 CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh run --filter '^formatter\.cpu\.ipv6\.compressed\.swift\.middleCompressed2\.4M$'
+CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh run --filter '^formatter\.cpu\.ipv6\.compressed\.raw\.(middleCompressed2|middleCompressed|max|loopback|allZero)\..*$'
 ```
 
 The default benchmark commands remain unchanged:
