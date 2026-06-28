@@ -15,6 +15,9 @@ bridges. It is intentionally separate from the default threshold-gated target so
 `NIOCore` measurements do not add noise to core CIDR parser, formatter, or
 currency-type tracking.
 
+See [PERFORMANCE.md](PERFORMANCE.md) for a dated performance snapshot with
+measured parser, formatter, system-baseline, and bulk direct UTF-8 results.
+
 ## Platform Notes
 
 Benchmarks are intended for macOS and Linux command-line workflows. The nested
