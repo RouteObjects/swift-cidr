@@ -11,7 +11,7 @@
 //
 //===----------------------------------------------------------------------===//
 import Benchmark
-@_spi(Benchmark) import CIDR
+import CIDR
 
 #if canImport(Darwin)
 import Darwin
@@ -27,19 +27,216 @@ private func systemInetPton6(_ string: String) -> CInt {
     }
 }
 
+private let asciiSlash = UInt8(ascii: "/")
+private let asciiZero = UInt8(ascii: "0")
+private let prefixLengthDecimalTriplets: StaticString =
+    "000001002003004005006007008009010011012013014015016017018019020021022023024025026027028029030031032033034035036037038039040041042043044045046047048049050051052053054055056057058059060061062063064065066067068069070071072073074075076077078079080081082083084085086087088089090091092093094095096097098099100101102103104105106107108109110111112113114115116117118119120121122123124125126127128"
+
+@inline(__always)
+private func writeSlashPrefixLengthCurrentBenchmark(
+    _ prefixLength: Int,
+    into buffer: UnsafeMutableBufferPointer<UInt8>,
+    at writeIndex: inout Int
+) {
+    buffer[writeIndex] = asciiSlash
+    writeIndex &+= 1
+
+    if prefixLength >= 100 {
+        buffer[writeIndex] = asciiZero &+ UInt8(prefixLength / 100)
+        buffer[writeIndex &+ 1] = asciiZero &+ UInt8((prefixLength / 10) % 10)
+        buffer[writeIndex &+ 2] = asciiZero &+ UInt8(prefixLength % 10)
+        writeIndex &+= 3
+    } else if prefixLength >= 10 {
+        buffer[writeIndex] = asciiZero &+ UInt8(prefixLength / 10)
+        buffer[writeIndex &+ 1] = asciiZero &+ UInt8(prefixLength % 10)
+        writeIndex &+= 2
+    } else {
+        buffer[writeIndex] = asciiZero &+ UInt8(prefixLength)
+        writeIndex &+= 1
+    }
+}
+
+@inline(__always)
+private func writeSlashPrefixLengthTripletBenchmark(
+    _ prefixLength: UInt8,
+    into buffer: UnsafeMutableBufferPointer<UInt8>,
+    at writeIndex: inout Int
+) {
+    buffer[writeIndex] = asciiSlash
+    writeIndex &+= 1
+
+    let offset = Int(prefixLength) &* 3
+    let table = prefixLengthDecimalTriplets.utf8Start
+
+    switch prefixLength {
+    case 100...:
+        buffer[writeIndex] = table[offset]
+        buffer[writeIndex &+ 1] = table[offset &+ 1]
+        buffer[writeIndex &+ 2] = table[offset &+ 2]
+        writeIndex &+= 3
+    case 10...:
+        buffer[writeIndex] = table[offset &+ 1]
+        buffer[writeIndex &+ 1] = table[offset &+ 2]
+        writeIndex &+= 2
+    default:
+        buffer[writeIndex] = asciiZero &+ prefixLength
+        writeIndex &+= 1
+    }
+}
+
 @inline(never)
-private func benchmarkRawCompressedIPv6Formatter(_ address: UInt128, iterations: Int) {
-    // CHANGE: Measure the UTF-8 writer directly so hextet extraction changes are not hidden by String allocation.
+private func benchmarkSlashPrefixCurrent(_ prefixes: [UInt8], batches: Int) {
     withUnsafeTemporaryAllocation(
         of: UInt8.self,
-        capacity: CIDRBenchmarkUTF8Writer.maximumCompressedIPv6AddressLiteralUTF8Count
+        capacity: CIDRUTF8Formatting.maximumCompressedIPv6CIDRNotationUTF8Count
+    ) { buffer in
+        for _ in 0..<batches {
+            for prefix in prefixes {
+                var writeIndex = 0
+                writeSlashPrefixLengthCurrentBenchmark(Int(prefix), into: buffer, at: &writeIndex)
+                blackHole(writeIndex)
+                blackHole(buffer[0])
+            }
+        }
+    }
+}
+
+@inline(never)
+private func benchmarkSlashPrefixTriplet(_ prefixes: [UInt8], batches: Int) {
+    withUnsafeTemporaryAllocation(
+        of: UInt8.self,
+        capacity: CIDRUTF8Formatting.maximumCompressedIPv6CIDRNotationUTF8Count
+    ) { buffer in
+        for _ in 0..<batches {
+            for prefix in prefixes {
+                var writeIndex = 0
+                writeSlashPrefixLengthTripletBenchmark(prefix, into: buffer, at: &writeIndex)
+                blackHole(writeIndex)
+                blackHole(buffer[0])
+            }
+        }
+    }
+}
+
+@inline(never)
+private func benchmarkRawIPv4AddressFormatter(_ address: IPv4Address, iterations: Int) {
+    withUnsafeTemporaryAllocation(
+        of: UInt8.self,
+        capacity: CIDRUTF8Formatting.maximumIPv4AddressLiteralUTF8Count
     ) { buffer in
         let rawBuffer = UnsafeMutableRawBufferPointer(buffer)
 
         for _ in 0..<iterations {
-            let written = CIDRBenchmarkUTF8Writer.writeCompressedIPv6AddressLiteral(address, into: rawBuffer)
+            let written = address.writeAddressLiteralUTF8(into: rawBuffer)
             blackHole(written)
             blackHole(buffer[0])
+        }
+    }
+}
+
+@inline(never)
+private func benchmarkRawIPv4CIDRFormatter(_ address: IPv4Address, iterations: Int) {
+    withUnsafeTemporaryAllocation(
+        of: UInt8.self,
+        capacity: CIDRUTF8Formatting.maximumIPv4CIDRNotationUTF8Count
+    ) { buffer in
+        let rawBuffer = UnsafeMutableRawBufferPointer(buffer)
+
+        for _ in 0..<iterations {
+            let written = address.writeCIDRNotationUTF8(into: rawBuffer)
+            blackHole(written)
+            blackHole(buffer[0])
+        }
+    }
+}
+
+@inline(never)
+private func benchmarkRawCompressedIPv6Formatter(_ address: IPv6Address, iterations: Int) {
+    // Measure the UTF-8 writer directly so hextet extraction changes are not hidden by String allocation.
+    withUnsafeTemporaryAllocation(
+        of: UInt8.self,
+        capacity: CIDRUTF8Formatting.maximumCompressedIPv6AddressLiteralUTF8Count
+    ) { buffer in
+        let rawBuffer = UnsafeMutableRawBufferPointer(buffer)
+
+        for _ in 0..<iterations {
+            let written = address.writeCompressedAddressLiteralUTF8(into: rawBuffer)
+            blackHole(written)
+            blackHole(buffer[0])
+        }
+    }
+}
+
+@inline(never)
+private func benchmarkRawCompressedIPv6CIDRFormatter(_ address: IPv6Address, iterations: Int) {
+    withUnsafeTemporaryAllocation(
+        of: UInt8.self,
+        capacity: CIDRUTF8Formatting.maximumCompressedIPv6CIDRNotationUTF8Count
+    ) { buffer in
+        let rawBuffer = UnsafeMutableRawBufferPointer(buffer)
+
+        for _ in 0..<iterations {
+            let written = address.writeCompressedCIDRNotationUTF8(into: rawBuffer)
+            blackHole(written)
+            blackHole(buffer[0])
+        }
+    }
+}
+
+@inline(never)
+private func benchmarkBulkIPv4CIDRStringFormatter(_ addresses: [IPv4Address], batches: Int) {
+    for _ in 0..<batches {
+        for address in addresses {
+            let text = address.description
+            blackHole(text.utf8.count)
+            blackHole(text)
+        }
+    }
+}
+
+@inline(never)
+private func benchmarkBulkIPv4CIDRRawFormatter(_ addresses: [IPv4Address], batches: Int) {
+    withUnsafeTemporaryAllocation(
+        of: UInt8.self,
+        capacity: CIDRUTF8Formatting.maximumIPv4CIDRNotationUTF8Count
+    ) { buffer in
+        let rawBuffer = UnsafeMutableRawBufferPointer(buffer)
+
+        for _ in 0..<batches {
+            for address in addresses {
+                let written = address.writeCIDRNotationUTF8(into: rawBuffer)
+                blackHole(written)
+                blackHole(buffer[0])
+            }
+        }
+    }
+}
+
+@inline(never)
+private func benchmarkBulkCompressedIPv6CIDRStringFormatter(_ addresses: [IPv6Address], batches: Int) {
+    for _ in 0..<batches {
+        for address in addresses {
+            let text = "\(address.formatted(.compressed))/\(address.prefixLength)"
+            blackHole(text.utf8.count)
+            blackHole(text)
+        }
+    }
+}
+
+@inline(never)
+private func benchmarkBulkCompressedIPv6CIDRRawFormatter(_ addresses: [IPv6Address], batches: Int) {
+    withUnsafeTemporaryAllocation(
+        of: UInt8.self,
+        capacity: CIDRUTF8Formatting.maximumCompressedIPv6CIDRNotationUTF8Count
+    ) { buffer in
+        let rawBuffer = UnsafeMutableRawBufferPointer(buffer)
+
+        for _ in 0..<batches {
+            for address in addresses {
+                let written = address.writeCompressedCIDRNotationUTF8(into: rawBuffer)
+                blackHole(written)
+                blackHole(buffer[0])
+            }
         }
     }
 }
@@ -58,7 +255,7 @@ let benchmarks = {
     let ipv6HostPrefix = IPv6PrefixLength(128)!
     let middleCompressedText = "2001:0db8:85a3::8a2e:0370:7334"
 
-    // CHANGE: mirror swift-endpoint's fixed-loop IPv4 formatter cases so CPU comparisons are apples-to-apples.
+    // Mirror fixed-loop IPv4 formatter cases so CPU comparisons are apples-to-apples.
     let formatterIPv4ZeroStorage: UInt32 = 0
     let formatterIPv4LoopbackStorage: UInt32 = 0x7F00_0001
     let formatterIPv4LocalBroadcastStorage = UInt32.max
@@ -67,6 +264,10 @@ let benchmarks = {
     let formatterIPv4Loopback = IPv4Address(address: formatterIPv4LoopbackStorage)
     let formatterIPv4LocalBroadcast = IPv4Address(address: formatterIPv4LocalBroadcastStorage)
     let formatterIPv4Mixed = IPv4Address(address: formatterIPv4MixedStorage)
+    let formatterIPv4Mixed24 = IPv4Address(
+        address: formatterIPv4MixedStorage,
+        prefixLength: IPv4PrefixLength(24)!
+    )
 
     let formatterIPv6MiddleCompressed2Storage: UInt128 = 0x85a0_850a_8500_0000_0000_00af_805a_085a
     let formatterIPv6MiddleCompressedStorage: UInt128 =
@@ -90,6 +291,29 @@ let benchmarks = {
     let formatterIPv6Max = IPv6Address(address: formatterIPv6MaxStorage, prefixLength: ipv6HostPrefix)
     let formatterIPv6Loopback = IPv6Address(address: formatterIPv6LoopbackStorage, prefixLength: ipv6HostPrefix)
     let formatterIPv6AllZero = IPv6Address(address: formatterIPv6AllZeroStorage, prefixLength: ipv6HostPrefix)
+    let formatterIPv6MiddleCompressed64 = IPv6Address(
+        address: formatterIPv6MiddleCompressedStorage,
+        prefixLength: IPv6PrefixLength(64)!
+    )
+    let formatterIPv6MiddleCompressed2_48 = IPv6Address(
+        address: formatterIPv6MiddleCompressed2Storage,
+        prefixLength: IPv6PrefixLength(48)!
+    )
+    let bulkIPv4CIDRValues = [
+        formatterIPv4Zero,
+        formatterIPv4Loopback,
+        formatterIPv4LocalBroadcast,
+        formatterIPv4Mixed24,
+    ]
+    let bulkIPv6CIDRValues = [
+        formatterIPv6AllZero,
+        formatterIPv6Loopback,
+        formatterIPv6MiddleCompressed64,
+        formatterIPv6MiddleCompressed2_48,
+    ]
+    let slashPrefixIPv4Mix: [UInt8] = [0, 24, 24, 24, 30, 31, 32, 32]
+    let slashPrefixIPv6Mix: [UInt8] = [0, 48, 56, 64, 64, 96, 127, 128]
+    let slashPrefixExportMix: [UInt8] = [0, 24, 32, 48, 56, 64, 96, 128]
 
     Benchmark(
         "formatter.cpu.ipv4.public.zero.15M",
@@ -164,6 +388,34 @@ let benchmarks = {
     }
 
     Benchmark(
+        "formatter.cpu.ipv4.raw.zero.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkRawIPv4AddressFormatter(formatterIPv4Zero, iterations: 15_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv4.raw.loopback.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkRawIPv4AddressFormatter(formatterIPv4Loopback, iterations: 15_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv4.raw.localBroadcast.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkRawIPv4AddressFormatter(formatterIPv4LocalBroadcast, iterations: 15_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv4.raw.mixed.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkRawIPv4AddressFormatter(formatterIPv4Mixed, iterations: 15_000_000)
+    }
+
+    Benchmark(
         "formatter.cpu.ipv6.compressed.swift.middleCompressed2.4M",
         configuration: cpuConfiguration()
     ) { _ in
@@ -212,35 +464,121 @@ let benchmarks = {
         "formatter.cpu.ipv6.compressed.raw.middleCompressed2.4M",
         configuration: cpuConfiguration()
     ) { _ in
-        benchmarkRawCompressedIPv6Formatter(formatterIPv6MiddleCompressed2Storage, iterations: 4_000_000)
+        benchmarkRawCompressedIPv6Formatter(formatterIPv6MiddleCompressed2, iterations: 4_000_000)
     }
 
     Benchmark(
         "formatter.cpu.ipv6.compressed.raw.middleCompressed.4M",
         configuration: cpuConfiguration()
     ) { _ in
-        benchmarkRawCompressedIPv6Formatter(formatterIPv6MiddleCompressedStorage, iterations: 4_000_000)
+        benchmarkRawCompressedIPv6Formatter(formatterIPv6MiddleCompressed, iterations: 4_000_000)
     }
 
     Benchmark(
         "formatter.cpu.ipv6.compressed.raw.max.4M",
         configuration: cpuConfiguration()
     ) { _ in
-        benchmarkRawCompressedIPv6Formatter(formatterIPv6MaxStorage, iterations: 4_000_000)
+        benchmarkRawCompressedIPv6Formatter(formatterIPv6Max, iterations: 4_000_000)
     }
 
     Benchmark(
         "formatter.cpu.ipv6.compressed.raw.loopback.10M",
         configuration: cpuConfiguration()
     ) { _ in
-        benchmarkRawCompressedIPv6Formatter(formatterIPv6LoopbackStorage, iterations: 10_000_000)
+        benchmarkRawCompressedIPv6Formatter(formatterIPv6Loopback, iterations: 10_000_000)
     }
 
     Benchmark(
         "formatter.cpu.ipv6.compressed.raw.allZero.20M",
         configuration: cpuConfiguration()
     ) { _ in
-        benchmarkRawCompressedIPv6Formatter(formatterIPv6AllZeroStorage, iterations: 20_000_000)
+        benchmarkRawCompressedIPv6Formatter(formatterIPv6AllZero, iterations: 20_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv4.cidr.raw.mixed24.15M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkRawIPv4CIDRFormatter(formatterIPv4Mixed24, iterations: 15_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.ipv6.compressed.cidr.raw.middleCompressed64.4M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkRawCompressedIPv6CIDRFormatter(formatterIPv6MiddleCompressed64, iterations: 4_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.bulk.ipv4.cidr.string.1M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        // Model export-style loops that currently force one String allocation per CIDR value.
+        benchmarkBulkIPv4CIDRStringFormatter(bulkIPv4CIDRValues, batches: 250_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.bulk.ipv4.cidr.raw.1M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkBulkIPv4CIDRRawFormatter(bulkIPv4CIDRValues, batches: 250_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.bulk.ipv6.compressed.cidr.string.1M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkBulkCompressedIPv6CIDRStringFormatter(bulkIPv6CIDRValues, batches: 250_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.bulk.ipv6.compressed.cidr.raw.1M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkBulkCompressedIPv6CIDRRawFormatter(bulkIPv6CIDRValues, batches: 250_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.slashPrefix.current.ipv4Mix.80M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        // Isolate the current slash-prefix suffix writer before changing production code.
+        benchmarkSlashPrefixCurrent(slashPrefixIPv4Mix, batches: 10_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.slashPrefix.triplet.ipv4Mix.80M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkSlashPrefixTriplet(slashPrefixIPv4Mix, batches: 10_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.slashPrefix.current.ipv6Mix.80M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkSlashPrefixCurrent(slashPrefixIPv6Mix, batches: 10_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.slashPrefix.triplet.ipv6Mix.80M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkSlashPrefixTriplet(slashPrefixIPv6Mix, batches: 10_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.slashPrefix.current.exportMix.80M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkSlashPrefixCurrent(slashPrefixExportMix, batches: 10_000_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.slashPrefix.triplet.exportMix.80M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkSlashPrefixTriplet(slashPrefixExportMix, batches: 10_000_000)
     }
 
     Benchmark(
