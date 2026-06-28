@@ -28,6 +28,7 @@ Usage: ./scripts/benchmarks.sh <command> [swift package benchmark args...]
 
 Commands:
   build    Build the benchmark target in release mode
+  list     List benchmarks in the selected benchmark target
   test     Run the benchmark package tests
   run      Run the benchmark suite
   check    Check committed benchmark thresholds
@@ -37,10 +38,14 @@ Commands:
 
 Examples:
   ./scripts/benchmarks.sh build
-  ./scripts/benchmarks.sh run --filter '^parser\\.pton6v4\\.'
+  ./scripts/benchmarks.sh list
+  ./scripts/benchmarks.sh run --filter '^parser\\.pton6v4\\..*'
   ./scripts/benchmarks.sh check
   ./scripts/benchmarks.sh update --filter '^parser\\.'
   ./scripts/benchmarks.sh graph
+
+Filters are Swift Regex whole-match patterns. Use list to see benchmark names,
+then use exact filters or add trailing .* for prefix filters.
 EOF
 }
 
@@ -57,6 +62,9 @@ fi
 case "${command}" in
 build)
     exec swift build -c release --package-path "${BENCHMARK_PACKAGE_ROOT}" --target "${TARGET}" "$@"
+    ;;
+list)
+    exec swift package --package-path "${BENCHMARK_PACKAGE_ROOT}" benchmark list --target "${TARGET}" "$@"
     ;;
 test)
     benchmark_test_file=""
