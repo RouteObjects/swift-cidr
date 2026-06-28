@@ -39,7 +39,7 @@ package enum CIDRUTF8Writer {
         )
         let buffer = rawBuffer.bindMemory(to: UInt8.self)
         if address == 0 {
-            // CHANGE: Preserve the String formatter's all-zero fast path for direct UTF-8 writers too.
+            // Preserve the String formatter's all-zero fast path for direct UTF-8 writers too.
             buffer[0] = asciiColon
             buffer[1] = asciiColon
             return 2
