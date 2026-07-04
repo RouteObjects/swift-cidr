@@ -241,6 +241,160 @@ private func benchmarkBulkCompressedIPv6CIDRRawFormatter(_ addresses: [IPv6Addre
     }
 }
 
+@inline(never)
+private func benchmarkConcreteIPv4Descriptions(
+    network: IPv4Network,
+    block: CIDRBlock<AF.V4>,
+    multicastRange: IPv4MulticastGroupRange,
+    iterations: Int
+) {
+    for _ in 0..<iterations {
+        let networkText = network.description
+        let blockText = block.description
+        let rangeText = multicastRange.description
+        blackHole(networkText.utf8.count)
+        blackHole(blockText.utf8.count)
+        blackHole(rangeText.utf8.count)
+    }
+}
+
+@inline(never)
+private func benchmarkConcreteIPv4CIDRText(
+    network: IPv4Network,
+    block: CIDRBlock<AF.V4>,
+    multicastRange: IPv4MulticastGroupRange,
+    iterations: Int
+) {
+    for _ in 0..<iterations {
+        blackHole(network.formatted(.cidrNotation))
+        blackHole(block.formatted(.cidrNotation))
+        blackHole(multicastRange.formatted(.cidrNotation))
+    }
+}
+
+@inline(never)
+private func benchmarkConcreteIPv4AddressOnly(
+    network: IPv4Network,
+    block: CIDRBlock<AF.V4>,
+    multicastRange: IPv4MulticastGroupRange,
+    iterations: Int
+) {
+    for _ in 0..<iterations {
+        blackHole(network.formatted(.addressOnly))
+        blackHole(block.formatted(.addressOnly))
+        blackHole(multicastRange.formatted(.addressOnly))
+    }
+}
+
+@inline(never)
+private func benchmarkConcreteIPv4NetmaskStyle(
+    network: IPv4Network,
+    block: CIDRBlock<AF.V4>,
+    multicastRange: IPv4MulticastGroupRange,
+    iterations: Int
+) {
+    for _ in 0..<iterations {
+        blackHole(network.formatted(.addressAndNetmask))
+        blackHole(block.formatted(.addressAndNetmask))
+        blackHole(multicastRange.formatted(.addressAndNetmask))
+    }
+}
+
+@inline(never)
+private func benchmarkConcreteIPv4RawCIDR(
+    network: IPv4Network,
+    block: CIDRBlock<AF.V4>,
+    multicastRange: IPv4MulticastGroupRange,
+    iterations: Int
+) {
+    withUnsafeTemporaryAllocation(
+        of: UInt8.self,
+        capacity: CIDRUTF8Formatting.maximumIPv4CIDRNotationUTF8Count
+    ) { buffer in
+        let rawBuffer = UnsafeMutableRawBufferPointer(buffer)
+
+        for _ in 0..<iterations {
+            let networkWritten = network.writeCIDRNotationUTF8(into: rawBuffer)
+            let blockWritten = block.writeCIDRNotationUTF8(into: rawBuffer)
+            let rangeWritten = multicastRange.writeCIDRNotationUTF8(into: rawBuffer)
+            blackHole(networkWritten)
+            blackHole(blockWritten)
+            blackHole(rangeWritten)
+            blackHole(buffer[0])
+        }
+    }
+}
+
+@inline(never)
+private func benchmarkConcreteIPv6Descriptions(
+    network: IPv6Network,
+    block: CIDRBlock<AF.V6>,
+    multicastRange: IPv6MulticastGroupRange,
+    iterations: Int
+) {
+    for _ in 0..<iterations {
+        let networkText = network.description
+        let blockText = block.description
+        let rangeText = multicastRange.description
+        blackHole(networkText.utf8.count)
+        blackHole(blockText.utf8.count)
+        blackHole(rangeText.utf8.count)
+    }
+}
+
+@inline(never)
+private func benchmarkConcreteIPv6CIDRText(
+    network: IPv6Network,
+    block: CIDRBlock<AF.V6>,
+    multicastRange: IPv6MulticastGroupRange,
+    iterations: Int
+) {
+    for _ in 0..<iterations {
+        blackHole(network.formatted(.cidrNotation))
+        blackHole(block.formatted(.cidrNotation))
+        blackHole(multicastRange.formatted(.cidrNotation))
+    }
+}
+
+@inline(never)
+private func benchmarkConcreteIPv6CompressedStyle(
+    network: IPv6Network,
+    block: CIDRBlock<AF.V6>,
+    multicastRange: IPv6MulticastGroupRange,
+    iterations: Int
+) {
+    for _ in 0..<iterations {
+        blackHole(network.formatted(.compressed))
+        blackHole(block.formatted(.compressed))
+        blackHole(multicastRange.formatted(.compressed))
+    }
+}
+
+@inline(never)
+private func benchmarkConcreteIPv6RawCIDR(
+    network: IPv6Network,
+    block: CIDRBlock<AF.V6>,
+    multicastRange: IPv6MulticastGroupRange,
+    iterations: Int
+) {
+    withUnsafeTemporaryAllocation(
+        of: UInt8.self,
+        capacity: CIDRUTF8Formatting.maximumCompressedIPv6CIDRNotationUTF8Count
+    ) { buffer in
+        let rawBuffer = UnsafeMutableRawBufferPointer(buffer)
+
+        for _ in 0..<iterations {
+            let networkWritten = network.writeCompressedCIDRNotationUTF8(into: rawBuffer)
+            let blockWritten = block.writeCompressedCIDRNotationUTF8(into: rawBuffer)
+            let rangeWritten = multicastRange.writeCompressedCIDRNotationUTF8(into: rawBuffer)
+            blackHole(networkWritten)
+            blackHole(blockWritten)
+            blackHole(rangeWritten)
+            blackHole(buffer[0])
+        }
+    }
+}
+
 @MainActor
 let benchmarks = {
     func cpuConfiguration() -> Benchmark.Configuration {
@@ -268,6 +422,15 @@ let benchmarks = {
         address: formatterIPv4MixedStorage,
         prefixLength: IPv4PrefixLength(24)!
     )
+    let formatterIPv4NetworkMixed24 = IPv4Network(
+        prefix: formatterIPv4MixedStorage,
+        prefixLength: IPv4PrefixLength(24)!
+    )
+    let formatterIPv4BlockMixed24 = CIDRBlock<AF.V4>(
+        prefix: formatterIPv4MixedStorage,
+        prefixLength: IPv4PrefixLength(24)!
+    )
+    let formatterIPv4MulticastRange = IPv4MulticastGroupRange("239.1.2.0/24")!
 
     let formatterIPv6MiddleCompressed2Storage: UInt128 = 0x85a0_850a_8500_0000_0000_00af_805a_085a
     let formatterIPv6MiddleCompressedStorage: UInt128 =
@@ -299,6 +462,15 @@ let benchmarks = {
         address: formatterIPv6MiddleCompressed2Storage,
         prefixLength: IPv6PrefixLength(48)!
     )
+    let formatterIPv6NetworkMiddleCompressed64 = IPv6Network(
+        prefix: formatterIPv6MiddleCompressedStorage,
+        prefixLength: IPv6PrefixLength(64)!
+    )
+    let formatterIPv6BlockMiddleCompressed64 = CIDRBlock<AF.V6>(
+        prefix: formatterIPv6MiddleCompressedStorage,
+        prefixLength: IPv6PrefixLength(64)!
+    )
+    let formatterIPv6MulticastRange = IPv6MulticastGroupRange("ff02::/16")!
     let bulkIPv4CIDRValues = [
         formatterIPv4Zero,
         formatterIPv4Loopback,
@@ -536,6 +708,114 @@ let benchmarks = {
         configuration: cpuConfiguration()
     ) { _ in
         benchmarkBulkCompressedIPv6CIDRRawFormatter(bulkIPv6CIDRValues, batches: 250_000)
+    }
+
+    Benchmark(
+        "formatter.cpu.concrete.ipv4.description.9M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkConcreteIPv4Descriptions(
+            network: formatterIPv4NetworkMixed24,
+            block: formatterIPv4BlockMixed24,
+            multicastRange: formatterIPv4MulticastRange,
+            iterations: 3_000_000
+        )
+    }
+
+    Benchmark(
+        "formatter.cpu.concrete.ipv4.cidrText.9M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkConcreteIPv4CIDRText(
+            network: formatterIPv4NetworkMixed24,
+            block: formatterIPv4BlockMixed24,
+            multicastRange: formatterIPv4MulticastRange,
+            iterations: 3_000_000
+        )
+    }
+
+    Benchmark(
+        "formatter.cpu.concrete.ipv4.addressOnly.9M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkConcreteIPv4AddressOnly(
+            network: formatterIPv4NetworkMixed24,
+            block: formatterIPv4BlockMixed24,
+            multicastRange: formatterIPv4MulticastRange,
+            iterations: 3_000_000
+        )
+    }
+
+    Benchmark(
+        "formatter.cpu.concrete.ipv4.netmask.9M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkConcreteIPv4NetmaskStyle(
+            network: formatterIPv4NetworkMixed24,
+            block: formatterIPv4BlockMixed24,
+            multicastRange: formatterIPv4MulticastRange,
+            iterations: 3_000_000
+        )
+    }
+
+    Benchmark(
+        "formatter.cpu.concrete.ipv4.rawCIDR.9M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkConcreteIPv4RawCIDR(
+            network: formatterIPv4NetworkMixed24,
+            block: formatterIPv4BlockMixed24,
+            multicastRange: formatterIPv4MulticastRange,
+            iterations: 3_000_000
+        )
+    }
+
+    Benchmark(
+        "formatter.cpu.concrete.ipv6.description.3M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkConcreteIPv6Descriptions(
+            network: formatterIPv6NetworkMiddleCompressed64,
+            block: formatterIPv6BlockMiddleCompressed64,
+            multicastRange: formatterIPv6MulticastRange,
+            iterations: 1_000_000
+        )
+    }
+
+    Benchmark(
+        "formatter.cpu.concrete.ipv6.cidrText.3M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkConcreteIPv6CIDRText(
+            network: formatterIPv6NetworkMiddleCompressed64,
+            block: formatterIPv6BlockMiddleCompressed64,
+            multicastRange: formatterIPv6MulticastRange,
+            iterations: 1_000_000
+        )
+    }
+
+    Benchmark(
+        "formatter.cpu.concrete.ipv6.compressed.3M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkConcreteIPv6CompressedStyle(
+            network: formatterIPv6NetworkMiddleCompressed64,
+            block: formatterIPv6BlockMiddleCompressed64,
+            multicastRange: formatterIPv6MulticastRange,
+            iterations: 1_000_000
+        )
+    }
+
+    Benchmark(
+        "formatter.cpu.concrete.ipv6.rawCIDR.3M",
+        configuration: cpuConfiguration()
+    ) { _ in
+        benchmarkConcreteIPv6RawCIDR(
+            network: formatterIPv6NetworkMiddleCompressed64,
+            block: formatterIPv6BlockMiddleCompressed64,
+            multicastRange: formatterIPv6MulticastRange,
+            iterations: 1_000_000
+        )
     }
 
     Benchmark(
