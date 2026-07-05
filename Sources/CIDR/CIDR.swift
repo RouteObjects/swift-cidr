@@ -70,14 +70,6 @@ public extension CIDR {
 }
 
 public extension CIDR where Family == AF.V4 {
-    @inlinable
-    @inline(__always)
-    internal func _cidrNotationDescription() -> String {
-        String(unsafeUninitializedCapacity: CIDRUTF8Formatting.maximumIPv4CIDRNotationUTF8Count) { buffer in
-            writeCIDRNotationUTF8(into: UnsafeMutableRawBufferPointer(buffer))
-        }
-    }
-
     func formatted(_ style: IPv4TextStyle) -> String {
         switch style {
         case .addressAndNetmask:

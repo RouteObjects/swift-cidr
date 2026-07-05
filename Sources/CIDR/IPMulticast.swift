@@ -295,7 +295,7 @@ public extension IPMulticastGroupRange where Family == AF.V4 {
     @inlinable
     @inline(__always)
     var description: String {
-        _cidrNotationDescription()
+        "\(addressLiteral)/\(prefixLength)"
     }
 
     @inlinable
@@ -303,7 +303,7 @@ public extension IPMulticastGroupRange where Family == AF.V4 {
     func formatted(_ style: CIDRTextStyle) -> String {
         switch style {
         case .cidrNotation:
-            return description
+            return "\(addressLiteral)/\(prefixLength)"
         case .addressOnly:
             return addressLiteral
         }
@@ -331,7 +331,7 @@ public extension IPMulticastGroupRange where Family == AF.V6 {
     func formatted(_ style: CIDRTextStyle) -> String {
         switch style {
         case .cidrNotation:
-            return description
+            return _compressedCIDRNotationDescription()
         case .addressOnly:
             return addressLiteral
         }
