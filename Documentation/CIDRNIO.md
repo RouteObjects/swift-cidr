@@ -62,7 +62,7 @@ let socketAddress = try SocketAddress(ipAddress: "2001:db8::1", port: 853)
 let endpoint = try IPEndpoint<V6>(socketAddress: socketAddress)
 
 print(endpoint.description)
-// [2001:db8:0:0:0:0:0:1/128]:853
+// [2001:db8::1/128]:853
 ```
 
 `SocketAddress` does not carry CIDR prefix context. Outbound conversion

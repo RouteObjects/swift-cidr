@@ -292,6 +292,23 @@ extension IPMulticastGroupRange {
 }
 
 public extension IPMulticastGroupRange where Family == AF.V4 {
+    @inlinable
+    @inline(__always)
+    var description: String {
+        _cidrNotationDescription()
+    }
+
+    @inlinable
+    @inline(__always)
+    func formatted(_ style: CIDRTextStyle) -> String {
+        switch style {
+        case .cidrNotation:
+            return description
+        case .addressOnly:
+            return addressLiteral
+        }
+    }
+
     @inline(__always)
     func formatted(_ style: IPv4TextStyle) -> String {
         switch style {
@@ -303,11 +320,28 @@ public extension IPMulticastGroupRange where Family == AF.V4 {
 }
 
 public extension IPMulticastGroupRange where Family == AF.V6 {
+    @inlinable
+    @inline(__always)
+    var description: String {
+        _compressedCIDRNotationDescription()
+    }
+
+    @inlinable
+    @inline(__always)
+    func formatted(_ style: CIDRTextStyle) -> String {
+        switch style {
+        case .cidrNotation:
+            return description
+        case .addressOnly:
+            return addressLiteral
+        }
+    }
+
     @inline(__always)
     func formatted(_ style: IPv6TextStyle) -> String {
         switch style {
         case .preferred:
-            return addressLiteral
+            return AF.formatV6(prefix)
         case .ipv4Mapped:
             return AF.formatV6Mapped(prefix) ?? addressLiteral
         case .compressed:

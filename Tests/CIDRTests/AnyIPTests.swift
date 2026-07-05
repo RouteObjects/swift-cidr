@@ -31,7 +31,7 @@ struct AnyIPTests {
         #expect(ipv6.isIPv6)
         #expect(ipv6.ianaValue == 2)
         #expect(ipv6.familyName == "IPv6")
-        #expect(ipv6.description == "2001:db8:0:0:0:0:0:1/64")
+        #expect(ipv6.description == "2001:db8::1/64")
         #expect(AnyIPAddress(ipv6.description) == ipv6)
     }
 
@@ -41,7 +41,7 @@ struct AnyIPTests {
         let ipv4Fallback = try #require(AnyIPAddress("192.0.2.1/24", parseOrder: .ipv6ThenIPv4))
 
         #expect(ipv6First.isIPv6)
-        #expect(ipv6First.description == "2001:db8:0:0:0:0:0:1/64")
+        #expect(ipv6First.description == "2001:db8::1/64")
         #expect(ipv4Fallback.isIPv4)
         #expect(ipv4Fallback.description == "192.0.2.1/24")
     }
@@ -55,7 +55,7 @@ struct AnyIPTests {
         #expect(mapped.formatted(.addressOnly) == mapped.addressLiteral)
         #expect(mappedV6.formatted(.ipv4Mapped) == "::ffff:192.0.2.1")
         #expect(mapped.prefixLength.intValue == 96)
-        #expect(mapped.network.description == "0:0:0:0:0:ffff:0:0/96")
+        #expect(mapped.network.description == "::ffff:0:0/96")
 
         #expect(ipv4.network.description == "192.0.2.0/24")
         #expect(ipv4.prefixLength.intValue == 24)
@@ -73,8 +73,8 @@ struct AnyIPTests {
         #expect(ipv4.nextNetwork?.description == "192.0.3.0/24")
 
         #expect(ipv6.isIPv6)
-        #expect(ipv6.first.description == "2001:db8:0:0:0:0:0:0/128")
-        #expect(ipv6.last.description == "2001:db8:0:0:0:0:0:3/128")
+        #expect(ipv6.first.description == "2001:db8::/128")
+        #expect(ipv6.last.description == "2001:db8::3/128")
     }
 
     @Test("AnyIPNetwork parse order changes first attempt only")
@@ -83,7 +83,7 @@ struct AnyIPTests {
         let ipv4Fallback = try #require(AnyIPNetwork("192.0.2.0/24", parseOrder: .ipv6ThenIPv4))
 
         #expect(ipv6First.isIPv6)
-        #expect(ipv6First.description == "2001:db8:0:0:0:0:0:0/64")
+        #expect(ipv6First.description == "2001:db8::/64")
         #expect(ipv4Fallback.isIPv4)
         #expect(ipv4Fallback.description == "192.0.2.0/24")
     }
@@ -143,8 +143,8 @@ struct AnyIPTests {
         #expect(ipv6.isIPv6)
         #expect(ipv6.ianaValue == 2)
         #expect(ipv6.familyName == "IPv6")
-        #expect(ipv6.description == "ff02:0:0:0:0:0:0:1")
-        #expect(ipv6.v6?.description == "ff02:0:0:0:0:0:0:1")
+        #expect(ipv6.description == "ff02::1")
+        #expect(ipv6.v6?.description == "ff02::1")
         #expect(ipv6.v4 == nil)
         #expect(AnyIPMulticastGroup(ipv6.description) == ipv6)
 
@@ -181,7 +181,7 @@ struct AnyIPTests {
         #expect(ipv6Range.isIPv6)
         #expect(ipv6Range.contains(ipv6Group))
         #expect(!ipv6Range.contains(group))
-        #expect(ipv6Range.v6?.description == "ff02:0:0:0:0:0:0:0/16")
+        #expect(ipv6Range.v6?.description == "ff02::/16")
         #expect(ipv6Range.v4 == nil)
 
         #expect(AnyIPMulticastGroupRange("192.0.2.0/24") == nil)

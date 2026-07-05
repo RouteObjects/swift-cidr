@@ -49,21 +49,27 @@ struct ConcreteCIDRFormattingTests {
         let multicastRange = try #require(IPv6MulticastGroupRange("ff02::/16"))
 
         #expect(address.formatted(.compressed) == "2001:db8::1")
+        #expect(address.description == "2001:db8::1/64")
+        #expect(address.formatted(.cidrNotation) == "2001:db8::1/64")
+        #expect(address.formatted(.preferred) == "2001:db8:0:0:0:0:0:1")
 
-        #expect(network.description == "2001:db8:abcd:0:0:0:0:0/48")
-        #expect(network.formatted(.cidrNotation) == "2001:db8:abcd:0:0:0:0:0/48")
-        #expect(network.formatted(.addressOnly) == "2001:db8:abcd:0:0:0:0:0")
+        #expect(network.description == "2001:db8:abcd::/48")
+        #expect(network.formatted(.cidrNotation) == "2001:db8:abcd::/48")
+        #expect(network.formatted(.addressOnly) == "2001:db8:abcd::")
         #expect(network.formatted(.compressed) == "2001:db8:abcd::")
+        #expect(network.formatted(.preferred) == "2001:db8:abcd:0:0:0:0:0")
 
-        #expect(block.description == "2001:db8:abcd:0:0:0:0:0/48")
-        #expect(block.formatted(.cidrNotation) == "2001:db8:abcd:0:0:0:0:0/48")
-        #expect(block.formatted(.addressOnly) == "2001:db8:abcd:0:0:0:0:0")
+        #expect(block.description == "2001:db8:abcd::/48")
+        #expect(block.formatted(.cidrNotation) == "2001:db8:abcd::/48")
+        #expect(block.formatted(.addressOnly) == "2001:db8:abcd::")
         #expect(block.formatted(.compressed) == "2001:db8:abcd::")
+        #expect(block.formatted(.preferred) == "2001:db8:abcd:0:0:0:0:0")
 
-        #expect(multicastRange.description == "ff02:0:0:0:0:0:0:0/16")
-        #expect(multicastRange.formatted(.cidrNotation) == "ff02:0:0:0:0:0:0:0/16")
-        #expect(multicastRange.formatted(.addressOnly) == "ff02:0:0:0:0:0:0:0")
+        #expect(multicastRange.description == "ff02::/16")
+        #expect(multicastRange.formatted(.cidrNotation) == "ff02::/16")
+        #expect(multicastRange.formatted(.addressOnly) == "ff02::")
         #expect(multicastRange.formatted(.compressed) == "ff02::")
+        #expect(multicastRange.formatted(.preferred) == "ff02:0:0:0:0:0:0:0")
     }
 
     @Test("Concrete CIDR block and multicast raw UTF-8 writers preserve canonical output")

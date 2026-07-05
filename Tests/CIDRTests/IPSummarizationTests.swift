@@ -196,11 +196,11 @@ struct IPSummarizationTests {
         #expect(network.formatted(.ipv4Mapped) == "::ffff:192.0.2.1")
     }
 
-    @Test("Non-mapped IPv6 style falls back to normal address text")
+    @Test("Non-mapped IPv6 style falls back to canonical compressed address text")
     func nonMappedIPv6FormattingFallsBack() throws {
         let host = try #require(IPv6Address("2001:db8:0:0:0:0:0:1"))
         let network = IPNetwork<V6>(host: host)
 
-        #expect(network.formatted(.ipv4Mapped) == "2001:db8:0:0:0:0:0:1")
+        #expect(network.formatted(.ipv4Mapped) == "2001:db8::1")
     }
 }

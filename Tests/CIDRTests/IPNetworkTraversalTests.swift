@@ -82,6 +82,6 @@ struct IPNetworkTraversalTests {
         #expect(ipv4Network.prefix == 0xC0000200)
         #expect(ipv4Network.description == "192.0.2.0/24")
         #expect(ipv6Network.prefix == UInt128(0x20010DB8) << 96)
-        #expect(ipv6Network.description == "2001:db8:0:0:0:0:0:0/64")
+        #expect(ipv6Network.description == "2001:db8::/64")
     }
 }

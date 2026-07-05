@@ -13,9 +13,9 @@
 
 /// Family-neutral textual representations for CIDR values.
 public enum CIDRTextStyle: Sendable, Hashable {
-    /// `192.168.1.1/32` or `2001:db8:0:0:0:0:0:1/128`
+    /// `192.168.1.1/32` or `2001:db8::1/128`
     case cidrNotation
-    /// `192.168.1.1` or `2001:db8:0:0:0:0:0:1`
+    /// `192.168.1.1` or `2001:db8::1`
     case addressOnly
 
     @available(*, deprecated, message: "Use .cidrNotation")

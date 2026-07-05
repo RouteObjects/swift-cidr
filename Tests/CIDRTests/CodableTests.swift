@@ -44,9 +44,9 @@ struct CodableTests {
         let ipv6Network = try #require(IPv6Network("2001:db8::/64"))
 
         #expect(try encodedJSONStringValue(ipv4Address) == "192.0.2.1/24")
-        #expect(try encodedJSONStringValue(ipv6Address) == "2001:db8:0:0:0:0:0:1/64")
+        #expect(try encodedJSONStringValue(ipv6Address) == "2001:db8::1/64")
         #expect(try encodedJSONStringValue(ipv4Network) == "192.0.2.0/24")
-        #expect(try encodedJSONStringValue(ipv6Network) == "2001:db8:0:0:0:0:0:0/64")
+        #expect(try encodedJSONStringValue(ipv6Network) == "2001:db8::/64")
 
         #expect(try decoder.decode(IPv4Address.self, from: Data(#""192.0.2.1/24""#.utf8)) == ipv4Address)
         #expect(try decoder.decode(IPv6Network.self, from: Data(#""2001:db8:0:0:0:0:0:0/64""#.utf8)) == ipv6Network)
@@ -57,7 +57,7 @@ struct CodableTests {
         let anyAddress = try #require(AnyIPAddress("2001:db8::1/64"))
         let anyNetwork = try #require(AnyIPNetwork("192.0.2.0/24"))
 
-        #expect(try encodedJSONStringValue(anyAddress) == "2001:db8:0:0:0:0:0:1/64")
+        #expect(try encodedJSONStringValue(anyAddress) == "2001:db8::1/64")
         #expect(try encodedJSONStringValue(anyNetwork) == "192.0.2.0/24")
         #expect(try decoder.decode(AnyIPAddress.self, from: Data(#""2001:db8:0:0:0:0:0:1/64""#.utf8)) == anyAddress)
         #expect(try decoder.decode(AnyIPNetwork.self, from: Data(#""192.0.2.0/24""#.utf8)) == anyNetwork)

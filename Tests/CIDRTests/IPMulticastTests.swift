@@ -63,7 +63,7 @@ struct IPMulticastTests {
         let sameAllNodes = try #require(IPv6MulticastGroup("ff02::1/128"))
 
         #expect(allNodes == sameAllNodes)
-        #expect(allNodes.description == "ff02:0:0:0:0:0:0:1")
+        #expect(allNodes.description == "ff02::1")
         #expect(IPv6MulticastGroup("fe80::1") == nil)
         #expect(IPv6MulticastGroup("2001:db8::1") == nil)
         #expect(IPv6MulticastGroup("ff02::1/64") == nil)
@@ -78,7 +78,7 @@ struct IPMulticastTests {
         #expect(allMulticast.contains(linkLocal))
         #expect(linkLocal.isWithin(allMulticast))
         #expect(linkLocal.contains(group))
-        #expect(linkLocal.firstGroup.description == "ff02:0:0:0:0:0:0:0")
+        #expect(linkLocal.firstGroup.description == "ff02::")
         #expect(linkLocal.lastGroup.description == "ff02:ffff:ffff:ffff:ffff:ffff:ffff:ffff")
         #expect(linkLocal.rangeSizeIfRepresentable == UInt128(1) << 112)
         #expect(IPv6MulticastGroupRange("ff02::1/16") == nil)

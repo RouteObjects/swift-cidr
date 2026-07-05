@@ -51,7 +51,7 @@ struct IPEndpointTests {
 
         #expect(String(decoding: encodedPort, as: UTF8.self) == #"{"rawValue":443}"#)
         let endpointObject = try #require(JSONSerialization.jsonObject(with: encodedEndpoint) as? [String: Any])
-        #expect(endpointObject["address"] as? String == "2001:db8:0:0:0:0:0:1/64")
+        #expect(endpointObject["address"] as? String == "2001:db8::1/64")
         let portObject = try #require(endpointObject["port"] as? [String: Any])
         #expect(portObject["rawValue"] as? Int == 443)
         #expect(try decoder.decode(Port.self, from: encodedPort) == Port(443))
@@ -76,7 +76,7 @@ struct IPEndpointTests {
             port: Port(443)
         )
 
-        #expect(endpoint.description == "[2001:db8:0:0:0:0:0:1/64]:443")
+        #expect(endpoint.description == "[2001:db8::1/64]:443")
         #expect(IPEndpoint<V6>(endpoint.description) == endpoint)
     }
 
