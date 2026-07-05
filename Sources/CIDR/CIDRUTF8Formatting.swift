@@ -35,11 +35,12 @@ public enum CIDRUTF8Formatting {
     private static let asciiSlash = UInt8(ascii: "/")
     private static let asciiZero = UInt8(ascii: "0")
 
+    @usableFromInline
     @inline(__always)
     // Leave the constant `/` and `%` operations readable; optimized Swift/LLVM lowers
     // `/10`, `%10`, and `/100` to multiply/shift/remainder sequences, and the table variant
     // benchmarked slightly slower in the bulk CIDR writer path.
-    static func writeSlashPrefixLength(
+    internal static func writeSlashPrefixLength(
         _ prefixLength: Int,
         into buffer: UnsafeMutableBufferPointer<UInt8>,
         at writeIndex: inout Int

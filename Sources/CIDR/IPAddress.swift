@@ -155,7 +155,7 @@ public extension IPAddress where Family == AF.V4 {
     @inlinable
     @inline(__always)
     var description: String {
-        "\(addressLiteral)/\(prefixLength)"
+        AF.formatV4CIDR(address: address, prefixLength: prefixLength.rawValue)
     }
 
     @inlinable
@@ -163,7 +163,7 @@ public extension IPAddress where Family == AF.V4 {
     func formatted(_ style: CIDRTextStyle) -> String {
         switch style {
         case .cidrNotation:
-            return "\(addressLiteral)/\(prefixLength)"
+            return AF.formatV4CIDR(address: address, prefixLength: prefixLength.rawValue)
         case .addressOnly:
             return addressLiteral
         }
