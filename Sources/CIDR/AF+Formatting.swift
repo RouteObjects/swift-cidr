@@ -27,6 +27,7 @@ extension AF {
     @inlinable
     @inline(__always)
     internal static func formatV4CIDR(address: UInt32, prefixLength: UInt8) -> String {
+        // Preserve Swift small-string storage for short CIDR text while still handling /32 max-width output.
         let capacity = ipv4CIDRUTF8Length(address: address, prefixLength: prefixLength) <= maximumIPv4AddressLiteralUTF8Count
             ? maximumIPv4AddressLiteralUTF8Count
             : CIDRUTF8Formatting.maximumIPv4CIDRNotationUTF8Count

@@ -41,6 +41,37 @@ struct ConcreteCIDRFormattingTests {
         #expect(multicastRange.formatted(.addressAndNetmask) == "239.1.2.0 255.255.255.0")
     }
 
+    @Test("IPv4 CIDR descriptions cover small-string and maximum-length output")
+    func ipv4CIDRDescriptionBoundaries() throws {
+        let smallAddress = try #require(IPv4Address("123.45.6.0/24"))
+        let smallNetwork = try #require(IPv4Network("123.45.6.99/24"))
+        let smallBlock = try #require(CIDRBlock<AF.V4>("123.45.6.99/24"))
+        let smallMulticastRange = try #require(IPv4MulticastGroupRange("239.1.2.0/24"))
+
+        #expect(smallAddress.description == "123.45.6.0/24")
+        #expect(smallAddress.formatted(.cidrNotation) == "123.45.6.0/24")
+        #expect(smallNetwork.description == "123.45.6.0/24")
+        #expect(smallNetwork.formatted(.cidrNotation) == "123.45.6.0/24")
+        #expect(smallBlock.description == "123.45.6.0/24")
+        #expect(smallBlock.formatted(.cidrNotation) == "123.45.6.0/24")
+        #expect(smallMulticastRange.description == "239.1.2.0/24")
+        #expect(smallMulticastRange.formatted(.cidrNotation) == "239.1.2.0/24")
+
+        let maximumAddress = try #require(IPv4Address("255.255.255.255/32"))
+        let maximumNetwork = try #require(IPv4Network("255.255.255.255/32"))
+        let maximumBlock = try #require(CIDRBlock<AF.V4>("255.255.255.255/32"))
+        let maximumMulticastRange = try #require(IPv4MulticastGroupRange("239.255.255.255/32"))
+
+        #expect(maximumAddress.description == "255.255.255.255/32")
+        #expect(maximumAddress.formatted(.cidrNotation) == "255.255.255.255/32")
+        #expect(maximumNetwork.description == "255.255.255.255/32")
+        #expect(maximumNetwork.formatted(.cidrNotation) == "255.255.255.255/32")
+        #expect(maximumBlock.description == "255.255.255.255/32")
+        #expect(maximumBlock.formatted(.cidrNotation) == "255.255.255.255/32")
+        #expect(maximumMulticastRange.description == "239.255.255.255/32")
+        #expect(maximumMulticastRange.formatted(.cidrNotation) == "239.255.255.255/32")
+    }
+
     @Test("IPv6 concrete CIDR values preserve CIDR and family-specific text styles")
     func ipv6ConcreteCIDRValuesPreserveTextStyles() throws {
         let address = try #require(IPv6Address("2001:db8::1/64"))
