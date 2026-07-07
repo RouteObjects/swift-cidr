@@ -24,6 +24,43 @@ extension AF {
         }
     }
 
+    @inlinable
+    @inline(__always)
+    internal static func formatV4CIDR(address: UInt32, prefixLength: UInt8) -> String {
+        // Preserve Swift small-string storage for short CIDR text while still handling /32 max-width output.
+        let capacity = ipv4CIDRUTF8Length(address: address, prefixLength: prefixLength) <= maximumIPv4AddressLiteralUTF8Count
+            ? maximumIPv4AddressLiteralUTF8Count
+            : CIDRUTF8Formatting.maximumIPv4CIDRNotationUTF8Count
+        return String(unsafeUninitializedCapacity: capacity) { buffer in
+            var writeIndex = 0
+            writeIPv4AddressLiteral(address, into: buffer.baseAddress!, at: &writeIndex)
+            CIDRUTF8Formatting.writeSlashPrefixLength(Int(prefixLength), into: buffer, at: &writeIndex)
+            return writeIndex
+        }
+    }
+
+    @usableFromInline
+    @inline(__always)
+    internal static func ipv4CIDRUTF8Length(address: UInt32, prefixLength: UInt8) -> Int {
+        var length = 0
+        length &+= decimalOctetUTF8Length((address &>> 24) & 0xFF)
+        length &+= 1
+        length &+= decimalOctetUTF8Length((address &>> 16) & 0xFF)
+        length &+= 1
+        length &+= decimalOctetUTF8Length((address &>> 8) & 0xFF)
+        length &+= 1
+        length &+= decimalOctetUTF8Length(address & 0xFF)
+        length &+= 1 // slash
+        length &+= prefixLength >= 10 ? 2 : 1
+        return length
+    }
+
+    @usableFromInline
+    @inline(__always)
+    internal static func decimalOctetUTF8Length(_ value: UInt32) -> Int {
+        value >= 100 ? 3 : (value >= 10 ? 2 : 1)
+    }
+
     internal static func formatV6(_ address: UInt128) -> String {
         CIDRUTF8Writer.fullIPv6AddressLiteral(address)
     }

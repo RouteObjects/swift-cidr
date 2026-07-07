@@ -107,8 +107,8 @@ struct NetworkPrefixRangeTests {
         let exact = try #require(exactRange)
 
         #expect(range.upperPrefixLength == PrefixLength<V6>(128))
-        #expect(range.description == "2001:db8:0:0:0:0:0:0/64^+")
-        #expect(exact.description == "2001:db8:0:0:0:0:0:0/64^96")
+        #expect(range.description == "2001:db8::/64^+")
+        #expect(exact.description == "2001:db8::/64^96")
     }
 
     @Test("IPPrefix operators work for generic conformers beyond IPNetwork")

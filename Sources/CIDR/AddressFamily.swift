@@ -90,7 +90,7 @@ public enum AF {
         }
 
         public static func formatAddress(_ address: UInt128) -> String {
-            AF.formatV6(address)
+            AF.formatV6Compressed(address)
         }
     }
 

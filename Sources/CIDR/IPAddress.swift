@@ -151,6 +151,32 @@ public extension IPAddress where Family == AF.V4 {
 
         self.init(address: result.address, prefixLength: prefixLength)
     }
+
+    @inlinable
+    @inline(__always)
+    var description: String {
+        AF.formatV4CIDR(address: address, prefixLength: prefixLength.rawValue)
+    }
+
+    @inlinable
+    @inline(__always)
+    func formatted(_ style: CIDRTextStyle) -> String {
+        switch style {
+        case .cidrNotation:
+            return AF.formatV4CIDR(address: address, prefixLength: prefixLength.rawValue)
+        case .addressOnly:
+            return addressLiteral
+        }
+    }
+
+    @inline(__always)
+    func formatted(_ style: IPv4TextStyle) -> String {
+        switch style {
+        case .addressAndNetmask:
+            let v4Mask = UInt32.networkMask(for: prefixLength.intValue)
+            return "\(addressLiteral) \(AF.formatV4(v4Mask))"
+        }
+    }
 }
 
 public extension IPAddress where Family == AF.V6 {
@@ -166,6 +192,35 @@ public extension IPAddress where Family == AF.V6 {
         }
 
         self.init(address: result.address, prefixLength: prefixLength)
+    }
+
+    @inlinable
+    @inline(__always)
+    var description: String {
+        _compressedCIDRNotationDescription()
+    }
+
+    @inlinable
+    @inline(__always)
+    func formatted(_ style: CIDRTextStyle) -> String {
+        switch style {
+        case .cidrNotation:
+            return _compressedCIDRNotationDescription()
+        case .addressOnly:
+            return addressLiteral
+        }
+    }
+
+    @inline(__always)
+    func formatted(_ style: IPv6TextStyle) -> String {
+        switch style {
+        case .preferred:
+            return AF.formatV6(address)
+        case .ipv4Mapped:
+            return AF.formatV6Mapped(address) ?? addressLiteral
+        case .compressed:
+            return AF.formatV6Compressed(address)
+        }
     }
 }
 

@@ -80,10 +80,18 @@ public extension CIDR where Family == AF.V4 {
 }
 
 public extension CIDR where Family == AF.V6 {
+    @inlinable
+    @inline(__always)
+    internal func _compressedCIDRNotationDescription() -> String {
+        String(unsafeUninitializedCapacity: CIDRUTF8Formatting.maximumCompressedIPv6CIDRNotationUTF8Count) { buffer in
+            writeCompressedCIDRNotationUTF8(into: UnsafeMutableRawBufferPointer(buffer))
+        }
+    }
+
     func formatted(_ style: IPv6TextStyle) -> String {
         switch style {
         case .preferred:
-            return addressLiteral
+            return AF.formatV6(storage)
         case .ipv4Mapped:
             return AF.formatV6Mapped(storage) ?? addressLiteral
         case .compressed:

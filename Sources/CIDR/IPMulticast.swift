@@ -174,8 +174,16 @@ public struct IPMulticastGroupRange<Family: MulticastAddressSpace>: CIDR, Hashab
     /// The raw storage value used to satisfy `CIDR`.
     ///
     /// For multicast group ranges, `storage` is the canonical range prefix.
+    @inlinable
+    @inline(__always)
     public var storage: Family.Storage {
         prefix
+    }
+
+    @inlinable
+    @inline(__always)
+    public var addressLiteral: String {
+        Family.formatAddress(prefix)
     }
 
     private var cidrBlock: CIDRBlock<Family> {
@@ -258,13 +266,87 @@ public struct IPMulticastGroupRange<Family: MulticastAddressSpace>: CIDR, Hashab
     }
 
     /// The canonical CIDR text for the multicast group range.
+    @inlinable
+    @inline(__always)
     public var description: String {
-        cidrBlock.description
+        "\(addressLiteral)/\(prefixLength)"
     }
 
     /// A debug representation that includes the concrete multicast group range type.
     public var debugDescription: String {
         "\(String(reflecting: Self.self))(\(description))"
+    }
+}
+
+extension IPMulticastGroupRange {
+    @inlinable
+    @inline(__always)
+    public func formatted(_ style: CIDRTextStyle) -> String {
+        switch style {
+        case .cidrNotation:
+            return description
+        case .addressOnly:
+            return addressLiteral
+        }
+    }
+}
+
+public extension IPMulticastGroupRange where Family == AF.V4 {
+    @inlinable
+    @inline(__always)
+    var description: String {
+        AF.formatV4CIDR(address: prefix, prefixLength: prefixLength.rawValue)
+    }
+
+    @inlinable
+    @inline(__always)
+    func formatted(_ style: CIDRTextStyle) -> String {
+        switch style {
+        case .cidrNotation:
+            return AF.formatV4CIDR(address: prefix, prefixLength: prefixLength.rawValue)
+        case .addressOnly:
+            return addressLiteral
+        }
+    }
+
+    @inline(__always)
+    func formatted(_ style: IPv4TextStyle) -> String {
+        switch style {
+        case .addressAndNetmask:
+            let v4Mask = UInt32.networkMask(for: prefixLength.intValue)
+            return "\(addressLiteral) \(AF.formatV4(v4Mask))"
+        }
+    }
+}
+
+public extension IPMulticastGroupRange where Family == AF.V6 {
+    @inlinable
+    @inline(__always)
+    var description: String {
+        _compressedCIDRNotationDescription()
+    }
+
+    @inlinable
+    @inline(__always)
+    func formatted(_ style: CIDRTextStyle) -> String {
+        switch style {
+        case .cidrNotation:
+            return _compressedCIDRNotationDescription()
+        case .addressOnly:
+            return addressLiteral
+        }
+    }
+
+    @inline(__always)
+    func formatted(_ style: IPv6TextStyle) -> String {
+        switch style {
+        case .preferred:
+            return AF.formatV6(prefix)
+        case .ipv4Mapped:
+            return AF.formatV6Mapped(prefix) ?? addressLiteral
+        case .compressed:
+            return AF.formatV6Compressed(prefix)
+        }
     }
 }
 

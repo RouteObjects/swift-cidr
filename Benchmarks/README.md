@@ -15,8 +15,9 @@ bridges. It is intentionally separate from the default threshold-gated target so
 `NIOCore` measurements do not add noise to core CIDR parser, formatter, or
 currency-type tracking.
 
-See [PERFORMANCE.md](PERFORMANCE.md) for a dated performance snapshot with
-measured parser, formatter, system-baseline, and bulk direct UTF-8 results.
+See [PERFORMANCE.md](PERFORMANCE.md) for a dated performance snapshot. It separates
+wall-clock public API latency (Mode A) from fixed-loop bulk CPU throughput (Mode B),
+with a headline summary, detailed tables, and an engineering appendix.
 
 ## Platform Notes
 

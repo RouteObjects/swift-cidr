@@ -67,9 +67,9 @@ struct CIDRBlockTests {
         let rawPrefixLength = try #require(IPv6PrefixLength(48))
         let rawChild = try #require(IPv6Network(prefix: rawPrefix.address, prefixLength: rawPrefixLength, within: parent))
 
-        #expect(child.description == "2001:db8:1:0:0:0:0:0/48")
-        #expect(equal.description == "2001:db8:0:0:0:0:0:0/32")
-        #expect(rawChild.description == "2001:db8:abcd:0:0:0:0:0/48")
+        #expect(child.description == "2001:db8:1::/48")
+        #expect(equal.description == "2001:db8::/32")
+        #expect(rawChild.description == "2001:db8:abcd::/48")
         #expect(parent.contains(child))
         #expect(parent.contains(equal))
         #expect(IPv6Network("2001:db9::/32", within: parent) == nil)

@@ -65,6 +65,37 @@ public struct IPNetwork<Family: IPAddressFamily>: IPPrefix, Hashable, LosslessSt
     }
 }
 
+extension IPNetwork {
+    @inlinable
+    @inline(__always)
+    public var storage: Family.Storage {
+        prefix
+    }
+
+    @inlinable
+    @inline(__always)
+    public var addressLiteral: String {
+        Family.formatAddress(prefix)
+    }
+
+    @inlinable
+    @inline(__always)
+    public var description: String {
+        "\(addressLiteral)/\(prefixLength)"
+    }
+
+    @inlinable
+    @inline(__always)
+    public func formatted(_ style: CIDRTextStyle) -> String {
+        switch style {
+        case .cidrNotation:
+            return description
+        case .addressOnly:
+            return addressLiteral
+        }
+    }
+}
+
 public extension IPNetwork where Family == AF.V4 {
     /// Creates an IPv4 network from address text and dotted-decimal netmask text.
     ///
@@ -80,6 +111,63 @@ public extension IPNetwork where Family == AF.V4 {
         }
 
         self.init(address: address, prefixLength: prefixLength)
+    }
+
+    @inlinable
+    @inline(__always)
+    var description: String {
+        AF.formatV4CIDR(address: prefix, prefixLength: prefixLength.rawValue)
+    }
+
+    @inlinable
+    @inline(__always)
+    func formatted(_ style: CIDRTextStyle) -> String {
+        switch style {
+        case .cidrNotation:
+            return AF.formatV4CIDR(address: prefix, prefixLength: prefixLength.rawValue)
+        case .addressOnly:
+            return addressLiteral
+        }
+    }
+
+    @inline(__always)
+    func formatted(_ style: IPv4TextStyle) -> String {
+        switch style {
+        case .addressAndNetmask:
+            let v4Mask = UInt32.networkMask(for: prefixLength.intValue)
+            return "\(addressLiteral) \(AF.formatV4(v4Mask))"
+        }
+    }
+}
+
+public extension IPNetwork where Family == AF.V6 {
+    @inlinable
+    @inline(__always)
+    var description: String {
+        _compressedCIDRNotationDescription()
+    }
+
+    @inlinable
+    @inline(__always)
+    func formatted(_ style: CIDRTextStyle) -> String {
+        switch style {
+        case .cidrNotation:
+            return _compressedCIDRNotationDescription()
+        case .addressOnly:
+            return addressLiteral
+        }
+    }
+
+    @inline(__always)
+    func formatted(_ style: IPv6TextStyle) -> String {
+        switch style {
+        case .preferred:
+            return AF.formatV6(prefix)
+        case .ipv4Mapped:
+            return AF.formatV6Mapped(prefix) ?? addressLiteral
+        case .compressed:
+            return AF.formatV6Compressed(prefix)
+        }
     }
 }
 

@@ -16,6 +16,22 @@ import Testing
 
 @Suite("IPv6 Compression Tests")
 struct IPv6CompressionTests {
+    @Test("Default IPv6 CIDR text uses RFC 5952 compressed output")
+    func defaultIPv6CIDRTextUsesCompressedOutput() throws {
+        let address = try #require(IPv6Address("2001:db8:0:0:0:0:0:1/64"))
+        let tieRun = try #require(IPv6Address("2001:0:0:1:0:0:1:1/128"))
+        let singleZero = try #require(IPv6Address("2001:db8:0:1:2:3:4:5/64"))
+
+        #expect(AF.V6.formatAddress(address.address) == "2001:db8::1")
+        #expect(address.addressLiteral == "2001:db8::1")
+        #expect(address.description == "2001:db8::1/64")
+        #expect(address.formatted(.cidrNotation) == "2001:db8::1/64")
+        #expect(address.formatted(.addressOnly) == "2001:db8::1")
+        #expect(address.formatted(.preferred) == "2001:db8:0:0:0:0:0:1")
+        #expect(tieRun.description == "2001::1:0:0:1:1/128")
+        #expect(singleZero.description == "2001:db8:0:1:2:3:4:5/64")
+    }
+
     @Test("Compressed formatter shortens a middle zero run")
     func compressesMiddleRun() throws {
         let host = try #require(IPv6Address("2001:db8:0:0:0:0:0:1"))
