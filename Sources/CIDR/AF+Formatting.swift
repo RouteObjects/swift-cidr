@@ -116,13 +116,13 @@ extension AF {
         into buffer: UnsafeMutablePointer<UInt8>,
         at writeIndex: inout Int
     ) {
-        writeDecimalOctet((address &>> 24) & 0xFF, into: buffer, at: &writeIndex)
+        writeDecimalOctet(UInt8(truncatingIfNeeded: address &>> 24), into: buffer, at: &writeIndex)
         writeDot(into: buffer, at: &writeIndex)
-        writeDecimalOctet((address &>> 16) & 0xFF, into: buffer, at: &writeIndex)
+        writeDecimalOctet(UInt8(truncatingIfNeeded: address &>> 16), into: buffer, at: &writeIndex)
         writeDot(into: buffer, at: &writeIndex)
-        writeDecimalOctet((address &>> 8) & 0xFF, into: buffer, at: &writeIndex)
+        writeDecimalOctet(UInt8(truncatingIfNeeded: address &>> 8), into: buffer, at: &writeIndex)
         writeDot(into: buffer, at: &writeIndex)
-        writeDecimalOctet(address & 0xFF, into: buffer, at: &writeIndex)
+        writeDecimalOctet(UInt8(truncatingIfNeeded: address), into: buffer, at: &writeIndex)
     }
 
     @inlinable
@@ -140,17 +140,17 @@ extension AF {
     @inline(__always)
     // SAFETY: The caller provides writable capacity for the maximum three decimal octet digits.
     internal static func writeDecimalOctet(
-        _ value: UInt32,
+        _ value: UInt8,
         into buffer: UnsafeMutablePointer<UInt8>,
         at writeIndex: inout Int
     ) {
         if value < 10 {
-            buffer[writeIndex] = asciiZero &+ UInt8(value)
+            buffer[writeIndex] = asciiZero &+ value
             writeIndex &+= 1
             return
         }
 
-        let offset = Int(value &* 3)
+        let offset = Int(value) &* 3
         let table = decimalOctetTriplets.utf8Start
 
         // Use fixed-width decimal triplet lookup for multi-digit octets to avoid divide/modulo.
