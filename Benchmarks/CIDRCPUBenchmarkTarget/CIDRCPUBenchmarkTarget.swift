@@ -27,6 +27,51 @@ private func systemInetPton6(_ string: String) -> CInt {
     }
 }
 
+// CHANGE: Use the same seeded xorshift sequence for selection, String, and raw writer measurements.
+private struct IPv4FormattingRNG {
+    private var state: UInt64 = 0x9E37_79B9_7F4A_7C15
+
+    @inline(__always)
+    mutating func next() -> UInt64 {
+        state ^= state &<< 13
+        state ^= state &>> 7
+        state ^= state &<< 17
+        return state
+    }
+}
+
+private struct IPv4FormattingCorpus {
+    let name: String
+    let addresses: [IPv4Address]
+}
+
+private func makeIPv4FormattingCorpora() -> [IPv4FormattingCorpus] {
+    // Match swift-endpoint's 16 runtime-selected addresses for comparable workload coverage.
+    let mixed16Storage: [UInt32] = [
+        0x7F00_0001, 0x0101_0101, 0x0808_0808, 0x0909_0909,
+        0xFFFF_FFFF, 0xC0A8_0101, 0x0A00_0001, 0xAC10_0001,
+        0x6440_0001, 0xD043_DEDE, 0xB9C7_6C99, 0x9765_018C,
+        0x6810_84E5, 0x8EFA_B94E, 0x0D6B_2A0E, 0x17B9_0002,
+    ]
+
+    let mixed16 = mixed16Storage.map { IPv4Address(address: $0) }
+
+    // Diagnostic corpus: cover every octet value once; this is not a traffic model.
+    let uniformOctets = stride(from: UInt32(0), through: 252, by: 4).map { first in
+        IPv4Address(
+            address: (first &<< 24)
+                | ((first &+ 1) &<< 16)
+                | ((first &+ 2) &<< 8)
+                | (first &+ 3)
+        )
+    }
+
+    return [
+        IPv4FormattingCorpus(name: "mixed16", addresses: mixed16),
+        IPv4FormattingCorpus(name: "uniformOctets", addresses: uniformOctets),
+    ]
+}
+
 private let asciiSlash = UInt8(ascii: "/")
 private let asciiZero = UInt8(ascii: "0")
 private let prefixLengthDecimalTriplets: StaticString =
@@ -128,6 +173,44 @@ private func benchmarkRawIPv4AddressFormatter(_ address: IPv4Address, iterations
 
         for _ in 0..<iterations {
             let written = address.writeAddressLiteralUTF8(into: rawBuffer)
+            blackHole(written)
+            blackHole(buffer[0])
+        }
+    }
+}
+
+@inline(never)
+private func benchmarkDynamicIPv4Selection(_ addresses: [IPv4Address], iterations: Int) {
+    var rng = IPv4FormattingRNG()
+
+    for _ in 0..<iterations {
+        let index = Int(rng.next() % UInt64(addresses.count))
+        blackHole(addresses[index])
+    }
+}
+
+@inline(never)
+private func benchmarkDynamicIPv4PublicFormatter(_ addresses: [IPv4Address], iterations: Int) {
+    var rng = IPv4FormattingRNG()
+
+    for _ in 0..<iterations {
+        let index = Int(rng.next() % UInt64(addresses.count))
+        blackHole(addresses[index].formatted(.addressOnly))
+    }
+}
+
+@inline(never)
+private func benchmarkDynamicRawIPv4AddressFormatter(_ addresses: [IPv4Address], iterations: Int) {
+    withUnsafeTemporaryAllocation(
+        of: UInt8.self,
+        capacity: CIDRUTF8Formatting.maximumIPv4AddressLiteralUTF8Count
+    ) { buffer in
+        let rawBuffer = UnsafeMutableRawBufferPointer(buffer)
+        var rng = IPv4FormattingRNG()
+
+        for _ in 0..<iterations {
+            let index = Int(rng.next() % UInt64(addresses.count))
+            let written = addresses[index].writeAddressLiteralUTF8(into: rawBuffer)
             blackHole(written)
             blackHole(buffer[0])
         }
@@ -669,6 +752,7 @@ let benchmarks = {
     let formatterIPv4Loopback = IPv4Address(address: formatterIPv4LoopbackStorage)
     let formatterIPv4LocalBroadcast = IPv4Address(address: formatterIPv4LocalBroadcastStorage)
     let formatterIPv4Mixed = IPv4Address(address: formatterIPv4MixedStorage)
+    let formatterIPv4Corpora = makeIPv4FormattingCorpora()
     let formatterIPv4Mixed24 = IPv4Address(
         address: formatterIPv4MixedStorage,
         prefixLength: IPv4PrefixLength(24)!
@@ -738,6 +822,7 @@ let benchmarks = {
     let slashPrefixIPv6Mix: [UInt8] = [0, 48, 56, 64, 64, 96, 127, 128]
     let slashPrefixExportMix: [UInt8] = [0, 24, 32, 48, 56, 64, 96, 128]
     let concreteAttributionIterations = 3_000_000
+    let dynamicIPv4Iterations = 8_000_000
 
     Benchmark(
         "formatter.cpu.ipv4.public.zero.15M",
@@ -837,6 +922,30 @@ let benchmarks = {
         configuration: cpuConfiguration()
     ) { _ in
         benchmarkRawIPv4AddressFormatter(formatterIPv4Mixed, iterations: 15_000_000)
+    }
+
+    // CHANGE: Selection isolates deterministic RNG, indexing, and blackHole overhead from formatting.
+    for corpus in formatterIPv4Corpora {
+        Benchmark(
+            "formatter.cpu.ipv4.selection.\(corpus.name).8M",
+            configuration: cpuConfiguration()
+        ) { _ in
+            benchmarkDynamicIPv4Selection(corpus.addresses, iterations: dynamicIPv4Iterations)
+        }
+
+        Benchmark(
+            "formatter.cpu.ipv4.public.\(corpus.name).8M",
+            configuration: cpuConfiguration()
+        ) { _ in
+            benchmarkDynamicIPv4PublicFormatter(corpus.addresses, iterations: dynamicIPv4Iterations)
+        }
+
+        Benchmark(
+            "formatter.cpu.ipv4.raw.\(corpus.name).8M",
+            configuration: cpuConfiguration()
+        ) { _ in
+            benchmarkDynamicRawIPv4AddressFormatter(corpus.addresses, iterations: dynamicIPv4Iterations)
+        }
     }
 
     Benchmark(
