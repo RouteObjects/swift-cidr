@@ -4,9 +4,9 @@ Thank you for considering a contribution to `swift-cidr`.
 
 `swift-cidr` is a type-driven CIDR math library. Contributions should preserve
 the library's main goal: small, value-semantic Swift types that model IP
-addresses, prefix lengths, network boundaries, delegated blocks, endpoints, and
-multicast group ranges without collapsing those meanings into strings or
-POSIX-shaped buffers.
+addresses, prefix lengths, network boundaries, delegated blocks, endpoints,
+Autonomous System numbers, and multicast group ranges without collapsing those
+meanings into strings or POSIX-shaped buffers.
 
 ## Contribution Workflow
 
@@ -49,6 +49,12 @@ Common references for this package include:
   text representation
 - [RFC 2622](https://datatracker.ietf.org/doc/html/rfc2622): RPSL prefix-range
   operators
+- [RFC 1930](https://datatracker.ietf.org/doc/html/rfc1930): Autonomous System
+  concepts and terminology
+- [RFC 5396](https://datatracker.ietf.org/doc/html/rfc5396): canonical `asplain`
+  textual representation of AS numbers
+- [RFC 6793](https://datatracker.ietf.org/doc/html/rfc6793): four-octet AS
+  number support
 - [RFC 6308](https://datatracker.ietf.org/doc/html/rfc6308): multicast address
   allocation and assignment architecture
 - [IANA Address Family Numbers](https://www.iana.org/assignments/address-family-numbers/address-family-numbers.xhtml)
@@ -67,6 +73,8 @@ same thing.
   allocated address space.
 - `InterfaceAddress<Family>` represents interface configuration context.
 - `IPEndpoint<Family>` represents an address plus transport port.
+- `AutonomousSystemNumber` represents a numeric four-octet AS identifier, while
+  `AF.ASN` remains its address-family marker.
 - `IPMulticastGroup<Family>` and `IPMulticastGroupRange<Family>` represent
   multicast destination identifiers and multicast group-address ranges.
 
