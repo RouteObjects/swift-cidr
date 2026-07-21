@@ -27,6 +27,13 @@ struct AutonomousSystemNumberTests {
         }
     }
 
+    @Test("ASN is shorthand for AutonomousSystemNumber")
+    func asnShorthand() throws {
+        let number: ASN = try #require(ASN("64496"))
+
+        #expect(number == AutonomousSystemNumber(64_496))
+    }
+
     @Test("Asplain parsing round-trips through canonical decimal text")
     func asplainParsingRoundTrips() throws {
         let examples: [(source: String, value: AF.ASN.Storage, canonical: String)] = [

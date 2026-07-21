@@ -73,8 +73,8 @@ same thing.
   allocated address space.
 - `InterfaceAddress<Family>` represents interface configuration context.
 - `IPEndpoint<Family>` represents an address plus transport port.
-- `AutonomousSystemNumber` represents a numeric four-octet AS identifier, while
-  `AF.ASN` remains its address-family marker.
+- `AutonomousSystemNumber`, also available as `ASN`, represents a numeric
+  four-octet AS identifier, while `AF.ASN` remains its address-family marker.
 - `IPMulticastGroup<Family>` and `IPMulticastGroupRange<Family>` represent
   multicast destination identifiers and multicast group-address ranges.
 

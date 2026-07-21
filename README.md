@@ -48,8 +48,8 @@ and other systems that process high-volume IP data or control-plane state.
 - `AddressFamily` models selected IANA address-family values as compile-time
   traits instead of runtime tags, carrying storage width, parser, formatter, and
   IANA family metadata in the type system.
-- `AutonomousSystemNumber` is the canonical numeric AS-number value, while
-  `AF.ASN` remains its IANA address-family marker.
+- `AutonomousSystemNumber`, also available as `ASN`, is the canonical numeric
+  AS-number value, while `AF.ASN` remains its IANA address-family marker.
 - `IPNetwork` is first-class, so CIDR prefixes can participate directly in
   containment checks, subnet traversal, summarization, and mixed-family API
   boundaries.

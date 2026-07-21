@@ -154,8 +154,6 @@ public enum AF {
 public typealias V4 = AF.V4
 /// Shorthand alias for the IPv6 address family marker type.
 public typealias V6 = AF.V6
-/// Shorthand alias for the AS Number address family marker type.
-public typealias ASN = AF.ASN
 /// Shorthand alias for the 48-bit MAC address family marker type.
 public typealias MAC48 = AF.MAC48
 /// Shorthand alias for the 64-bit MAC address family marker type.

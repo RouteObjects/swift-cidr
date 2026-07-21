@@ -79,3 +79,6 @@ extension AutonomousSystemNumber {
         try container.encode(rawValue)
     }
 }
+
+/// Shorthand for ``AutonomousSystemNumber``.
+public typealias ASN = AutonomousSystemNumber
