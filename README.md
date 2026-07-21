@@ -10,6 +10,15 @@
 addressing and related routing identifiers: addresses, prefix lengths, networks,
 endpoints, and Autonomous System numbers that need stable modeling across routing,
 addressing, policy, validation, configuration, server, and POSIX boundaries.
+
+Although an Autonomous System number is not a CIDR prefix, it is a foundational
+Internet routing identifier. Inter-domain routing operates between autonomous
+systems, and AS numbers are used alongside IP prefixes throughout BGP, RPSL, IRR
+queries, route-origin validation, and routing policy. `swift-cidr` therefore owns
+the protocol-neutral numeric `AutonomousSystemNumber` value, while higher-level
+packages own contextual syntax and behavior. For example, `swift-rpsl` owns
+`AS`-prefixed forms, AS expressions, sets, references, and policy semantics.
+
 The core models are currency types: public value types intended to be
 stored, passed, and composed throughout network infrastructure software.
 
