@@ -7,9 +7,18 @@
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FRouteObjects%2Fswift-cidr%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/RouteObjects/swift-cidr)
 
 `CIDR` provides value-semantic Swift types for classless Internet Protocol
-addressing: addresses, prefix lengths, networks, and endpoints that need stable
-modeling across routing, addressing, policy, validation, configuration, server,
-and POSIX boundaries.
+addressing and related routing identifiers: addresses, prefix lengths, networks,
+endpoints, and Autonomous System numbers that need stable modeling across routing,
+addressing, policy, validation, configuration, server, and POSIX boundaries.
+
+Although an Autonomous System number is not a CIDR prefix, it is a foundational
+Internet routing identifier. Inter-domain routing operates between autonomous
+systems, and AS numbers are used alongside IP prefixes throughout BGP, RPSL, IRR
+queries, route-origin validation, and routing policy. `swift-cidr` therefore owns
+the protocol-neutral numeric `AutonomousSystemNumber` value, while higher-level
+packages own contextual syntax and behavior. For example, `swift-rpsl` owns
+`AS`-prefixed forms, AS expressions, sets, references, and policy semantics.
+
 The core models are currency types: public value types intended to be
 stored, passed, and composed throughout network infrastructure software.
 
@@ -39,6 +48,8 @@ and other systems that process high-volume IP data or control-plane state.
 - `AddressFamily` models selected IANA address-family values as compile-time
   traits instead of runtime tags, carrying storage width, parser, formatter, and
   IANA family metadata in the type system.
+- `AutonomousSystemNumber`, also available as `ASN`, is the canonical numeric
+  AS-number value, while `AF.ASN` remains its IANA address-family marker.
 - `IPNetwork` is first-class, so CIDR prefixes can participate directly in
   containment checks, subnet traversal, summarization, and mixed-family API
   boundaries.
@@ -72,6 +83,8 @@ The package is organized around a family-bound core:
    `IPv4MulticastGroup` and `IPv6MulticastGroup`.
 - `AnyIPAddress`, `AnyIPNetwork`, and `AnyPrefixLength` provide mixed-family
    wrappers for boundary APIs.
+- `AutonomousSystemNumber` stores a four-octet AS number and parses its canonical
+  bare `asplain` decimal representation.
 - `Port` stores numeric transport-layer port values, and `IPEndpoint` combines
    an IP address with a port.
 
@@ -102,9 +115,12 @@ terminology rather than package-specific interpretations:
 - [RFC 6308](https://datatracker.ietf.org/doc/html/rfc6308) informs the
   multicast address allocation and assignment model used by multicast types.
 - [RFC 1930](https://datatracker.ietf.org/doc/html/rfc1930) defines the
-  Autonomous System concept used by `AF.ASN`.
+  Autonomous System concept modeled by `AutonomousSystemNumber` and identified
+  by the `AF.ASN` family marker.
+- [RFC 5396](https://datatracker.ietf.org/doc/html/rfc5396) defines bare decimal
+  `asplain` as the canonical textual representation of an AS number.
 - [RFC 6793](https://datatracker.ietf.org/doc/html/rfc6793) defines four-octet
-  AS numbers, matching `AF.ASN`'s 32-bit storage.
+  AS numbers, matching `AutonomousSystemNumber`'s `AF.ASN.Storage` backing.
 
 ## Learning Guides
 
@@ -226,6 +242,24 @@ if let v4 = AnyIPAddress("192.0.2.1/24"),
     }
 }
 ```
+
+### Autonomous System Numbers
+
+```swift
+import CIDR
+
+if let asn = AutonomousSystemNumber("64496") {
+    print(asn.rawValue)
+    // 64496
+
+    print(asn.description)
+    // 64496
+}
+```
+
+The numeric value intentionally does not accept the RPSL form `AS64496` or
+legacy `asdot` text. Those lexical and policy concerns belong in higher-level
+packages.
 
 ## Development
 

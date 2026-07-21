@@ -192,6 +192,7 @@ let benchmarks = {
     let ipv6AddressCIDR = "2001:db8::1/64"
     let ipv4NetworkCIDR = "198.51.100.4/30"
     let ipv6NetworkCIDR = "2001:db8:1::/48"
+    let asnMaxText = "4294967295"
 
     let ipv4Prefix: IPv4PrefixLength = benchmarkPrefixLength(24)
     let ipv6Prefix: IPv6PrefixLength = benchmarkPrefixLength(64)
@@ -246,6 +247,9 @@ let benchmarks = {
 
     let anyIPv4Address = AnyIPAddress(ipv4Host)
     let anyIPv4Network = AnyIPNetwork(ipv4Network)
+    let asnMaxStorage = AF.ASN.Storage.max
+    let asnMax = AutonomousSystemNumber(asnMaxStorage)
+    let asnCompare = AutonomousSystemNumber(asnMaxStorage - 1)
 
     Benchmark(
         "parser.pton4v4.simple",
@@ -640,6 +644,53 @@ let benchmarks = {
     ) { benchmark in
         for _ in benchmark.scaledIterations {
             blackHole(systemInetNtop6(formatterIPv6MiddleCompressed2Storage))
+        }
+    }
+
+    Benchmark(
+        "parser.asn.autonomousSystemNumber.max",
+        configuration: parserConfiguration(tags: ["family": "asn", "variant": "max"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AutonomousSystemNumber(asnMaxText))
+        }
+    }
+
+    Benchmark(
+        "formatter.asn.autonomousSystemNumber.max",
+        configuration: formatterConfiguration(tags: ["family": "asn", "variant": "max"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(asnMax.description)
+        }
+    }
+
+    Benchmark(
+        "currency.autonomousSystemNumber.init",
+        configuration: currencyConfiguration(tags: ["family": "asn", "kind": "init"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AutonomousSystemNumber(asnMaxStorage))
+        }
+    }
+
+    Benchmark(
+        "currency.autonomousSystemNumber.compare",
+        configuration: currencyConfiguration(tags: ["family": "asn", "kind": "compare"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(asnCompare < asnMax)
+        }
+    }
+
+    Benchmark(
+        "currency.autonomousSystemNumber.hash",
+        configuration: currencyConfiguration(tags: ["family": "asn", "kind": "hash"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            var hasher = Hasher()
+            hasher.combine(asnMax)
+            blackHole(hasher.finalize())
         }
     }
 
