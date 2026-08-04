@@ -17,7 +17,10 @@
 /// UDP. It does not model an IANA service-name registration, transport protocol selection, socket
 /// metadata, or a physical/interface port. The
 /// [IANA Service Name and Port Number registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)
-/// is useful reference data layered above this core currency type.
+/// is useful reference data layered above this currency type.
+///
+/// **Layering:** with ``IPEndpoint``, design intent places port/endpoint in a **host/context**
+/// layer above pure classless prefix math (see package DESIGN.md).
 public struct Port: Sendable, Hashable, Codable {
     /// The raw 16-bit numeric port value.
     public let rawValue: UInt16
@@ -33,6 +36,11 @@ public struct Port: Sendable, Hashable, Codable {
 /// `IPEndpoint` intentionally models only `IPAddress + Port`. It does not include a transport
 /// protocol such as TCP or UDP, because that choice belongs one layer above this transport-neutral
 /// currency type.
+///
+/// **Layering:** endpoint composition is **host/context** currency (sockets, services), not pure
+/// classless prefix math. Design intent is to keep the math module focused on addresses, networks,
+/// and related forms; `IPEndpoint` / ``Port`` may move to a dedicated host/context package. Scoped
+/// IPv6 (`addr%zone`) belongs in that same layer—see package DESIGN.md and issue #10.
 ///
 /// IPv4 endpoints format as `192.0.2.1/24:53`.
 /// IPv6 endpoints format as `[2001:db8::1/64]:443`.

@@ -30,8 +30,10 @@ public enum AddressFamilyParseOrder: Sendable, Hashable, Codable {
 /// family-bound CIDR currency types intact while giving boundary APIs one value type for
 /// "IPv4 or IPv6."
 ///
-/// Use this type when the address family is not known until runtime, such as parsing imported text,
-/// displaying mixed-family UI rows, serializing user data, or storing mixed-family collections.
+/// **Why:** use when the family is not known until runtime—imported text, mixed-family UI,
+/// multi-family control-plane feeds (for example RPKI data with both IPv4 and IPv6 prefixes), or
+/// mixed collections. Prefer ``IPAddress`` with a concrete family inside algorithms.
+///
 /// `AnyIPAddress` does not infer multicast semantics; `AnyIPAddress("239.1.2.3")` is an ordinary
 /// IPv4 address wrapper.
 public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDebugStringConvertible, LosslessStringConvertible, Codable {
@@ -198,8 +200,11 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
 /// A family-erased IP network wrapper that stores either an IPv4 or IPv6 network.
 ///
 /// `AnyIPNetwork` is a concrete tagged union for APIs that accept "IPv4 network or IPv6 network"
-/// while preserving the family-bound `IPNetwork` value inside. Mixed-family networks serialize
+/// while preserving the family-bound ``IPNetwork`` value inside. Mixed-family networks serialize
 /// losslessly as canonical CIDR strings.
+///
+/// **Why:** same boundary role as ``AnyIPAddress``, for **canonical networks** (routes, ROA
+/// prefixes, policy keys). Prefer ``IPNetwork`` with a concrete family inside algorithms.
 public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDebugStringConvertible, LosslessStringConvertible, Codable {
     /// An IPv4 network.
     case v4(IPv4Network)

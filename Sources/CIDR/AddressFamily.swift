@@ -17,6 +17,9 @@
 /// values into the type system so a family defines its storage width, canonical parser, formatter,
 /// and IANA identifier.
 ///
+/// **Why:** generic algorithms need width and parse/format hooks without a runtime switch on every
+/// call. **Standards:** [IANA Address Family Numbers](https://www.iana.org/assignments/address-family-numbers/).
+///
 /// IPv4 and IPv6 are Internet Protocol address families and therefore conform to
 /// ``IPAddressFamily``. Other supported families, such as AS numbers and MAC address formats, are
 /// parseable and formattable registry families but do not automatically participate in IP-specific
@@ -49,6 +52,9 @@ public protocol AddressFamily: Sendable {
 /// This keeps non-IP registry families, such as AS numbers and MAC address formats, out of
 /// IP-specific CIDR types while still letting them share the broader ``AddressFamily`` metadata,
 /// parsing, and formatting surface.
+///
+/// **Standards:** [RFC 791](https://datatracker.ietf.org/doc/html/rfc791) (IPv4),
+/// [RFC 4291](https://datatracker.ietf.org/doc/html/rfc4291) (IPv6).
 public protocol IPAddressFamily: AddressFamily {}
 
 /// Namespace for the concrete IANA address family marker types supported by CIDR.

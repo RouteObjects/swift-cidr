@@ -1,0 +1,158 @@
+# Design: Why each type exists
+
+This document explains the **architecture** of `swift-cidr`: why public types exist, how they map to Internet standards, and how the package separates **classless address-space math** from **host and context-of-use** composition.
+
+It is written for adopters, contributors, and the [Swift Networking Workgroup](https://www.swift.org/networking-workgroup/) when exploring prior art. It is **not** a proposal that every type must appear in a future standard library surface.
+
+For hands-on guides, see [Learning](Learning/README.md). For real consumers of this package, see [Examples](Examples.md). For non-public helpers, see [INTERNALS](INTERNALS.md).
+
+---
+
+## 1. Purpose and non-goals
+
+### Purpose
+
+Provide **value-semantic currency types** for classless IP addressing and closely related routing identifiers so network-infrastructure software (routing, policy, IPAM, RPKI, IRR tooling, configuration, telemetry) can share one precise foundation instead of ad hoc strings and host-only models.
+
+### Non-goals
+
+- Socket I/O, URLSession, or a full networking stack
+- Operational state (RIB/FIB, BGP path attributes, live sockets)
+- Service-name registries, transport protocol selection (TCP vs UDP)
+- Cryptographic RPKI validation (consumers use prefixes + lengths + ASNs produced here)
+- Host-local interface tables as part of core math (scoped addresses belong in a host/context layer)
+
+---
+
+## 2. Narrative: RFC 4632 and expanded prefix usage
+
+### Core plan (RFC 4632)
+
+[RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632), *Classless Inter-domain Routing: The Internet Address Assignment and Aggregation Plan*, is not merely “parse text with a slash.”
+
+| Word | Meaning for this package |
+|------|---------------------------|
+| **Classless** | Network boundary = **explicit prefix length**, not Class A/B/C inference |
+| **Inter-domain** | Independently administered networks (often Autonomous Systems) and policy boundaries |
+| **Routing** | Prefixes and aggregation as Layer 3 assignment / control-plane concepts—not only host presentation |
+
+The **native unit of that plan** is **prefix-shaped address space**: what this package calls a canonical **network** (`IPNetwork` / `IPPrefix`).
+
+### Expanded usage
+
+The same classless math is reused far beyond a single routing table entry:
+
+| Context | Package modeling |
+|---------|------------------|
+| Route / filter / many policy keys | `IPNetwork` |
+| RIR / allocation-shaped blocks | `CIDRBlock` ([RFC 7020](https://datatracker.ietf.org/doc/html/rfc7020)) |
+| RPSL more-specific / length-range selection | `NetworkPrefixRange` ([RFC 2622](https://datatracker.ietf.org/doc/html/rfc2622)) |
+| Host or interface-style `addr/len` | `IPAddress` + `PrefixLength` (address with prefix **context**) |
+| RPKI ROA base prefix + optional `maxLength` | `IPNetwork` + `PrefixLength` as **consumers** of length currency ([RFC 9582](https://datatracker.ietf.org/doc/html/rfc9582)) |
+| Multicast destinations | `IPMulticastGroup` / `IPMulticastGroupRange` (not unicast subnet ceremony) |
+| Inter-domain origin / peer identity | `AutonomousSystemNumber` (with routes, ROAs, IRR—not BGP-only) |
+
+**Composable types** exist so those roles do not collapse into one hybrid “CIDR wrapper” around a host address.
+
+---
+
+## 3. Progressive disclosure
+
+You do not need the full surface for every app.
+
+| Path | Start here | Add when needed |
+|------|------------|-----------------|
+| **Common / end-host** | `IPv4Address`, `IPv6Address` | Later: host/context layer for `Port`, endpoint, scoped IPv6 |
+| **Infrastructure** | + `PrefixLength`, `IPNetwork` | `CIDRBlock`, `NetworkPrefixRange`, ASN, multicast, `AnyIP*` |
+
+The breadth of types is **depth for control-plane and policy work**, not a claim that every program must import every type on day one.
+
+---
+
+## 4. Type map (public currency)
+
+Primary cite = strongest definition of the concept. Secondary = important consumers or related rules.
+
+| Type / protocol | Why it exists | Why not a neighbor | Primary standard(s) | Also / consumers |
+|-----------------|---------------|--------------------|---------------------|------------------|
+| `AddressFamily` | Compile-time IANA family + width, parse/format hooks | Not a runtime-only tag when generic algorithms need width | [IANA Address Family Numbers](https://www.iana.org/assignments/address-family-numbers/) | — |
+| `IPAddressFamily` | IP-only refinement so MAC/ASN do not enter IP CIDR ops | Not every `AddressFamily` is an IP space | RFC 791, RFC 4291 | — |
+| `AF.V4` / `AF.V6` | Concrete IP family markers | — | RFC 791, RFC 4291 | RFC 7608 (any length 0…128 in forwarding) |
+| `AF.MAC48` / `AF.MAC64` | L2 currency in the same family *pattern* | Not IP networks or prefixes | IANA AF numbers | IEEE 802 as needed |
+| `AF.ASN` | Family marker for AS number storage | Not an IP | RFC 1930 | — |
+| `PrefixLength<Family>` | Family-valid slash count; shared currency | Not raw `Int` (wrong width / silent bugs) | RFC 4632; RFC 4291 | ROA `maxLength` etc. (RFC 9582 consumer) |
+| `IPAddress<Family>` | Address + prefix **context** (`192.0.2.77/24`) | Not a canonical network; host bits matter for identity | RFC 4632; RFC 4291 | Interface/config practice |
+| `IPNetwork<Family>` | **Canonical** network / prefix (4632 unit) | Not address-with-context; host bits cleared | **RFC 4632** | BGP/IRR/RPKI *consumers* of prefixes |
+| `IPPrefix` | Protocol for aligned-prefix ops (containment, subnets, summarize) | Not a stored value by itself | RFC 4632 | Implemented by `IPNetwork` |
+| `CIDR` (protocol) | Shared “storage + prefix length” across forms | **Not** a single hybrid value type | RFC 4632 | See §6 |
+| `CIDRBlock<Family>` | Neutral address-space block (allocation-shaped set math) | Not subnet/broadcast/gateway ceremony | RFC 4632; **RFC 7020** | RFC 6890 consumers |
+| `NetworkPrefixRange<Family>` | Prefix **selector** (more-specific / length range) | Not one network; not an address | **RFC 2622** §2; RFC 4012 | Related idea: ROA maxLength (9582) |
+| `IPMulticastGroup` / `Range` | Multicast destination identity / ranges | Not unicast subnet semantics | RFC 4291; RFC 4607; RFC 6308 | RFC 5771 where useful |
+| `AnyIPAddress` / `AnyIPNetwork` / `AnyPrefixLength` | Mixed-family API boundaries | Not a substitute for family-bound math | API need | Multi-family ROA sets (RFC 9582) |
+| `AutonomousSystemNumber` | Numeric AS currency | Not RPSL `AS` text; not allocation registry | RFC 1930; **RFC 5396**; **RFC 6793** | **BGP, RPKI ROA origin, IRR, RPSL/policy** |
+| `Port` | 16-bit transport port number only | Not service names or “Ethernet port” | Transport / [IANA ports](https://www.iana.org/assignments/service-names-port-numbers/) as reference | Host/context layer long-term |
+| `IPEndpoint` | Address + port composition | Not TCP/UDP choice; not pure prefix math | Composition | **Host/context layer** (see §7, issue #10) |
+| Text style enums | Presentation choices | Not network identity | RFC 5952 (v6); RFC 4291 | — |
+
+Aliases such as `IPv4Network`, `ASN`, `IPv6PrefixLength` are conveniences over the generic types above.
+
+---
+
+## 5. Form comparison
+
+| | `IPAddress` | `IPNetwork` | `CIDRBlock` | `NetworkPrefixRange` |
+|--|-------------|-------------|-------------|----------------------|
+| **Shape** | Address + prefix context | Canonical prefix | Neutral block | Selector over prefixes |
+| **Host bits** | Preserved (identity) | Cleared | Cleared | N/A (base is a network) |
+| **Typical use** | Host/interface-style values | Route/filter-shaped keys | Allocation / set math | RPSL-style more-specifics |
+| **Projection** | `.network` → `IPNetwork` (lossy) | — | Related math, different role | Built from a base `IPNetwork` |
+
+---
+
+## 6. `protocol CIDR` vs community `struct CIDR`
+
+Many libraries expose a single **`struct CIDR`** that:
+
+- stores and often **prints** host bits, and  
+- **equates / hashes / matches** as a network  
+
+That pattern is convenient for demos and costly for infrastructure: presentation and identity disagree (form collision).
+
+In **swift-cidr**, **`CIDR` is a protocol**: shared structure (family-bound storage + prefix length) implemented by **several** concrete types (`IPAddress`, `IPNetwork`, `CIDRBlock`, multicast ranges, …). Meaning lives in the **concrete type**, not in one overloaded wrapper.
+
+---
+
+## 7. Layering: math core vs host / context
+
+| Layer | Examples | Role |
+|-------|----------|------|
+| **Math core** (`CIDR` module focus) | Families, `PrefixLength`, `IPAddress`, `IPNetwork`, blocks, selectors, multicast, ASN, MAC families | Classless address-space currency |
+| **Host / context** (target; issue #10) | `Port`, `IPEndpoint`, scoped IPv6 (`addr%zone`), Interface/zone | Transport binding and link attachment |
+| **Adapters** | `CIDRPOSIX`, `CIDRNIO` | OS / SwiftNIO edges |
+
+**Recommendation for standards exploration:** keep the same split—do not force interface scope or endpoints into pure prefix math. Zone identifiers are often **host-local** (name ↔ index); they fit adapters + host/context types better than core network equality.
+
+`IPEndpoint` and `Port` currently live in the core module for historical packaging; **design intent** is to treat them as host/context layer (and migrate when ready). Core IPv6 values remain **bits-only**; scoped addresses are a future host-layer feature ([issue #10](https://github.com/RouteObjects/swift-cidr/issues/10)).
+
+Adapters that convert bits-only addresses may reject non-zero `sin6_scope_id` until a scoped type exists—that is intentional.
+
+---
+
+## 8. Modules
+
+| Module | Role |
+|--------|------|
+| **CIDR** | Pure Swift currency types and math; no NIO dependency |
+| **CIDRPOSIX** | POSIX/`sockaddr` interoperability |
+| **CIDRNIO** | SwiftNIO `SocketAddress` / buffer edges |
+
+IANA bulk datasets and full RPKI validators stay **outside** this package.
+
+---
+
+## 9. Further reading
+
+- [Learning guides](Learning/README.md)  
+- [Examples (dogfooding)](Examples.md)  
+- [Internals](INTERNALS.md)  
+- [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632)  

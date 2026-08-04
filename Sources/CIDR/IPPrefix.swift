@@ -13,19 +13,20 @@
 
 /// A canonical, aligned IP prefix that supports network-level operations.
 ///
-/// `IPPrefix` is the structural refinement of `CIDR` used for values whose stored bits are meant to
-/// represent a formal prefix boundary. This is the level where containment, subnetting, and prefix
-/// summarization become rational operations.
+/// `IPPrefix` is the structural refinement of ``CIDR`` used for values whose stored bits are meant
+/// to represent a formal prefix boundary. This is the level where containment, subnetting, and
+/// prefix summarization become rational operations—aligned with classless aggregation thinking in
+/// [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632).
+///
+/// **Why a protocol:** ``IPNetwork`` is the primary unicast conforming type; shared algorithms
+/// (subnets, summarize) should not hard-code one concrete struct.
 ///
 /// Conforming types own their stored prefix bits, so they also own enforcement of canonical
 /// alignment. Implementations of ``init(prefix:prefixLength:)`` must clear any host bits below the
-/// prefix boundary before storage. Protocol extension initializers and helpers adapt inputs and
-/// share behavior, but they do not replace the conforming type's storage-boundary invariant.
+/// prefix boundary before storage.
 ///
 /// Because `IPPrefix` requires a canonical `Self` initializer, shared extension algorithms can
-/// construct aligned prefix results without knowing the concrete type. This is why prefix
-/// summarization lives at this abstraction level: the algorithm decomposes address ranges into
-/// canonical prefixes of the conforming type.
+/// construct aligned prefix results without knowing the concrete type.
 public protocol IPPrefix: CIDR {
     /// The canonical prefix boundary for this value.
     ///

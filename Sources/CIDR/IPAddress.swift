@@ -41,12 +41,22 @@ public typealias IPv6Address = IPAddress<V6>
 ///
 /// `IPAddress` stores a concrete IP address together with a ``PrefixLength``. The pair is the
 /// canonical form for address-shaped CIDR input: `192.0.2.77/24` means address `192.0.2.77`
-/// interpreted within the `/24` CIDR range.
+/// interpreted within the `/24` CIDR range (host bits are part of identity).
+///
+/// **Why this type:** classless notation is often used for host or interface-style values, not only
+/// route prefixes. Keeping address + prefix **context** distinct from a canonical ``IPNetwork``
+/// avoids treating two different interface configs as the same network key.
+///
+/// **Why not ``IPNetwork``:** networks clear host bits and model a prefix boundary. Use ``network``
+/// for an explicit, lossy projection to that form.
+///
+/// **Standards:** classless notation and aggregation context in
+/// [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632); IPv6 addressing in
+/// [RFC 4291](https://datatracker.ietf.org/doc/html/rfc4291).
 ///
 /// In swift-cidr terminology, `IPAddress` is a core currency type: a small, value-semantic type
-/// intended to move between parsing, formatting, containment, and endpoint APIs.
-///
-/// Use ``network`` when you need the containing ``IPNetwork`` prefix boundary.
+/// intended to move between parsing, formatting, containment, and higher layers (including
+/// endpoints in the host/context layer).
 public struct IPAddress<Family: IPAddressFamily>: Addressable, CIDR, Hashable, Comparable, LosslessStringConvertible, Codable {
     /// The address component of this CIDR value.
     ///

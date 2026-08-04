@@ -131,3 +131,7 @@ Choose the type that matches the context:
 
 This keeps the same CIDR math reusable without mixing unrelated operational
 semantics.
+
+For a full type ↔ standards map, form comparison (`IPAddress` vs `IPNetwork` vs
+`CIDRBlock` vs `NetworkPrefixRange`), and the math-core vs host/context layering
+story, see [DESIGN.md](../DESIGN.md).

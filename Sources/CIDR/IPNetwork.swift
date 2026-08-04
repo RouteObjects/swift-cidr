@@ -19,15 +19,23 @@ public typealias IPv6Network = IPNetwork<V6>
 
 /// A family-bound, prefix-aligned IP network boundary.
 ///
-/// `IPNetwork` is the concrete `IPPrefix` type for ordinary unicast-style network prefixes. It
+/// `IPNetwork` is the concrete ``IPPrefix`` type for ordinary unicast-style network prefixes. It
 /// stores a canonical prefix boundary: any host bits below `prefixLength` are cleared during
 /// initialization.
 ///
-/// A network value describes CIDR prefix math, not operational routing state. A prefix may later be
-/// installed in a routing table, advertised by BGP, assigned to an interface context, or referenced
-/// by policy, but those are higher-layer interpretations built on top of this boundary value.
+/// **Why this type:** [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632) describes classless
+/// **address assignment and aggregation**; the native unit is prefix-shaped space. `IPNetwork` is
+/// that unit for route keys, many filters, registry prefixes, and aggregation math.
 ///
-/// By conforming to `IPPrefix`, `IPNetwork` gets the shared aligned-prefix operations such as
+/// **Why not ``IPAddress``:** address-with-context preserves host bits. **Why not ``CIDRBlock``:**
+/// blocks are neutral allocation-shaped ranges without implying unicast “network” operations as the
+/// primary story—see package design docs.
+///
+/// A network value describes CIDR prefix math, not operational routing state. A prefix may later be
+/// installed in a routing table, advertised by BGP, listed in IRR/RPKI-related data, or referenced
+/// by policy; those are higher-layer roles on top of this boundary value.
+///
+/// By conforming to ``IPPrefix``, `IPNetwork` gets shared aligned-prefix operations such as
 /// containment, subnet traversal, next-prefix calculation, and summarization.
 public struct IPNetwork<Family: IPAddressFamily>: IPPrefix, Hashable, LosslessStringConvertible, Codable {
     /// The canonical prefix boundary for this network.
