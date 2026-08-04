@@ -122,9 +122,11 @@ Flagship references (full map in DESIGN.md):
   32-bit Internet address family.
 - [RFC 4291](https://datatracker.ietf.org/doc/html/rfc4291) grounds IPv6 as a
   128-bit address family and defines conventional IPv6 text forms.
-- [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632) defines Classless
-  Inter-Domain Routing notation, aggregation context, and the registry
-  distinction between allocation and assignment.
+- [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632) is *Classless
+  Inter-domain Routing: The Internet Address Assignment and Aggregation Plan*—not
+  merely slash-text parsing. The package’s abbreviated Classless / Inter-domain /
+  Routing reading is in
+  [DESIGN.md §2](Documentation/DESIGN.md#2-narrative-rfc-4632-and-expanded-prefix-usage).
 - [RFC 7020](https://datatracker.ietf.org/doc/html/rfc7020) describes the
   Internet Numbers Registry System for globally unique IP address space and AS
   numbers; that registry and delegation context is why `CIDRBlock` exists as a

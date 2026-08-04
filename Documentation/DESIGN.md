@@ -28,13 +28,15 @@ Provide **value-semantic currency types** for classless IP addressing and closel
 
 ### Core plan (RFC 4632)
 
-[RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632), *Classless Inter-domain Routing: The Internet Address Assignment and Aggregation Plan*, is not merely “parse text with a slash.”
+This is where the full meaning of CIDR matters.
 
-| Word | Meaning for this package |
-|------|---------------------------|
-| **Classless** | Network boundary = **explicit prefix length**, not Class A/B/C inference |
-| **Inter-domain** | Independently administered networks (often Autonomous Systems) and policy boundaries |
-| **Routing** | Prefixes and aggregation as Layer 3 assignment / control-plane concepts—not only host presentation |
+[RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632) is not merely a specification for parsing text containing a slash. Its title is *Classless Inter-domain Routing: The Internet Address Assignment and Aggregation Plan*:
+
+- **Classless** means that a network boundary is represented by an explicit prefix length rather than inferred from the former IPv4 Class A/B/C divisions. For IPv4, this is the variable-length prefix model associated with VLSM. IPv6 was designed around prefixes from the outset: its routing architecture supports prefix lengths from `/0` through `/128`, although `/64` is conventional for subnets using SLAAC. In both families, prefixes provide boundaries for routing and aggregation.
+- **Inter-domain** places these values in the context of independently administered networks, commonly Autonomous Systems, with different operational and policy boundaries.
+- **Routing** makes prefixes and their aggregation Layer 3 control-plane concepts, not merely presentation formats for host addresses.
+
+This wording is the package’s **canonical abbreviated definition of CIDR** (aligned with the same framing on the Swift Forums). Prefer it over shorter “slash notation” glosses when explaining what CIDR means here.
 
 The **native unit of that plan** is **prefix-shaped address space**: what this package calls a canonical **network** (`IPNetwork` / `IPPrefix`).
 
@@ -64,8 +66,28 @@ You do not need the full surface for every app.
 |------|------------|-----------------|
 | **Common / end-host** | `IPv4Address`, `IPv6Address` | Later: host/context layer for `Port`, endpoint, scoped IPv6 |
 | **Infrastructure** | + `PrefixLength`, `IPNetwork` | `CIDRBlock`, `NetworkPrefixRange`, ASN, multicast, `AnyIP*` |
+| **Protocols** (generic / library code) | still concrete types first | `CIDR`, `IPPrefix`, `Addressable`, `AddressFamily` / `IPAddressFamily` when writing shared algorithms or new conformers |
 
-The breadth of types is **depth for control-plane and policy work**, not a claim that every program must import every type on day one.
+**Public protocols are part of progressive disclosure**, not day-one vocabulary. Most programs only touch **concrete currency types** (and aliases such as `IPv4Address`). You reach for protocols when:
+
+- you write **generic** helpers (`func summarize<P: IPPrefix>(…)`, `where Family: IPAddressFamily`);
+- you need the **shared storage + length** surface without choosing one form (`CIDR`);
+- you implement or document a **new form** that should share math with existing types.
+
+They are **not** a second parallel product surface you must learn before parsing `"192.0.2.1/24"`. Meaning still lives in the concrete type (§5–§6); protocols factor structure and operations.
+
+### Protocol hierarchy
+
+Editable source: [protocol-hierarchy.drawio](Architecture/protocol-hierarchy.drawio).
+
+![Public protocol hierarchy](Architecture/protocol-hierarchy.svg)
+
+Two related trees:
+
+1. **Family system** — `AddressFamily` → `IPAddressFamily` → `MulticastAddressSpace`, with marker types (`AF.V4` / `AF.V6` / `AF.ASN` / MAC families). IP CIDR value types require `IPAddressFamily`; non-IP families stay out of prefix math.
+2. **Value protocols** — `CIDR` (storage + prefix length) refined by `IPPrefix` (aligned prefix ops); `Addressable` for singular address identity. Key conformers: `IPNetwork` (`IPPrefix`), `IPAddress` (`CIDR` + `Addressable`), `CIDRBlock` / `IPMulticastGroupRange` (`CIDR`), `IPMulticastGroup` (`Addressable`). `NetworkPrefixRange` is a **selector** (not `CIDR`); it *uses* `IPPrefix` in APIs. `PrefixLength` is length currency, not a CIDR form.
+
+The breadth of types **and** protocols is **depth for control-plane, policy, and library work**, not a claim that every program must import every symbol on day one.
 
 ---
 
@@ -120,6 +142,8 @@ That pattern is convenient for demos and costly for infrastructure: presentation
 
 In **swift-cidr**, **`CIDR` is a protocol**: shared structure (family-bound storage + prefix length) implemented by **several** concrete types (`IPAddress`, `IPNetwork`, `CIDRBlock`, multicast ranges, …). Meaning lives in the **concrete type**, not in one overloaded wrapper.
 
+See the [protocol hierarchy](#protocol-hierarchy) under progressive disclosure for how `CIDR`, `IPPrefix`, `Addressable`, and the family protocols fit together.
+
 ---
 
 ## 7. Layering: math core vs host / context
@@ -155,4 +179,5 @@ IANA bulk datasets and full RPKI validators stay **outside** this package.
 - [Learning guides](Learning/README.md)  
 - [Examples (dogfooding)](Examples.md)  
 - [Internals](INTERNALS.md)  
+- [Protocol hierarchy (Draw.io)](Architecture/protocol-hierarchy.drawio) · [SVG](Architecture/protocol-hierarchy.svg)  
 - [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632)  
