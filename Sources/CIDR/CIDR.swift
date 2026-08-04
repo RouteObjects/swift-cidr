@@ -13,14 +13,17 @@
 
 /// A family-bound Classless Inter-Domain Routing (CIDR) value with stored bits and prefix length.
 ///
-/// `CIDR` is the broad structural protocol for IP values that participate in the CIDR model
-/// described in [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632). It covers both
-/// host-oriented values that carry prefix context and canonical aligned prefixes.
+/// `CIDR` is a **protocol**, not a single hybrid value type. It is the broad structural interface
+/// for IP values that participate in the classless model described in
+/// [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632). Concrete types give the bits their
+/// meaning: ``IPAddress`` (address + prefix context), ``IPNetwork`` (canonical prefix),
+/// ``CIDRBlock`` (neutral block), multicast ranges, and so on.
+///
+/// **Why a protocol:** many libraries use one `struct CIDR` that prints host bits but equates as a
+/// network. Factoring shared structure into a protocol keeps **forms distinct** while reusing math.
 ///
 /// `storage` is the raw address-family storage for the value. It is not allocation state, not an
-/// RIR delegation block, and not necessarily a network-aligned prefix. Concrete types give those
-/// bits their domain meaning: an address, a network prefix, a neutral `CIDRBlock`, or another
-/// CIDR-qualified context.
+/// RIR delegation block, and not necessarily a network-aligned prefix.
 public protocol CIDR: Sendable, CustomStringConvertible, CustomDebugStringConvertible {
     associatedtype Family: IPAddressFamily
 

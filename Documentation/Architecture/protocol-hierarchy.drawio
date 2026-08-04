@@ -1,0 +1,158 @@
+<mxfile host="app.diagrams.net" agent="Grok" version="22.0.0" type="device">
+  <diagram id="protocol-hierarchy" name="Protocol hierarchy">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="swift-cidr public protocol hierarchy" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="480" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Solid boxes = concrete types · Dashed = protocols · Arrows = inherits / refines · Gray arrows = conforms to" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="48" width="700" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Family system ===== -->
+        <mxCell id="fam_lane" value="Family system" style="swimlane;horizontal=0;startSize=28;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="420" height="520" as="geometry" />
+        </mxCell>
+
+        <mxCell id="AddressFamily" value="&lt;i&gt;protocol&lt;/i&gt;&lt;br&gt;&lt;b&gt;AddressFamily&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;width · parse/format · IANA&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=0;align=center;verticalAlign=middle;" vertex="1" parent="fam_lane">
+          <mxGeometry x="120" y="40" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="IPAddressFamily" value="&lt;i&gt;protocol&lt;/i&gt;&lt;br&gt;&lt;b&gt;IPAddressFamily&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;IP-only refinement&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;verticalAlign=middle;" vertex="1" parent="fam_lane">
+          <mxGeometry x="40" y="160" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="MulticastAddressSpace" value="&lt;i&gt;protocol&lt;/i&gt;&lt;br&gt;&lt;b&gt;MulticastAddressSpace&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;verticalAlign=middle;fontSize=11;" vertex="1" parent="fam_lane">
+          <mxGeometry x="40" y="280" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="AF_V4" value="&lt;b&gt;AF.V4&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;verticalAlign=middle;" vertex="1" parent="fam_lane">
+          <mxGeometry x="30" y="380" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="AF_V6" value="&lt;b&gt;AF.V6&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;verticalAlign=middle;" vertex="1" parent="fam_lane">
+          <mxGeometry x="130" y="380" width="80" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="AF_ASN" value="&lt;b&gt;AF.ASN&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;verticalAlign=middle;" vertex="1" parent="fam_lane">
+          <mxGeometry x="250" y="160" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="AF_MAC48" value="&lt;b&gt;AF.MAC48&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;verticalAlign=middle;" vertex="1" parent="fam_lane">
+          <mxGeometry x="250" y="220" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="AF_MAC64" value="&lt;b&gt;AF.MAC64&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;verticalAlign=middle;" vertex="1" parent="fam_lane">
+          <mxGeometry x="250" y="280" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ASN_val" value="AutonomousSystemNumber" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;fontSize=11;" vertex="1" parent="fam_lane">
+          <mxGeometry x="230" y="380" width="150" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Family edges (inherit) -->
+        <mxCell id="e_af_ipaf" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#9673a6;strokeWidth=1.5;" edge="1" parent="fam_lane" source="AddressFamily" target="IPAddressFamily">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ipaf_mcast" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#9673a6;strokeWidth=1.5;" edge="1" parent="fam_lane" source="IPAddressFamily" target="MulticastAddressSpace">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mcast_v4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;" edge="1" parent="fam_lane" source="MulticastAddressSpace" target="AF_V4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mcast_v6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;" edge="1" parent="fam_lane" source="MulticastAddressSpace" target="AF_V6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_af_asn" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;" edge="1" parent="fam_lane" source="AddressFamily" target="AF_ASN">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_af_mac48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;" edge="1" parent="fam_lane" source="AddressFamily" target="AF_MAC48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_af_mac64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;" edge="1" parent="fam_lane" source="AddressFamily" target="AF_MAC64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_asn_val" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;" edge="1" parent="fam_lane" source="AF_ASN" target="ASN_val">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Value protocols ===== -->
+        <mxCell id="val_lane" value="Value protocols &amp; key conformers" style="swimlane;horizontal=0;startSize=28;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="500" y="90" width="780" height="520" as="geometry" />
+        </mxCell>
+
+        <mxCell id="CIDR" value="&lt;i&gt;protocol&lt;/i&gt;&lt;br&gt;&lt;b&gt;CIDR&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;storage + prefixLength&lt;br&gt;Family: IPAddressFamily&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;verticalAlign=middle;" vertex="1" parent="val_lane">
+          <mxGeometry x="40" y="40" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="IPPrefix" value="&lt;i&gt;protocol&lt;/i&gt;&lt;br&gt;&lt;b&gt;IPPrefix&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;aligned prefix ops&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;verticalAlign=middle;" vertex="1" parent="val_lane">
+          <mxGeometry x="60" y="160" width="160" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="Addressable" value="&lt;i&gt;protocol&lt;/i&gt;&lt;br&gt;&lt;b&gt;Addressable&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;singular address bits&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;verticalAlign=middle;" vertex="1" parent="val_lane">
+          <mxGeometry x="480" y="40" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="IPNetwork" value="&lt;b&gt;IPNetwork&amp;lt;Family&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;canonical network&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;" vertex="1" parent="val_lane">
+          <mxGeometry x="60" y="280" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="IPAddress" value="&lt;b&gt;IPAddress&amp;lt;Family&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;address + prefix context&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;" vertex="1" parent="val_lane">
+          <mxGeometry x="300" y="200" width="170" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="CIDRBlock" value="&lt;b&gt;CIDRBlock&amp;lt;Family&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;neutral block&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;" vertex="1" parent="val_lane">
+          <mxGeometry x="40" y="380" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="MRange" value="&lt;b&gt;IPMulticastGroupRange&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;fontSize=11;" vertex="1" parent="val_lane">
+          <mxGeometry x="220" y="380" width="180" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="MGroup" value="&lt;b&gt;IPMulticastGroup&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;fontSize=11;" vertex="1" parent="val_lane">
+          <mxGeometry x="500" y="200" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="NPR" value="&lt;b&gt;NetworkPrefixRange&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;selector — not CIDR&lt;br&gt;uses IPPrefix in APIs&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;verticalAlign=middle;" vertex="1" parent="val_lane">
+          <mxGeometry x="440" y="340" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="PL" value="&lt;b&gt;PrefixLength&amp;lt;Family&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;standalone length currency&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;" vertex="1" parent="val_lane">
+          <mxGeometry x="560" y="440" width="170" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Value edges -->
+        <mxCell id="e_cidr_ipprefix" value="refines" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#9673a6;strokeWidth=1.5;fontSize=10;fontColor=#666666;" edge="1" parent="val_lane" source="CIDR" target="IPPrefix">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ipprefix_net" value="conforms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;fontSize=10;fontColor=#666666;" edge="1" parent="val_lane" source="IPPrefix" target="IPNetwork">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_cidr_addr" value="conforms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;fontSize=10;fontColor=#666666;" edge="1" parent="val_lane" source="CIDR" target="IPAddress">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_addrable_addr" value="conforms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;fontSize=10;fontColor=#666666;" edge="1" parent="val_lane" source="Addressable" target="IPAddress">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_addrable_mgroup" value="conforms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;fontSize=10;fontColor=#666666;" edge="1" parent="val_lane" source="Addressable" target="MGroup">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_cidr_block" value="conforms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;fontSize=10;fontColor=#666666;" edge="1" parent="val_lane" source="CIDR" target="CIDRBlock">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_cidr_mrange" value="conforms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;fontSize=10;fontColor=#666666;" edge="1" parent="val_lane" source="CIDR" target="MRange">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_net_npr" value="API uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#d6b656;fontSize=10;fontColor=#666666;" edge="1" parent="val_lane" source="IPNetwork" target="NPR">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Footer note -->
+        <mxCell id="note" value="Progressive disclosure: most apps use concrete types only (IPv4Address, IPNetwork, …). Public protocols are the next layer—for generic algorithms and shared ops—not day-one vocabulary. See DESIGN.md §3 and §6." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;fontColor=#666666;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="630" width="1100" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

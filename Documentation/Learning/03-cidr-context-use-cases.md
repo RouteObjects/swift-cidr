@@ -5,6 +5,60 @@ interpret the bits, but the surrounding system tells you what the value means.
 
 `swift-cidr` models that distinction with separate types.
 
+## Context inventory (overview)
+
+Prefix and address values show up far wider than host or interface configuration.
+A single CIDR-style wrapper around an address usually falls short across that
+range. The inventory below matches the framing used on the Swift Forums
+requirements thread
+([Requirements for IP address and port APIs](https://forums.swift.org/t/requirements-for-ip-address-and-port-apis/88514/10))
+so package docs and that discussion stay aligned.
+
+**Host / link**
+
+- Interface address assignment
+- Link-local + zone/scope
+- On-link subnet / point-to-point / host route
+- Loopback and router-id style addresses
+
+**Routing / control plane**
+
+- Connected, static, IGP, and BGP destinations
+- Aggregates, defaults, more-specifics
+- RIB/FIB keys and next-hop addresses
+- FlowSpec-style prefix match components
+
+**Policy / filtering**
+
+- Prefix-lists (exact / length-bounded / more-specific)
+- Route policy match/set
+- ACL / security-group CIDR operands
+- Source validation (e.g. expected source prefixes)
+
+**Registries / authorization**
+
+- RIR allocations and assignments
+- IRR `route` / `route6` objects
+- RPKI ROAs (and related resource bindings)
+- Working example: [`asroutes`](https://github.com/RouteObjects/asroutes) — IRR
+  lookup by origin AS, results as **canonical networks**
+
+**Planning / isolation / ops**
+
+- IPAM pools and delegations
+- VRF / tenant / VPC route entries
+- VPN NLRI (prefix plus routing-instance context)
+- Telemetry, collectors, and logging keys
+
+Not every row above is a separate public type in `swift-cidr`. The package
+supplies **currency** (addresses with context, canonical networks, neutral
+blocks, selectors, multicast forms, ASN, mixed-family wrappers) so those
+operational systems can share one precise foundation. Higher layers own
+RIB/FIB state, policy engines, registry metadata, and transport choice.
+
+The sections that follow walk through a few of these contexts in more detail
+with concrete `swift-cidr` types.
+
 ## Interface Configuration
 
 An interface configuration stores a host address and the prefix context of the
@@ -131,3 +185,7 @@ Choose the type that matches the context:
 
 This keeps the same CIDR math reusable without mixing unrelated operational
 semantics.
+
+For a full type ↔ standards map, form comparison (`IPAddress` vs `IPNetwork` vs
+`CIDRBlock` vs `NetworkPrefixRange`), and the math-core vs host/context layering
+story, see [DESIGN.md](../DESIGN.md).

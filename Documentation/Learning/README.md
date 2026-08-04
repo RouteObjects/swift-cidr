@@ -8,6 +8,10 @@ multicast group ranges.
 separate from the core math so the same slash notation can be used correctly in
 different networking domains.
 
+**Also read:** [DESIGN.md](../DESIGN.md) (why each type + standards map),
+[Examples.md](../Examples.md) (dogfooding), [INTERNALS.md](../INTERNALS.md)
+(contributors / prior-art explorers).
+
 ## Guides
 
 - [CIDR Foundations](01-cidr-foundations.md)

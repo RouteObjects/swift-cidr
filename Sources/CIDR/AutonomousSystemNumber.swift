@@ -17,6 +17,11 @@
 /// marker. It stores the complete four-octet AS number space defined by
 /// [RFC 6793](https://www.rfc-editor.org/rfc/rfc6793.html) and uses the decimal `asplain`
 /// representation specified by [RFC 5396](https://www.rfc-editor.org/rfc/rfc5396.html).
+/// The AS concept is described in [RFC 1930](https://datatracker.ietf.org/doc/html/rfc1930).
+///
+/// **Why this type:** inter-domain work pairs **prefixes with ASNs**—not only BGP. The same numeric
+/// currency appears in RPKI **ROA** origin fields, IRR `route`/`route6` origin, RPSL policy, and
+/// telemetry. Higher layers own syntax such as `AS64496`.
 ///
 /// Parsing accepts bare ASCII decimal text such as `64496`. RPSL forms such as `AS64496`, legacy
 /// `asdot` text such as `1.10`, and lossless source spelling belong to an RPSL layer above this

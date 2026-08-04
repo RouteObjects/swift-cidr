@@ -17,8 +17,13 @@
 /// last address, containment, and overlap. It intentionally does not model operational network
 /// concepts such as broadcast addresses, usable hosts, gateways, or subnet allocation policy.
 ///
-/// See [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632) for Classless Inter-Domain
-/// Routing notation and aggregation context.
+/// **Why this type:** registry and delegation workflows need address-space **blocks** as set math
+/// ([RFC 7020](https://datatracker.ietf.org/doc/html/rfc7020) Internet Numbers Registry System)
+/// without implying a configured LAN subnet. Classless notation remains
+/// [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632).
+///
+/// **Why not ``IPNetwork``:** same alignment math is fine to share conceptually, but the role is
+/// allocation-neutral block vs ordinary unicast network prefix operations—see package DESIGN.md.
 public struct CIDRBlock<Family: IPAddressFamily>: CIDR, Hashable, LosslessStringConvertible, Codable {
     public let prefix: Family.Storage
     public let prefixLength: PrefixLength<Family>

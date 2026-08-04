@@ -13,11 +13,17 @@ addressing, policy, validation, configuration, server, and POSIX boundaries.
 
 Although an Autonomous System number is not a CIDR prefix, it is a foundational
 Internet routing identifier. Inter-domain routing operates between autonomous
-systems, and AS numbers are used alongside IP prefixes throughout BGP, RPSL, IRR
-queries, route-origin validation, and routing policy. `swift-cidr` therefore owns
-the protocol-neutral numeric `AutonomousSystemNumber` value, while higher-level
-packages own contextual syntax and behavior. For example, `swift-rpsl` owns
-`AS`-prefixed forms, AS expressions, sets, references, and policy semantics.
+systems, and AS numbers are used alongside IP prefixes throughout BGP, RPKI ROAs,
+RPSL, IRR queries, route-origin validation, and routing policy—not BGP alone.
+`swift-cidr` therefore owns the protocol-neutral numeric `AutonomousSystemNumber`
+value, while higher-level packages own contextual syntax and behavior. For
+example, `swift-rpsl` owns `AS`-prefixed forms, AS expressions, sets, references,
+and policy semantics.
+
+**Progressive disclosure.** Many apps only need `IPv4Address` / `IPv6Address`.
+Infrastructure work adds `PrefixLength`, `IPNetwork`, blocks, selectors, ASN, and
+mixed-family types. You do not need the full surface on day one—see
+[DESIGN.md](Documentation/DESIGN.md).
 
 The core models are currency types: public value types intended to be
 stored, passed, and composed throughout network infrastructure software.
@@ -52,7 +58,9 @@ and other systems that process high-volume IP data or control-plane state.
   AS-number value, while `AF.ASN` remains its IANA address-family marker.
 - `IPNetwork` is first-class, so CIDR prefixes can participate directly in
   containment checks, subnet traversal, summarization, and mixed-family API
-  boundaries.
+  boundaries. In this package, `CIDR` is a **protocol** shared by several forms—
+  not a single hybrid `struct CIDR` wrapper around a host address (see
+  [DESIGN.md](Documentation/DESIGN.md)).
 - RPSL-style prefix-range operators model route-policy prefix selection with
   `^+`, `^-`, `^n`, and `^n-m` forms.
 - Multicast group addresses and group-address ranges are modeled explicitly, so
@@ -86,12 +94,26 @@ The package is organized around a family-bound core:
 - `AutonomousSystemNumber` stores a four-octet AS number and parses its canonical
   bare `asplain` decimal representation.
 - `Port` stores numeric transport-layer port values, and `IPEndpoint` combines
-   an IP address with a port.
+   an IP address with a port. Design intent treats endpoint, port, and future
+   scoped IPv6 (`addr%zone`) as a **host/context layer** above pure prefix math
+   (see [DESIGN.md](Documentation/DESIGN.md) and
+   [issue #10](https://github.com/RouteObjects/swift-cidr/issues/10)).
 
 ## Standards Grounding
 
 `swift-cidr` is built around established Internet standards and registry
-terminology rather than package-specific interpretations:
+terminology rather than package-specific interpretations.
+
+**Type ↔ standards map, form comparison, and layering:**
+[Documentation/DESIGN.md](Documentation/DESIGN.md).
+
+**Dogfooding / usage examples:**
+[Documentation/Examples.md](Documentation/Examples.md).
+
+**Internals for contributors and prior-art explorers:**
+[Documentation/INTERNALS.md](Documentation/INTERNALS.md).
+
+Flagship references (full map in DESIGN.md):
 
 - The [IANA Address Family Numbers registry](https://www.iana.org/assignments/address-family-numbers/address-family-numbers.xhtml)
   grounds `AddressFamily.ianaValue` and the selected registry families modeled by
@@ -100,9 +122,11 @@ terminology rather than package-specific interpretations:
   32-bit Internet address family.
 - [RFC 4291](https://datatracker.ietf.org/doc/html/rfc4291) grounds IPv6 as a
   128-bit address family and defines conventional IPv6 text forms.
-- [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632) defines Classless
-  Inter-Domain Routing notation, aggregation context, and the registry
-  distinction between allocation and assignment.
+- [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632) is *Classless
+  Inter-domain Routing: The Internet Address Assignment and Aggregation Plan*—not
+  merely slash-text parsing. The package’s abbreviated Classless / Inter-domain /
+  Routing reading is in
+  [DESIGN.md §2](Documentation/DESIGN.md#2-narrative-rfc-4632-and-expanded-prefix-usage).
 - [RFC 7020](https://datatracker.ietf.org/doc/html/rfc7020) describes the
   Internet Numbers Registry System for globally unique IP address space and AS
   numbers; that registry and delegation context is why `CIDRBlock` exists as a
@@ -116,7 +140,8 @@ terminology rather than package-specific interpretations:
   multicast address allocation and assignment model used by multicast types.
 - [RFC 1930](https://datatracker.ietf.org/doc/html/rfc1930) defines the
   Autonomous System concept modeled by `AutonomousSystemNumber` and identified
-  by the `AF.ASN` family marker.
+  by the `AF.ASN` family marker. ASNs appear with BGP, RPKI ROAs, IRR, and
+  policy—not only BGP.
 - [RFC 5396](https://datatracker.ietf.org/doc/html/rfc5396) defines bare decimal
   `asplain` as the canonical textual representation of an AS number.
 - [RFC 6793](https://datatracker.ietf.org/doc/html/rfc6793) defines four-octet
@@ -134,7 +159,8 @@ not have deep network-architecture background:
 These guides explain why `swift-cidr` separates host addresses, network
 prefixes, Regional Internet Registry-style delegated CIDR blocks, and multicast
 group ranges into distinct types while leaving operational context to higher
-layers.
+layers. For a single map of types to standards and the math vs host/context
+split, start with [DESIGN.md](Documentation/DESIGN.md).
 
 ## Modules
 

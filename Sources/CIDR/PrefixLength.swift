@@ -24,12 +24,20 @@ public typealias IPv6PrefixLength = PrefixLength<V6>
 /// `0...128`. The type parameter prevents accidentally using an IPv4 prefix length where an IPv6
 /// prefix length is required, or the reverse.
 ///
+/// **Why this type:** classless networking is defined by an explicit length
+/// ([RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632);
+/// [RFC 4291](https://datatracker.ietf.org/doc/html/rfc4291) for IPv6). Length also appears as a
+/// **standalone control-plane field** (for example ROA `maxLength` in
+/// [RFC 9582](https://datatracker.ietf.org/doc/html/rfc9582))—not only glued to a host address.
+/// A dedicated type keeps those values family-safe and composable.
+///
 /// A prefix length describes how much of an address belongs to the CIDR prefix. `/0` covers the
 /// entire address-family space. `/32` for IPv4 and `/128` for IPv6 describe a range containing
 /// exactly one address.
 ///
 /// In swift-cidr terminology, `PrefixLength` is a core currency type: a compact, value-semantic
-/// representation used by addresses, networks, multicast ranges, and neutral CIDR blocks.
+/// representation used by addresses, networks, multicast ranges, neutral CIDR blocks, and
+/// selector/authorization bounds.
 public struct PrefixLength<Family: IPAddressFamily>: RawRepresentable, Sendable, Hashable, Comparable, CustomStringConvertible, LosslessStringConvertible, Codable {
     /// The validated slash number stored as compact unsigned integer storage.
     ///
