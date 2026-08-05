@@ -8,8 +8,9 @@
 
 `CIDR` provides value-semantic Swift types for classless Internet Protocol
 addressing and related routing identifiers: addresses, prefix lengths, networks,
-endpoints, and Autonomous System numbers that need stable modeling across routing,
-addressing, policy, validation, configuration, server, and POSIX boundaries.
+exact address ranges and coverage sets, endpoints, and Autonomous System numbers
+that need stable modeling across routing, addressing, policy, validation,
+configuration, server, and POSIX boundaries.
 
 Although an Autonomous System number is not a CIDR prefix, it is a foundational
 Internet routing identifier. Inter-domain routing operates between autonomous
@@ -61,6 +62,9 @@ and other systems that process high-volume IP data or control-plane state.
   boundaries. In this package, `CIDR` is a **protocol** shared by several forms—
   not a single hybrid `struct CIDR` wrapper around a host address (see
   [DESIGN.md](Documentation/DESIGN.md)).
+- `IPAddressRange` represents one exact inclusive address interval independently
+  of CIDR prefix structure, while `IPAddressCoverage` normalizes an exact union
+  of ranges for deterministic containment and summarization.
 - RPSL-style prefix-range operators model route-policy prefix selection with
   `^+`, `^-`, `^n`, and `^n-m` forms.
 - Multicast group addresses and group-address ranges are modeled explicitly, so
@@ -85,12 +89,15 @@ The package is organized around a family-bound core:
    and `AF.V6` as the concrete IPv4 and IPv6 marker types.
 - `IPAddress<Family>` stores an IP address together with its prefix context.
 - `IPNetwork<Family>` stores a canonical network boundary.
+- `IPAddressRange<Family>` stores one inclusive address interval using strict
+   `lower...upper` text, and `IPAddressCoverage<Family>` stores a normalized exact
+   union of those intervals.
 - `PrefixLength<Family>` validates CIDR prefix lengths per family.
 - `IPMulticastGroup<Family>` and `IPMulticastGroupRange<Family>` model multicast
    destination identifiers and group-address ranges, with aliases such as
    `IPv4MulticastGroup` and `IPv6MulticastGroup`.
-- `AnyIPAddress`, `AnyIPNetwork`, and `AnyPrefixLength` provide mixed-family
-   wrappers for boundary APIs.
+- `AnyIPAddress`, `AnyIPNetwork`, `AnyIPAddressRange`, and `AnyPrefixLength`
+   provide mixed-family wrappers for boundary APIs.
 - `AutonomousSystemNumber` stores a four-octet AS number and parses its canonical
   bare `asplain` decimal representation.
 - `Port` stores numeric transport-layer port values, and `IPEndpoint` combines
@@ -268,6 +275,32 @@ if let v4 = AnyIPAddress("192.0.2.1/24"),
     }
 }
 ```
+
+### Exact Address Coverage
+
+`IPAddressRange` text is a strict, library-defined `lower...upper` form. It
+models inclusive address coverage rather than preserving the CIDR prefixes that
+may have produced that coverage. Adjacent and overlapping ranges can be
+normalized into an `IPAddressCoverage`, whose containment lookup uses its
+sorted range index.
+
+```swift
+import CIDR
+
+if let lower = IPv4AddressRange("192.0.2.0...192.0.2.63"),
+   let upper = IPv4AddressRange("192.0.2.64...192.0.2.127") {
+    let coverage = IPAddressCoverage([upper, lower])
+
+    print(coverage.ranges.map(\.description))
+    // ["192.0.2.0...192.0.2.127"]
+
+    print(coverage.summarizedNetworks().map(\.description))
+    // ["192.0.2.0/25"]
+}
+```
+
+`summarizedNetworks()` preserves the exact address union, but it does not retain
+the original prefix lengths used to construct a range or coverage set.
 
 ### Autonomous System Numbers
 

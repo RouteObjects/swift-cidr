@@ -55,12 +55,29 @@ For architecture and type rationale, see [DESIGN.md](DESIGN.md).
 
 **Repository:** [RouteObjects/cidrmerge](https://github.com/RouteObjects/cidrmerge)
 
-**What it does:** Merge / aggregate prefix sets using classless network math.
+**What it does:** Compiles address and prefix inputs into deterministic, exact
+coverage represented as coalesced ranges or canonical networks.
 
 **What it shows:**
 
-- Aggregation-style operations on **canonical network** currency  
-- Dogfooding of `IPNetwork` / prefix-aligned types outside a GUI app  
+- Exact coalescing that does not widen across uncovered addresses
+- Conversion between `IPAddressRange` coverage and canonical `IPNetwork` values
+- Dogfooding of reusable family-bound math outside a GUI app
+
+```swift
+import CIDR
+
+if let first = IPv4AddressRange("192.0.2.0...192.0.2.63"),
+   let second = IPv4AddressRange("192.0.2.64...192.0.2.127") {
+    let coverage = IPAddressCoverage([second, first])
+
+    print(coverage.ranges.map(\.description))
+    // ["192.0.2.0...192.0.2.127"]
+
+    print(coverage.summarizedNetworks().map(\.description))
+    // ["192.0.2.0/25"]
+}
+```
 
 ---
 
@@ -69,6 +86,8 @@ For architecture and type rationale, see [DESIGN.md](DESIGN.md).
 | Pattern | Types typically involved |
 |---------|---------------------------|
 | Address with prefix context → network | `IPAddress` → `.network` → `IPNetwork` |
+| Exact inclusive interval | `IPAddressRange` |
+| Normalized exact union + indexed containment | `IPAddressCoverage` |
 | Route / registry / policy key | `IPNetwork`, sometimes `AnyIPNetwork` |
 | Origin / peer identity | `AutonomousSystemNumber` |
 | More-specific selection | `NetworkPrefixRange` (RPSL-style) |

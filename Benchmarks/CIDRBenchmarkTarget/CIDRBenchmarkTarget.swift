@@ -86,6 +86,17 @@ private func benchmarkPrefixLength<Family: IPAddressFamily>(_ value: Int) -> Pre
     return prefixLength
 }
 
+private func benchmarkAddressRange<Family: IPAddressFamily>(
+    lowerBound: IPAddress<Family>,
+    upperBound: IPAddress<Family>
+) -> IPAddressRange<Family> {
+    guard let range = IPAddressRange(lowerBound: lowerBound, upperBound: upperBound) else {
+        preconditionFailure("Benchmark fixture uses a reversed \(Family.familyName) address range.")
+    }
+
+    return range
+}
+
 @MainActor
 let benchmarks = {
     let parserMetrics: [BenchmarkMetric] = [
@@ -209,6 +220,13 @@ let benchmarks = {
     let ipv6Host = IPv6Address(address: ipv6HostStorage, prefixLength: ipv6Prefix)
     let ipv6Compare = IPv6Address(address: ipv6CompareStorage, prefixLength: ipv6Prefix)
     let ipv6Network = IPv6Network(address: ipv6Host, prefixLength: ipv6Prefix)
+
+    // CHANGE: Build reusable normalized fixtures outside measured closures so the currency cases
+    // isolate allocation-free construction and containment rather than setup sorting and arrays.
+    let ipv4Range = benchmarkAddressRange(lowerBound: ipv4Host, upperBound: ipv4Compare)
+    let ipv6Range = benchmarkAddressRange(lowerBound: ipv6Host, upperBound: ipv6Compare)
+    let ipv4Coverage = IPAddressCoverage([ipv4Range])
+    let ipv6Coverage = IPAddressCoverage([ipv6Range])
 
     let formatterIPv4ZeroStorage: UInt32 = 0
     let formatterIPv4SimpleStorage: UInt32 = 0x01020304
@@ -785,6 +803,60 @@ let benchmarks = {
     }
 
     Benchmark(
+        "currency.ipAddressRange.v4.init",
+        configuration: currencyConfiguration(tags: ["family": "v4", "kind": "range"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(IPv4AddressRange(lowerBound: ipv4Host, upperBound: ipv4Compare))
+        }
+    }
+
+    Benchmark(
+        "currency.ipAddressRange.v6.init",
+        configuration: currencyConfiguration(tags: ["family": "v6", "kind": "range"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(IPv6AddressRange(lowerBound: ipv6Host, upperBound: ipv6Compare))
+        }
+    }
+
+    Benchmark(
+        "currency.ipAddressRange.v4.containsAddress",
+        configuration: currencyConfiguration(tags: ["family": "v4", "kind": "contains"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(ipv4Range.contains(ipv4Host))
+        }
+    }
+
+    Benchmark(
+        "currency.ipAddressRange.v6.containsAddress",
+        configuration: currencyConfiguration(tags: ["family": "v6", "kind": "contains"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(ipv6Range.contains(ipv6Host))
+        }
+    }
+
+    Benchmark(
+        "currency.ipAddressCoverage.v4.containsAddress",
+        configuration: currencyConfiguration(tags: ["family": "v4", "kind": "contains"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(ipv4Coverage.contains(ipv4Host))
+        }
+    }
+
+    Benchmark(
+        "currency.ipAddressCoverage.v6.containsAddress",
+        configuration: currencyConfiguration(tags: ["family": "v6", "kind": "contains"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(ipv6Coverage.contains(ipv6Host))
+        }
+    }
+
+    Benchmark(
         "currency.ipAddress.v4.compare",
         configuration: currencyConfiguration(tags: ["family": "v4", "kind": "compare"])
     ) { benchmark in
@@ -830,6 +902,15 @@ let benchmarks = {
     ) { benchmark in
         for _ in benchmark.scaledIterations {
             blackHole(AnyIPAddress(ipv4Host))
+        }
+    }
+
+    Benchmark(
+        "currency.anyIPAddressRange.wrap",
+        configuration: currencyConfiguration(tags: ["family": "mixed", "kind": "wrap"])
+    ) { benchmark in
+        for _ in benchmark.scaledIterations {
+            blackHole(AnyIPAddressRange(ipv4Range))
         }
     }
 

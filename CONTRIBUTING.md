@@ -4,9 +4,10 @@ Thank you for considering a contribution to `swift-cidr`.
 
 `swift-cidr` is a type-driven CIDR math library. Contributions should preserve
 the library's main goal: small, value-semantic Swift types that model IP
-addresses, prefix lengths, network boundaries, delegated blocks, endpoints,
-Autonomous System numbers, and multicast group ranges without collapsing those
-meanings into strings or POSIX-shaped buffers.
+addresses, prefix lengths, network boundaries, exact address ranges and coverage
+sets, delegated blocks, endpoints, Autonomous System numbers, and multicast
+group ranges without collapsing those meanings into strings or POSIX-shaped
+buffers.
 
 ## Contribution Workflow
 
@@ -69,6 +70,10 @@ same thing.
 
 - `IPAddress<Family>` represents an address with prefix context.
 - `IPNetwork<Family>` represents a canonical network boundary.
+- `IPAddressRange<Family>` represents one exact inclusive interval of addresses,
+  independent of CIDR prefix structure.
+- `IPAddressCoverage<Family>` represents a normalized exact union of address
+  ranges and uses that ordered index for containment.
 - `CIDRBlock<Family>` represents neutral CIDR range math, such as delegated or
   allocated address space.
 - `InterfaceAddress<Family>` represents interface configuration context.
@@ -81,6 +86,11 @@ same thing.
 Do not collapse these meanings into one generic container unless the design has
 been discussed and accepted. A contribution that makes the API easier by
 removing semantic distinctions is likely to be rejected.
+
+`IPAddressRange` accepts the package-defined strict `lower...upper` text form.
+Do not describe that spelling as an RFC-defined range syntax. Range-to-network
+summarization must preserve exact address coverage, but it is not required to
+reproduce the original CIDR prefix lengths that formed the range.
 
 ### 3. Keep Math, Policy, and Adapters Separate
 

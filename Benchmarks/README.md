@@ -5,7 +5,7 @@ split into three benchmark suites with different goals.
 
 - `parser.*` measures string-to-bits parser cost through public entry points such as `IPv4Address(...)`, `IPv6Address(...)`, `IPNetwork(...)`, `AutonomousSystemNumber(...)`, and `IPAddressFamily.parseAddress(_:)`.
 - `formatter.*` measures bits-to-string formatter cost through public formatting APIs, including `AutonomousSystemNumber.description`, and includes platform `inet_ntop` baselines where useful.
-- `currency.*` measures already-constructed value operations to validate the currency-type claim for `PrefixLength`, `IPAddress`, `IPNetwork`, `AutonomousSystemNumber`, and the `Any*` wrappers.
+- `currency.*` measures already-constructed value operations to validate the currency-type claim for `PrefixLength`, `IPAddress`, `IPNetwork`, `IPAddressRange`, `IPAddressCoverage`, `AutonomousSystemNumber`, and the `Any*` wrappers.
 
 Historical parser-engine experiments were removed from the release benchmark
 package and archived outside the repository for future writing/reference work.
@@ -147,6 +147,12 @@ swift build --target CIDRProfileTarget
   - formatter benchmarks return `String`; on current Swift runtimes, ASCII output longer than the small-string inline capacity, typically 15 UTF-8 bytes, is expected to allocate once
   - formatter allocations should be interpreted as `String` storage cost, not currency-type allocation; compare Swift formatter cases against matching `formatter.*.inet_ntop.*` baselines where present
 - `currency.*`
+  - covers endpoint-based `IPAddressRange` construction, range and coverage
+    containment, and allocation-free mixed-family wrapping in addition to the
+    existing address, network, prefix-length, and ASN cases
+  - intentionally excludes range coalescing and network summarization because
+    those operations produce arrays and do not belong under a zero-allocation
+    currency benchmark contract
   - must stay at zero mallocs, zero object allocations, and zero ARC traffic
   - any nonzero `mallocCount*`, `objectAllocCount`, `retainCount`, `releaseCount`, or `retainReleaseDelta` is a failure
 
