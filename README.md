@@ -284,10 +284,19 @@ object allocations, retains, and releases; see the
 [benchmark methodology](Benchmarks/README.md).
 
 This standard-library octet boundary coexists with the richer `CIDRPOSIX` and
-`CIDRNIO` adapters. Each projects the same integer-backed address identity into
-a different interoperability environment; none makes octets, socket
-structures, or framework buffers the identity or mathematical storage of an IP
-address.
+`CIDRNIO` adapters. On Linux and Apple OS 26 or later, the `CIDRNIO`
+`SocketAddress` bridge consumes this same octet projection when copying address
+bytes to and from POSIX socket fields. Supported pre-26 Apple deployments retain
+a private, behavior-equivalent integer network-byte-order fallback because
+`InlineArray` is not back-deployed. The `ByteBuffer` bridge remains integer
+network-byte-order I/O.
+
+The `InlineArray` used by `CIDRNIO` is a transient, owned transfer value. It is
+not the literal storage of `SocketAddress`, a zero-copy representation, or a
+borrowed `View`. The allocation-free evidence above applies to the octet
+projection itself; it is not a claim that constructing a SwiftNIO
+`SocketAddress` performs no allocations. Integer-backed address identity and
+CIDR math remain canonical in every case.
 
 ### Subnet Math
 

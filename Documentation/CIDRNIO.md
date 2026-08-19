@@ -69,6 +69,50 @@ print(endpoint.description)
 therefore projects only address bits plus port, and inbound conversion
 materializes `/32` for IPv4 or `/128` for IPv6.
 
+## Socket Address Octets
+
+On Linux and Apple OS 26 or later, the `SocketAddress` bridge uses
+`IPv4Address.octets` and `IPv6Address.octets` as its address-byte boundary. The
+network-byte-order bytes copied into `sin_addr` or `sin6_addr` are the same bytes
+returned by the address's octet projection:
+
+```swift
+import CIDR
+import CIDRNIO
+import NIOCore
+
+let address = IPv4Address("192.0.2.1/24")!
+let endpoint = IPEndpoint(address: address, port: Port(443))
+let expected = address.octets
+let socketAddress = try SocketAddress(ipEndpoint: endpoint)
+
+if case .v4(let socketIPv4) = socketAddress {
+    withUnsafeBytes(of: socketIPv4.address.sin_addr) { bytes in
+        assert(bytes[0] == expected[0])
+        assert(bytes[1] == expected[1])
+        assert(bytes[2] == expected[2])
+        assert(bytes[3] == expected[3])
+    }
+}
+```
+
+The octets contain the address bits, including host bits, but do not contain the
+`/24` prefix or any IPv6 scope. Converting the socket address back therefore
+produces `/32` context, just as it did before the octet path was adopted.
+
+The public conversion APIs retain their existing availability. On supported
+pre-26 Apple deployments, a private integer network-byte-order implementation
+preserves the same behavior because `InlineArray` is not back-deployed. The
+`ByteBuffer` read/write APIs continue to use integer network-byte-order
+operations on every platform.
+
+`InlineArray` is a transient, owned value copied between the integer-backed
+address and the POSIX socket field. It is not the literal storage of
+`SocketAddress`, a zero-copy bridge, or a borrowed `View`. The octet projection
+has allocation-free benchmark evidence, but SwiftNIO owns the resulting socket
+storage; this documentation does not claim that constructing a complete
+`SocketAddress` is allocation-free.
+
 ## SocketAddress To AnyIPAddress
 
 ```swift

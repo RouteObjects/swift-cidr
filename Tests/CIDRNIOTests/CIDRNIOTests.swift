@@ -11,16 +11,16 @@
 //
 //===----------------------------------------------------------------------===//
 
-#if canImport(Darwin)
-import Darwin
-#elseif canImport(Glibc)
-import Glibc
-#endif
-
-import Testing
 import CIDR
 import CIDRNIO
 import NIOCore
+import Testing
+
+#if canImport(Darwin)
+    import Darwin
+#elseif canImport(Glibc)
+    import Glibc
+#endif
 
 @Suite("CIDR NIO Adapter Tests")
 struct CIDRNIOTests {
@@ -83,6 +83,72 @@ struct CIDRNIOTests {
 
         #expect(written == formatted.utf8.count)
         #expect(buffer.getString(at: buffer.readerIndex, length: buffer.readableBytes) == formatted)
+    }
+
+    @Test("IPv4 SocketAddress stores network-order address bytes")
+    func ipv4SocketAddressNetworkOrderBytes() throws {
+        let endpoint = IPEndpoint(
+            address: try #require(IPv4Address("192.0.2.1")),
+            port: Port(443)
+        )
+
+        let socketAddress = try SocketAddress(ipEndpoint: endpoint)
+        let encoded = try #require(ipv4SockaddrAddress(from: socketAddress))
+
+        expectIPv4Bytes(encoded, equal: [192, 0, 2, 1])
+    }
+
+    @Test("IPv6 SocketAddress stores network-order address bytes")
+    func ipv6SocketAddressNetworkOrderBytes() throws {
+        let endpoint = IPEndpoint(
+            address: try #require(IPv6Address("2001:db8::1")),
+            port: Port(853)
+        )
+
+        let socketAddress = try SocketAddress(ipEndpoint: endpoint)
+        let encoded = try #require(ipv6SockaddrAddress(from: socketAddress))
+
+        expectIPv6Bytes(
+            encoded,
+            equal: [
+                0x20, 0x01, 0x0D, 0xB8,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 1,
+            ]
+        )
+    }
+
+    @Test("IPv4 SocketAddress bytes equal the address octet projection")
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+    func ipv4SocketAddressBytesMatchOctets() throws {
+        let address = try #require(IPv4Address("192.0.2.1/24"))
+        let endpoint = IPEndpoint(address: address, port: Port(443))
+
+        let socketAddress = try SocketAddress(ipEndpoint: endpoint)
+        let encoded = try #require(ipv4SockaddrAddress(from: socketAddress))
+        let roundTrip = try IPEndpoint<V4>(socketAddress: socketAddress)
+
+        expectIPv4Bytes(encoded, equal: address.octets)
+        expectIPv4Bytes(encoded, equal: roundTrip.address.octets)
+        #expect(roundTrip.address.address == address.address)
+        #expect(roundTrip.address.prefixLength == .maximum)
+    }
+
+    @Test("IPv6 SocketAddress bytes equal the address octet projection")
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+    func ipv6SocketAddressBytesMatchOctets() throws {
+        let address = try #require(IPv6Address("2001:db8::1/64"))
+        let endpoint = IPEndpoint(address: address, port: Port(853))
+
+        let socketAddress = try SocketAddress(ipEndpoint: endpoint)
+        let encoded = try #require(ipv6SockaddrAddress(from: socketAddress))
+        let roundTrip = try IPEndpoint<V6>(socketAddress: socketAddress)
+
+        expectIPv6Bytes(encoded, equal: address.octets)
+        expectIPv6Bytes(encoded, equal: roundTrip.address.octets)
+        #expect(roundTrip.address.address == address.address)
+        #expect(roundTrip.address.prefixLength == .maximum)
     }
 
     @Test("IPv4 SocketAddress bridge round-trips host endpoints")
@@ -264,11 +330,64 @@ struct CIDRNIOTests {
     }
 }
 
-private func mutatedIPv6SocketAddress(scopeID: UInt32, flowInfo: UInt32, basedOn base: SocketAddress) -> SocketAddress? {
+private func mutatedIPv6SocketAddress(scopeID: UInt32, flowInfo: UInt32, basedOn base: SocketAddress) -> SocketAddress?
+{
     guard case .v6(let ipv6Address) = base else { return nil }
 
     var sockaddr = ipv6Address.address
     sockaddr.sin6_scope_id = scopeID
     sockaddr.sin6_flowinfo = flowInfo
     return SocketAddress(sockaddr)
+}
+
+private func ipv4SockaddrAddress(from socketAddress: SocketAddress) -> in_addr? {
+    guard case .v4(let address) = socketAddress else { return nil }
+    return address.address.sin_addr
+}
+
+private func ipv6SockaddrAddress(from socketAddress: SocketAddress) -> in6_addr? {
+    guard case .v6(let address) = socketAddress else { return nil }
+    return address.address.sin6_addr
+}
+
+private func expectIPv4Bytes(_ address: in_addr, equal expected: [UInt8]) {
+    #expect(expected.count == 4)
+
+    withUnsafeBytes(of: address) { actual in
+        #expect(actual.count == 4)
+        for index in 0..<4 {
+            #expect(actual[index] == expected[index])
+        }
+    }
+}
+
+private func expectIPv6Bytes(_ address: in6_addr, equal expected: [UInt8]) {
+    #expect(expected.count == 16)
+
+    withUnsafeBytes(of: address) { actual in
+        #expect(actual.count == 16)
+        for index in 0..<16 {
+            #expect(actual[index] == expected[index])
+        }
+    }
+}
+
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+private func expectIPv4Bytes(_ address: in_addr, equal expected: InlineArray<4, UInt8>) {
+    withUnsafeBytes(of: address) { actual in
+        #expect(actual.count == 4)
+        for index in 0..<4 {
+            #expect(actual[index] == expected[index])
+        }
+    }
+}
+
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+private func expectIPv6Bytes(_ address: in6_addr, equal expected: InlineArray<16, UInt8>) {
+    withUnsafeBytes(of: address) { actual in
+        #expect(actual.count == 16)
+        for index in 0..<16 {
+            #expect(actual[index] == expected[index])
+        }
+    }
 }

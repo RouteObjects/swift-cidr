@@ -75,6 +75,20 @@ borrowed view over another value's storage. A future workgroup `View` API may
 share the same byte-level boundary while having different ownership and
 lifetime semantics.
 
+On Linux and Apple OS 26 or later, `CIDRNIO` dogfoods this public projection for
+the address-byte portion of its `SocketAddress` conversions. It copies between
+an owned `InlineArray` and the POSIX `in_addr` or `in6_addr` field; the array is
+not the socket's storage and the bridge is not zero-copy. Ports, IPv4 boundary
+validation, and IPv6 metadata handling remain separate socket concerns.
+
+Supported pre-26 Apple deployments use a private, behavior-equivalent integer
+network-byte-order fallback because `InlineArray` is not back-deployed. That
+fallback preserves the availability of the existing public conversions and can
+be removed when the package intentionally raises its Apple deployment floors.
+`ByteBuffer` read/write remains integer network-byte-order I/O on every
+platform. Allocation-free evidence for `IPAddress.octets` does not imply that
+SwiftNIO's complete `SocketAddress` construction is allocation-free.
+
 ### Span vs scoped pointers
 
 Hot parse/format paths currently favor **scoped pointer** techniques measured for this codebase.  

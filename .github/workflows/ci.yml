@@ -78,15 +78,17 @@ jobs:
       - name: Resolve package graph
         run: swift package resolve
 
-      - name: Build CIDR at the macOS 15 deployment floor
+      - name: Build CIDR and CIDRNIO at the macOS 15 deployment floor
         env:
           MACOSX_DEPLOYMENT_TARGET: "15.0"
-        run: swift build --target CIDR
+        run: |
+          swift build --target CIDR
+          swift build --target CIDRNIO
 
       - name: Test
         run: ./scripts/test.sh
 
-      - name: Build CIDR for the iOS 18 simulator deployment floor
+      - name: Build CIDR and CIDRNIO for the iOS 18 simulator deployment floor
         run: |
           sdk_path="$(xcrun --sdk iphonesimulator --show-sdk-path)"
           swift build \
@@ -94,6 +96,45 @@ jobs:
             --target CIDR \
             --triple arm64-apple-ios18.0-simulator \
             --sdk "${sdk_path}"
+          swift build \
+            --scratch-path .build/ios18-simulator \
+            --target CIDRNIO \
+            --triple arm64-apple-ios18.0-simulator \
+            --sdk "${sdk_path}"
+
+  macos-15-compatibility:
+    name: macOS 15 compatibility (Xcode 26.3)
+    runs-on: macos-15
+    timeout-minutes: 25
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Show host and toolchain
+        run: |
+          sw_vers
+          xcodebuild -version
+          swift --version
+
+      - name: Require macOS 15
+        run: test "$(sw_vers -productVersion | cut -d. -f1)" = "15"
+
+      - name: Require Xcode 26.3
+        run: test "$(xcodebuild -version | head -n 1)" = "Xcode 26.3"
+
+      - name: Resolve package graph
+        run: swift package resolve
+
+      - name: Build CIDRNIO at the macOS 15 deployment floor
+        env:
+          MACOSX_DEPLOYMENT_TARGET: "15.0"
+        run: swift build --target CIDRNIO
+
+      - name: Test CIDRNIO compatibility path
+        env:
+          MACOSX_DEPLOYMENT_TARGET: "15.0"
+        run: ./scripts/test.sh --filter CIDRNIOTests
 
   linux-benchmark-build:
     name: linux benchmark build (swift:6.3)

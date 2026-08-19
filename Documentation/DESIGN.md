@@ -185,6 +185,20 @@ layer. The same integer-backed identity can be projected into standard-library
 octets, POSIX socket structures, or SwiftNIO buffers without any projection
 becoming the canonical representation.
 
+`CIDRNIO` demonstrates that composition directly. On Linux and Apple OS 26 or
+later, its `SocketAddress` bridge uses the public `IPAddress.octets` projection
+to transfer network-order address bytes to and from `sin_addr` and `sin6_addr`.
+The `InlineArray` is a transient, owned transfer value rather than socket
+storage, a zero-copy representation, or a borrowed `View`. Prefix context and
+IPv6 scope remain outside the array. `ByteBuffer` continues to use integer
+network-byte-order operations.
+
+Because `InlineArray` is not back-deployed, the same public socket conversions
+use a private, behavior-equivalent integer path on supported pre-26 Apple
+deployments. This compatibility detail does not change the model: integers
+remain canonical for identity and math, while octets are an interoperability
+projection where the platform provides them.
+
 **Recommendation for standards exploration:** keep the same split—do not force interface scope or endpoints into pure prefix math. Zone identifiers are often **host-local** (name ↔ index); they fit adapters + host/context types better than core network equality.
 
 `IPEndpoint` and `Port` currently live in the core module for historical packaging; **design intent** is to treat them as host/context layer (and migrate when ready). Core IPv6 values remain **bits-only**; scoped addresses are a future host-layer feature ([issue #10](https://github.com/RouteObjects/swift-cidr/issues/10)).
