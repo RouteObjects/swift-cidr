@@ -748,6 +748,60 @@ let benchmarks = {
         }
     }
 
+    // CHANGE: InlineArray enters the Apple SDK with the OS 26 family. Register these cases only
+    // where the public octet adapter is available while continuing to exercise them on Linux.
+    if #available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *) {
+        let ipv4HostOctets: InlineArray<4, UInt8> = [192, 0, 2, 1]
+        let ipv6HostOctets: InlineArray<16, UInt8> = [
+            0x20, 0x01, 0x0D, 0xB8,
+            0, 0, 0, 0,
+            0, 0, 0, 0,
+            0, 0, 0, 1,
+        ]
+        // CHANGE: Make adapter operands opaque before timing so @inlinable packing and projection
+        // cannot be reduced to compile-time constants while setup remains outside measured closures.
+        let opaqueIPv4Host = identity(ipv4Host)
+        let opaqueIPv6Host = identity(ipv6Host)
+        let opaqueIPv4HostOctets = identity(ipv4HostOctets)
+        let opaqueIPv6HostOctets = identity(ipv6HostOctets)
+
+        Benchmark(
+            "currency.ipAddress.v4.octets",
+            configuration: currencyConfiguration(tags: ["family": "v4", "kind": "octets"])
+        ) { benchmark in
+            for _ in benchmark.scaledIterations {
+                blackHole(opaqueIPv4Host.octets)
+            }
+        }
+
+        Benchmark(
+            "currency.ipAddress.v6.octets",
+            configuration: currencyConfiguration(tags: ["family": "v6", "kind": "octets"])
+        ) { benchmark in
+            for _ in benchmark.scaledIterations {
+                blackHole(opaqueIPv6Host.octets)
+            }
+        }
+
+        Benchmark(
+            "currency.ipAddress.v4.initOctets",
+            configuration: currencyConfiguration(tags: ["family": "v4", "kind": "initOctets"])
+        ) { benchmark in
+            for _ in benchmark.scaledIterations {
+                blackHole(IPv4Address(octets: opaqueIPv4HostOctets, prefixLength: ipv4Prefix))
+            }
+        }
+
+        Benchmark(
+            "currency.ipAddress.v6.initOctets",
+            configuration: currencyConfiguration(tags: ["family": "v6", "kind": "initOctets"])
+        ) { benchmark in
+            for _ in benchmark.scaledIterations {
+                blackHole(IPv6Address(octets: opaqueIPv6HostOctets, prefixLength: ipv6Prefix))
+            }
+        }
+    }
+
     Benchmark(
         "currency.ipNetwork.v4.init",
         configuration: currencyConfiguration(tags: ["family": "v4", "kind": "network"])

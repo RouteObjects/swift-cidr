@@ -180,6 +180,11 @@ See the [protocol hierarchy](#protocol-hierarchy) under progressive disclosure f
 | **Host / context** (target; issue #10) | `Port`, `IPEndpoint`, scoped IPv6 (`addr%zone`), Interface/zone | Transport binding and link attachment |
 | **Adapters** | `CIDRPOSIX`, `CIDRNIO` | OS / SwiftNIO edges |
 
+Fixed-size octets are a core interoperability projection, not a new storage
+layer. The same integer-backed identity can be projected into standard-library
+octets, POSIX socket structures, or SwiftNIO buffers without any projection
+becoming the canonical representation.
+
 **Recommendation for standards exploration:** keep the same split—do not force interface scope or endpoints into pure prefix math. Zone identifiers are often **host-local** (name ↔ index); they fit adapters + host/context types better than core network equality.
 
 `IPEndpoint` and `Port` currently live in the core module for historical packaging; **design intent** is to treat them as host/context layer (and migrate when ready). Core IPv6 values remain **bits-only**; scoped addresses are a future host-layer feature ([issue #10](https://github.com/RouteObjects/swift-cidr/issues/10)).

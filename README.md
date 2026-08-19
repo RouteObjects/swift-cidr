@@ -73,6 +73,9 @@ and other systems that process high-volume IP data or control-plane state.
 - The core `CIDR` module stays pure Swift and dependency-free. POSIX and
   SwiftNIO support live at adapter boundaries instead of shaping the core type
   system.
+- `IPv4Address` and `IPv6Address` expose fixed-size, network-byte-order
+  `InlineArray` projections on supported toolchains and platforms while keeping
+  integer storage as the canonical representation for CIDR math.
 - The API is designed for network infrastructure software: routing, addressing,
   policy, validation, configuration, and control-plane data pipelines that need
   small value types, explicit family metadata, predictable formatting/parsing,
@@ -182,14 +185,18 @@ keeping this package focused on value types, parsing, formatting, and CIDR math.
 
 ## Toolchains and Platforms
 
-- Swift 6.3
-- Swift 6.3 Command Line Tools for command-line and editor-based workflows
+- Swift 6.2 or later
+- Swift 6.2 or later Command Line Tools for command-line and editor-based
+  workflows
 - Minimum Apple deployment targets:
   - macOS 15
   - iOS 18
 
 The Apple platform minimums come from this toolchain's built-in `UInt128`
-availability. Linux validation is handled in CI.
+availability. The `InlineArray` octet adapters require macOS 26, iOS 26,
+tvOS 26, watchOS 26, or visionOS 26; existing APIs retain the package's lower
+deployment targets. Linux validation is handled in CI, including the Swift 6.2
+minimum toolchain.
 
 On macOS with standalone Command Line Tools, use the repository test wrapper:
 
@@ -241,6 +248,46 @@ if let host = IPv4Address("192.0.2.1/24") {
     // 192.0.2.1/24:53
 }
 ```
+
+### Network-Order Octets
+
+On Swift 6.2 or later, `IPv4Address` and `IPv6Address` can exchange address bits
+with packet, protocol, and FFI boundaries through fixed-size `InlineArray`
+values. On Apple platforms these APIs require macOS 26, iOS 26, tvOS 26,
+watchOS 26, or visionOS 26.
+
+```swift
+import CIDR
+
+let wireOctets: InlineArray<4, UInt8> = [192, 0, 2, 129]
+
+let address = IPv4Address(octets: wireOctets)
+
+print(address.description)
+// 192.0.2.129/32
+
+let projected = address.octets
+print(projected[0], projected[1], projected[2], projected[3])
+// 192 0 2 129
+```
+
+Octets use network byte order, with the most-significant octet first. They are
+an owned projection of address bits only: they do not carry prefix length,
+network canonicalization, or IPv6 scope. The integer-backed address remains the
+math representation. This adapter is an exact, allocation-free, text-free
+interoperability boundary; it does not replace integer storage or model a
+borrowed `View`.
+
+Four locked currency benchmarks cover IPv4 and IPv6 octet projection and
+reconstruction. Their configured p50, p75, and p90 gates require zero mallocs,
+object allocations, retains, and releases; see the
+[benchmark methodology](Benchmarks/README.md).
+
+This standard-library octet boundary coexists with the richer `CIDRPOSIX` and
+`CIDRNIO` adapters. Each projects the same integer-backed address identity into
+a different interoperability environment; none makes octets, socket
+structures, or framework buffers the identity or mathematical storage of an IP
+address.
 
 ### Subnet Math
 

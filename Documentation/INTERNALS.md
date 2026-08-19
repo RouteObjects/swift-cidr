@@ -54,11 +54,26 @@ Do not treat MAC families as a substitute for zone identifiers.
 
 These document **this package’s choices** for explorers comparing designs—not a mandate for a future standard.
 
-### Storage (not InlineArray today)
+### Integer storage and InlineArray I/O
 
-Addresses use **family-appropriate integer / fixed-width storage** suited to mask and generic bit operations.  
+Addresses use **family-appropriate integer / fixed-width storage** suited to
+masking, comparison, ordering, and generic bit operations. `IPv4Address` stores
+`UInt32`; `IPv6Address` stores `UInt128`. Prefix context remains a separate part
+of `IPAddress` identity, and `IPNetwork` continues to canonicalize with integer
+mask operations.
 
-**InlineArray** (and similar modern representations) is **not used today and not rejected**. Revisit is open if deployment-target policy and ecosystem cost allow, especially if the workgroup standardizes a representation.
+`IPv4Address` and `IPv6Address` also expose `InlineArray<4, UInt8>` and
+`InlineArray<16, UInt8>` as **I/O projections**. The arrays are owned values in
+network byte order and contain address bits only. They do not contain prefix
+length, perform network masking, or represent IPv6 scope. Constructing or
+projecting octets is therefore an exact, allocation-free, text-free
+interoperability boundary around the integer representation.
+
+This adapter is deliberately not stored inside `IPAddress`, is not the basis of
+equality or hashing, and is not added to `IPNetwork`. It also does not model a
+borrowed view over another value's storage. A future workgroup `View` API may
+share the same byte-level boundary while having different ownership and
+lifetime semantics.
 
 ### Span vs scoped pointers
 
