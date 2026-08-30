@@ -685,16 +685,40 @@ private struct P2Options: ParsableArguments {
 // Exercise family-erased values through defaulted and optional `@Option` properties.
 private struct DualStackOptions: ParsableArguments {
     @Option(name: .long, help: "Default mixed-family IP address.")
-    var address = AnyIPAddress(IPv4Address(address: 0xC000_0201))
+    var address: AnyIPAddress
 
     @Option(name: .long, help: "Optional mixed-family IP address.")
     var optionalAddress: AnyIPAddress?
 
     @Option(name: .long, help: "Default mixed-family IP network.")
-    var network = AnyIPNetwork(IPv4Network(prefix: 0, prefixLength: .zero))
+    var network: AnyIPNetwork
 
     @Option(name: .long, help: "Optional mixed-family IP network.")
     var optionalNetwork: AnyIPNetwork?
+
+    // CHANGE: Spell out wrapper initialization to bypass the synthesized metadata path that
+    // crashes for these aligned values under concurrent Swift Testing on Swift 6.2 and 6.3
+    // x86_64 Linux.
+    init() {
+        _address = Option(
+            wrappedValue: AnyIPAddress(IPv4Address(address: 0xC000_0201)),
+            name: .long,
+            help: "Default mixed-family IP address."
+        )
+        _optionalAddress = Option(
+            name: .long,
+            help: "Optional mixed-family IP address."
+        )
+        _network = Option(
+            wrappedValue: AnyIPNetwork(IPv4Network(prefix: 0, prefixLength: .zero)),
+            name: .long,
+            help: "Default mixed-family IP network."
+        )
+        _optionalNetwork = Option(
+            name: .long,
+            help: "Optional mixed-family IP network."
+        )
+    }
 }
 
 // Verify the same adapter witnesses are usable by ArgumentParser's positional wrapper.
