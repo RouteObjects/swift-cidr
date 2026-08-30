@@ -17,15 +17,20 @@ import PackageDescription
 let package = Package(
     name: "swift-cidr",
     platforms: [
-        .iOS(.v18), // built-in UInt128 is only available from iOS 18 / macOS 15 in this toolchain.
+        .iOS(.v18),  // built-in UInt128 is only available from iOS 18 / macOS 15 in this toolchain.
         .macOS(.v15),
     ],
     products: [
         .library(name: "CIDR", targets: ["CIDR"]),
         .library(name: "CIDRPOSIX", targets: ["CIDRPOSIX"]),
         .library(name: "CIDRNIO", targets: ["CIDRNIO"]),
+        .library(name: "CIDRArgumentParser", targets: ["CIDRArgumentParser"]),
     ],
     dependencies: [
+        .package(
+            url: "https://github.com/apple/swift-argument-parser.git",
+            "1.7.0"..<"2.0.0"
+        ),
         .package(url: "https://github.com/apple/swift-nio.git", from: "2.100.0"),
     ],
     targets: [
@@ -42,6 +47,14 @@ let package = Package(
                 .product(name: "NIOCore", package: "swift-nio"),
             ]
         ),
+        .target(
+            name: "CIDRArgumentParser",
+            dependencies: [
+                "CIDR",
+                // Keep CLI parsing opt-in so CIDR's target and link graph stay lean.
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+            ]
+        ),
         .testTarget(
             name: "CIDRTests",
             dependencies: ["CIDR"]
@@ -56,6 +69,14 @@ let package = Package(
                 "CIDR",
                 "CIDRNIO",
                 .product(name: "NIOCore", package: "swift-nio"),
+            ]
+        ),
+        .testTarget(
+            name: "CIDRArgumentParserTests",
+            dependencies: [
+                "CIDR",
+                "CIDRArgumentParser",
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ]
         ),
     ]

@@ -11,9 +11,9 @@
 //
 //===----------------------------------------------------------------------===//
 
+import CIDR
 import Foundation
 import Testing
-import CIDR
 
 @Suite("IP Address Range Tests")
 struct IPAddressRangeTests {
@@ -27,7 +27,7 @@ struct IPAddressRangeTests {
         #expect(alias.description == "192.0.2.2...192.0.2.7")
         #expect(alias.lowerBound.prefixLength.intValue == 32)
         #expect(alias.upperBound.prefixLength.intValue == 32)
-        // CHANGE: Range membership compares literal address bits and ignores an input address's
+        // Range membership compares literal address bits and ignores an input address's
         // prefix context; ClosedRange<IPAddress> would not provide that semantic guarantee.
         #expect(alias.contains(try #require(IPv4Address("192.0.2.2/24"))))
         #expect(alias.contains(try #require(IPv4Address("192.0.2.7/30"))))
@@ -147,7 +147,7 @@ struct IPAddressRangeTests {
             summarized.map(\.description)
                 == ["192.168.2.2/31", "192.168.2.4/30"]
         )
-        // CHANGE: Prefix lengths are representation details; the supported round trip preserves
+        // Prefix lengths are representation details; the supported round trip preserves
         // exact coverage even when the original range is not one canonical CIDR block.
         #expect(IPAddressCoverage<V4>(covering: summarized).ranges == [arbitrary])
     }

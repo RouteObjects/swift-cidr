@@ -31,6 +31,23 @@ public struct Port: Sendable, Hashable, Codable {
     }
 }
 
+// Make the numeric port grammar reusable outside CLI adapters and endpoint parsing.
+extension Port: CustomStringConvertible, LosslessStringConvertible {
+    /// Creates a port from base-10 integer text accepted by `UInt16`.
+    ///
+    /// The complete `0...65535` range is valid. Service names, surrounding whitespace, negative
+    /// nonzero values, overflow, and other nonnumeric text are rejected.
+    public init?(_ description: String) {
+        guard let rawValue = UInt16(description) else { return nil }
+        self.init(rawValue)
+    }
+
+    /// Canonical unpadded base-10 text for the numeric port.
+    public var description: String {
+        rawValue.description
+    }
+}
+
 /// A transport-agnostic IP endpoint composed from an IP address and port.
 ///
 /// `IPEndpoint` intentionally models only `IPAddress + Port`. It does not include a transport
@@ -44,7 +61,9 @@ public struct Port: Sendable, Hashable, Codable {
 ///
 /// IPv4 endpoints format as `192.0.2.1/24:53`.
 /// IPv6 endpoints format as `[2001:db8::1/64]:443`.
-public struct IPEndpoint<Family: IPAddressFamily>: Sendable, Hashable, Codable, CustomStringConvertible, LosslessStringConvertible {
+public struct IPEndpoint<Family: IPAddressFamily>: Sendable, Hashable, Codable, CustomStringConvertible,
+    LosslessStringConvertible
+{
     public let address: IPAddress<Family>
     public let port: Port
 
@@ -56,14 +75,14 @@ public struct IPEndpoint<Family: IPAddressFamily>: Sendable, Hashable, Codable, 
     public init?(_ description: String) {
         if Family.self == AF.V6.self {
             guard description.first == "[",
-                  let closingBracket = description.lastIndex(of: "]")
+                let closingBracket = description.lastIndex(of: "]")
             else {
                 return nil
             }
 
             let colonIndex = description.index(after: closingBracket)
             guard colonIndex < description.endIndex,
-                  description[colonIndex] == ":"
+                description[colonIndex] == ":"
             else {
                 return nil
             }
@@ -74,7 +93,7 @@ public struct IPEndpoint<Family: IPAddressFamily>: Sendable, Hashable, Codable, 
             let portText = description[portStart...]
 
             guard let address = IPAddress<Family>(addressText),
-                  let port = Self.parsePort(portText)
+                let port = Self.parsePort(portText)
             else {
                 return nil
             }
@@ -88,7 +107,7 @@ public struct IPEndpoint<Family: IPAddressFamily>: Sendable, Hashable, Codable, 
         let portText = description[description.index(after: separator)...]
 
         guard let address = IPAddress<Family>(addressText),
-              let port = Self.parsePort(portText)
+            let port = Self.parsePort(portText)
         else {
             return nil
         }
@@ -97,17 +116,18 @@ public struct IPEndpoint<Family: IPAddressFamily>: Sendable, Hashable, Codable, 
     }
 
     public var description: String {
+        // Compose endpoint text from Port's canonical representation.
         if Family.self == AF.V6.self {
-            return "[\(address)]:\(port.rawValue)"
+            return "[\(address)]:\(port)"
         }
 
-        return "\(address):\(port.rawValue)"
+        return "\(address):\(port)"
     }
 }
 
-private extension IPEndpoint {
-    static func parsePort(_ description: Substring) -> Port? {
-        guard let rawValue = UInt16(String(description)) else { return nil }
-        return Port(rawValue)
+extension IPEndpoint {
+    fileprivate static func parsePort(_ description: Substring) -> Port? {
+        // Keep standalone Port and composite endpoint text on one parsing path.
+        Port(String(description))
     }
 }

@@ -6,5 +6,6 @@ builder:
     - documentation_targets:
         # The first target is the documentation landing target.
         - CIDR
+        - CIDRArgumentParser
         - CIDRPOSIX
         - CIDRNIO

@@ -54,7 +54,7 @@ public struct IPAddressCoverage<Family: IPAddressFamily>: Sendable, Hashable {
         var lowerIndex = ranges.startIndex
         var upperIndex = ranges.endIndex
 
-        // CHANGE: Normalized ranges are ascending and disjoint, so containment can use logarithmic
+        // Normalized ranges are ascending and disjoint, so containment can use logarithmic
         // lookup while keeping the value representation itself simple and auditable.
         while lowerIndex < upperIndex {
             let middleIndex = lowerIndex + (upperIndex - lowerIndex) / 2

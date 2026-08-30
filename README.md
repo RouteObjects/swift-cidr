@@ -103,8 +103,9 @@ The package is organized around a family-bound core:
    provide mixed-family wrappers for boundary APIs.
 - `AutonomousSystemNumber` stores a four-octet AS number and parses its canonical
   bare `asplain` decimal representation.
-- `Port` stores numeric transport-layer port values, and `IPEndpoint` combines
-   an IP address with a port. Design intent treats endpoint, port, and future
+- `Port` stores numeric transport-layer port values and round-trips their
+  canonical decimal text, while `IPEndpoint` combines an IP address with a
+  port. Design intent treats endpoint, port, and future
    scoped IPv6 (`addr%zone`) as a **host/context layer** above pure prefix math
    (see [DESIGN.md](Documentation/DESIGN.md) and
    [issue #10](https://github.com/RouteObjects/swift-cidr/issues/10)).
@@ -175,6 +176,11 @@ split, start with [DESIGN.md](Documentation/DESIGN.md).
 ## Modules
 
 - `CIDR`: Core address, network, prefix, mixed-family, and endpoint types.
+- `CIDRArgumentParser`: Opt-in Swift Argument Parser conformances for `Port`,
+  `AutonomousSystemNumber`, family-bound address, endpoint, network, and
+  prefix-length values, plus the `AnyIPAddress` and `AnyIPNetwork`
+  mixed-family boundary types. See
+  [CIDRArgumentParser.md](Documentation/CIDRArgumentParser.md).
 - `CIDRPOSIX`: POSIX interoperability helpers for address families and
   `sockaddr` conversion.
 - `CIDRNIO`: SwiftNIO adapters for `ByteBuffer` and `SocketAddress`. Importing
@@ -182,6 +188,55 @@ split, start with [DESIGN.md](Documentation/DESIGN.md).
 
 IANA registry datasets are intentionally outside the core `CIDR` package,
 keeping this package focused on value types, parsing, formatting, and CIDR math.
+
+### Swift Argument Parser Integration
+
+Beginning with `swift-cidr` 0.7.0, CLI targets can opt into direct
+`@Option` / `@Argument` parsing by depending on `CIDR`, `CIDRArgumentParser`,
+and Swift Argument Parser, then importing all three modules explicitly:
+
+```swift
+import ArgumentParser
+import CIDR
+import CIDRArgumentParser
+
+struct PeerOptions: ParsableArguments {
+    @Option var peer: IPv4Address
+    @Option var port: Port = Port(179)
+    @Option(name: .customLong("local-as"))
+    var localAS: AutonomousSystemNumber = AutonomousSystemNumber(65001)
+    @Option(name: .customLong("local-address"))
+    var localAddress: IPv4Address?
+    @Option(name: .customLong("allowed-prefix"))
+    var allowedPrefix: IPv4Network?
+    @Option(name: .customLong("listen-endpoint"))
+    var listenEndpoint: IPEndpoint<V6>?
+    @Option(name: .customLong("maximum-prefix-length"))
+    var maximumPrefixLength: IPv4PrefixLength?
+    @Option(name: .customLong("next-hop"))
+    var nextHop: AnyIPAddress?
+    @Option(name: .customLong("route"))
+    var route: AnyIPNetwork?
+}
+```
+
+The adapter accepts numeric ports, bare asplain ASNs, and literal IPv4 or IPv6
+addresses. Bare addresses receive `/32` or `/128` context, and an explicit valid
+prefix is preserved. It also parses family-bound endpoints, networks, and
+standalone prefix lengths: endpoints require a numeric port (and brackets around
+IPv6), networks require an explicit prefix and clear host bits to the canonical
+network boundary, and prefix lengths must fit their address family.
+`AnyIPAddress` and `AnyIPNetwork` provide the same address and network behavior
+when the family is selected from each literal at runtime, which is useful for
+dual-stack CLI boundaries. DNS names, service-name ports, `AS`-prefixed/asdot
+ASNs, and an explicit empty option value are rejected. Omit an optional option
+to get `nil`.
+
+The `CIDR`, `CIDRPOSIX`, and `CIDRNIO` targets do not depend on or link Swift
+Argument Parser. SwiftPM does resolve `swift-argument-parser` as part of the
+overall `swift-cidr` package graph because it is declared in the package
+manifest; only targets that opt into `CIDRArgumentParser` link the adapter and
+Argument Parser. No modules are underscored re-exports.
 
 ## Toolchains and Platforms
 
@@ -235,11 +290,15 @@ Use the interactive Linux shell when diagnosing platform-specific failures:
 ```swift
 import CIDR
 
-if let host = IPv4Address("192.0.2.1/24") {
-    let endpoint = IPEndpoint(address: host, port: Port(53))
+if let host = IPv4Address("192.0.2.1/24"),
+   let port = Port("53") {
+    let endpoint = IPEndpoint(address: host, port: port)
 
     print(host.description)
     // 192.0.2.1/24
+
+    print(port.description)
+    // 53
 
     print(host.network.description)
     // 192.0.2.0/24
@@ -382,6 +441,7 @@ Common local commands:
 
 ```bash
 swift build --target CIDR
+swift build --target CIDRArgumentParser
 swift build --target CIDRPOSIX
 swift build --target CIDRNIO
 ./scripts/test.sh

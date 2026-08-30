@@ -30,8 +30,10 @@
 /// Every value representable by ``AF/ASN/Storage`` can be stored, including reserved and
 /// special-purpose numbers. Whether an AS number is allocated, reserved, or suitable for a routing
 /// operation is registry or policy information outside this type.
-// CHANGE: Keep the numeric value distinct from AF.ASN, which remains an AddressFamily marker.
-public struct AutonomousSystemNumber: RawRepresentable, Sendable, Hashable, Comparable, CustomStringConvertible, LosslessStringConvertible, Codable {
+// Keep the numeric value distinct from AF.ASN, which remains an AddressFamily marker.
+public struct AutonomousSystemNumber: RawRepresentable, Sendable, Hashable, Comparable, CustomStringConvertible,
+    LosslessStringConvertible, Codable
+{
     /// The complete unsigned 32-bit AS number value.
     public let rawValue: AF.ASN.Storage
 

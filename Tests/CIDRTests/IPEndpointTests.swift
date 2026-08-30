@@ -13,6 +13,7 @@
 
 import Foundation
 import Testing
+
 @testable import CIDR
 
 @Suite("IP Endpoint Tests")
@@ -78,6 +79,23 @@ struct IPEndpointTests {
 
         #expect(endpoint.description == "[2001:db8::1/64]:443")
         #expect(IPEndpoint<V6>(endpoint.description) == endpoint)
+    }
+
+    @Test("IPEndpoint canonicalizes accepted numeric port text")
+    func ipEndpointCanonicalizesPortText() throws {
+        let examples: [(source: String, canonical: String)] = [
+            ("192.0.2.1:00179", "192.0.2.1/32:179"),
+            ("[2001:0db8:0:0:0:0:0:1]:00179", "[2001:db8::1/128]:179"),
+        ]
+
+        let ipv4 = try #require(IPEndpoint<V4>(examples[0].source))
+        let ipv6 = try #require(IPEndpoint<V6>(examples[1].source))
+
+        // Endpoint parsing must use Port's canonical numeric string contract.
+        #expect(ipv4.description == examples[0].canonical)
+        #expect(ipv6.description == examples[1].canonical)
+        #expect(IPEndpoint<V4>(ipv4.description) == ipv4)
+        #expect(IPEndpoint<V6>(ipv6.description) == ipv6)
     }
 
     @Test("IPEndpoint rejects malformed endpoint strings")

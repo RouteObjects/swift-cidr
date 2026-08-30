@@ -16,6 +16,38 @@ import Testing
 
 @Suite("Lossless String Convertible Tests")
 struct LosslessStringConvertibleTests {
+    @Test("Port parses and round-trips canonical decimal text")
+    func portRoundTrips() throws {
+        let examples: [(source: String, canonical: String, value: UInt16)] = [
+            ("0", "0", 0),
+            ("-0", "0", 0),
+            ("00179", "179", 179),
+            ("+179", "179", 179),
+            ("65535", "65535", .max),
+        ]
+
+        for example in examples {
+            // Exercise Port through the protocol witness, not only its concrete initializer.
+            let port = try #require(parseLosslessly(example.source, as: Port.self))
+            #expect(port.rawValue == example.value)
+            #expect(port.description == example.canonical)
+            #expect(Port(port.description) == port)
+        }
+    }
+
+    @Test("Port rejects invalid numeric and service-name text")
+    func portRejectsInvalidText() {
+        for source in ["", "-1", "65536", " 179", "179 ", "http", "80/tcp"] {
+            #expect(Port(source) == nil)
+        }
+    }
+
+    private func parseLosslessly<Value: LosslessStringConvertible>(
+        _ source: String, as _: Value.Type
+    ) -> Value? {
+        Value(source)
+    }
+
     @Test("PrefixLength parses and round-trips canonical decimal text")
     func prefixLengthRoundTrips() throws {
         let ipv4 = try #require(PrefixLength<V4>("24"))

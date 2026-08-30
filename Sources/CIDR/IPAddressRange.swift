@@ -49,7 +49,7 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
     public init?(lowerBound: IPAddress<Family>, upperBound: IPAddress<Family>) {
         guard lowerBound.address <= upperBound.address else { return nil }
 
-        // CHANGE: A range endpoint is one address; retaining CIDR prefix context would make equal
+        // A range endpoint is one address; retaining CIDR prefix context would make equal
         // address intervals hash differently even though they cover the same addresses.
         self.lowerAddress = lowerBound.address
         self.upperAddress = upperBound.address
@@ -106,7 +106,7 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
     /// A range covering the entire IPv6 address space returns `nil` because its cardinality is
     /// `2^128`, one greater than `UInt128.max`.
     public var rangeSizeIfRepresentable: UInt128? {
-        // CHANGE: Widen IPv4 before adding one so its complete address space remains representable.
+        // Widen IPv4 before adding one so its complete address space remains representable.
         guard let lower = UInt128(exactly: lowerAddress),
             let upper = UInt128(exactly: upperAddress)
         else {
@@ -166,7 +166,7 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
         var current = sorted[0]
 
         for range in sorted.dropFirst() {
-            // CHANGE: Sorted input only needs a forward boundary comparison. Keeping one active
+            // Sorted input only needs a forward boundary comparison. Keeping one active
             // interval avoids repeated result-array mutation for heavily subsumed data.
             if current.connectsToFollowing(range) {
                 current = Self(
@@ -450,7 +450,7 @@ public enum AnyIPAddressRange: Sendable, Hashable, CustomStringConvertible,
             }
         }
 
-        // CHANGE: Family partitioning makes the erased result deterministic without introducing
+        // Family partitioning makes the erased result deterministic without introducing
         // mixed-family ordering or arithmetic into the family-bound range engine.
         return IPv4AddressRange.coalescing(ipv4).map(Self.v4)
             + IPv6AddressRange.coalescing(ipv6).map(Self.v6)

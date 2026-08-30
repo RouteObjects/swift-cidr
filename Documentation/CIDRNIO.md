@@ -81,17 +81,18 @@ import CIDR
 import CIDRNIO
 import NIOCore
 
-let address = IPv4Address("192.0.2.1/24")!
-let endpoint = IPEndpoint(address: address, port: Port(443))
-let expected = address.octets
-let socketAddress = try SocketAddress(ipEndpoint: endpoint)
+if let address = IPv4Address("192.0.2.1/24") {
+    let endpoint = IPEndpoint(address: address, port: Port(443))
+    let expected = address.octets
+    let socketAddress = try SocketAddress(ipEndpoint: endpoint)
 
-if case .v4(let socketIPv4) = socketAddress {
-    withUnsafeBytes(of: socketIPv4.address.sin_addr) { bytes in
-        assert(bytes[0] == expected[0])
-        assert(bytes[1] == expected[1])
-        assert(bytes[2] == expected[2])
-        assert(bytes[3] == expected[3])
+    if case .v4(let socketIPv4) = socketAddress {
+        withUnsafeBytes(of: socketIPv4.address.sin_addr) { bytes in
+            assert(bytes[0] == expected[0])
+            assert(bytes[1] == expected[1])
+            assert(bytes[2] == expected[2])
+            assert(bytes[3] == expected[3])
+        }
     }
 }
 ```

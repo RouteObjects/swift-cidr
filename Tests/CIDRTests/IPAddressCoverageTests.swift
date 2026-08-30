@@ -11,8 +11,8 @@
 //
 //===----------------------------------------------------------------------===//
 
-import Testing
 import CIDR
+import Testing
 
 @Suite("IP Address Coverage Tests")
 struct IPAddressCoverageTests {
@@ -58,7 +58,7 @@ struct IPAddressCoverageTests {
         ].map { try #require(IPv4AddressRange($0)) }
         let coverage = IPAddressCoverage(source)
 
-        // CHANGE: Coverage owns an immutable normalized value; later mutations to the source
+        // Coverage owns an immutable normalized value; later mutations to the source
         // collection cannot change either its index or the represented address set.
         source.append(try #require(IPv4AddressRange("192.0.2.20...192.0.2.29")))
 
@@ -197,7 +197,7 @@ struct IPAddressCoverageTests {
         let base = try #require(IPv6Address("2001:db8::")).address
         var generator = DeterministicGenerator(state: 0x1_6C1D_2E)
 
-        // CHANGE: A bounded /120 window permits exhaustive membership checks while still varying
+        // A bounded /120 window permits exhaustive membership checks while still varying
         // network alignment and every prefix length from /120 through /128.
         for _ in 0..<250 {
             let count = Int(generator.next() % 33)

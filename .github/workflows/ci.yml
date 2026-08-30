@@ -31,6 +31,7 @@ jobs:
       - name: Build library targets
         run: |
           swift build --target CIDR
+          swift build --target CIDRArgumentParser
           swift build --target CIDRPOSIX
           swift build --target CIDRNIO
 
@@ -52,8 +53,12 @@ jobs:
       - name: Resolve package graph
         run: swift package resolve
 
-      - name: Build all products
-        run: swift build
+      - name: Build library targets
+        run: |
+          swift build --target CIDR
+          swift build --target CIDRArgumentParser
+          swift build --target CIDRPOSIX
+          swift build --target CIDRNIO
 
       - name: Test
         run: ./scripts/test.sh
@@ -78,22 +83,34 @@ jobs:
       - name: Resolve package graph
         run: swift package resolve
 
-      - name: Build CIDR and CIDRNIO at the macOS 15 deployment floor
+      - name: Build library targets at the macOS 15 deployment floor
         env:
           MACOSX_DEPLOYMENT_TARGET: "15.0"
         run: |
           swift build --target CIDR
+          swift build --target CIDRArgumentParser
+          swift build --target CIDRPOSIX
           swift build --target CIDRNIO
 
       - name: Test
         run: ./scripts/test.sh
 
-      - name: Build CIDR and CIDRNIO for the iOS 18 simulator deployment floor
+      - name: Build library targets for the iOS 18 simulator deployment floor
         run: |
           sdk_path="$(xcrun --sdk iphonesimulator --show-sdk-path)"
           swift build \
             --scratch-path .build/ios18-simulator \
             --target CIDR \
+            --triple arm64-apple-ios18.0-simulator \
+            --sdk "${sdk_path}"
+          swift build \
+            --scratch-path .build/ios18-simulator \
+            --target CIDRArgumentParser \
+            --triple arm64-apple-ios18.0-simulator \
+            --sdk "${sdk_path}"
+          swift build \
+            --scratch-path .build/ios18-simulator \
+            --target CIDRPOSIX \
             --triple arm64-apple-ios18.0-simulator \
             --sdk "${sdk_path}"
           swift build \

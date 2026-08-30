@@ -155,7 +155,7 @@ extension AnyIPAddress {
     /// `SocketAddress` does not carry CIDR prefix context, so IPv4 socket identities are
     /// materialized as `/32` and IPv6 socket identities are materialized as `/128`.
     public init(socketAddress: SocketAddress) throws {
-        // CHANGE: reuse the existing endpoint bridges so SocketAddress metadata validation stays centralized.
+        // reuse the existing endpoint bridges so SocketAddress metadata validation stays centralized.
         switch socketAddress {
         case .v4:
             self = .v4(try IPEndpoint<AF.V4>(socketAddress: socketAddress).address)
@@ -198,7 +198,7 @@ private func decodeIPv4SocketAddress(_ address: in_addr) -> IPv4Address {
             return IPv4Address(octets: copyIPv4Octets(from: address))
         }
 
-        // CHANGE: preserve the existing integer bridge on Apple releases where InlineArray is unavailable.
+        // preserve the existing integer bridge on Apple releases where InlineArray is unavailable.
         return IPv4Address(address: decodeIPv4IntegerFallback(address))
     #else
         return IPv4Address(octets: copyIPv4Octets(from: address))
@@ -211,7 +211,7 @@ private func encodeIPv4SocketAddress(_ address: IPv4Address) -> in_addr {
             return copyIPv4SocketAddress(from: address.octets)
         }
 
-        // CHANGE: preserve the existing integer bridge on Apple releases where InlineArray is unavailable.
+        // preserve the existing integer bridge on Apple releases where InlineArray is unavailable.
         return encodeIPv4IntegerFallback(address.address)
     #else
         return copyIPv4SocketAddress(from: address.octets)
@@ -224,7 +224,7 @@ private func decodeIPv6SocketAddress(_ address: in6_addr) -> IPv6Address {
             return IPv6Address(octets: copyIPv6Octets(from: address))
         }
 
-        // CHANGE: preserve the existing integer bridge on Apple releases where InlineArray is unavailable.
+        // preserve the existing integer bridge on Apple releases where InlineArray is unavailable.
         return IPv6Address(address: decodeIPv6IntegerFallback(address))
     #else
         return IPv6Address(octets: copyIPv6Octets(from: address))
@@ -237,7 +237,7 @@ private func encodeIPv6SocketAddress(_ address: IPv6Address) -> in6_addr {
             return copyIPv6SocketAddress(from: address.octets)
         }
 
-        // CHANGE: preserve the existing integer bridge on Apple releases where InlineArray is unavailable.
+        // preserve the existing integer bridge on Apple releases where InlineArray is unavailable.
         return encodeIPv6IntegerFallback(address.address)
     #else
         return copyIPv6SocketAddress(from: address.octets)
