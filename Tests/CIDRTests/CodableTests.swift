@@ -99,6 +99,35 @@ struct CodableTests {
         }
     }
 
+    @Test(
+        "Codable address and network decoding reject malformed IPv6 literals",
+        arguments: [
+            "00000::1",
+            "1:2:3:4:5:6:7:8:",
+            "1:2:3:4:5:6:7:8::",
+            "1:2:3:4:5:6::192.0.2.1",
+        ])
+    func codableRejectsMalformedIPv6Literals(source: String) throws {
+        // CHANGE: Decoding must inherit strict parsing rather than silently normalize invalid text.
+        for literal in [source, "\(source)/128"] {
+            let data = try encoder.encode(literal)
+            #expect(throws: DecodingError.self) {
+                try decoder.decode(IPv6Address.self, from: data)
+            }
+            #expect(throws: DecodingError.self) {
+                try decoder.decode(AnyIPAddress.self, from: data)
+            }
+        }
+
+        let networkData = try encoder.encode("\(source)/128")
+        #expect(throws: DecodingError.self) {
+            try decoder.decode(IPv6Network.self, from: networkData)
+        }
+        #expect(throws: DecodingError.self) {
+            try decoder.decode(AnyIPNetwork.self, from: networkData)
+        }
+    }
+
     private func encodedJSON<T: Encodable>(_ value: T) throws -> String {
         let data = try encoder.encode(value)
         return String(decoding: data, as: UTF8.self)

@@ -156,6 +156,7 @@ extension AF {
         var doubleColonIndex = -1
         var index = 0
         var currentWord: UInt32 = 0
+        var digitsInWord = 0
         var hasDigits = false
         var seenDot = false
 
@@ -175,7 +176,9 @@ extension AF {
 
         @inline(__always)
         func consumeHexDigit(_ byte: UInt8) -> Bool {
-            guard let value = hexValue(byte) else { return false }
+            // CHANGE: Leading zeros still count toward the four-digit hextet limit.
+            guard digitsInWord < 4, let value = hexValue(byte) else { return false }
+            digitsInWord += 1
             currentWord = (currentWord << 4) | value
             guard currentWord <= 0xFFFF else { return false }
             hasDigits = true
@@ -196,16 +199,19 @@ extension AF {
                     }
                     doubleColonIndex = wordCount
                     currentWord = 0
+                    digitsInWord = 0
                     hasDigits = false
                     index = nextIndex + 1
                     continue
                 }
 
-                guard hasDigits else { return nil }
+                // CHANGE: A single colon must separate components, never terminate the literal.
+                guard hasDigits, nextIndex < count else { return nil }
                 guard wordCount < 8 else { return nil }
                 words[wordCount] = UInt16(currentWord)
                 wordCount += 1
                 currentWord = 0
+                digitsInWord = 0
                 hasDigits = false
             case 46:
                 seenDot = true
@@ -240,6 +246,8 @@ extension AF {
         }
 
         if doubleColonIndex >= 0 {
+            // CHANGE: Double-colon compression must omit at least one 16-bit word.
+            guard wordCount < 8 else { return nil }
             let rightCount = wordCount - doubleColonIndex
             if rightCount > 0 {
                 var readIndex = wordCount - 1
