@@ -46,6 +46,45 @@ struct AnyIPTests {
         #expect(ipv4Fallback.description == "192.0.2.1/24")
     }
 
+    @Test(
+        "AnyIP wrappers reject malformed IPv6 literals in either parse order",
+        arguments: [
+            "00000::1",
+            "1:2:3:4:5:6:7:8:",
+            "1:2:3:4:5:6:7:8::",
+            "1:2:3:4:5:6::192.0.2.1",
+        ])
+    func anyIPWrappersRejectMalformedIPv6(source: String) {
+        // CHANGE: Family selection must not bypass the shared IPv6 grammar correction.
+        for order in [AddressFamilyParseOrder.ipv4ThenIPv6, .ipv6ThenIPv4] {
+            #expect(AnyIPAddress(source, parseOrder: order) == nil)
+            #expect(AnyIPAddress("\(source)/128", parseOrder: order) == nil)
+            #expect(AnyIPNetwork("\(source)/128", parseOrder: order) == nil)
+        }
+    }
+
+    @Test(
+        "AnyIP wrappers retain valid IPv6 boundary forms in either parse order",
+        arguments: [
+            "0000::1",
+            "::1:2:3:4:5:6:7",
+            "1:2:3:4:5:6:7::",
+            "1:2:3:4:5::192.0.2.1",
+            "::ffff:192.000.002.001",
+        ])
+    func anyIPWrappersRetainValidIPv6BoundaryForms(source: String) throws {
+        for order in [AddressFamilyParseOrder.ipv4ThenIPv6, .ipv6ThenIPv4] {
+            let address = try #require(AnyIPAddress(source, parseOrder: order))
+            let network = try #require(AnyIPNetwork("\(source)/128", parseOrder: order))
+
+            #expect(address.isIPv6)
+            #expect(address.prefixLength.intValue == 128)
+            #expect(network.isIPv6)
+            #expect(network.first == address)
+            #expect(AnyIPAddress(address.description, parseOrder: order) == address)
+        }
+    }
+
     @Test("AnyIPAddress exposes wrapped network and formatting behavior")
     func anyIPAddressDelegatesNetworkAndFormatting() throws {
         let mapped = try #require(AnyIPAddress("::ffff:192.0.2.1/96"))

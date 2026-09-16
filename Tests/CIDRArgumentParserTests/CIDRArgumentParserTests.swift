@@ -101,6 +101,8 @@ struct CIDRArgumentParserTests {
         let examples: [(source: String, canonical: String, prefixLength: Int)] = [
             ("2001:0db8:0:0:0:0:0:1", "2001:db8::1/128", 128),
             ("2001:db8::1/64", "2001:db8::1/64", 64),
+            ("0000::1", "::1/128", 128),
+            ("1:2:3:4:5:6:7::", "1:2:3:4:5:6:7:0/128", 128),
         ]
 
         for example in examples {
@@ -141,6 +143,25 @@ struct CIDRArgumentParserTests {
         }
     }
 
+    @Test(
+        "IP argument boundaries reject malformed IPv6 literals",
+        arguments: [
+            "00000::1",
+            "1:2:3:4:5:6:7:8:",
+            "1:2:3:4:5:6:7:8::",
+            "1:2:3:4:5:6::192.0.2.1",
+        ])
+    func ipArgumentsRejectMalformedIPv6Literals(source: String) {
+        // CHANGE: All adapters inherit the core parser's rejection, including bracketed endpoints.
+        for literal in [source, "\(source)/128"] {
+            #expect(IPv6Address(argument: literal) == nil)
+            #expect(AnyIPAddress(argument: literal) == nil)
+            #expect(IPEndpoint<V6>(argument: "[\(literal)]:53") == nil)
+        }
+        #expect(IPv6Network(argument: "\(source)/128") == nil)
+        #expect(AnyIPNetwork(argument: "\(source)/128") == nil)
+    }
+
     @Test("IP endpoint arguments require a port and round-trip canonically")
     func ipEndpointArgumentsRoundTrip() throws {
         let ipv4Examples: [(source: String, canonical: String)] = [
@@ -152,6 +173,8 @@ struct CIDRArgumentParserTests {
             ("[2001:0db8:0:0:0:0:0:1]:179", "[2001:db8::1/128]:179"),
             ("[2001:0db8:0:0:0:0:0:1]:00179", "[2001:db8::1/128]:179"),
             ("[2001:db8::1/64]:443", "[2001:db8::1/64]:443"),
+            ("[0000::1]:53", "[::1/128]:53"),
+            ("[1:2:3:4:5:6:7::]:53", "[1:2:3:4:5:6:7:0/128]:53"),
         ]
 
         for example in ipv4Examples {
