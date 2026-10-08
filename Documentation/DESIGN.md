@@ -221,6 +221,7 @@ IANA bulk datasets and full RPKI validators stay **outside** this package.
 
 ## 9. Further reading
 
+- [IPAddress offset exploration](Proposals/IPAddressOffset.md) — ideas for future maintainer review; no API approved or implemented.
 - [Learning guides](Learning/README.md)  
 - [Examples (dogfooding)](Examples.md)  
 - [Internals](INTERNALS.md)  
