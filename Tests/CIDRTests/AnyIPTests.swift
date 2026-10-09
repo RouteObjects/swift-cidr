@@ -132,7 +132,10 @@ struct AnyIPTests {
         // CHANGE: Direct and generic hashValue access exposed a native x86-64 compiler crash.
         #expect(value == same)
         #expect(value.hashValue == same.hashValue)
-        #expect(genericHash(value) == genericHash(same))
+        // Keep enum arguments outside #expect's generated closure, which has the same alignment defect.
+        let valueHash = genericHash(value)
+        let sameHash = genericHash(same)
+        #expect(valueHash == sameHash)
         #expect(value != different)
         #expect(Set([value, same, different]).count == 2)
 
