@@ -42,6 +42,7 @@ public typealias IPv6Address = IPAddress<V6>
 /// `IPAddress` stores a concrete IP address together with a ``PrefixLength``. The pair is the
 /// canonical form for address-shaped CIDR input: `192.0.2.77/24` means address `192.0.2.77`
 /// interpreted within the `/24` CIDR range (host bits are part of identity).
+/// Equality and hashing include both the complete address bits and the prefix length.
 ///
 /// **Why this type:** classless notation is often used for host or interface-style values, not only
 /// route prefixes. Keeping address + prefix **context** distinct from a canonical ``IPNetwork``
@@ -100,6 +101,19 @@ public struct IPAddress<Family: IPAddressFamily>: Addressable, CIDR, Hashable, C
     /// using the same address family.
     public var network: IPNetwork<Family> {
         IPNetwork(host: self)
+    }
+
+    /// Compares complete address values, including their prefix context.
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        // CHANGE: Override Strideable's distance-based equality to compare the complete identity.
+        lhs.address == rhs.address && lhs.prefixLength == rhs.prefixLength
+    }
+
+    /// Hashes the address bits and prefix context used by equality.
+    public func hash(into hasher: inout Hasher) {
+        // CHANGE: Keep the identity fields explicit alongside equality as stored properties evolve.
+        hasher.combine(address)
+        hasher.combine(prefixLength)
     }
 
     /// Orders addresses first by address bits, then by prefix length.
@@ -259,7 +273,8 @@ extension IPAddress: Strideable {
     /// Returns the signed distance to another address when it fits in `Int128`.
     ///
     /// The calculation compares only address bits. Prefix context is ignored for distance
-    /// measurement.
+    /// measurement. Advancing by this distance preserves the starting prefix context, so the
+    /// resulting value equals `other` only when both values have the same prefix length.
     public func distanceIfRepresentable(to other: IPAddress) -> Int128? {
         // Force unwrap is safe: supported CIDR address-family storage is unsigned and fits in UInt128.
         let lhs = UInt128(exactly: self.address)!
@@ -307,6 +322,11 @@ extension IPAddress: Strideable {
     ///
     /// This `Strideable` requirement traps if the distance cannot be represented by `Int128`. Use
     /// ``distanceIfRepresentable(to:)`` when failure should be handled explicitly.
+    ///
+    /// Distance measures address bits, while equality also compares prefix context. Consequently,
+    /// `x.advanced(by: x.distance(to: y)) == y` holds for representable distances with matching
+    /// prefix lengths. Mixed-prefix values do not satisfy that `Strideable` inverse law; movement
+    /// retains `x.prefixLength` rather than adopting `y.prefixLength`.
     public func distance(to other: IPAddress) -> Int128 {
         guard let distance = distanceIfRepresentable(to: other) else { preconditionFailure("Exceeds Int128 range.") }
         return distance
