@@ -105,8 +105,15 @@ public struct IPAddress<Family: IPAddressFamily>: Addressable, CIDR, Hashable, C
 
     /// Compares complete address values, including their prefix context.
     public static func == (lhs: Self, rhs: Self) -> Bool {
-        // CHANGE: Override Strideable's distance-based equality to match synthesized hashing.
+        // CHANGE: Override Strideable's distance-based equality to compare the complete identity.
         lhs.address == rhs.address && lhs.prefixLength == rhs.prefixLength
+    }
+
+    /// Hashes the address bits and prefix context used by equality.
+    public func hash(into hasher: inout Hasher) {
+        // CHANGE: Keep the identity fields explicit alongside equality as stored properties evolve.
+        hasher.combine(address)
+        hasher.combine(prefixLength)
     }
 
     /// Orders addresses first by address bits, then by prefix length.

@@ -37,6 +37,27 @@ public enum AddressFamilyParseOrder: Sendable, Hashable, Codable {
 /// `AnyIPAddress` does not infer multicast semantics; `AnyIPAddress("239.1.2.3")` is an ordinary
 /// IPv4 address wrapper.
 public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDebugStringConvertible, LosslessStringConvertible, Codable {
+    /// The hash of the address family and complete wrapped address.
+    // CHANGE: Avoid a misaligned load in Swift 6.2/6.3 synthesized enum hashing on x86-64.
+    // Keep hash(into:) explicit too; its legacy synthesis can call hashValue recursively.
+    public var hashValue: Int {
+        var hasher = Hasher()
+        hash(into: &hasher)
+        return hasher.finalize()
+    }
+
+    /// Hashes the family discriminator and the complete wrapped address.
+    public func hash(into hasher: inout Hasher) {
+        switch self {
+        case .v4(let value):
+            hasher.combine(0)
+            hasher.combine(value)
+        case .v6(let value):
+            hasher.combine(1)
+            hasher.combine(value)
+        }
+    }
+
     /// An IPv4 address.
     case v4(IPv4Address)
 
@@ -206,6 +227,27 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
 /// **Why:** same boundary role as ``AnyIPAddress``, for **canonical networks** (routes, ROA
 /// prefixes, policy keys). Prefer ``IPNetwork`` with a concrete family inside algorithms.
 public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDebugStringConvertible, LosslessStringConvertible, Codable {
+    /// The hash of the address family and complete wrapped network.
+    // CHANGE: Avoid a misaligned load in Swift 6.2/6.3 synthesized enum hashing on x86-64.
+    // Keep hash(into:) explicit too; its legacy synthesis can call hashValue recursively.
+    public var hashValue: Int {
+        var hasher = Hasher()
+        hash(into: &hasher)
+        return hasher.finalize()
+    }
+
+    /// Hashes the family discriminator and the complete wrapped network.
+    public func hash(into hasher: inout Hasher) {
+        switch self {
+        case .v4(let value):
+            hasher.combine(0)
+            hasher.combine(value)
+        case .v6(let value):
+            hasher.combine(1)
+            hasher.combine(value)
+        }
+    }
+
     /// An IPv4 network.
     case v4(IPv4Network)
 

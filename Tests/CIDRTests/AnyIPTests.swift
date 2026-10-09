@@ -116,6 +116,31 @@ struct AnyIPTests {
         #expect(ipv6.last.description == "2001:db8::3/128")
     }
 
+    @Test(
+        "AnyIPNetwork hashing preserves equality and prefix identity",
+        arguments: [
+            ("192.0.2.0/24", "192.0.2.0/25"),
+            ("2001:db8::/64", "2001:db8::/65"),
+        ])
+    func anyIPNetworkHashingPreservesIdentity(source: String, otherPrefix: String) throws {
+        let value = try #require(AnyIPNetwork(source))
+        let same = try #require(AnyIPNetwork(source))
+        let different = try #require(AnyIPNetwork(otherPrefix))
+
+        func genericHash<T: Hashable>(_ value: T) -> Int { value.hashValue }
+
+        // CHANGE: Direct and generic hashValue access exposed a native x86-64 compiler crash.
+        #expect(value == same)
+        #expect(value.hashValue == same.hashValue)
+        #expect(genericHash(value) == genericHash(same))
+        #expect(value != different)
+        #expect(Set([value, same, different]).count == 2)
+
+        let dictionary = [value: "original", different: "other prefix"]
+        #expect(dictionary[same] == "original")
+        #expect(dictionary[different] == "other prefix")
+    }
+
     @Test("AnyIPNetwork parse order changes first attempt only")
     func anyIPNetworkParseOrderIsAHint() throws {
         let ipv6First = try #require(AnyIPNetwork("2001:db8::/64", parseOrder: .ipv6ThenIPv4))
