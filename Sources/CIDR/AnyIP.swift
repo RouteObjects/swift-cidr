@@ -407,18 +407,32 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
-    /// Returns whether this network contains the supplied address.
+    /// Returns whether the address bits lie inside this network, ignoring prefix context.
     ///
     /// Containment is meaningful only within the same address family. Mixed-family comparisons
     /// return `false`.
+    @available(*, deprecated, message: "Checks address bits only. Use contains(address:) for hierarchical containment, or the concrete network's addresses view for exact membership.")
     public func contains(_ address: AnyIPAddress) -> Bool {
         switch (self, address) {
         case (.v4(let network), .v4(let address)):
-            return network.contains(address)
+            return (address.address & network.mask) == network.prefix
         case (.v6(let network), .v6(let address)):
-            return network.contains(address)
+            return (address.address & network.mask) == network.prefix
         default:
             // mixed-family containment is always false instead of trying to coerce between unrelated address families.
+            return false
+        }
+    }
+
+    /// Returns whether the address and its prefix context lie inside this network.
+    /// Mixed address families return `false`. Complexity is O(1).
+    public func contains(address: AnyIPAddress) -> Bool {
+        switch (self, address) {
+        case (.v4(let network), .v4(let address)):
+            return network.contains(address: address)
+        case (.v6(let network), .v6(let address)):
+            return network.contains(address: address)
+        default:
             return false
         }
     }
@@ -427,12 +441,19 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
     ///
     /// Containment is meaningful only within the same address family. Mixed-family comparisons
     /// return `false`.
+    @available(*, deprecated, renamed: "contains(subnet:)")
     public func contains(_ other: AnyIPNetwork) -> Bool {
+        contains(subnet: other)
+    }
+
+    /// Returns whether this network fully contains a subnet of the same family.
+    /// - Complexity: O(1).
+    public func contains(subnet other: AnyIPNetwork) -> Bool {
         switch (self, other) {
         case (.v4(let lhs), .v4(let rhs)):
-            return lhs.contains(rhs)
+            return lhs.contains(subnet: rhs)
         case (.v6(let lhs), .v6(let rhs)):
-            return lhs.contains(rhs)
+            return lhs.contains(subnet: rhs)
         default:
             // family-erased wrapper APIs keep family mismatch explicit rather than silently widening semantics.
             return false

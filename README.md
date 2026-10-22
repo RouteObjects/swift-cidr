@@ -376,6 +376,35 @@ if let network = IPv4Network("192.0.2.0/24"),
 }
 ```
 
+### Contextual Address Traversal and Containment
+
+`IPNetwork` and its explicit `addresses` view yield addresses with the parent
+network's prefix context. Named containment checks the whole candidate context;
+sequence membership checks equality with a yielded element:
+
+```swift
+import CIDR
+
+if let network = IPv4Network("192.0.2.0/30"),
+   let contextual = IPv4Address("192.0.2.1/30"),
+   let host = IPv4Address("192.0.2.1/32"),
+   let subnet = IPv4Network("192.0.2.2/31") {
+    print(Array(network.addresses).map(\.description))
+    // ["192.0.2.0/30", "192.0.2.1/30", "192.0.2.2/30", "192.0.2.3/30"]
+
+    print(network.contains(address: host))           // true
+    print(network.contains(subnet: subnet))          // true
+    print(network.addresses.contains(contextual))    // true
+    print(network.addresses.contains(host))          // false
+}
+```
+
+Named containment and exact sequence membership run in O(1). Enumeration still
+visits every address; use `network.addresses.prefix(10)` for a bounded sample.
+The legacy unlabeled network containment overloads are deprecated but retain
+their previous behavior. See the [0.8.0 migration notes](Documentation/ReleaseNotes/0.8.0.md)
+(unreleased) for endpoint changes, generic dispatch, and socket boundaries.
+
 ### Mixed-Family Boundary APIs
 
 ```swift

@@ -238,6 +238,23 @@ struct CIDRNIOTests {
         }
     }
 
+    @Test("Contextual network endpoints retain the existing IPv4 socket boundary policy", arguments: [24, 31])
+    func contextualNetworkEndpointProjection(prefix: Int) throws {
+        let network = try #require(IPv4Network("192.0.2.0/\(prefix)"))
+        let first = IPEndpoint(address: network.first, port: Port(53))
+        let last = IPEndpoint(address: network.last, port: Port(53))
+        #expect(throws: NIOSocketAddressConversionError.ipv4NetworkAddress(prefixLength: prefix)) {
+            try first.makeSocketAddress()
+        }
+        #expect(throws: NIOSocketAddressConversionError.ipv4DirectedBroadcastAddress(prefixLength: prefix)) {
+            try last.makeSocketAddress()
+        }
+        // CHANGE: Explicit address-only projection remains available at the socket boundary.
+        let projected = IPEndpoint(address: IPv4Address(address: network.first.address), port: Port(53))
+        let decoded = try IPEndpoint<V4>(socketAddress: projected.makeSocketAddress())
+        #expect(decoded.address.prefixLength.intValue == 32)
+    }
+
     @Test("IPv4 directed broadcast boundary is rejected when creating a SocketAddress")
     func ipv4DirectedBroadcastRejection() throws {
         let endpoint = IPEndpoint(

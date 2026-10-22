@@ -78,8 +78,8 @@ struct IPAddressStrideTests {
         let addresses = Array(network)
 
         #expect(addresses.map(\.address) == [UInt128.max - 1, UInt128.max])
-        #expect(addresses[0].prefixLength.intValue == 128)
-        #expect(addresses[1].prefixLength.intValue == 128)
+        #expect(addresses[0].prefixLength.intValue == 127)
+        #expect(addresses[1].prefixLength.intValue == 127)
     }
 
     @Test("IPv4 strides satisfy both inverse laws with matching prefix context")

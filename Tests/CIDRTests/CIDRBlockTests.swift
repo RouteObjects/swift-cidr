@@ -28,8 +28,8 @@ struct CIDRBlockTests {
 
         #expect(block.prefix == 0xC0000200)
         #expect(block.description == "192.0.2.0/24")
-        #expect(block.firstAddress.description == "192.0.2.0/32")
-        #expect(block.lastAddress.description == "192.0.2.255/32")
+        #expect(block.firstAddress.description == "192.0.2.0/24")
+        #expect(block.lastAddress.description == "192.0.2.255/24")
         #expect(block.rangeSizeIfRepresentable == 256)
         #expect(block.contains(address))
         #expect(block.contains(child))

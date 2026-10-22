@@ -281,22 +281,18 @@ extension IPNetwork: Sequence {
     /// The address type yielded when iterating every address in the represented range.
     public typealias Element = IPAddress<Family>
 
-    /// Returns an iterator over every address in the network range.
+    /// Returns an iterator over every address, retaining the network's prefix length.
     ///
     /// Iteration walks from `first` through `last`. Large networks may contain many addresses, so
     /// prefer containment or subnet operations when enumeration is not explicitly required.
     public func makeIterator() -> AnyIterator<Element> {
-        var current = first.address
-        let end = last.address
-        var finished = false
-        return AnyIterator {
-            guard !finished else { return nil }
-            let element = Element(address: current)
-            if current == end { finished = true; return element }
-            let (next, overflow) = current.addingReportingOverflow(1)
-            precondition(!overflow)
-            current = next
-            return element
-        }
+        // CHANGE: Share contextual traversal while preserving the existing iterator signature.
+        AnyIterator(addresses.makeIterator())
+    }
+
+    /// Supplies exact sequence membership without enumerating addresses.
+    /// - Complexity: O(1).
+    public func _customContainsEquatableElement(_ element: Element) -> Bool? {
+        addresses._customContainsEquatableElement(element)
     }
 }

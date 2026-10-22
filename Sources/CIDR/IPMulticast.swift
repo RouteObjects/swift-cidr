@@ -231,13 +231,14 @@ public struct IPMulticastGroupRange<Family: MulticastAddressSpace>: CIDR, Hashab
     /// The first multicast group destination identifier in the range.
     public var firstGroup: IPMulticastGroup<Family> {
         // Force unwrap is safe: range initialization guarantees every endpoint is multicast.
-        IPMulticastGroup(cidrBlock.firstAddress)!
+        // CHANGE: Group identifiers intentionally project contextual block endpoints to single addresses.
+        IPMulticastGroup(address: cidrBlock.firstAddress.address)!
     }
 
     /// The last multicast group destination identifier in the range.
     public var lastGroup: IPMulticastGroup<Family> {
         // Force unwrap is safe: range initialization guarantees every endpoint is multicast.
-        IPMulticastGroup(cidrBlock.lastAddress)!
+        IPMulticastGroup(address: cidrBlock.lastAddress.address)!
     }
 
     /// The number of multicast group destination identifiers in the range, if representable.
