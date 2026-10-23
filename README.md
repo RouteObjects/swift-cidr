@@ -403,7 +403,8 @@ Named containment and exact sequence membership run in O(1). Enumeration still
 visits every address; use `network.addresses.prefix(10)` for a bounded sample.
 The legacy unlabeled network containment overloads are deprecated but retain
 their previous behavior. See the [0.8.0 migration notes](Documentation/ReleaseNotes/0.8.0.md)
-(unreleased) for endpoint changes, generic dispatch, socket boundaries, and
+(in release preparation; not yet published) for address identity, endpoint changes,
+generic dispatch, socket boundaries, and
 the unified prefix-length grammar.
 
 ### Address Parsing Policy
