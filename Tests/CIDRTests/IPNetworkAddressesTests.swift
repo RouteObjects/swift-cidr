@@ -15,7 +15,7 @@ struct IPNetworkAddressesTests {
         try checkHierarchy(#require(IPv6Network("2001:db8::/126")))
     }
 
-    @Test("Family-erased containment rejects mixed families and preserves legacy behavior")
+    @Test("Family-erased containment respects prefix context and rejects mixed families")
     func erasedContainment() throws {
         for (parent, inside, broader, child, outside) in [
             ("192.0.2.0/30", "192.0.2.1/32", "192.0.2.1/24", "192.0.2.2/31", "192.0.2.4/30"),
@@ -30,9 +30,6 @@ struct IPNetworkAddressesTests {
             #expect(!network.contains(address: broad))
             #expect(network.contains(subnet: subnet))
             #expect(!network.contains(subnet: other))
-            // CHANGE: Legacy raw-address containment must not silently acquire the new semantics.
-            #expect(network.contains(broad))
-            #expect(network.contains(subnet))
         }
         let v4 = try #require(AnyIPNetwork("0.0.0.0/0"))
         let v6 = try #require(AnyIPNetwork("::/0"))
@@ -40,6 +37,29 @@ struct IPNetworkAddressesTests {
         #expect(!v6.contains(address: v4.first))
         #expect(!v4.contains(subnet: v6))
         #expect(!v6.contains(subnet: v4))
+    }
+
+    @Test("Legacy typed containment preserves raw-address semantics and generic IPPrefix dispatch")
+    func legacyTypedContainment() throws {
+        try checkLegacyContainment(#require(IPv4Network("192.0.2.0/30")))
+        try checkLegacyContainment(#require(IPv6Network("2001:db8::/126")))
+    }
+
+    @Test("Legacy family-erased containment preserves address and subnet compatibility")
+    func legacyErasedContainment() throws {
+        for (parent, broader, child) in [
+            ("192.0.2.0/30", "192.0.2.1/24", "192.0.2.2/31"),
+            ("2001:db8::/126", "2001:db8::1/120", "2001:db8::2/127"),
+        ] {
+            let network = try #require(AnyIPNetwork(parent))
+            let broad = try #require(AnyIPAddress(broader))
+            let subnet = try #require(AnyIPNetwork(child))
+            #expect(!network.contains(address: broad))
+            // CHANGE: Intentional deprecation warning: legacy address containment ignores prefix context.
+            #expect(network.contains(broad))
+            // CHANGE: Intentional deprecation warning: preserve the legacy subnet overload's result.
+            #expect(network.contains(subnet))
+        }
     }
 
     @Test("Independent iterators terminate at the highest address")
@@ -117,11 +137,6 @@ struct IPNetworkAddressesTests {
             #expect(network.contains(address: address) == (length >= network.prefixBits))
             #expect(network.contains(subnet: address.network) == (length >= network.prefixBits))
             #expect(network.addresses.contains(address) == (length == network.prefixBits))
-            #expect(network.contains(address))
-            func legacy<P: IPPrefix>(_ prefix: P, _ value: IPAddress<P.Family>) -> Bool {
-                prefix.contains(value)
-            }
-            #expect(legacy(network, address))
         }
         let outside = IPAddress<F>(address: network.last.address + 1, prefixLength: network.prefixLength)
         #expect(!network.contains(address: outside))
@@ -131,6 +146,20 @@ struct IPNetworkAddressesTests {
             parent.contains(address: address) && parent.contains(subnet: address.network)
         }
         #expect(generic(network, network.first))
+    }
+
+    private func checkLegacyContainment<F: IPAddressFamily>(_ network: IPNetwork<F>) throws {
+        for length in [network.prefixBits - 1, network.prefixBits, network.prefixBits + 1, F.bitWidth] {
+            let address = IPAddress<F>(address: network.prefix | 1, prefixLength: try #require(PrefixLength<F>(length)))
+            #expect(network.contains(address: address) == (length >= network.prefixBits))
+            // CHANGE: Intentional deprecation warning: retain direct raw-address compatibility for every context.
+            #expect(network.contains(address))
+            func legacy<P: IPPrefix>(_ prefix: P, _ value: IPAddress<P.Family>) -> Bool {
+                // CHANGE: Intentional deprecation warning: exercise the legacy IPPrefix-constrained dispatch.
+                prefix.contains(value)
+            }
+            #expect(legacy(network, address))
+        }
     }
 
     private func checkFullSpace<F: IPAddressFamily>(_ network: IPNetwork<F>) throws {
@@ -146,8 +175,15 @@ struct IPNetworkAddressesTests {
     }
 
     private func checkFastMembership<S: Sequence>(_ sequence: S, last: S.Element, individual: S.Element) throws where S.Element: Equatable {
-        #expect(try #require(sequence._customContainsEquatableElement(last)))
-        #expect(!(try #require(sequence._customContainsEquatableElement(individual))))
+        // CHANGE: Unwrap both optional answers before generic membership can fall back to scanning /0.
+        let lastAnswer = try #require(
+            sequence._customContainsEquatableElement(last) as Bool?
+        )
+        let individualAnswer = try #require(
+            sequence._customContainsEquatableElement(individual) as Bool?
+        )
+        #expect(lastAnswer)
+        #expect(!individualAnswer)
         #expect(genericContains(sequence, last))
         #expect(!genericContains(sequence, individual))
     }

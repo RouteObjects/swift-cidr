@@ -180,9 +180,9 @@ struct IPAddressCoverageTests {
 
             for offset in UInt32(0)...UInt32(255) {
                 let address = IPv4Address(address: base | offset)
-                let expected = input.contains { $0.contains(address) }
+                let expected = input.contains { $0.contains(address: address) }
                 #expect(coverage.contains(address) == expected)
-                #expect(summarized.contains { $0.contains(address) } == expected)
+                #expect(summarized.contains { $0.contains(address: address) } == expected)
             }
 
             for index in coverage.ranges.indices.dropLast() {
@@ -221,9 +221,9 @@ struct IPAddressCoverageTests {
 
             for offset in UInt64(0)...UInt64(255) {
                 let address = IPv6Address(address: base | UInt128(offset))
-                let expected = input.contains { $0.contains(address) }
+                let expected = input.contains { $0.contains(address: address) }
                 #expect(coverage.contains(address) == expected)
-                #expect(summarized.contains { $0.contains(address) } == expected)
+                #expect(summarized.contains { $0.contains(address: address) } == expected)
             }
 
             for index in coverage.ranges.indices.dropLast() {
