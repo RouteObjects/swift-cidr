@@ -145,6 +145,15 @@ if let address = IPv6Address("2001:db8:0:0:0:0:0:1/64") {
 
 ## IPv4 Boundary Addresses Fail Explicitly
 
+The context-preserving traversal and endpoints planned for 0.8.0 make this
+existing policy visible when passing `network.first`, `network.last`, or a
+boundary element from `network.addresses`. Those values retain the parent
+prefix instead of becoming `/32`. A boundary that previously bypassed the
+check as a host-length value can therefore throw the existing projection
+error. Both endpoints of a `/31` are rejected under the current adapter
+policy; this migration does not change that policy. See the
+[unreleased migration notes](ReleaseNotes/0.8.0.md).
+
 ```swift
 import CIDR
 import CIDRNIO

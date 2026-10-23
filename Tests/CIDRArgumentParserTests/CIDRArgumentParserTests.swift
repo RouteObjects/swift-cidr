@@ -355,20 +355,16 @@ struct CIDRArgumentParserTests {
         }
     }
 
-    @Test("Prefix-length arguments accept family boundaries and canonicalize decimal text")
-    func prefixLengthArgumentsAcceptBoundariesAndCanonicalize() throws {
+    @Test("Prefix-length arguments accept family boundaries and canonical decimal text")
+    func prefixLengthArgumentsAcceptBoundariesAndCanonicalText() throws {
         let ipv4Examples: [(source: String, canonical: String, value: Int)] = [
             ("0", "0", 0),
-            ("-0", "0", 0),
-            ("024", "24", 24),
-            ("+24", "24", 24),
+            ("24", "24", 24),
             ("32", "32", 32),
         ]
         let ipv6Examples: [(source: String, canonical: String, value: Int)] = [
             ("0", "0", 0),
-            ("-0", "0", 0),
-            ("064", "64", 64),
-            ("+64", "64", 64),
+            ("64", "64", 64),
             ("128", "128", 128),
         ]
 
@@ -388,12 +384,47 @@ struct CIDRArgumentParserTests {
 
     @Test("Prefix-length arguments reject out-of-family ranges and malformed text")
     func prefixLengthArgumentsRejectInvalidValues() {
-        for source in ["", "-1", "33", "24/", "/24", " 24", "24 ", "abc"] {
+        for source in ["", "-1", "33", "24/", "/24", " 24", "24 ", "abc", "+0", "-0", "00", "024", "+24", "２４"] {
             #expect(IPv4PrefixLength(argument: source) == nil)
         }
-        for source in ["", "-1", "129", "64/", "/64", " 64", "64 ", "abc"] {
+        for source in ["", "-1", "129", "64/", "/64", " 64", "64 ", "abc", "+0", "-0", "00", "064", "+64", "６４"] {
             #expect(IPv6PrefixLength(argument: source) == nil)
         }
+    }
+
+    @Test("Address, network, and endpoint arguments share canonical prefix grammar")
+    func compositeArgumentsRejectNoncanonicalPrefixes() {
+        // CHANGE: CLI uses LosslessStringConvertible witnesses rather than concrete overload lookup.
+        for suffix in ["+0", "-0", "00", "+24", "024"] {
+            let ipv4 = "192.0.2.1/\(suffix)"
+            let ipv6 = "2001:db8::1/\(suffix)"
+            #expect(IPv4Address(argument: ipv4) == nil, "\(ipv4)")
+            #expect(IPv4Network(argument: ipv4) == nil, "\(ipv4)")
+            #expect(IPEndpoint<V4>(argument: ipv4 + ":53") == nil, "\(ipv4)")
+            #expect(IPv6Address(argument: ipv6) == nil, "\(ipv6)")
+            #expect(IPv6Network(argument: ipv6) == nil, "\(ipv6)")
+            #expect(IPEndpoint<V6>(argument: "[\(ipv6)]:53") == nil, "\(ipv6)")
+            #expect(AnyIPAddress(argument: ipv4) == nil)
+            #expect(AnyIPAddress(argument: ipv6) == nil)
+            #expect(AnyIPNetwork(argument: ipv4) == nil)
+            #expect(AnyIPNetwork(argument: ipv6) == nil)
+        }
+    }
+
+    @Test("CLI address parsing retains compatible decimal padded octets")
+    func compositeArgumentsRetainCompatibleAddressSyntax() throws {
+        let address = try #require(IPv4Address(argument: "012.0.0.1/24"))
+        #expect(address.address == 0x0C000001)
+        #expect(address.prefixLength.intValue == 24)
+        #expect(IPv4Network(argument: "012.0.0.1/24") == address.network)
+        #expect(IPEndpoint<V4>(argument: "012.0.0.1/24:53")?.address == address)
+        #expect(AnyIPAddress(argument: "012.0.0.1/24") == AnyIPAddress(address))
+        #expect(AnyIPNetwork(argument: "012.0.0.1/24") == AnyIPNetwork(address.network))
+        let mapped = try #require(IPv6Address(argument: "::ffff:012.0.0.1/96"))
+        #expect(mapped.addressLiteral == "::ffff:c00:1")
+        #expect(mapped.prefixLength.intValue == 96)
+        #expect(IPv6Network(argument: "::ffff:012.0.0.1/96") == mapped.network)
+        #expect(IPEndpoint<V6>(argument: "[::ffff:012.0.0.1/96]:53")?.address == mapped)
     }
 
     @Test("Open-ended values do not advertise a finite completion list")

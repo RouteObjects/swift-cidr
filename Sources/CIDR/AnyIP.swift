@@ -87,24 +87,35 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
     /// The parse order is only a performance hint for workloads that know which family is likely to
     /// appear first. Both families are still attempted before this initializer returns `nil`.
     public init?(_ description: String, parseOrder: AddressFamilyParseOrder = .ipv4ThenIPv6) {
+        self.init(description, policy: .compatible, parseOrder: parseOrder)
+    }
+
+    /// Parses either family with an explicit octet policy and the requested family order.
+    ///
+    /// Both attempts honor `policy`; strict failure never retries compatible parsing.
+    public init?(
+        _ description: String,
+        policy: IPAddressParsingPolicy,
+        parseOrder: AddressFamilyParseOrder = .ipv4ThenIPv6
+    ) {
         switch parseOrder {
         case .ipv4ThenIPv6:
-            if let address = IPv4Address(description) {
+            if let address = IPv4Address(description, policy: policy) {
                 self = .v4(address)
                 return
             }
 
-            if let address = IPv6Address(description) {
+            if let address = IPv6Address(description, policy: policy) {
                 self = .v6(address)
                 return
             }
         case .ipv6ThenIPv4:
-            if let address = IPv6Address(description) {
+            if let address = IPv6Address(description, policy: policy) {
                 self = .v6(address)
                 return
             }
 
-            if let address = IPv4Address(description) {
+            if let address = IPv4Address(description, policy: policy) {
                 self = .v4(address)
                 return
             }
@@ -277,24 +288,35 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
     /// The parse order is only a performance hint. Both families are still attempted before this
     /// initializer returns `nil`.
     public init?(_ description: String, parseOrder: AddressFamilyParseOrder = .ipv4ThenIPv6) {
+        self.init(description, policy: .compatible, parseOrder: parseOrder)
+    }
+
+    /// Parses either family with an explicit octet policy and the requested family order.
+    ///
+    /// Both attempts honor `policy`; strict failure never retries compatible parsing.
+    public init?(
+        _ description: String,
+        policy: IPAddressParsingPolicy,
+        parseOrder: AddressFamilyParseOrder = .ipv4ThenIPv6
+    ) {
         switch parseOrder {
         case .ipv4ThenIPv6:
-            if let network = IPv4Network(description) {
+            if let network = IPv4Network(description, policy: policy) {
                 self = .v4(network)
                 return
             }
 
-            if let network = IPv6Network(description) {
+            if let network = IPv6Network(description, policy: policy) {
                 self = .v6(network)
                 return
             }
         case .ipv6ThenIPv4:
-            if let network = IPv6Network(description) {
+            if let network = IPv6Network(description, policy: policy) {
                 self = .v6(network)
                 return
             }
 
-            if let network = IPv4Network(description) {
+            if let network = IPv4Network(description, policy: policy) {
                 self = .v4(network)
                 return
             }
@@ -407,18 +429,32 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
         }
     }
 
-    /// Returns whether this network contains the supplied address.
+    /// Returns whether the address bits lie inside this network, ignoring prefix context.
     ///
     /// Containment is meaningful only within the same address family. Mixed-family comparisons
     /// return `false`.
+    @available(*, deprecated, message: "Checks address bits only. Use contains(address:) for hierarchical containment, or the concrete network's addresses view for exact membership.")
     public func contains(_ address: AnyIPAddress) -> Bool {
         switch (self, address) {
         case (.v4(let network), .v4(let address)):
-            return network.contains(address)
+            return (address.address & network.mask) == network.prefix
         case (.v6(let network), .v6(let address)):
-            return network.contains(address)
+            return (address.address & network.mask) == network.prefix
         default:
             // mixed-family containment is always false instead of trying to coerce between unrelated address families.
+            return false
+        }
+    }
+
+    /// Returns whether the address and its prefix context lie inside this network.
+    /// Mixed address families return `false`. Complexity is O(1).
+    public func contains(address: AnyIPAddress) -> Bool {
+        switch (self, address) {
+        case (.v4(let network), .v4(let address)):
+            return network.contains(address: address)
+        case (.v6(let network), .v6(let address)):
+            return network.contains(address: address)
+        default:
             return false
         }
     }
@@ -427,12 +463,19 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
     ///
     /// Containment is meaningful only within the same address family. Mixed-family comparisons
     /// return `false`.
+    @available(*, deprecated, renamed: "contains(subnet:)")
     public func contains(_ other: AnyIPNetwork) -> Bool {
+        contains(subnet: other)
+    }
+
+    /// Returns whether this network fully contains a subnet of the same family.
+    /// - Complexity: O(1).
+    public func contains(subnet other: AnyIPNetwork) -> Bool {
         switch (self, other) {
         case (.v4(let lhs), .v4(let rhs)):
-            return lhs.contains(rhs)
+            return lhs.contains(subnet: rhs)
         case (.v6(let lhs), .v6(let rhs)):
-            return lhs.contains(rhs)
+            return lhs.contains(subnet: rhs)
         default:
             // family-erased wrapper APIs keep family mismatch explicit rather than silently widening semantics.
             return false

@@ -69,10 +69,12 @@ public struct PrefixLength<Family: IPAddressFamily>: RawRepresentable, Sendable,
     /// Creates a prefix length from base-10 integer text.
     ///
     /// The text is the number after the slash, without the slash itself. For example,
-    /// `PrefixLength<V4>("24")` represents `/24`.
+    /// `PrefixLength<V4>("24")` represents `/24`. Only `0` or unpadded ASCII decimal digits
+    /// beginning with `1...9` are accepted; signs and whitespace are rejected.
     public init?(_ description: String) {
-        guard let value = Int(description) else { return nil }
-        self.init(value)
+        // CHANGE: Standalone lengths and every composite CIDR parser share one lexical contract.
+        guard let value = PrefixLengthTextParser.parse(description.utf8, maximum: Family.bitWidth) else { return nil }
+        self.init(rawValue: value)
     }
 
     /// The prefix length as an `Int`.
@@ -139,5 +141,22 @@ extension PrefixLength {
     public func encode(to encoder: any Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(intValue)
+    }
+}
+
+/// The shared grammar for textual lengths, including borrowed suffix bytes in optimized parsers.
+internal enum PrefixLengthTextParser {
+    static func parse(_ bytes: some Collection<UInt8>, maximum: Int) -> UInt8? {
+        var value: UInt16 = 0
+        var digitCount = 0
+        for byte in bytes {
+            // CHANGE: At most three digits fit UInt8; reject padding before arithmetic can overflow.
+            guard byte >= 48, byte <= 57, digitCount < 3,
+                  digitCount == 0 || value != 0 else { return nil }
+            value = value * 10 + UInt16(byte - 48)
+            digitCount += 1
+        }
+        guard digitCount > 0, Int(value) <= maximum else { return nil }
+        return UInt8(exactly: value)
     }
 }

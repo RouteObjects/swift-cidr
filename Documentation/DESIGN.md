@@ -132,6 +132,29 @@ Aliases such as `IPv4Network`, `ASN`, `IPv6PrefixLength` are conveniences over t
 | **Typical use** | Host/interface-style values | Route/filter-shaped keys | Allocation / set math | RPSL-style more-specifics |
 | **Projection** | `.network` → `IPNetwork` (lossy) | — | Related math, different role | Built from a base `IPNetwork` |
 
+### Prefix context in traversal
+
+`IPNetwork` remains a sequence of `IPAddress` values. Its `addresses` view and
+direct iteration retain the parent's prefix length on every yielded address.
+The shared `CIDR.first`, `last`, and `range` endpoints retain that same context,
+including through generic callers and mixed-family network wrappers.
+
+There are two distinct membership questions. `contains(address:)` checks
+whether the candidate's whole prefix context fits inside the network;
+`contains(subnet:)` checks complete canonical-prefix containment. Exact
+sequence membership, exposed by `addresses.contains(_:)` and generic
+`Sequence.contains(_:)`, requires both a matching parent prefix length and
+address bits inside the network. Both questions have constant-time answers.
+The deprecated direct unlabeled address overload retains its older raw-bit
+containment behavior during migration.
+
+`CIDR.range` remains a `ClosedRange` ordered by address bits and then prefix
+length; its membership does not impose the sequence's exact prefix match.
+Use `addresses` when contextual element identity matters. Full traversal
+remains proportional to the number of addresses, regardless of membership
+optimization. See the [0.8.0 migration notes](ReleaseNotes/0.8.0.md) for the
+unreleased transition and consumer compatibility details.
+
 ### Exact address coverage
 
 `IPAddressRange<Family>` is an inclusive, ordered interval of literal address

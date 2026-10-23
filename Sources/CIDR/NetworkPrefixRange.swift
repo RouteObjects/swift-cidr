@@ -84,7 +84,7 @@ public struct NetworkPrefixRange<Family: IPAddressFamily>: Sendable, Hashable, C
     public func contains<P: IPPrefix>(_ candidate: P) -> Bool where P.Family == Family {
         guard candidate.prefixLength >= lowerPrefixLength else { return false }
         guard candidate.prefixLength <= upperPrefixLength else { return false }
-        return network.contains(candidate)
+        return network.contains(subnet: candidate)
     }
 
     /// The canonical RPSL-style text for this prefix range.

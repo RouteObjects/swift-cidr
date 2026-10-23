@@ -376,6 +376,55 @@ if let network = IPv4Network("192.0.2.0/24"),
 }
 ```
 
+### Contextual Address Traversal and Containment
+
+`IPNetwork` and its explicit `addresses` view yield addresses with the parent
+network's prefix context. Named containment checks the whole candidate context;
+sequence membership checks equality with a yielded element:
+
+```swift
+import CIDR
+
+if let network = IPv4Network("192.0.2.0/30"),
+   let contextual = IPv4Address("192.0.2.1/30"),
+   let host = IPv4Address("192.0.2.1/32"),
+   let subnet = IPv4Network("192.0.2.2/31") {
+    print(Array(network.addresses).map(\.description))
+    // ["192.0.2.0/30", "192.0.2.1/30", "192.0.2.2/30", "192.0.2.3/30"]
+
+    print(network.contains(address: host))           // true
+    print(network.contains(subnet: subnet))          // true
+    print(network.addresses.contains(contextual))    // true
+    print(network.addresses.contains(host))          // false
+}
+```
+
+Named containment and exact sequence membership run in O(1). Enumeration still
+visits every address; use `network.addresses.prefix(10)` for a bounded sample.
+The legacy unlabeled network containment overloads are deprecated but retain
+their previous behavior. See the [0.8.0 migration notes](Documentation/ReleaseNotes/0.8.0.md)
+(unreleased) for endpoint changes, generic dispatch, socket boundaries, and
+the unified prefix-length grammar.
+
+### Address Parsing Policy
+
+Every textual prefix length is unpadded unsigned ASCII decimal: `0`, `24`, and
+`128` are valid when in range; `00`, `+24`, and `-0` are rejected. Existing
+address initializers interpret padded IPv4 octets as decimal for compatibility.
+Use an explicit policy when unpadded IPv4 literals are required:
+
+```swift
+let compatible = IPv4Address("012.0.0.1") // 12.0.0.1/32
+let rejected = IPv4Address("012.0.0.1", policy: .strict) // nil
+let contextual = IPv4Address("192.0.2.1/24", policy: .strict)
+```
+
+Strict parsing also rejects padded IPv4 octets inside IPv6 dotted notation.
+It does not require IPv6 text to use one canonical spelling. After validating
+an address, pass the typed value to transport adapters or use its
+`addressLiteral` when text is necessary. Passing the original input to a system
+resolver can reinterpret compatible padded IPv4 text as octal on some systems.
+
 ### Mixed-Family Boundary APIs
 
 ```swift

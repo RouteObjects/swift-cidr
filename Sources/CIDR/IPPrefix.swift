@@ -65,12 +65,28 @@ public extension IPPrefix {
     var isCanonical: Bool { prefix & mask == prefix }
     var networkAddress: IPAddress<Family> { first }
 
+    /// Checks address bits only, ignoring the candidate's prefix context.
+    @available(*, deprecated, message: "Checks address bits only. Use contains(address:) for hierarchical containment, or addresses.contains(_:) on IPNetwork for exact element membership.")
     func contains(_ address: IPAddress<Family>) -> Bool {
         (address.address & mask) == prefix
     }
 
+    /// Returns whether both the address and its prefix context lie inside this prefix.
+    /// - Complexity: O(1).
+    func contains(address: IPAddress<Family>) -> Bool {
+        // CHANGE: An address in a broader context is not wholly contained by this prefix.
+        address.prefixLength >= prefixLength && (address.address & mask) == prefix
+    }
+
+    /// Returns whether this prefix fully contains the supplied subnet.
+    /// - Complexity: O(1).
+    func contains<P: IPPrefix>(subnet other: P) -> Bool where P.Family == Family {
+        other.prefixLength >= prefixLength && (other.prefix & mask) == prefix
+    }
+
+    @available(*, deprecated, renamed: "contains(subnet:)")
     func contains<P: IPPrefix>(_ other: P) -> Bool where P.Family == Family {
-        other.prefixLength >= self.prefixLength && self.contains(other.first)
+        contains(subnet: other)
     }
 
     var nextNetwork: Self? {

@@ -30,6 +30,19 @@ For *why* public types exist, see [DESIGN.md](DESIGN.md).
 
 These are **implementation machinery**, not currency types. Callers should use `LosslessStringConvertible`, span/text initializers, and public format APIs.
 
+IPv4 and IPv6 parsing witnesses (`parseAddress` and `parseCIDR`) live beside
+their scanners in [AF+IPv4Parsing.swift](../Sources/CIDR/AF+IPv4Parsing.swift)
+and [AF+IPv6Parsing.swift](../Sources/CIDR/AF+IPv6Parsing.swift).
+[IPAddressFamily.swift](../Sources/CIDR/IPAddressFamily.swift) declares the IP
+parsing requirement and its compatible custom-family default. The base protocol
+and family declarations remain in [AddressFamily.swift](../Sources/CIDR/AddressFamily.swift);
+the shared textual prefix lexer lives in [PrefixLength.swift](../Sources/CIDR/PrefixLength.swift).
+
+The [shared CIDR byte parsing exploration](Proposals/CIDRByteParsing.md) records
+a future helper investigation, including custom-family compatibility and the
+evidence needed before changing byte handling or digit arithmetic. No such
+implementation or performance change is approved.
+
 ### Family markers (`AF.*`)
 
 `AF.V4`, `AF.V6`, `AF.MAC48`, `AF.MAC64`, and `AF.ASN` are empty (or storage-associated) **marker types** that carry associated type metadata (width, parse/format). They exist so generic algorithms are **compile-time family-safe** instead of switching on runtime enums for every operation.

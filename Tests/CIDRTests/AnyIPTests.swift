@@ -107,13 +107,13 @@ struct AnyIPTests {
 
         #expect(ipv4.description == "192.0.2.0/24")
         #expect(AnyIPNetwork(ipv4.description) == ipv4)
-        #expect(ipv4.first.description == "192.0.2.0/32")
-        #expect(ipv4.last.description == "192.0.2.255/32")
+        #expect(ipv4.first.description == "192.0.2.0/24")
+        #expect(ipv4.last.description == "192.0.2.255/24")
         #expect(ipv4.nextNetwork?.description == "192.0.3.0/24")
 
         #expect(ipv6.isIPv6)
-        #expect(ipv6.first.description == "2001:db8::/128")
-        #expect(ipv6.last.description == "2001:db8::3/128")
+        #expect(ipv6.first.description == "2001:db8::/126")
+        #expect(ipv6.last.description == "2001:db8::3/126")
     }
 
     @Test(
@@ -163,10 +163,10 @@ struct AnyIPTests {
         let ipv6Address = try #require(AnyIPAddress("2001:db8::1/128"))
         let ipv6Network = try #require(AnyIPNetwork("2001:db8::/64"))
 
-        #expect(ipv4Network.contains(ipv4Address))
-        #expect(ipv4Network.contains(ipv4Subnet))
-        #expect(ipv4Network.contains(ipv6Address) == false)
-        #expect(ipv4Network.contains(ipv6Network) == false)
+        #expect(ipv4Network.contains(address: ipv4Address))
+        #expect(ipv4Network.contains(subnet: ipv4Subnet))
+        #expect(ipv4Network.contains(address: ipv6Address) == false)
+        #expect(ipv4Network.contains(subnet: ipv6Network) == false)
     }
 
     @Test("AnyPrefixLength exposes family metadata and typed projections")

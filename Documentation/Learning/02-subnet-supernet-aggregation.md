@@ -93,8 +93,8 @@ import CIDR
 if let aggregate = IPv4Network("192.0.2.0/23"),
    let route = IPv4Network("192.0.3.0/24"),
    let host = IPv4Address("192.0.3.10") {
-    print(aggregate.contains(route))
-    print(aggregate.contains(host))
+    print(aggregate.contains(subnet: route))
+    print(aggregate.contains(address: host))
 }
 ```
 

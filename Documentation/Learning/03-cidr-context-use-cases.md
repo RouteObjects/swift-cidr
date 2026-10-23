@@ -100,7 +100,7 @@ import CIDR
 
 if let advertisedRoute = IPv4Network("203.0.113.0/24"),
    let coveringAggregate = IPv4Network("203.0.112.0/23") {
-    print(coveringAggregate.contains(advertisedRoute))
+    print(coveringAggregate.contains(subnet: advertisedRoute))
 }
 ```
 

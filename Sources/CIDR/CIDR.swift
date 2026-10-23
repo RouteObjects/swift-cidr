@@ -46,8 +46,19 @@ public extension CIDR {
     var mask: Family.Storage { Family.Storage.networkMask(for: prefixBits) }
     var inverseMask: Family.Storage { ~mask }
     
-    var first: IPAddress<Family> { IPAddress(address: storage & mask) }
-    var last: IPAddress<Family> { IPAddress(address: storage | inverseMask) }
+    /// The first address, retaining this value's prefix context.
+    var first: IPAddress<Family> {
+        // CHANGE: Endpoint projection preserves the same context as address enumeration.
+        IPAddress(address: storage & mask, prefixLength: prefixLength)
+    }
+
+    /// The last address, retaining this value's prefix context.
+    var last: IPAddress<Family> { IPAddress(address: storage | inverseMask, prefixLength: prefixLength) }
+
+    /// Ordered contextual endpoints, subject to `ClosedRange` and `Strideable` limits.
+    ///
+    /// Range containment uses ordering. Use network containment for hierarchy checks or
+    /// `IPNetwork.addresses` for exact sequence membership and raw-storage traversal.
     var range: ClosedRange<IPAddress<Family>> { first...last }
 
     var addressLiteral: String {

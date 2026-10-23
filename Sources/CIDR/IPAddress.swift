@@ -137,27 +137,18 @@ extension IPAddress {
     /// CIDR-qualified text preserves the parsed address bits and stores the parsed prefix length as
     /// context.
     public init?(_ string: String) {
-        guard let slashIndex = string.firstIndex(of: "/") else {
-            guard let address = Family.parseAddress(string) else { return nil }
-            self.init(address: address)
-            return
-        }
+        self.init(string, policy: .compatible)
+    }
 
-        let prefixStart = string.index(after: slashIndex)
-        let addressText = string[..<slashIndex]
-        let prefixText = string[prefixStart...]
-
-        guard !addressText.isEmpty,
-              !prefixText.isEmpty,
-              prefixText.firstIndex(of: "/") == nil,
-              let rawPrefix = Int(prefixText),
-              let prefixLength = PrefixLength<Family>(rawPrefix),
-              let address = Family.parseAddress(String(addressText))
-        else {
-            return nil
-        }
-
-        self.init(address: address, prefixLength: prefixLength)
+    /// Parses an address with an explicit IPv4-octet policy, preserving any prefix context.
+    ///
+    /// Every policy requires unpadded unsigned ASCII decimal prefix lengths. Address-only input
+    /// receives the family's maximum prefix length. This initializer never resolves hostnames.
+    public init?(_ string: String, policy: IPAddressParsingPolicy) {
+        // CHANGE: A protocol requirement keeps generic, concrete, Codable, and CLI dispatch consistent.
+        guard let result = Family.parseCIDR(string, requiresPrefix: false, policy: policy),
+              let prefixLength = PrefixLength<Family>(rawValue: result.prefixLength) else { return nil }
+        self.init(address: result.address, prefixLength: prefixLength)
     }
 }
 
@@ -167,13 +158,7 @@ public extension IPAddress where Family == AF.V4 {
     /// This overload uses the optimized IPv4 CIDR parser while preserving the public semantics of
     /// the generic string initializer.
     init?(_ string: String) {
-        guard let result = AF.parseIPv4CIDRTextSuffix(string, requiresPrefix: false),
-              let prefixLength = PrefixLength<Family>(rawValue: result.prefixLength)
-        else {
-            return nil
-        }
-
-        self.init(address: result.address, prefixLength: prefixLength)
+        self.init(string, policy: .compatible)
     }
 
     @inlinable
@@ -209,13 +194,7 @@ public extension IPAddress where Family == AF.V6 {
     /// This overload uses the optimized IPv6 CIDR parser while preserving the public semantics of
     /// the generic string initializer.
     init?(_ string: String) {
-        guard let result = AF.parseIPv6CIDRTextSuffix(string, requiresPrefix: false),
-              let prefixLength = PrefixLength<Family>(rawValue: result.prefixLength)
-        else {
-            return nil
-        }
-
-        self.init(address: result.address, prefixLength: prefixLength)
+        self.init(string, policy: .compatible)
     }
 
     @inlinable

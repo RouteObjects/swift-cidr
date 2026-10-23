@@ -43,7 +43,8 @@ extension AF {
     @usableFromInline
     internal static func parseIPv4CIDRTextSuffix(
         _ string: String,
-        requiresPrefix: Bool
+        requiresPrefix: Bool,
+        policy: IPAddressParsingPolicy = .compatible
     ) -> IPv4CIDRParseResult? {
         var string = string
 
@@ -51,14 +52,18 @@ extension AF {
             _parseIPv4CIDRTextCore(
                 bytes,
                 slashIndex: _firstSlashIndexSuffix(in: bytes),
-                requiresPrefix: requiresPrefix
+                requiresPrefix: requiresPrefix,
+                policy: policy
             )
         }
     }
 
     @inline(__always)
     // SAFETY: `bytes` is a borrowed UTF-8 view that is never escaped; all indexing is bounded by iteration.
-    internal static func _parseIPv4TextCore(_ bytes: UnsafeBufferPointer<UInt8>) -> UInt32? {
+    internal static func _parseIPv4TextCore(
+        _ bytes: UnsafeBufferPointer<UInt8>,
+        policy: IPAddressParsingPolicy = .compatible
+    ) -> UInt32? {
         // Share exact IPv4 dotted-quad rules between standalone IPv4 and IPv6 mixed-notation parsing.
         guard bytes.count >= 7 && bytes.count <= 15 else { return nil }
 
@@ -70,6 +75,8 @@ extension AF {
         for byte in bytes {
             let digit = byte &- 48
             if digit <= 9 {
+                // CHANGE: Strict octets cannot continue after an initial zero; compatible input stays decimal.
+                guard policy != .strict || digitsInOctet == 0 || currentOctet != 0 else { return nil }
                 digitsInOctet += 1
                 guard digitsInOctet <= 3 else { return nil }
                 currentOctet = (currentOctet * 10) + UInt32(digit)
@@ -94,11 +101,12 @@ extension AF {
     private static func _parseIPv4CIDRTextCore(
         _ bytes: UnsafeBufferPointer<UInt8>,
         slashIndex: Int?,
-        requiresPrefix: Bool
+        requiresPrefix: Bool,
+        policy: IPAddressParsingPolicy = .compatible
     ) -> IPv4CIDRParseResult? {
         guard let slashIndex else {
             guard !requiresPrefix,
-                  let address = _parseIPv4TextCore(bytes)
+                  let address = _parseIPv4TextCore(bytes, policy: policy)
             else {
                 return nil
             }
@@ -116,37 +124,13 @@ extension AF {
 
         // SAFETY: `slashIndex` was validated inside `bytes`, and the rebased buffer does not escape.
         let addressBytes = UnsafeBufferPointer(start: baseAddress, count: slashIndex)
-        guard let address = _parseIPv4TextCore(addressBytes),
-              let prefixLength = _parseStrictIPv4PrefixLength(bytes, start: prefixStart, end: bytes.count)
+        guard let address = _parseIPv4TextCore(addressBytes, policy: policy),
+              let prefixLength = PrefixLengthTextParser.parse(bytes[prefixStart...], maximum: 32)
         else {
             return nil
         }
 
         return IPv4CIDRParseResult(address: address, prefixLength: prefixLength, hasExplicitPrefix: true)
-    }
-
-    @inline(__always)
-    // SAFETY: `start` and `end` are produced from validated slash positions within `bytes`.
-    private static func _parseStrictIPv4PrefixLength(
-        _ bytes: UnsafeBufferPointer<UInt8>,
-        start: Int,
-        end: Int
-    ) -> UInt8? {
-        let count = end - start
-        guard count == 1 || count == 2 else { return nil }
-        guard count == 1 || bytes[start] != asciiZero else { return nil }
-
-        var value = UInt8.zero
-        var index = start
-        while index < end {
-            let digit = bytes[index] &- asciiZero
-            guard digit <= 9 else { return nil }
-            value = (value &* 10) &+ digit
-            index &+= 1
-        }
-
-        guard value <= 32 else { return nil }
-        return value
     }
 
     @inline(__always)
@@ -171,6 +155,19 @@ extension AF {
 }
 
 extension AF.V4 {
+    public static func parseAddress(_ string: String) -> UInt32? {
+        AF.parseIPv4Text(string)
+    }
+
+    public static func parseCIDR(
+        _ text: String,
+        requiresPrefix: Bool,
+        policy: IPAddressParsingPolicy
+    ) -> (address: UInt32, prefixLength: UInt8)? {
+        guard let result = AF.parseIPv4CIDRTextSuffix(text, requiresPrefix: requiresPrefix, policy: policy) else { return nil }
+        return (result.address, result.prefixLength)
+    }
+
     internal static func prefixLength(fromNetmask netmaskString: String) -> Int? {
         guard let maskValue = AF.parseIPv4Text(netmaskString) else { return nil }
         let leadingOnes = (~maskValue).leadingZeroBitCount
