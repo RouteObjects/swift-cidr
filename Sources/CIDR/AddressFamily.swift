@@ -45,18 +45,6 @@ public protocol AddressFamily: Sendable {
     static func formatAddress(_ address: Storage) -> String
 }
 
-/// An IANA Address Family value that represents an Internet Protocol address space.
-///
-/// `IPAddressFamily` is the refinement used by IP-specific types such as ``IPAddress``,
-/// ``IPNetwork``, ``CIDRBlock``, and ``IPEndpoint``. Today only ``AF/V4`` and ``AF/V6`` conform.
-/// This keeps non-IP registry families, such as AS numbers and MAC address formats, out of
-/// IP-specific CIDR types while still letting them share the broader ``AddressFamily`` metadata,
-/// parsing, and formatting surface.
-///
-/// **Standards:** [RFC 791](https://datatracker.ietf.org/doc/html/rfc791) (IPv4),
-/// [RFC 4291](https://datatracker.ietf.org/doc/html/rfc4291) (IPv6).
-public protocol IPAddressFamily: AddressFamily {}
-
 /// Namespace for the concrete IANA address family marker types supported by CIDR.
 ///
 /// `AF` is intentionally familiar to developers coming from POSIX and IANA registry terminology,
@@ -72,10 +60,6 @@ public enum AF {
         public static let bitWidth: Int = UInt32.bitWidth
         public static let familyName: String = "IPv4"
 
-        public static func parseAddress(_ string: String) -> UInt32? {
-            AF.parseIPv4Text(string)
-        }
-
         @inlinable
         @inline(__always)
         public static func formatAddress(_ address: UInt32) -> String {
@@ -90,10 +74,6 @@ public enum AF {
         public static let ianaValue: Int32 = 2
         public static let bitWidth: Int = UInt128.bitWidth
         public static let familyName: String = "IPv6"
-
-        public static func parseAddress(_ string: String) -> UInt128? {
-            AF.parseIPv6Text(string)
-        }
 
         public static func formatAddress(_ address: UInt128) -> String {
             AF.formatV6Compressed(address)

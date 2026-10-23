@@ -25,7 +25,6 @@ struct IPv6CIDRParseResult: Sendable, Equatable {
 
 extension AF {
     private static let ipv6CIDRSlashASCII = UInt8(ascii: "/")
-    private static let ipv6CIDRZeroASCII = UInt8(ascii: "0")
 
     /// The selected production IPv6 text parser.
     internal static func parseIPv6Text(_ string: String) -> UInt128? {
@@ -44,7 +43,8 @@ extension AF {
 
     internal static func parseIPv6CIDRTextSuffix(
         _ string: String,
-        requiresPrefix: Bool
+        requiresPrefix: Bool,
+        policy: IPAddressParsingPolicy = .compatible
     ) -> IPv6CIDRParseResult? {
         var string = string
 
@@ -52,7 +52,8 @@ extension AF {
             _parseIPv6CIDRTextCore(
                 bytes,
                 slashIndex: _firstIPv6CIDRSlashIndexSuffix(in: bytes),
-                requiresPrefix: requiresPrefix
+                requiresPrefix: requiresPrefix,
+                policy: policy
             )
         }
     }
@@ -62,11 +63,12 @@ extension AF {
     private static func _parseIPv6CIDRTextCore(
         _ bytes: UnsafeBufferPointer<UInt8>,
         slashIndex: Int?,
-        requiresPrefix: Bool
+        requiresPrefix: Bool,
+        policy: IPAddressParsingPolicy = .compatible
     ) -> IPv6CIDRParseResult? {
         guard let slashIndex else {
             guard !requiresPrefix,
-                  let address = _parseIPv6TextCore(bytes)
+                  let address = _parseIPv6TextCore(bytes, policy: policy)
             else {
                 return nil
             }
@@ -84,37 +86,13 @@ extension AF {
 
         // SAFETY: `slashIndex` was validated inside `bytes`, and the rebased buffer does not escape.
         let addressBytes = UnsafeBufferPointer(start: baseAddress, count: slashIndex)
-        guard let address = _parseIPv6TextCore(addressBytes),
-              let prefixLength = _parseStrictIPv6PrefixLength(bytes, start: prefixStart, end: bytes.count)
+        guard let address = _parseIPv6TextCore(addressBytes, policy: policy),
+              let prefixLength = PrefixLengthTextParser.parse(bytes[prefixStart...], maximum: 128)
         else {
             return nil
         }
 
         return IPv6CIDRParseResult(address: address, prefixLength: prefixLength, hasExplicitPrefix: true)
-    }
-
-    @inline(__always)
-    // SAFETY: `start` and `end` are produced from validated slash positions within `bytes`.
-    private static func _parseStrictIPv6PrefixLength(
-        _ bytes: UnsafeBufferPointer<UInt8>,
-        start: Int,
-        end: Int
-    ) -> UInt8? {
-        let count = end - start
-        guard (1...3).contains(count) else { return nil }
-        guard count == 1 || bytes[start] != ipv6CIDRZeroASCII else { return nil }
-
-        var value = UInt16.zero
-        var index = start
-        while index < end {
-            let digit = bytes[index] &- ipv6CIDRZeroASCII
-            guard digit <= 9 else { return nil }
-            value = (value &* 10) &+ UInt16(digit)
-            index &+= 1
-        }
-
-        guard value <= 128 else { return nil }
-        return UInt8(value)
     }
 
     @inline(__always)
@@ -143,7 +121,10 @@ extension AF {
     }
 
     // SAFETY: `bytes` is a borrowed UTF-8 view that is never escaped; subscripts are guarded by `count`.
-    private static func _parseIPv6TextCore(_ bytes: UnsafeBufferPointer<UInt8>) -> UInt128? {
+    private static func _parseIPv6TextCore(
+        _ bytes: UnsafeBufferPointer<UInt8>,
+        policy: IPAddressParsingPolicy = .compatible
+    ) -> UInt128? {
         let count = bytes.count
         guard count > 0 else { return nil }
 
@@ -234,7 +215,7 @@ extension AF {
             let baseAddress = bytes.baseAddress!
             // SAFETY: `dotStart` is found within `bytes`, and the derived IPv4 tail buffer does not escape.
             let v4Bytes = UnsafeBufferPointer(start: baseAddress + dotStart, count: count - dotStart)
-            guard let v4Value = _parseIPv4TextCore(v4Bytes) else { return nil }
+            guard let v4Value = _parseIPv4TextCore(v4Bytes, policy: policy) else { return nil }
 
             words[wordCount] = UInt16((v4Value >> 16) & 0xFFFF)
             words[wordCount + 1] = UInt16(v4Value & 0xFFFF)
@@ -333,5 +314,20 @@ extension AF {
         let highBits = (SIMD4<UInt64>(UInt64(lowHalf[0]), UInt64(lowHalf[1]), UInt64(lowHalf[2]), UInt64(lowHalf[3])) &<< shifts).wrappedSum()
         let lowBits = (SIMD4<UInt64>(UInt64(highHalf[0]), UInt64(highHalf[1]), UInt64(highHalf[2]), UInt64(highHalf[3])) &<< shifts).wrappedSum()
         return (UInt128(highBits) << 64) | UInt128(lowBits)
+    }
+}
+
+extension AF.V6 {
+    public static func parseAddress(_ string: String) -> UInt128? {
+        AF.parseIPv6Text(string)
+    }
+
+    public static func parseCIDR(
+        _ text: String,
+        requiresPrefix: Bool,
+        policy: IPAddressParsingPolicy
+    ) -> (address: UInt128, prefixLength: UInt8)? {
+        guard let result = AF.parseIPv6CIDRTextSuffix(text, requiresPrefix: requiresPrefix, policy: policy) else { return nil }
+        return (result.address, result.prefixLength)
     }
 }

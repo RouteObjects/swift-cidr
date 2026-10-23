@@ -87,24 +87,35 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
     /// The parse order is only a performance hint for workloads that know which family is likely to
     /// appear first. Both families are still attempted before this initializer returns `nil`.
     public init?(_ description: String, parseOrder: AddressFamilyParseOrder = .ipv4ThenIPv6) {
+        self.init(description, policy: .compatible, parseOrder: parseOrder)
+    }
+
+    /// Parses either family with an explicit octet policy and the requested family order.
+    ///
+    /// Both attempts honor `policy`; strict failure never retries compatible parsing.
+    public init?(
+        _ description: String,
+        policy: IPAddressParsingPolicy,
+        parseOrder: AddressFamilyParseOrder = .ipv4ThenIPv6
+    ) {
         switch parseOrder {
         case .ipv4ThenIPv6:
-            if let address = IPv4Address(description) {
+            if let address = IPv4Address(description, policy: policy) {
                 self = .v4(address)
                 return
             }
 
-            if let address = IPv6Address(description) {
+            if let address = IPv6Address(description, policy: policy) {
                 self = .v6(address)
                 return
             }
         case .ipv6ThenIPv4:
-            if let address = IPv6Address(description) {
+            if let address = IPv6Address(description, policy: policy) {
                 self = .v6(address)
                 return
             }
 
-            if let address = IPv4Address(description) {
+            if let address = IPv4Address(description, policy: policy) {
                 self = .v4(address)
                 return
             }
@@ -277,24 +288,35 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
     /// The parse order is only a performance hint. Both families are still attempted before this
     /// initializer returns `nil`.
     public init?(_ description: String, parseOrder: AddressFamilyParseOrder = .ipv4ThenIPv6) {
+        self.init(description, policy: .compatible, parseOrder: parseOrder)
+    }
+
+    /// Parses either family with an explicit octet policy and the requested family order.
+    ///
+    /// Both attempts honor `policy`; strict failure never retries compatible parsing.
+    public init?(
+        _ description: String,
+        policy: IPAddressParsingPolicy,
+        parseOrder: AddressFamilyParseOrder = .ipv4ThenIPv6
+    ) {
         switch parseOrder {
         case .ipv4ThenIPv6:
-            if let network = IPv4Network(description) {
+            if let network = IPv4Network(description, policy: policy) {
                 self = .v4(network)
                 return
             }
 
-            if let network = IPv6Network(description) {
+            if let network = IPv6Network(description, policy: policy) {
                 self = .v6(network)
                 return
             }
         case .ipv6ThenIPv4:
-            if let network = IPv6Network(description) {
+            if let network = IPv6Network(description, policy: policy) {
                 self = .v6(network)
                 return
             }
 
-            if let network = IPv4Network(description) {
+            if let network = IPv4Network(description, policy: policy) {
                 self = .v4(network)
                 return
             }

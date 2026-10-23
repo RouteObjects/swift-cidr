@@ -75,6 +75,6 @@ extension AnyIPNetwork: ExpressibleByArgument {}
 /// Adds standalone prefix-length command-line parsing for every supported address family.
 ///
 /// The witness supplied by ArgumentParser for `LosslessStringConvertible` delegates to
-/// `PrefixLength.init(_:)`, accepting only values within the selected family's bit width. The
-/// argument is the decimal number without a leading slash.
+/// `PrefixLength.init(_:)`, accepting only unpadded unsigned ASCII decimal within the selected
+/// family's bit width. The argument has no slash; signs and leading zeros other than `0` are invalid.
 extension PrefixLength: ExpressibleByArgument {}

@@ -166,11 +166,16 @@ notation remains mandatory, the family is selected from the literal, and host
 bits are cleared to the canonical IPv4 or IPv6 network boundary.
 
 The generic `PrefixLength<Family>` conformance covers `IPv4PrefixLength` and
-`IPv6PrefixLength`. It delegates to the existing `Int`-based parser and then
-validates `0...32` or `0...128`. Consequently, canonicalizable integer forms
-such as `024`, `+24`, and `-0` remain accepted; `description` normalizes them to
-`24`, `24`, and `0`. The argument is the number without a slash. The adapter
-does not impose a stricter lexical policy than the underlying type.
+`IPv6PrefixLength`. It accepts `0` or unpadded ASCII decimal digits beginning
+with `1...9`, within `0...32` or `0...128`. Signs, leading zeros, and whitespace
+are rejected: `024`, `+24`, and `-0` are invalid. The argument is the number
+without a slash. The same grammar applies to prefixes inside every CIDR string.
+
+Address arguments retain decimal-compatible IPv4 octet parsing, including
+padded octets. The explicit `IPAddressParsingPolicy.strict` API is available
+to applications that require unpadded IPv4 literals; the standard CLI
+conformances do not select that policy. See the [0.8.0 migration notes](ReleaseNotes/0.8.0.md)
+for safe conversion from validated addresses to transport destinations.
 
 All lossless values round-trip through their canonical `description`. Port
 default-value help therefore uses canonical numeric text, so accepted

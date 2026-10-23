@@ -185,47 +185,27 @@ extension IPNetwork {
     /// The address portion may include host bits; the resulting `IPNetwork` stores the canonical
     /// prefix boundary.
     public init?(_ string: String) {
-        guard let slashIndex = string.firstIndex(of: "/") else {
-            return nil
-        }
-
-        let prefixStart = string.index(after: slashIndex)
-        let addressText = string[..<slashIndex]
-        let prefixText = string[prefixStart...]
-
-        guard !addressText.isEmpty,
-              !prefixText.isEmpty,
-              prefixText.firstIndex(of: "/") == nil,
-              let rawPrefix = Int(prefixText),
-              let prefixLength = PrefixLength<Family>(rawPrefix),
-              let prefix = Family.parseAddress(String(addressText))
-        else {
-            return nil
-        }
-
-        self.init(prefix: prefix, prefixLength: prefixLength)
+        self.init(string, policy: .compatible)
     }
 
-    /// Creates a canonical IPv4 network from CIDR notation using the IPv4 CIDR suffix scanner.
+    /// Parses CIDR notation using an explicit IPv4-octet policy and clears input host bits.
+    ///
+    /// A slash and canonical unsigned decimal prefix length are required under either policy.
+    public init?(_ string: String, policy: IPAddressParsingPolicy) {
+        // CHANGE: Share the family requirement with address parsing instead of accepting Int spellings.
+        guard let result = Family.parseCIDR(string, requiresPrefix: true, policy: policy),
+              let prefixLength = PrefixLength<Family>(rawValue: result.prefixLength) else { return nil }
+        self.init(prefix: result.address, prefixLength: prefixLength)
+    }
+
+    /// Creates a canonical IPv4 network using the shared family parser with compatible octets.
     public init?(_ string: String) where Family == AF.V4 {
-        guard let result = AF.parseIPv4CIDRTextSuffix(string, requiresPrefix: true),
-              let prefixLength = PrefixLength<Family>(rawValue: result.prefixLength)
-        else {
-            return nil
-        }
-
-        self.init(prefix: result.address, prefixLength: prefixLength)
+        self.init(string, policy: .compatible)
     }
 
-    /// Creates a canonical IPv6 network from CIDR notation using the IPv6 CIDR suffix scanner.
+    /// Creates a canonical IPv6 network using the shared family parser with compatible octets.
     public init?(_ string: String) where Family == AF.V6 {
-        guard let result = AF.parseIPv6CIDRTextSuffix(string, requiresPrefix: true),
-              let prefixLength = PrefixLength<Family>(rawValue: result.prefixLength)
-        else {
-            return nil
-        }
-
-        self.init(prefix: result.address, prefixLength: prefixLength)
+        self.init(string, policy: .compatible)
     }
 
     /// Creates a canonical network from CIDR notation only when it is contained by a parent block.
