@@ -1,0 +1,20 @@
+{
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "ConnectTimeout=15",
+    "-o",
+    "ServerAliveInterval=15",
+    "-o",
+    "ServerAliveCountMax=3",
+    "swift-dev",
+    "sha256sum /tmp/cidr-containment-20261030.fPBtAc/sources.tar.gz"
+  ],
+  "started_unix": 1793394258.644941,
+  "elapsed_seconds": 0.37151002883911133,
+  "exit": 0
+}

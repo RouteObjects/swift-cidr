@@ -1,0 +1,13 @@
+{
+  "command": [
+    "sysctl",
+    "hw.model",
+    "hw.memsize",
+    "hw.ncpu",
+    "machdep.cpu.brand_string"
+  ],
+  "cwd": "/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr",
+  "exit": 0,
+  "started_unix": 1793391557.785352,
+  "elapsed_seconds": 0.00899505615234375
+}

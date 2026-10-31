@@ -1,0 +1,17 @@
+platform,swift,phase,case,samples,scans_per_sample,checks_per_scan,median_batch_mean_ns_per_scan
+native-x86_64-linux,6.2.4,baseline,v4.typed,82,25,20000,8497630.36
+native-x86_64-linux,6.2.4,baseline,v4.erased,82,25,20000,170494.72
+native-x86_64-linux,6.2.4,baseline,v6.typed,82,25,20000,9173804.54
+native-x86_64-linux,6.2.4,baseline,v6.erased,82,25,20000,198002.4
+native-x86_64-linux,6.2.4,mask-chain,v4.typed,82,25,20000,53535.28
+native-x86_64-linux,6.2.4,mask-chain,v4.erased,82,25,20000,170543.5
+native-x86_64-linux,6.2.4,mask-chain,v6.typed,82,25,20000,128437.8
+native-x86_64-linux,6.2.4,mask-chain,v6.erased,82,25,20000,198027.8
+native-x86_64-linux,6.3.3,baseline,v4.typed,82,25,20000,9434600.9
+native-x86_64-linux,6.3.3,baseline,v4.erased,82,25,20000,196104.03999999998
+native-x86_64-linux,6.3.3,baseline,v6.typed,82,25,20000,9051388.86
+native-x86_64-linux,6.3.3,baseline,v6.erased,82,25,20000,224052.36
+native-x86_64-linux,6.3.3,mask-chain,v4.typed,82,25,20000,53499.36
+native-x86_64-linux,6.3.3,mask-chain,v4.erased,82,25,20000,195994.24
+native-x86_64-linux,6.3.3,mask-chain,v6.typed,82,25,20000,135821.5
+native-x86_64-linux,6.3.3,mask-chain,v6.erased,82,25,20000,224012.91999999998

@@ -1,0 +1,103 @@
+{
+  "admission_snapshots_preserved": true,
+  "base_commit": "cdc2e592beb9095875bc42fc4c269396b20d99e3",
+  "benchmark_and_pins_identical_across_phases": true,
+  "binaries": {
+    "baseline-linux-6.2.4": "3b7f87a4bac30e1d440d59e0febb4a50f207c1741c739c5cfb8ec7a652f2c1cf",
+    "baseline-linux-6.3.3": "d9aa22e0b4b479e93d703e370e6ddc5898170469e667b51a8e6eae0f0140454e",
+    "baseline-mac": "701727b821eda6a444641159b5e304d3a6ee242df49aff6b8d18d2c18062ab62",
+    "entry-only-mac": "383ed07ddfcd38fa96986eb8b5b2d262a692c49851743d4a8bfdbb8eae751bd8",
+    "mask-chain-linux-6.2.4": "8f7f11a3a40afc88d688252199b7c25431b5c2bd3bc683e18f73eeb1f5bc37e5",
+    "mask-chain-linux-6.3.3": "69a21e4f7279362a5c931540ee7974188a7115f641ba759257fc1c2376f33035",
+    "mask-chain-mac": "2553a040cb0e3ae26716e1c25e5964584f4419ef9b471426137079335f9fcdd8"
+  },
+  "branch": "perf/typed-prefix-containment",
+  "codegen": [
+    {
+      "call_instructions": 3,
+      "file": "baseline-mac-scanV4.s"
+    },
+    {
+      "call_instructions": 3,
+      "file": "baseline-mac-scanV6.s"
+    },
+    {
+      "call_instructions": 3,
+      "file": "baseline-linux-6.2.4-build-scanV4.s"
+    },
+    {
+      "call_instructions": 3,
+      "file": "baseline-linux-6.2.4-build-scanV6.s"
+    },
+    {
+      "call_instructions": 3,
+      "file": "baseline-linux-6.3.3-build-scanV4.s"
+    },
+    {
+      "call_instructions": 3,
+      "file": "baseline-linux-6.3.3-build-scanV6.s"
+    },
+    {
+      "call_instructions": 3,
+      "file": "entry-only-mac-scanV4.s"
+    },
+    {
+      "call_instructions": 3,
+      "file": "entry-only-mac-scanV6.s"
+    },
+    {
+      "call_instructions": 0,
+      "file": "mask-chain-mac-scanV4.s"
+    },
+    {
+      "call_instructions": 0,
+      "file": "mask-chain-mac-scanV6.s"
+    },
+    {
+      "call_instructions": 0,
+      "file": "mask-chain-linux-6.2.4-build-scanV4.s"
+    },
+    {
+      "call_instructions": 0,
+      "file": "mask-chain-linux-6.2.4-build-scanV6.s"
+    },
+    {
+      "call_instructions": 0,
+      "file": "mask-chain-linux-6.3.3-build-scanV4.s"
+    },
+    {
+      "call_instructions": 0,
+      "file": "mask-chain-linux-6.3.3-build-scanV6.s"
+    }
+  ],
+  "index_empty": true,
+  "production_files_changed": [
+    "Sources/CIDR/CIDR.swift",
+    "Sources/CIDR/FixedWidthInteger+NetworkMask.swift",
+    "Sources/CIDR/IPPrefix.swift"
+  ],
+  "tests": {
+    "mask-chain-linux-6.2.4-test": {
+      "passed": true,
+      "suites": 29,
+      "tests": 269
+    },
+    "mask-chain-linux-6.3.3-test": {
+      "passed": true,
+      "suites": 29,
+      "tests": 269
+    },
+    "mask-chain-mac-debug-tests": {
+      "passed": true,
+      "suites": 29,
+      "tests": 269
+    },
+    "mask-chain-mac-release-tests": {
+      "passed": true,
+      "suites": 29,
+      "tests": 269
+    }
+  },
+  "timing_captures": 15,
+  "timing_rows": 2460
+}

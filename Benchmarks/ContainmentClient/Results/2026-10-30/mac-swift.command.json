@@ -1,0 +1,10 @@
+{
+  "command": [
+    "swift",
+    "--version"
+  ],
+  "cwd": "/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr",
+  "exit": 0,
+  "started_unix": 1793391557.28317,
+  "elapsed_seconds": 0.1744551658630371
+}

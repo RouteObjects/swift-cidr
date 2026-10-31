@@ -1,0 +1,20 @@
+{
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "ConnectTimeout=15",
+    "-o",
+    "ServerAliveInterval=15",
+    "-o",
+    "ServerAliveCountMax=3",
+    "swift-dev",
+    "env PATH=/home/craig/.local/share/swiftly/toolchains/6.3.3/usr/bin:/usr/bin:/bin llvm-objdump -dr --no-show-raw-insn /tmp/cidr-containment-20261030.fPBtAc/build/6.3.3/baseline/release/CIDR.build/IPPrefix.swift.o"
+  ],
+  "started_unix": 1793393871.186072,
+  "elapsed_seconds": 0.43900585174560547,
+  "exit": 0
+}

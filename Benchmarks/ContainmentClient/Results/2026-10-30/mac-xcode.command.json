@@ -1,0 +1,10 @@
+{
+  "command": [
+    "xcodebuild",
+    "-version"
+  ],
+  "cwd": "/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr",
+  "exit": 0,
+  "started_unix": 1793391557.509035,
+  "elapsed_seconds": 0.27584290504455566
+}

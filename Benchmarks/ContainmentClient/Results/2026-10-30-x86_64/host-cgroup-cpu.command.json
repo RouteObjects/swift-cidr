@@ -1,0 +1,20 @@
+{
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "ConnectTimeout=15",
+    "-o",
+    "ServerAliveInterval=15",
+    "-o",
+    "ServerAliveCountMax=3",
+    "swift-dev",
+    "cat /sys/fs/cgroup/cpu.max"
+  ],
+  "started_unix": 1793393448.2174232,
+  "elapsed_seconds": 0.38896775245666504,
+  "exit": 0
+}

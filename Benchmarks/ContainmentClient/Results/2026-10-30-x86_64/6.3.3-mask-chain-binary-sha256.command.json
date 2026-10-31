@@ -1,0 +1,20 @@
+{
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "ConnectTimeout=15",
+    "-o",
+    "ServerAliveInterval=15",
+    "-o",
+    "ServerAliveCountMax=3",
+    "swift-dev",
+    "sha256sum /tmp/cidr-containment-20261030.fPBtAc/build/6.3.3/mask-chain/release/ContainmentClient"
+  ],
+  "started_unix": 1793393898.2079701,
+  "elapsed_seconds": 0.48868870735168457,
+  "exit": 0
+}

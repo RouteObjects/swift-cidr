@@ -1,0 +1,17 @@
+{
+  "command": [
+    "swift",
+    "build",
+    "-v",
+    "-c",
+    "release",
+    "--disable-sandbox",
+    "--disable-automatic-resolution",
+    "--package-path",
+    "Benchmarks/ContainmentClient"
+  ],
+  "cwd": "/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr",
+  "exit": 0,
+  "started_unix": 1793391365.748578,
+  "elapsed_seconds": 11.6610848903656
+}

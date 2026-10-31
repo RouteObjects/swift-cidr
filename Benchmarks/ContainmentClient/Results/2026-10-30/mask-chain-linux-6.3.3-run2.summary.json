@@ -1,0 +1,18 @@
+{
+  "v4.erased": {
+    "median_batch_mean_ns_per_scan": 53238.2,
+    "samples": 41
+  },
+  "v4.typed": {
+    "median_batch_mean_ns_per_scan": 16359.96,
+    "samples": 41
+  },
+  "v6.erased": {
+    "median_batch_mean_ns_per_scan": 52883.2,
+    "samples": 41
+  },
+  "v6.typed": {
+    "median_batch_mean_ns_per_scan": 26974.96,
+    "samples": 41
+  }
+}

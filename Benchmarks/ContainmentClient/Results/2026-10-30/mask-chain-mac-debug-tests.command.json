@@ -1,0 +1,11 @@
+{
+  "command": [
+    "./scripts/test.sh",
+    "--disable-sandbox",
+    "--disable-automatic-resolution"
+  ],
+  "cwd": "/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr",
+  "exit": 0,
+  "started_unix": 1793391711.7318988,
+  "elapsed_seconds": 16.986303329467773
+}
