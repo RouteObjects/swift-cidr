@@ -1,0 +1,13 @@
+{
+  "command": [
+    "docker",
+    "image",
+    "inspect",
+    "swift:6.2.4-noble",
+    "swift:6.3.3-noble"
+  ],
+  "cwd": "/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr",
+  "exit": 0,
+  "started_unix": 1793391557.834924,
+  "elapsed_seconds": 0.20616507530212402
+}

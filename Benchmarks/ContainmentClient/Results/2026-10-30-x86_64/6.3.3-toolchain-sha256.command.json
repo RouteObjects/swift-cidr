@@ -1,0 +1,20 @@
+{
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "ConnectTimeout=15",
+    "-o",
+    "ServerAliveInterval=15",
+    "-o",
+    "ServerAliveCountMax=3",
+    "swift-dev",
+    "sha256sum /home/craig/.local/share/swiftly/toolchains/6.3.3/usr/bin/swift-frontend /home/craig/.local/share/swiftly/toolchains/6.3.3/usr/bin/llvm-objdump"
+  ],
+  "started_unix": 1793393843.135123,
+  "elapsed_seconds": 1.811387062072754,
+  "exit": 0
+}

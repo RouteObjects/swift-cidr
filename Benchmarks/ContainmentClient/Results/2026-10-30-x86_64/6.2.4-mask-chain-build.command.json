@@ -1,0 +1,20 @@
+{
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "ConnectTimeout=15",
+    "-o",
+    "ServerAliveInterval=15",
+    "-o",
+    "ServerAliveCountMax=3",
+    "swift-dev",
+    "env PATH=/home/craig/.local/share/swiftly/toolchains/6.2.4/usr/bin:/usr/bin:/bin swift build -v -c release -j 4 --disable-automatic-resolution --scratch-path /tmp/cidr-containment-20261030.fPBtAc/build/6.2.4/mask-chain --package-path /tmp/cidr-containment-20261030.fPBtAc/mask-chain/swift-cidr/Benchmarks/ContainmentClient"
+  ],
+  "started_unix": 1793393495.924598,
+  "elapsed_seconds": 25.872546195983887,
+  "exit": 0
+}

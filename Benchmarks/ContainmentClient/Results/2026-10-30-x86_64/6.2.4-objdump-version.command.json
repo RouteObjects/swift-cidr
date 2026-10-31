@@ -1,0 +1,20 @@
+{
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "ConnectTimeout=15",
+    "-o",
+    "ServerAliveInterval=15",
+    "-o",
+    "ServerAliveCountMax=3",
+    "swift-dev",
+    "env PATH=/home/craig/.local/share/swiftly/toolchains/6.2.4/usr/bin:/usr/bin:/bin llvm-objdump --version"
+  ],
+  "started_unix": 1793393456.8091688,
+  "elapsed_seconds": 0.41419005393981934,
+  "exit": 0
+}

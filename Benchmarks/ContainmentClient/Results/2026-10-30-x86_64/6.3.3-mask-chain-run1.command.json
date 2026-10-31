@@ -1,0 +1,20 @@
+{
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "ConnectTimeout=15",
+    "-o",
+    "ServerAliveInterval=15",
+    "-o",
+    "ServerAliveCountMax=3",
+    "swift-dev",
+    "env PATH=/home/craig/.local/share/swiftly/toolchains/6.3.3/usr/bin:/usr/bin:/bin /tmp/cidr-containment-20261030.fPBtAc/build/6.3.3/mask-chain/release/ContainmentClient"
+  ],
+  "started_unix": 1793393922.9934158,
+  "elapsed_seconds": 1.1043262481689453,
+  "exit": 0
+}

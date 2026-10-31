@@ -43,6 +43,8 @@ public extension CIDR {
         prefixLength.intValue
     }
 
+    // CHANGE: Allow concrete downstream containment calls to specialize mask generation.
+    @inlinable
     var mask: Family.Storage { Family.Storage.networkMask(for: prefixBits) }
     var inverseMask: Family.Storage { ~mask }
     

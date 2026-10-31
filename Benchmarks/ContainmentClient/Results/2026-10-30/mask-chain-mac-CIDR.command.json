@@ -1,0 +1,13 @@
+{
+  "command": [
+    "xcrun",
+    "llvm-objdump",
+    "-dr",
+    "--no-show-raw-insn",
+    "/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/ContainmentClient/.build/arm64-apple-macosx/release/CIDR.build/IPPrefix.swift.o"
+  ],
+  "cwd": "/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr",
+  "exit": 0,
+  "started_unix": 1793391377.471513,
+  "elapsed_seconds": 0.08152413368225098
+}

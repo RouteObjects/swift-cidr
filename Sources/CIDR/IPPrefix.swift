@@ -73,6 +73,8 @@ public extension IPPrefix {
 
     /// Returns whether both the address and its prefix context lie inside this prefix.
     /// - Complexity: O(1).
+    // CHANGE: Make the generic containment body available to downstream optimizers.
+    @inlinable
     func contains(address: IPAddress<Family>) -> Bool {
         // CHANGE: An address in a broader context is not wholly contained by this prefix.
         address.prefixLength >= prefixLength && (address.address & mask) == prefix

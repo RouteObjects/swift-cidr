@@ -1,0 +1,20 @@
+{
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "ConnectTimeout=15",
+    "-o",
+    "ServerAliveInterval=15",
+    "-o",
+    "ServerAliveCountMax=3",
+    "swift-dev",
+    "env PATH=/home/craig/.local/share/swiftly/toolchains/6.3.3/usr/bin:/usr/bin:/bin llvm-objdump -dr --no-show-raw-insn /tmp/cidr-containment-20261030.fPBtAc/build/6.3.3/mask-chain/release/ContainmentClient.build/main.swift.o"
+  ],
+  "started_unix": 1793393896.672692,
+  "elapsed_seconds": 0.8085517883300781,
+  "exit": 0
+}

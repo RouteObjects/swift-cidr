@@ -1,0 +1,81 @@
+{
+  "host": "swift-dev",
+  "architecture": "x86_64",
+  "execution": "native LXC, not emulation",
+  "remote_directory": "/tmp/cidr-containment-20261030.fPBtAc",
+  "archive_sha256": "1a3ede4791f3f7f1df79ccd3a2fc90c20b7323f2622d3d9ab127714542891691",
+  "production_patch_unchanged": true,
+  "source_and_lock_hashes_match_before_and_after": true,
+  "captures": 8,
+  "timing_rows": 1312,
+  "tests": [
+    {
+      "swift": "6.2.4",
+      "configuration": "debug",
+      "tests": 269,
+      "suites": 29,
+      "passed": true
+    },
+    {
+      "swift": "6.2.4",
+      "configuration": "release",
+      "tests": 269,
+      "suites": 29,
+      "passed": true
+    },
+    {
+      "swift": "6.3.3",
+      "configuration": "debug",
+      "tests": 269,
+      "suites": 29,
+      "passed": true
+    },
+    {
+      "swift": "6.3.3",
+      "configuration": "release",
+      "tests": 269,
+      "suites": 29,
+      "passed": true
+    }
+  ],
+  "codegen": [
+    {
+      "file": "6.2.4-baseline-scanV4.s",
+      "call_instructions": 3
+    },
+    {
+      "file": "6.2.4-baseline-scanV6.s",
+      "call_instructions": 3
+    },
+    {
+      "file": "6.2.4-mask-chain-scanV4.s",
+      "call_instructions": 0
+    },
+    {
+      "file": "6.2.4-mask-chain-scanV6.s",
+      "call_instructions": 0
+    },
+    {
+      "file": "6.3.3-baseline-scanV4.s",
+      "call_instructions": 3
+    },
+    {
+      "file": "6.3.3-baseline-scanV6.s",
+      "call_instructions": 3
+    },
+    {
+      "file": "6.3.3-mask-chain-scanV4.s",
+      "call_instructions": 0
+    },
+    {
+      "file": "6.3.3-mask-chain-scanV6.s",
+      "call_instructions": 0
+    }
+  ],
+  "preserved_snapshots": [
+    "/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/ContainmentClient/Results/2026-10-30",
+    "/Users/craig/Developer/Route Objects/swift-cidr-admission/Benchmarks/Results/2026-10-30-main-5d01867-benchmark-1.38.1",
+    "/Users/craig/Developer/Route Objects/swift-cidr-admission/Benchmarks/Results/2026-10-30-sampling-followup-benchmark-1.38.1"
+  ],
+  "nothing_staged": true
+}

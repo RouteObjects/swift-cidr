@@ -1,0 +1,28 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--platform",
+    "linux/arm64",
+    "-v",
+    "/private/tmp/cidr-containment.IDK9JO/mask-chain/swift-cidr:/source/swift-cidr:ro",
+    "-v",
+    "/private/tmp/cidr-containment.IDK9JO:/experiment",
+    "-v",
+    "cidr-containment-6.3.3-mask-chain:/build",
+    "-v",
+    "cidr-containment-cache-6.3.3:/root/.cache",
+    "-w",
+    "/source/swift-cidr",
+    "sha256:1038d54c80063f5cdfabc4560990c30af64b5de8ebf28161deb22ca4ad5db866",
+    "llvm-objdump",
+    "-dr",
+    "--no-show-raw-insn",
+    "/build/client/release/ContainmentClient.build/main.swift.o"
+  ],
+  "cwd": "/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr",
+  "exit": 0,
+  "started_unix": 1793391599.998527,
+  "elapsed_seconds": 0.38478684425354004
+}

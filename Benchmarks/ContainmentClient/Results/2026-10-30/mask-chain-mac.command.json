@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/private/tmp/cidr-containment.IDK9JO/mask-chain-mac"
+  ],
+  "cwd": "/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr",
+  "exit": 0,
+  "started_unix": 1793391377.553393,
+  "elapsed_seconds": 0.39208126068115234
+}
