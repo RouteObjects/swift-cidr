@@ -89,7 +89,7 @@ struct AddressFamilyTests {
 
     private func assertAddressFamily<Family: AddressFamily>(
         _ family: Family.Type,
-        ianaValue: Int32,
+        ianaValue: UInt16,
         bitWidth: Int,
         familyName: String
     ) {

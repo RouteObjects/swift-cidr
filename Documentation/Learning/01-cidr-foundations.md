@@ -70,10 +70,10 @@ normal API use.
 
 ## CIDR
 
-`CIDR` is the base protocol for values that carry address-family-specific bits
+`CIDRForm` is the base protocol for values that carry address-family-specific bits
 and a prefix length.
 
-The important point is that `CIDR` does not decide the operational meaning of
+The important point is that `CIDRForm` does not decide the operational meaning of
 the slash. A `/24` may be a route prefix, a configured interface context, a
 delegated block, or a multicast group-address range depending on the type using
 it.

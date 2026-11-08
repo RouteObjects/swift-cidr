@@ -29,7 +29,7 @@ extension FixedWidthInteger where Self: UnsignedInteger {
     /// - `networkMask(for: 32)` returns `255.255.255.255`
     ///
     /// The prefix length must be in `0...Self.bitWidth`.
-    // CHANGE: Export this internal helper's body for inlinable CIDR.mask without a public API.
+    // Export this internal helper's body for inlinable CIDRForm.mask without a public API.
     @inlinable
     static func networkMask(for prefixLength: Int) -> Self {
         precondition((0...Self.bitWidth).contains(prefixLength))

@@ -47,7 +47,7 @@ struct IPNetworkContextTests {
         #expect(network._customContainsEquatableElement(individual) == false)
     }
 
-    private func checkEndpoints<C: CIDR>(_ value: C, lower: C.Family.Storage, upper: C.Family.Storage) {
+    private func checkEndpoints<C: CIDRForm>(_ value: C, lower: C.Family.Storage, upper: C.Family.Storage) {
         #expect(value.first.address == lower)
         #expect(value.last.address == upper)
         #expect(value.first.prefixLength == value.prefixLength)

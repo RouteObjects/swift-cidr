@@ -13,7 +13,7 @@
 
 /// A canonical, aligned IP prefix that supports network-level operations.
 ///
-/// `IPPrefix` is the structural refinement of ``CIDR`` used for values whose stored bits are meant
+/// `IPPrefix` is the structural refinement of ``CIDRForm`` used for values whose stored bits are meant
 /// to represent a formal prefix boundary. This is the level where containment, subnetting, and
 /// prefix summarization become rational operations—aligned with classless aggregation thinking in
 /// [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632).
@@ -27,7 +27,7 @@
 ///
 /// Because `IPPrefix` requires a canonical `Self` initializer, shared extension algorithms can
 /// construct aligned prefix results without knowing the concrete type.
-public protocol IPPrefix: CIDR {
+public protocol IPPrefix: CIDRForm {
     /// The canonical prefix boundary for this value.
     ///
     /// Host bits below `prefixLength` are expected to be cleared by the conforming type's
@@ -92,38 +92,26 @@ public extension IPPrefix {
     }
 
     var nextNetwork: Self? {
-        let shift = Family.bitWidth - prefixBits
-        guard shift < Family.bitWidth else { return nil }
+        let shift = Family.Storage.bitWidth - prefixBits
+        guard shift < Family.Storage.bitWidth else { return nil }
         let stride = (1 as Family.Storage) << shift
         let (nextPrefix, overflow) = prefix.addingReportingOverflow(stride)
         guard !overflow else { return nil }
         return Self(prefix: nextPrefix, prefixLength: prefixLength)
     }
 
-    func subnets(prefixLength newPrefixLength: PrefixLength<Family>) -> AnySequence<Self> {
-        guard newPrefixLength >= self.prefixLength else { return AnySequence([]) }
-        return AnySequence {
-            var current: Family.Storage? = self.first.address
-            let end = self.last.address
-            let shift = Family.bitWidth - newPrefixLength.intValue
-            let stride = shift < Family.bitWidth ? ((1 as Family.Storage) << shift) : nil
-            return AnyIterator<Self> {
-                guard let address = current else { return nil }
-                let net = Self(prefix: address, prefixLength: newPrefixLength)
-                if let stride {
-                    let (next, overflow) = address.addingReportingOverflow(stride)
-                    current = (overflow || next > end) ? nil : next
-                } else {
-                    current = nil
-                }
-                return net
-            }
-        }
+    /// Returns the aligned subnets at `newPrefixLength`, or an empty sequence when it is shorter
+    /// than this prefix.
+    // AnySequence<Self> → IPPrefixSubnets<Self>, a concrete lazy sequence.
+    func subnets(prefixLength newPrefixLength: PrefixLength<Family>) -> IPPrefixSubnets<Self> {
+        IPPrefixSubnets(parent: self, length: newPrefixLength)
     }
 
-    func subnets(prefixLength rawValue: Int) -> AnySequence<Self> {
-        guard let length = PrefixLength<Family>(rawValue) else { return AnySequence([]) }
-        return subnets(prefixLength: length)
+    /// Returns the aligned subnets at an integer length, or an empty sequence when the length is
+    /// invalid for the family or shorter than this prefix.
+    func subnets(prefixLength rawValue: Int) -> IPPrefixSubnets<Self> {
+        // An invalid length is an empty sequence, including for a /0 parent.
+        IPPrefixSubnets(parent: self, length: PrefixLength<Family>(rawValue))
     }
 
     /// Summarizes an inclusive address range into the smallest set of aligned prefixes.
@@ -185,7 +173,7 @@ public extension IPPrefix {
     ///   greater than `end`, the ordered range is empty, so the result is an empty list rather than an
     ///   error.
     static func summarize(from start: IPAddress<Family>, to end: IPAddress<Family>) -> [Self] {
-        let bitWidth = Family.bitWidth
+        let bitWidth = Family.Storage.bitWidth
         let one: Family.Storage = 1
         if start.address == 0, end.address == Family.Storage.max {
             let prefix = PrefixLength<Family>.zero

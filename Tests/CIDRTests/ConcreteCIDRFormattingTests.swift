@@ -116,13 +116,13 @@ struct ConcreteCIDRFormattingTests {
         #expect(renderIPv6CompressedCIDR(ipv6MulticastRange) == "ff02::/16")
     }
 
-    private func renderIPv4CIDR<Value: CIDR>(_ value: Value) -> String where Value.Family == AF.V4 {
+    private func renderIPv4CIDR<Value: CIDRForm>(_ value: Value) -> String where Value.Family == AF.V4 {
         render(capacity: CIDRUTF8Formatting.maximumIPv4CIDRNotationUTF8Count) { rawBuffer in
             value.writeCIDRNotationUTF8(into: rawBuffer)
         }
     }
 
-    private func renderIPv6CompressedCIDR<Value: CIDR>(_ value: Value) -> String where Value.Family == AF.V6 {
+    private func renderIPv6CompressedCIDR<Value: CIDRForm>(_ value: Value) -> String where Value.Family == AF.V6 {
         render(capacity: CIDRUTF8Formatting.maximumCompressedIPv6CIDRNotationUTF8Count) { rawBuffer in
             value.writeCompressedCIDRNotationUTF8(into: rawBuffer)
         }

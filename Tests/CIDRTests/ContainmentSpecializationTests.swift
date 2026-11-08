@@ -40,7 +40,7 @@ struct ContainmentSpecializationTests {
             for seed in seeds {
                 let network = IPNetwork<F>(prefix: seed, prefixLength: prefixLength)
                 let erased = eraseNetwork(network)
-                // CHANGE: Use shifted high bits as an independent oracle, not CIDR.mask/contains.
+                // Use shifted high bits as an independent oracle, not CIDRForm.mask/contains.
                 let canonical = length == 0 ? 0 : (seed >> (width - length)) << (width - length)
                 let hostBits = length == 0 ? F.Storage.max : F.Storage.max >> length
                 #expect(network.prefix == canonical)

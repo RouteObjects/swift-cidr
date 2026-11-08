@@ -203,7 +203,7 @@ struct IPParsingPolicyTests {
 
 private enum CompatibleOnlyFamily: IPAddressFamily {
     typealias Storage = UInt32
-    static let ianaValue: Int32 = 1
+    static let ianaValue: UInt16 = 1
     static let bitWidth = 32
     static let familyName = "CompatibleOnlyFamily"
 
@@ -218,7 +218,7 @@ private enum CompatibleOnlyFamily: IPAddressFamily {
 
 private enum StrictCustomFamily: IPAddressFamily {
     typealias Storage = UInt32
-    static let ianaValue: Int32 = 1
+    static let ianaValue: UInt16 = 1
     static let bitWidth = 32
     static let familyName = "StrictCustomFamily"
 

@@ -25,7 +25,7 @@ public extension IPAddress {
     }
 }
 
-public extension CIDR where Family == AF.V6 {
+public extension CIDRForm where Family == AF.V6 {
     /// Writes this IPv6 CIDR value's address literal directly into a `ByteBuffer`.
     ///
     /// This avoids creating an intermediate `String`. Only the address literal is written; prefix

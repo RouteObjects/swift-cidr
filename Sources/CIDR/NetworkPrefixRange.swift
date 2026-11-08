@@ -98,7 +98,7 @@ public struct NetworkPrefixRange<Family: IPAddressFamily>: Sendable, Hashable, C
     /// - `network^n-m` for all other bounded ranges.
     public var description: String {
         let base = network.description
-        let maxPrefixLength = Family.bitWidth
+        let maxPrefixLength = Family.Storage.bitWidth
 
         if lowerPrefixLength == network.prefixLength, upperPrefixLength.intValue == maxPrefixLength {
             return "\(base)^+"

@@ -61,15 +61,31 @@ extension AF {
         value >= 100 ? 3 : (value >= 10 ? 2 : 1)
     }
 
+    @usableFromInline
     internal static func formatV6(_ address: UInt128) -> String {
         CIDRUTF8Writer.fullIPv6AddressLiteral(address)
     }
 
+    @usableFromInline
     internal static func formatV6Compressed(_ address: UInt128) -> String {
         // Use the fixed-buffer UTF-8 formatter to avoid intermediate String fragments.
         CIDRUTF8Writer.compressedIPv6AddressLiteral(address)
     }
 
+    // Storage-level form of the former CIDR._compressedCIDRNotationDescription(), so the
+    // family formatter can write IPv6 CIDR text without constructing a carrier value.
+    internal static func formatV6CompressedCIDR(address: UInt128, prefixLength: UInt8) -> String {
+        String(unsafeUninitializedCapacity: CIDRUTF8Formatting.maximumCompressedIPv6CIDRNotationUTF8Count) { buffer in
+            var writeIndex = CIDRUTF8Writer.writeCompressedIPv6AddressLiteral(
+                address,
+                into: UnsafeMutableRawBufferPointer(buffer)
+            )
+            CIDRUTF8Formatting.writeSlashPrefixLength(Int(prefixLength), into: buffer, at: &writeIndex)
+            return writeIndex
+        }
+    }
+
+    @usableFromInline
     internal static func formatV6Mapped(_ address: UInt128) -> String? {
         guard (address >> 32) == UInt128(0xFFFF) else { return nil }
         return String(unsafeUninitializedCapacity: maximumIPv4MappedIPv6AddressLiteralUTF8Count) { buffer in

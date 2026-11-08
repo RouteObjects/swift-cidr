@@ -30,9 +30,17 @@ public protocol AddressFamily: Sendable {
 
     /// The [IANA Address Family Number](https://www.iana.org/assignments/address-family-numbers/address-family-numbers.xhtml)
     /// for this family.
-    static var ianaValue: Int32 { get }
+    ///
+    /// IANA assigns these as 16-bit values (the AFI field carried by MP-BGP and BGP-LS), so the
+    /// type encodes the registry's range.
+    // UInt16 to match the 16-bit IANA Address Family Numbers registry.
+    static var ianaValue: UInt16 { get }
 
     /// The width of the address space in bits.
+    ///
+    /// For non-IP families this may be narrower than `Storage` (``AF/MAC48`` stores 48 bits in a
+    /// `UInt64`). ``IPAddressFamily`` derives it from `Storage`, because CIDR math requires an IP
+    /// address to fill its storage.
     static var bitWidth: Int { get }
 
     /// A human-readable family name such as `IPv4` or `IPv6`.
@@ -56,8 +64,8 @@ public enum AF {
     public enum V4: IPAddressFamily {
         public typealias Storage = UInt32
 
-        public static let ianaValue: Int32 = 1
-        public static let bitWidth: Int = UInt32.bitWidth
+        public static let ianaValue: UInt16 = 1
+        // bitWidth now comes from IPAddressFamily's Storage-derived default.
         public static let familyName: String = "IPv4"
 
         @inlinable
@@ -65,18 +73,30 @@ public enum AF {
         public static func formatAddress(_ address: UInt32) -> String {
             AF.formatV4(address)
         }
+
+        // The single IPv4 CIDR fast path, reached by concrete and generic callers alike.
+        @inlinable
+        @inline(__always)
+        public static func formatCIDR(_ storage: UInt32, prefixLength: PrefixLength<AF.V4>) -> String {
+            AF.formatV4CIDR(address: storage, prefixLength: prefixLength.rawValue)
+        }
     }
 
     /// The IPv6 address family, stored as a `UInt128`.
     public enum V6: IPAddressFamily {
         public typealias Storage = UInt128
 
-        public static let ianaValue: Int32 = 2
-        public static let bitWidth: Int = UInt128.bitWidth
+        public static let ianaValue: UInt16 = 2
+        // bitWidth now comes from IPAddressFamily's Storage-derived default.
         public static let familyName: String = "IPv6"
 
         public static func formatAddress(_ address: UInt128) -> String {
             AF.formatV6Compressed(address)
+        }
+
+        // The single IPv6 compressed CIDR fast path, reached by concrete and generic callers alike.
+        public static func formatCIDR(_ storage: UInt128, prefixLength: PrefixLength<AF.V6>) -> String {
+            AF.formatV6CompressedCIDR(address: storage, prefixLength: prefixLength.rawValue)
         }
     }
 
@@ -88,7 +108,7 @@ public enum AF {
     public enum ASN: AddressFamily {
         public typealias Storage = UInt32
 
-        public static let ianaValue: Int32 = 18
+        public static let ianaValue: UInt16 = 18
         public static let bitWidth: Int = UInt32.bitWidth
         public static let familyName: String = "AS Number"
 
@@ -105,7 +125,7 @@ public enum AF {
     public enum MAC48: AddressFamily {
         public typealias Storage = UInt64
 
-        public static let ianaValue: Int32 = 16389
+        public static let ianaValue: UInt16 = 16389
         public static let bitWidth: Int = 48
         public static let familyName: String = "48-bit MAC"
 
@@ -122,7 +142,7 @@ public enum AF {
     public enum MAC64: AddressFamily {
         public typealias Storage = UInt64
 
-        public static let ianaValue: Int32 = 16390
+        public static let ianaValue: UInt16 = 16390
         public static let bitWidth: Int = UInt64.bitWidth
         public static let familyName: String = "64-bit MAC"
 

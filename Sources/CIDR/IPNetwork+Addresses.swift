@@ -28,7 +28,7 @@ extension IPNetwork {
         /// Answers the standard sequence membership question without a linear scan.
         /// - Complexity: O(1).
         public func _customContainsEquatableElement(_ element: Element) -> Bool? {
-            // CHANGE: The fast path must agree with equality of the actual yielded elements.
+            // The fast path must agree with equality of the actual yielded elements.
             element.prefixLength == network.prefixLength && (element.address & network.mask) == network.prefix
         }
 

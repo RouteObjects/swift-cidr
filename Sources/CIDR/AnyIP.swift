@@ -125,7 +125,7 @@ public enum AnyIPAddress: Sendable, Hashable, CustomStringConvertible, CustomDeb
     }
 
     /// The IANA address-family number for the wrapped address.
-    public var ianaValue: Int32 {
+    public var ianaValue: UInt16 {
         switch self {
         case .v4:
             return AF.V4.ianaValue
@@ -326,7 +326,7 @@ public enum AnyIPNetwork: Sendable, Hashable, CustomStringConvertible, CustomDeb
     }
 
     /// The IANA address-family number for the wrapped network.
-    public var ianaValue: Int32 {
+    public var ianaValue: UInt16 {
         switch self {
         case .v4:
             return AF.V4.ianaValue
@@ -544,7 +544,7 @@ public enum AnyIPMulticastGroup: Sendable, Hashable, CustomStringConvertible, Cu
     }
 
     /// The IANA address-family number for the wrapped multicast group.
-    public var ianaValue: Int32 {
+    public var ianaValue: UInt16 {
         switch self {
         case .v4:
             return AF.V4.ianaValue
@@ -658,7 +658,7 @@ public enum AnyIPMulticastGroupRange: Sendable, Hashable, CustomStringConvertibl
     }
 
     /// The IANA address-family number for the wrapped multicast range.
-    public var ianaValue: Int32 {
+    public var ianaValue: UInt16 {
         switch self {
         case .v4:
             return AF.V4.ianaValue
@@ -867,7 +867,7 @@ public enum AnyPrefixLength: Sendable, Hashable, CustomStringConvertible, Codabl
     }
 
     /// The IANA address-family number for the wrapped prefix length.
-    public var ianaValue: Int32 {
+    public var ianaValue: UInt16 {
         switch self {
         case .v4:
             return AF.V4.ianaValue

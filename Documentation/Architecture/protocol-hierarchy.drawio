@@ -82,7 +82,7 @@
           <mxGeometry x="500" y="90" width="780" height="520" as="geometry" />
         </mxCell>
 
-        <mxCell id="CIDR" value="&lt;i&gt;protocol&lt;/i&gt;&lt;br&gt;&lt;b&gt;CIDR&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;storage + prefixLength&lt;br&gt;Family: IPAddressFamily&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;verticalAlign=middle;" vertex="1" parent="val_lane">
+        <mxCell id="CIDR" value="&lt;i&gt;protocol&lt;/i&gt;&lt;br&gt;&lt;b&gt;CIDRForm&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;storage + prefixLength&lt;br&gt;Family: IPAddressFamily&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;verticalAlign=middle;" vertex="1" parent="val_lane">
           <mxGeometry x="40" y="40" width="200" height="70" as="geometry" />
         </mxCell>
 
@@ -114,7 +114,7 @@
           <mxGeometry x="500" y="200" width="160" height="50" as="geometry" />
         </mxCell>
 
-        <mxCell id="NPR" value="&lt;b&gt;NetworkPrefixRange&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;selector — not CIDR&lt;br&gt;uses IPPrefix in APIs&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;verticalAlign=middle;" vertex="1" parent="val_lane">
+        <mxCell id="NPR" value="&lt;b&gt;NetworkPrefixRange&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;selector — not CIDRForm&lt;br&gt;uses IPPrefix in APIs&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;verticalAlign=middle;" vertex="1" parent="val_lane">
           <mxGeometry x="440" y="340" width="180" height="70" as="geometry" />
         </mxCell>
 

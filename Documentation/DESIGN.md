@@ -67,12 +67,12 @@ You do not need the full surface for every app.
 |------|------------|-----------------|
 | **Common / end-host** | `IPv4Address`, `IPv6Address` | Later: host/context layer for `Port`, endpoint, scoped IPv6 |
 | **Infrastructure** | + `PrefixLength`, `IPNetwork` | `IPAddressRange`, `IPAddressCoverage`, `CIDRBlock`, `NetworkPrefixRange`, ASN, multicast, `AnyIP*` |
-| **Protocols** (generic / library code) | still concrete types first | `CIDR`, `IPPrefix`, `Addressable`, `AddressFamily` / `IPAddressFamily` when writing shared algorithms or new conformers |
+| **Protocols** (generic / library code) | still concrete types first | `CIDRForm`, `IPPrefix`, `Addressable`, `AddressFamily` / `IPAddressFamily` when writing shared algorithms or new conformers |
 
 **Public protocols are part of progressive disclosure**, not day-one vocabulary. Most programs only touch **concrete currency types** (and aliases such as `IPv4Address`). You reach for protocols when:
 
 - you write **generic** helpers (`func summarize<P: IPPrefix>(…)`, `where Family: IPAddressFamily`);
-- you need the **shared storage + length** surface without choosing one form (`CIDR`);
+- you need the **shared storage + length** surface without choosing one form (`CIDRForm`);
 - you implement or document a **new form** that should share math with existing types.
 
 They are **not** a second parallel product surface you must learn before parsing `"192.0.2.1/24"`. Meaning still lives in the concrete type (§5–§6); protocols factor structure and operations.
@@ -86,7 +86,7 @@ Editable source: [protocol-hierarchy.drawio](Architecture/protocol-hierarchy.dra
 Two related trees:
 
 1. **Family system** — `AddressFamily` → `IPAddressFamily` → `MulticastAddressSpace`, with marker types (`AF.V4` / `AF.V6` / `AF.ASN` / MAC families). IP CIDR value types require `IPAddressFamily`; non-IP families stay out of prefix math.
-2. **Value protocols** — `CIDR` (storage + prefix length) refined by `IPPrefix` (aligned prefix ops); `Addressable` for singular address identity. Key conformers: `IPNetwork` (`IPPrefix`), `IPAddress` (`CIDR` + `Addressable`), `CIDRBlock` / `IPMulticastGroupRange` (`CIDR`), `IPMulticastGroup` (`Addressable`). `NetworkPrefixRange` is a **selector** (not `CIDR`); it *uses* `IPPrefix` in APIs. `PrefixLength` is length currency, not a CIDR form.
+2. **Value protocols** — `CIDRForm` (storage + prefix length) refined by `IPPrefix` (aligned prefix ops); `Addressable` for singular address identity. Key conformers: `IPNetwork` (`IPPrefix`), `IPAddress` (`CIDRForm` + `Addressable`), `CIDRBlock` / `IPMulticastGroupRange` (`CIDRForm`), `IPMulticastGroup` (`Addressable`). `NetworkPrefixRange` is a **selector** (not `CIDRForm`); it *uses* `IPPrefix` in APIs. `PrefixLength` is length currency, not a CIDR form.
 
 The breadth of types **and** protocols is **depth for control-plane, policy, and library work**, not a claim that every program must import every symbol on day one.
 
@@ -109,7 +109,7 @@ Primary cite = strongest definition of the concept. Secondary = important consum
 | `IPAddressRange<Family>` | Exact inclusive interval of address bits | Not a CIDR prefix; endpoint prefix context is intentionally erased | Address-space math; package-defined text form | Can summarize exactly to `IPNetwork` values |
 | `IPAddressCoverage<Family>` | Normalized exact union of disjoint address ranges | Not source-prefix identity or policy metadata | Address-space set math | Binary-search containment over normalized ranges |
 | `IPPrefix` | Protocol for aligned-prefix ops (containment, subnets, summarize) | Not a stored value by itself | RFC 4632 | Implemented by `IPNetwork` |
-| `CIDR` (protocol) | Shared “storage + prefix length” across forms | **Not** a single hybrid value type | RFC 4632 | See §6 |
+| `CIDRForm` (protocol) | Shared “storage + prefix length” across forms | **Not** a single hybrid value type | RFC 4632 | See §6 |
 | `CIDRBlock<Family>` | Neutral address-space block (allocation-shaped set math) | Not subnet/broadcast/gateway ceremony | RFC 4632; **RFC 7020** | RFC 6890 consumers |
 | `NetworkPrefixRange<Family>` | Prefix **selector** (more-specific / length range) | Not one network; not an address | **RFC 2622** §2; RFC 4012 | Related idea: ROA maxLength (9582) |
 | `IPMulticastGroup` / `Range` | Multicast destination identity / ranges | Not unicast subnet semantics | RFC 4291; RFC 4607; RFC 6308 | RFC 5771 where useful |
@@ -136,7 +136,7 @@ Aliases such as `IPv4Network`, `ASN`, `IPv6PrefixLength` are conveniences over t
 
 `IPNetwork` remains a sequence of `IPAddress` values. Its `addresses` view and
 direct iteration retain the parent's prefix length on every yielded address.
-The shared `CIDR.first`, `last`, and `range` endpoints retain that same context,
+The shared `CIDRForm.first`, `last`, and `range` endpoints retain that same context,
 including through generic callers and mixed-family network wrappers.
 
 There are two distinct membership questions. `contains(address:)` checks
@@ -148,7 +148,7 @@ address bits inside the network. Both questions have constant-time answers.
 The deprecated direct unlabeled address overload retains its older raw-bit
 containment behavior during migration.
 
-`CIDR.range` remains a `ClosedRange` ordered by address bits and then prefix
+`CIDRForm.range` remains a `ClosedRange` ordered by address bits and then prefix
 length; its membership does not impose the sequence's exact prefix match.
 Use `addresses` when contextual element identity matters. Full traversal
 remains proportional to the number of addresses, regardless of membership
@@ -180,7 +180,7 @@ original CIDR prefix lengths.
 
 ---
 
-## 6. `protocol CIDR` vs community `struct CIDR`
+## 6. `protocol CIDRForm` vs community `struct CIDR`
 
 Many libraries expose a single **`struct CIDR`** that:
 
@@ -189,9 +189,15 @@ Many libraries expose a single **`struct CIDR`** that:
 
 That pattern is convenient for demos and costly for infrastructure: presentation and identity disagree (form collision).
 
-In **swift-cidr**, **`CIDR` is a protocol**: shared structure (family-bound storage + prefix length) implemented by **several** concrete types (`IPAddress`, `IPNetwork`, `CIDRBlock`, multicast ranges, …). Meaning lives in the **concrete type**, not in one overloaded wrapper.
+In **swift-cidr**, **`CIDRForm` is a protocol**: shared structure (family-bound storage + prefix length) implemented by **several** concrete types (`IPAddress`, `IPNetwork`, `CIDRBlock`, multicast ranges, …). Meaning lives in the **concrete type**, not in one overloaded wrapper.
 
-See the [protocol hierarchy](#protocol-hierarchy) under progressive disclosure for how `CIDR`, `IPPrefix`, `Addressable`, and the family protocols fit together.
+Shared CIDR formatting calls the family's `formatCIDR` requirement, so generic
+and existential callers can reach the family implementation. Parsing follows
+the family's `parseCIDR` requirement. Inlinable initializer bodies allow
+specialization where the optimizer can see a concrete family; an opaque generic
+or protocol boundary can remain unspecialized.
+
+See the [protocol hierarchy](#protocol-hierarchy) under progressive disclosure for how `CIDRForm`, `IPPrefix`, `Addressable`, and the family protocols fit together.
 
 ---
 
