@@ -82,25 +82,25 @@ struct CIDRUTF8FormattingTests {
         #expect(renderIPv6CompressedCIDR(maximum) == "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff/128")
     }
 
-    private func renderIPv4Address<Value: CIDR>(_ value: Value) -> String where Value.Family == AF.V4 {
+    private func renderIPv4Address<Value: CIDRForm>(_ value: Value) -> String where Value.Family == AF.V4 {
         render(capacity: CIDRUTF8Formatting.maximumIPv4AddressLiteralUTF8Count) { rawBuffer in
             value.writeAddressLiteralUTF8(into: rawBuffer)
         }
     }
 
-    private func renderIPv4CIDR<Value: CIDR>(_ value: Value) -> String where Value.Family == AF.V4 {
+    private func renderIPv4CIDR<Value: CIDRForm>(_ value: Value) -> String where Value.Family == AF.V4 {
         render(capacity: CIDRUTF8Formatting.maximumIPv4CIDRNotationUTF8Count) { rawBuffer in
             value.writeCIDRNotationUTF8(into: rawBuffer)
         }
     }
 
-    private func renderIPv6CompressedAddress<Value: CIDR>(_ value: Value) -> String where Value.Family == AF.V6 {
+    private func renderIPv6CompressedAddress<Value: CIDRForm>(_ value: Value) -> String where Value.Family == AF.V6 {
         render(capacity: CIDRUTF8Formatting.maximumCompressedIPv6AddressLiteralUTF8Count) { rawBuffer in
             value.writeCompressedAddressLiteralUTF8(into: rawBuffer)
         }
     }
 
-    private func renderIPv6CompressedCIDR<Value: CIDR>(_ value: Value) -> String where Value.Family == AF.V6 {
+    private func renderIPv6CompressedCIDR<Value: CIDRForm>(_ value: Value) -> String where Value.Family == AF.V6 {
         render(capacity: CIDRUTF8Formatting.maximumCompressedIPv6CIDRNotationUTF8Count) { rawBuffer in
             value.writeCompressedCIDRNotationUTF8(into: rawBuffer)
         }

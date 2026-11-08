@@ -24,7 +24,7 @@
 ///
 /// **Why not ``IPNetwork``:** same alignment math is fine to share conceptually, but the role is
 /// allocation-neutral block vs ordinary unicast network prefix operations—see package DESIGN.md.
-public struct CIDRBlock<Family: IPAddressFamily>: CIDR, Hashable, LosslessStringConvertible, Codable {
+public struct CIDRBlock<Family: IPAddressFamily>: CIDRForm, Hashable, LosslessStringConvertible, Codable {
     public let prefix: Family.Storage
     public let prefixLength: PrefixLength<Family>
 
@@ -38,89 +38,8 @@ public struct CIDRBlock<Family: IPAddressFamily>: CIDR, Hashable, LosslessString
     }
 }
 
-extension CIDRBlock {
-    @inlinable
-    @inline(__always)
-    public var addressLiteral: String {
-        Family.formatAddress(prefix)
-    }
-
-    @inlinable
-    @inline(__always)
-    public var description: String {
-        "\(addressLiteral)/\(prefixLength)"
-    }
-
-    @inlinable
-    @inline(__always)
-    public func formatted(_ style: CIDRTextStyle) -> String {
-        switch style {
-        case .cidrNotation:
-            return description
-        case .addressOnly:
-            return addressLiteral
-        }
-    }
-}
-
-public extension CIDRBlock where Family == AF.V4 {
-    @inlinable
-    @inline(__always)
-    var description: String {
-        AF.formatV4CIDR(address: prefix, prefixLength: prefixLength.rawValue)
-    }
-
-    @inlinable
-    @inline(__always)
-    func formatted(_ style: CIDRTextStyle) -> String {
-        switch style {
-        case .cidrNotation:
-            return AF.formatV4CIDR(address: prefix, prefixLength: prefixLength.rawValue)
-        case .addressOnly:
-            return addressLiteral
-        }
-    }
-
-    @inline(__always)
-    func formatted(_ style: IPv4TextStyle) -> String {
-        switch style {
-        case .addressAndNetmask:
-            let v4Mask = UInt32.networkMask(for: prefixLength.intValue)
-            return "\(addressLiteral) \(AF.formatV4(v4Mask))"
-        }
-    }
-}
-
-public extension CIDRBlock where Family == AF.V6 {
-    @inlinable
-    @inline(__always)
-    var description: String {
-        _compressedCIDRNotationDescription()
-    }
-
-    @inlinable
-    @inline(__always)
-    func formatted(_ style: CIDRTextStyle) -> String {
-        switch style {
-        case .cidrNotation:
-            return _compressedCIDRNotationDescription()
-        case .addressOnly:
-            return addressLiteral
-        }
-    }
-
-    @inline(__always)
-    func formatted(_ style: IPv6TextStyle) -> String {
-        switch style {
-        case .preferred:
-            return AF.formatV6(prefix)
-        case .ipv4Mapped:
-            return AF.formatV6Mapped(prefix) ?? addressLiteral
-        case .compressed:
-            return AF.formatV6Compressed(prefix)
-        }
-    }
-}
+// addressLiteral, description, and formatted(_:) overloads now come from the shared CIDRForm
+// extension, which dispatches CIDR text through Family.formatCIDR.
 
 public extension CIDRBlock {
     /// The first address in the represented range.
@@ -135,7 +54,7 @@ public extension CIDRBlock {
 
     /// The number of addresses in the represented range when it fits in `UInt128`.
     var rangeSizeIfRepresentable: UInt128? {
-        let hostBits = Family.bitWidth - prefixBits
+        let hostBits = Family.Storage.bitWidth - prefixBits
         guard hostBits < UInt128.bitWidth else { return nil }
         return UInt128(1) << hostBits
     }

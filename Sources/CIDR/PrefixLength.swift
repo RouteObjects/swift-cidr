@@ -41,14 +41,16 @@ public typealias IPv6PrefixLength = PrefixLength<V6>
 public struct PrefixLength<Family: IPAddressFamily>: RawRepresentable, Sendable, Hashable, Comparable, CustomStringConvertible, LosslessStringConvertible, Codable {
     /// The validated slash number stored as compact unsigned integer storage.
     ///
-    /// This value is guaranteed to be in `0...Family.bitWidth`.
+    /// This value is guaranteed to be in `0...Family.Storage.bitWidth`.
     public let rawValue: UInt8
 
     /// Creates a prefix length from raw storage.
     ///
     /// Returns `nil` when `rawValue` is greater than the address-family bit width.
+    // Make storage-width validation visible to concrete parsing callers.
+    @inlinable
     public init?(rawValue: UInt8) {
-        guard Int(rawValue) <= Family.bitWidth else { return nil }
+        guard Int(rawValue) <= Family.Storage.bitWidth else { return nil }
         self.rawValue = rawValue
     }
 
@@ -57,7 +59,7 @@ public struct PrefixLength<Family: IPAddressFamily>: RawRepresentable, Sendable,
     /// Returns `nil` for negative values and for values greater than the address-family bit width.
     public init?(_ value: Int) {
         guard value >= 0,
-              value <= Family.bitWidth,
+              value <= Family.Storage.bitWidth,
               let rawValue = UInt8(exactly: value)
         else {
             return nil
@@ -72,8 +74,8 @@ public struct PrefixLength<Family: IPAddressFamily>: RawRepresentable, Sendable,
     /// `PrefixLength<V4>("24")` represents `/24`. Only `0` or unpadded ASCII decimal digits
     /// beginning with `1...9` are accepted; signs and whitespace are rejected.
     public init?(_ description: String) {
-        // CHANGE: Standalone lengths and every composite CIDR parser share one lexical contract.
-        guard let value = PrefixLengthTextParser.parse(description.utf8, maximum: Family.bitWidth) else { return nil }
+        // Standalone lengths and every composite CIDR parser share one lexical contract.
+        guard let value = PrefixLengthTextParser.parse(description.utf8, maximum: Family.Storage.bitWidth) else { return nil }
         self.init(rawValue: value)
     }
 
@@ -104,9 +106,11 @@ extension PrefixLength {
     ///
     /// Use the failable public initializers for external input. This initializer is for internal CIDR
     /// math where failure would indicate a programmer error or a violated address-family invariant.
+    // Let concrete clients fold storage-width validation with the caller.
+    @inlinable
     internal init(preconditioned value: Int) {
         precondition(value >= 0, "Prefix length must not be negative.")
-        precondition(value <= Family.bitWidth, "Prefix length must not exceed the address-family width.")
+        precondition(value <= Family.Storage.bitWidth, "Prefix length must not exceed the address-family width.")
         precondition(value <= Int(UInt8.max), "Prefix length must fit in UInt8 storage.")
         self.rawValue = UInt8(truncatingIfNeeded: value)
     }
@@ -119,8 +123,9 @@ extension PrefixLength {
     /// The maximum prefix length for this address family.
     ///
     /// This is `/32` for IPv4 and `/128` for IPv6.
+    @inlinable
     public static var maximum: Self {
-        Self(preconditioned: Family.bitWidth)
+        Self(preconditioned: Family.Storage.bitWidth)
     }
 }
 
@@ -150,7 +155,7 @@ internal enum PrefixLengthTextParser {
         var value: UInt16 = 0
         var digitCount = 0
         for byte in bytes {
-            // CHANGE: At most three digits fit UInt8; reject padding before arithmetic can overflow.
+            // At most three digits fit UInt8; reject padding before arithmetic can overflow.
             guard byte >= 48, byte <= 57, digitCount < 3,
                   digitCount == 0 || value != 0 else { return nil }
             value = value * 10 + UInt16(byte - 48)

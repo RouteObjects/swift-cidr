@@ -85,7 +85,7 @@ public struct IPMulticastGroup<Family: MulticastAddressSpace>: Addressable, Hash
     /// The initializer accepts only host-length addresses inside the family multicast address
     /// space. It rejects ordinary unicast addresses and prefixed ranges such as `239.1.2.1/24`.
     public init?(_ address: IPAddress<Family>) {
-        guard address.prefixLength.intValue == Family.bitWidth,
+        guard address.prefixLength.intValue == Family.Storage.bitWidth,
               Family.multicastAddressSpace.contains(address)
         else {
             return nil
@@ -162,7 +162,7 @@ extension IPMulticastGroup {
 /// The prefix must be aligned to its prefix length, and the entire range must fit inside the
 /// family's multicast address space. Registry-specific allocation names and policies are outside
 /// this type; this type models the typed CIDR range math.
-public struct IPMulticastGroupRange<Family: MulticastAddressSpace>: CIDR, Hashable, LosslessStringConvertible, Codable {
+public struct IPMulticastGroupRange<Family: MulticastAddressSpace>: CIDRForm, Hashable, LosslessStringConvertible, Codable {
     /// The canonical multicast range prefix.
     ///
     /// Host bits below `prefixLength` are required to be clear.
@@ -171,19 +171,13 @@ public struct IPMulticastGroupRange<Family: MulticastAddressSpace>: CIDR, Hashab
     /// The prefix length for the multicast group-address range.
     public let prefixLength: PrefixLength<Family>
 
-    /// The raw storage value used to satisfy `CIDR`.
+    /// The raw storage value used to satisfy `CIDRForm`.
     ///
     /// For multicast group ranges, `storage` is the canonical range prefix.
     @inlinable
     @inline(__always)
     public var storage: Family.Storage {
         prefix
-    }
-
-    @inlinable
-    @inline(__always)
-    public var addressLiteral: String {
-        Family.formatAddress(prefix)
     }
 
     private var cidrBlock: CIDRBlock<Family> {
@@ -266,12 +260,7 @@ public struct IPMulticastGroupRange<Family: MulticastAddressSpace>: CIDR, Hashab
         cidrBlock.isWithin(range.cidrBlock)
     }
 
-    /// The canonical CIDR text for the multicast group range.
-    @inlinable
-    @inline(__always)
-    public var description: String {
-        "\(addressLiteral)/\(prefixLength)"
-    }
+    // description now comes from the shared CIDRForm extension via Family.formatCIDR.
 
     /// A debug representation that includes the concrete multicast group range type.
     public var debugDescription: String {
@@ -279,77 +268,7 @@ public struct IPMulticastGroupRange<Family: MulticastAddressSpace>: CIDR, Hashab
     }
 }
 
-extension IPMulticastGroupRange {
-    @inlinable
-    @inline(__always)
-    public func formatted(_ style: CIDRTextStyle) -> String {
-        switch style {
-        case .cidrNotation:
-            return description
-        case .addressOnly:
-            return addressLiteral
-        }
-    }
-}
-
-public extension IPMulticastGroupRange where Family == AF.V4 {
-    @inlinable
-    @inline(__always)
-    var description: String {
-        AF.formatV4CIDR(address: prefix, prefixLength: prefixLength.rawValue)
-    }
-
-    @inlinable
-    @inline(__always)
-    func formatted(_ style: CIDRTextStyle) -> String {
-        switch style {
-        case .cidrNotation:
-            return AF.formatV4CIDR(address: prefix, prefixLength: prefixLength.rawValue)
-        case .addressOnly:
-            return addressLiteral
-        }
-    }
-
-    @inline(__always)
-    func formatted(_ style: IPv4TextStyle) -> String {
-        switch style {
-        case .addressAndNetmask:
-            let v4Mask = UInt32.networkMask(for: prefixLength.intValue)
-            return "\(addressLiteral) \(AF.formatV4(v4Mask))"
-        }
-    }
-}
-
-public extension IPMulticastGroupRange where Family == AF.V6 {
-    @inlinable
-    @inline(__always)
-    var description: String {
-        _compressedCIDRNotationDescription()
-    }
-
-    @inlinable
-    @inline(__always)
-    func formatted(_ style: CIDRTextStyle) -> String {
-        switch style {
-        case .cidrNotation:
-            return _compressedCIDRNotationDescription()
-        case .addressOnly:
-            return addressLiteral
-        }
-    }
-
-    @inline(__always)
-    func formatted(_ style: IPv6TextStyle) -> String {
-        switch style {
-        case .preferred:
-            return AF.formatV6(prefix)
-        case .ipv4Mapped:
-            return AF.formatV6Mapped(prefix) ?? addressLiteral
-        case .compressed:
-            return AF.formatV6Compressed(prefix)
-        }
-    }
-}
+// formatted(_:) overloads now come from the shared CIDRForm extensions.
 
 extension IPMulticastGroupRange {
     /// Decodes a multicast group range from canonical CIDR string text.

@@ -307,7 +307,7 @@ public enum AnyIPAddressRange: Sendable, Hashable, CustomStringConvertible,
     }
 
     /// The IANA address-family number of the wrapped range.
-    public var ianaValue: Int32 {
+    public var ianaValue: UInt16 {
         switch self {
         case .v4: V4.ianaValue
         case .v6: V6.ianaValue

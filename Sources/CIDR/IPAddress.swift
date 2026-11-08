@@ -58,7 +58,7 @@ public typealias IPv6Address = IPAddress<V6>
 /// In swift-cidr terminology, `IPAddress` is a core currency type: a small, value-semantic type
 /// intended to move between parsing, formatting, containment, and higher layers (including
 /// endpoints in the host/context layer).
-public struct IPAddress<Family: IPAddressFamily>: Addressable, CIDR, Hashable, Comparable, LosslessStringConvertible, Codable {
+public struct IPAddress<Family: IPAddressFamily>: Addressable, CIDRForm, Hashable, Comparable, LosslessStringConvertible, Codable {
     /// The address component of this CIDR value.
     ///
     /// `address` identifies the concrete IP address being described. Together with
@@ -71,10 +71,13 @@ public struct IPAddress<Family: IPAddressFamily>: Addressable, CIDR, Hashable, C
     /// ``address`` and ``prefixLength`` are the canonical form for an address-shaped CIDR value.
     public let prefixLength: PrefixLength<Family>
 
-    /// The raw storage value used to satisfy `CIDR`.
+    /// The raw storage value used to satisfy `CIDRForm`.
     ///
     /// For `IPAddress`, `storage` is the same value as ``address`` because the address is the stored
     /// CIDR value. Prefix-aligned types such as `IPNetwork` project their canonical prefix instead.
+    // Shared CIDR formatting reads `storage`; inline it as IPNetwork/CIDRBlock already do.
+    @inlinable
+    @inline(__always)
     public var storage: Family.Storage { address }
 
     /// Creates an address-shaped CIDR value from address bits and an explicit prefix length.
@@ -136,6 +139,9 @@ extension IPAddress {
     /// as `192.0.2.1/24`. Address-only text receives maximum prefix-length context for the family.
     /// CIDR-qualified text preserves the parsed address bits and stores the parsed prefix length as
     /// context.
+    // CHANGE: Expose parsing so callers with a visible concrete family can specialize it.
+    // Opaque generic callers can still dispatch through family/protocol requirements.
+    @inlinable
     public init?(_ string: String) {
         self.init(string, policy: .compatible)
     }
@@ -144,6 +150,7 @@ extension IPAddress {
     ///
     /// Every policy requires unpadded unsigned ASCII decimal prefix lengths. Address-only input
     /// receives the family's maximum prefix length. This initializer never resolves hostnames.
+    @inlinable
     public init?(_ string: String, policy: IPAddressParsingPolicy) {
         // CHANGE: A protocol requirement keeps generic, concrete, Codable, and CLI dispatch consistent.
         guard let result = Family.parseCIDR(string, requiresPrefix: false, policy: policy),
@@ -152,80 +159,9 @@ extension IPAddress {
     }
 }
 
-public extension IPAddress where Family == AF.V4 {
-    /// Creates an IPv4 address from address-only or CIDR-qualified presentation text.
-    ///
-    /// This overload uses the optimized IPv4 CIDR parser while preserving the public semantics of
-    /// the generic string initializer.
-    init?(_ string: String) {
-        self.init(string, policy: .compatible)
-    }
-
-    @inlinable
-    @inline(__always)
-    var description: String {
-        AF.formatV4CIDR(address: address, prefixLength: prefixLength.rawValue)
-    }
-
-    @inlinable
-    @inline(__always)
-    func formatted(_ style: CIDRTextStyle) -> String {
-        switch style {
-        case .cidrNotation:
-            return AF.formatV4CIDR(address: address, prefixLength: prefixLength.rawValue)
-        case .addressOnly:
-            return addressLiteral
-        }
-    }
-
-    @inline(__always)
-    func formatted(_ style: IPv4TextStyle) -> String {
-        switch style {
-        case .addressAndNetmask:
-            let v4Mask = UInt32.networkMask(for: prefixLength.intValue)
-            return "\(addressLiteral) \(AF.formatV4(v4Mask))"
-        }
-    }
-}
-
-public extension IPAddress where Family == AF.V6 {
-    /// Creates an IPv6 address from address-only or CIDR-qualified presentation text.
-    ///
-    /// This overload uses the optimized IPv6 CIDR parser while preserving the public semantics of
-    /// the generic string initializer.
-    init?(_ string: String) {
-        self.init(string, policy: .compatible)
-    }
-
-    @inlinable
-    @inline(__always)
-    var description: String {
-        _compressedCIDRNotationDescription()
-    }
-
-    @inlinable
-    @inline(__always)
-    func formatted(_ style: CIDRTextStyle) -> String {
-        switch style {
-        case .cidrNotation:
-            return _compressedCIDRNotationDescription()
-        case .addressOnly:
-            return addressLiteral
-        }
-    }
-
-    @inline(__always)
-    func formatted(_ style: IPv6TextStyle) -> String {
-        switch style {
-        case .preferred:
-            return AF.formatV6(address)
-        case .ipv4Mapped:
-            return AF.formatV6Mapped(address) ?? addressLiteral
-        case .compressed:
-            return AF.formatV6Compressed(address)
-        }
-    }
-}
+// CHANGE: Per-family overloads are replaced by Family.formatCIDR and shared parsing.
+// Inlinable initializers permit specialization where the concrete family is visible;
+// opaque LosslessStringConvertible/Codable/ArgumentParser paths can remain unspecialized.
 
 extension IPAddress {
     /// Decodes an address from its canonical CIDR text representation.
@@ -318,30 +254,5 @@ extension IPAddress: Strideable {
     public func advanced(by n: Int128) -> IPAddress {
         guard let advanced = advancedIfRepresentable(by: n) else { preconditionFailure("Overflow/Underflow range.") }
         return advanced
-    }
-}
-
-extension IPAddress {
-    @inlinable
-    @inline(__always)
-    public var addressLiteral: String {
-        Family.formatAddress(address)
-    }
-
-    @inlinable
-    @inline(__always)
-    public var description: String {
-        "\(addressLiteral)/\(prefixLength)"
-    }
-
-    @inlinable
-    @inline(__always)
-    public func formatted(_ style: CIDRTextStyle) -> String {
-        switch style {
-        case .cidrNotation:
-            return description
-        case .addressOnly:
-            return addressLiteral
-        }
     }
 }

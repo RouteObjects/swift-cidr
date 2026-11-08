@@ -59,7 +59,7 @@ and other systems that process high-volume IP data or control-plane state.
   AS-number value, while `AF.ASN` remains its IANA address-family marker.
 - `IPNetwork` is first-class, so CIDR prefixes can participate directly in
   containment checks, subnet traversal, summarization, and mixed-family API
-  boundaries. In this package, `CIDR` is a **protocol** shared by several forms—
+  boundaries. In this package, `CIDRForm` is a **protocol** shared by several forms—
   not a single hybrid `struct CIDR` wrapper around a host address (see
   [DESIGN.md](Documentation/DESIGN.md)).
 - `IPAddressRange` represents one exact inclusive address interval independently

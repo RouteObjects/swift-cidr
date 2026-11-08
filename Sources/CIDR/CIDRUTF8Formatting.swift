@@ -64,7 +64,7 @@ public enum CIDRUTF8Formatting {
     }
 }
 
-public extension CIDR where Family == AF.V4 {
+public extension CIDRForm where Family == AF.V4 {
     /// Writes this IPv4 CIDR value's address literal into caller-owned UTF-8 storage.
     ///
     /// The buffer must contain at least
@@ -103,7 +103,7 @@ public extension CIDR where Family == AF.V4 {
     }
 }
 
-public extension CIDR where Family == AF.V6 {
+public extension CIDRForm where Family == AF.V6 {
     /// Writes this IPv6 CIDR value's compressed address literal into caller-owned UTF-8 storage.
     ///
     /// The buffer must contain at least

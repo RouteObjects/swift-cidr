@@ -13,7 +13,7 @@
 
 /// A family-bound Classless Inter-Domain Routing (CIDR) value with stored bits and prefix length.
 ///
-/// `CIDR` is a **protocol**, not a single hybrid value type. It is the broad structural interface
+/// `CIDRForm` is a **protocol**, not a single hybrid value type. It is the broad structural interface
 /// for IP values that participate in the classless model described in
 /// [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632). Concrete types give the bits their
 /// meaning: ``IPAddress`` (address + prefix context), ``IPNetwork`` (canonical prefix),
@@ -24,7 +24,12 @@
 ///
 /// `storage` is the raw address-family storage for the value. It is not allocation state, not an
 /// RIR delegation block, and not necessarily a network-aligned prefix.
-public protocol CIDR: Sendable, CustomStringConvertible, CustomDebugStringConvertible {
+///
+/// The name follows "CIDR form" terminology in the CIPS Internet-Draft (draft-munro-cips).
+// Renamed from `CIDR`. A protocol sharing the module's name shadows it, so clients could
+// not write `CIDR.IPv4Address` to disambiguate from Network.framework. Do not add a `CIDR` typealias:
+// it would reintroduce the shadowing.
+public protocol CIDRForm: Sendable, CustomStringConvertible, CustomDebugStringConvertible {
     associatedtype Family: IPAddressFamily
 
     /// The raw address-family storage for this CIDR value.
@@ -37,7 +42,7 @@ public protocol CIDR: Sendable, CustomStringConvertible, CustomDebugStringConver
     func formatted(_ style: CIDRTextStyle) -> String
 }
 
-public extension CIDR {
+public extension CIDRForm {
     @inline(__always)
     var prefixBits: Int {
         prefixLength.intValue
@@ -63,18 +68,29 @@ public extension CIDR {
     /// `IPNetwork.addresses` for exact sequence membership and raw-storage traversal.
     var range: ClosedRange<IPAddress<Family>> { first...last }
 
+    /// The stored bits formatted as an address literal, without the prefix length.
+    @inlinable
+    @inline(__always)
     var addressLiteral: String {
         Family.formatAddress(storage)
     }
 
+    /// Canonical CIDR text, such as `192.0.2.0/24` or `2001:db8::/32`.
+    // The one CustomStringConvertible witness for every conformer. Routing through
+    // Family.formatCIDR keeps the per-family fast path on interpolation and generic calls.
+    @inlinable
+    @inline(__always)
     var description: String {
-        "\(addressLiteral)/\(prefixLength)"
+        Family.formatCIDR(storage, prefixLength: prefixLength)
     }
 
     var debugDescription: String {
         "\(String(reflecting: Self.self))(\(description))"
     }
 
+    // Shared by every conformer; replaces identical per-type and per-family overloads.
+    @inlinable
+    @inline(__always)
     func formatted(_ style: CIDRTextStyle) -> String {
         switch style {
         case .cidrNotation:
@@ -85,7 +101,7 @@ public extension CIDR {
     }
 }
 
-public extension CIDR where Family == AF.V4 {
+public extension CIDRForm where Family == AF.V4 {
     func formatted(_ style: IPv4TextStyle) -> String {
         switch style {
         case .addressAndNetmask:
@@ -95,15 +111,10 @@ public extension CIDR where Family == AF.V4 {
     }
 }
 
-public extension CIDR where Family == AF.V6 {
+public extension CIDRForm where Family == AF.V6 {
+    // _compressedCIDRNotationDescription() moved to AF.formatV6CompressedCIDR.
+    // Expose this wrapper so concrete callers can eliminate storage witness dispatch.
     @inlinable
-    @inline(__always)
-    internal func _compressedCIDRNotationDescription() -> String {
-        String(unsafeUninitializedCapacity: CIDRUTF8Formatting.maximumCompressedIPv6CIDRNotationUTF8Count) { buffer in
-            writeCompressedCIDRNotationUTF8(into: UnsafeMutableRawBufferPointer(buffer))
-        }
-    }
-
     func formatted(_ style: IPv6TextStyle) -> String {
         switch style {
         case .preferred:

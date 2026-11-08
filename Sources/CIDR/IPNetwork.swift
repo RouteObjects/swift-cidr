@@ -79,29 +79,7 @@ extension IPNetwork {
     public var storage: Family.Storage {
         prefix
     }
-
-    @inlinable
-    @inline(__always)
-    public var addressLiteral: String {
-        Family.formatAddress(prefix)
-    }
-
-    @inlinable
-    @inline(__always)
-    public var description: String {
-        "\(addressLiteral)/\(prefixLength)"
-    }
-
-    @inlinable
-    @inline(__always)
-    public func formatted(_ style: CIDRTextStyle) -> String {
-        switch style {
-        case .cidrNotation:
-            return description
-        case .addressOnly:
-            return addressLiteral
-        }
-    }
+    // addressLiteral, description, and formatted(_:) now come from the shared CIDRForm extension.
 }
 
 public extension IPNetwork where Family == AF.V4 {
@@ -120,63 +98,6 @@ public extension IPNetwork where Family == AF.V4 {
 
         self.init(address: address, prefixLength: prefixLength)
     }
-
-    @inlinable
-    @inline(__always)
-    var description: String {
-        AF.formatV4CIDR(address: prefix, prefixLength: prefixLength.rawValue)
-    }
-
-    @inlinable
-    @inline(__always)
-    func formatted(_ style: CIDRTextStyle) -> String {
-        switch style {
-        case .cidrNotation:
-            return AF.formatV4CIDR(address: prefix, prefixLength: prefixLength.rawValue)
-        case .addressOnly:
-            return addressLiteral
-        }
-    }
-
-    @inline(__always)
-    func formatted(_ style: IPv4TextStyle) -> String {
-        switch style {
-        case .addressAndNetmask:
-            let v4Mask = UInt32.networkMask(for: prefixLength.intValue)
-            return "\(addressLiteral) \(AF.formatV4(v4Mask))"
-        }
-    }
-}
-
-public extension IPNetwork where Family == AF.V6 {
-    @inlinable
-    @inline(__always)
-    var description: String {
-        _compressedCIDRNotationDescription()
-    }
-
-    @inlinable
-    @inline(__always)
-    func formatted(_ style: CIDRTextStyle) -> String {
-        switch style {
-        case .cidrNotation:
-            return _compressedCIDRNotationDescription()
-        case .addressOnly:
-            return addressLiteral
-        }
-    }
-
-    @inline(__always)
-    func formatted(_ style: IPv6TextStyle) -> String {
-        switch style {
-        case .preferred:
-            return AF.formatV6(prefix)
-        case .ipv4Mapped:
-            return AF.formatV6Mapped(prefix) ?? addressLiteral
-        case .compressed:
-            return AF.formatV6Compressed(prefix)
-        }
-    }
 }
 
 extension IPNetwork {
@@ -184,6 +105,9 @@ extension IPNetwork {
     ///
     /// The address portion may include host bits; the resulting `IPNetwork` stores the canonical
     /// prefix boundary.
+    // CHANGE: Expose parsing so callers with a visible concrete family can specialize it.
+    // Opaque generic callers can still dispatch through family/protocol requirements.
+    @inlinable
     public init?(_ string: String) {
         self.init(string, policy: .compatible)
     }
@@ -191,6 +115,7 @@ extension IPNetwork {
     /// Parses CIDR notation using an explicit IPv4-octet policy and clears input host bits.
     ///
     /// A slash and canonical unsigned decimal prefix length are required under either policy.
+    @inlinable
     public init?(_ string: String, policy: IPAddressParsingPolicy) {
         // CHANGE: Share the family requirement with address parsing instead of accepting Int spellings.
         guard let result = Family.parseCIDR(string, requiresPrefix: true, policy: policy),
@@ -198,15 +123,7 @@ extension IPNetwork {
         self.init(prefix: result.address, prefixLength: prefixLength)
     }
 
-    /// Creates a canonical IPv4 network using the shared family parser with compatible octets.
-    public init?(_ string: String) where Family == AF.V4 {
-        self.init(string, policy: .compatible)
-    }
-
-    /// Creates a canonical IPv6 network using the shared family parser with compatible octets.
-    public init?(_ string: String) where Family == AF.V6 {
-        self.init(string, policy: .compatible)
-    }
+    // Removed per-family init?(_:) overloads; the @inlinable generic initializers replace them.
 
     /// Creates a canonical network from CIDR notation only when it is contained by a parent block.
     ///
@@ -261,13 +178,17 @@ extension IPNetwork: Sequence {
     /// The address type yielded when iterating every address in the represented range.
     public typealias Element = IPAddress<Family>
 
+    /// The concrete address iterator shared with ``addresses``.
+    // Expose the existing concrete iterator instead of boxing it in AnyIterator, which
+    // heap-allocated and made an indirect call per next().
+    public typealias Iterator = Addresses.Iterator
+
     /// Returns an iterator over every address, retaining the network's prefix length.
     ///
     /// Iteration walks from `first` through `last`. Large networks may contain many addresses, so
     /// prefer containment or subnet operations when enumeration is not explicitly required.
-    public func makeIterator() -> AnyIterator<Element> {
-        // CHANGE: Share contextual traversal while preserving the existing iterator signature.
-        AnyIterator(addresses.makeIterator())
+    public func makeIterator() -> Addresses.Iterator {
+        addresses.makeIterator()
     }
 
     /// Supplies exact sequence membership without enumerating addresses.
