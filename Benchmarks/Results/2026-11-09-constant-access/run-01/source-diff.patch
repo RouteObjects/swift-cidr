@@ -1,0 +1,37 @@
+diff --git a/Sources/CIDR/AF+Formatting.swift b/Sources/CIDR/AF+Formatting.swift
+index 1e81e1f..952ed48 100644
+--- a/Sources/CIDR/AF+Formatting.swift
++++ b/Sources/CIDR/AF+Formatting.swift
+@@ -103,7 +103,8 @@ extension AF {
+     @usableFromInline internal static let maximumIPv4AddressLiteralUTF8Count =
+         (ipv4OctetCount * maximumDecimalDigitsPerIPv4Octet) + maximumDotSeparatorsInIPv4Literal
+     private static let ipv4MappedIPv6Prefix: StaticString = "::ffff:"
+-    private static let ipv4MappedIPv6PrefixUTF8Count = "::ffff:".utf8.count
++    // CHANGE: StaticString exposes the literal byte count without lazy String.UTF8View initialization.
++    private static let ipv4MappedIPv6PrefixUTF8Count = ipv4MappedIPv6Prefix.utf8CodeUnitCount
+     private static let maximumIPv4MappedIPv6AddressLiteralUTF8Count =
+         ipv4MappedIPv6PrefixUTF8Count + maximumIPv4AddressLiteralUTF8Count
+ 
+diff --git a/Sources/CIDR/IPMulticast.swift b/Sources/CIDR/IPMulticast.swift
+index 370af4d..afc0f67 100644
+--- a/Sources/CIDR/IPMulticast.swift
++++ b/Sources/CIDR/IPMulticast.swift
+@@ -41,10 +41,14 @@ extension AF.V4: MulticastAddressSpace {
+ 
+ extension AF.V6: MulticastAddressSpace {
+     /// The IPv6 multicast address space, `ff00::/8`.
+-    public static let multicastAddressSpace = CIDRBlock(
+-        prefix: UInt128(0xFF) << 120,
+-        prefixLength: PrefixLength<AF.V6>(preconditioned: 8)
+-    )
++    // CHANGE: Let optimized callers construct the constant block without shared lazy storage.
++    @inlinable
++    public static var multicastAddressSpace: CIDRBlock<AF.V6> {
++        CIDRBlock(
++            prefix: UInt128(0xFF) << 120,
++            prefixLength: PrefixLength<AF.V6>(preconditioned: 8)
++        )
++    }
+ }
+ 
+ /// Canonical alias for an IPv4 multicast group destination identifier.

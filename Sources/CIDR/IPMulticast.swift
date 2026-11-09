@@ -41,10 +41,14 @@ extension AF.V4: MulticastAddressSpace {
 
 extension AF.V6: MulticastAddressSpace {
     /// The IPv6 multicast address space, `ff00::/8`.
-    public static let multicastAddressSpace = CIDRBlock(
-        prefix: UInt128(0xFF) << 120,
-        prefixLength: PrefixLength<AF.V6>(preconditioned: 8)
-    )
+    // Let optimized callers construct the constant block without shared lazy storage.
+    @inlinable
+    public static var multicastAddressSpace: CIDRBlock<AF.V6> {
+        CIDRBlock(
+            prefix: UInt128(0xFF) << 120,
+            prefixLength: PrefixLength<AF.V6>(preconditioned: 8)
+        )
+    }
 }
 
 /// Canonical alias for an IPv4 multicast group destination identifier.

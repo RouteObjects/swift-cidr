@@ -103,7 +103,8 @@ extension AF {
     @usableFromInline internal static let maximumIPv4AddressLiteralUTF8Count =
         (ipv4OctetCount * maximumDecimalDigitsPerIPv4Octet) + maximumDotSeparatorsInIPv4Literal
     private static let ipv4MappedIPv6Prefix: StaticString = "::ffff:"
-    private static let ipv4MappedIPv6PrefixUTF8Count = "::ffff:".utf8.count
+    // StaticString exposes the literal byte count without lazy String.UTF8View initialization.
+    private static let ipv4MappedIPv6PrefixUTF8Count = ipv4MappedIPv6Prefix.utf8CodeUnitCount
     private static let maximumIPv4MappedIPv6AddressLiteralUTF8Count =
         ipv4MappedIPv6PrefixUTF8Count + maximumIPv4AddressLiteralUTF8Count
 

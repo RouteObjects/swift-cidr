@@ -1,0 +1,78 @@
+{
+  "measurements": {
+    "ipv6-block-read-with-wrapper": {
+      "case": "ipv6-block-read-with-wrapper",
+      "input_count": 512,
+      "rounds": 128,
+      "samples": [
+        {
+          "checksum_hex": "b170402a36170000",
+          "elapsed_ns": 352709,
+          "ns_per_operation_batch_mean": 5.3819122314453125,
+          "operations": 65536,
+          "sample": 0
+        }
+      ],
+      "seed": "20261109",
+      "validated": true,
+      "warmup_batches": 2
+    },
+    "ipv6-group-validation": {
+      "case": "ipv6-group-validation",
+      "input_count": 512,
+      "rounds": 128,
+      "samples": [
+        {
+          "checksum_hex": "c42526d07195c000",
+          "elapsed_ns": 381750,
+          "ns_per_operation_batch_mean": 5.825042724609375,
+          "operations": 65536,
+          "sample": 0
+        }
+      ],
+      "seed": "20261109",
+      "validated": true,
+      "warmup_batches": 2
+    },
+    "ipv6-range-validation": {
+      "case": "ipv6-range-validation",
+      "input_count": 512,
+      "rounds": 128,
+      "samples": [
+        {
+          "checksum_hex": "5fa1cc78bd848000",
+          "elapsed_ns": 511875,
+          "ns_per_operation_batch_mean": 7.8105926513671875,
+          "operations": 65536,
+          "sample": 0
+        }
+      ],
+      "seed": "20261109",
+      "validated": true,
+      "warmup_batches": 2
+    },
+    "mapped-format-and-digest": {
+      "case": "mapped-format-and-digest",
+      "input_count": 512,
+      "rounds": 128,
+      "samples": [
+        {
+          "checksum_hex": "6531967229dd9a80",
+          "elapsed_ns": 8083417,
+          "ns_per_operation_batch_mean": 123.34315490722656,
+          "operations": 65536,
+          "sample": 0
+        }
+      ],
+      "seed": "20261109",
+      "validated": true,
+      "warmup_batches": 2
+    }
+  },
+  "selected_rounds": {
+    "ipv6-block-read-with-wrapper": 18146,
+    "ipv6-group-validation": 16765,
+    "ipv6-range-validation": 12504,
+    "mapped-format-and-digest": 792
+  }
+}

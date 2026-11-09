@@ -64,6 +64,11 @@ struct IPMulticastTests {
 
         #expect(allNodes == sameAllNodes)
         #expect(allNodes.description == "ff02::1")
+        // Exercise both ends of ff00::/8 and the immediately preceding unicast address.
+        let firstMulticastAddress = UInt128(0xFF) << 120
+        #expect(IPv6MulticastGroup(address: firstMulticastAddress) != nil)
+        #expect(IPv6MulticastGroup(address: UInt128.max) != nil)
+        #expect(IPv6MulticastGroup(address: firstMulticastAddress - 1) == nil)
         #expect(IPv6MulticastGroup("fe80::1") == nil)
         #expect(IPv6MulticastGroup("2001:db8::1") == nil)
         #expect(IPv6MulticastGroup("ff02::1/64") == nil)
