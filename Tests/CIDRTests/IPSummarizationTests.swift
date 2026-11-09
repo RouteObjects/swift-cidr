@@ -184,16 +184,21 @@ struct IPSummarizationTests {
         #expect(maximum.formatted(.preferred) == "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff")
     }
 
-    @Test("IPv4-mapped IPv6 style uses mixed notation")
-    func ipv4MappedIPv6Formatting() throws {
-        let mappedAddress = (UInt128(0xFFFF) << 32) | UInt128(0xC0000201)
+    @Test("IPv4-mapped IPv6 style uses mixed notation", arguments: [
+        (UInt32.zero, "::ffff:0.0.0.0"),
+        (UInt32(0xC0000201), "::ffff:192.0.2.1"),
+        (UInt32.max, "::ffff:255.255.255.255"),
+    ])
+    func ipv4MappedIPv6Formatting(ipv4Address: UInt32, expected: String) throws {
+        // Include the longest mapped literal to exercise the formatter's full capacity.
+        let mappedAddress = (UInt128(0xFFFF) << 32) | UInt128(ipv4Address)
         let host = IPAddress<V6>(
             address: mappedAddress,
             prefixLength: try #require(PrefixLength<V6>(128))
         )
         let network = IPNetwork<V6>(host: host)
 
-        #expect(network.formatted(.ipv4Mapped) == "::ffff:192.0.2.1")
+        #expect(network.formatted(.ipv4Mapped) == expected)
     }
 
     @Test("Non-mapped IPv6 style falls back to canonical compressed address text")

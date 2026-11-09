@@ -1,0 +1,83 @@
+diff --git a/Sources/CIDR/AF+Formatting.swift b/Sources/CIDR/AF+Formatting.swift
+index 1e81e1f..7444388 100644
+--- a/Sources/CIDR/AF+Formatting.swift
++++ b/Sources/CIDR/AF+Formatting.swift
+@@ -103,7 +103,8 @@ extension AF {
+     @usableFromInline internal static let maximumIPv4AddressLiteralUTF8Count =
+         (ipv4OctetCount * maximumDecimalDigitsPerIPv4Octet) + maximumDotSeparatorsInIPv4Literal
+     private static let ipv4MappedIPv6Prefix: StaticString = "::ffff:"
+-    private static let ipv4MappedIPv6PrefixUTF8Count = "::ffff:".utf8.count
++    // StaticString exposes the literal byte count without lazy String.UTF8View initialization.
++    private static let ipv4MappedIPv6PrefixUTF8Count = ipv4MappedIPv6Prefix.utf8CodeUnitCount
+     private static let maximumIPv4MappedIPv6AddressLiteralUTF8Count =
+         ipv4MappedIPv6PrefixUTF8Count + maximumIPv4AddressLiteralUTF8Count
+ 
+diff --git a/Sources/CIDR/IPMulticast.swift b/Sources/CIDR/IPMulticast.swift
+index 370af4d..d8a393a 100644
+--- a/Sources/CIDR/IPMulticast.swift
++++ b/Sources/CIDR/IPMulticast.swift
+@@ -41,10 +41,14 @@ extension AF.V4: MulticastAddressSpace {
+ 
+ extension AF.V6: MulticastAddressSpace {
+     /// The IPv6 multicast address space, `ff00::/8`.
+-    public static let multicastAddressSpace = CIDRBlock(
+-        prefix: UInt128(0xFF) << 120,
+-        prefixLength: PrefixLength<AF.V6>(preconditioned: 8)
+-    )
++    // Let optimized callers construct the constant block without shared lazy storage.
++    @inlinable
++    public static var multicastAddressSpace: CIDRBlock<AF.V6> {
++        CIDRBlock(
++            prefix: UInt128(0xFF) << 120,
++            prefixLength: PrefixLength<AF.V6>(preconditioned: 8)
++        )
++    }
+ }
+ 
+ /// Canonical alias for an IPv4 multicast group destination identifier.
+diff --git a/Tests/CIDRTests/IPMulticastTests.swift b/Tests/CIDRTests/IPMulticastTests.swift
+index 34c7c8e..c80fd13 100644
+--- a/Tests/CIDRTests/IPMulticastTests.swift
++++ b/Tests/CIDRTests/IPMulticastTests.swift
+@@ -64,6 +64,11 @@ struct IPMulticastTests {
+ 
+         #expect(allNodes == sameAllNodes)
+         #expect(allNodes.description == "ff02::1")
++        // Exercise both ends of ff00::/8 and the immediately preceding unicast address.
++        let firstMulticastAddress = UInt128(0xFF) << 120
++        #expect(IPv6MulticastGroup(address: firstMulticastAddress) != nil)
++        #expect(IPv6MulticastGroup(address: UInt128.max) != nil)
++        #expect(IPv6MulticastGroup(address: firstMulticastAddress - 1) == nil)
+         #expect(IPv6MulticastGroup("fe80::1") == nil)
+         #expect(IPv6MulticastGroup("2001:db8::1") == nil)
+         #expect(IPv6MulticastGroup("ff02::1/64") == nil)
+diff --git a/Tests/CIDRTests/IPSummarizationTests.swift b/Tests/CIDRTests/IPSummarizationTests.swift
+index 13b7950..5a36485 100644
+--- a/Tests/CIDRTests/IPSummarizationTests.swift
++++ b/Tests/CIDRTests/IPSummarizationTests.swift
+@@ -184,16 +184,21 @@ struct IPSummarizationTests {
+         #expect(maximum.formatted(.preferred) == "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff")
+     }
+ 
+-    @Test("IPv4-mapped IPv6 style uses mixed notation")
+-    func ipv4MappedIPv6Formatting() throws {
+-        let mappedAddress = (UInt128(0xFFFF) << 32) | UInt128(0xC0000201)
++    @Test("IPv4-mapped IPv6 style uses mixed notation", arguments: [
++        (UInt32.zero, "::ffff:0.0.0.0"),
++        (UInt32(0xC0000201), "::ffff:192.0.2.1"),
++        (UInt32.max, "::ffff:255.255.255.255"),
++    ])
++    func ipv4MappedIPv6Formatting(ipv4Address: UInt32, expected: String) throws {
++        // Include the longest mapped literal to exercise the formatter's full capacity.
++        let mappedAddress = (UInt128(0xFFFF) << 32) | UInt128(ipv4Address)
+         let host = IPAddress<V6>(
+             address: mappedAddress,
+             prefixLength: try #require(PrefixLength<V6>(128))
+         )
+         let network = IPNetwork<V6>(host: host)
+ 
+-        #expect(network.formatted(.ipv4Mapped) == "::ffff:192.0.2.1")
++        #expect(network.formatted(.ipv4Mapped) == expected)
+     }
+ 
+     @Test("Non-mapped IPv6 style falls back to canonical compressed address text")

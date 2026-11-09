@@ -1,0 +1,226 @@
+warning: /Users/craig/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/craig/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+warning: /Users/craig/Library/Caches/org.swift.swiftpm is not accessible or not writable, disabling user-level cache features.
+warning: 'swift-cidr': failed storing manifest for 'swift-cidr' in cache: attempt to write a readonly database
+warning: 'swift-argument-parser': failed storing manifest for 'swift-argument-parser' in cache: attempt to write a readonly database
+warning: 'swift-nio': failed storing manifest for 'swift-nio' in cache: attempt to write a readonly database
+warning: 'swift-atomics': failed storing manifest for 'swift-atomics' in cache: attempt to write a readonly database
+warning: 'swift-system': failed storing manifest for 'swift-system' in cache: attempt to write a readonly database
+warning: 'swift-collections': failed storing manifest for 'swift-collections' in cache: attempt to write a readonly database
+[0/1] Planning build
+[1/1] Compiling plugin GenerateManual
+[2/2] Compiling plugin GenerateDoccReference
+Building for debugging...
+[2/7] Write sources
+[5/7] Write swift-version-3CD7052B146186F2.txt
+[7/24] Compiling CIDR NetworkPrefixRange.swift
+[8/24] Compiling CIDR IPPrefixSubnets.swift
+[9/24] Compiling CIDR IPNetwork.swift
+[10/24] Compiling CIDR IPPrefix.swift
+[11/24] Compiling CIDR AF+Formatting.swift
+[12/24] Compiling CIDR AddressFamily.swift
+[13/25] Compiling CIDR IPMulticast.swift
+[14/25] Compiling CIDR IPNetwork+Addresses.swift
+[15/25] Compiling CIDR CIDRForm.swift
+[16/25] Compiling CIDR CIDRUTF8Formatting.swift
+[17/25] Compiling CIDR IPAddressFamily.swift
+[18/25] Compiling CIDR IPAddressRange.swift
+[19/25] Compiling CIDR AnyIP.swift
+[20/25] Compiling CIDR CIDRBlock.swift
+[21/25] Compiling CIDR FixedWidthInteger+NetworkMask.swift
+[22/25] Compiling CIDR IPAddress.swift
+[23/25] Compiling CIDR PrefixLength.swift
+[24/25] Emitting module CIDR
+[25/40] Emitting module CIDRPOSIX
+[26/40] Emitting module CIDRNIO
+[27/40] Compiling CIDRNIO CIDRNIO.swift
+[28/40] Emitting module CIDRArgumentParser
+[29/43] Emitting module CIDRPOSIXTests
+[30/43] Emitting module CIDRNIOTests
+[31/43] Emitting module CIDRArgumentParserTests
+[32/43] Compiling CIDRTests FamilyFormattingDispatchTests.swift
+[33/44] Emitting module CIDRTests
+[34/44] Compiling CIDRTests IPNetworkContextTests.swift
+[35/44] Compiling CIDRTests IPAddressFamilyWidthTests.swift
+[36/44] Compiling CIDRTests ContainmentSpecializationTests.swift
+[37/44] Compiling CIDRTests AddressFamilyTests.swift
+[38/44] Compiling CIDRTests IPMulticastTests.swift
+[39/44] Compiling CIDRTests CIDRUTF8FormattingTests.swift
+[40/44] Compiling CIDRTests IPParsingPolicyTests.swift
+[41/44] Compiling CIDRTests ConcreteCIDRFormattingTests.swift
+[42/44] Compiling CIDRTests IPSummarizationTests.swift
+[42/44] Write Objects.LinkFileList
+[43/44] Linking swift-cidrPackageTests
+Build complete! (8.18s)
+Test Suite 'Selected tests' started at 2026-11-09 10:51:50.376.
+Test Suite 'swift-cidrPackageTests.xctest' started at 2026-11-09 10:51:50.377.
+Test Suite 'swift-cidrPackageTests.xctest' passed at 2026-11-09 10:51:50.377.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-11-09 10:51:50.377.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 1902
+􀄵  Target Platform: arm64e-apple-macos14.0
+􀟈  Suite "Contextual address views and containment" started.
+􀟈  Suite "IPv6 Compression Tests" started.
+􀟈  Suite "IP Multicast Tests" started.
+􀟈  Suite "Any IP Wrapper Tests" started.
+􀟈  Suite "IP Summarization Tests" started.
+􀟈  Suite "CIDR UTF-8 Formatting Tests" started.
+􀟈  Suite "Concrete CIDR Formatting Tests" started.
+􀟈  Test "Compressed formatter prefers the leftmost longest zero run" started.
+􀟈  Test "Legacy family-erased containment preserves address and subnet compatibility" started.
+􀟈  Test "Compressed formatter handles mixed hextets around a middle zero run" started.
+􀟈  Test "Family-erased containment respects prefix context and rejects mixed families" started.
+􀟈  Test "Compressed formatter shortens a middle zero run" started.
+􀟈  Test "Default-route traversal is bounded and membership uses a constant-time witness" started.
+􀟈  Test "Default IPv6 CIDR text uses RFC 5952 compressed output" started.
+􀟈  Test "Raw ranges and multicast destinations retain their explicit projections" started.
+􀟈  Test "Independent iterators terminate at the highest address" started.
+􀟈  Test "Address views agree with iteration and exact membership" started.
+􀟈  Test "Zero finder handles leading, trailing, all-zero, and tie runs from words" started.
+􀟈  Test "Hierarchical containment distinguishes prefix context from exact membership" started.
+􀟈  Test "IPv6 multicast groups accept only host-length addresses in ff00::/8" started.
+􀟈  Test "Compressed formatter keeps mapped IPv6 in hexadecimal form" started.
+􀟈  Test "Zero finder reports the longest middle run from words" started.
+􀟈  Test "Multicast types encode and decode their canonical text forms" started.
+􀟈  Test "Compressed formatter preserves a single zero hextet" started.
+􀟈  Test "Raw UTF-8 compressed writer emits expected IPv6 literals" started.
+􀟈  Test "IPv4 multicast groups accept only host-length addresses in 224.0.0.0/4" started.
+􀟈  Test "Legacy typed containment preserves raw-address semantics and generic IPPrefix dispatch" started.
+􀟈  Test "Generic AnyIP wrappers do not infer multicast semantics" started.
+􀟈  Test "IPv6 multicast ranges are canonical ranges fully inside ff00::/8" started.
+􀟈  Test "Zero finder rejects single-zero runs" started.
+􀟈  Test "AnyIPMulticastGroup parses IPv4 and IPv6 groups and round-trips canonical text" started.
+􀟈  Test "AnyPrefixLength exposes family metadata and typed projections" started.
+􀟈  Test "Compressed formatter handles maximum IPv6 without zero compression" started.
+􀟈  Test "AnyIPAddress parses IPv4 and IPv6 strings and round-trips canonical text" started.
+􀟈  Test "AnyIP wrappers reject malformed IPv6 literals in either parse order" started.
+􀟈  Test "Network summarization covers nested IPv4 networks" started.
+􀟈  Test "IPv4 multicast ranges are canonical ranges fully inside 224.0.0.0/4" started.
+􀟈  Test "Compressed formatter handles all-zero IPv6" started.
+􀟈  Test "Zero finder reports the longest middle run from network-order bytes" started.
+􀟈  Test "AnyIPAddress exposes wrapped network and formatting behavior" started.
+􀟈  Test "Non-mapped IPv6 style falls back to canonical compressed address text" started.
+􀟈  Test "Network summarization covers adjacent IPv6 networks" started.
+􀟈  Test "Summarize complex IPv6 range" started.
+􀟈  Test "AnyIPNetwork round-trips canonical CIDR text and preserves family in traversal" started.
+􀟈  Test "AnyIPNetwork containment is family-aware" started.
+􀟈  Test "AnyIPMulticast wrappers encode and decode canonical string values" started.
+􀟈  Test "IPv6 preferred style preserves current all-zero and maximum full-text output" started.
+􀟈  Test "Endpoint-pair summarization normalizes reversed IPv6 endpoints" started.
+􀟈  Test "IPv4 address and mask style stays vendor-friendly" started.
+􀟈  Test "AnyIPNetwork parse order changes first attempt only" started.
+􀟈  Test "Compressed formatter handles a trailing zero run" started.
+􀟈  Test "Endpoint-pair summarization normalizes reversed IPv4 endpoints" started.
+􀟈  Test "IPv6 preferred style uses the current full-text formatter" started.
+􀟈  Test "AnyIP wrappers retain valid IPv6 boundary forms in either parse order" started.
+􀟈  Test "Network summarization is independent of argument order" started.
+􀟈  Test "AnyIPMulticastGroupRange preserves multicast range semantics" started.
+􀟈  Test "AnyIPAddress parse order changes first attempt only" started.
+􀟈  Test "AnyIPNetwork hashing preserves equality and prefix identity" started.
+􀟈  Test "Full IPv4 space summarizes to a single /0" started.
+􀟈  Test "Summarize adjacent IPv4 hosts" started.
+􀟈  Test "IPv4-mapped IPv6 style uses mixed notation" started.
+􀟈  Test "IPv4 address writer emits expected literals" started.
+􀟈  Test "Full IPv6 space summarizes to a single /0" started.
+􀟈  Test "Network summarization covers adjacent IPv4 networks" started.
+􀟈  Test "IPv6 compressed address writer emits expected literals" started.
+􀟈  Test "Ordered summarization returns empty for reversed ranges" started.
+􀟈  Test "IPv4 CIDR writer emits address and canonical network notation" started.
+􀟈  Test "IPv6 compressed CIDR writer emits address and canonical network notation" started.
+􀟈  Test "Single address range results in one /32" started.
+􀟈  Test "Public capacity constants match maximum literal sizes" started.
+􀟈  Test "IPv6 concrete CIDR values preserve CIDR and family-specific text styles" started.
+􀟈  Test "IPv4 CIDR descriptions cover small-string and maximum-length output" started.
+􀟈  Test "IPv4 concrete CIDR values preserve CIDR and family-specific text styles" started.
+􀟈  Test "Concrete CIDR block and multicast raw UTF-8 writers preserve canonical output" started.
+􀟈  Test case passing 1 argument source → "1:2:3:4:5:6:7:8:" to "AnyIP wrappers reject malformed IPv6 literals in either parse order" started.
+􀟈  Test case passing 1 argument source → "1:2:3:4:5:6::192.0.2.1" to "AnyIP wrappers reject malformed IPv6 literals in either parse order" started.
+􀟈  Test case passing 1 argument source → "00000::1" to "AnyIP wrappers reject malformed IPv6 literals in either parse order" started.
+􀟈  Test case passing 1 argument source → "1:2:3:4:5:6:7:8::" to "AnyIP wrappers reject malformed IPv6 literals in either parse order" started.
+􀟈  Test case passing 1 argument source → "1:2:3:4:5:6:7::" to "AnyIP wrappers retain valid IPv6 boundary forms in either parse order" started.
+􀟈  Test case passing 1 argument source → "1:2:3:4:5::192.0.2.1" to "AnyIP wrappers retain valid IPv6 boundary forms in either parse order" started.
+􀟈  Test case passing 1 argument source → "0000::1" to "AnyIP wrappers retain valid IPv6 boundary forms in either parse order" started.
+􀟈  Test case passing 1 argument source → "::1:2:3:4:5:6:7" to "AnyIP wrappers retain valid IPv6 boundary forms in either parse order" started.
+􀟈  Test case passing 2 arguments source → "192.0.2.0/24", otherPrefix → "192.0.2.0/25" to "AnyIPNetwork hashing preserves equality and prefix identity" started.
+􀟈  Test case passing 2 arguments source → "2001:db8::/64", otherPrefix → "2001:db8::/65" to "AnyIPNetwork hashing preserves equality and prefix identity" started.
+􀟈  Test case passing 1 argument source → "::ffff:192.000.002.001" to "AnyIP wrappers retain valid IPv6 boundary forms in either parse order" started.
+􀟈  Test case passing 2 arguments ipv4Address → 0, expected → "::ffff:0.0.0.0" to "IPv4-mapped IPv6 style uses mixed notation" started.
+􀟈  Test case passing 2 arguments ipv4Address → 4294967295, expected → "::ffff:255.255.255.255" to "IPv4-mapped IPv6 style uses mixed notation" started.
+􀟈  Test case passing 2 arguments ipv4Address → 3221225985, expected → "::ffff:192.0.2.1" to "IPv4-mapped IPv6 style uses mixed notation" started.
+􁁛  Test "Default IPv6 CIDR text uses RFC 5952 compressed output" passed after 0.002 seconds.
+􁁛  Test "Family-erased containment respects prefix context and rejects mixed families" passed after 0.002 seconds.
+􁁛  Test "Compressed formatter prefers the leftmost longest zero run" passed after 0.002 seconds.
+􁁛  Test "Legacy family-erased containment preserves address and subnet compatibility" passed after 0.002 seconds.
+􁁛  Test "Compressed formatter handles mixed hextets around a middle zero run" passed after 0.002 seconds.
+􁁛  Test "Compressed formatter shortens a middle zero run" passed after 0.002 seconds.
+􁁛  Test "Raw ranges and multicast destinations retain their explicit projections" passed after 0.002 seconds.
+􁁛  Test "Zero finder reports the longest middle run from words" passed after 0.002 seconds.
+􁁛  Test "Zero finder handles leading, trailing, all-zero, and tie runs from words" passed after 0.002 seconds.
+􁁛  Test "IPv6 multicast groups accept only host-length addresses in ff00::/8" passed after 0.002 seconds.
+􁁛  Test "Raw UTF-8 compressed writer emits expected IPv6 literals" passed after 0.002 seconds.
+􁁛  Test "Hierarchical containment distinguishes prefix context from exact membership" passed after 0.002 seconds.
+􁁛  Test "IPv6 multicast ranges are canonical ranges fully inside ff00::/8" passed after 0.002 seconds.
+􁁛  Test "Legacy typed containment preserves raw-address semantics and generic IPPrefix dispatch" passed after 0.002 seconds.
+􁁛  Test "Compressed formatter preserves a single zero hextet" passed after 0.002 seconds.
+􁁛  Test "Generic AnyIP wrappers do not infer multicast semantics" passed after 0.002 seconds.
+􁁛  Test "AnyIPMulticastGroup parses IPv4 and IPv6 groups and round-trips canonical text" passed after 0.002 seconds.
+􁁛  Test "IPv4 multicast groups accept only host-length addresses in 224.0.0.0/4" passed after 0.002 seconds.
+􁁛  Test "Default-route traversal is bounded and membership uses a constant-time witness" passed after 0.002 seconds.
+􁁛  Test "AnyPrefixLength exposes family metadata and typed projections" passed after 0.002 seconds.
+􁁛  Test "Compressed formatter keeps mapped IPv6 in hexadecimal form" passed after 0.002 seconds.
+􁁛  Test "Network summarization covers nested IPv4 networks" passed after 0.002 seconds.
+􁁛  Test "Multicast types encode and decode their canonical text forms" passed after 0.002 seconds.
+􁁛  Test "AnyIPAddress parses IPv4 and IPv6 strings and round-trips canonical text" passed after 0.002 seconds.
+􁁛  Test "Compressed formatter handles maximum IPv6 without zero compression" passed after 0.002 seconds.
+􁁛  Test "Zero finder rejects single-zero runs" passed after 0.002 seconds.
+􁁛  Test "Compressed formatter handles all-zero IPv6" passed after 0.002 seconds.
+􁁛  Test "Zero finder reports the longest middle run from network-order bytes" passed after 0.002 seconds.
+􁁛  Test "Independent iterators terminate at the highest address" passed after 0.002 seconds.
+􁁛  Test "Address views agree with iteration and exact membership" passed after 0.002 seconds.
+􁁛  Test "Summarize complex IPv6 range" passed after 0.002 seconds.
+􁁛  Test "AnyIPAddress exposes wrapped network and formatting behavior" passed after 0.002 seconds.
+􁁛  Test "AnyIPNetwork round-trips canonical CIDR text and preserves family in traversal" passed after 0.002 seconds.
+􁁛  Test "AnyIPMulticast wrappers encode and decode canonical string values" passed after 0.002 seconds.
+􁁛  Test "IPv4 address and mask style stays vendor-friendly" passed after 0.002 seconds.
+􁁛  Test "AnyIPNetwork containment is family-aware" passed after 0.002 seconds.
+􁁛  Test "Compressed formatter handles a trailing zero run" passed after 0.002 seconds.
+􁁛  Test "Network summarization covers adjacent IPv6 networks" passed after 0.002 seconds.
+􁁛  Test "AnyIP wrappers reject malformed IPv6 literals in either parse order" with 4 test cases passed after 0.002 seconds.
+􁁛  Test "Non-mapped IPv6 style falls back to canonical compressed address text" passed after 0.002 seconds.
+􁁛  Test "IPv6 preferred style uses the current full-text formatter" passed after 0.002 seconds.
+􁁛  Test "Network summarization is independent of argument order" passed after 0.002 seconds.
+􁁛  Test "IPv6 preferred style preserves current all-zero and maximum full-text output" passed after 0.002 seconds.
+􁁛  Test "Endpoint-pair summarization normalizes reversed IPv4 endpoints" passed after 0.002 seconds.
+􁁛  Test "AnyIPNetwork parse order changes first attempt only" passed after 0.002 seconds.
+􁁛  Test "AnyIPAddress parse order changes first attempt only" passed after 0.002 seconds.
+􁁛  Test "IPv4 multicast ranges are canonical ranges fully inside 224.0.0.0/4" passed after 0.002 seconds.
+􁁛  Test "Full IPv4 space summarizes to a single /0" passed after 0.002 seconds.
+􁁛  Test "AnyIPMulticastGroupRange preserves multicast range semantics" passed after 0.002 seconds.
+􁁛  Test "AnyIP wrappers retain valid IPv6 boundary forms in either parse order" with 5 test cases passed after 0.002 seconds.
+􁁛  Test "IPv4-mapped IPv6 style uses mixed notation" with 3 test cases passed after 0.002 seconds.
+􁁛  Test "Ordered summarization returns empty for reversed ranges" passed after 0.001 seconds.
+􁁛  Test "IPv4 address writer emits expected literals" passed after 0.001 seconds.
+􁁛  Test "AnyIPNetwork hashing preserves equality and prefix identity" with 2 test cases passed after 0.002 seconds.
+􁁛  Test "Summarize adjacent IPv4 hosts" passed after 0.002 seconds.
+􁁛  Test "IPv4 CIDR writer emits address and canonical network notation" passed after 0.001 seconds.
+􁁛  Test "IPv6 compressed address writer emits expected literals" passed after 0.001 seconds.
+􁁛  Test "Network summarization covers adjacent IPv4 networks" passed after 0.001 seconds.
+􁁛  Test "Public capacity constants match maximum literal sizes" passed after 0.001 seconds.
+􁁛  Test "Endpoint-pair summarization normalizes reversed IPv6 endpoints" passed after 0.002 seconds.
+􁁛  Test "Single address range results in one /32" passed after 0.001 seconds.
+􁁛  Test "IPv4 concrete CIDR values preserve CIDR and family-specific text styles" passed after 0.001 seconds.
+􁁛  Test "Full IPv6 space summarizes to a single /0" passed after 0.002 seconds.
+􁁛  Test "IPv6 compressed CIDR writer emits address and canonical network notation" passed after 0.001 seconds.
+􁁛  Test "IPv6 concrete CIDR values preserve CIDR and family-specific text styles" passed after 0.001 seconds.
+􁁛  Test "Concrete CIDR block and multicast raw UTF-8 writers preserve canonical output" passed after 0.001 seconds.
+􁁛  Test "IPv4 CIDR descriptions cover small-string and maximum-length output" passed after 0.001 seconds.
+􁁛  Suite "IP Multicast Tests" passed after 0.003 seconds.
+􁁛  Suite "CIDR UTF-8 Formatting Tests" passed after 0.003 seconds.
+􁁛  Suite "Contextual address views and containment" passed after 0.003 seconds.
+􁁛  Suite "IPv6 Compression Tests" passed after 0.003 seconds.
+􁁛  Suite "Any IP Wrapper Tests" passed after 0.003 seconds.
+􁁛  Suite "Concrete CIDR Formatting Tests" passed after 0.003 seconds.
+􁁛  Suite "IP Summarization Tests" passed after 0.003 seconds.
+􁁛  Test run with 67 tests in 7 suites passed after 0.003 seconds.
