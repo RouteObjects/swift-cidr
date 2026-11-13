@@ -187,8 +187,24 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
     ///
     /// This delegates range-to-CIDR math to swift-cidr. The returned networks preserve exact
     /// coverage, but their prefix lengths need not match prefixes used to construct this range.
+    @inlinable
     public func summarizedNetworks() -> [IPNetwork<Family>] {
-        IPNetwork<Family>.summarize(from: lowerBound, to: upperBound)
+        var result: [IPNetwork<Family>] = []
+        summarizedNetworks(into: &result)
+        return result
+    }
+
+    /// Appends the smallest ordered list of canonical networks covering this exact range.
+    ///
+    /// Existing elements are preserved. The appended networks are not merged, deduplicated, or
+    /// reordered with earlier elements. Retaining the array's capacity can reuse storage across
+    /// calls; destination growth or copy-on-write can still allocate.
+    ///
+    /// - Parameter result: The array to which this range's networks are appended.
+    @inlinable
+    public func summarizedNetworks(into result: inout [IPNetwork<Family>]) {
+        // CHANGE: Append directly so callers can summarize multiple ranges into one destination.
+        IPNetwork<Family>.summarize(from: lowerBound, to: upperBound, into: &result)
     }
 
     /// Decodes a range from its canonical single-string representation.

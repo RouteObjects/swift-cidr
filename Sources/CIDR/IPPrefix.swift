@@ -172,27 +172,56 @@ public extension IPPrefix {
     /// - Returns: A minimal ordered list of canonical prefixes covering `start...end`. When `start` is
     ///   greater than `end`, the ordered range is empty, so the result is an empty list rather than an
     ///   error.
+    @inlinable
     static func summarize(from start: IPAddress<Family>, to end: IPAddress<Family>) -> [Self] {
+        var result: [Self] = []
+        summarize(from: start, to: end, into: &result)
+        return result
+    }
+
+    /// Appends the smallest ordered set of aligned prefixes covering an inclusive address range.
+    ///
+    /// Existing elements in `result` are preserved. The appended prefixes cover exactly the address
+    /// bits in `start...end`; endpoint prefix context does not change that interval. This method does
+    /// not merge, deduplicate, or reorder prefixes already in `result`. Reversed endpoints append
+    /// nothing. The caller can retain capacity between calls to reuse the destination's storage.
+    ///
+    /// - Parameters:
+    ///   - start: The first address in the inclusive range.
+    ///   - end: The last address in the inclusive range.
+    ///   - result: The array to which the range's canonical prefixes are appended.
+    @inlinable
+    static func summarize(
+        from start: IPAddress<Family>,
+        to end: IPAddress<Family>,
+        into result: inout [Self]
+    ) {
+        let startAddr = start.address
+        let endAddr = end.address
+        guard startAddr <= endAddr else { return }
+        if startAddr == 0, endAddr == Family.Storage.max {
+            result.append(Self(prefix: 0, prefixLength: .zero))
+            return
+        }
+
+        // CHANGE: Storage width governs prefix math even when a custom family overrides metadata.
         let bitWidth = Family.Storage.bitWidth
         let one: Family.Storage = 1
-        if start.address == 0, end.address == Family.Storage.max {
-            let prefix = PrefixLength<Family>.zero
-            return [Self(address: IPAddress(address: 0), prefixLength: prefix)]
-        }
-        var current = start.address
-        let endAddr = end.address
-        var result: [Self] = []
-        while current <= endAddr {
-            let remaining = endAddr - current + 1
-            let maxBlockShift = bitWidth - remaining.leadingZeroBitCount - 1
+        var current = startAddr
+        while true {
+            // CHANGE: Excluding the full space makes remaining representable and positive. The
+            // selected span is in 1...remaining, with its shift strictly below the storage width.
+            let remaining = (endAddr &- current) &+ 1
+            let maxBlockShift = bitWidth &- remaining.leadingZeroBitCount &- 1
             let shift = min(maxBlockShift, current.trailingZeroBitCount)
-            let length = PrefixLength<Family>(preconditioned: bitWidth - shift)
+            let length = PrefixLength<Family>(preconditioned: bitWidth &- shift)
             result.append(Self(prefix: current, prefixLength: length))
-            let (next, overflow) = current.addingReportingOverflow(one << shift)
-            if overflow { break }
-            current = next
+            let span = one &<< shift
+            // Finish before advancing past the final block, including one ending at max.
+            // Otherwise span < remaining, so current advances without overflow and stays <= end.
+            if span == remaining { break }
+            current &+= span
         }
-        return result
     }
 
     /// Summarizes two unordered endpoint addresses into the smallest set of aligned prefixes.

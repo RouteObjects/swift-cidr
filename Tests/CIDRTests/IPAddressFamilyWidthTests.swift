@@ -66,6 +66,25 @@ struct IPAddressFamilyWidthTests {
         #expect(IPNetwork<MisdeclaredWidthFamily>("7/40") == nil)
         #expect(IPNetwork<MisdeclaredWidthFamily>("7/32")?.prefixLength.rawValue == 32)
     }
+
+    @Test("Summarization uses storage width even when family metadata disagrees")
+    func summarizationIgnoresMisdeclaredWidth() throws {
+        // CHANGE: The append kernel must retain Storage.bitWidth as its arithmetic authority.
+        let start = IPAddress<MisdeclaredWidthFamily>(address: 0xFFFF_FFFE)
+        let end = IPAddress<MisdeclaredWidthFamily>(address: .max)
+        let expected = IPNetwork<MisdeclaredWidthFamily>(
+            prefix: start.address, prefixLength: try #require(PrefixLength(31))
+        )
+        var result: [IPNetwork<MisdeclaredWidthFamily>] = []
+        IPNetwork<MisdeclaredWidthFamily>.summarize(from: start, to: end, into: &result)
+        #expect(result == [expected])
+        #expect(IPNetwork<MisdeclaredWidthFamily>.summarize(from: start, to: end) == [expected])
+
+        let range = try #require(IPAddressRange(lowerBound: start, upperBound: end))
+        range.summarizedNetworks(into: &result)
+        IPAddressCoverage([range]).summarizedNetworks(into: &result)
+        #expect(result == [expected, expected, expected])
+    }
 }
 
 private enum DerivedWidthFamily: IPAddressFamily {

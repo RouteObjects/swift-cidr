@@ -76,7 +76,28 @@ public struct IPAddressCoverage<Family: IPAddressFamily>: Sendable, Hashable {
     /// Each disjoint range delegates to swift-cidr's range summarizer. Because normalized ranges are
     /// ascending and separated by gaps, concatenating those summaries is deterministic and cannot
     /// merge across uncovered addresses.
+    @inlinable
     public func summarizedNetworks() -> [IPNetwork<Family>] {
-        ranges.flatMap { $0.summarizedNetworks() }
+        var result: [IPNetwork<Family>] = []
+        summarizedNetworks(into: &result)
+        return result
+    }
+
+    /// Appends the smallest ordered list of canonical networks covering this exact coverage set.
+    ///
+    /// Existing elements are preserved. The appended summary is ordered and minimal for this
+    /// coverage set, but is not merged, deduplicated, or reordered with earlier elements. Empty
+    /// coverage appends nothing. Capacity is reserved for at least one network per range; ranges
+    /// that expand into multiple networks may require further destination growth.
+    ///
+    /// - Parameter result: The array to which this coverage set's networks are appended.
+    @inlinable
+    public func summarizedNetworks(into result: inout [IPNetwork<Family>]) {
+        guard !ranges.isEmpty else { return }
+        // CHANGE: Reserve a conservative lower bound and eliminate each range's temporary array.
+        result.reserveCapacity(result.count + ranges.count)
+        for range in ranges {
+            range.summarizedNetworks(into: &result)
+        }
     }
 }

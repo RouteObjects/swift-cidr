@@ -376,6 +376,24 @@ if let network = IPv4Network("192.0.2.0/24"),
 }
 ```
 
+The `summarize(from:to:into:)` overload appends to a caller-owned array:
+
+```swift
+var networks: [IPv4Network] = []
+IPv4Network.summarize(
+    from: IPv4Address(address: 0xC0000201),
+    to: IPv4Address(address: 0xC00002FE),
+    into: &networks
+)
+```
+
+`IPAddressRange` and `IPAddressCoverage` also provide
+`summarizedNetworks(into:)`. Each call preserves earlier elements and appends
+its own ordered, minimal summary; it does not merge or reorder the existing
+destination. Reversed endpoints and empty coverage append nothing. Coverage
+appends avoid per-range temporary arrays. Retaining capacity can also reuse
+destination storage, although growth or copy-on-write can still allocate.
+
 ### Contextual Address Traversal and Containment
 
 `IPNetwork` and its explicit `addresses` view yield addresses with the parent

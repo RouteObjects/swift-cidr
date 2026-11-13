@@ -1,0 +1,252 @@
+{
+  "baseline_revision": "9a2e78c5f4e3d1d08dd54b2f9b856c874dae56d0",
+  "candidate_branch": "perf/summarization-append",
+  "candidate_committed": false,
+  "test_runs": [
+    {
+      "name": "macos-debug",
+      "tests": 295,
+      "suites": 33,
+      "exit_code": 0
+    },
+    {
+      "name": "macos-release",
+      "tests": 295,
+      "suites": 33,
+      "exit_code": 0
+    },
+    {
+      "name": "arm64-6.2.4-debug",
+      "tests": 295,
+      "suites": 33,
+      "exit_code": 0,
+      "log_sha256": "9843604db86771303a9336c52143f98f683205a015622ef34fe0b18533cdc68b"
+    },
+    {
+      "name": "arm64-6.2.4-release",
+      "tests": 295,
+      "suites": 33,
+      "exit_code": 0,
+      "log_sha256": "a5cbd21b2f512889fdeb2abd30626d1bb5610f5528a95bbf80ff3fe8b8c27623"
+    },
+    {
+      "name": "arm64-6.3.3-debug",
+      "tests": 295,
+      "suites": 33,
+      "exit_code": 0,
+      "log_sha256": "7f4a67ae79e9e4da8141745ebf7aede9fe5dc08b53f848715b4a39fc3b79a8ab"
+    },
+    {
+      "name": "arm64-6.3.3-release",
+      "tests": 295,
+      "suites": 33,
+      "exit_code": 0,
+      "log_sha256": "acc4a665527e25e9fa27e4dca1c7247b9bdf85b1d474564a00c8ab9f08fd8c66"
+    },
+    {
+      "name": "x86_64-6.2.4-debug",
+      "tests": 295,
+      "suites": 33,
+      "exit_code": 0,
+      "log_sha256": "62b751a12c08ba2e0a6c37180cea8f68fbd08c181fb62f330292906e4fbfe424"
+    },
+    {
+      "name": "x86_64-6.2.4-release",
+      "tests": 295,
+      "suites": 33,
+      "exit_code": 0,
+      "log_sha256": "7c0b36bbb5820d50d11c96a5fb2340f4f8df10b5a2b133e1a0c86d6acdc5ee96"
+    },
+    {
+      "name": "x86_64-6.3.3-debug",
+      "tests": 295,
+      "suites": 33,
+      "exit_code": 0,
+      "log_sha256": "39da91e313d2fc4ef0be51df003d6a1fb451fe23dad92fa1a0a6c9619c323d34"
+    },
+    {
+      "name": "x86_64-6.3.3-release",
+      "tests": 295,
+      "suites": 33,
+      "exit_code": 0,
+      "log_sha256": "0b3cb70a8a6295853cc067c7ce9844774a99591a5bd75ea347547386407017bc"
+    }
+  ],
+  "ios18_simulator_targets_passed": [
+    "CIDR",
+    "CIDRArgumentParser",
+    "CIDRPOSIX",
+    "CIDRNIO"
+  ],
+  "production_sources": {
+    "Sources/CIDR/IPPrefix.swift": {
+      "current_sha256": "5ed06e5b6ba9e209bc4dfeb3cc20fd8dd197ea7598c30356820a7d8cf661b796",
+      "tested_snapshot_sha256": "5ed06e5b6ba9e209bc4dfeb3cc20fd8dd197ea7598c30356820a7d8cf661b796",
+      "identical": true
+    },
+    "Sources/CIDR/IPAddressRange.swift": {
+      "current_sha256": "0344abf3304cf5c0cda2b0c9d125ef79ddf60d292518c7da3efb7e7763a2120e",
+      "tested_snapshot_sha256": "0344abf3304cf5c0cda2b0c9d125ef79ddf60d292518c7da3efb7e7763a2120e",
+      "identical": true
+    },
+    "Sources/CIDR/IPAddressCoverage.swift": {
+      "current_sha256": "fbebe8f781cd06abb0099c08f7e74a49492b208f40779f3a7ddb8b268c0433ce",
+      "tested_snapshot_sha256": "fbebe8f781cd06abb0099c08f7e74a49492b208f40779f3a7ddb8b268c0433ce",
+      "identical": true
+    }
+  },
+  "matched_standard_benchmark_policy_passed": true,
+  "absolute_threshold_failures": {
+    "baseline": [
+      "formatter.ipv4.swift.zero",
+      "formatter.ipv6.compressed.swift.loopback",
+      "formatter.ipv6.compressed.swift.mappedHex",
+      "formatter.ipv6.compressed.swift.max",
+      "formatter.ipv6.compressed.swift.middleCompressed",
+      "formatter.ipv6.compressed.swift.middleCompressed2",
+      "formatter.ipv6.compressed.swift.simple",
+      "formatter.ipv6.compressed.swift.trailingCompressed",
+      "parser.cidr.ipAddress.v4"
+    ],
+    "candidate": [
+      "formatter.ipv4.swift.simple",
+      "formatter.ipv4.swift.zero",
+      "formatter.ipv6.compressed.swift.loopback",
+      "formatter.ipv6.compressed.swift.mappedHex",
+      "formatter.ipv6.compressed.swift.max",
+      "formatter.ipv6.compressed.swift.middleCompressed",
+      "formatter.ipv6.compressed.swift.simple",
+      "formatter.ipv6.compressed.swift.trailingCompressed",
+      "parser.cidr.ipAddress.v4"
+    ]
+  },
+  "count_metrics_unchanged": true,
+  "threshold_files_unchanged": true,
+  "historical_threshold_comparability": "Not a controlled same-environment comparison: macOS was upgraded before this experiment; threshold files lack generation-environment metadata. Exact drift cause is not established.",
+  "macos_measured_toolchain": "Selected Xcode 26.6 / Apple Swift 6.3.3 on macOS 27.2.1; installed Xcode and Command Line Tools 27.2 / Swift 6.4.2 were verified separately afterward and did not produce these measurements.",
+  "targeted_repetitions": [
+    {
+      "case": "currency.ipAddress.v6.hash",
+      "median_paired_p50_change_percent": 1.5176366879200431,
+      "median_paired_p90_change_percent": -0.4548614626390113,
+      "baseline_absolute_failure_rounds": [],
+      "candidate_absolute_failure_rounds": [],
+      "candidate_failure_when_baseline_passes": []
+    },
+    {
+      "case": "formatter.ipv4.swift.simple",
+      "median_paired_p50_change_percent": 0.0,
+      "median_paired_p90_change_percent": 0.5150415544890596,
+      "baseline_absolute_failure_rounds": [
+        1
+      ],
+      "candidate_absolute_failure_rounds": [
+        1,
+        5
+      ],
+      "candidate_failure_when_baseline_passes": [
+        5
+      ]
+    },
+    {
+      "case": "formatter.ipv6.compressed.swift.middleCompressed2",
+      "median_paired_p50_change_percent": -1.3035211906896271,
+      "median_paired_p90_change_percent": -1.943299930366832,
+      "baseline_absolute_failure_rounds": [
+        1
+      ],
+      "candidate_absolute_failure_rounds": [],
+      "candidate_failure_when_baseline_passes": []
+    }
+  ],
+  "arm64_isolated_allocation_control": {
+    "summarization.coverage.v4.fragmented.ranges16384.appendFresh": [
+      6.0,
+      6.0,
+      6.0
+    ],
+    "summarization.coverage.v4.fragmented.ranges16384.appendReused": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "summarization.coverage.v6.fragmented.ranges16384.appendFresh": [
+      8.0,
+      8.0,
+      8.0
+    ],
+    "summarization.coverage.v6.fragmented.ranges16384.appendReused": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "summarization.prefix.v4.singleton.appendFresh": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "summarization.prefix.v4.singleton.appendReused": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "summarization.prefix.v6.singleton.appendFresh": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "summarization.prefix.v6.singleton.appendReused": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "x86_64_isolated_allocation_control": {
+    "summarization.coverage.v4.fragmented.ranges16384.appendFresh": [
+      6.0,
+      6.0,
+      6.0
+    ],
+    "summarization.coverage.v4.fragmented.ranges16384.appendReused": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "summarization.coverage.v6.fragmented.ranges16384.appendFresh": [
+      8.0,
+      8.0,
+      8.0
+    ],
+    "summarization.coverage.v6.fragmented.ranges16384.appendReused": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "summarization.prefix.v4.singleton.appendFresh": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "summarization.prefix.v4.singleton.appendReused": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "summarization.prefix.v6.singleton.appendFresh": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "summarization.prefix.v6.singleton.appendReused": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "x86_64_remaining": [],
+  "x86_64_raw_audit_passed": true,
+  "x86_64_all_reused_allocation_samples_zero": true,
+  "x86_64_reused_allocation_sample_count": 6278,
+  "x86_64_connection_closed": true,
+  "qualification_status": "Requested test and benchmark runs complete; matched regression checks passed with existing absolute timing failures documented; publication not authorized."
+}
