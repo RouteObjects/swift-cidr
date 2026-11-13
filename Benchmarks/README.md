@@ -266,3 +266,8 @@ swift build --target CIDRProfileTarget
 2. Update the committed threshold snapshot only after an intentional performance change.
 3. Use `thresholds check` in regular verification to catch regressions.
 4. Use named baselines only for local A/B performance work, not as the long-term reviewed artifact.
+The committed 79-case threshold snapshot was regenerated on 2026-11-13 using
+Xcode 27.2 / Swift 6.4.2 after the host and toolchain upgrade. This intentional
+environment refresh preserves allocation/ARC limits and all existing tolerances.
+See the [maintenance provenance](Results/2026-11-13-swift64-thresholds/MAINTENANCE.md)
+for the native export procedure and independent fresh verification.
