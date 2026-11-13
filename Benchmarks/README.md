@@ -117,6 +117,102 @@ The default benchmark commands remain unchanged:
 ./scripts/benchmarks.sh check
 ```
 
+## Summarization Benchmarks
+
+`CIDRSummarizationBenchmarkTarget` is opt-in and has no committed thresholds.
+It measures the public prefix, range, and coverage summarizers with prebuilt
+IPv4/IPv6 fixtures, reporting wall/user CPU time, malloc counts/bytes, ARC
+traffic, and process-level peak resident memory. Peak memory is not an
+allocation-per-call measurement. Fixture construction and coverage coalescing
+are excluded; every result passes through `blackHole`. Count/memory metrics
+explicitly use base units so histogram exports do not round them to K/M units.
+
+```bash
+CIDR_BENCHMARK_TARGET=CIDRSummarizationBenchmarkTarget ./scripts/benchmarks.sh build
+CIDR_BENCHMARK_TARGET=CIDRSummarizationBenchmarkTarget ./scripts/benchmarks.sh list
+CIDR_BENCHMARK_TARGET=CIDRSummarizationBenchmarkTarget ./scripts/benchmarks.sh run \
+  --filter '.*\.returning' --no-progress
+```
+
+The same sources compile against the pre-optimization library: the default
+44 cases use only the existing array-returning API. Compile the candidate with
+`SUMMARIZATION_APPEND_APIS` to add fresh-array and reusable-buffer append cases
+(132 total), preserving the original names for matched comparisons:
+
+```bash
+CIDR_BENCHMARK_TARGET=CIDRSummarizationBenchmarkTarget ./scripts/benchmarks.sh build \
+  -Xswiftc -DSUMMARIZATION_APPEND_APIS
+CIDR_BENCHMARK_TARGET=CIDRSummarizationBenchmarkTarget ./scripts/benchmarks.sh list \
+  --Xswiftc -DSUMMARIZATION_APPEND_APIS
+CIDR_BENCHMARK_TARGET=CIDRSummarizationBenchmarkTarget ./scripts/benchmarks.sh run \
+  --Xswiftc -DSUMMARIZATION_APPEND_APIS --filter '.*\.appendReused' --no-progress
+```
+
+Each case uses three warmup batches, at most 300 ms and 1,000 measured batches.
+Prefix/range calls and one-range coverage use 1,000 calls per batch; coverage
+with 1,024 or 16,384 normalized disjoint ranges uses one call per batch. Use
+`--scale` for per-call batch means. Those percentiles describe batch means,
+not individual-call latency; further division by the range count yields a
+per-input-range mean. `histogramSamples` exports quantized histogram
+observations, not chronological exact samples. Keep original unscaled exports,
+compiler versions, revisions, commands, and repeat ordering when comparing.
+
+For a separate fixture check, build/list with
+`--Xswiftc -DSUMMARIZATION_VALIDATE_FIXTURES` (or `-Xswiftc` with `build`). This
+verifies every expected output count using the returning APIs. Rebuild without
+that flag before timing so validation does not precondition allocator state.
+
+Single-range cases are singleton, aligned, maximally fragmented (`1...max-1`),
+near-maximum ending at `max`, and full-family `/0`. Coverage fixtures use
+singleton, aligned, fragmented, and near-maximum shapes at each range count.
+The slot width is `2^16` for IPv4 and `2^64` for IPv6; gaps keep all input ranges
+disjoint after normalization. Each coverage range emits these network counts:
+
+| Shape | IPv4 | IPv6 |
+|---|---:|---:|
+| singleton / aligned | 1 | 1 |
+| fragmented | 30 | 126 |
+| nearMax | 16 | 64 |
+
+`appendFresh` includes allocation and disposal. `appendReused` reserves the
+known output capacity in a uniquely owned local array before measurement,
+then clears it with `removeAll(keepingCapacity: true)` inside the measured
+loop. Its setup allocation and final disposal are excluded. No array alias is
+retained across mutations. Compare these as distinct ownership workloads;
+do not attribute their difference solely to the summarization loop.
+
+`Tools/SummarizationComparison/compare.py` runs six alternating baseline/candidate
+rounds against already-built executables. Point `CIDR_BASELINE_BUILD` and
+`CIDR_CANDIDATE_BUILD` at their Release binary directories and choose a new
+`CIDR_RESULTS_DIR`; existing result directories are rejected:
+
+```bash
+python3 Benchmarks/Tools/SummarizationComparison/compare.py \
+  --baseline-tool "$CIDR_BASELINE_BUILD/BenchmarkTool" \
+  --baseline-executable "$CIDR_BASELINE_BUILD/CIDRSummarizationBenchmarkTarget" \
+  --candidate-tool "$CIDR_CANDIDATE_BUILD/BenchmarkTool" \
+  --candidate-executable "$CIDR_CANDIDATE_BUILD/CIDRSummarizationBenchmarkTarget" \
+  --output "$CIDR_RESULTS_DIR"
+```
+
+The runner retains commands, executable hashes, unscaled histogram exports,
+sample counts, per-run medians, and paired ratios. Use `--metric wallClock`
+for a counter-disabled timing control, with malloc and ARC measurement disabled.
+The linked allocator interposer remains loaded, so this is not a completely
+uninstrumented executable. On Linux,
+provide `--baseline-preload` and `--candidate-preload` with the interposer paths
+selected by the locked Benchmark plugin; verify that allocation runs report
+nonzero counts for fresh arrays before interpreting zero-allocation results.
+Peak resident memory describes the benchmark process and is not divided by
+the batch size.
+
+On Linux, the full profile can count allocations made by the benchmark's own
+CPU/RSS process-stat collection. Those reads occur inside its malloc snapshot
+window even when they occur outside the wall-clock interval. Preserve these
+observations as process-wide measurements. To check the append buffer's
+allocation behavior separately, override the metrics with `mallocCountTotal`
+only; do not subtract an assumed fixed profiling overhead from the full pass.
+
 ## SwiftNIO Adapter Benchmarks
 
 `CIDRNIOBenchmarkTarget` measures `ByteBuffer`, direct IPv6 literal formatting,
@@ -170,3 +266,8 @@ swift build --target CIDRProfileTarget
 2. Update the committed threshold snapshot only after an intentional performance change.
 3. Use `thresholds check` in regular verification to catch regressions.
 4. Use named baselines only for local A/B performance work, not as the long-term reviewed artifact.
+The committed 79-case threshold snapshot was regenerated on 2026-11-13 using
+Xcode 27.2 / Swift 6.4.2 after the host and toolchain upgrade. This intentional
+environment refresh preserves allocation/ARC limits and all existing tolerances.
+See the [maintenance provenance](Results/2026-11-13-swift64-thresholds/MAINTENANCE.md)
+for the native export procedure and independent fresh verification.

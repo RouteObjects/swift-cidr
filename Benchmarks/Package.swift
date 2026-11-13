@@ -63,6 +63,18 @@ let package = Package(
             ]
         ),
         .executableTarget(
+            name: "CIDRSummarizationBenchmarkTarget",
+            dependencies: [
+                .product(name: "CIDR", package: "swift-cidr"),
+                .product(name: "Benchmark", package: "benchmark"),
+            ],
+            path: "CIDRSummarizationBenchmarkTarget",
+            plugins: [
+                // CHANGE: Array-producing summaries have a separate, opt-in allocation profile.
+                .plugin(name: "BenchmarkPlugin", package: "benchmark"),
+            ]
+        ),
+        .executableTarget(
             name: "CIDRNIOBenchmarkTarget",
             dependencies: [
                 .product(name: "CIDR", package: "swift-cidr"),

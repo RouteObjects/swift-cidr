@@ -97,8 +97,8 @@ private func benchmarkAddressRange<Family: IPAddressFamily>(
     return range
 }
 
-@MainActor
-let benchmarks = {
+// CHANGE: Match the runner's nonisolated registration hook with an immutable Sendable closure.
+let benchmarks: @Sendable () -> Void = {
     let parserMetrics: [BenchmarkMetric] = [
         .wallClock,
         .mallocCountSmall,

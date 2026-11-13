@@ -1,0 +1,2142 @@
+{
+  "report": "Xcode 27.2 / Swift 6.4.2 macOS rerun",
+  "baseline_revision": "9a2e78c5f4e3d1d08dd54b2f9b856c874dae56d0",
+  "candidate_branch": "perf/summarization-append",
+  "candidate_committed": false,
+  "cidrmerge_release_gate": "Unchanged: review and release swift-cidr before updating cidrmerge.",
+  "environment": {
+    "observed": {
+      "swift": {
+        "command": [
+          "swift",
+          "--version"
+        ],
+        "stdout": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0\n",
+        "stderr": "swift-driver version: 1.168.6 "
+      },
+      "xcode": {
+        "command": [
+          "xcodebuild",
+          "-version"
+        ],
+        "stdout": "Xcode 27.2\nBuild version 27B52\n",
+        "stderr": ""
+      },
+      "selected": {
+        "command": [
+          "xcode-select",
+          "-p"
+        ],
+        "stdout": "/Applications/Xcode-27.2.0.app/Contents/Developer\n",
+        "stderr": ""
+      },
+      "sdk": {
+        "command": [
+          "xcrun",
+          "--sdk",
+          "macosx",
+          "--show-sdk-version"
+        ],
+        "stdout": "27.2\n",
+        "stderr": ""
+      },
+      "os": {
+        "command": [
+          "sw_vers"
+        ],
+        "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t27.2.1\nBuildVersion:\t\t26B131\n",
+        "stderr": ""
+      },
+      "swift_path": {
+        "command": [
+          "xcrun",
+          "--find",
+          "swift"
+        ],
+        "stdout": "/Applications/Xcode-27.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift\n",
+        "stderr": ""
+      }
+    },
+    "environment": {
+      "DEVELOPER_DIR": "/Applications/Xcode-27.2.0.app/Contents/Developer",
+      "PATH": "/Applications/Xcode-27.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/craig/.grok/bin:/Users/craig/.local/bin:/Users/craig/.local/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/Apple/usr/bin:/Applications/Wireshark.app/Contents/MacOS:/Applications/VMware Fusion.app/Contents/Public:/Users/craig/.codex/tmp/arg0-macos/codex-arg0ZagRia:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/craig/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/craig/.grok/bin:/Users/craig/.local/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/craig/.docker/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Applications/Obsidian.app/Contents/MacOS:/Users/craig/.orbstack/bin:/Users/craig/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/craig/.docker/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Applications/Obsidian.app/Contents/MacOS:/Users/craig/.orbstack/bin",
+      "CLANG_MODULE_CACHE_PATH": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/module-cache",
+      "SWIFTPM_MODULECACHE_OVERRIDE": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/module-cache"
+    }
+  },
+  "source_provenance": {
+    "baseline": {
+      "files": {
+        "Sources/CIDR/IPPrefix.swift": "e6a16f473c6e3ff4cdf09ecc1095726d9ad4e4c534d6a82505447d9b6ae4e7c8",
+        "Sources/CIDR/IPAddressRange.swift": "ead64e2d83364b773f26ef8c654da4b9a727799bdf01167f337b4bb3ad992403",
+        "Sources/CIDR/IPAddressCoverage.swift": "f46b4ab977bb7cebc66c5ea86b95ad9d7d189d0e2451f0780a31013d0b095c5c",
+        "Package.resolved": "192209f525224dc9dbe1bd2cd699494d6b7e3093cdb8cbafd29bbce129bfa12e",
+        "Benchmarks/Package.resolved": "e46451373901b723ac6a0c0ac639cf4c764c3700de39408003b944064f3a2fe1",
+        "Benchmarks/CIDRSummarizationBenchmarkTarget/CIDRSummarizationBenchmarkTarget.swift": "74a87a081e7cd3301ecafa3bec71e1ac18435b4bbcc0f647138da5f96f9045ac",
+        "Benchmarks/CIDRSummarizationBenchmarkTarget/SummarizationFixtures.swift": "780b3ed5ad50eebbaa0e29f67012bd3441c16fc980b5cf03b3448ff5e1737e6b",
+        "Benchmarks/CIDRBenchmarkTarget/CIDRBenchmarkTarget.swift": "5025150f0a0d6baabc951a9a41194444513e13df7bd1ea9e3bf340fa5e433039"
+      }
+    },
+    "candidate": {
+      "files": {
+        "Sources/CIDR/IPPrefix.swift": "5ed06e5b6ba9e209bc4dfeb3cc20fd8dd197ea7598c30356820a7d8cf661b796",
+        "Sources/CIDR/IPAddressRange.swift": "0344abf3304cf5c0cda2b0c9d125ef79ddf60d292518c7da3efb7e7763a2120e",
+        "Sources/CIDR/IPAddressCoverage.swift": "fbebe8f781cd06abb0099c08f7e74a49492b208f40779f3a7ddb8b268c0433ce",
+        "Package.resolved": "192209f525224dc9dbe1bd2cd699494d6b7e3093cdb8cbafd29bbce129bfa12e",
+        "Benchmarks/Package.resolved": "e46451373901b723ac6a0c0ac639cf4c764c3700de39408003b944064f3a2fe1",
+        "Benchmarks/CIDRSummarizationBenchmarkTarget/CIDRSummarizationBenchmarkTarget.swift": "74a87a081e7cd3301ecafa3bec71e1ac18435b4bbcc0f647138da5f96f9045ac",
+        "Benchmarks/CIDRSummarizationBenchmarkTarget/SummarizationFixtures.swift": "780b3ed5ad50eebbaa0e29f67012bd3441c16fc980b5cf03b3448ff5e1737e6b",
+        "Benchmarks/CIDRBenchmarkTarget/CIDRBenchmarkTarget.swift": "5025150f0a0d6baabc951a9a41194444513e13df7bd1ea9e3bf340fa5e433039"
+      }
+    }
+  },
+  "binaries": {
+    "baseline": {
+      "tool": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/bin/baseline/BenchmarkTool",
+      "executable": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/bin/baseline/CIDRSummarizationBenchmarkTarget",
+      "standard_executable": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/bin/baseline/CIDRBenchmarkTarget",
+      "hashes": {
+        "CIDRSummarizationBenchmarkTarget": "857bc02976b982245465978b6fd035bea7e1a3966e2ab7b22d8612be41b0ef18",
+        "CIDRBenchmarkTarget": "83330126eb8f4cbcc3c0ee396fada07c08770ba6cdf57ac6cf7a760cb832ee1f",
+        "BenchmarkTool": "de9cc7d365db78dd1bb43cd97a16e19f9b0db693652314792175f6a3d07b99ed",
+        "libMallocInterposerSwift.dylib": "35c796ba35074616243e272dbec77d255aa45fab2fa92c8cfe3483c4c4af968e"
+      },
+      "build_directory": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/sources/baseline/Benchmarks/.build/out/Products/Release",
+      "build_system": "swiftbuild"
+    },
+    "candidate": {
+      "tool": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/bin/candidate/BenchmarkTool",
+      "executable": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/bin/candidate/CIDRSummarizationBenchmarkTarget",
+      "standard_executable": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/bin/candidate/CIDRBenchmarkTarget",
+      "hashes": {
+        "CIDRSummarizationBenchmarkTarget": "599266ba05a948d970cf67e4d3a43e45e672763d1a73d117b5409a25fa89e3ef",
+        "CIDRBenchmarkTarget": "43fe8aa299f8c19cd9e0690fc0fcc59165982e92f8fcd1c1f4e1f92c38e2fd36",
+        "BenchmarkTool": "8773f6e6b986b00e28410a7ae14711b3509025327a94483dff1b4376d64a7d35",
+        "libMallocInterposerSwift.dylib": "e304523fb0f0ef6756d9f810aac35c8636b7d5304bc5526ada84f603846ac136"
+      },
+      "build_directory": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/sources/candidate/Benchmarks/.build/out/Products/Release",
+      "build_system": "swiftbuild"
+    }
+  },
+  "correctness": {
+    "finished_utc": "2026-11-13T13:56:12.864123+00:00",
+    "all_commands_passed": true,
+    "sources_and_pins_unchanged": true,
+    "macos_tests": [
+      {
+        "label": "debug",
+        "cwd": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate",
+        "command": [
+          "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate/scripts/test.sh",
+          "--scratch-path",
+          "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/tests/build",
+          "--disable-automatic-resolution",
+          "-j",
+          "4"
+        ],
+        "shell_command": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate/scripts/test.sh --scratch-path /Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/tests/build --disable-automatic-resolution -j 4",
+        "environment_overrides": {
+          "DEVELOPER_DIR": "/Applications/Xcode-27.2.0.app/Contents/Developer",
+          "PATH_prefix": "/Applications/Xcode-27.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+          "CLANG_MODULE_CACHE_PATH": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/tests/clang-module-cache"
+        },
+        "started_utc": "2026-11-13T13:54:25.438540+00:00",
+        "log": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/tests/debug.log",
+        "finished_utc": "2026-11-13T13:55:08.698790+00:00",
+        "seconds": 43.26,
+        "exit_code": 0,
+        "test_summaries": [
+          "Test run with 230 tests in 30 suites passed after 1.436 seconds.",
+          "Test run with 3 tests in 1 suite passed after 0.001 seconds.",
+          "Test run with 23 tests in 1 suite passed after 0.002 seconds.",
+          "Test run with 39 tests in 1 suite passed after 0.042 seconds."
+        ],
+        "test_count": 295,
+        "suite_count": 33
+      },
+      {
+        "label": "release",
+        "cwd": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate",
+        "command": [
+          "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate/scripts/test.sh",
+          "--scratch-path",
+          "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/tests/build",
+          "--disable-automatic-resolution",
+          "-j",
+          "4",
+          "-c",
+          "release"
+        ],
+        "shell_command": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate/scripts/test.sh --scratch-path /Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/tests/build --disable-automatic-resolution -j 4 -c release",
+        "environment_overrides": {
+          "DEVELOPER_DIR": "/Applications/Xcode-27.2.0.app/Contents/Developer",
+          "PATH_prefix": "/Applications/Xcode-27.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+          "CLANG_MODULE_CACHE_PATH": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/tests/clang-module-cache"
+        },
+        "started_utc": "2026-11-13T13:55:08.699641+00:00",
+        "log": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/tests/release.log",
+        "finished_utc": "2026-11-13T13:55:46.871782+00:00",
+        "seconds": 38.172,
+        "exit_code": 0,
+        "test_summaries": [
+          "Test run with 230 tests in 30 suites passed after 0.518 seconds.",
+          "Test run with 3 tests in 1 suite passed after 0.001 seconds.",
+          "Test run with 23 tests in 1 suite passed after 0.001 seconds.",
+          "Test run with 39 tests in 1 suite passed after 0.008 seconds."
+        ],
+        "test_count": 295,
+        "suite_count": 33
+      }
+    ],
+    "ios18_builds": [
+      {
+        "label": "CIDR",
+        "cwd": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate",
+        "command": [
+          "swift",
+          "build",
+          "--package-path",
+          "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate",
+          "--scratch-path",
+          "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/build",
+          "--target",
+          "CIDR",
+          "--triple",
+          "arm64-apple-ios18.0-simulator",
+          "--sdk",
+          "/Applications/Xcode-27.2.0.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk",
+          "--force-resolved-versions",
+          "-j",
+          "4"
+        ],
+        "shell_command": "swift build --package-path /Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate --scratch-path /Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/build --target CIDR --triple arm64-apple-ios18.0-simulator --sdk /Applications/Xcode-27.2.0.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk --force-resolved-versions -j 4",
+        "environment_overrides": {
+          "DEVELOPER_DIR": "/Applications/Xcode-27.2.0.app/Contents/Developer",
+          "PATH_prefix": "/Applications/Xcode-27.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+          "CLANG_MODULE_CACHE_PATH": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/clang-module-cache"
+        },
+        "started_utc": "2026-11-13T13:55:46.872482+00:00",
+        "log": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/CIDR.log",
+        "finished_utc": "2026-11-13T13:55:53.092404+00:00",
+        "seconds": 6.22,
+        "exit_code": 0
+      },
+      {
+        "label": "CIDRArgumentParser",
+        "cwd": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate",
+        "command": [
+          "swift",
+          "build",
+          "--package-path",
+          "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate",
+          "--scratch-path",
+          "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/build",
+          "--target",
+          "CIDRArgumentParser",
+          "--triple",
+          "arm64-apple-ios18.0-simulator",
+          "--sdk",
+          "/Applications/Xcode-27.2.0.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk",
+          "--force-resolved-versions",
+          "-j",
+          "4"
+        ],
+        "shell_command": "swift build --package-path /Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate --scratch-path /Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/build --target CIDRArgumentParser --triple arm64-apple-ios18.0-simulator --sdk /Applications/Xcode-27.2.0.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk --force-resolved-versions -j 4",
+        "environment_overrides": {
+          "DEVELOPER_DIR": "/Applications/Xcode-27.2.0.app/Contents/Developer",
+          "PATH_prefix": "/Applications/Xcode-27.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+          "CLANG_MODULE_CACHE_PATH": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/clang-module-cache"
+        },
+        "started_utc": "2026-11-13T13:55:53.092960+00:00",
+        "log": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/CIDRArgumentParser.log",
+        "finished_utc": "2026-11-13T13:55:58.790748+00:00",
+        "seconds": 5.698,
+        "exit_code": 0
+      },
+      {
+        "label": "CIDRPOSIX",
+        "cwd": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate",
+        "command": [
+          "swift",
+          "build",
+          "--package-path",
+          "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate",
+          "--scratch-path",
+          "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/build",
+          "--target",
+          "CIDRPOSIX",
+          "--triple",
+          "arm64-apple-ios18.0-simulator",
+          "--sdk",
+          "/Applications/Xcode-27.2.0.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk",
+          "--force-resolved-versions",
+          "-j",
+          "4"
+        ],
+        "shell_command": "swift build --package-path /Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate --scratch-path /Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/build --target CIDRPOSIX --triple arm64-apple-ios18.0-simulator --sdk /Applications/Xcode-27.2.0.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk --force-resolved-versions -j 4",
+        "environment_overrides": {
+          "DEVELOPER_DIR": "/Applications/Xcode-27.2.0.app/Contents/Developer",
+          "PATH_prefix": "/Applications/Xcode-27.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+          "CLANG_MODULE_CACHE_PATH": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/clang-module-cache"
+        },
+        "started_utc": "2026-11-13T13:55:58.791446+00:00",
+        "log": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/CIDRPOSIX.log",
+        "finished_utc": "2026-11-13T13:56:00.957415+00:00",
+        "seconds": 2.165,
+        "exit_code": 0
+      },
+      {
+        "label": "CIDRNIO",
+        "cwd": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate",
+        "command": [
+          "swift",
+          "build",
+          "--package-path",
+          "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate",
+          "--scratch-path",
+          "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/build",
+          "--target",
+          "CIDRNIO",
+          "--triple",
+          "arm64-apple-ios18.0-simulator",
+          "--sdk",
+          "/Applications/Xcode-27.2.0.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk",
+          "--force-resolved-versions",
+          "-j",
+          "4"
+        ],
+        "shell_command": "swift build --package-path /Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/candidate --scratch-path /Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/build --target CIDRNIO --triple arm64-apple-ios18.0-simulator --sdk /Applications/Xcode-27.2.0.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk --force-resolved-versions -j 4",
+        "environment_overrides": {
+          "DEVELOPER_DIR": "/Applications/Xcode-27.2.0.app/Contents/Developer",
+          "PATH_prefix": "/Applications/Xcode-27.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+          "CLANG_MODULE_CACHE_PATH": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/clang-module-cache"
+        },
+        "started_utc": "2026-11-13T13:56:00.958312+00:00",
+        "log": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/ios18/CIDRNIO.log",
+        "finished_utc": "2026-11-13T13:56:12.857193+00:00",
+        "seconds": 11.898,
+        "exit_code": 0
+      }
+    ],
+    "ios_scope": "Compilation only for arm64 iOS 18 simulator deployment target using iPhoneSimulator 27.2 SDK; no iOS runtime tests.",
+    "compiler": "Apple Swift 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)",
+    "xcode": "27.2 (27B52)",
+    "developer_directory": "/Applications/Xcode-27.2.0.app/Contents/Developer",
+    "notes": [
+      "Original frozen candidate is unchanged; the current canonical append test differs only by formatting.",
+      "The initial restricted execution failed before package compilation because nested sandbox-exec was not permitted; preserved under tests/sandbox-attempt. Authorized retry succeeded.",
+      "Existing intentional deprecation warnings in legacy-containment tests are preserved."
+    ]
+  },
+  "registration_compatibility": {
+    "summarization": {
+      "updated_sha256": "74a87a081e7cd3301ecafa3bec71e1ac18435b4bbcc0f647138da5f96f9045ac",
+      "static_checks": {
+        "identical_in_three_paths": true,
+        "exact_requested_transform_only": true,
+        "measured_callbacks_unchanged": true,
+        "measured_sendable_callback_count": 9,
+        "old_baseline_retained": true
+      }
+    },
+    "standard": {
+      "updated_sha256": "5025150f0a0d6baabc951a9a41194444513e13df7bd1ea9e3bf340fa5e433039",
+      "static_checks": {
+        "identical_in_three_paths": true,
+        "exact_requested_transform_only": true,
+        "timed_callback_bodies_unchanged": true,
+        "old_baseline_retained": true
+      }
+    }
+  },
+  "swift63_compatibility_builds_passed": true,
+  "measurement_design": {
+    "returning_cases": 44,
+    "returning_pairs": 6,
+    "append_cases": 88,
+    "append_repetitions": 3,
+    "wall_only_cases": 6,
+    "wall_only_pairs": 6
+  },
+  "allocation_audit": {
+    "all_reuse_medians_zero": true,
+    "all_reused_samples_zero": true,
+    "reused_sample_count": 113636,
+    "fresh_sample_count": 99549,
+    "allocation_sensor_live_each_repetition": true
+  },
+  "raw_audit_passed": true,
+  "preservation_audit": {
+    "passed": true,
+    "manifests": [
+      {
+        "manifest": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/previous-evidence-hashes.json",
+        "manifest_sha256": "16cec32acbf93cf097d1f3188d5fd7a875704b46e3fb25b4a4abc7a80beee3f4",
+        "base": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization",
+        "expected_files": 27004,
+        "checked_files": 27004,
+        "checked_bytes": 157845466
+      },
+      {
+        "manifest": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9/work/summarization/macos-xcode27/preserved-deliverables.json",
+        "manifest_sha256": "90d3ea3901b6b4cb383c2492089b6b5036d7be840aee373797ee238fc59b0de4",
+        "base": "/Users/craig/Documents/Codex/2026-11-12/i-have-an-exciting-optimization-for-9",
+        "expected_files": 4,
+        "checked_files": 4,
+        "checked_bytes": 8120721
+      }
+    ],
+    "failures": [],
+    "audited_utc": "2026-11-13T14:17:24.970364+00:00",
+    "auditor_sha256": "5dbcf92dc5627459f5deff6f8953bda24e57538a25c0a8ff4b0ea87b7706872b"
+  },
+  "standard_suite": {
+    "comparison": {
+      "measurement": "HDR histogram p90 of each timed batch; per-operation figures divide that batch statistic by the benchmark scaling factor. These are not percentiles of individually timed operations.",
+      "cases": [
+        {
+          "case": "currency.anyIPAddress.projection",
+          "baseline_p90_batch_ns": 1997823,
+          "candidate_p90_batch_ns": 1992703,
+          "change_percent": -0.2562789596475712,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.997823,
+          "candidate_p90_batch_mean_ns_per_operation": 1.992703
+        },
+        {
+          "case": "currency.anyIPAddress.wrap",
+          "baseline_p90_batch_ns": 1000959,
+          "candidate_p90_batch_ns": 1005055,
+          "change_percent": 0.4092075699404285,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.000959,
+          "candidate_p90_batch_mean_ns_per_operation": 1.005055
+        },
+        {
+          "case": "currency.anyIPAddressRange.wrap",
+          "baseline_p90_batch_ns": 999423,
+          "candidate_p90_batch_ns": 999423,
+          "change_percent": 0.0,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 0.999423,
+          "candidate_p90_batch_mean_ns_per_operation": 0.999423
+        },
+        {
+          "case": "currency.anyIPNetwork.containsAddress",
+          "baseline_p90_batch_ns": 2332671,
+          "candidate_p90_batch_ns": 2322431,
+          "change_percent": -0.4389817509627414,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 2.332671,
+          "candidate_p90_batch_mean_ns_per_operation": 2.322431
+        },
+        {
+          "case": "currency.anyIPNetwork.wrap",
+          "baseline_p90_batch_ns": 1002495,
+          "candidate_p90_batch_ns": 1005055,
+          "change_percent": 0.2553628696402521,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.002495,
+          "candidate_p90_batch_mean_ns_per_operation": 1.005055
+        },
+        {
+          "case": "currency.anyPrefixLength.wrap",
+          "baseline_p90_batch_ns": 1000959,
+          "candidate_p90_batch_ns": 1010687,
+          "change_percent": 0.9718679786085094,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.000959,
+          "candidate_p90_batch_mean_ns_per_operation": 1.010687
+        },
+        {
+          "case": "currency.autonomousSystemNumber.compare",
+          "baseline_p90_batch_ns": 998399,
+          "candidate_p90_batch_ns": 995839,
+          "change_percent": -0.2564105132316863,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 0.998399,
+          "candidate_p90_batch_mean_ns_per_operation": 0.995839
+        },
+        {
+          "case": "currency.autonomousSystemNumber.hash",
+          "baseline_p90_batch_ns": 15327231,
+          "candidate_p90_batch_ns": 15310847,
+          "change_percent": -0.10689471568608999,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 15.327231,
+          "candidate_p90_batch_mean_ns_per_operation": 15.310847
+        },
+        {
+          "case": "currency.autonomousSystemNumber.init",
+          "baseline_p90_batch_ns": 999423,
+          "candidate_p90_batch_ns": 997887,
+          "change_percent": -0.15368867836741407,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 0.999423,
+          "candidate_p90_batch_mean_ns_per_operation": 0.997887
+        },
+        {
+          "case": "currency.ipAddress.v4.compare",
+          "baseline_p90_batch_ns": 995327,
+          "candidate_p90_batch_ns": 1000959,
+          "change_percent": 0.5658441898994004,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 0.995327,
+          "candidate_p90_batch_mean_ns_per_operation": 1.000959
+        },
+        {
+          "case": "currency.ipAddress.v4.hash",
+          "baseline_p90_batch_ns": 15450111,
+          "candidate_p90_batch_ns": 15392767,
+          "change_percent": -0.3711559094947581,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 15.450111,
+          "candidate_p90_batch_mean_ns_per_operation": 15.392767
+        },
+        {
+          "case": "currency.ipAddress.v4.init",
+          "baseline_p90_batch_ns": 1990655,
+          "candidate_p90_batch_ns": 1990655,
+          "change_percent": 0.0,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.990655,
+          "candidate_p90_batch_mean_ns_per_operation": 1.990655
+        },
+        {
+          "case": "currency.ipAddress.v4.initOctets",
+          "baseline_p90_batch_ns": 1993727,
+          "candidate_p90_batch_ns": 1994751,
+          "change_percent": 0.05136109407155587,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.993727,
+          "candidate_p90_batch_mean_ns_per_operation": 1.994751
+        },
+        {
+          "case": "currency.ipAddress.v4.network",
+          "baseline_p90_batch_ns": 1990655,
+          "candidate_p90_batch_ns": 1993727,
+          "change_percent": 0.15432106517703215,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.990655,
+          "candidate_p90_batch_mean_ns_per_operation": 1.993727
+        },
+        {
+          "case": "currency.ipAddress.v4.octets",
+          "baseline_p90_batch_ns": 1989631,
+          "candidate_p90_batch_ns": 1994751,
+          "change_percent": 0.2573341488949499,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.989631,
+          "candidate_p90_batch_mean_ns_per_operation": 1.994751
+        },
+        {
+          "case": "currency.ipAddress.v6.compare",
+          "baseline_p90_batch_ns": 1000959,
+          "candidate_p90_batch_ns": 1000959,
+          "change_percent": 0.0,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.000959,
+          "candidate_p90_batch_mean_ns_per_operation": 1.000959
+        },
+        {
+          "case": "currency.ipAddress.v6.hash",
+          "baseline_p90_batch_ns": 27131903,
+          "candidate_p90_batch_ns": 25837567,
+          "change_percent": -4.770531576793557,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 27.131903,
+          "candidate_p90_batch_mean_ns_per_operation": 25.837567
+        },
+        {
+          "case": "currency.ipAddress.v6.init",
+          "baseline_p90_batch_ns": 1992703,
+          "candidate_p90_batch_ns": 1994751,
+          "change_percent": 0.10277497449444617,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.992703,
+          "candidate_p90_batch_mean_ns_per_operation": 1.994751
+        },
+        {
+          "case": "currency.ipAddress.v6.initOctets",
+          "baseline_p90_batch_ns": 1992703,
+          "candidate_p90_batch_ns": 1990655,
+          "change_percent": -0.10277497449444617,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.992703,
+          "candidate_p90_batch_mean_ns_per_operation": 1.990655
+        },
+        {
+          "case": "currency.ipAddress.v6.network",
+          "baseline_p90_batch_ns": 1987583,
+          "candidate_p90_batch_ns": 1992703,
+          "change_percent": 0.2575993052868819,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.987583,
+          "candidate_p90_batch_mean_ns_per_operation": 1.992703
+        },
+        {
+          "case": "currency.ipAddress.v6.octets",
+          "baseline_p90_batch_ns": 2988031,
+          "candidate_p90_batch_ns": 2990079,
+          "change_percent": 0.06854011889434464,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 2.988031,
+          "candidate_p90_batch_mean_ns_per_operation": 2.990079
+        },
+        {
+          "case": "currency.ipAddressCoverage.v4.containsAddress",
+          "baseline_p90_batch_ns": 187695103,
+          "candidate_p90_batch_ns": 188216042,
+          "change_percent": 0.2775453337213518,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 187.695103,
+          "candidate_p90_batch_mean_ns_per_operation": 188.216042
+        },
+        {
+          "case": "currency.ipAddressCoverage.v6.containsAddress",
+          "baseline_p90_batch_ns": 187957247,
+          "candidate_p90_batch_ns": 187957247,
+          "change_percent": 0.0,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 187.957247,
+          "candidate_p90_batch_mean_ns_per_operation": 187.957247
+        },
+        {
+          "case": "currency.ipAddressRange.v4.containsAddress",
+          "baseline_p90_batch_ns": 997375,
+          "candidate_p90_batch_ns": 1000447,
+          "change_percent": 0.3080085223712281,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 0.997375,
+          "candidate_p90_batch_mean_ns_per_operation": 1.000447
+        },
+        {
+          "case": "currency.ipAddressRange.v4.init",
+          "baseline_p90_batch_ns": 1993727,
+          "candidate_p90_batch_ns": 1992703,
+          "change_percent": -0.05136109407155587,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.993727,
+          "candidate_p90_batch_mean_ns_per_operation": 1.992703
+        },
+        {
+          "case": "currency.ipAddressRange.v6.containsAddress",
+          "baseline_p90_batch_ns": 999423,
+          "candidate_p90_batch_ns": 1005055,
+          "change_percent": 0.5635251540138553,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 0.999423,
+          "candidate_p90_batch_mean_ns_per_operation": 1.005055
+        },
+        {
+          "case": "currency.ipAddressRange.v6.init",
+          "baseline_p90_batch_ns": 1991679,
+          "candidate_p90_batch_ns": 1997823,
+          "change_percent": 0.3084834453744856,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.991679,
+          "candidate_p90_batch_mean_ns_per_operation": 1.997823
+        },
+        {
+          "case": "currency.ipNetwork.v4.containsAddress",
+          "baseline_p90_batch_ns": 997375,
+          "candidate_p90_batch_ns": 998399,
+          "change_percent": 0.10266950745707604,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 0.997375,
+          "candidate_p90_batch_mean_ns_per_operation": 0.998399
+        },
+        {
+          "case": "currency.ipNetwork.v4.init",
+          "baseline_p90_batch_ns": 1991679,
+          "candidate_p90_batch_ns": 1991679,
+          "change_percent": 0.0,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.991679,
+          "candidate_p90_batch_mean_ns_per_operation": 1.991679
+        },
+        {
+          "case": "currency.ipNetwork.v6.containsAddress",
+          "baseline_p90_batch_ns": 1004031,
+          "candidate_p90_batch_ns": 1000959,
+          "change_percent": -0.3059666484401369,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.004031,
+          "candidate_p90_batch_mean_ns_per_operation": 1.000959
+        },
+        {
+          "case": "currency.ipNetwork.v6.init",
+          "baseline_p90_batch_ns": 1992703,
+          "candidate_p90_batch_ns": 1994751,
+          "change_percent": 0.10277497449444617,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.992703,
+          "candidate_p90_batch_mean_ns_per_operation": 1.994751
+        },
+        {
+          "case": "currency.prefixLength.v4.init",
+          "baseline_p90_batch_ns": 1995775,
+          "candidate_p90_batch_ns": 1993727,
+          "change_percent": -0.10261677794340951,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.995775,
+          "candidate_p90_batch_mean_ns_per_operation": 1.993727
+        },
+        {
+          "case": "currency.prefixLength.v6.init",
+          "baseline_p90_batch_ns": 1995775,
+          "candidate_p90_batch_ns": 2000895,
+          "change_percent": 0.25654194485851267,
+          "operations_per_batch": 1000000,
+          "baseline_p90_batch_mean_ns_per_operation": 1.995775,
+          "candidate_p90_batch_mean_ns_per_operation": 2.000895
+        },
+        {
+          "case": "formatter.asn.autonomousSystemNumber.max",
+          "baseline_p90_batch_ns": 24751,
+          "candidate_p90_batch_ns": 24591,
+          "change_percent": -0.6464385277362483,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 24.751,
+          "candidate_p90_batch_mean_ns_per_operation": 24.591
+        },
+        {
+          "case": "formatter.ipv4.inet_ntop.max",
+          "baseline_p90_batch_ns": 187519,
+          "candidate_p90_batch_ns": 187519,
+          "change_percent": 0.0,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 187.519,
+          "candidate_p90_batch_mean_ns_per_operation": 187.519
+        },
+        {
+          "case": "formatter.ipv4.inet_ntop.mixed",
+          "baseline_p90_batch_ns": 184063,
+          "candidate_p90_batch_ns": 185343,
+          "change_percent": 0.6954140701824985,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 184.063,
+          "candidate_p90_batch_mean_ns_per_operation": 185.343
+        },
+        {
+          "case": "formatter.ipv4.inet_ntop.simple",
+          "baseline_p90_batch_ns": 177407,
+          "candidate_p90_batch_ns": 175743,
+          "change_percent": -0.9379562249516638,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 177.407,
+          "candidate_p90_batch_mean_ns_per_operation": 175.743
+        },
+        {
+          "case": "formatter.ipv4.inet_ntop.zero",
+          "baseline_p90_batch_ns": 177023,
+          "candidate_p90_batch_ns": 176639,
+          "change_percent": -0.21692096507233138,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 177.023,
+          "candidate_p90_batch_mean_ns_per_operation": 176.639
+        },
+        {
+          "case": "formatter.ipv4.swift.max",
+          "baseline_p90_batch_ns": 13255,
+          "candidate_p90_batch_ns": 13215,
+          "change_percent": -0.3017729158808047,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 13.255,
+          "candidate_p90_batch_mean_ns_per_operation": 13.215
+        },
+        {
+          "case": "formatter.ipv4.swift.mixed",
+          "baseline_p90_batch_ns": 12591,
+          "candidate_p90_batch_ns": 12583,
+          "change_percent": -0.06353744738305522,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 12.591,
+          "candidate_p90_batch_mean_ns_per_operation": 12.583
+        },
+        {
+          "case": "formatter.ipv4.swift.simple",
+          "baseline_p90_batch_ns": 11959,
+          "candidate_p90_batch_ns": 12007,
+          "change_percent": 0.4013713521197504,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 11.959,
+          "candidate_p90_batch_mean_ns_per_operation": 12.007
+        },
+        {
+          "case": "formatter.ipv4.swift.zero",
+          "baseline_p90_batch_ns": 11919,
+          "candidate_p90_batch_ns": 11591,
+          "change_percent": -2.7519087171742562,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 11.919,
+          "candidate_p90_batch_mean_ns_per_operation": 11.591
+        },
+        {
+          "case": "formatter.ipv6.compressed.inet_ntop.allZero",
+          "baseline_p90_batch_ns": 67519,
+          "candidate_p90_batch_ns": 67903,
+          "change_percent": 0.5687288022630632,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 67.519,
+          "candidate_p90_batch_mean_ns_per_operation": 67.903
+        },
+        {
+          "case": "formatter.ipv6.compressed.inet_ntop.loopback",
+          "baseline_p90_batch_ns": 106815,
+          "candidate_p90_batch_ns": 103551,
+          "change_percent": -3.05575059682629,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 106.815,
+          "candidate_p90_batch_mean_ns_per_operation": 103.551
+        },
+        {
+          "case": "formatter.ipv6.compressed.inet_ntop.mappedHex",
+          "baseline_p90_batch_ns": 347391,
+          "candidate_p90_batch_ns": 345599,
+          "change_percent": -0.5158452579370199,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 347.391,
+          "candidate_p90_batch_mean_ns_per_operation": 345.599
+        },
+        {
+          "case": "formatter.ipv6.compressed.inet_ntop.middleCompressed",
+          "baseline_p90_batch_ns": 385023,
+          "candidate_p90_batch_ns": 385535,
+          "change_percent": 0.13297906878291244,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 385.023,
+          "candidate_p90_batch_mean_ns_per_operation": 385.535
+        },
+        {
+          "case": "formatter.ipv6.compressed.inet_ntop.middleCompressed2",
+          "baseline_p90_batch_ns": 388095,
+          "candidate_p90_batch_ns": 383487,
+          "change_percent": -1.1873381517412018,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 388.095,
+          "candidate_p90_batch_mean_ns_per_operation": 383.487
+        },
+        {
+          "case": "formatter.ipv6.compressed.inet_ntop.simple",
+          "baseline_p90_batch_ns": 181375,
+          "candidate_p90_batch_ns": 183295,
+          "change_percent": 1.0585802894555574,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 181.375,
+          "candidate_p90_batch_mean_ns_per_operation": 183.295
+        },
+        {
+          "case": "formatter.ipv6.compressed.inet_ntop.trailingCompressed",
+          "baseline_p90_batch_ns": 183167,
+          "candidate_p90_batch_ns": 177023,
+          "change_percent": -3.354316006704261,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 183.167,
+          "candidate_p90_batch_mean_ns_per_operation": 177.023
+        },
+        {
+          "case": "formatter.ipv6.compressed.swift.allZero",
+          "baseline_p90_batch_ns": 3375,
+          "candidate_p90_batch_ns": 3293,
+          "change_percent": -2.429629629629626,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 3.375,
+          "candidate_p90_batch_mean_ns_per_operation": 3.293
+        },
+        {
+          "case": "formatter.ipv6.compressed.swift.loopback",
+          "baseline_p90_batch_ns": 105343,
+          "candidate_p90_batch_ns": 109439,
+          "change_percent": 3.888250761797174,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 105.343,
+          "candidate_p90_batch_mean_ns_per_operation": 109.439
+        },
+        {
+          "case": "formatter.ipv6.compressed.swift.mappedHex",
+          "baseline_p90_batch_ns": 105599,
+          "candidate_p90_batch_ns": 112959,
+          "change_percent": 6.9697629712402565,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 105.599,
+          "candidate_p90_batch_mean_ns_per_operation": 112.959
+        },
+        {
+          "case": "formatter.ipv6.compressed.swift.max",
+          "baseline_p90_batch_ns": 114047,
+          "candidate_p90_batch_ns": 118335,
+          "change_percent": 3.759853393776247,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 114.047,
+          "candidate_p90_batch_mean_ns_per_operation": 118.335
+        },
+        {
+          "case": "formatter.ipv6.compressed.swift.middleCompressed",
+          "baseline_p90_batch_ns": 116223,
+          "candidate_p90_batch_ns": 119295,
+          "change_percent": 2.643194548411243,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 116.223,
+          "candidate_p90_batch_mean_ns_per_operation": 119.295
+        },
+        {
+          "case": "formatter.ipv6.compressed.swift.middleCompressed2",
+          "baseline_p90_batch_ns": 119551,
+          "candidate_p90_batch_ns": 120639,
+          "change_percent": 0.9100718521802387,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 119.551,
+          "candidate_p90_batch_mean_ns_per_operation": 120.639
+        },
+        {
+          "case": "formatter.ipv6.compressed.swift.simple",
+          "baseline_p90_batch_ns": 108991,
+          "candidate_p90_batch_ns": 112063,
+          "change_percent": 2.818581350753724,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 108.991,
+          "candidate_p90_batch_mean_ns_per_operation": 112.063
+        },
+        {
+          "case": "formatter.ipv6.compressed.swift.trailingCompressed",
+          "baseline_p90_batch_ns": 106495,
+          "candidate_p90_batch_ns": 110207,
+          "change_percent": 3.4856096530353486,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 106.495,
+          "candidate_p90_batch_mean_ns_per_operation": 110.207
+        },
+        {
+          "case": "formatter.ipv6.ipv4Mapped.swift.mapped",
+          "baseline_p90_batch_ns": 93055,
+          "candidate_p90_batch_ns": 100927,
+          "change_percent": 8.459513191123524,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 93.055,
+          "candidate_p90_batch_mean_ns_per_operation": 100.927
+        },
+        {
+          "case": "formatter.ipv6.preferred.swift.max",
+          "baseline_p90_batch_ns": 101375,
+          "candidate_p90_batch_ns": 109759,
+          "change_percent": 8.270283600493222,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 101.375,
+          "candidate_p90_batch_mean_ns_per_operation": 109.759
+        },
+        {
+          "case": "formatter.ipv6.preferred.swift.middleCompressed",
+          "baseline_p90_batch_ns": 105087,
+          "candidate_p90_batch_ns": 111743,
+          "change_percent": 6.333799613653457,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 105.087,
+          "candidate_p90_batch_mean_ns_per_operation": 111.743
+        },
+        {
+          "case": "formatter.ipv6.preferred.swift.middleCompressed2",
+          "baseline_p90_batch_ns": 107583,
+          "candidate_p90_batch_ns": 113791,
+          "change_percent": 5.770428413411044,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 107.583,
+          "candidate_p90_batch_mean_ns_per_operation": 113.791
+        },
+        {
+          "case": "formatter.ipv6.preferred.swift.simple",
+          "baseline_p90_batch_ns": 100927,
+          "candidate_p90_batch_ns": 99455,
+          "change_percent": -1.458479891406661,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 100.927,
+          "candidate_p90_batch_mean_ns_per_operation": 99.455
+        },
+        {
+          "case": "parser.asn.autonomousSystemNumber.max",
+          "baseline_p90_batch_ns": 21215,
+          "candidate_p90_batch_ns": 20639,
+          "change_percent": -2.715060098986566,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 21.215,
+          "candidate_p90_batch_mean_ns_per_operation": 20.639
+        },
+        {
+          "case": "parser.cidr.ipAddress.v4",
+          "baseline_p90_batch_ns": 13255,
+          "candidate_p90_batch_ns": 12919,
+          "change_percent": -2.5348924933987216,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 13.255,
+          "candidate_p90_batch_mean_ns_per_operation": 12.919
+        },
+        {
+          "case": "parser.cidr.ipAddress.v6",
+          "baseline_p90_batch_ns": 28431,
+          "candidate_p90_batch_ns": 28463,
+          "change_percent": 0.11255319897294225,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 28.431,
+          "candidate_p90_batch_mean_ns_per_operation": 28.463
+        },
+        {
+          "case": "parser.cidr.ipNetwork.v4",
+          "baseline_p90_batch_ns": 17007,
+          "candidate_p90_batch_ns": 16751,
+          "change_percent": -1.5052625389545438,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 17.007,
+          "candidate_p90_batch_mean_ns_per_operation": 16.751
+        },
+        {
+          "case": "parser.cidr.ipNetwork.v6",
+          "baseline_p90_batch_ns": 29967,
+          "candidate_p90_batch_ns": 29967,
+          "change_percent": 0.0,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 29.967,
+          "candidate_p90_batch_mean_ns_per_operation": 29.967
+        },
+        {
+          "case": "parser.inet_pton4.edge",
+          "baseline_p90_batch_ns": 44671,
+          "candidate_p90_batch_ns": 44223,
+          "change_percent": -1.0028877795437707,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 44.671,
+          "candidate_p90_batch_mean_ns_per_operation": 44.223
+        },
+        {
+          "case": "parser.inet_pton4.simple",
+          "baseline_p90_batch_ns": 38271,
+          "candidate_p90_batch_ns": 37983,
+          "change_percent": -0.7525280238300569,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 38.271,
+          "candidate_p90_batch_mean_ns_per_operation": 37.983
+        },
+        {
+          "case": "parser.inet_pton6.full",
+          "baseline_p90_batch_ns": 180223,
+          "candidate_p90_batch_ns": 182271,
+          "change_percent": 1.1363699416833573,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 180.223,
+          "candidate_p90_batch_mean_ns_per_operation": 182.271
+        },
+        {
+          "case": "parser.inet_pton6.mapped",
+          "baseline_p90_batch_ns": 89663,
+          "candidate_p90_batch_ns": 87871,
+          "change_percent": -1.9985947380747882,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 89.663,
+          "candidate_p90_batch_mean_ns_per_operation": 87.871
+        },
+        {
+          "case": "parser.inet_pton6.middleCompressed",
+          "baseline_p90_batch_ns": 130239,
+          "candidate_p90_batch_ns": 134271,
+          "change_percent": 3.095846866146079,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 130.239,
+          "candidate_p90_batch_mean_ns_per_operation": 134.271
+        },
+        {
+          "case": "parser.inet_pton6.simple",
+          "baseline_p90_batch_ns": 56063,
+          "candidate_p90_batch_ns": 55007,
+          "change_percent": -1.8835952410680812,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 56.063,
+          "candidate_p90_batch_mean_ns_per_operation": 55.007
+        },
+        {
+          "case": "parser.pton4v4.edge",
+          "baseline_p90_batch_ns": 11591,
+          "candidate_p90_batch_ns": 11295,
+          "change_percent": -2.5537054611336374,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 11.591,
+          "candidate_p90_batch_mean_ns_per_operation": 11.295
+        },
+        {
+          "case": "parser.pton4v4.simple",
+          "baseline_p90_batch_ns": 10007,
+          "candidate_p90_batch_ns": 9671,
+          "change_percent": -3.3576496452483284,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 10.007,
+          "candidate_p90_batch_mean_ns_per_operation": 9.671
+        },
+        {
+          "case": "parser.pton6v4.full",
+          "baseline_p90_batch_ns": 20223,
+          "candidate_p90_batch_ns": 19887,
+          "change_percent": -1.6614745586708168,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 20.223,
+          "candidate_p90_batch_mean_ns_per_operation": 19.887
+        },
+        {
+          "case": "parser.pton6v4.mapped",
+          "baseline_p90_batch_ns": 33567,
+          "candidate_p90_batch_ns": 33439,
+          "change_percent": -0.3813268984419249,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 33.567,
+          "candidate_p90_batch_mean_ns_per_operation": 33.439
+        },
+        {
+          "case": "parser.pton6v4.middleCompressed",
+          "baseline_p90_batch_ns": 48607,
+          "candidate_p90_batch_ns": 48127,
+          "change_percent": -0.9875120867364751,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 48.607,
+          "candidate_p90_batch_mean_ns_per_operation": 48.127
+        },
+        {
+          "case": "parser.pton6v4.simple",
+          "baseline_p90_batch_ns": 23807,
+          "candidate_p90_batch_ns": 22927,
+          "change_percent": -3.6963918175326627,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 23.807,
+          "candidate_p90_batch_mean_ns_per_operation": 22.927
+        }
+      ],
+      "timing_regressions_over_5_percent": [
+        {
+          "case": "formatter.ipv6.ipv4Mapped.swift.mapped",
+          "baseline_p90_batch_ns": 93055,
+          "candidate_p90_batch_ns": 100927,
+          "change_percent": 8.459513191123524,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 93.055,
+          "candidate_p90_batch_mean_ns_per_operation": 100.927
+        },
+        {
+          "case": "formatter.ipv6.preferred.swift.max",
+          "baseline_p90_batch_ns": 101375,
+          "candidate_p90_batch_ns": 109759,
+          "change_percent": 8.270283600493222,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 101.375,
+          "candidate_p90_batch_mean_ns_per_operation": 109.759
+        },
+        {
+          "case": "formatter.ipv6.compressed.swift.mappedHex",
+          "baseline_p90_batch_ns": 105599,
+          "candidate_p90_batch_ns": 112959,
+          "change_percent": 6.9697629712402565,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 105.599,
+          "candidate_p90_batch_mean_ns_per_operation": 112.959
+        },
+        {
+          "case": "formatter.ipv6.preferred.swift.middleCompressed",
+          "baseline_p90_batch_ns": 105087,
+          "candidate_p90_batch_ns": 111743,
+          "change_percent": 6.333799613653457,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 105.087,
+          "candidate_p90_batch_mean_ns_per_operation": 111.743
+        },
+        {
+          "case": "formatter.ipv6.preferred.swift.middleCompressed2",
+          "baseline_p90_batch_ns": 107583,
+          "candidate_p90_batch_ns": 113791,
+          "change_percent": 5.770428413411044,
+          "operations_per_batch": 1000,
+          "baseline_p90_batch_mean_ns_per_operation": 107.583,
+          "candidate_p90_batch_mean_ns_per_operation": 113.791
+        }
+      ],
+      "timing_improvements_over_5_percent": [],
+      "changed_count_metrics": [],
+      "gate_exit_codes": {
+        "baseline-threshold-check": 2,
+        "candidate-threshold-check": 2,
+        "matched-threshold-check": 0
+      },
+      "gate_exit_code_meaning": {
+        "0": "within thresholds",
+        "2": "regression",
+        "4": "improvement"
+      }
+    },
+    "gates": {
+      "baseline-threshold-check": {
+        "exit_code": 2,
+        "meaning": "regression",
+        "failed_case_count": 15,
+        "failed_cases": [
+          "formatter.ipv4.swift.max",
+          "formatter.ipv4.swift.simple",
+          "formatter.ipv4.swift.zero",
+          "formatter.ipv6.compressed.swift.loopback",
+          "formatter.ipv6.compressed.swift.mappedHex",
+          "formatter.ipv6.compressed.swift.max",
+          "formatter.ipv6.compressed.swift.middleCompressed",
+          "formatter.ipv6.compressed.swift.middleCompressed2",
+          "formatter.ipv6.compressed.swift.simple",
+          "formatter.ipv6.compressed.swift.trailingCompressed",
+          "parser.cidr.ipAddress.v4",
+          "parser.cidr.ipAddress.v6",
+          "parser.pton6v4.mapped",
+          "parser.pton6v4.middleCompressed",
+          "parser.pton6v4.simple"
+        ]
+      },
+      "candidate-threshold-check": {
+        "exit_code": 2,
+        "meaning": "regression",
+        "failed_case_count": 16,
+        "failed_cases": [
+          "formatter.ipv4.swift.max",
+          "formatter.ipv4.swift.simple",
+          "formatter.ipv4.swift.zero",
+          "formatter.ipv6.compressed.swift.loopback",
+          "formatter.ipv6.compressed.swift.mappedHex",
+          "formatter.ipv6.compressed.swift.max",
+          "formatter.ipv6.compressed.swift.middleCompressed",
+          "formatter.ipv6.compressed.swift.middleCompressed2",
+          "formatter.ipv6.compressed.swift.simple",
+          "formatter.ipv6.compressed.swift.trailingCompressed",
+          "formatter.ipv6.ipv4Mapped.swift.mapped",
+          "parser.cidr.ipAddress.v4",
+          "parser.cidr.ipAddress.v6",
+          "parser.pton6v4.mapped",
+          "parser.pton6v4.middleCompressed",
+          "parser.pton6v4.simple"
+        ]
+      },
+      "matched-threshold-check": {
+        "exit_code": 0,
+        "meaning": "within thresholds",
+        "failed_case_count": 0,
+        "failed_cases": []
+      }
+    },
+    "shared_absolute_failures": [
+      "formatter.ipv4.swift.max",
+      "formatter.ipv4.swift.simple",
+      "formatter.ipv4.swift.zero",
+      "formatter.ipv6.compressed.swift.loopback",
+      "formatter.ipv6.compressed.swift.mappedHex",
+      "formatter.ipv6.compressed.swift.max",
+      "formatter.ipv6.compressed.swift.middleCompressed",
+      "formatter.ipv6.compressed.swift.middleCompressed2",
+      "formatter.ipv6.compressed.swift.simple",
+      "formatter.ipv6.compressed.swift.trailingCompressed",
+      "parser.cidr.ipAddress.v4",
+      "parser.cidr.ipAddress.v6",
+      "parser.pton6v4.mapped",
+      "parser.pton6v4.middleCompressed",
+      "parser.pton6v4.simple"
+    ],
+    "baseline_only_absolute_failures": [],
+    "candidate_only_absolute_failures": [
+      "formatter.ipv6.ipv4Mapped.swift.mapped"
+    ],
+    "thresholds_unchanged": true,
+    "followups": {
+      "measurement": "p50/p90 of timed batches using the unchanged scaling factor; ratios are paired within rounds. These are not individual-operation latency percentiles.",
+      "decoder_validation": "Native histogram p90 matches BenchmarkTool raw p90 exports for 1264 full-suite metric results.",
+      "cases": [
+        {
+          "case": "formatter.ipv6.compressed.swift.mappedHex",
+          "median_paired_p50_change_percent": -1.298714475593299,
+          "median_paired_p90_change_percent": -1.331823759498879,
+          "baseline_absolute_failure_rounds": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "candidate_absolute_failure_rounds": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "candidate_failure_when_baseline_passes": [],
+          "pairs": [
+            {
+              "round": 1,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 96895,
+                "p90_batch_ns": 101183,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "candidate": {
+                "p50_batch_ns": 97279,
+                "p90_batch_ns": 101887,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "p50_candidate_over_baseline": 1.0039630527891017,
+              "p50_change_percent": 0.39630527891016953,
+              "p90_candidate_over_baseline": 1.006957690521135,
+              "p90_change_percent": 0.695769052113504
+            },
+            {
+              "round": 2,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 98559,
+                "p90_batch_ns": 103103,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "candidate": {
+                "p50_batch_ns": 97215,
+                "p90_batch_ns": 101887,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "p50_candidate_over_baseline": 0.9863634980062703,
+              "p50_change_percent": -1.3636501993729677,
+              "p90_candidate_over_baseline": 0.9882059687884931,
+              "p90_change_percent": -1.1794031211506906
+            },
+            {
+              "round": 3,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 98559,
+                "p90_batch_ns": 103487,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "candidate": {
+                "p50_batch_ns": 97343,
+                "p90_batch_ns": 101951,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "p50_candidate_over_baseline": 0.9876622124818637,
+              "p50_change_percent": -1.23377875181363,
+              "p90_candidate_over_baseline": 0.9851575560215293,
+              "p90_change_percent": -1.4842443978470676
+            },
+            {
+              "round": 4,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 98687,
+                "p90_batch_ns": 103743,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "candidate": {
+                "p50_batch_ns": 97215,
+                "p90_batch_ns": 102015,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "p50_candidate_over_baseline": 0.9850841549545533,
+              "p50_change_percent": -1.491584504544674,
+              "p90_candidate_over_baseline": 0.9833434544981348,
+              "p90_change_percent": -1.6656545501865239
+            },
+            {
+              "round": 5,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 96895,
+                "p90_batch_ns": 101055,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "candidate": {
+                "p50_batch_ns": 95743,
+                "p90_batch_ns": 104127,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "p50_candidate_over_baseline": 0.9881108416326951,
+              "p50_change_percent": -1.1889158367304864,
+              "p90_candidate_over_baseline": 1.0303992875166987,
+              "p90_change_percent": 3.0399287516698736
+            },
+            {
+              "round": 6,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 99391,
+                "p90_batch_ns": 110207,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "candidate": {
+                "p50_batch_ns": 95807,
+                "p90_batch_ns": 103295,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "p50_candidate_over_baseline": 0.9639403970178386,
+              "p50_change_percent": -3.6059602982161376,
+              "p90_candidate_over_baseline": 0.9372816608745361,
+              "p90_change_percent": -6.271833912546388
+            }
+          ]
+        },
+        {
+          "case": "formatter.ipv6.ipv4Mapped.swift.mapped",
+          "median_paired_p50_change_percent": 1.135516837585615,
+          "median_paired_p90_change_percent": 0.5404330733883689,
+          "baseline_absolute_failure_rounds": [],
+          "candidate_absolute_failure_rounds": [
+            6
+          ],
+          "candidate_failure_when_baseline_passes": [
+            6
+          ],
+          "pairs": [
+            {
+              "round": 1,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 84543,
+                "p90_batch_ns": 88191,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 85503,
+                "p90_batch_ns": 89855,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0113551683758562,
+              "p50_change_percent": 1.135516837585615,
+              "p90_candidate_over_baseline": 1.0188681384721796,
+              "p90_change_percent": 1.8868138472179607
+            },
+            {
+              "round": 2,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 84543,
+                "p90_batch_ns": 88639,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 85503,
+                "p90_batch_ns": 89215,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0113551683758562,
+              "p50_change_percent": 1.135516837585615,
+              "p90_candidate_over_baseline": 1.0064982682566366,
+              "p90_change_percent": 0.6498268256636575
+            },
+            {
+              "round": 3,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 84991,
+                "p90_batch_ns": 89407,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 85503,
+                "p90_batch_ns": 89535,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0060241672647692,
+              "p50_change_percent": 0.6024167264769176,
+              "p90_candidate_over_baseline": 1.0014316552395226,
+              "p90_change_percent": 0.14316552395226
+            },
+            {
+              "round": 4,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 84543,
+                "p90_batch_ns": 89087,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 85503,
+                "p90_batch_ns": 89471,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0113551683758562,
+              "p50_change_percent": 1.135516837585615,
+              "p90_candidate_over_baseline": 1.0043103932111308,
+              "p90_change_percent": 0.4310393211130803
+            },
+            {
+              "round": 5,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 85183,
+                "p90_batch_ns": 91967,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 85759,
+                "p90_batch_ns": 92095,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0067619125881926,
+              "p50_change_percent": 0.6761912588192587,
+              "p90_candidate_over_baseline": 1.0013918035817195,
+              "p90_change_percent": 0.13918035817195307
+            },
+            {
+              "round": 6,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 84927,
+                "p90_batch_ns": 91519,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 86143,
+                "p90_batch_ns": 93759,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": true
+              },
+              "p50_candidate_over_baseline": 1.0143181791420868,
+              "p50_change_percent": 1.4318179142086773,
+              "p90_candidate_over_baseline": 1.024475791912062,
+              "p90_change_percent": 2.447579191206195
+            }
+          ]
+        },
+        {
+          "case": "formatter.ipv6.preferred.swift.max",
+          "median_paired_p50_change_percent": 1.609021750751971,
+          "median_paired_p90_change_percent": 0.7316369149041657,
+          "baseline_absolute_failure_rounds": [],
+          "candidate_absolute_failure_rounds": [],
+          "candidate_failure_when_baseline_passes": [],
+          "pairs": [
+            {
+              "round": 1,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 93375,
+                "p90_batch_ns": 98495,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 97663,
+                "p90_batch_ns": 102975,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0459223560910307,
+              "p50_change_percent": 4.592235609103068,
+              "p90_candidate_over_baseline": 1.0454845423625565,
+              "p90_change_percent": 4.54845423625565
+            },
+            {
+              "round": 2,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 93439,
+                "p90_batch_ns": 98687,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 94335,
+                "p90_batch_ns": 99647,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.009589143719432,
+              "p50_change_percent": 0.9589143719431981,
+              "p90_candidate_over_baseline": 1.0097277250296393,
+              "p90_change_percent": 0.9727725029639256
+            },
+            {
+              "round": 3,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 93375,
+                "p90_batch_ns": 98367,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 94847,
+                "p90_batch_ns": 99775,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.015764390896921,
+              "p50_change_percent": 1.5764390896920943,
+              "p90_candidate_over_baseline": 1.0143137434302154,
+              "p90_change_percent": 1.4313743430215409
+            },
+            {
+              "round": 4,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 93375,
+                "p90_batch_ns": 97919,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 92671,
+                "p90_batch_ns": 97407,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 0.9924605087014725,
+              "p50_change_percent": -0.753949129852749,
+              "p90_candidate_over_baseline": 0.9947711884312544,
+              "p90_change_percent": -0.522881156874555
+            },
+            {
+              "round": 5,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 93567,
+                "p90_batch_ns": 104383,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 95103,
+                "p90_batch_ns": 104895,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0164160441181185,
+              "p50_change_percent": 1.6416044118118478,
+              "p90_candidate_over_baseline": 1.004905013268444,
+              "p90_change_percent": 0.49050132684440584
+            },
+            {
+              "round": 6,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 93183,
+                "p90_batch_ns": 102335,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 94719,
+                "p90_batch_ns": 102271,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0164836933775474,
+              "p50_change_percent": 1.6483693377547404,
+              "p90_candidate_over_baseline": 0.9993746030194948,
+              "p90_change_percent": -0.06253969805052328
+            }
+          ]
+        },
+        {
+          "case": "formatter.ipv6.preferred.swift.middleCompressed",
+          "median_paired_p50_change_percent": 1.1092225806644818,
+          "median_paired_p90_change_percent": 1.1232461814644323,
+          "baseline_absolute_failure_rounds": [],
+          "candidate_absolute_failure_rounds": [],
+          "candidate_failure_when_baseline_passes": [],
+          "pairs": [
+            {
+              "round": 1,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 95039,
+                "p90_batch_ns": 99647,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 96383,
+                "p90_batch_ns": 101183,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0141415629373205,
+              "p50_change_percent": 1.4141562937320495,
+              "p90_candidate_over_baseline": 1.0154144128774574,
+              "p90_change_percent": 1.5414412877457373
+            },
+            {
+              "round": 2,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 95103,
+                "p90_batch_ns": 99711,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 96127,
+                "p90_batch_ns": 101055,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0107672733772857,
+              "p50_change_percent": 1.0767273377285669,
+              "p90_candidate_over_baseline": 1.0134789541775733,
+              "p90_change_percent": 1.3478954177573277
+            },
+            {
+              "round": 3,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 95103,
+                "p90_batch_ns": 99711,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 97087,
+                "p90_batch_ns": 101183,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.020861592168491,
+              "p50_change_percent": 2.086159216849093,
+              "p90_candidate_over_baseline": 1.0147626640992469,
+              "p90_change_percent": 1.476266409924687
+            },
+            {
+              "round": 4,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 95103,
+                "p90_batch_ns": 99711,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 96063,
+                "p90_batch_ns": 100607,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0100943187912053,
+              "p50_change_percent": 1.009431879120526,
+              "p90_candidate_over_baseline": 1.0089859694517154,
+              "p90_change_percent": 0.898596945171537
+            },
+            {
+              "round": 5,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 95935,
+                "p90_batch_ns": 104127,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 94463,
+                "p90_batch_ns": 102847,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 0.9846562776880179,
+              "p50_change_percent": -1.534372231198211,
+              "p90_candidate_over_baseline": 0.987707318947055,
+              "p90_change_percent": -1.229268105294501
+            },
+            {
+              "round": 6,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 95295,
+                "p90_batch_ns": 105471,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 96383,
+                "p90_batch_ns": 104255,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.011417178236004,
+              "p50_change_percent": 1.1417178236003966,
+              "p90_candidate_over_baseline": 0.988470764475543,
+              "p90_change_percent": -1.1529235524456949
+            }
+          ]
+        },
+        {
+          "case": "formatter.ipv6.preferred.swift.middleCompressed2",
+          "median_paired_p50_change_percent": 0.8491272516274351,
+          "median_paired_p90_change_percent": 0.2155465562046599,
+          "baseline_absolute_failure_rounds": [],
+          "candidate_absolute_failure_rounds": [],
+          "candidate_failure_when_baseline_passes": [],
+          "pairs": [
+            {
+              "round": 1,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 97919,
+                "p90_batch_ns": 103295,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 98175,
+                "p90_batch_ns": 102847,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0026144057843729,
+              "p50_change_percent": 0.26144057843728863,
+              "p90_candidate_over_baseline": 0.9956629072075125,
+              "p90_change_percent": -0.4337092792487507
+            },
+            {
+              "round": 2,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 96191,
+                "p90_batch_ns": 100159,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 99007,
+                "p90_batch_ns": 104383,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0292750881059558,
+              "p50_change_percent": 2.9275088105955804,
+              "p90_candidate_over_baseline": 1.0421729450174222,
+              "p90_change_percent": 4.217294501742219
+            },
+            {
+              "round": 3,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 97919,
+                "p90_batch_ns": 102975,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 98751,
+                "p90_batch_ns": 103295,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0084968187992116,
+              "p50_change_percent": 0.8496818799211603,
+              "p90_candidate_over_baseline": 1.003107550376305,
+              "p90_change_percent": 0.3107550376304946
+            },
+            {
+              "round": 4,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 98239,
+                "p90_batch_ns": 104511,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 98751,
+                "p90_batch_ns": 102975,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0052117794358655,
+              "p50_change_percent": 0.5211779435865482,
+              "p90_candidate_over_baseline": 0.9853029824611763,
+              "p90_change_percent": -1.4697017538823687
+            },
+            {
+              "round": 5,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "baseline": {
+                "p50_batch_ns": 98047,
+                "p90_batch_ns": 106367,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 98879,
+                "p90_batch_ns": 106495,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.008485726233337,
+              "p50_change_percent": 0.8485726233337099,
+              "p90_candidate_over_baseline": 1.0012033807477883,
+              "p90_change_percent": 0.12033807477882519
+            },
+            {
+              "round": 6,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "baseline": {
+                "p50_batch_ns": 96383,
+                "p90_batch_ns": 104767,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "candidate": {
+                "p50_batch_ns": 98751,
+                "p90_batch_ns": 107263,
+                "samples": 10000,
+                "operations_per_batch": 1000,
+                "absolute_gate_regression": false
+              },
+              "p50_candidate_over_baseline": 1.0245686479980909,
+              "p50_change_percent": 2.4568647998090887,
+              "p90_candidate_over_baseline": 1.0238242958183397,
+              "p90_change_percent": 2.382429581833967
+            }
+          ]
+        }
+      ]
+    },
+    "followup_matched_checks": [
+      {
+        "label": "round1-matched-policy",
+        "exit_code": 0,
+        "meaning": "within thresholds"
+      },
+      {
+        "label": "round2-matched-policy",
+        "exit_code": 0,
+        "meaning": "within thresholds"
+      },
+      {
+        "label": "round3-matched-policy",
+        "exit_code": 0,
+        "meaning": "within thresholds"
+      },
+      {
+        "label": "round4-matched-policy",
+        "exit_code": 0,
+        "meaning": "within thresholds"
+      },
+      {
+        "label": "round5-matched-policy",
+        "exit_code": 0,
+        "meaning": "within thresholds"
+      },
+      {
+        "label": "round6-matched-policy",
+        "exit_code": 0,
+        "meaning": "within thresholds"
+      }
+    ],
+    "uninvestigated_p90_increases_over_5_percent": []
+  },
+  "historical_results_relabelled_or_replaced": false,
+  "linux_rerun": false,
+  "input_sha256": {
+    "audit/results-audit.json": "c5c09c0978f4efc16dc5538282c20daee4c4949ec4b27ec1c06b02e11141083d",
+    "audit/preservation-audit.json": "e6e533cb5d26734f982492fce4d5af299b54f1ad70fd17170d1bf2d9db4f9bc8",
+    "tests/summary.json": "4a55c0916f03679a143f7d9ee6f994f1c1d6f590cc3b0557bff5871accd3e616",
+    "tests/pin-verification.json": "06f5cc7ae5f9527b75c6f27e291e9d323802773bd0194e86a6acd4ecb5b19e4b",
+    "benchmark-environment.json": "f06fa846ae5fed9f6e5d41ad838e39b46fcccb294d44a1459e23f3f5ab89fa52",
+    "source-provenance.json": "b177850b6dfad502b51eafcbbf38a2f9ed885d5f887bc24cb1d2614ac6aec8f3",
+    "binaries.json": "ef87e136a47ac8351f5af53cfa87b05914c995c124ae613dd5f6a9dbc6067d6a",
+    "summarization-registration-compatibility.json": "45f1bfa7b4959a3a7d2d1b5181a81ec8018d531db5dc27dc6f107eb7d1b635bf",
+    "standard-registration-compatibility.json": "49d220afe0b5c8075c181531f83999e50eeabf16444cc814a90791a50c07b153",
+    "compatibility-swift63/receipt.json": "72f0444df4978abdb1cb3f0f9a8bf788ad6a44733fdda62435413c7a6ea484fa",
+    "returning/summary.json": "41fa43b17af3b3e23a05d2773e2ded451f55cedf6a6774fd722202f528bc9718",
+    "returning/observations.json": "cec2bf83edf2f7ed97a20d2a7f8856780abd9f84c306554f0a3aba2139d72677",
+    "timing-only/summary.json": "dae98347095d2d6af8c59b02630e3e9feddbd307f7e9597c4a3a6938c7ae9c28",
+    "timing-only/observations.json": "d4cfca3e920f8fbce687251a8842b95212d6698220c1a0c809ae73af6b41e195",
+    "append/observations.json": "4a00ddbdc52dd42e58d0bba926b1c13f8acaa50e094b5ea3f1e96a2c45fd7d92",
+    "standard-benchmarks/comparison-p90.json": "093ea5cfd9283c958513ed33254a50ee9e4cbd8fc0dc1c1b9dd8a43a4371ab61",
+    "standard-benchmarks/gate-commands.json": "b82fa40b6c30674cf28b6ca22486bf5221eb0c52b2299d3b6f8211e87ee685f5",
+    "standard-benchmarks/baseline-threshold-check.log": "607324e9ac55c70a95d28d3cf28ea1d2ef9518165954846c98db80ed08c7c8a1",
+    "standard-benchmarks/candidate-threshold-check.log": "7beac309426c29af50125c730aaa4ea372e79d0e083ab01e3398df52dd24a28c",
+    "standard-benchmarks/matched-threshold-check.log": "1a12ff2d67042d1b7fc0a229f61b7a5ac63cd824959c586f1b88a801a59922c9",
+    "standard-benchmarks/thresholds-after.json": "b041ebb4044a809c0d57a169f8d7b17dd5e188e00d0fdc2da6a5fd62ed5e25e9",
+    "standard-benchmarks/thresholds-before.json": "92f50abbef5be4d6065a4da2b69f25d5a2e6340a4c5973a4ddc5375bc6543c66",
+    "standard-benchmarks/planned-commands.json": "a426394f7e28684a2b72f5c7a64e09f471eca1b9e789a36e9acdcdade062fd28",
+    "standard-benchmarks/targeted-repeats/analysis.json": "7c182466042c5562369ba3467ae10c41c126b748baae78842e3a7b703f76e70f",
+    "standard-benchmarks/targeted-repeats/commands.json": "55795d8b3ac5eba9ccf55d5540fe6105f33585c0ce2beb29260b729f765d5372",
+    "previous-report/repository-results/RESULTS.md": "8f10ae25b3eddedc67b3c155e2ea50300b87b907b91aa0cc2d1430584d26b5ac",
+    "standard-benchmarks/comparison-p90.csv": "28a7183f40f167d75419c2321327b54b12db5ec0d60d28d1a75a5b54053bdc94"
+  },
+  "output_sha256": {
+    "PREVIOUS-XCODE-26.6.md": "8f10ae25b3eddedc67b3c155e2ea50300b87b907b91aa0cc2d1430584d26b5ac",
+    "macos-xcode27-full-profile.csv": "454dc19f8a0099b110b71b42cbcd7f7eceb2ae9a64215ec409bf1e9da36612ac",
+    "macos-xcode27-counter-disabled.csv": "b1d939631201e4743d4a9014a4f53376b64e058a27acf822e87b4a05215453fa",
+    "macos-xcode27-append-metrics.csv": "e389cd02a831d4756d385fdc571d40a1bb2186c86aa123df0301e62b55d2560e",
+    "macos-xcode27-standard-p90.csv": "937d8f6fec380ecf1c023fceb922c6945e00513d055e63cdb9213a253ff9aca9",
+    "macos-xcode27-standard-followups.csv": "d5dc219be2271496c8fc9ee21123a74280108489f67feed1c4a11dcb772cee2b",
+    "RESULTS.md": "74427a2a59f9d16e2041a9a983d06904762db7bd0376c77a2706e5da00ec9fc7"
+  }
+}

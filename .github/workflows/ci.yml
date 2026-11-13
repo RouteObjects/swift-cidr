@@ -172,3 +172,4 @@ jobs:
           ./scripts/benchmarks.sh build
           CIDR_BENCHMARK_TARGET=CIDRCPUBenchmarkTarget ./scripts/benchmarks.sh build
           CIDR_BENCHMARK_TARGET=CIDRNIOBenchmarkTarget ./scripts/benchmarks.sh build
+          CIDR_BENCHMARK_TARGET=CIDRSummarizationBenchmarkTarget ./scripts/benchmarks.sh build -Xswiftc -DSUMMARIZATION_APPEND_APIS
