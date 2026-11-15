@@ -1,0 +1,50 @@
+{
+  "id": "0d4ff036fb8ef3505a9211ddb3fe5166cb2e94917f9e6d4d691152b2ca3c5c0d",
+  "image": "sha256:23d9b28ad97fb1cf1999edc3a0cb265ee915ed42299a9344e7173d5a6d2b05f4",
+  "name": "/cidrmerge-coalescing-arm642-20261115",
+  "network_mode": "none",
+  "mounts": [
+    {
+      "Source": "LINUX_EVIDENCE_ROOT/shared",
+      "Destination": "/shared",
+      "RW": false,
+      "Type": "bind"
+    },
+    {
+      "Source": "LINUX_EVIDENCE_ROOT/arm64",
+      "Destination": "/validation",
+      "RW": true,
+      "Type": "bind"
+    },
+    {
+      "Source": "COMPETITOR_EVIDENCE_ROOT/fixtures",
+      "Destination": "/validation/fixtures",
+      "RW": false,
+      "Type": "bind"
+    },
+    {
+      "Source": "LINUX_EVIDENCE_ROOT/arm64/python",
+      "Destination": "/validation/python",
+      "RW": false,
+      "Type": "bind"
+    },
+    {
+      "Source": "LINUX_EVIDENCE_ROOT/arm64/sources",
+      "Destination": "/validation/sources",
+      "RW": false,
+      "Type": "bind"
+    }
+  ],
+  "cpu_limits": {
+    "NanoCpus": 0,
+    "CpuPeriod": 0,
+    "CpuQuota": 0,
+    "CpusetCpus": "",
+    "Memory": 0
+  },
+  "entrypoint": null,
+  "command": [
+    "sleep",
+    "infinity"
+  ]
+}

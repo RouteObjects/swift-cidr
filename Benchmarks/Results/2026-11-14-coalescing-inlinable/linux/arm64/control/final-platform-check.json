@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "test_executions": 1414,
+  "measured_samples": 132,
+  "measured_processes": 192,
+  "source_full_hashes_checked": 193,
+  "bin_sha256": {
+    "B": "46526cf942a91687cf231cbeaaf6bb65d9e19f233fc54b0e6b1839d27c8a4af8",
+    "C": "3ce0ef33d754242e0629c20443853b081ca3f1ec0bc622cae77c1ebc93b480e9"
+  },
+  "positive_elapsed_pairs": 1,
+  "summary_sha256": "8855e64fe74a175546e146548627f1039882b23cf2d8cdfd63a252905ce7133c"
+}

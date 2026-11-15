@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "repos": {
+    "swift-cidr": {
+      "head": "e268b139e334a0662185d16a3e07b187ab0cbe70",
+      "preserved_preexisting_files": 3775,
+      "branch": "perf/coalescing-inlinable"
+    },
+    "cidrmerge": {
+      "head": "e4f1aed90c013cc5b0d75bb0d29d80f0259e19b0",
+      "preserved_preexisting_files": 17,
+      "branch": "perf/coalescing-inlinable"
+    }
+  }
+}

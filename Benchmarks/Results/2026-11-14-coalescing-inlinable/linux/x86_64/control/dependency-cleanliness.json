@@ -1,0 +1,152 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-argument-parser",
+      "tracked_clean": true
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-asn1",
+      "tracked_clean": true
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-atomics",
+      "tracked_clean": true
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-collections",
+      "tracked_clean": true
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-crypto",
+      "tracked_clean": true
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-nio",
+      "tracked_clean": true
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-system",
+      "tracked_clean": true
+    },
+    {
+      "variant": "B",
+      "package": "upstream",
+      "identity": "swift-argument-parser",
+      "tracked_clean": true
+    },
+    {
+      "variant": "B",
+      "package": "upstream",
+      "identity": "swift-atomics",
+      "tracked_clean": true
+    },
+    {
+      "variant": "B",
+      "package": "upstream",
+      "identity": "swift-collections",
+      "tracked_clean": true
+    },
+    {
+      "variant": "B",
+      "package": "upstream",
+      "identity": "swift-nio",
+      "tracked_clean": true
+    },
+    {
+      "variant": "B",
+      "package": "upstream",
+      "identity": "swift-system",
+      "tracked_clean": true
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-argument-parser",
+      "tracked_clean": true
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-asn1",
+      "tracked_clean": true
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-atomics",
+      "tracked_clean": true
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-collections",
+      "tracked_clean": true
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-crypto",
+      "tracked_clean": true
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-nio",
+      "tracked_clean": true
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-system",
+      "tracked_clean": true
+    },
+    {
+      "variant": "C",
+      "package": "upstream",
+      "identity": "swift-argument-parser",
+      "tracked_clean": true
+    },
+    {
+      "variant": "C",
+      "package": "upstream",
+      "identity": "swift-atomics",
+      "tracked_clean": true
+    },
+    {
+      "variant": "C",
+      "package": "upstream",
+      "identity": "swift-collections",
+      "tracked_clean": true
+    },
+    {
+      "variant": "C",
+      "package": "upstream",
+      "identity": "swift-nio",
+      "tracked_clean": true
+    },
+    {
+      "variant": "C",
+      "package": "upstream",
+      "identity": "swift-system",
+      "tracked_clean": true
+    }
+  ],
+  "runtime_hash_matches": true,
+  "source_files": 185,
+  "disk_free_bytes": 12210454528
+}

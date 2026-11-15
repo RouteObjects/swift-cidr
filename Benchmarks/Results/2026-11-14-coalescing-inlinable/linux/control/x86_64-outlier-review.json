@@ -1,0 +1,1138 @@
+{
+  "created_at": "2026-11-15T14:46:56.689706+00:00",
+  "scope": "Read-only analysis of retained unusual x86 observations; no removal, retries or new measurements.",
+  "summary_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/summary.json",
+  "summary_sha256": "92925bc5ea99d39e7a80ec53e9f53a47341d6ef5a5bcf31347fdbf2838d9ccbe",
+  "independent_audit": "LINUX_EVIDENCE_ROOT/control/independent-x86_64-audit.json",
+  "independent_audit_sha256": "8fdb1a8e5558db3fc64dde4af2345e64d6f64c4651702696fafc508cb348782a",
+  "cases": [
+    {
+      "case": "ipv6-disjoint",
+      "focus": {
+        "round": 2,
+        "tool": "C",
+        "family": 6
+      },
+      "all_six_pair_summary": {
+        "suite": "split",
+        "case": "ipv6-disjoint",
+        "n_pairs": 6,
+        "paired_elapsed_change_median_pct": -1.9843497442362523,
+        "paired_elapsed_change_min_pct": -4.566184256930505,
+        "paired_elapsed_change_max_pct": 70.66768591160746,
+        "paired_rss_change_median_pct": -0.03642707431116832,
+        "paired_rss_difference_median_mib": -0.041015625,
+        "pairs": [
+          {
+            "round": 1,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": -1.2745892101919343,
+            "rss_change_pct": 0.18382352941177516,
+            "elapsed_difference_s": -0.134649855,
+            "rss_difference_mib": 0.20703125
+          },
+          {
+            "round": 2,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 70.66768591160746,
+            "rss_change_pct": 0.010402219140082103,
+            "elapsed_difference_s": 7.62419866,
+            "rss_difference_mib": 0.01171875
+          },
+          {
+            "round": 3,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": -1.499953940126253,
+            "rss_change_pct": -0.020812376426515566,
+            "elapsed_difference_s": -0.161626179,
+            "rss_difference_mib": -0.0234375
+          },
+          {
+            "round": 4,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": -4.566184256930505,
+            "rss_change_pct": -0.07272979150793057,
+            "elapsed_difference_s": -0.496561317,
+            "rss_difference_mib": -0.08203125
+          },
+          {
+            "round": 5,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": -2.4687455483462517,
+            "rss_change_pct": -0.19396626372484294,
+            "elapsed_difference_s": -0.260899723,
+            "rss_difference_mib": -0.21875
+          },
+          {
+            "round": 6,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": -4.476437581315762,
+            "rss_change_pct": -0.05204177219582107,
+            "elapsed_difference_s": -0.481088316,
+            "rss_difference_mib": -0.05859375
+          }
+        ]
+      },
+      "all_six_paired_cpu_changes_pct": [
+        -1.2773946306438466,
+        70.64371757166225,
+        -1.50613315226652,
+        -4.559441583917511,
+        -2.476291690511623,
+        -4.47320759910178
+      ],
+      "paired_cpu_change_median_pct": -1.9912124213890714,
+      "nearby_records": [
+        {
+          "round": 1,
+          "tool": "B",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/ipv6-disjoint/B/sample.json",
+          "sample_sha256": "e9209bd8a0ce5a973697eaa6239a36b70c954a3050de14029d2c50e602b87ec8",
+          "wall_seconds": 10.564176593,
+          "cpu_seconds": 10.556721999999999,
+          "peak_rss_mib": 112.625,
+          "parts": [
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/ipv6-disjoint/B/6.rusage.json",
+              "raw_sha256": "b2f5b0811df5e6a53137fc501bab156f6f6dd50a9ceba23ce7a85b8b0b2e0330",
+              "wall_seconds": 10.564176593,
+              "cpu_seconds": 10.556721999999999,
+              "wall_minus_cpu_seconds": 0.007454593000000287,
+              "wait4_rusage": {
+                "ru_utime": 10.384792,
+                "ru_stime": 0.17193,
+                "ru_maxrss": 115328,
+                "ru_minflt": 45610,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 41688,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 108
+              },
+              "output_sha256": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85"
+            }
+          ]
+        },
+        {
+          "round": 1,
+          "tool": "C",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/ipv6-disjoint/C/sample.json",
+          "sample_sha256": "ae260f69056600d53ad93b64ed676b40fa360102c2973fd67d44877e37066087",
+          "wall_seconds": 10.429526738,
+          "cpu_seconds": 10.421871000000001,
+          "peak_rss_mib": 112.83203125,
+          "parts": [
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/ipv6-disjoint/C/6.rusage.json",
+              "raw_sha256": "590fa058d4ed8c57745d64aa909062f2de388c2d72d034e55a1e8f39044c99c2",
+              "wall_seconds": 10.429526738,
+              "cpu_seconds": 10.421871000000001,
+              "wall_minus_cpu_seconds": 0.007655737999998635,
+              "wait4_rusage": {
+                "ru_utime": 10.248957,
+                "ru_stime": 0.17291399999999998,
+                "ru_maxrss": 115540,
+                "ru_minflt": 45608,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 41688,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 100
+              },
+              "output_sha256": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85"
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "tool": "C",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/ipv6-disjoint/C/sample.json",
+          "sample_sha256": "5be8af8dc8d8eb00dedc3ce3846eac58edaf578c9184eaf66dd7f88ec170d3e9",
+          "wall_seconds": 18.413003418,
+          "cpu_seconds": 18.404471,
+          "peak_rss_mib": 112.66796875,
+          "parts": [
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/ipv6-disjoint/C/6.rusage.json",
+              "raw_sha256": "11f5ae954a160e28b8feaba0d7f517e2b3cec9d2b46d2561c4a8f4af8d2d9c36",
+              "wall_seconds": 18.413003418,
+              "cpu_seconds": 18.404471,
+              "wall_minus_cpu_seconds": 0.008532417999997932,
+              "wait4_rusage": {
+                "ru_utime": 18.146549,
+                "ru_stime": 0.257922,
+                "ru_maxrss": 115372,
+                "ru_minflt": 45606,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 41688,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 120
+              },
+              "output_sha256": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85"
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "tool": "B",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/ipv6-disjoint/B/sample.json",
+          "sample_sha256": "ad4ec953f3fb1efc104d5a17563cde5ae59c80add54c2b11bc69b43827e475fd",
+          "wall_seconds": 10.788804758,
+          "cpu_seconds": 10.785319999999999,
+          "peak_rss_mib": 112.65625,
+          "parts": [
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/ipv6-disjoint/B/6.rusage.json",
+              "raw_sha256": "7ce9fcc5bd3ad9b84db53b0e05a7af6ee28b7e9fc9f343fb41c138b1ff4e52f0",
+              "wall_seconds": 10.788804758,
+              "cpu_seconds": 10.785319999999999,
+              "wall_minus_cpu_seconds": 0.0034847580000008094,
+              "wait4_rusage": {
+                "ru_utime": 10.604349,
+                "ru_stime": 0.180971,
+                "ru_maxrss": 115360,
+                "ru_minflt": 45611,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 41688,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 53
+              },
+              "output_sha256": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "B",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/ipv6-disjoint/B/sample.json",
+          "sample_sha256": "a1ee83b4437fcde06ba27c749f88fd44041f41daea2549e1ac1e252ee9038047",
+          "wall_seconds": 10.775409476,
+          "cpu_seconds": 10.768769,
+          "peak_rss_mib": 112.61328125,
+          "parts": [
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/ipv6-disjoint/B/6.rusage.json",
+              "raw_sha256": "92e5ecb225a54ac787c074e9c8e974e8cc790b5f703bc3df04f0a150396992d6",
+              "wall_seconds": 10.775409476,
+              "cpu_seconds": 10.768769,
+              "wall_minus_cpu_seconds": 0.006640475999999396,
+              "wait4_rusage": {
+                "ru_utime": 10.602819,
+                "ru_stime": 0.16595,
+                "ru_maxrss": 115316,
+                "ru_minflt": 45611,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 41688,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 109
+              },
+              "output_sha256": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "C",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/ipv6-disjoint/C/sample.json",
+          "sample_sha256": "2b6418ccccf3c123088a61238d257fa954614118503c251ed29cf377cd770831",
+          "wall_seconds": 10.613783297,
+          "cpu_seconds": 10.606577000000001,
+          "peak_rss_mib": 112.58984375,
+          "parts": [
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/ipv6-disjoint/C/6.rusage.json",
+              "raw_sha256": "f336c8bcbc0c481ae248dc0201a8a9ddd5fe8b7e60ef9bb09e2c8f628104ef27",
+              "wall_seconds": 10.613783297,
+              "cpu_seconds": 10.606577000000001,
+              "wall_minus_cpu_seconds": 0.007206296999997974,
+              "wait4_rusage": {
+                "ru_utime": 10.434665,
+                "ru_stime": 0.17191199999999998,
+                "ru_maxrss": 115292,
+                "ru_minflt": 45606,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 41688,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 99
+              },
+              "output_sha256": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "mixed-disjoint",
+      "focus": {
+        "round": 2,
+        "tool": "C",
+        "family": 6
+      },
+      "all_six_pair_summary": {
+        "suite": "split",
+        "case": "mixed-disjoint",
+        "n_pairs": 6,
+        "paired_elapsed_change_median_pct": -1.1961603810144106,
+        "paired_elapsed_change_min_pct": -3.763206824491372,
+        "paired_elapsed_change_max_pct": 32.418591630588864,
+        "paired_rss_change_median_pct": -0.18668555485542027,
+        "paired_rss_difference_median_mib": -0.125,
+        "pairs": [
+          {
+            "round": 1,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": -2.3104187581347357,
+            "rss_change_pct": -0.03505491937368932,
+            "elapsed_difference_s": -0.219951555,
+            "rss_difference_mib": -0.0234375
+          },
+          {
+            "round": 2,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 32.418591630588864,
+            "rss_change_pct": -0.44908433453866303,
+            "elapsed_difference_s": 3.074084577,
+            "rss_difference_mib": -0.30078125
+          },
+          {
+            "round": 3,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 0.486848365888104,
+            "rss_change_pct": -0.23329056339671528,
+            "elapsed_difference_s": 0.046065853,
+            "rss_difference_mib": -0.15625
+          },
+          {
+            "round": 4,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": -1.29526040945952,
+            "rss_change_pct": -0.14008054631412525,
+            "elapsed_difference_s": -0.122149965,
+            "rss_difference_mib": -0.09375
+          },
+          {
+            "round": 5,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": -3.763206824491372,
+            "rss_change_pct": 0.1577379213647312,
+            "elapsed_difference_s": -0.356108899,
+            "rss_difference_mib": 0.10546875
+          },
+          {
+            "round": 6,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": -1.0970603525693012,
+            "rss_change_pct": -0.23894166326708932,
+            "elapsed_difference_s": -0.103469194,
+            "rss_difference_mib": -0.16015625
+          }
+        ]
+      },
+      "all_six_paired_cpu_changes_pct": [
+        -2.296497155367705,
+        32.47183635931397,
+        0.47848707026001414,
+        -1.295098290946206,
+        -3.753526422089082,
+        -1.1079382858062203
+      ],
+      "paired_cpu_change_median_pct": -1.2015182883762132,
+      "nearby_records": [
+        {
+          "round": 1,
+          "tool": "B",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-disjoint/B/sample.json",
+          "sample_sha256": "28f63dff04d0ac9aad873103e8e8b7fb7f8a366e5a41d7915eca08f8d09c8324",
+          "wall_seconds": 9.519986549,
+          "cpu_seconds": 9.508786,
+          "peak_rss_mib": 66.859375,
+          "parts": [
+            {
+              "family": 4,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-disjoint/B/4.rusage.json",
+              "raw_sha256": "ef6b824ec0b9bd2c84c44dba25fab9afc9769543c96745c2a1ae65991f9fab8a",
+              "wall_seconds": 4.165098695,
+              "cpu_seconds": 4.1588199999999995,
+              "wall_minus_cpu_seconds": 0.006278695000000667,
+              "wait4_rusage": {
+                "ru_utime": 4.122839,
+                "ru_stime": 0.035981,
+                "ru_maxrss": 33376,
+                "ru_minflt": 7586,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 14456,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 46
+              },
+              "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
+            },
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-disjoint/B/6.rusage.json",
+              "raw_sha256": "56d6565177ae40b8067c3d0c1c1c0977ee105eccecf516e59db3e782d7116624",
+              "wall_seconds": 5.354887854,
+              "cpu_seconds": 5.349966,
+              "wall_minus_cpu_seconds": 0.004921854000000003,
+              "wait4_rusage": {
+                "ru_utime": 5.270982,
+                "ru_stime": 0.078984,
+                "ru_maxrss": 68464,
+                "ru_minflt": 23171,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 20440,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 63
+              },
+              "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd"
+            }
+          ]
+        },
+        {
+          "round": 1,
+          "tool": "C",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-disjoint/C/sample.json",
+          "sample_sha256": "7da5b90eb694ed876c8783d52e729fa6e519d0b1f30ad3bb550bfb8a6ad23d57",
+          "wall_seconds": 9.300034994,
+          "cpu_seconds": 9.290416999999998,
+          "peak_rss_mib": 66.8359375,
+          "parts": [
+            {
+              "family": 4,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-disjoint/C/4.rusage.json",
+              "raw_sha256": "09bfb9fc932b1953bfd1cfd8c51a21ee493033ad706f55e9c8428760b84adb14",
+              "wall_seconds": 4.077853576,
+              "cpu_seconds": 4.073188999999999,
+              "wall_minus_cpu_seconds": 0.0046645760000005865,
+              "wait4_rusage": {
+                "ru_utime": 4.036197,
+                "ru_stime": 0.036992,
+                "ru_maxrss": 33416,
+                "ru_minflt": 7579,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 14456,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 39
+              },
+              "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
+            },
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-disjoint/C/6.rusage.json",
+              "raw_sha256": "829b38b2eb3e03cc5b5387d1d545a79e73f73810c530f9e0aba0c6a9617b7a20",
+              "wall_seconds": 5.222181418,
+              "cpu_seconds": 5.2172279999999995,
+              "wall_minus_cpu_seconds": 0.004953418000000376,
+              "wait4_rusage": {
+                "ru_utime": 5.118262,
+                "ru_stime": 0.098966,
+                "ru_maxrss": 68440,
+                "ru_minflt": 23166,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 20440,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 54
+              },
+              "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd"
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "tool": "C",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-disjoint/C/sample.json",
+          "sample_sha256": "efbc21427849cf0036588cc04538ca381a0ae1dc7866d94b5ab703889f9590bf",
+          "wall_seconds": 12.556558745,
+          "cpu_seconds": 12.548860999999999,
+          "peak_rss_mib": 66.67578125,
+          "parts": [
+            {
+              "family": 4,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-disjoint/C/4.rusage.json",
+              "raw_sha256": "2e360c675ec954c07acd5a10b244109b79817823c283f1fcc48f5ac405181128",
+              "wall_seconds": 4.123365979,
+              "cpu_seconds": 4.119672,
+              "wall_minus_cpu_seconds": 0.003693979000000347,
+              "wait4_rusage": {
+                "ru_utime": 4.089682,
+                "ru_stime": 0.02999,
+                "ru_maxrss": 33500,
+                "ru_minflt": 7580,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 14456,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 31
+              },
+              "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
+            },
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-disjoint/C/6.rusage.json",
+              "raw_sha256": "54d314877cf41a9be7e71158775c39095c6b462687897b0be7cc64f14f875f2c",
+              "wall_seconds": 8.433192766,
+              "cpu_seconds": 8.429189,
+              "wall_minus_cpu_seconds": 0.004003766000000297,
+              "wait4_rusage": {
+                "ru_utime": 8.298202,
+                "ru_stime": 0.130987,
+                "ru_maxrss": 68276,
+                "ru_minflt": 23164,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 20440,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 41
+              },
+              "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd"
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "tool": "B",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-disjoint/B/sample.json",
+          "sample_sha256": "0d013ce94f1232f08ca56948764de27bd97fa7775115ca5f533f65374ae2e6f7",
+          "wall_seconds": 9.482474168,
+          "cpu_seconds": 9.472852,
+          "peak_rss_mib": 66.9765625,
+          "parts": [
+            {
+              "family": 4,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-disjoint/B/4.rusage.json",
+              "raw_sha256": "8091da8f8bee190b15ddff3b41a1b04d75c4237ff53919e4c08a28755e541d20",
+              "wall_seconds": 4.163849508,
+              "cpu_seconds": 4.157049000000001,
+              "wall_minus_cpu_seconds": 0.006800507999999539,
+              "wait4_rusage": {
+                "ru_utime": 4.117059,
+                "ru_stime": 0.03999,
+                "ru_maxrss": 33364,
+                "ru_minflt": 7582,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 14456,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 29
+              },
+              "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
+            },
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-disjoint/B/6.rusage.json",
+              "raw_sha256": "d638f3e7558aafc1dd9f93135026a8634ba42e386257d338d6d61f3f3b18f0b8",
+              "wall_seconds": 5.31862466,
+              "cpu_seconds": 5.315803,
+              "wall_minus_cpu_seconds": 0.002821660000000392,
+              "wait4_rusage": {
+                "ru_utime": 5.219843,
+                "ru_stime": 0.09595999999999999,
+                "ru_maxrss": 68584,
+                "ru_minflt": 23171,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 20440,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 34
+              },
+              "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "B",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-disjoint/B/sample.json",
+          "sample_sha256": "2ebee34891cf683a460cf6c6ee04ae83d29ad928c242de47e9806f8f0ba7b262",
+          "wall_seconds": 9.462053532,
+          "cpu_seconds": 9.453129,
+          "peak_rss_mib": 66.9765625,
+          "parts": [
+            {
+              "family": 4,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-disjoint/B/4.rusage.json",
+              "raw_sha256": "9bf099af929a2000906884cf816e219bd22c70388a34b9da12e7e74aaf91c6b9",
+              "wall_seconds": 4.171249841,
+              "cpu_seconds": 4.167342,
+              "wall_minus_cpu_seconds": 0.0039078410000001895,
+              "wait4_rusage": {
+                "ru_utime": 4.133356,
+                "ru_stime": 0.033985999999999995,
+                "ru_maxrss": 33316,
+                "ru_minflt": 7583,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 14456,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 42
+              },
+              "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
+            },
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-disjoint/B/6.rusage.json",
+              "raw_sha256": "04a6da74a4dd95efe001cdf34b308ef98474bfee3a50feae84f5ad3eab5aaf61",
+              "wall_seconds": 5.290803691,
+              "cpu_seconds": 5.285787,
+              "wall_minus_cpu_seconds": 0.0050166909999997955,
+              "wait4_rusage": {
+                "ru_utime": 5.191827,
+                "ru_stime": 0.09396,
+                "ru_maxrss": 68584,
+                "ru_minflt": 23170,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 20440,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 52
+              },
+              "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "C",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-disjoint/C/sample.json",
+          "sample_sha256": "3c47aec10728ad0964fd15135184bb79d3da7baa9dc7ad588911a7a0b78f6711",
+          "wall_seconds": 9.508119385,
+          "cpu_seconds": 9.498361000000001,
+          "peak_rss_mib": 66.8203125,
+          "parts": [
+            {
+              "family": 4,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-disjoint/C/4.rusage.json",
+              "raw_sha256": "78a37fa2428c8be9c0108f37bc29d10991ebeb243f9948ea826f58d860f31cfa",
+              "wall_seconds": 4.125722465,
+              "cpu_seconds": 4.121018,
+              "wall_minus_cpu_seconds": 0.004704464999999658,
+              "wait4_rusage": {
+                "ru_utime": 4.080038,
+                "ru_stime": 0.040979999999999996,
+                "ru_maxrss": 33240,
+                "ru_minflt": 7576,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 14456,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 50
+              },
+              "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
+            },
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-disjoint/C/6.rusage.json",
+              "raw_sha256": "d870812c880684fd3ac772f07e623628156fb2add69305cb78b33fd9e09a4660",
+              "wall_seconds": 5.38239692,
+              "cpu_seconds": 5.377343000000001,
+              "wall_minus_cpu_seconds": 0.005053919999999046,
+              "wait4_rusage": {
+                "ru_utime": 5.275394,
+                "ru_stime": 0.101949,
+                "ru_maxrss": 68424,
+                "ru_minflt": 23164,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 20440,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 58
+              },
+              "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "mixed-adjacent",
+      "focus": {
+        "round": 1,
+        "tool": "B",
+        "family": 6
+      },
+      "all_six_pair_summary": {
+        "suite": "split",
+        "case": "mixed-adjacent",
+        "n_pairs": 6,
+        "paired_elapsed_change_median_pct": -3.0145728034256027,
+        "paired_elapsed_change_min_pct": -32.43288785974461,
+        "paired_elapsed_change_max_pct": -0.42515097076740727,
+        "paired_rss_change_median_pct": -0.1322280326899794,
+        "paired_rss_difference_median_mib": -0.068359375,
+        "pairs": [
+          {
+            "round": 1,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": -32.43288785974461,
+            "rss_change_pct": -0.09817989577826092,
+            "elapsed_difference_s": -4.262275225,
+            "rss_difference_mib": -0.05078125
+          },
+          {
+            "round": 2,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": -3.412649361270925,
+            "rss_change_pct": -0.5651420390324735,
+            "elapsed_difference_s": -0.31601352,
+            "rss_difference_mib": -0.29296875
+          },
+          {
+            "round": 3,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": -0.42515097076740727,
+            "rss_change_pct": -0.2414365474573743,
+            "elapsed_difference_s": -0.038541016,
+            "rss_difference_mib": -0.125
+          },
+          {
+            "round": 4,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": -2.61649624558028,
+            "rss_change_pct": -0.05297411835931687,
+            "elapsed_difference_s": -0.239905928,
+            "rss_difference_mib": -0.02734375
+          },
+          {
+            "round": 5,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": -4.7828022259904905,
+            "rss_change_pct": 0.13633265167007913,
+            "elapsed_difference_s": -0.44180803,
+            "rss_difference_mib": 0.0703125
+          },
+          {
+            "round": 6,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": -1.0056843048891873,
+            "rss_change_pct": -0.1662761696016979,
+            "elapsed_difference_s": -0.091589252,
+            "rss_difference_mib": -0.0859375
+          }
+        ]
+      },
+      "all_six_paired_cpu_changes_pct": [
+        -32.437091918075545,
+        -3.406724208525591,
+        -0.42823757634006254,
+        -2.6162011256131157,
+        -4.785298954813754,
+        -1.0227665009570952
+      ],
+      "paired_cpu_change_median_pct": -3.0114626670693534,
+      "nearby_records": [
+        {
+          "round": 1,
+          "tool": "B",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-adjacent/B/sample.json",
+          "sample_sha256": "7e54ae419f88b3fd92c59916f12b0865e10185099826c5593b17efb14833d3b0",
+          "wall_seconds": 13.141830735,
+          "cpu_seconds": 13.135076999999999,
+          "peak_rss_mib": 51.72265625,
+          "parts": [
+            {
+              "family": 4,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-adjacent/B/4.rusage.json",
+              "raw_sha256": "5388514003f74cff0b527520176467165bb208edaa7457d23e6a1240fcb88c1e",
+              "wall_seconds": 4.033208663,
+              "cpu_seconds": 4.031193,
+              "wall_minus_cpu_seconds": 0.00201566299999989,
+              "wait4_rusage": {
+                "ru_utime": 4.008198,
+                "ru_stime": 0.022994999999999998,
+                "ru_maxrss": 29512,
+                "ru_minflt": 3855,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 8,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 6
+              },
+              "output_sha256": "7f39dfd925b900c038386ce3c211b0ee72dc62875e751e82dbfc6d5a748c36a0"
+            },
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-adjacent/B/6.rusage.json",
+              "raw_sha256": "cb83c508722614807efcf3a77329a4656ab6bba66eb4ab848d648e4f79027da9",
+              "wall_seconds": 9.108622072,
+              "cpu_seconds": 9.103883999999999,
+              "wall_minus_cpu_seconds": 0.004738072000000315,
+              "wait4_rusage": {
+                "ru_utime": 9.022912,
+                "ru_stime": 0.080972,
+                "ru_maxrss": 52964,
+                "ru_minflt": 12838,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 8,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 46
+              },
+              "output_sha256": "b8a2b2728c96407d642e4885f5d0c2a41d450cdb43c5bb0f209206da2341d0a1"
+            }
+          ]
+        },
+        {
+          "round": 1,
+          "tool": "C",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-adjacent/C/sample.json",
+          "sample_sha256": "403c8d09605a6c8f8bdb1ccedc7c5ce1cc5e340253f1b25bd880d2de442a5de6",
+          "wall_seconds": 8.87955551,
+          "cpu_seconds": 8.87444,
+          "peak_rss_mib": 51.671875,
+          "parts": [
+            {
+              "family": 4,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-adjacent/C/4.rusage.json",
+              "raw_sha256": "15ac60d8b6ddb02a2e916b846b825f386b3f00342bd0c7fea8b03bdeed35a396",
+              "wall_seconds": 3.851100334,
+              "cpu_seconds": 3.848451,
+              "wall_minus_cpu_seconds": 0.002649334000000003,
+              "wait4_rusage": {
+                "ru_utime": 3.8304489999999998,
+                "ru_stime": 0.018002,
+                "ru_maxrss": 29312,
+                "ru_minflt": 3853,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 8,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 6
+              },
+              "output_sha256": "7f39dfd925b900c038386ce3c211b0ee72dc62875e751e82dbfc6d5a748c36a0"
+            },
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-adjacent/C/6.rusage.json",
+              "raw_sha256": "a104e3da3d7e04dac89c2146f9e1b50416d472484bcd6100fa35d3847c0d912f",
+              "wall_seconds": 5.028455176,
+              "cpu_seconds": 5.025989,
+              "wall_minus_cpu_seconds": 0.0024661759999995425,
+              "wait4_rusage": {
+                "ru_utime": 4.975,
+                "ru_stime": 0.050989,
+                "ru_maxrss": 52912,
+                "ru_minflt": 12833,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 8,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 17
+              },
+              "output_sha256": "b8a2b2728c96407d642e4885f5d0c2a41d450cdb43c5bb0f209206da2341d0a1"
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "tool": "C",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-adjacent/C/sample.json",
+          "sample_sha256": "4831542e3951897266da3c8736492d95d4028229389c2d4a70183dd250a15970",
+          "wall_seconds": 8.944050628,
+          "cpu_seconds": 8.936296,
+          "peak_rss_mib": 51.546875,
+          "parts": [
+            {
+              "family": 4,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-adjacent/C/4.rusage.json",
+              "raw_sha256": "44ce94320961367df7bde8c2a68f7f9eb07efa270d2be93dc86aadda743e53ce",
+              "wall_seconds": 3.892992105,
+              "cpu_seconds": 3.8892860000000002,
+              "wall_minus_cpu_seconds": 0.003706104999999571,
+              "wait4_rusage": {
+                "ru_utime": 3.858292,
+                "ru_stime": 0.030993999999999997,
+                "ru_maxrss": 29304,
+                "ru_minflt": 3852,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 8,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 39
+              },
+              "output_sha256": "7f39dfd925b900c038386ce3c211b0ee72dc62875e751e82dbfc6d5a748c36a0"
+            },
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-adjacent/C/6.rusage.json",
+              "raw_sha256": "b78accae2239961498505d78e59be97a3f55955add04c82cd57dd272a5550372",
+              "wall_seconds": 5.051058523,
+              "cpu_seconds": 5.04701,
+              "wall_minus_cpu_seconds": 0.004048522999999804,
+              "wait4_rusage": {
+                "ru_utime": 5.00101,
+                "ru_stime": 0.046,
+                "ru_maxrss": 52784,
+                "ru_minflt": 12834,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 8,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 52
+              },
+              "output_sha256": "b8a2b2728c96407d642e4885f5d0c2a41d450cdb43c5bb0f209206da2341d0a1"
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "tool": "B",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-adjacent/B/sample.json",
+          "sample_sha256": "1a17545aa6c99a2440d870669c0586c18c0458c9eedc7e66860f514125153ed2",
+          "wall_seconds": 9.260064148,
+          "cpu_seconds": 9.251468,
+          "peak_rss_mib": 51.83984375,
+          "parts": [
+            {
+              "family": 4,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-adjacent/B/4.rusage.json",
+              "raw_sha256": "4a5eb930a973fc5d7c735bd2696dca8082a9e768a3d1575aad959cba98df13f4",
+              "wall_seconds": 4.055486545,
+              "cpu_seconds": 4.0514969999999995,
+              "wall_minus_cpu_seconds": 0.003989545000000483,
+              "wait4_rusage": {
+                "ru_utime": 4.033509,
+                "ru_stime": 0.017988,
+                "ru_maxrss": 29528,
+                "ru_minflt": 3859,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 8,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 37
+              },
+              "output_sha256": "7f39dfd925b900c038386ce3c211b0ee72dc62875e751e82dbfc6d5a748c36a0"
+            },
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-adjacent/B/6.rusage.json",
+              "raw_sha256": "3d26dd4edb321c4045c1ab6d432188a3770d8f53f269b66e02e68d658b8b5edb",
+              "wall_seconds": 5.204577603,
+              "cpu_seconds": 5.199971,
+              "wall_minus_cpu_seconds": 0.004606603000000042,
+              "wait4_rusage": {
+                "ru_utime": 5.15299,
+                "ru_stime": 0.046980999999999995,
+                "ru_maxrss": 53084,
+                "ru_minflt": 12837,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 8,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 59
+              },
+              "output_sha256": "b8a2b2728c96407d642e4885f5d0c2a41d450cdb43c5bb0f209206da2341d0a1"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "B",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-adjacent/B/sample.json",
+          "sample_sha256": "d51ab7ec740d51601aa6056876889f2d0b960d0df6a33d932ba5529669ddb6a7",
+          "wall_seconds": 9.065254145,
+          "cpu_seconds": 9.056187999999999,
+          "peak_rss_mib": 51.7734375,
+          "parts": [
+            {
+              "family": 4,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-adjacent/B/4.rusage.json",
+              "raw_sha256": "ba3ba3719388651ffb996a84ff7cfce5dcf1c197602e62c0d8f8349b0400ed76",
+              "wall_seconds": 3.940378045,
+              "cpu_seconds": 3.9359129999999998,
+              "wall_minus_cpu_seconds": 0.004465045000000334,
+              "wait4_rusage": {
+                "ru_utime": 3.911926,
+                "ru_stime": 0.023986999999999998,
+                "ru_maxrss": 29388,
+                "ru_minflt": 3857,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 8,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 39
+              },
+              "output_sha256": "7f39dfd925b900c038386ce3c211b0ee72dc62875e751e82dbfc6d5a748c36a0"
+            },
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-adjacent/B/6.rusage.json",
+              "raw_sha256": "801fa1180c0503e6a6cef9f7f4034198f65343d9cd594ee8d69ded76dbd56867",
+              "wall_seconds": 5.1248761,
+              "cpu_seconds": 5.1202749999999995,
+              "wall_minus_cpu_seconds": 0.004601100000000358,
+              "wait4_rusage": {
+                "ru_utime": 5.060307,
+                "ru_stime": 0.059968,
+                "ru_maxrss": 53016,
+                "ru_minflt": 12838,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 8,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 51
+              },
+              "output_sha256": "b8a2b2728c96407d642e4885f5d0c2a41d450cdb43c5bb0f209206da2341d0a1"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "C",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-adjacent/C/sample.json",
+          "sample_sha256": "64ef26fd21c627ffa4cfca6b7535393e00905ec739152cb80e2c93b70ccb0309",
+          "wall_seconds": 9.026713129,
+          "cpu_seconds": 9.017406,
+          "peak_rss_mib": 51.6484375,
+          "parts": [
+            {
+              "family": 4,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-adjacent/C/4.rusage.json",
+              "raw_sha256": "b17d1f21648f7403ec2bb2c6b7ef559c23f24828d033158819dc7fba86abe532",
+              "wall_seconds": 3.921847393,
+              "cpu_seconds": 3.917143,
+              "wall_minus_cpu_seconds": 0.004704393000000362,
+              "wait4_rusage": {
+                "ru_utime": 3.895148,
+                "ru_stime": 0.021995,
+                "ru_maxrss": 29264,
+                "ru_minflt": 3851,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 8,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 44
+              },
+              "output_sha256": "7f39dfd925b900c038386ce3c211b0ee72dc62875e751e82dbfc6d5a748c36a0"
+            },
+            {
+              "family": 6,
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-adjacent/C/6.rusage.json",
+              "raw_sha256": "9d912db9ccf970d336eba0cb7bf26737ff47121078886e1847838759768b8381",
+              "wall_seconds": 5.104865736,
+              "cpu_seconds": 5.100263,
+              "wall_minus_cpu_seconds": 0.00460273599999983,
+              "wait4_rusage": {
+                "ru_utime": 5.045293,
+                "ru_stime": 0.05497,
+                "ru_maxrss": 52888,
+                "ru_minflt": 12833,
+                "ru_majflt": 0,
+                "ru_nswap": 0,
+                "ru_inblock": 0,
+                "ru_oublock": 8,
+                "ru_nvcsw": 14,
+                "ru_nivcsw": 51
+              },
+              "output_sha256": "b8a2b2728c96407d642e4885f5d0c2a41d450cdb43c5bb0f209206da2341d0a1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "observations": [
+    "The split IPv6-disjoint candidate in round 2 takes 18.413003418 s wall and 18.404471 s CPU; nearby candidate rounds 1 and 3 take 10.429526738 s and 10.613783297 s wall. Paired elapsed change: +70.667685912%.",
+    "The split mixed-disjoint candidate round 2 excess is concentrated in its IPv6 child: 8.433192766 s wall and 8.429189 s CPU. The IPv4 child takes 4.123365979 s, close to nearby IPv4 values. Total paired elapsed change: +32.418591631%.",
+    "The favorable split mixed-adjacent round 1 comparison includes a slower baseline: 13.141830735 s total wall and 13.135077 s CPU. Its IPv6 child takes 9.108622072 s wall and 9.103884 s CPU, versus 5.204577603 s and 5.124876100 s wall in baseline rounds 2 and 3. The paired elapsed change is -32.432887860%.",
+    "For these nearby records, major faults, swaps and input-block counts are zero; output-block counts are unchanged within each fixture/family, and minor-fault counts are close. Context-switch counts vary but do not show a consistent increase sufficient to identify a cause.",
+    "Extra wall time is also charged as child CPU time; wall-minus-CPU remains on the millisecond scale. These counters do not support treating the observations merely as parent waiting or blocking-input-I/O delays.",
+    "The data do not establish thermal throttling, CPU frequency changes, hypervisor scheduling/steal, allocator behavior, or a specific algorithmic cause. No hardware/perf trace was taken for these individual runs.",
+    "Small 1\u20133% paired median changes require qualification given six pairs and retained variability. Larger consistent sorting-heavy improvements should be described separately, with platform-specific scope."
+  ]
+}

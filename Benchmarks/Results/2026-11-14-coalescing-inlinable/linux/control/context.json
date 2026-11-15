@@ -1,0 +1,6 @@
+{
+  "root": "LINUX_EVIDENCE_ROOT",
+  "macos_evidence": "MAC_EVIDENCE_ROOT",
+  "original_fixtures": "COMPETITOR_EVIDENCE_ROOT",
+  "source_freeze_sha256": "373e55dd9e59387dd83ce5d39c51710e052ee29f2fd5449ab5d0fd1cfaed23af"
+}

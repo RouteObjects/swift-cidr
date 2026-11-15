@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-15T04:56:26.002520+00:00",
+  "container": "cidrmerge-coalescing-arm642-20261115",
+  "state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 143,
+    "Error": "",
+    "StartedAt": "2026-11-15T04:39:18.710075919Z",
+    "FinishedAt": "2026-11-15T04:56:25.931707028Z"
+  },
+  "owned_processes_before_stop": "PID                 COMMAND\n124113              /sbin/docker-init -- sleep infinity\n124125              sleep infinity\n",
+  "stop_exit_code": 0,
+  "other_containers_untouched": true
+}

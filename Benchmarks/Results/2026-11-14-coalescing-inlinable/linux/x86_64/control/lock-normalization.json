@@ -1,0 +1,6 @@
+{
+  "path": "sources/B/swift-cidr/Package.resolved",
+  "original_sha256": "5caf64374e1d14eadff3fe755926b5cb1fdd904339c4d284d797ed90f84fc88d",
+  "normalized_sha256": "5c22fdc42eff4901a941804ec09a425972a573ce29d225946d993dffcd74e26f",
+  "reason": "Remove irrelevant app-level pins from the upstream baseline lock; needed dependency revisions remain exactly the candidate/Mac revisions."
+}

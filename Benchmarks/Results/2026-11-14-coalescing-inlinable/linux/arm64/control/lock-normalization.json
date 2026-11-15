@@ -1,0 +1,6 @@
+{
+  "file": "sources/B/swift-cidr/Package.resolved",
+  "before_sha256": "5caf64374e1d14eadff3fe755926b5cb1fdd904339c4d284d797ed90f84fc88d",
+  "after_sha256": "5c22fdc42eff4901a941804ec09a425972a573ce29d225946d993dffcd74e26f",
+  "reason": "Drop extraneous CLI-only pins from baseline upstream lock; needed dependency revisions match C and original Mac pins."
+}

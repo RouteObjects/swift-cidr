@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "toolchain": "Swift version 6.2.4 (swift-6.2.4-RELEASE)\nTarget: aarch64-unknown-linux-gnu\n",
+  "tests": [
+    {
+      "package": "swift-cidr",
+      "configuration": "debug",
+      "exit_code": 0,
+      "tests": 298
+    },
+    {
+      "package": "swift-cidr",
+      "configuration": "release",
+      "exit_code": 0,
+      "tests": 298
+    },
+    {
+      "package": "cidrmerge",
+      "configuration": "debug",
+      "exit_code": 0,
+      "tests": 57
+    },
+    {
+      "package": "cidrmerge",
+      "configuration": "release",
+      "exit_code": 0,
+      "tests": 57
+    }
+  ],
+  "total_executions": 710,
+  "image": "sha256:e508ef1e4be68087f720de622b91cbf1e32799a7aa96134b35e6f1a1d656db7a",
+  "network_mode": "none",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-15T04:13:15.251173872Z",
+    "FinishedAt": "2026-11-15T04:15:47.576670282Z"
+  }
+}

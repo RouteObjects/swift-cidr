@@ -1,0 +1,7 @@
+# Independent ARM64 Linux audit
+
+Passed. Verified all 132 measured samples (192 processes), 22 excluded warmup samples (32 processes), and 224 retained output files. Each output matches the original independently verified coverage reference. Raw per-child wait4 records, KiB-to-byte RSS conversion, elapsed/CPU sums, split RSS maxima, commands, environments, sequential timestamps, all sample files and progress events pass. Each workload has three B/C and three C/B pairs. All 22 group statistics and 66 paired comparisons were independently recomputed and match the summary.
+
+The audit checked 667 hashes and 5,127 assertions, including source and benchmark freezes, measured binaries, codegen-gate evidence, original coverage-reference files, locked dependency pins, and all ten build/test receipts. The eight test configurations account for 1,414 passing test executions (upstream B 295 and C 298 each in Debug and Release, plus downstream 57 per variant/configuration). No observed measurement sample was dropped or retried.
+
+The script imported no benchmark harness and launched no builds, profiles, tests, coverage checks or benchmark processes. Measured outputs and source files remained read-only. Runtime receipt hashes were verified; the ARM64 libswiftCore.so path was not rehashed from the Mac audit host. Raw nanosecond timing consistency is checked rather than independently reconstructed. Codegen evidence is bound to actual binary hashes; disassembly interpretation was not repeated by this audit.

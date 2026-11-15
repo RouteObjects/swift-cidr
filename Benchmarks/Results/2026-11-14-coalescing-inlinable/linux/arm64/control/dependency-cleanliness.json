@@ -1,0 +1,390 @@
+{
+  "passed": true,
+  "checked": [
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-argument-parser",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/B/cli/checkouts/swift-argument-parser",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-asn1",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/B/cli/checkouts/swift-asn1",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-atomics",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/B/cli/checkouts/swift-atomics",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-collections",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/B/cli/checkouts/swift-collections",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-crypto",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/B/cli/checkouts/swift-crypto",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-nio",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/B/cli/checkouts/swift-nio",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "identity": "swift-system",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/B/cli/checkouts/swift-system",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "B",
+      "package": "upstream",
+      "identity": "swift-argument-parser",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/B/upstream/checkouts/swift-argument-parser",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "B",
+      "package": "upstream",
+      "identity": "swift-atomics",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/B/upstream/checkouts/swift-atomics",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "B",
+      "package": "upstream",
+      "identity": "swift-collections",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/B/upstream/checkouts/swift-collections",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "B",
+      "package": "upstream",
+      "identity": "swift-nio",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/B/upstream/checkouts/swift-nio",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "B",
+      "package": "upstream",
+      "identity": "swift-system",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/B/upstream/checkouts/swift-system",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-argument-parser",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/C/cli/checkouts/swift-argument-parser",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-asn1",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/C/cli/checkouts/swift-asn1",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-atomics",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/C/cli/checkouts/swift-atomics",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-collections",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/C/cli/checkouts/swift-collections",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-crypto",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/C/cli/checkouts/swift-crypto",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-nio",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/C/cli/checkouts/swift-nio",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "identity": "swift-system",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/C/cli/checkouts/swift-system",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "C",
+      "package": "upstream",
+      "identity": "swift-argument-parser",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/C/upstream/checkouts/swift-argument-parser",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "C",
+      "package": "upstream",
+      "identity": "swift-atomics",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/C/upstream/checkouts/swift-atomics",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "C",
+      "package": "upstream",
+      "identity": "swift-collections",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/C/upstream/checkouts/swift-collections",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "C",
+      "package": "upstream",
+      "identity": "swift-nio",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/C/upstream/checkouts/swift-nio",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    },
+    {
+      "variant": "C",
+      "package": "upstream",
+      "identity": "swift-system",
+      "command": [
+        "git",
+        "-C",
+        "/validation/build/C/upstream/checkouts/swift-system",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "status": "",
+      "stderr": ""
+    }
+  ],
+  "swift_runtime_hash_unchanged": true
+}

@@ -1,0 +1,146 @@
+diff --git a/Sources/CIDR/IPAddressCoverage.swift b/Sources/CIDR/IPAddressCoverage.swift
+index 1ec36a0..8bac712 100644
+--- a/Sources/CIDR/IPAddressCoverage.swift
++++ b/Sources/CIDR/IPAddressCoverage.swift
+@@ -27,6 +27,8 @@ public struct IPAddressCoverage<Family: IPAddressFamily>: Sendable, Hashable {
+     ///
+     /// Duplicate, contained, overlapping, and adjacent ranges are coalesced. Empty input produces
+     /// empty coverage.
++    // CHANGE: Preserve concrete family and sequence types through coverage construction.
++    @inlinable
+     public init<Ranges: Sequence>(_ ranges: Ranges)
+     where Ranges.Element == IPAddressRange<Family> {
+         self.ranges = IPAddressRange.coalescing(ranges)
+diff --git a/Sources/CIDR/IPAddressRange.swift b/Sources/CIDR/IPAddressRange.swift
+index 567ff2d..2d059a3 100644
+--- a/Sources/CIDR/IPAddressRange.swift
++++ b/Sources/CIDR/IPAddressRange.swift
+@@ -29,8 +29,11 @@ public typealias IPv6AddressRange = IPAddressRange<V6>
+ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
+     LosslessStringConvertible, Codable
+ {
+-    private let lowerAddress: Family.Storage
+-    private let upperAddress: Family.Storage
++    // CHANGE: Make immutable endpoints available to the cross-module coalescing implementation.
++    @usableFromInline
++    internal let lowerAddress: Family.Storage
++    @usableFromInline
++    internal let upperAddress: Family.Storage
+ 
+     /// The first address in the range, with host-prefix context.
+     public var lowerBound: IPAddress<Family> {
+@@ -151,6 +154,8 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
+     ///
+     /// Duplicate, contained, overlapping, and adjacent ranges collapse. Gaps are never widened or
+     /// covered. Applying this operation to an already-coalesced result is idempotent.
++    // CHANGE: Let typed callers specialize the range ordering and coalescing loop together.
++    @inlinable
+     public static func coalescing<Ranges: Sequence>(_ ranges: Ranges) -> [Self]
+     where Ranges.Element == Self {
+         let sorted = ranges.sorted { lhs, rhs in
+@@ -226,7 +231,8 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
+         try container.encode(description)
+     }
+ 
+-    private init(
++    @inlinable
++    internal init(
+         uncheckedLowerAddress lowerAddress: Family.Storage,
+         upperAddress: Family.Storage
+     ) {
+@@ -234,12 +240,14 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
+         self.upperAddress = upperAddress
+     }
+ 
+-    private func areSuccessive(_ lower: Family.Storage, _ upper: Family.Storage) -> Bool {
++    @inlinable
++    internal func areSuccessive(_ lower: Family.Storage, _ upper: Family.Storage) -> Bool {
+         let (successor, overflow) = lower.addingReportingOverflow(1)
+         return !overflow && successor == upper
+     }
+ 
+-    private func connectsToFollowing(_ other: Self) -> Bool {
++    @inlinable
++    internal func connectsToFollowing(_ other: Self) -> Bool {
+         other.lowerAddress <= upperAddress || areSuccessive(upperAddress, other.lowerAddress)
+     }
+ }
+diff --git a/Tests/CIDRTests/IPAddressCoalescingSequenceTests.swift b/Tests/CIDRTests/IPAddressCoalescingSequenceTests.swift
+new file mode 100644
+index 0000000..1ef87e9
+--- /dev/null
++++ b/Tests/CIDRTests/IPAddressCoalescingSequenceTests.swift
+@@ -0,0 +1,73 @@
++//===----------------------------------------------------------------------===//
++//
++// This source file is part of the swift-cidr project.
++//
++// Copyright (c) 2026 Craig A. Munro
++//
++// Licensed under the Apache License, Version 2.0.
++// See the LICENSE file for details.
++//
++// SPDX-License-Identifier: Apache-2.0
++//
++//===----------------------------------------------------------------------===//
++
++import CIDR
++import Testing
++
++@Suite("IP Address Coalescing Sequence Tests")
++struct IPAddressCoalescingSequenceTests {
++    @Test("IPv4 coalesces arbitrary sequences through maximum endpoints")
++    func ipv4Sequence() throws {
++        try checkSequenceNormalization(V4.self)
++    }
++
++    @Test("IPv6 coalesces arbitrary sequences through maximum endpoints")
++    func ipv6Sequence() throws {
++        try checkSequenceNormalization(V6.self)
++    }
++
++    @Test("Custom storage families retain generic sequence normalization")
++    func customFamilySequence() throws {
++        try checkSequenceNormalization(CoalescingTestFamily.self)
++    }
++
++    private func checkSequenceNormalization<Family: IPAddressFamily>(_: Family.Type) throws {
++        typealias Range = IPAddressRange<Family>
++
++        func range(_ lower: Family.Storage, _ upper: Family.Storage) throws -> Range {
++            try #require(
++                Range(
++                    lowerBound: IPAddress<Family>(address: lower),
++                    upperBound: IPAddress<Family>(address: upper)
++                )
++            )
++        }
++
++        let maximum = Family.Storage.max
++        // CHANGE: Specialization must preserve non-Array sequences and custom-family boundary math.
++        let input = try [
++            range(maximum, maximum),
++            range(8, 9),
++            range(0, 0),
++            range(maximum - 1, maximum - 1),
++            range(8, 10),
++            range(8, 9),
++        ]
++        let expected = try [range(0, 0), range(8, 10), range(maximum - 1, maximum)]
++
++        #expect(Range.coalescing(AnySequence(input)) == expected)
++        #expect(IPAddressCoverage(AnySequence(input)).ranges == expected)
++
++        let empty = AnySequence([Range]())
++        #expect(Range.coalescing(empty).isEmpty)
++        #expect(IPAddressCoverage(empty).isEmpty)
++    }
++}
++
++private enum CoalescingTestFamily: IPAddressFamily {
++    typealias Storage = UInt16
++    static let ianaValue: UInt16 = 65_535
++    static let familyName = "Coalescing Test"
++    static func parseAddress(_ string: String) -> UInt16? { UInt16(string) }
++    static func formatAddress(_ address: UInt16) -> String { String(address) }
++}

@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "configuration": "CIDRMERGE_REPOSITORY_ROOT/.swift-format.json",
+  "scope": "All modified/new Swift files in both repositories"
+}
