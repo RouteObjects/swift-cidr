@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "binary_sha256": {
+    "B": "341234e40b810847b2b33de12b6bfb7ccdfbfb882aa5424061dd299d23832211",
+    "C": "5aceca2a43b1edc362763b546273c620b4a2fe05c8f7ed4336f9ddc4dbc62fa2"
+  },
+  "evidence": "control/codegen.json",
+  "evidence_sha256": "7a02a5edc2c788fcf8b233201256abb97ffdc1c4a27f909f1b3d343938d2dd68",
+  "actual_cli_calls_reviewed": true
+}

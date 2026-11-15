@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-15T14:44:03.054845+00:00",
+  "repositories": {
+    "swift-cidr": {
+      "head": "e268b139e334a0662185d16a3e07b187ab0cbe70",
+      "branch": "perf/coalescing-inlinable",
+      "index_empty": true,
+      "preserved_prior_files": 3775,
+      "matched_candidate_source_files": 78,
+      "comment_only_differences": [
+        {
+          "path": "Sources/CIDR/IPAddressCoverage.swift",
+          "frozen_sha256": "f7134c7269c756460e38b89795b46a44d34b716a63caa48803f9794b70b18b47",
+          "canonical_sha256": "8d87164901e34fd4b407e823ab63aee86d382aceb9aac677664b8f8a49eea269",
+          "removed_comment_prefixes": 1
+        },
+        {
+          "path": "Sources/CIDR/IPAddressRange.swift",
+          "frozen_sha256": "71294fea818bf1b80c389d2a98ef69059dc3b2f1c9231d63e1e03ae0e33eb300",
+          "canonical_sha256": "091cddc784c3978bf1d09de3268c6c05e8d7765d049aab1f0d5097a1670630c7",
+          "removed_comment_prefixes": 2
+        }
+      ],
+      "status": "M Sources/CIDR/IPAddressCoverage.swift\n M Sources/CIDR/IPAddressRange.swift\n?? Benchmarks/Results/2026-11-06-family-format-dispatch/\n?? Benchmarks/Results/2026-11-07-family-dispatch-fixes/\n?? Benchmarks/Results/2026-11-07-ipv6-formatting-investigation/\n?? Benchmarks/Results/2026-11-07-performance-investigation/\n?? Benchmarks/Results/2026-11-07-release-0.9.0/\n?? Benchmarks/Results/2026-11-14-coalescing-inlinable/\n?? Tests/CIDRTests/IPAddressCoalescingSequenceTests.swift"
+    },
+    "cidrmerge": {
+      "head": "e4f1aed90c013cc5b0d75bb0d29d80f0259e19b0",
+      "branch": "perf/coalescing-inlinable",
+      "index_empty": true,
+      "preserved_prior_files": 17,
+      "matched_candidate_source_files": 14,
+      "comment_only_differences": [
+        {
+          "path": "Sources/CIDRMergeCore/CIDRMergeCoverage.swift",
+          "frozen_sha256": "dd8cfb3809d4c4e900fe9cfc06f4a1ef73bc22580f86b6b899de1084aab90289",
+          "canonical_sha256": "607d2e75174d900b205815b620e795fee6c3248c66bd7b10206195e0381289d8",
+          "removed_comment_prefixes": 1
+        }
+      ],
+      "status": "M Benchmarks/README.md\n M Benchmarks/Results/2026-11-13-summarization/RESULTS.md\n M Sources/CIDRMergeCore/CIDRMergeCoverage.swift\n?? Benchmarks/Results/2026-11-14-coalescing-inlinable/\n?? Benchmarks/Results/2026-11-14-competitors/"
+    }
+  },
+  "prior_report_backups_verified": true
+}

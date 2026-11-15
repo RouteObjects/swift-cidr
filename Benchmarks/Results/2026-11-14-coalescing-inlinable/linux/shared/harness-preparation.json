@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-15T04:43:28.068432+00:00",
+  "passed": true,
+  "syntax_checked": true,
+  "summary_function_matches_audited_macos_runner": true,
+  "no_benchmark_target_executed": true,
+  "measured_samples": 132,
+  "measured_processes": 192,
+  "warmup_samples": 22,
+  "warmup_processes": 32,
+  "files": {
+    "linux_runner.py": "646868b94d723a7c0c2e622c95d7e1a3366e3f4473aea0a6eea13b192b7ca2ac",
+    "run_matched.py": "c81456f5e9fb5b6204df30d2c66af8217029dfa9472a40275d3b004798218d35",
+    "source-reference.json": "8b417f5e2ae672ccbd62350f212dbb3220459066abecef0ad324c3b57d14050e",
+    "reference.json": "aa892aabae87fdc9bff34421bcacccac9f3546ab058086c63250333427b2cecd",
+    "README.md": "f1d671b2f15aa031878dbfc0f2099dc964fd703948c9227b5020b4bf45298bfb",
+    "matched-protocol.json": "31ceabb0b58013a32ed0d5d1a5948325036059cce1c259a61b7666d8cdafc38f",
+    "common.py": "e048454560f45cbb349a04d5a7cc2244a87f0294492183c40cc5f61a3012ee69",
+    "prepare_benchmark.py": "8f09274b7891fcdf8d2129bfd7df356a7e3a15ccefd4a24e44c5e6d5b983eb53",
+    "build_tests.py": "1b6d49cef5ae3c7e1b2d155fdd6c1ecdd86eea577699c774fb492b139a4bcf6b"
+  }
+}

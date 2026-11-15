@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "receipt": "control/C-upstream-test-debug-v2.json",
+      "tests": 298,
+      "exit_code": 0,
+      "log_decode_replacements": 0
+    },
+    {
+      "receipt": "control/C-upstream-test-release-v1.json",
+      "tests": 298,
+      "exit_code": 0,
+      "log_decode_replacements": 0
+    },
+    {
+      "receipt": "control/C-cli-test-debug-v1.json",
+      "tests": 57,
+      "exit_code": 0,
+      "log_decode_replacements": 0
+    },
+    {
+      "receipt": "control/C-cli-test-release-v1.json",
+      "tests": 57,
+      "exit_code": 0,
+      "log_decode_replacements": 2
+    }
+  ],
+  "total_executions": 710,
+  "log_note": "Raw combined stdout/stderr retained; one native SwiftPM log interleaves Unicode output bytes. Count extraction tolerates replacement characters without rewriting raw logs."
+}

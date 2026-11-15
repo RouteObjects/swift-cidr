@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "at": "2026-11-15T04:46:20.111279+00:00",
+  "binary_sha256": {
+    "B": "46526cf942a91687cf231cbeaaf6bb65d9e19f233fc54b0e6b1839d27c8a4af8",
+    "C": "3ce0ef33d754242e0629c20443853b081ca3f1ec0bc622cae77c1ebc93b480e9"
+  },
+  "evidence": "control/codegen.json",
+  "evidence_sha256": "5ac61880b14edfdfec0442bdefcd8f121abb618a6457814908d2db4fefbf0760",
+  "finding": "Actual candidate CLI reaches specialized IPv4/Array and IPv6/Array coalescing and concrete sorting; matched baseline remains generic."
+}

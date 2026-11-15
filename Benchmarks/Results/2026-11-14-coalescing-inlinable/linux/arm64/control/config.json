@@ -1,0 +1,5 @@
+{
+  "swift": "/usr/bin/swift",
+  "jobs": 8,
+  "platform_label": "arm64-linux"
+}

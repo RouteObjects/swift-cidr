@@ -29,8 +29,11 @@ public typealias IPv6AddressRange = IPAddressRange<V6>
 public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
     LosslessStringConvertible, Codable
 {
-    private let lowerAddress: Family.Storage
-    private let upperAddress: Family.Storage
+    // Make immutable endpoints available to the cross-module coalescing implementation.
+    @usableFromInline
+    internal let lowerAddress: Family.Storage
+    @usableFromInline
+    internal let upperAddress: Family.Storage
 
     /// The first address in the range, with host-prefix context.
     public var lowerBound: IPAddress<Family> {
@@ -151,6 +154,8 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
     ///
     /// Duplicate, contained, overlapping, and adjacent ranges collapse. Gaps are never widened or
     /// covered. Applying this operation to an already-coalesced result is idempotent.
+    // Let typed callers specialize the range ordering and coalescing loop together.
+    @inlinable
     public static func coalescing<Ranges: Sequence>(_ ranges: Ranges) -> [Self]
     where Ranges.Element == Self {
         let sorted = ranges.sorted { lhs, rhs in
@@ -226,7 +231,8 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
         try container.encode(description)
     }
 
-    private init(
+    @inlinable
+    internal init(
         uncheckedLowerAddress lowerAddress: Family.Storage,
         upperAddress: Family.Storage
     ) {
@@ -234,12 +240,14 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
         self.upperAddress = upperAddress
     }
 
-    private func areSuccessive(_ lower: Family.Storage, _ upper: Family.Storage) -> Bool {
+    @inlinable
+    internal func areSuccessive(_ lower: Family.Storage, _ upper: Family.Storage) -> Bool {
         let (successor, overflow) = lower.addingReportingOverflow(1)
         return !overflow && successor == upper
     }
 
-    private func connectsToFollowing(_ other: Self) -> Bool {
+    @inlinable
+    internal func connectsToFollowing(_ other: Self) -> Bool {
         other.lowerAddress <= upperAddress || areSuccessive(upperAddress, other.lowerAddress)
     }
 }

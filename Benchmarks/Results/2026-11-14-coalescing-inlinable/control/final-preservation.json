@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "repositories": {
+    "swift-cidr": {
+      "head": "e268b139e334a0662185d16a3e07b187ab0cbe70",
+      "branch": "perf/coalescing-inlinable",
+      "preserved_prior_files": 3775,
+      "allowed_new_files": [
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/RESULTS.md",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/cidrmerge.patch",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/codegen-C-v1.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/codegen-C-v1.md",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/codegen-C-v2.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/codegen-C-v2.md",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/formatting.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/host-before-benchmark.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/macos-tests.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/matched-protocol.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/methodology.md",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/pre-benchmark-freeze.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/reference-output-freeze.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/repository-preservation-initial.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/swift-cidr.patch",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/floor-6.2.4/verification.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/measurements/summary.json",
+        "Sources/CIDR/IPAddressCoverage.swift",
+        "Sources/CIDR/IPAddressRange.swift",
+        "Tests/CIDRTests/IPAddressCoalescingSequenceTests.swift"
+      ],
+      "index_empty": true
+    },
+    "cidrmerge": {
+      "head": "e4f1aed90c013cc5b0d75bb0d29d80f0259e19b0",
+      "branch": "perf/coalescing-inlinable",
+      "preserved_prior_files": 17,
+      "allowed_new_files": [
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/RESULTS.md",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/cidrmerge.patch",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/codegen-C-v1.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/codegen-C-v1.md",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/codegen-C-v2.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/codegen-C-v2.md",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/formatting.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/host-before-benchmark.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/macos-tests.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/matched-protocol.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/methodology.md",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/pre-benchmark-freeze.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/reference-output-freeze.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/repository-preservation-initial.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/control/swift-cidr.patch",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/floor-6.2.4/verification.json",
+        "Benchmarks/Results/2026-11-14-coalescing-inlinable/measurements/summary.json",
+        "Sources/CIDRMergeCore/CIDRMergeCoverage.swift"
+      ],
+      "index_empty": true
+    }
+  },
+  "prior_profile_documents_unchanged": true
+}

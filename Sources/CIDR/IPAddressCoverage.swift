@@ -27,6 +27,8 @@ public struct IPAddressCoverage<Family: IPAddressFamily>: Sendable, Hashable {
     ///
     /// Duplicate, contained, overlapping, and adjacent ranges are coalesced. Empty input produces
     /// empty coverage.
+    // Preserve concrete family and sequence types through coverage construction.
+    @inlinable
     public init<Ranges: Sequence>(_ ranges: Ranges)
     where Ranges.Element == IPAddressRange<Family> {
         self.ranges = IPAddressRange.coalescing(ranges)

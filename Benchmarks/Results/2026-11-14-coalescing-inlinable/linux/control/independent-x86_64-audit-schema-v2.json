@@ -1,0 +1,46 @@
+{
+  "passed": false,
+  "platform_root": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64",
+  "started_at": "2026-11-15T14:44:55.217847+00:00",
+  "scope": "Independent evidence-only audit; no harness imports or benchmark execution.",
+  "errors": [
+    {
+      "exception": "KeyError('at')",
+      "traceback": "Traceback (most recent call last):\n  File \"/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/control/audit_linux.py\", line 229, in audit\n    check(datetime.datetime.fromisoformat(gate['at']) <= datetime.datetime.fromisoformat(execution_order[0]['started_at']), 'codegen gate completed before timing')\n                                          ~~~~^^^^^^\nKeyError: 'at'\n"
+    }
+  ],
+  "summary_sha256": "92925bc5ea99d39e7a80ec53e9f53a47341d6ef5a5bcf31347fdbf2838d9ccbe",
+  "frozen_files_verified": 198,
+  "source_files_verified": 185,
+  "fixtures_verified": 24,
+  "runtime_arch": "x86_64",
+  "runtime_libraries_verified": false,
+  "runtime_note": "Runtime receipt frozen; native library paths are not rehashed on this retrieval host.",
+  "binary_sha256": {
+    "B": "341234e40b810847b2b33de12b6bfb7ccdfbfb882aa5424061dd299d23832211",
+    "C": "5aceca2a43b1edc362763b546273c620b4a2fe05c8f7ed4336f9ddc4dbc62fa2"
+  },
+  "codegen_gate_verified": true,
+  "log_encoding_notes": [
+    {
+      "log": "logs/C-upstream-test-release.log",
+      "invalid_utf8_start": 76398,
+      "reason": "invalid continuation byte",
+      "context_hex": "3432207365636f6e64732e0ae27761726e696e673a20272d2d6275696c642d73797374656d206e61746976652720686173206265656e206465707265636174656420616e642077696c6c2062652072656d6f76656420696e20612066",
+      "handling": "Frozen bytes preserved; extract the ASCII test summary using a bytes regex."
+    }
+  ],
+  "test_executions_verified": 1414,
+  "test_configurations_verified": 8,
+  "original_reference_files_verified": 22,
+  "native_execution_root": "/home/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z",
+  "progress_log": "control/benchmark-driver.log",
+  "checks": {
+    "files_hashed": 667,
+    "bytes_hashed": 2173498105,
+    "assertions": 4839,
+    "outputs_verified": 224,
+    "raw_rusage_files_verified": 224
+  },
+  "completed_at": "2026-11-15T14:44:56.464299+00:00"
+}

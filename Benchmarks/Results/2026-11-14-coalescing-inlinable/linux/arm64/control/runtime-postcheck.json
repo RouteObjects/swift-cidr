@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "at": "2026-11-15T04:57:47.138378+00:00",
+  "method": "Read-only docker cp from completed stopped measured container; original image/container unchanged",
+  "checks": [
+    {
+      "container_path": "/usr/lib/swift/linux/libswiftCore.so",
+      "copied_path": "control/runtime-postcheck/0-libswiftCore.so",
+      "sha256": "247baf3da05c8a44b7fdcbdcc841ff6c2f2747392a7524ee00e2ecd667645f55",
+      "matches_prebuild_runtime": true,
+      "command": [
+        "docker",
+        "--context",
+        "orbstack",
+        "cp",
+        "-L",
+        "cidrmerge-coalescing-arm642-20261115:/usr/lib/swift/linux/libswiftCore.so",
+        "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/arm64/control/runtime-postcheck/0-libswiftCore.so"
+      ]
+    }
+  ],
+  "container_running": false
+}

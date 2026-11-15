@@ -1,0 +1,41 @@
+{
+  "time": "2026-11-15T04:16:18.982592+00:00",
+  "commands": {
+    "sw_vers": {
+      "exit_code": 0,
+      "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t27.2.1\nBuildVersion:\t\t26B131\n",
+      "stderr": ""
+    },
+    "uname -m": {
+      "exit_code": 0,
+      "stdout": "arm64\n",
+      "stderr": ""
+    },
+    "sysctl -n machdep.cpu.brand_string": {
+      "exit_code": 0,
+      "stdout": "Apple M1 Max\n",
+      "stderr": ""
+    },
+    "sysctl -n hw.memsize": {
+      "exit_code": 0,
+      "stdout": "68719476736\n",
+      "stderr": ""
+    },
+    "sysctl -n hw.physicalcpu": {
+      "exit_code": 0,
+      "stdout": "10\n",
+      "stderr": ""
+    },
+    "xcrun swift --version": {
+      "exit_code": 0,
+      "stdout": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0\n",
+      "stderr": "swift-driver version: 1.168.6 "
+    },
+    "pmset -g therm": {
+      "exit_code": 0,
+      "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded\n",
+      "stderr": ""
+    }
+  },
+  "floor_container_stopped": true
+}

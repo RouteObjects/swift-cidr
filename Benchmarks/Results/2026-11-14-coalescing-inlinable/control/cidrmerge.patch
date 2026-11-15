@@ -1,0 +1,13 @@
+diff --git a/Sources/CIDRMergeCore/CIDRMergeCoverage.swift b/Sources/CIDRMergeCore/CIDRMergeCoverage.swift
+index 6479385..c7317ed 100644
+--- a/Sources/CIDRMergeCore/CIDRMergeCoverage.swift
++++ b/Sources/CIDRMergeCore/CIDRMergeCoverage.swift
+@@ -49,6 +49,8 @@ public struct CIDRMergeCoverage: Sendable, Hashable {
+     ///
+     /// This package-only path preserves the streaming parser's bounded staging cost while keeping
+     /// the public API centered on family-erased swift-cidr ranges.
++    // CHANGE: Let the CLI carry its concrete array types through the upstream coalescing chain.
++    @inlinable
+     package init<IPv4Ranges: Sequence, IPv6Ranges: Sequence>(
+         ipv4Ranges: IPv4Ranges,
+         ipv6Ranges: IPv6Ranges
