@@ -15,7 +15,7 @@
         "cp",
         "-L",
         "cidrmerge-coalescing-arm642-20261115:/usr/lib/swift/linux/libswiftCore.so",
-        "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/arm64/control/runtime-postcheck/0-libswiftCore.so"
+        "LINUX_EVIDENCE_ROOT/arm64/control/runtime-postcheck/0-libswiftCore.so"
       ]
     }
   ],

@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "macos_freeze": "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/control/pre-benchmark-freeze.json",
+  "macos_freeze": "MAC_EVIDENCE_ROOT/control/pre-benchmark-freeze.json",
   "checked_files": [
     "sources/B/swift-cidr/Package.swift",
     "sources/B/swift-cidr/Benchmarks/Package.resolved",

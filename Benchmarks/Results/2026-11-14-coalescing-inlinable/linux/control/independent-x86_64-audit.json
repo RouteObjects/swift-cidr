@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "platform_root": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64",
+  "platform_root": "LINUX_EVIDENCE_ROOT/x86_64",
   "started_at": "2026-11-15T14:45:29.505873+00:00",
   "scope": "Independent evidence-only audit; no harness imports or benchmark execution.",
   "errors": [],
@@ -28,7 +28,7 @@
   "test_executions_verified": 1414,
   "test_configurations_verified": 8,
   "original_reference_files_verified": 22,
-  "native_execution_root": "/home/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z",
+  "native_execution_root": "LINUX_REMOTE_EVIDENCE_ROOT",
   "progress_log": "control/benchmark-driver.log",
   "codegen_gate_timing_evidence": "No gate timestamp stored; required gate hash is bound by the pre-benchmark freeze and start validation receipt.",
   "measured_samples": 132,

@@ -134,12 +134,12 @@
         ],
         "coverage_receipt": {
           "passed": true,
-          "fixture": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/ipv4-disjoint",
+          "fixture": "COMPETITOR_EVIDENCE_ROOT/fixtures/ipv4-disjoint",
           "started_at": "2026-11-14T21:17:44.870710+00:00",
           "expected_sha256": "1e318342d3b4fec026cf4a9e849329c1263df01ce974e3e2fadc8d8ca6fb6233",
           "output_files": [
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/ipv4-disjoint/cidrmerge/4.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/ipv4-disjoint/cidrmerge/4.stdout",
               "bytes": 14806125,
               "line_count": 1000000,
               "blank_lines": 0,
@@ -185,12 +185,12 @@
         ],
         "coverage_receipt": {
           "passed": true,
-          "fixture": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/ipv6-disjoint",
+          "fixture": "COMPETITOR_EVIDENCE_ROOT/fixtures/ipv6-disjoint",
           "started_at": "2026-11-14T21:18:16.532613+00:00",
           "expected_sha256": "321417e238cde81b5e15666ea6dcee69542a2efcdca0bbd849301c0ff24121cf",
           "output_files": [
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/ipv6-disjoint/cidrmerge/6.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/ipv6-disjoint/cidrmerge/6.stdout",
               "bytes": 21342471,
               "line_count": 1000000,
               "blank_lines": 0,
@@ -242,19 +242,19 @@
         ],
         "coverage_receipt": {
           "passed": true,
-          "fixture": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-disjoint",
+          "fixture": "COMPETITOR_EVIDENCE_ROOT/fixtures/mixed-disjoint",
           "started_at": "2026-11-14T21:19:00.388765+00:00",
           "expected_sha256": "2d88b6e30a35ea7c9813839551d2c2171e61b7b4cfc1ee13202f815cf28c5bae",
           "output_files": [
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-disjoint/cidrmerge/4.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/mixed-disjoint/cidrmerge/4.stdout",
               "bytes": 7399156,
               "line_count": 500000,
               "blank_lines": 0,
               "sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
             },
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-disjoint/cidrmerge/6.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/mixed-disjoint/cidrmerge/6.stdout",
               "bytes": 10465056,
               "line_count": 500000,
               "blank_lines": 0,
@@ -306,19 +306,19 @@
         ],
         "coverage_receipt": {
           "passed": true,
-          "fixture": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-permuted",
+          "fixture": "COMPETITOR_EVIDENCE_ROOT/fixtures/mixed-permuted",
           "started_at": "2026-11-14T21:19:38.720864+00:00",
           "expected_sha256": "8678e5e11814c126818422278c6341ca9af41b7f1d6275e46a8da3331f735bc2",
           "output_files": [
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-permuted/cidrmerge/4.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/mixed-permuted/cidrmerge/4.stdout",
               "bytes": 7399156,
               "line_count": 500000,
               "blank_lines": 0,
               "sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
             },
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-permuted/cidrmerge/6.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/mixed-permuted/cidrmerge/6.stdout",
               "bytes": 10465056,
               "line_count": 500000,
               "blank_lines": 0,
@@ -370,19 +370,19 @@
         ],
         "coverage_receipt": {
           "passed": true,
-          "fixture": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-overlap",
+          "fixture": "COMPETITOR_EVIDENCE_ROOT/fixtures/mixed-overlap",
           "started_at": "2026-11-14T21:20:23.285469+00:00",
           "expected_sha256": "df4d5bff67b41ec08fb5db793e84a837cd7ab214fbf2c954441f46b733dba864",
           "output_files": [
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-overlap/cidrmerge/4.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/mixed-overlap/cidrmerge/4.stdout",
               "bytes": 11,
               "line_count": 1,
               "blank_lines": 0,
               "sha256": "9b4e456139331a2ec582ecfbc9ccf436bd32b34742440d649f0f086b0ea84df0"
             },
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-overlap/cidrmerge/6.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/mixed-overlap/cidrmerge/6.stdout",
               "bytes": 14,
               "line_count": 1,
               "blank_lines": 0,
@@ -434,19 +434,19 @@
         ],
         "coverage_receipt": {
           "passed": true,
-          "fixture": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-adjacent",
+          "fixture": "COMPETITOR_EVIDENCE_ROOT/fixtures/mixed-adjacent",
           "started_at": "2026-11-14T21:20:35.206060+00:00",
           "expected_sha256": "248040536f81f3c90e370d1ad543f0146a903da4e68c99716c63095766b9d2e5",
           "output_files": [
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-adjacent/cidrmerge/4.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/mixed-adjacent/cidrmerge/4.stdout",
               "bytes": 83,
               "line_count": 7,
               "blank_lines": 0,
               "sha256": "7f39dfd925b900c038386ce3c211b0ee72dc62875e751e82dbfc6d5a748c36a0"
             },
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-adjacent/cidrmerge/6.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/mixed-adjacent/cidrmerge/6.stdout",
               "bytes": 132,
               "line_count": 7,
               "blank_lines": 0,
@@ -492,12 +492,12 @@
         ],
         "coverage_receipt": {
           "passed": true,
-          "fixture": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/bgp-like-ipv4",
+          "fixture": "COMPETITOR_EVIDENCE_ROOT/fixtures/bgp-like-ipv4",
           "started_at": "2026-11-14T21:20:44.384303+00:00",
           "expected_sha256": "2b43575b733a10a022970d56e0b7e3457e31f559b66286dd434a5a087bdc5bff",
           "output_files": [
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/bgp-like-ipv4/cidrmerge/4.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/bgp-like-ipv4/cidrmerge/4.stdout",
               "bytes": 3691176,
               "line_count": 233532,
               "blank_lines": 0,
@@ -549,19 +549,19 @@
         ],
         "coverage_receipt": {
           "passed": true,
-          "fixture": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/range-derived-mixed",
+          "fixture": "COMPETITOR_EVIDENCE_ROOT/fixtures/range-derived-mixed",
           "started_at": "2026-11-14T21:21:16.779190+00:00",
           "expected_sha256": "07d5afa1559620724634f64cbece5dc4b5e691d84b85ec7279673b92da23f797",
           "output_files": [
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/range-derived-mixed/cidrmerge/4.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/range-derived-mixed/cidrmerge/4.stdout",
               "bytes": 7553022,
               "line_count": 500000,
               "blank_lines": 0,
               "sha256": "53db427e9aee7d9817f2384521f688751c2cfff9c78f9156380a96441e242c8c"
             },
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/range-derived-mixed/cidrmerge/6.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/split/range-derived-mixed/cidrmerge/6.stdout",
               "bytes": 10892816,
               "line_count": 500000,
               "blank_lines": 0,
@@ -609,12 +609,12 @@
         ],
         "coverage_receipt": {
           "passed": true,
-          "fixture": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-disjoint",
+          "fixture": "COMPETITOR_EVIDENCE_ROOT/fixtures/mixed-disjoint",
           "started_at": "2026-11-14T21:22:06.838782+00:00",
           "expected_sha256": "2d88b6e30a35ea7c9813839551d2c2171e61b7b4cfc1ee13202f815cf28c5bae",
           "output_files": [
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/native/mixed-disjoint/cidrmerge/mixed.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/native/mixed-disjoint/cidrmerge/mixed.stdout",
               "bytes": 17864212,
               "line_count": 1000000,
               "blank_lines": 0,
@@ -660,12 +660,12 @@
         ],
         "coverage_receipt": {
           "passed": true,
-          "fixture": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-permuted",
+          "fixture": "COMPETITOR_EVIDENCE_ROOT/fixtures/mixed-permuted",
           "started_at": "2026-11-14T21:22:38.831121+00:00",
           "expected_sha256": "8678e5e11814c126818422278c6341ca9af41b7f1d6275e46a8da3331f735bc2",
           "output_files": [
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/native/mixed-permuted/cidrmerge/mixed.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/native/mixed-permuted/cidrmerge/mixed.stdout",
               "bytes": 17864212,
               "line_count": 1000000,
               "blank_lines": 0,
@@ -711,12 +711,12 @@
         ],
         "coverage_receipt": {
           "passed": true,
-          "fixture": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-overlap",
+          "fixture": "COMPETITOR_EVIDENCE_ROOT/fixtures/mixed-overlap",
           "started_at": "2026-11-14T21:23:15.252254+00:00",
           "expected_sha256": "df4d5bff67b41ec08fb5db793e84a837cd7ab214fbf2c954441f46b733dba864",
           "output_files": [
             {
-              "path": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/native/mixed-overlap/cidrmerge/mixed.stdout",
+              "path": "COMPETITOR_EVIDENCE_ROOT/warmup/native/mixed-overlap/cidrmerge/mixed.stdout",
               "bytes": 25,
               "line_count": 2,
               "blank_lines": 0,

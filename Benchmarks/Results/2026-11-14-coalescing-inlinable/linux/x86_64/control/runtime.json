@@ -1,8 +1,8 @@
 {
-  "swift": "/home/craig/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
-  "toolchain_bin": "/home/craig/.local/share/swiftly/toolchains/6.4.2/usr/bin",
+  "swift": "SWIFTLY_TOOLCHAINS_ROOT/6.4.2/usr/bin/swift",
+  "toolchain_bin": "SWIFTLY_TOOLCHAINS_ROOT/6.4.2/usr/bin",
   "library_paths": [
-    "/home/craig/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux"
+    "SWIFTLY_TOOLCHAINS_ROOT/6.4.2/usr/lib/swift/linux"
   ],
   "target_info": {
     "compilerVersion": "Swift version 6.4.2 (swift-6.4.2-RELEASE)",
@@ -21,16 +21,16 @@
     },
     "paths": {
       "runtimeLibraryPaths": [
-        "/home/craig/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux"
+        "SWIFTLY_TOOLCHAINS_ROOT/6.4.2/usr/lib/swift/linux"
       ],
       "runtimeLibraryImportPaths": [
-        "/home/craig/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
-        "/home/craig/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/x86_64"
+        "SWIFTLY_TOOLCHAINS_ROOT/6.4.2/usr/lib/swift/linux",
+        "SWIFTLY_TOOLCHAINS_ROOT/6.4.2/usr/lib/swift/linux/x86_64"
       ],
-      "runtimeResourcePath": "/home/craig/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift"
+      "runtimeResourcePath": "SWIFTLY_TOOLCHAINS_ROOT/6.4.2/usr/lib/swift"
     }
   },
   "libswiftCore_sha256": {
-    "/home/craig/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftCore.so": "c6aa1b71de9ca9d7c332b7570410fbd78824aa6a81f3d114a2fd4f8aed234495"
+    "SWIFTLY_TOOLCHAINS_ROOT/6.4.2/usr/lib/swift/linux/libswiftCore.so": "c6aa1b71de9ca9d7c332b7570410fbd78824aa6a81f3d114a2fd4f8aed234495"
   }
 }

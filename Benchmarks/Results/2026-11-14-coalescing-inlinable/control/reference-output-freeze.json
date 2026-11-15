@@ -1,6 +1,6 @@
 {
   "created_at": "2026-11-15T04:07:02.186350+00:00",
-  "root": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z",
+  "root": "COMPETITOR_EVIDENCE_ROOT",
   "files": {
     "warmup/split/ipv4-disjoint/cidrmerge/sample.json": "11436944d472e20990e691b5f61103c9b7ca9e361fefd17c843a7de468ff8a5e",
     "warmup/split/ipv4-disjoint/cidrmerge/coverage.json": "cd5f0e3a7b4150cfb75b7a46b24d77962d13e8c48ac20de1138c2b26fb64bcca",

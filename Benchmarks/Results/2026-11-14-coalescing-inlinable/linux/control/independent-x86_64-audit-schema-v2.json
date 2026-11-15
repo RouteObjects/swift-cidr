@@ -1,12 +1,12 @@
 {
   "passed": false,
-  "platform_root": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64",
+  "platform_root": "LINUX_EVIDENCE_ROOT/x86_64",
   "started_at": "2026-11-15T14:44:55.217847+00:00",
   "scope": "Independent evidence-only audit; no harness imports or benchmark execution.",
   "errors": [
     {
       "exception": "KeyError('at')",
-      "traceback": "Traceback (most recent call last):\n  File \"/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/control/audit_linux.py\", line 229, in audit\n    check(datetime.datetime.fromisoformat(gate['at']) <= datetime.datetime.fromisoformat(execution_order[0]['started_at']), 'codegen gate completed before timing')\n                                          ~~~~^^^^^^\nKeyError: 'at'\n"
+      "traceback": "Traceback (most recent call last):\n  File \"LINUX_EVIDENCE_ROOT/control/audit_linux.py\", line 229, in audit\n    check(datetime.datetime.fromisoformat(gate['at']) <= datetime.datetime.fromisoformat(execution_order[0]['started_at']), 'codegen gate completed before timing')\n                                          ~~~~^^^^^^\nKeyError: 'at'\n"
     }
   ],
   "summary_sha256": "92925bc5ea99d39e7a80ec53e9f53a47341d6ef5a5bcf31347fdbf2838d9ccbe",
@@ -33,7 +33,7 @@
   "test_executions_verified": 1414,
   "test_configurations_verified": 8,
   "original_reference_files_verified": 22,
-  "native_execution_root": "/home/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z",
+  "native_execution_root": "LINUX_REMOTE_EVIDENCE_ROOT",
   "progress_log": "control/benchmark-driver.log",
   "checks": {
     "files_hashed": 667,

@@ -15,9 +15,9 @@ import shutil
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-MAC = Path('/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z')
-DIRS = [Path('/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-14-coalescing-inlinable'),
-        Path('/Users/craig/Developer/Route Objects/cidrmerge/Benchmarks/Results/2026-11-14-coalescing-inlinable')]
+MAC = Path('MAC_EVIDENCE_ROOT')
+DIRS = [Path('SWIFT_CIDR_REPOSITORY_ROOT/Benchmarks/Results/2026-11-14-coalescing-inlinable'),
+        Path('CIDRMERGE_REPOSITORY_ROOT/Benchmarks/Results/2026-11-14-coalescing-inlinable')]
 PRIOR = ROOT/'control/prior-reports'
 BACKUPS = {MAC/'REPORT.md': PRIOR/'macos-report.md', DIRS[0]/'RESULTS.md': PRIOR/'swift-cidr-results.md', DIRS[1]/'RESULTS.md': PRIOR/'cidrmerge-results.md'}
 

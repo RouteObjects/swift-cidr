@@ -1,6 +1,8 @@
 # Coalescing inlinable prototype — 2026-11-14
 
-Full local evidence bundle: [Downloads report](</Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/REPORT.md>). This repository directory contains the report, patches, generated-code captures and aggregate verification evidence. Raw logs, individual outputs, binaries and source/build snapshots remain in that Downloads bundle.
+> Publication note: Paths in this repository copy use placeholders. Embedded hashes and audit results describe the original immutable evidence; [path portability](PATH_PORTABILITY.md) explains the [manifest](portable-copy-manifest.json) binding these copies to their originals.
+
+Full local evidence bundle: `MAC_EVIDENCE_ROOT/REPORT.md`. This repository directory contains the report, patches, generated-code captures and aggregate verification evidence. Raw logs, individual outputs, binaries and source/build snapshots remain in that Downloads bundle.
 
 **The complete inlinable chain reaches specialized CLI sorting and improves elapsed time in every matched case.** Paired median elapsed changes range from −13.26% to −63.36%; all 66 individual elapsed-time pairs favor the candidate. Peak RSS is essentially unchanged. This addresses the generic sorting CPU cost; retained input chunks and large range/network/output buffers remain separate optimization targets.
 

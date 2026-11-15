@@ -1,9 +1,9 @@
 {
   "created_at": "2026-11-15T14:46:56.689706+00:00",
   "scope": "Read-only analysis of retained unusual x86 observations; no removal, retries or new measurements.",
-  "summary_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/summary.json",
+  "summary_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/summary.json",
   "summary_sha256": "92925bc5ea99d39e7a80ec53e9f53a47341d6ef5a5bcf31347fdbf2838d9ccbe",
-  "independent_audit": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/control/independent-x86_64-audit.json",
+  "independent_audit": "LINUX_EVIDENCE_ROOT/control/independent-x86_64-audit.json",
   "independent_audit_sha256": "8fdb1a8e5558db3fc64dde4af2345e64d6f64c4651702696fafc508cb348782a",
   "cases": [
     {
@@ -104,7 +104,7 @@
         {
           "round": 1,
           "tool": "B",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/ipv6-disjoint/B/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/ipv6-disjoint/B/sample.json",
           "sample_sha256": "e9209bd8a0ce5a973697eaa6239a36b70c954a3050de14029d2c50e602b87ec8",
           "wall_seconds": 10.564176593,
           "cpu_seconds": 10.556721999999999,
@@ -112,7 +112,7 @@
           "parts": [
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/ipv6-disjoint/B/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/ipv6-disjoint/B/6.rusage.json",
               "raw_sha256": "b2f5b0811df5e6a53137fc501bab156f6f6dd50a9ceba23ce7a85b8b0b2e0330",
               "wall_seconds": 10.564176593,
               "cpu_seconds": 10.556721999999999,
@@ -136,7 +136,7 @@
         {
           "round": 1,
           "tool": "C",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/ipv6-disjoint/C/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/ipv6-disjoint/C/sample.json",
           "sample_sha256": "ae260f69056600d53ad93b64ed676b40fa360102c2973fd67d44877e37066087",
           "wall_seconds": 10.429526738,
           "cpu_seconds": 10.421871000000001,
@@ -144,7 +144,7 @@
           "parts": [
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/ipv6-disjoint/C/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/ipv6-disjoint/C/6.rusage.json",
               "raw_sha256": "590fa058d4ed8c57745d64aa909062f2de388c2d72d034e55a1e8f39044c99c2",
               "wall_seconds": 10.429526738,
               "cpu_seconds": 10.421871000000001,
@@ -168,7 +168,7 @@
         {
           "round": 2,
           "tool": "C",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/ipv6-disjoint/C/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/ipv6-disjoint/C/sample.json",
           "sample_sha256": "5be8af8dc8d8eb00dedc3ce3846eac58edaf578c9184eaf66dd7f88ec170d3e9",
           "wall_seconds": 18.413003418,
           "cpu_seconds": 18.404471,
@@ -176,7 +176,7 @@
           "parts": [
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/ipv6-disjoint/C/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/ipv6-disjoint/C/6.rusage.json",
               "raw_sha256": "11f5ae954a160e28b8feaba0d7f517e2b3cec9d2b46d2561c4a8f4af8d2d9c36",
               "wall_seconds": 18.413003418,
               "cpu_seconds": 18.404471,
@@ -200,7 +200,7 @@
         {
           "round": 2,
           "tool": "B",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/ipv6-disjoint/B/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/ipv6-disjoint/B/sample.json",
           "sample_sha256": "ad4ec953f3fb1efc104d5a17563cde5ae59c80add54c2b11bc69b43827e475fd",
           "wall_seconds": 10.788804758,
           "cpu_seconds": 10.785319999999999,
@@ -208,7 +208,7 @@
           "parts": [
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/ipv6-disjoint/B/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/ipv6-disjoint/B/6.rusage.json",
               "raw_sha256": "7ce9fcc5bd3ad9b84db53b0e05a7af6ee28b7e9fc9f343fb41c138b1ff4e52f0",
               "wall_seconds": 10.788804758,
               "cpu_seconds": 10.785319999999999,
@@ -232,7 +232,7 @@
         {
           "round": 3,
           "tool": "B",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/ipv6-disjoint/B/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/ipv6-disjoint/B/sample.json",
           "sample_sha256": "a1ee83b4437fcde06ba27c749f88fd44041f41daea2549e1ac1e252ee9038047",
           "wall_seconds": 10.775409476,
           "cpu_seconds": 10.768769,
@@ -240,7 +240,7 @@
           "parts": [
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/ipv6-disjoint/B/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/ipv6-disjoint/B/6.rusage.json",
               "raw_sha256": "92e5ecb225a54ac787c074e9c8e974e8cc790b5f703bc3df04f0a150396992d6",
               "wall_seconds": 10.775409476,
               "cpu_seconds": 10.768769,
@@ -264,7 +264,7 @@
         {
           "round": 3,
           "tool": "C",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/ipv6-disjoint/C/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/ipv6-disjoint/C/sample.json",
           "sample_sha256": "2b6418ccccf3c123088a61238d257fa954614118503c251ed29cf377cd770831",
           "wall_seconds": 10.613783297,
           "cpu_seconds": 10.606577000000001,
@@ -272,7 +272,7 @@
           "parts": [
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/ipv6-disjoint/C/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/ipv6-disjoint/C/6.rusage.json",
               "raw_sha256": "f336c8bcbc0c481ae248dc0201a8a9ddd5fe8b7e60ef9bb09e2c8f628104ef27",
               "wall_seconds": 10.613783297,
               "cpu_seconds": 10.606577000000001,
@@ -393,7 +393,7 @@
         {
           "round": 1,
           "tool": "B",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/mixed-disjoint/B/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-disjoint/B/sample.json",
           "sample_sha256": "28f63dff04d0ac9aad873103e8e8b7fb7f8a366e5a41d7915eca08f8d09c8324",
           "wall_seconds": 9.519986549,
           "cpu_seconds": 9.508786,
@@ -401,7 +401,7 @@
           "parts": [
             {
               "family": 4,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/mixed-disjoint/B/4.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-disjoint/B/4.rusage.json",
               "raw_sha256": "ef6b824ec0b9bd2c84c44dba25fab9afc9769543c96745c2a1ae65991f9fab8a",
               "wall_seconds": 4.165098695,
               "cpu_seconds": 4.1588199999999995,
@@ -422,7 +422,7 @@
             },
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/mixed-disjoint/B/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-disjoint/B/6.rusage.json",
               "raw_sha256": "56d6565177ae40b8067c3d0c1c1c0977ee105eccecf516e59db3e782d7116624",
               "wall_seconds": 5.354887854,
               "cpu_seconds": 5.349966,
@@ -446,7 +446,7 @@
         {
           "round": 1,
           "tool": "C",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/mixed-disjoint/C/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-disjoint/C/sample.json",
           "sample_sha256": "7da5b90eb694ed876c8783d52e729fa6e519d0b1f30ad3bb550bfb8a6ad23d57",
           "wall_seconds": 9.300034994,
           "cpu_seconds": 9.290416999999998,
@@ -454,7 +454,7 @@
           "parts": [
             {
               "family": 4,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/mixed-disjoint/C/4.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-disjoint/C/4.rusage.json",
               "raw_sha256": "09bfb9fc932b1953bfd1cfd8c51a21ee493033ad706f55e9c8428760b84adb14",
               "wall_seconds": 4.077853576,
               "cpu_seconds": 4.073188999999999,
@@ -475,7 +475,7 @@
             },
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/mixed-disjoint/C/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-disjoint/C/6.rusage.json",
               "raw_sha256": "829b38b2eb3e03cc5b5387d1d545a79e73f73810c530f9e0aba0c6a9617b7a20",
               "wall_seconds": 5.222181418,
               "cpu_seconds": 5.2172279999999995,
@@ -499,7 +499,7 @@
         {
           "round": 2,
           "tool": "C",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/mixed-disjoint/C/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-disjoint/C/sample.json",
           "sample_sha256": "efbc21427849cf0036588cc04538ca381a0ae1dc7866d94b5ab703889f9590bf",
           "wall_seconds": 12.556558745,
           "cpu_seconds": 12.548860999999999,
@@ -507,7 +507,7 @@
           "parts": [
             {
               "family": 4,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/mixed-disjoint/C/4.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-disjoint/C/4.rusage.json",
               "raw_sha256": "2e360c675ec954c07acd5a10b244109b79817823c283f1fcc48f5ac405181128",
               "wall_seconds": 4.123365979,
               "cpu_seconds": 4.119672,
@@ -528,7 +528,7 @@
             },
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/mixed-disjoint/C/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-disjoint/C/6.rusage.json",
               "raw_sha256": "54d314877cf41a9be7e71158775c39095c6b462687897b0be7cc64f14f875f2c",
               "wall_seconds": 8.433192766,
               "cpu_seconds": 8.429189,
@@ -552,7 +552,7 @@
         {
           "round": 2,
           "tool": "B",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/mixed-disjoint/B/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-disjoint/B/sample.json",
           "sample_sha256": "0d013ce94f1232f08ca56948764de27bd97fa7775115ca5f533f65374ae2e6f7",
           "wall_seconds": 9.482474168,
           "cpu_seconds": 9.472852,
@@ -560,7 +560,7 @@
           "parts": [
             {
               "family": 4,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/mixed-disjoint/B/4.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-disjoint/B/4.rusage.json",
               "raw_sha256": "8091da8f8bee190b15ddff3b41a1b04d75c4237ff53919e4c08a28755e541d20",
               "wall_seconds": 4.163849508,
               "cpu_seconds": 4.157049000000001,
@@ -581,7 +581,7 @@
             },
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/mixed-disjoint/B/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-disjoint/B/6.rusage.json",
               "raw_sha256": "d638f3e7558aafc1dd9f93135026a8634ba42e386257d338d6d61f3f3b18f0b8",
               "wall_seconds": 5.31862466,
               "cpu_seconds": 5.315803,
@@ -605,7 +605,7 @@
         {
           "round": 3,
           "tool": "B",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/mixed-disjoint/B/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-disjoint/B/sample.json",
           "sample_sha256": "2ebee34891cf683a460cf6c6ee04ae83d29ad928c242de47e9806f8f0ba7b262",
           "wall_seconds": 9.462053532,
           "cpu_seconds": 9.453129,
@@ -613,7 +613,7 @@
           "parts": [
             {
               "family": 4,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/mixed-disjoint/B/4.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-disjoint/B/4.rusage.json",
               "raw_sha256": "9bf099af929a2000906884cf816e219bd22c70388a34b9da12e7e74aaf91c6b9",
               "wall_seconds": 4.171249841,
               "cpu_seconds": 4.167342,
@@ -634,7 +634,7 @@
             },
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/mixed-disjoint/B/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-disjoint/B/6.rusage.json",
               "raw_sha256": "04a6da74a4dd95efe001cdf34b308ef98474bfee3a50feae84f5ad3eab5aaf61",
               "wall_seconds": 5.290803691,
               "cpu_seconds": 5.285787,
@@ -658,7 +658,7 @@
         {
           "round": 3,
           "tool": "C",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/mixed-disjoint/C/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-disjoint/C/sample.json",
           "sample_sha256": "3c47aec10728ad0964fd15135184bb79d3da7baa9dc7ad588911a7a0b78f6711",
           "wall_seconds": 9.508119385,
           "cpu_seconds": 9.498361000000001,
@@ -666,7 +666,7 @@
           "parts": [
             {
               "family": 4,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/mixed-disjoint/C/4.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-disjoint/C/4.rusage.json",
               "raw_sha256": "78a37fa2428c8be9c0108f37bc29d10991ebeb243f9948ea826f58d860f31cfa",
               "wall_seconds": 4.125722465,
               "cpu_seconds": 4.121018,
@@ -687,7 +687,7 @@
             },
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/mixed-disjoint/C/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-disjoint/C/6.rusage.json",
               "raw_sha256": "d870812c880684fd3ac772f07e623628156fb2add69305cb78b33fd9e09a4660",
               "wall_seconds": 5.38239692,
               "cpu_seconds": 5.377343000000001,
@@ -808,7 +808,7 @@
         {
           "round": 1,
           "tool": "B",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/mixed-adjacent/B/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-adjacent/B/sample.json",
           "sample_sha256": "7e54ae419f88b3fd92c59916f12b0865e10185099826c5593b17efb14833d3b0",
           "wall_seconds": 13.141830735,
           "cpu_seconds": 13.135076999999999,
@@ -816,7 +816,7 @@
           "parts": [
             {
               "family": 4,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/mixed-adjacent/B/4.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-adjacent/B/4.rusage.json",
               "raw_sha256": "5388514003f74cff0b527520176467165bb208edaa7457d23e6a1240fcb88c1e",
               "wall_seconds": 4.033208663,
               "cpu_seconds": 4.031193,
@@ -837,7 +837,7 @@
             },
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/mixed-adjacent/B/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-adjacent/B/6.rusage.json",
               "raw_sha256": "cb83c508722614807efcf3a77329a4656ab6bba66eb4ab848d648e4f79027da9",
               "wall_seconds": 9.108622072,
               "cpu_seconds": 9.103883999999999,
@@ -861,7 +861,7 @@
         {
           "round": 1,
           "tool": "C",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/mixed-adjacent/C/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-adjacent/C/sample.json",
           "sample_sha256": "403c8d09605a6c8f8bdb1ccedc7c5ce1cc5e340253f1b25bd880d2de442a5de6",
           "wall_seconds": 8.87955551,
           "cpu_seconds": 8.87444,
@@ -869,7 +869,7 @@
           "parts": [
             {
               "family": 4,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/mixed-adjacent/C/4.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-adjacent/C/4.rusage.json",
               "raw_sha256": "15ac60d8b6ddb02a2e916b846b825f386b3f00342bd0c7fea8b03bdeed35a396",
               "wall_seconds": 3.851100334,
               "cpu_seconds": 3.848451,
@@ -890,7 +890,7 @@
             },
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-01/mixed-adjacent/C/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-01/mixed-adjacent/C/6.rusage.json",
               "raw_sha256": "a104e3da3d7e04dac89c2146f9e1b50416d472484bcd6100fa35d3847c0d912f",
               "wall_seconds": 5.028455176,
               "cpu_seconds": 5.025989,
@@ -914,7 +914,7 @@
         {
           "round": 2,
           "tool": "C",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/mixed-adjacent/C/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-adjacent/C/sample.json",
           "sample_sha256": "4831542e3951897266da3c8736492d95d4028229389c2d4a70183dd250a15970",
           "wall_seconds": 8.944050628,
           "cpu_seconds": 8.936296,
@@ -922,7 +922,7 @@
           "parts": [
             {
               "family": 4,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/mixed-adjacent/C/4.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-adjacent/C/4.rusage.json",
               "raw_sha256": "44ce94320961367df7bde8c2a68f7f9eb07efa270d2be93dc86aadda743e53ce",
               "wall_seconds": 3.892992105,
               "cpu_seconds": 3.8892860000000002,
@@ -943,7 +943,7 @@
             },
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/mixed-adjacent/C/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-adjacent/C/6.rusage.json",
               "raw_sha256": "b78accae2239961498505d78e59be97a3f55955add04c82cd57dd272a5550372",
               "wall_seconds": 5.051058523,
               "cpu_seconds": 5.04701,
@@ -967,7 +967,7 @@
         {
           "round": 2,
           "tool": "B",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/mixed-adjacent/B/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-adjacent/B/sample.json",
           "sample_sha256": "1a17545aa6c99a2440d870669c0586c18c0458c9eedc7e66860f514125153ed2",
           "wall_seconds": 9.260064148,
           "cpu_seconds": 9.251468,
@@ -975,7 +975,7 @@
           "parts": [
             {
               "family": 4,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/mixed-adjacent/B/4.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-adjacent/B/4.rusage.json",
               "raw_sha256": "4a5eb930a973fc5d7c735bd2696dca8082a9e768a3d1575aad959cba98df13f4",
               "wall_seconds": 4.055486545,
               "cpu_seconds": 4.0514969999999995,
@@ -996,7 +996,7 @@
             },
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-02/mixed-adjacent/B/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-02/mixed-adjacent/B/6.rusage.json",
               "raw_sha256": "3d26dd4edb321c4045c1ab6d432188a3770d8f53f269b66e02e68d658b8b5edb",
               "wall_seconds": 5.204577603,
               "cpu_seconds": 5.199971,
@@ -1020,7 +1020,7 @@
         {
           "round": 3,
           "tool": "B",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/mixed-adjacent/B/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-adjacent/B/sample.json",
           "sample_sha256": "d51ab7ec740d51601aa6056876889f2d0b960d0df6a33d932ba5529669ddb6a7",
           "wall_seconds": 9.065254145,
           "cpu_seconds": 9.056187999999999,
@@ -1028,7 +1028,7 @@
           "parts": [
             {
               "family": 4,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/mixed-adjacent/B/4.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-adjacent/B/4.rusage.json",
               "raw_sha256": "ba3ba3719388651ffb996a84ff7cfce5dcf1c197602e62c0d8f8349b0400ed76",
               "wall_seconds": 3.940378045,
               "cpu_seconds": 3.9359129999999998,
@@ -1049,7 +1049,7 @@
             },
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/mixed-adjacent/B/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-adjacent/B/6.rusage.json",
               "raw_sha256": "801fa1180c0503e6a6cef9f7f4034198f65343d9cd594ee8d69ded76dbd56867",
               "wall_seconds": 5.1248761,
               "cpu_seconds": 5.1202749999999995,
@@ -1073,7 +1073,7 @@
         {
           "round": 3,
           "tool": "C",
-          "sample_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/mixed-adjacent/C/sample.json",
+          "sample_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-adjacent/C/sample.json",
           "sample_sha256": "64ef26fd21c627ffa4cfca6b7535393e00905ec739152cb80e2c93b70ccb0309",
           "wall_seconds": 9.026713129,
           "cpu_seconds": 9.017406,
@@ -1081,7 +1081,7 @@
           "parts": [
             {
               "family": 4,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/mixed-adjacent/C/4.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-adjacent/C/4.rusage.json",
               "raw_sha256": "b17d1f21648f7403ec2bb2c6b7ef559c23f24828d033158819dc7fba86abe532",
               "wall_seconds": 3.921847393,
               "cpu_seconds": 3.917143,
@@ -1102,7 +1102,7 @@
             },
             {
               "family": 6,
-              "raw_path": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/x86_64/measurements/split/round-03/mixed-adjacent/C/6.rusage.json",
+              "raw_path": "LINUX_EVIDENCE_ROOT/x86_64/measurements/split/round-03/mixed-adjacent/C/6.rusage.json",
               "raw_sha256": "9d912db9ccf970d336eba0cb7bf26737ff47121078886e1847838759768b8381",
               "wall_seconds": 5.104865736,
               "cpu_seconds": 5.100263,

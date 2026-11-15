@@ -5,31 +5,31 @@
   "network_mode": "none",
   "mounts": [
     {
-      "Source": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/shared",
+      "Source": "LINUX_EVIDENCE_ROOT/shared",
       "Destination": "/shared",
       "RW": false,
       "Type": "bind"
     },
     {
-      "Source": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/arm64",
+      "Source": "LINUX_EVIDENCE_ROOT/arm64",
       "Destination": "/validation",
       "RW": true,
       "Type": "bind"
     },
     {
-      "Source": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures",
+      "Source": "COMPETITOR_EVIDENCE_ROOT/fixtures",
       "Destination": "/validation/fixtures",
       "RW": false,
       "Type": "bind"
     },
     {
-      "Source": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/arm64/python",
+      "Source": "LINUX_EVIDENCE_ROOT/arm64/python",
       "Destination": "/validation/python",
       "RW": false,
       "Type": "bind"
     },
     {
-      "Source": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/arm64/sources",
+      "Source": "LINUX_EVIDENCE_ROOT/arm64/sources",
       "Destination": "/validation/sources",
       "RW": false,
       "Type": "bind"

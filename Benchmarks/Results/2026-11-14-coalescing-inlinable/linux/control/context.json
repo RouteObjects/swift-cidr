@@ -1,6 +1,6 @@
 {
-  "root": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z",
-  "macos_evidence": "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z",
-  "original_fixtures": "/Users/craig/Downloads/cidrmerge-competitors-20261114T210745Z",
+  "root": "LINUX_EVIDENCE_ROOT",
+  "macos_evidence": "MAC_EVIDENCE_ROOT",
+  "original_fixtures": "COMPETITOR_EVIDENCE_ROOT",
   "source_freeze_sha256": "373e55dd9e59387dd83ce5d39c51710e052ee29f2fd5449ab5d0fd1cfaed23af"
 }

@@ -16,11 +16,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 793008291,
@@ -59,11 +59,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 627372209,
@@ -102,11 +102,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 1077322125,
@@ -145,11 +145,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 919301500,
@@ -188,11 +188,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 372920292,
@@ -211,11 +211,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 593823167,
@@ -254,11 +254,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 301849917,
@@ -277,11 +277,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 473493958,
@@ -320,11 +320,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 970013792,
@@ -343,11 +343,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 1221545041,
@@ -386,11 +386,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 334417292,
@@ -409,11 +409,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 530567416,
@@ -452,11 +452,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 828203917,
@@ -475,11 +475,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 1002923084,
@@ -518,11 +518,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 303687917,
@@ -541,11 +541,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 512394417,
@@ -584,11 +584,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 365122084,
@@ -607,11 +607,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 521582000,
@@ -650,11 +650,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 270967458,
@@ -673,11 +673,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 415712625,
@@ -716,11 +716,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 2038624333,
@@ -759,11 +759,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 744431917,
@@ -802,11 +802,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 435890792,
@@ -825,11 +825,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 563174083,
@@ -868,11 +868,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 314257209,
@@ -891,11 +891,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 472399291,
@@ -934,11 +934,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 931053000,
@@ -977,11 +977,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 1068466125,
@@ -1020,11 +1020,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 303156041,
@@ -1043,11 +1043,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 464076250,
@@ -1086,11 +1086,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 374133292,
@@ -1109,11 +1109,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 541865209,
@@ -1152,11 +1152,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 332728083,
@@ -1175,11 +1175,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 587694958,
@@ -1218,11 +1218,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 999790209,
@@ -1241,11 +1241,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 1221103167,
@@ -1284,11 +1284,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 304175084,
@@ -1307,11 +1307,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 460934625,
@@ -1350,11 +1350,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 820619375,
@@ -1373,11 +1373,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 999443667,
@@ -1416,11 +1416,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 269922625,
@@ -1439,11 +1439,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 456442000,
@@ -1482,11 +1482,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 349605416,
@@ -1505,11 +1505,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 494698167,
@@ -1548,11 +1548,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 735882541,
@@ -1591,11 +1591,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 2007253750,
@@ -1634,11 +1634,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 314439542,
@@ -1657,11 +1657,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 475800166,
@@ -1700,11 +1700,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 424169417,
@@ -1723,11 +1723,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 569180917,
@@ -1766,11 +1766,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 617403959,
@@ -1809,11 +1809,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 738456250,
@@ -1852,11 +1852,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 373807625,
@@ -1875,11 +1875,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 541631500,
@@ -1918,11 +1918,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 302207792,
@@ -1941,11 +1941,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 459124792,
@@ -1984,11 +1984,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 973777167,
@@ -2007,11 +2007,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 1224741333,
@@ -2050,11 +2050,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 339909625,
@@ -2073,11 +2073,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 573977500,
@@ -2116,11 +2116,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 820482250,
@@ -2139,11 +2139,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 1005907917,
@@ -2182,11 +2182,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 302193042,
@@ -2205,11 +2205,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 459198292,
@@ -2248,11 +2248,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 350600125,
@@ -2271,11 +2271,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 492879167,
@@ -2314,11 +2314,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 297891000,
@@ -2337,11 +2337,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 442203000,
@@ -2380,11 +2380,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 2044754917,
@@ -2423,11 +2423,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 745792208,
@@ -2466,11 +2466,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 392047375,
@@ -2489,11 +2489,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 557380417,
@@ -2532,11 +2532,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 320305875,
@@ -2555,11 +2555,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 475875917,
@@ -2598,11 +2598,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 734645000,
@@ -2641,11 +2641,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 595207625,
@@ -2684,11 +2684,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 1145592167,
@@ -2727,11 +2727,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 920827458,
@@ -2770,11 +2770,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 334718042,
@@ -2793,11 +2793,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 525973750,
@@ -2836,11 +2836,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 967652000,
@@ -2859,11 +2859,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 1302068334,
@@ -2902,11 +2902,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 302849791,
@@ -2925,11 +2925,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 455833542,
@@ -2968,11 +2968,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 826830291,
@@ -2991,11 +2991,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 1002828542,
@@ -3034,11 +3034,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 273421458,
@@ -3057,11 +3057,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 413349833,
@@ -3100,11 +3100,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 350112333,
@@ -3123,11 +3123,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 492796459,
@@ -3166,11 +3166,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 736725083,
@@ -3209,11 +3209,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 2012108250,
@@ -3252,11 +3252,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 364255541,
@@ -3275,11 +3275,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 476389125,
@@ -3318,11 +3318,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 390144375,
@@ -3341,11 +3341,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 546704625,
@@ -3384,11 +3384,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 591058875,
@@ -3427,11 +3427,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 793745416,
@@ -3470,11 +3470,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 985027375,
@@ -3513,11 +3513,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 1075900708,
@@ -3556,11 +3556,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 304709583,
@@ -3579,11 +3579,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 465860375,
@@ -3622,11 +3622,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 375969000,
@@ -3645,11 +3645,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 535545625,
@@ -3688,11 +3688,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 826350042,
@@ -3711,11 +3711,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 999485666,
@@ -3754,11 +3754,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 308618250,
@@ -3777,11 +3777,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 453711250,
@@ -3820,11 +3820,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 350857334,
@@ -3843,11 +3843,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 493784625,
@@ -3886,11 +3886,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 273829667,
@@ -3909,11 +3909,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 410535916,
@@ -3952,11 +3952,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 2049939584,
@@ -3995,11 +3995,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 799273458,
@@ -4038,11 +4038,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 434364542,
@@ -4061,11 +4061,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 558597084,
@@ -4104,11 +4104,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 312922958,
@@ -4127,11 +4127,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 473799666,
@@ -4170,11 +4170,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 740726000,
@@ -4213,11 +4213,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 594466083,
@@ -4256,11 +4256,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 1063244708,
@@ -4299,11 +4299,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 918114417,
@@ -4342,11 +4342,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 376027709,
@@ -4365,11 +4365,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 535809875,
@@ -4408,11 +4408,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 302086500,
@@ -4431,11 +4431,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 462977667,
@@ -4474,11 +4474,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 969983458,
@@ -4497,11 +4497,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 1231461667,
@@ -4540,11 +4540,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 385280125,
@@ -4563,11 +4563,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 556641875,
@@ -4606,11 +4606,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 321056917,
@@ -4629,11 +4629,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 413094666,
@@ -4672,11 +4672,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 376615791,
@@ -4695,11 +4695,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 492380500,
@@ -4738,11 +4738,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 742924458,
@@ -4781,11 +4781,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 2013389750,
@@ -4824,11 +4824,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 317262584,
@@ -4847,11 +4847,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 476299834,
@@ -4890,11 +4890,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 393188041,
@@ -4913,11 +4913,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 564967875,
@@ -4956,11 +4956,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 600455708,
@@ -4999,11 +4999,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 738435042,
@@ -5042,11 +5042,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 940419417,
@@ -5085,11 +5085,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 1071784667,
@@ -5128,11 +5128,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 400637334,
@@ -5151,11 +5151,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 468494209,
@@ -5194,11 +5194,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 576712250,
@@ -5217,11 +5217,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 542413833,
@@ -5260,11 +5260,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 412430959,
@@ -5283,11 +5283,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 534611583,
@@ -5326,11 +5326,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 980055000,
@@ -5349,11 +5349,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 1259149375,
@@ -5392,11 +5392,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 310567209,
@@ -5415,11 +5415,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 460776250,
@@ -5458,11 +5458,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 823874083,
@@ -5481,11 +5481,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 1003511750,
@@ -5524,11 +5524,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 920146750,
@@ -5567,11 +5567,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 767066208,
@@ -5610,11 +5610,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 2216425042,
@@ -5653,11 +5653,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 886912375,
@@ -5696,11 +5696,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 1835029708,
@@ -5739,11 +5739,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 835271333,
@@ -5782,11 +5782,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 978107334,
@@ -5825,11 +5825,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 2256571833,
@@ -5868,11 +5868,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 761125375,
@@ -5911,11 +5911,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 1826557209,
@@ -5954,11 +5954,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 771065875,
@@ -5997,11 +5997,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 908835500,
@@ -6040,11 +6040,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 1814715417,
@@ -6083,11 +6083,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 771881500,
@@ -6126,11 +6126,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 1024684792,
@@ -6169,11 +6169,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 849725625,
@@ -6212,11 +6212,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 2212523000,
@@ -6255,11 +6255,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 875232958,
@@ -6298,11 +6298,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 790919000,
@@ -6341,11 +6341,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 913149500,
@@ -6384,11 +6384,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 877114458,
@@ -6427,11 +6427,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 2209692833,
@@ -6470,11 +6470,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 767544666,
@@ -6513,11 +6513,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 1903699042,
@@ -6556,11 +6556,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 2265657583,
@@ -6599,11 +6599,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 865615458,
@@ -6642,11 +6642,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 1827119041,
@@ -6685,11 +6685,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 762747334,
@@ -6728,11 +6728,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 929146250,
@@ -6771,11 +6771,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 793280791,
@@ -6814,11 +6814,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 761692000,
@@ -6857,11 +6857,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 1939838959,
@@ -6900,11 +6900,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 778838166,
@@ -6943,11 +6943,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 923014459,
@@ -6986,11 +6986,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 935086083,
@@ -7029,11 +7029,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 2258021000,
@@ -7074,11 +7074,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 862705709,
@@ -7117,11 +7117,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv4-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv4-disjoint/ipv4.txt"
           ],
           "input": "fixtures/ipv4-disjoint/ipv4.txt",
           "elapsed_ns": 657995458,
@@ -7160,11 +7160,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 1075958875,
@@ -7203,11 +7203,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/ipv6-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/ipv6-disjoint/ipv6.txt"
           ],
           "input": "fixtures/ipv6-disjoint/ipv6.txt",
           "elapsed_ns": 924357000,
@@ -7246,11 +7246,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 373611083,
@@ -7269,11 +7269,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 535038084,
@@ -7312,11 +7312,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv4.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv4.txt",
           "elapsed_ns": 300403000,
@@ -7335,11 +7335,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/ipv6.txt"
           ],
           "input": "fixtures/mixed-disjoint/ipv6.txt",
           "elapsed_ns": 468418333,
@@ -7378,11 +7378,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 969061250,
@@ -7401,11 +7401,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 1289722833,
@@ -7444,11 +7444,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv4.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv4.txt",
           "elapsed_ns": 369352000,
@@ -7467,11 +7467,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/ipv6.txt"
           ],
           "input": "fixtures/mixed-permuted/ipv6.txt",
           "elapsed_ns": 525220000,
@@ -7510,11 +7510,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 821388584,
@@ -7533,11 +7533,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 1042785916,
@@ -7576,11 +7576,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv4.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv4.txt",
           "elapsed_ns": 297855708,
@@ -7599,11 +7599,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/ipv6.txt"
           ],
           "input": "fixtures/mixed-overlap/ipv6.txt",
           "elapsed_ns": 454026833,
@@ -7642,11 +7642,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 349431583,
@@ -7665,11 +7665,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 489991750,
@@ -7708,11 +7708,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv4.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv4.txt",
           "elapsed_ns": 276709000,
@@ -7731,11 +7731,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-adjacent/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-adjacent/ipv6.txt"
           ],
           "input": "fixtures/mixed-adjacent/ipv6.txt",
           "elapsed_ns": 412696541,
@@ -7774,11 +7774,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 1997851042,
@@ -7817,11 +7817,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/bgp-like-ipv4/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/bgp-like-ipv4/ipv4.txt"
           ],
           "input": "fixtures/bgp-like-ipv4/ipv4.txt",
           "elapsed_ns": 736637959,
@@ -7860,11 +7860,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 387238000,
@@ -7883,11 +7883,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 558623583,
@@ -7926,11 +7926,11 @@
         {
           "family": 4,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv4.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv4.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv4.txt",
           "elapsed_ns": 310090417,
@@ -7949,11 +7949,11 @@
         {
           "family": 6,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/range-derived-mixed/ipv6.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/range-derived-mixed/ipv6.txt"
           ],
           "input": "fixtures/range-derived-mixed/ipv6.txt",
           "elapsed_ns": 470381667,
@@ -7992,11 +7992,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 916014208,
@@ -8035,11 +8035,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-disjoint/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-disjoint/input.txt"
           ],
           "input": "fixtures/mixed-disjoint/input.txt",
           "elapsed_ns": 776354542,
@@ -8078,11 +8078,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 2244512333,
@@ -8121,11 +8121,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-permuted/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-permuted/input.txt"
           ],
           "input": "fixtures/mixed-permuted/input.txt",
           "elapsed_ns": 977561833,
@@ -8164,11 +8164,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/B",
+            "MAC_EVIDENCE_ROOT/bin/B",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 1827320417,
@@ -8207,11 +8207,11 @@
         {
           "family": null,
           "command": [
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/bin/C",
+            "MAC_EVIDENCE_ROOT/bin/C",
             "--raw",
             "--representation",
             "cidr",
-            "/Users/craig/Downloads/cidrmerge-coalescing-inlinable-20261115T040514Z/fixtures/mixed-overlap/input.txt"
+            "MAC_EVIDENCE_ROOT/fixtures/mixed-overlap/input.txt"
           ],
           "input": "fixtures/mixed-overlap/input.txt",
           "elapsed_ns": 766220459,

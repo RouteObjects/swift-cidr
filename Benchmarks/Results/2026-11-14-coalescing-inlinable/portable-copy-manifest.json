@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "description": "Reversible path substitutions and publication notices. Embedded hashes and audit results continue to describe original immutable evidence.",
+  "original_file_count": 82,
+  "changed_file_count": 28,
+  "unchanged_file_count": 54,
+  "placeholders": {
+    "SWIFT_CIDR_REPOSITORY_ROOT": "The upstream source checkout used to publish the original report.",
+    "MAC_EVIDENCE_ROOT": "The original macOS coalescing evidence bundle (20261115T040514Z).",
+    "LINUX_EVIDENCE_ROOT": "The local Linux evidence bundle (20261115T043459Z).",
+    "LINUX_REMOTE_EVIDENCE_ROOT": "The retained x86-64 host evidence bundle (20261115T043459Z).",
+    "COMPETITOR_EVIDENCE_ROOT": "The original matched competitor evidence bundle (20261114T210745Z).",
+    "BENCHMARK_SSH_CONTROL_SOCKET": "The historical SSH connection control socket; not needed for reproducing measurements.",
+    "CIDRMERGE_REPOSITORY_ROOT": "The downstream source checkout used to publish the original report.",
+    "SWIFTLY_TOOLCHAINS_ROOT": "The x86-64 host Swiftly toolchain installation directory."
+  },
+  "files": [
+    {
+      "path": "RESULTS.md",
+      "original_sha256": "e0951454eb54390b00a905f8e7aa2c65213b6e307359029faf5a2322850182d4",
+      "published_sha256": "8c34994db0adbdecc5f2412e78062a11498b4d0262fa20ec14627ca53e03a951"
+    },
+    {
+      "path": "control/codegen-C-v1.json",
+      "original_sha256": "3a1e13190ea7a5746d65805cb69dc2785636a2af0a1c0e0032d9f3b7d5101e54",
+      "published_sha256": "bc009cb032dabbb4dc365736e213df956ade9c1c1d62d8b6936d0046ae15c499"
+    },
+    {
+      "path": "control/codegen-C-v2.json",
+      "original_sha256": "58da569a873899b073066380528e20b16b668a3d8cd20098d1a21a2bf511e859",
+      "published_sha256": "6bb1e6af50aeb483ce00781716505f470be105486078ffd4937584e03f7158ac"
+    },
+    {
+      "path": "control/formatting.json",
+      "original_sha256": "471009363aef22f1d157629432b1963069982c9f384634ceaadafecbf4e91d94",
+      "published_sha256": "3eef95fc2aa4b64ebf21c3db2a3f2b81264f031964583848ab30709bef463c3e"
+    },
+    {
+      "path": "control/reference-output-freeze.json",
+      "original_sha256": "8240720305e641b6ccc2d336f82108cfd2be1fc79e773993c63401b674c38a48",
+      "published_sha256": "c4d1870d75c453acd784cf3a0f027447b780d786b21944ff5218ee8c0c10cc89"
+    },
+    {
+      "path": "linux/RESULTS.md",
+      "original_sha256": "5dc496edd0c995842e19374aba0becbe201aa0c0b504e7e8bc79bbf29a1d3af3",
+      "published_sha256": "a308e62c00673e21d21a713781d832501b96dd20d7a7577819c635a166bb4d13"
+    },
+    {
+      "path": "linux/arm64/control/codegen.json",
+      "original_sha256": "5ac61880b14edfdfec0442bdefcd8f121abb618a6457814908d2db4fefbf0760",
+      "published_sha256": "9129e0a88d3c796226d694fae2276482e36d8e76e02d5d6b116173b1a41fa464"
+    },
+    {
+      "path": "linux/arm64/control/container.json",
+      "original_sha256": "6052ea527c413678fa3d8e07f4c87edfc3fc50d4dcca7eb7f901795297795ee8",
+      "published_sha256": "d6f27cbfa42156eceba6e78808d41c571267146305a7bba118cf9146be69086b"
+    },
+    {
+      "path": "linux/arm64/control/runtime-postcheck.json",
+      "original_sha256": "274413a9db49241bff299a7e47afc7ae0edf5e313c57924f8e3a8bf3b9467f9b",
+      "published_sha256": "167292754ce1ca07debf26c7f061066c8d929f1b265dd67b9d190134303f2785"
+    },
+    {
+      "path": "linux/arm64/control/source-parity.json",
+      "original_sha256": "6cff19ae4013618985c276edd39f5e17c003547e7cddeabc9ac3a9cc419c5949",
+      "published_sha256": "1c2c0f6a1ccacf566d01976227801b42ddbfbb028a23b7668a26dd2b5edf6e3c"
+    },
+    {
+      "path": "linux/control/context.json",
+      "original_sha256": "0720b37456ada6555a00f3e3cd7e85994e4773d6aae5a3adc3c852ef268d6727",
+      "published_sha256": "fb9dc17175bf9352ed76c3e18e90a493666876a77875b46240bff71c303ae73b"
+    },
+    {
+      "path": "linux/control/independent-arm64-audit.json",
+      "original_sha256": "2427a8950068d10792e246e4374ac01e2b39015a4fa96fbd3093b3543a9d15b0",
+      "published_sha256": "b41033adb443dc999c28e54e6d32a468de0c1d2cdea12cb1994ce2df5e80bab4"
+    },
+    {
+      "path": "linux/control/independent-x86_64-audit-logdecode-v1.json",
+      "original_sha256": "a90fb56dfc6743920e6becef833e421048abfccdac5afc9072bab48064777f1f",
+      "published_sha256": "097754faef6e44e49f9d9330071847678a850e417dc67395b4a1792c5d4049f0"
+    },
+    {
+      "path": "linux/control/independent-x86_64-audit-schema-v2.json",
+      "original_sha256": "90aa949789d82aef76b1687214c3034c1d6ecb39c96a16c30a62bd42f90f7019",
+      "published_sha256": "f18ddbe7aff544ceb00bf0e601516ce27bf1345027694e891d851bd6ba015829"
+    },
+    {
+      "path": "linux/control/independent-x86_64-audit.json",
+      "original_sha256": "8fdb1a8e5558db3fc64dde4af2345e64d6f64c4651702696fafc508cb348782a",
+      "published_sha256": "8abcab22ceb139d2a30e116ee1f91ae96325924600527542e96a7bc0884b7d4c"
+    },
+    {
+      "path": "linux/control/publish_linux_report.py",
+      "original_sha256": "e37ebe91a7d0a0e83a30a3f58c133d8efb853694e2464db1f82f4d3e9dad2d74",
+      "published_sha256": "1f534b8cf28904ebbbe19f11d4ede101a833261bc49f74356a0b48a175e042df"
+    },
+    {
+      "path": "linux/control/retrieval-export-20261115T144301/transfer-receipt.json",
+      "original_sha256": "7000880a5517285a56a3216d5e9b5366201d5a5282caf0b2f4561ecd24f7a2d1",
+      "published_sha256": "8f57f03e05fd9cb17ee1429f3b2c97ec6a695f40c05b1379ff115c34dab41df7"
+    },
+    {
+      "path": "linux/control/x86_64-outlier-review.json",
+      "original_sha256": "79a858921aa30d3fa1e9e7491a3f8a8fdae9db2e6fbb31e9f6ba5355ac6cd7e1",
+      "published_sha256": "ec58f0acc8c5199a670eaa0ba51e95d2337fd40969147b3ae64c2eb55a2ba789"
+    },
+    {
+      "path": "linux/shared/reference.json",
+      "original_sha256": "aa892aabae87fdc9bff34421bcacccac9f3546ab058086c63250333427b2cecd",
+      "published_sha256": "981aa703d5791b9b2f4040c6bc6cec9a3b9efa8f84d39a7c56991b8dbb70f202"
+    },
+    {
+      "path": "linux/x86_64/control/build-tests/summary.json",
+      "original_sha256": "38ec52e76a0e322dd2f50b73537aa6fe2ca1b4a223debd474eac381be4b31074",
+      "published_sha256": "5981403d8837256834ea4264a5078b92a98a6969954479f3cc8f6327a8fc64f5"
+    },
+    {
+      "path": "linux/x86_64/control/codegen.json",
+      "original_sha256": "7a02a5edc2c788fcf8b233201256abb97ffdc1c4a27f909f1b3d343938d2dd68",
+      "published_sha256": "ece3614e1388d2d2cc77959d9f2cbf90f9d3fa2feca04caa46f6e65c948ab3fd"
+    },
+    {
+      "path": "linux/x86_64/control/config.json",
+      "original_sha256": "1363e9d4bc62ba93d0c7c6a0ac0b49444a2d9a245cac9fb24230ac5cbe7ba7cb",
+      "published_sha256": "013271778870c947ce032ee04365c5d3a1dcf99039517444052251a378ea6858"
+    },
+    {
+      "path": "linux/x86_64/control/host-before-benchmark.json",
+      "original_sha256": "f5bcfe845be47a4e80738dfbe57252f5f1c0cf8a8ccd32138371beaf34cc44fb",
+      "published_sha256": "d1af2db83f6de2dd20e80a17a1c52287d20e9da1059815663d69b69f1e86d5cc"
+    },
+    {
+      "path": "linux/x86_64/control/runtime-postcheck.json",
+      "original_sha256": "58e7d833aafcd664c44de0551e6be440712afc77aeeed09067c522190b5a5588",
+      "published_sha256": "60e2f2981cf555e8f06dcd6ef3acd8e408e626e33a0f684c7bb5ffa0d50207eb"
+    },
+    {
+      "path": "linux/x86_64/control/runtime.json",
+      "original_sha256": "90d6aad43c7b87ca25dade9da209633ba8beae0a457de94f6d6bbcf6728e385a",
+      "published_sha256": "5adffb366ba20f3b419739c309f3bebf9fa66ca46256776ebb317f5b68ffda6f"
+    },
+    {
+      "path": "linux/x86_64/control/validation-complete.json",
+      "original_sha256": "2498b2f64367b8c9c833930ae28fa7eb1fe307d4041ca3a8b573cb2b138a8978",
+      "published_sha256": "e15af427233a06f2be706fa41b47610dcc0e19dd74958394b12ba71151ca2d71"
+    },
+    {
+      "path": "linux/x86_64/measurements/summary.json",
+      "original_sha256": "92925bc5ea99d39e7a80ec53e9f53a47341d6ef5a5bcf31347fdbf2838d9ccbe",
+      "published_sha256": "5519264c6b7e191e22052be67eec00156f0842201d068ac756bb07b03f2adc57"
+    },
+    {
+      "path": "measurements/summary.json",
+      "original_sha256": "6593f2e3289c743e7e3450ef594688c2701dac937ba8d6fdc9c52eda2245817d",
+      "published_sha256": "93359935e1ecebe0ad15027015767d3da2a6b7b0852c15a8f12eaef0cb6346dd"
+    }
+  ]
+}

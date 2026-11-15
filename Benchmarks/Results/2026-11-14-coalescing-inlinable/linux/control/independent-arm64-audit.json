@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "platform_root": "/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z/arm64",
+  "platform_root": "LINUX_EVIDENCE_ROOT/arm64",
   "started_at": "2026-11-15T04:56:03.583558+00:00",
   "scope": "Independent evidence-only audit; no harness imports or benchmark execution.",
   "errors": [],

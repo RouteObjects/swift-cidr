@@ -18,7 +18,7 @@
     "disk_free_bytes": 10389233664,
     "swift": {
       "command": [
-        "/home/craig/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+        "SWIFTLY_TOOLCHAINS_ROOT/6.4.2/usr/bin/swift",
         "--version"
       ],
       "exit_code": 0,

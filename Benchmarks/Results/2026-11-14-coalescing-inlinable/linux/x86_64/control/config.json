@@ -1,5 +1,5 @@
 {
-  "swift": "/home/craig/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+  "swift": "SWIFTLY_TOOLCHAINS_ROOT/6.4.2/usr/bin/swift",
   "jobs": 4,
   "platform_label": "native x86-64 Linux swift-dev"
 }

@@ -1,7 +1,7 @@
 {
   "passed": true,
   "files": {
-    "/home/craig/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftCore.so": "c6aa1b71de9ca9d7c332b7570410fbd78824aa6a81f3d114a2fd4f8aed234495"
+    "SWIFTLY_TOOLCHAINS_ROOT/6.4.2/usr/lib/swift/linux/libswiftCore.so": "c6aa1b71de9ca9d7c332b7570410fbd78824aa6a81f3d114a2fd4f8aed234495"
   },
   "checked_at": "2026-11-15T05:29:27.059398+00:00"
 }

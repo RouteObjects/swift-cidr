@@ -1,6 +1,8 @@
 # Linux Swift 6.4.2 validation
 
-Portable Linux report and compact metadata. The full local evidence bundle is `/Users/craig/Downloads/cidrmerge-coalescing-linux-20261115T043459Z`; raw outputs, binaries and build products remain in Downloads.
+> Publication note: Paths in this repository copy use placeholders. Embedded hashes and audit results describe the original immutable evidence; [path portability](../PATH_PORTABILITY.md) explains the [manifest](../portable-copy-manifest.json) binding these copies to their originals.
+
+Portable Linux report and compact metadata. The full local evidence bundle is `LINUX_EVIDENCE_ROOT`; raw outputs, binaries and build products remain in Downloads.
 
 The frozen candidate reaches specialized sorting on both Linux architectures. Both complete test matrices and both independently audited matched benchmark runs passed. Results below are kept separate by platform; no pooled speedup is calculated.
 
@@ -77,7 +79,7 @@ Retained non-improving individual pairs (not removed or retried):
 
 11/11 workload paired medians improved; elapsed changes range from -27.58% to -1.20%. 61/66 individual pairs favor C. Median paired RSS differences range from -0.30 to -0.04 MiB.
 
-Host: Intel(R) Xeon(R) CPU           E5520  @ 2.27GHz; `x86_64`; 4 allowed logical CPUs; 8.00 GiB guest-visible memory; kernel `6.14.8-2-pve`. Swift executable: `/home/craig/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift`. Measurement completion timestamp: `2026-11-15T05:29:26.827497+00:00`.
+Host: Intel(R) Xeon(R) CPU           E5520  @ 2.27GHz; `x86_64`; 4 allowed logical CPUs; 8.00 GiB guest-visible memory; kernel `6.14.8-2-pve`. Swift executable: `SWIFTLY_TOOLCHAINS_ROOT/6.4.2/usr/bin/swift`. Measurement completion timestamp: `2026-11-15T05:29:26.827497+00:00`.
 
 | Suite / corpus | B elapsed (s) | C elapsed (s) | Paired elapsed change | B peak RSS (MiB) | C peak RSS (MiB) |
 |---|---:|---:|---:|---:|---:|
