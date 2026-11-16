@@ -1,0 +1,62 @@
+{
+  "round": 0,
+  "variant": "B",
+  "case": "mixed-sparse-duplicate-10000",
+  "entries": 10002,
+  "order": [
+    "B",
+    "C"
+  ],
+  "command": [
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+    "--raw",
+    "--representation",
+    "cidr",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+  ],
+  "actual_command": [
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+    "--raw",
+    "--representation",
+    "cidr",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+  ],
+  "environment": {
+    "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+    "LANG": "C",
+    "LC_ALL": "C",
+    "TZ": "UTC",
+    "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+    "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-sparse-01/measurements/round-00/mixed-sparse-duplicate-10000/B"
+  },
+  "started_at": "2026-11-16T04:26:16.065722+00:00",
+  "free_bytes_before": 5029527552,
+  "directory": "round-00/mixed-sparse-duplicate-10000/B",
+  "passed": true,
+  "exit_code": 0,
+  "elapsed_ns": 34730822,
+  "cpu_seconds": 0.031653,
+  "peak_rss_bytes": 22626304,
+  "resources": {
+    "ru_idrss": 0,
+    "ru_inblock": 0,
+    "ru_isrss": 0,
+    "ru_ixrss": 0,
+    "ru_majflt": 0,
+    "ru_maxrss": 22096,
+    "ru_minflt": 1083,
+    "ru_msgrcv": 0,
+    "ru_msgsnd": 0,
+    "ru_nivcsw": 1,
+    "ru_nsignals": 0,
+    "ru_nswap": 0,
+    "ru_nvcsw": 14,
+    "ru_oublock": 336,
+    "ru_stime": 0.010881,
+    "ru_utime": 0.020772
+  },
+  "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+  "stdout_bytes": 169981,
+  "stderr_bytes": 0,
+  "finished_at": "2026-11-16T04:26:16.102192+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "started_at": "2026-11-16T03:52:32.664158+00:00",
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3",
+    "$EXPERIMENT/control/scale_bench.py",
+    "--root",
+    "$EXPERIMENT/macos",
+    "--fixtures",
+    "$EXPERIMENT/scale",
+    "--output",
+    "$EXPERIMENT/macos/scale-measurements"
+  ],
+  "exit_code": 0,
+  "finished_at": "2026-11-16T03:52:37.412161+00:00"
+}

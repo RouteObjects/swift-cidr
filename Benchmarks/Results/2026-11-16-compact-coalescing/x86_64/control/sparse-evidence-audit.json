@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "scope": "Independent native sparse evidence audit; no harness imports or target execution",
+  "started_at": "2026-11-16T04:28:49.056715+00:00",
+  "binary_sha256": {
+    "B": "079d55abdfa5c88104adac1dbc1321ea3c39bcaff04a32996c4f658197aac0be",
+    "C": "01c693caed015b1a3960777225d41f387949946cf1ee8c4656fa6dad05824fd5"
+  },
+  "source_files_verified": 179,
+  "runtime_libraries_verified": 20,
+  "auditor_sha256": "bd5bd433b78659c70028a79ed71575ad2cfa54408a068b6bed38438ebbccace5",
+  "reference_sha256": "e55c759160d197f233b7ce7175d3cf455a64dac152e7b56ad27ee15f20533e7d",
+  "measured_samples": 24,
+  "excluded_warmups": 4,
+  "outputs_verified": 28,
+  "all_observations_accounted_for": true,
+  "primary_frozen_files_verified": 235,
+  "sparse_frozen_files_verified": 31,
+  "comparisons_recomputed": 2,
+  "summary_sha256": "3408c54de226e059e4b85a8d7c0a42eab832ae8ec7cfa0fc83644a1f5275da55",
+  "finished_at": "2026-11-16T04:28:54.367424+00:00"
+}

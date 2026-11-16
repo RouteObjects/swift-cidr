@@ -1,0 +1,100 @@
+{
+  "suite": "split",
+  "case": "mixed-disjoint",
+  "tool": "B",
+  "started_at": "2026-11-16T04:24:41.555712+00:00",
+  "free_bytes_before": 5071163392,
+  "parts": [
+    {
+      "family": 4,
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/fixtures/mixed-disjoint/ipv4.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/B/tmp-4/"
+      },
+      "input": "fixtures/mixed-disjoint/ipv4.txt",
+      "output": "followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/B/4.stdout",
+      "stderr": "followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/B/4.stderr",
+      "started_at": "2026-11-16T04:24:41.556477+00:00",
+      "elapsed_ns": 404972344,
+      "exit_code": 0,
+      "output_bytes": 7399156,
+      "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+      "stderr_bytes": 0,
+      "wait4_rusage": {
+        "ru_utime": 0.36749299999999996,
+        "ru_stime": 0.034950999999999996,
+        "ru_maxrss": 32812,
+        "ru_minflt": 7551,
+        "ru_majflt": 0,
+        "ru_nswap": 0,
+        "ru_inblock": 0,
+        "ru_oublock": 14456,
+        "ru_nvcsw": 14,
+        "ru_nivcsw": 5
+      },
+      "peak_rss_bytes": 33599488,
+      "cpu_seconds": 0.40244399999999997,
+      "raw_metrics": "followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/B/4.rusage.json"
+    },
+    {
+      "family": 6,
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/fixtures/mixed-disjoint/ipv6.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/B/tmp-6/"
+      },
+      "input": "fixtures/mixed-disjoint/ipv6.txt",
+      "output": "followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/B/6.stdout",
+      "stderr": "followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/B/6.stderr",
+      "started_at": "2026-11-16T04:24:42.011063+00:00",
+      "elapsed_ns": 821429884,
+      "exit_code": 0,
+      "output_bytes": 10465056,
+      "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+      "stderr_bytes": 0,
+      "wait4_rusage": {
+        "ru_utime": 0.7298469999999999,
+        "ru_stime": 0.08898099999999999,
+        "ru_maxrss": 68008,
+        "ru_minflt": 23144,
+        "ru_majflt": 0,
+        "ru_nswap": 0,
+        "ru_inblock": 0,
+        "ru_oublock": 20440,
+        "ru_nvcsw": 13,
+        "ru_nivcsw": 8
+      },
+      "peak_rss_bytes": 69640192,
+      "cpu_seconds": 0.8188279999999999,
+      "raw_metrics": "followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/B/6.rusage.json"
+    }
+  ],
+  "passed": true,
+  "elapsed_ns": 1226402228,
+  "peak_rss_bytes": 69640192,
+  "cpu_seconds": 1.221272,
+  "output_bytes": 17864212,
+  "matches_verified_warmup_bytes": true,
+  "finished_at": "2026-11-16T04:24:42.896381+00:00"
+}

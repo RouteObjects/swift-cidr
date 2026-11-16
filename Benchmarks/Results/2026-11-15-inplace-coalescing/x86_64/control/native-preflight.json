@@ -1,0 +1,43 @@
+{
+  "recorded_utc": "2026-11-15T22:16:02.141152+00:00",
+  "machine": "x86_64",
+  "kernel": "6.14.8-2-pve",
+  "affinity": [
+    3,
+    8,
+    9,
+    14
+  ],
+  "remote_root": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z",
+  "remote_root_exists": false,
+  "swift_path": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+  "swift_exists": true,
+  "persistent": {
+    "path": "$LINUX_HOME/Downloads",
+    "total_bytes": 67318259712,
+    "free_bytes": 3884150784,
+    "used_bytes": 60217606144
+  },
+  "tmpfs": {
+    "path": "/run/user/1000",
+    "total_bytes": 13506101248,
+    "free_bytes": 13506093056,
+    "used_bytes": 8192
+  },
+  "memory": [
+    "MemTotal:        8388608 kB",
+    "MemAvailable:    8336261 kB",
+    "SwapTotal:        524288 kB",
+    "SwapFree:         514804 kB"
+  ],
+  "cpu_quota": "max 100000",
+  "memory_limit": "max",
+  "swift_exit_code": 0,
+  "swift_version": "Swift version 6.4.2 (swift-6.4.2-RELEASE)\nTarget: x86_64-unknown-linux-gnu\n",
+  "virtualization": {
+    "exit_code": 0,
+    "stdout": "lxc",
+    "stderr": ""
+  },
+  "meets_3GiB_measurement_floor_now": true
+}

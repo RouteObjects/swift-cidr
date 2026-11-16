@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-15T22:18:32.577709+00:00",
+  "shared_files": {
+    "run_correctness.py": "1e659d178b252802c99136a42613ca67d14e0252e7dd83533f5bbd73c6bd5e01",
+    "linux_runner.py": "646868b94d723a7c0c2e622c95d7e1a3366e3f4473aea0a6eea13b192b7ca2ac",
+    "phase_runner.py": "484b71084ab46bea513fdfc8e7c622e9ed74eeaf488f34d9a5a5cd6f8991fbdd",
+    "audit_linux.py": "4ae3f42221634468b29f1925ef38b7a7274b05117bb3e6c166689fbada30a876",
+    "freeze_sources.py": "86b27866943cf040ba1aa8274a4d6a32608a0a44487b5a7d83cdf0691471d684",
+    "run_matched.py": "732a252f2aa40e3ac9953282db2366abed0d43aa16bb5f5ddc9e4da76c6a89b3",
+    "reference.json": "aa892aabae87fdc9bff34421bcacccac9f3546ab058086c63250333427b2cecd",
+    "README.md": "7c76e44176d52ec9f17ac2a88588aeda48a3e55b713e9ed2e2e29cd4f1827fc3",
+    "run_floor.py": "f78d9ed03afc9b318f20a53229faa3341d586f3727bafa6ba59fb506912464ef",
+    "matched-protocol.json": "808ab2e5ccd2f3275e93a09052d0e576238d374fc203abf9342e8aefa388dde0",
+    "common.py": "0dda989878ba6b6be3e82083e7aa6776b89ec64c35c0cd905a44c0c7e10d4bb5",
+    "freeze_runtime_libraries.py": "d16981de118cfe30327ac1b19f5b7164b93b16caac32e211f3b07a400a061518",
+    "prepare_benchmark.py": "045f9a3ebd10d46d3eb6477bf8781e74349219b7db6bb564b5140fcd75bd75e9",
+    "differential.py": "d2e1cf3555283dfa25bc346b5bff85a131d047ae5f337ce1d27a5d634f2d420c",
+    "build_tests.py": "8630b553310bc12e5b750839bcc7e3dc2b8f99afc479378e0ef06eb7dce745ca"
+  },
+  "source_reference_sha256": "67f6779569a57a6c3dbf6f87eadf92f1e10a5c18dc06896918e71bf7432b41c3",
+  "config": {
+    "swift": "/usr/bin/swift",
+    "jobs": 8,
+    "platform_label": "native ARM64 Linux OrbStack",
+    "expected_tests": {
+      "B": {
+        "upstream": 298,
+        "cli": 72
+      },
+      "C": {
+        "upstream": 302,
+        "cli": 72
+      }
+    },
+    "require_codegen_gate": true
+  },
+  "no_builds_or_timings_yet": true
+}

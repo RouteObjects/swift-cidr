@@ -1,0 +1,26 @@
+{
+  "files": {
+    "source/main.swift": "988a79302379177cb4a56aec194b197aa054293b7c0177d647fe429c5bfb815c",
+    "common.py": "aa7b3b2853e05065724dfd08e4743dfb6648a1a7c4fd5ea7f18f065c5e13dc2b",
+    "build_probe.py": "0f53802d8dc439177bb2deb1b264f6c9d72c7d37a6ac39001218e8ecf8f5b7a8",
+    "run_probe.py": "0bff6dd7eb9d98d72e44f17cd6d2bbb64cf05c92f5d71fe86923466f1da1465a",
+    "README.md": "062def150e5633c57cd50c93ee4857d6b5afba83980f722c78a1a787c020b482",
+    "B/Package.swift": "885709b995db2e71df4de485360f7e979e1f7b582c497568022253b1fcdd6a42",
+    "B/Package.resolved": "192209f525224dc9dbe1bd2cd699494d6b7e3093cdb8cbafd29bbce129bfa12e",
+    "B/Sources/RetentionProbe/main.swift": "988a79302379177cb4a56aec194b197aa054293b7c0177d647fe429c5bfb815c",
+    "control/B-build.json": "5ebb0a3ca7bffb5dc4a6136d14168d434d58a4218a29317c03a405cdfb7842ad",
+    "logs/B-build.log": "ab043f4082e1f5a0178575a1042351827302c7c7cc04a595b99c74adc4e8d76e",
+    "logs/B-inspection-signing.log": "fb9838195addd7058c625f073f4b391412f59ea7667bd44bb15dc249dab232fa",
+    "bin/B": "20075ecd40040b22a8f90c9da45b7465b9cb8f84bdd5233a9a8b79c2562e5777",
+    "bin/B-profile": "b1200a0aceafb4f3f4f7f3599fec83044bc63d3fa6ed7b495d3a720a634a21d2",
+    "C/Package.swift": "5cfa3cd0de11ba8549084bb23ccf896dfc2dfd5461afbfe61695d2ec6518be59",
+    "C/Package.resolved": "192209f525224dc9dbe1bd2cd699494d6b7e3093cdb8cbafd29bbce129bfa12e",
+    "C/Sources/RetentionProbe/main.swift": "988a79302379177cb4a56aec194b197aa054293b7c0177d647fe429c5bfb815c",
+    "control/C-build.json": "4732cdf3d1e6db581dd19497c81f28a9055165d6cfa4ca5829706bd3b30fde76",
+    "logs/C-build.log": "5a02f6550995e976a3cc89ee7956211d25ccbfe347d2fdc50b98f626ee3b3174",
+    "logs/C-inspection-signing.log": "95214a2584a80f17aaf1b00af836ae5dfa0fed8bf144cdc861cb256ba270428b",
+    "bin/C": "28c758ab4f822e6873aac5fdfff74189a51c7eb290024e55d99ba3ee3885cd80",
+    "bin/C-profile": "bc1324068f8c304717eb314ad54f29181bfa6ad85a86028db1d10204956ff5f0"
+  },
+  "note": "Prepared/compiled client and profiling copies only; no retention cases launched yet."
+}

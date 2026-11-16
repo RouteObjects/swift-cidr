@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "at": "2026-11-16T04:17:05.887029+00:00",
+  "validation": {
+    "frozen_files": 235,
+    "sources": 179,
+    "fixture_files": 24
+  },
+  "task_workers": [],
+  "free_bytes": 5176463360,
+  "minimum_free_bytes": 3221225472,
+  "reserved_additional_bytes": 234004355,
+  "test_scope_check": {
+    "command": [
+      "systemctl",
+      "--user",
+      "show",
+      "cidrmerge-compact-tests-20261116T033826Z.scope",
+      "--property=ActiveState"
+    ],
+    "exit_code": 0,
+    "stdout": "ActiveState=inactive\n",
+    "stderr": ""
+  },
+  "order": "primary, scale, sparse, fixed six-pair triggered follow-ups",
+  "storage_protocol": "Post-sample verified hardlinks; original timing functions unchanged; between-sample IO disclosed",
+  "timings_outside_build_memory_scope": true,
+  "old_paths_modified": false
+}

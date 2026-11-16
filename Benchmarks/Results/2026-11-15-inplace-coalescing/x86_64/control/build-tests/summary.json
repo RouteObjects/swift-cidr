@@ -1,0 +1,774 @@
+{
+  "passed": true,
+  "finished_at": "2026-11-15T22:57:25.965059+00:00",
+  "results": [
+    {
+      "variant": "B",
+      "package": "cli",
+      "action": "build",
+      "configuration": "release",
+      "command": [
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+        "build",
+        "--package-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/B/cidrmerge",
+        "--scratch-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/build/B/cli",
+        "--cache-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/cache",
+        "--config-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/config",
+        "--security-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/security",
+        "--disable-netrc",
+        "--skip-update",
+        "--only-use-versions-from-resolved-file",
+        "--disable-sandbox",
+        "--build-system",
+        "native",
+        "-c",
+        "release",
+        "-j",
+        "2",
+        "--product",
+        "cidrmerge"
+      ],
+      "started_at": "2026-11-15T22:28:18.971630+00:00",
+      "free_bytes_before": 3870261248,
+      "log": "logs/B-cli-build-release.log",
+      "exit_code": 0,
+      "elapsed_s": 240.34894875623286,
+      "log_sha256": "1ba0d7e03d8168468a5f1c41e1802aa76ecdcbf5ede2306e67be23f3d4bc0f5b",
+      "dependency_pins": {
+        "remote": {
+          "swift-argument-parser": {
+            "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+            "version": "1.8.2"
+          },
+          "swift-asn1": {
+            "revision": "a9a5efd40eaf558a2bcd48d64b1d1646be686008",
+            "version": "1.7.1"
+          },
+          "swift-atomics": {
+            "revision": "0442cb5a3f98ab802acb777929fdb446bda11a34",
+            "version": "1.3.1"
+          },
+          "swift-collections": {
+            "revision": "a0cb0954ecb21e4e31b0070e6ed5674e8556685a",
+            "version": "1.6.0"
+          },
+          "swift-crypto": {
+            "revision": "f8fad2f95ad67b45f6340c0960e2396094d67e07",
+            "version": "5.1.1"
+          },
+          "swift-nio": {
+            "revision": "cd3e1152083706d77b223fb29110e590efcc70c0",
+            "version": "2.101.2"
+          },
+          "swift-system": {
+            "revision": "b5544ba79a70a0cb3563e75bf26dc198d6b40ed3",
+            "version": "1.7.4"
+          }
+        },
+        "local": {
+          "swift-cidr": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/B/swift-cidr"
+        }
+      },
+      "ldd": {
+        "exit_code": 0,
+        "stdout": "\tlinux-vdso.so.1 (0x000072d6bd3ab000)\n\tlibswiftCore.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftCore.so (0x000072d6bc800000)\n\tlibswiftObservation.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftObservation.so (0x000072d6bcfdc000)\n\tlibswift_Concurrency.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_Concurrency.so (0x000072d6bcf34000)\n\tlibswift_StringProcessing.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_StringProcessing.so (0x000072d6bc745000)\n\tlibswift_RegexParser.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_RegexParser.so (0x000072d6bc637000)\n\tlibswiftGlibc.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftGlibc.so (0x000072d6bcf22000)\n\tlibBlocksRuntime.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libBlocksRuntime.so (0x000072d6bcf1e000)\n\tlibdispatch.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libdispatch.so (0x000072d6bc5d8000)\n\tlibswiftDispatch.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftDispatch.so (0x000072d6bc5a6000)\n\tlibFoundation.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libFoundation.so (0x000072d6bbe00000)\n\tlibFoundationEssentials.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libFoundationEssentials.so (0x000072d6bb600000)\n\tlibFoundationInternationalization.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libFoundationInternationalization.so (0x000072d6bb424000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x000072d6bc4b6000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x000072d6bb000000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000072d6bc488000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x000072d6bac00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000072d6bd3ad000)\n\tlibswift_Builtin_float.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_Builtin_float.so (0x000072d6bc482000)\n\tlib_FoundationICU.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/lib_FoundationICU.so (0x000072d6b8600000)\n\tlibswiftSynchronization.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftSynchronization.so (0x000072d6bc470000)\n",
+        "stderr": ""
+      },
+      "binary": "bin/B",
+      "binary_sha256": "e56b27050ccae259bf82d2530b2d0bc25ee0882f82974f44daf57314c219b08b"
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "action": "build",
+      "configuration": "release",
+      "command": [
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+        "build",
+        "--package-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/C/cidrmerge",
+        "--scratch-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/build/C/cli",
+        "--cache-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/cache",
+        "--config-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/config",
+        "--security-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/security",
+        "--disable-netrc",
+        "--skip-update",
+        "--only-use-versions-from-resolved-file",
+        "--disable-sandbox",
+        "--build-system",
+        "native",
+        "-c",
+        "release",
+        "-j",
+        "2",
+        "--product",
+        "cidrmerge"
+      ],
+      "started_at": "2026-11-15T22:32:20.203659+00:00",
+      "free_bytes_before": 3852480512,
+      "log": "logs/C-cli-build-release.log",
+      "exit_code": 0,
+      "elapsed_s": 234.98818301409483,
+      "log_sha256": "404c74ed2580672980cc87c3d523e08b2433bdfe1cfff5239e5a74cced6910d9",
+      "dependency_pins": {
+        "remote": {
+          "swift-argument-parser": {
+            "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+            "version": "1.8.2"
+          },
+          "swift-asn1": {
+            "revision": "a9a5efd40eaf558a2bcd48d64b1d1646be686008",
+            "version": "1.7.1"
+          },
+          "swift-atomics": {
+            "revision": "0442cb5a3f98ab802acb777929fdb446bda11a34",
+            "version": "1.3.1"
+          },
+          "swift-collections": {
+            "revision": "a0cb0954ecb21e4e31b0070e6ed5674e8556685a",
+            "version": "1.6.0"
+          },
+          "swift-crypto": {
+            "revision": "f8fad2f95ad67b45f6340c0960e2396094d67e07",
+            "version": "5.1.1"
+          },
+          "swift-nio": {
+            "revision": "cd3e1152083706d77b223fb29110e590efcc70c0",
+            "version": "2.101.2"
+          },
+          "swift-system": {
+            "revision": "b5544ba79a70a0cb3563e75bf26dc198d6b40ed3",
+            "version": "1.7.4"
+          }
+        },
+        "local": {
+          "swift-cidr": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/C/swift-cidr"
+        }
+      },
+      "ldd": {
+        "exit_code": 0,
+        "stdout": "\tlinux-vdso.so.1 (0x00007b9295404000)\n\tlibswiftCore.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftCore.so (0x00007b9294800000)\n\tlibswiftObservation.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftObservation.so (0x00007b92953dc000)\n\tlibswift_Concurrency.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_Concurrency.so (0x00007b9294f58000)\n\tlibswift_StringProcessing.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_StringProcessing.so (0x00007b9294745000)\n\tlibswift_RegexParser.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_RegexParser.so (0x00007b9294637000)\n\tlibswiftGlibc.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftGlibc.so (0x00007b92953ca000)\n\tlibBlocksRuntime.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libBlocksRuntime.so (0x00007b92953c6000)\n\tlibdispatch.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libdispatch.so (0x00007b92945d8000)\n\tlibswiftDispatch.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftDispatch.so (0x00007b9294f26000)\n\tlibFoundation.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libFoundation.so (0x00007b9293e00000)\n\tlibFoundationEssentials.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libFoundationEssentials.so (0x00007b9293600000)\n\tlibFoundationInternationalization.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libFoundationInternationalization.so (0x00007b9293424000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007b92944ef000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007b9293000000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007b92944c1000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007b9292c00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007b9295406000)\n\tlibswift_Builtin_float.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_Builtin_float.so (0x00007b92953b9000)\n\tlib_FoundationICU.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/lib_FoundationICU.so (0x00007b9290600000)\n\tlibswiftSynchronization.so => $LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftSynchronization.so (0x00007b92944af000)\n",
+        "stderr": ""
+      },
+      "binary": "bin/C",
+      "binary_sha256": "9a7d5b88bf8f42b5aa3a6b1c19ffa449d142b57fb7852a02255f7f5e6c3d12d1"
+    },
+    {
+      "variant": "B",
+      "package": "upstream",
+      "action": "test",
+      "configuration": "debug",
+      "command": [
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+        "test",
+        "--package-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/B/swift-cidr",
+        "--scratch-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/build/B/upstream",
+        "--cache-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/cache",
+        "--config-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/config",
+        "--security-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/security",
+        "--disable-netrc",
+        "--skip-update",
+        "--only-use-versions-from-resolved-file",
+        "--disable-sandbox",
+        "--build-system",
+        "native",
+        "-c",
+        "debug",
+        "-j",
+        "2"
+      ],
+      "started_at": "2026-11-15T22:36:16.573669+00:00",
+      "free_bytes_before": 3834707968,
+      "log": "logs/B-upstream-test-debug.log",
+      "exit_code": 0,
+      "elapsed_s": 118.27061048196629,
+      "log_sha256": "d6607d9f23cf0ba0afd3d8f908eb0de34281f22421a48959019cb7016d8a8216",
+      "dependency_pins": {
+        "remote": {
+          "swift-argument-parser": {
+            "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+            "version": "1.8.2"
+          },
+          "swift-atomics": {
+            "revision": "b601256eab081c0f92f059e12818ac1d4f178ff7",
+            "version": "1.3.0"
+          },
+          "swift-collections": {
+            "revision": "03cc312c2c933ed87abace34044a5dff7a3117c1",
+            "version": "1.5.0"
+          },
+          "swift-nio": {
+            "revision": "77b84ac2cd2ac9e4ac67d19f045fd5b434f56967",
+            "version": "2.101.0"
+          },
+          "swift-system": {
+            "revision": "7c6ad0fc39d0763e0b699210e4124afd5041c5df",
+            "version": "1.6.4"
+          }
+        },
+        "local": {}
+      },
+      "tests": 298,
+      "suites": 34,
+      "test_summaries": [
+        {
+          "tests": 298,
+          "suites": 34
+        }
+      ]
+    },
+    {
+      "variant": "B",
+      "package": "upstream",
+      "action": "test",
+      "configuration": "release",
+      "command": [
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+        "test",
+        "--package-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/B/swift-cidr",
+        "--scratch-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/build/B/upstream",
+        "--cache-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/cache",
+        "--config-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/config",
+        "--security-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/security",
+        "--disable-netrc",
+        "--skip-update",
+        "--only-use-versions-from-resolved-file",
+        "--disable-sandbox",
+        "--build-system",
+        "native",
+        "-c",
+        "release",
+        "-j",
+        "2"
+      ],
+      "started_at": "2026-11-15T22:38:15.092708+00:00",
+      "free_bytes_before": 3834474496,
+      "log": "logs/B-upstream-test-release.log",
+      "exit_code": 0,
+      "elapsed_s": 176.00101918866858,
+      "log_sha256": "e257e00d03f0a3951d4a2ee09ae47201d56072fb1b305d6da14e78614ee161cf",
+      "dependency_pins": {
+        "remote": {
+          "swift-argument-parser": {
+            "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+            "version": "1.8.2"
+          },
+          "swift-atomics": {
+            "revision": "b601256eab081c0f92f059e12818ac1d4f178ff7",
+            "version": "1.3.0"
+          },
+          "swift-collections": {
+            "revision": "03cc312c2c933ed87abace34044a5dff7a3117c1",
+            "version": "1.5.0"
+          },
+          "swift-nio": {
+            "revision": "77b84ac2cd2ac9e4ac67d19f045fd5b434f56967",
+            "version": "2.101.0"
+          },
+          "swift-system": {
+            "revision": "7c6ad0fc39d0763e0b699210e4124afd5041c5df",
+            "version": "1.6.4"
+          }
+        },
+        "local": {}
+      },
+      "tests": 298,
+      "suites": 34,
+      "test_summaries": [
+        {
+          "tests": 298,
+          "suites": 34
+        }
+      ]
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "action": "test",
+      "configuration": "debug",
+      "command": [
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+        "test",
+        "--package-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/B/cidrmerge",
+        "--scratch-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/build/B/cli",
+        "--cache-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/cache",
+        "--config-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/config",
+        "--security-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/security",
+        "--disable-netrc",
+        "--skip-update",
+        "--only-use-versions-from-resolved-file",
+        "--disable-sandbox",
+        "--build-system",
+        "native",
+        "-c",
+        "debug",
+        "-j",
+        "2"
+      ],
+      "started_at": "2026-11-15T22:41:11.221549+00:00",
+      "free_bytes_before": 3827089408,
+      "log": "logs/B-cli-test-debug.log",
+      "exit_code": 0,
+      "elapsed_s": 216.99804603122175,
+      "log_sha256": "511795bbf1defe67b1699d74a1e519a1de798a86f0e6dbb6a2d200af4b5da1ba",
+      "dependency_pins": {
+        "remote": {
+          "swift-argument-parser": {
+            "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+            "version": "1.8.2"
+          },
+          "swift-asn1": {
+            "revision": "a9a5efd40eaf558a2bcd48d64b1d1646be686008",
+            "version": "1.7.1"
+          },
+          "swift-atomics": {
+            "revision": "0442cb5a3f98ab802acb777929fdb446bda11a34",
+            "version": "1.3.1"
+          },
+          "swift-collections": {
+            "revision": "a0cb0954ecb21e4e31b0070e6ed5674e8556685a",
+            "version": "1.6.0"
+          },
+          "swift-crypto": {
+            "revision": "f8fad2f95ad67b45f6340c0960e2396094d67e07",
+            "version": "5.1.1"
+          },
+          "swift-nio": {
+            "revision": "cd3e1152083706d77b223fb29110e590efcc70c0",
+            "version": "2.101.2"
+          },
+          "swift-system": {
+            "revision": "b5544ba79a70a0cb3563e75bf26dc198d6b40ed3",
+            "version": "1.7.4"
+          }
+        },
+        "local": {
+          "swift-cidr": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/B/swift-cidr"
+        }
+      },
+      "tests": 72,
+      "suites": 9,
+      "test_summaries": [
+        {
+          "tests": 72,
+          "suites": 9
+        }
+      ]
+    },
+    {
+      "variant": "B",
+      "package": "cli",
+      "action": "test",
+      "configuration": "release",
+      "command": [
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+        "test",
+        "--package-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/B/cidrmerge",
+        "--scratch-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/build/B/cli",
+        "--cache-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/cache",
+        "--config-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/config",
+        "--security-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/security",
+        "--disable-netrc",
+        "--skip-update",
+        "--only-use-versions-from-resolved-file",
+        "--disable-sandbox",
+        "--build-system",
+        "native",
+        "-c",
+        "release",
+        "-j",
+        "2"
+      ],
+      "started_at": "2026-11-15T22:44:48.371715+00:00",
+      "free_bytes_before": 3827007488,
+      "log": "logs/B-cli-test-release.log",
+      "exit_code": 0,
+      "elapsed_s": 104.71862950408831,
+      "log_sha256": "b59bb812da4ba6faf82404e784351d77d0aa21278bf2e8c544436c0a4b02525e",
+      "dependency_pins": {
+        "remote": {
+          "swift-argument-parser": {
+            "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+            "version": "1.8.2"
+          },
+          "swift-asn1": {
+            "revision": "a9a5efd40eaf558a2bcd48d64b1d1646be686008",
+            "version": "1.7.1"
+          },
+          "swift-atomics": {
+            "revision": "0442cb5a3f98ab802acb777929fdb446bda11a34",
+            "version": "1.3.1"
+          },
+          "swift-collections": {
+            "revision": "a0cb0954ecb21e4e31b0070e6ed5674e8556685a",
+            "version": "1.6.0"
+          },
+          "swift-crypto": {
+            "revision": "f8fad2f95ad67b45f6340c0960e2396094d67e07",
+            "version": "5.1.1"
+          },
+          "swift-nio": {
+            "revision": "cd3e1152083706d77b223fb29110e590efcc70c0",
+            "version": "2.101.2"
+          },
+          "swift-system": {
+            "revision": "b5544ba79a70a0cb3563e75bf26dc198d6b40ed3",
+            "version": "1.7.4"
+          }
+        },
+        "local": {
+          "swift-cidr": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/B/swift-cidr"
+        }
+      },
+      "tests": 72,
+      "suites": 9,
+      "test_summaries": [
+        {
+          "tests": 72,
+          "suites": 9
+        }
+      ]
+    },
+    {
+      "variant": "C",
+      "package": "upstream",
+      "action": "test",
+      "configuration": "debug",
+      "command": [
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+        "test",
+        "--package-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/C/swift-cidr",
+        "--scratch-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/build/C/upstream",
+        "--cache-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/cache",
+        "--config-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/config",
+        "--security-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/security",
+        "--disable-netrc",
+        "--skip-update",
+        "--only-use-versions-from-resolved-file",
+        "--disable-sandbox",
+        "--build-system",
+        "native",
+        "-c",
+        "debug",
+        "-j",
+        "2"
+      ],
+      "started_at": "2026-11-15T22:46:33.243330+00:00",
+      "free_bytes_before": 3826962432,
+      "log": "logs/C-upstream-test-debug.log",
+      "exit_code": 0,
+      "elapsed_s": 147.05020823702216,
+      "log_sha256": "4ccb55ff715bcc26f47cc777d496b7f0eaa6ab6c5ba039601560e869ab132450",
+      "dependency_pins": {
+        "remote": {
+          "swift-argument-parser": {
+            "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+            "version": "1.8.2"
+          },
+          "swift-atomics": {
+            "revision": "b601256eab081c0f92f059e12818ac1d4f178ff7",
+            "version": "1.3.0"
+          },
+          "swift-collections": {
+            "revision": "03cc312c2c933ed87abace34044a5dff7a3117c1",
+            "version": "1.5.0"
+          },
+          "swift-nio": {
+            "revision": "77b84ac2cd2ac9e4ac67d19f045fd5b434f56967",
+            "version": "2.101.0"
+          },
+          "swift-system": {
+            "revision": "7c6ad0fc39d0763e0b699210e4124afd5041c5df",
+            "version": "1.6.4"
+          }
+        },
+        "local": {}
+      },
+      "tests": 302,
+      "suites": 35,
+      "test_summaries": [
+        {
+          "tests": 302,
+          "suites": 35
+        }
+      ]
+    },
+    {
+      "variant": "C",
+      "package": "upstream",
+      "action": "test",
+      "configuration": "release",
+      "command": [
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+        "test",
+        "--package-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/C/swift-cidr",
+        "--scratch-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/build/C/upstream",
+        "--cache-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/cache",
+        "--config-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/config",
+        "--security-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/security",
+        "--disable-netrc",
+        "--skip-update",
+        "--only-use-versions-from-resolved-file",
+        "--disable-sandbox",
+        "--build-system",
+        "native",
+        "-c",
+        "release",
+        "-j",
+        "2"
+      ],
+      "started_at": "2026-11-15T22:49:00.652919+00:00",
+      "free_bytes_before": 3826728960,
+      "log": "logs/C-upstream-test-release.log",
+      "exit_code": 0,
+      "elapsed_s": 183.99326519528404,
+      "log_sha256": "07d4187904c72078885dd0c96ec017ee01338e5505b00f00252a7dcdcab75672",
+      "dependency_pins": {
+        "remote": {
+          "swift-argument-parser": {
+            "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+            "version": "1.8.2"
+          },
+          "swift-atomics": {
+            "revision": "b601256eab081c0f92f059e12818ac1d4f178ff7",
+            "version": "1.3.0"
+          },
+          "swift-collections": {
+            "revision": "03cc312c2c933ed87abace34044a5dff7a3117c1",
+            "version": "1.5.0"
+          },
+          "swift-nio": {
+            "revision": "77b84ac2cd2ac9e4ac67d19f045fd5b434f56967",
+            "version": "2.101.0"
+          },
+          "swift-system": {
+            "revision": "7c6ad0fc39d0763e0b699210e4124afd5041c5df",
+            "version": "1.6.4"
+          }
+        },
+        "local": {}
+      },
+      "tests": 302,
+      "suites": 35,
+      "test_summaries": [
+        {
+          "tests": 302,
+          "suites": 35
+        }
+      ]
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "action": "test",
+      "configuration": "debug",
+      "command": [
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+        "test",
+        "--package-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/C/cidrmerge",
+        "--scratch-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/build/C/cli",
+        "--cache-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/cache",
+        "--config-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/config",
+        "--security-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/security",
+        "--disable-netrc",
+        "--skip-update",
+        "--only-use-versions-from-resolved-file",
+        "--disable-sandbox",
+        "--build-system",
+        "native",
+        "-c",
+        "debug",
+        "-j",
+        "2"
+      ],
+      "started_at": "2026-11-15T22:52:04.775602+00:00",
+      "free_bytes_before": 3826622464,
+      "log": "logs/C-cli-test-debug.log",
+      "exit_code": 0,
+      "elapsed_s": 216.0563940219581,
+      "log_sha256": "6f0b0b747c7714a525aebd81a916aa161b08e2c961dad272279688ad323246ae",
+      "dependency_pins": {
+        "remote": {
+          "swift-argument-parser": {
+            "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+            "version": "1.8.2"
+          },
+          "swift-asn1": {
+            "revision": "a9a5efd40eaf558a2bcd48d64b1d1646be686008",
+            "version": "1.7.1"
+          },
+          "swift-atomics": {
+            "revision": "0442cb5a3f98ab802acb777929fdb446bda11a34",
+            "version": "1.3.1"
+          },
+          "swift-collections": {
+            "revision": "a0cb0954ecb21e4e31b0070e6ed5674e8556685a",
+            "version": "1.6.0"
+          },
+          "swift-crypto": {
+            "revision": "f8fad2f95ad67b45f6340c0960e2396094d67e07",
+            "version": "5.1.1"
+          },
+          "swift-nio": {
+            "revision": "cd3e1152083706d77b223fb29110e590efcc70c0",
+            "version": "2.101.2"
+          },
+          "swift-system": {
+            "revision": "b5544ba79a70a0cb3563e75bf26dc198d6b40ed3",
+            "version": "1.7.4"
+          }
+        },
+        "local": {
+          "swift-cidr": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/C/swift-cidr"
+        }
+      },
+      "tests": 72,
+      "suites": 9,
+      "test_summaries": [
+        {
+          "tests": 72,
+          "suites": 9
+        }
+      ]
+    },
+    {
+      "variant": "C",
+      "package": "cli",
+      "action": "test",
+      "configuration": "release",
+      "command": [
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+        "test",
+        "--package-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/C/cidrmerge",
+        "--scratch-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/build/C/cli",
+        "--cache-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/cache",
+        "--config-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/config",
+        "--security-path",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/security",
+        "--disable-netrc",
+        "--skip-update",
+        "--only-use-versions-from-resolved-file",
+        "--disable-sandbox",
+        "--build-system",
+        "native",
+        "-c",
+        "release",
+        "-j",
+        "2"
+      ],
+      "started_at": "2026-11-15T22:55:40.985859+00:00",
+      "free_bytes_before": 3826561024,
+      "log": "logs/C-cli-test-release.log",
+      "exit_code": 0,
+      "elapsed_s": 104.76163115212694,
+      "log_sha256": "4e4517a206839f9f047fd79cbb1aa3bc84528f3d2e39525d768f9b076c109be2",
+      "dependency_pins": {
+        "remote": {
+          "swift-argument-parser": {
+            "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+            "version": "1.8.2"
+          },
+          "swift-asn1": {
+            "revision": "a9a5efd40eaf558a2bcd48d64b1d1646be686008",
+            "version": "1.7.1"
+          },
+          "swift-atomics": {
+            "revision": "0442cb5a3f98ab802acb777929fdb446bda11a34",
+            "version": "1.3.1"
+          },
+          "swift-collections": {
+            "revision": "a0cb0954ecb21e4e31b0070e6ed5674e8556685a",
+            "version": "1.6.0"
+          },
+          "swift-crypto": {
+            "revision": "f8fad2f95ad67b45f6340c0960e2396094d67e07",
+            "version": "5.1.1"
+          },
+          "swift-nio": {
+            "revision": "cd3e1152083706d77b223fb29110e590efcc70c0",
+            "version": "2.101.2"
+          },
+          "swift-system": {
+            "revision": "b5544ba79a70a0cb3563e75bf26dc198d6b40ed3",
+            "version": "1.7.4"
+          }
+        },
+        "local": {
+          "swift-cidr": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/sources/C/swift-cidr"
+        }
+      },
+      "tests": 72,
+      "suites": 9,
+      "test_summaries": [
+        {
+          "tests": 72,
+          "suites": 9
+        }
+      ]
+    }
+  ],
+  "test_executions": 1488,
+  "expected_tests": {
+    "B": {
+      "upstream": 298,
+      "cli": 72
+    },
+    "C": {
+      "upstream": 302,
+      "cli": 72
+    }
+  },
+  "source_files_verified": 179,
+  "bin": {
+    "B": "e56b27050ccae259bf82d2530b2d0bc25ee0882f82974f44daf57314c219b08b",
+    "C": "9a7d5b88bf8f42b5aa3a6b1c19ffa449d142b57fb7852a02255f7f5e6c3d12d1"
+  }
+}

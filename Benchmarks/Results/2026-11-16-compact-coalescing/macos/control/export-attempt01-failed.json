@@ -1,0 +1,153 @@
+{
+  "passed": false,
+  "exit_code": 1,
+  "recorded_at": "2026-11-16T03:59:19.173419+00:00",
+  "error": "FileNotFoundError: macos/control/regression-screen.json",
+  "reason": "Stale inherited export selection; current orchestration-complete receipt provides regression selection. No measurement or independent audit failed.",
+  "exporter_sha256": "caee1a1740754a64476acdfd16e2816365c74432c5e3302be2b1493c89eb004e",
+  "preserved_directory": "control/export-history/attempt01/partial-export",
+  "partial_inventory": {
+    "scale/reference.json": {
+      "bytes": 5877,
+      "sha256": "ec9a6a0ff66433927ba827ef411faa9a5ba52019217221dd324e7155b9ca36c6"
+    },
+    "retention/summary.json": {
+      "bytes": 23622,
+      "sha256": "6b05130c0d42c5cff9642a31716aee00c3786e0dce71dac96ed8f0dde70eb331"
+    },
+    "retention/SUMMARY.md": {
+      "bytes": 3937,
+      "sha256": "afaa89b030ed30c9b8042b72a79ef958f562bad4a3c7ab977b83eb5c17921cb5"
+    },
+    "retention/README.md": {
+      "bytes": 3568,
+      "sha256": "a5bd77420438a7bc971e50a5396737f72f706f8925ca44951f4a921748bd1e94"
+    },
+    "sparse/provenance.json": {
+      "bytes": 2082,
+      "sha256": "cc5298f3191035623f265d0c4fe4d8c89c0651b74fa0e12ef1ea4ef37537e06a"
+    },
+    "sparse/reference.json": {
+      "bytes": 1485,
+      "sha256": "e55c759160d197f233b7ce7175d3cf455a64dac152e7b56ad27ee15f20533e7d"
+    },
+    "sparse/prepare.py": {
+      "bytes": 5083,
+      "sha256": "bfdd89be0aaab1ca4bdedd7067944beeb45a77657edc8599f20f92028e474503"
+    },
+    "control/reused-scale-reference-provenance.json": {
+      "bytes": 425,
+      "sha256": "07d90a70abb6f8025d08a84b1704e10c8389cf3ab96bbbd5ad9b771ff51998fa"
+    },
+    "control/full.patch": {
+      "bytes": 13397,
+      "sha256": "0dbe2a2c82a30f935518d14e11cc1f9074c35196c6f2c9e1abf23906b5b0ca43"
+    },
+    "control/prior-evidence-binding.json": {
+      "bytes": 558,
+      "sha256": "65e97177428ae0104b102627e2d58041826df75628c853283b558631367700be"
+    },
+    "control/full-patch-validation.json": {
+      "bytes": 300,
+      "sha256": "8bc6c894fbcdaa19c10e2f525565addc7dfe37b221b4d348b09f5cd66a585c74"
+    },
+    "control/independent-macos-audit-01.md": {
+      "bytes": 1207,
+      "sha256": "a65f566948e4137b72cebd5ba4a247d8d7a319163f47f0e2c40cfec80b97ae7d"
+    },
+    "control/independent-macos-audit-01.json": {
+      "bytes": 87294,
+      "sha256": "7309943cf7f4fe28b73a15dd208e3ee136277d249f3769c3b9d0558a566927a5"
+    },
+    "control/production.patch": {
+      "bytes": 2302,
+      "sha256": "5de1eedcf0e0f440927caa2cab2199b979189c5f3ede92e82616dc24314c0c20"
+    },
+    "control/dependency-normalization.json": {
+      "bytes": 4644,
+      "sha256": "53c0d69f75bc413243e3bd273eaf3640e45cd02b2ca2bbab0a1d044f848124c9"
+    },
+    "macos/differential/summary.json": {
+      "bytes": 138791,
+      "sha256": "6dc9447b1e421c7fa9060d6050f82f9a1edbc775cdb7d6ba428dca59adefad34"
+    },
+    "macos/control/dependency-freeze.json": {
+      "bytes": 5514,
+      "sha256": "3da4e357f3c657b15dee0cf9a6207801b39bb9977a38972c128d97cc87684cc5"
+    },
+    "macos/control/correctness-gate.json": {
+      "bytes": 11847,
+      "sha256": "73fff1749e251fd9a4cd7159f134f72028f84358b365182e572ab5874f9b4a3c"
+    },
+    "macos/control/host-runtime.json": {
+      "bytes": 9275,
+      "sha256": "4bf445d60c53198402aa5fd1065a7b3fddebc598ad7816dd5bacefadaabb20bc"
+    },
+    "macos/control/matched-protocol.json": {
+      "bytes": 2095,
+      "sha256": "e3f17439070775dbbc44f1007dd2359c98542a8f47df0b1a92819a13d7c0a031"
+    },
+    "macos/control/reference-output-freeze.json": {
+      "bytes": 4941,
+      "sha256": "8585f1cb10d235101392428994b1dbafe70edaebeb2f85516c94f16c356b82f3"
+    },
+    "macos/control/context.json": {
+      "bytes": 524,
+      "sha256": "e0503bbe1f38ce8ca365be4e26daac1786c3b8c1ca312f35464d9d2e71d9aae4"
+    },
+    "macos/control/pre-benchmark-freeze.json": {
+      "bytes": 4490,
+      "sha256": "55ad3c539dd97553dffbe37aae00d0f9ab556b9e94d5dd56b26c7936521c4cff"
+    },
+    "retention/source/main.swift": {
+      "bytes": 3690,
+      "sha256": "74c45690e01e7ffd676b38da8a334a1ac26cb0665db845de58ebf707e99e87fa"
+    },
+    "retention/codegen/summary.json": {
+      "bytes": 11400,
+      "sha256": "091d0f7131f534284e1ceaf45c8996b2a9b05f8028eb7b3e3bf1d8260fd4c03b"
+    },
+    "retention/codegen/SUMMARY.md": {
+      "bytes": 1640,
+      "sha256": "bb172bad5b1e490f71bec7998d4a06494d982ea8250bb09367d441a0c4f6ec97"
+    },
+    "retention/codegen/B-selected.txt": {
+      "bytes": 45019,
+      "sha256": "1f67b24394635fdc44b2e1c95ce4aab1f33a24a2817673422aac53f23bb0f1d0"
+    },
+    "retention/codegen/C-selected.txt": {
+      "bytes": 47450,
+      "sha256": "eb4c273c00b5bcc54f183d4ebeb0f7d007e846b275c183e8a53565783748d508"
+    },
+    "retention/logs/B-build.log": {
+      "bytes": 151,
+      "sha256": "d9186dc6dd83486eaa48d51e7d53849a329fe677b60fb8e94a0b9478be8b5ec5"
+    },
+    "retention/logs/C-build.log": {
+      "bytes": 151,
+      "sha256": "d9186dc6dd83486eaa48d51e7d53849a329fe677b60fb8e94a0b9478be8b5ec5"
+    },
+    "retention/control/B-build-retry02.json": {
+      "bytes": 5044,
+      "sha256": "211b5d77807bfb4ca4de3fbb4eb5909f5987d568883e4f9bef89a78bfb330649"
+    },
+    "retention/control/B-build.json": {
+      "bytes": 2162,
+      "sha256": "d00772b8b614acd501afafdfd8fc0223ac4da676abe1369635746032e6965afa"
+    },
+    "retention/control/C-build.json": {
+      "bytes": 2162,
+      "sha256": "6e72f60bd99d91d6930c13c2f498bc23ed5b159c9b3f7db75140501f4b56c296"
+    },
+    "retention/control/C-build-retry02.json": {
+      "bytes": 5044,
+      "sha256": "a64809e09229efc1e538903983262912903356b0e06cc3f23745f27b76c697c1"
+    },
+    "retention/control/freeze.json": {
+      "bytes": 3077,
+      "sha256": "503e2c5ff42f6190aed98b42ada7b0f34499b5982aa980984a8a22a983ab24db"
+    }
+  },
+  "preservation_note": "First sandbox rename was denied; guarded exporter retry then refused the existing directory without writing anything. This explicitly authorized preservation rename succeeded with escalation.",
+  "preserved_exporter": "control/export-history/attempt01/exporter.py"
+}

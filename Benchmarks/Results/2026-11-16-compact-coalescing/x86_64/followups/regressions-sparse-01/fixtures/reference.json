@@ -1,0 +1,41 @@
+{
+  "cases": [
+    {
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "base_entries": 10000,
+      "duplicates_added": {
+        "ipv4": 1,
+        "ipv6": 1
+      },
+      "pattern": "mixed-disjoint plus one duplicate per family",
+      "input": "mixed-sparse-duplicate-10000/input.txt",
+      "input_bytes": 170010,
+      "input_sha256": "c7b98ccb1a499919a4d6726da858640abdd8ad738f5a1ec260e7c43d4f26a133",
+      "output": "mixed-sparse-duplicate-10000/reference.txt",
+      "output_bytes": 169981,
+      "output_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "output_count": 10000
+    },
+    {
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "base_entries": 1000000,
+      "duplicates_added": {
+        "ipv4": 1,
+        "ipv6": 1
+      },
+      "pattern": "mixed-disjoint plus one duplicate per family",
+      "input": "mixed-sparse-duplicate-1000000/input.txt",
+      "input_bytes": 17864241,
+      "input_sha256": "6abaaad6e5e2848b78c58aa3bfbf2f5e8d52f9a65a000e54b64922cdaf740af6",
+      "output": "mixed-sparse-duplicate-1000000/reference.txt",
+      "output_bytes": 17864212,
+      "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "output_count": 1000000
+    }
+  ],
+  "method": "Independent Python ipaddress.collapse_addresses after adding exactly one duplicate per family; exact bytes also equal preserved original coverage references.",
+  "original_reference_sha256": "e55c759160d197f233b7ce7175d3cf455a64dac152e7b56ad27ee15f20533e7d",
+  "selection_source_sha256": "3408c54de226e059e4b85a8d7c0a42eab832ae8ec7cfa0fc83644a1f5275da55"
+}

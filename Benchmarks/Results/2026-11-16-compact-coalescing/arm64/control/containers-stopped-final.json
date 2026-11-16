@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-16T03:59:13.783747+00:00",
+  "containers": [
+    {
+      "name": "cidrmerge-compact-arm642-20261116T033826Z",
+      "state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 143,
+        "Error": "",
+        "StartedAt": "2026-11-16T03:42:28.068269198Z",
+        "FinishedAt": "2026-11-16T03:59:13.6847241Z"
+      },
+      "image": "sha256:23d9b28ad97fb1cf1999edc3a0cb265ee915ed42299a9344e7173d5a6d2b05f4"
+    },
+    {
+      "name": "cidrmerge-compact-arm624-20261116T033826Z",
+      "state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 143,
+        "Error": "",
+        "StartedAt": "2026-11-16T03:47:20.102241289Z",
+        "FinishedAt": "2026-11-16T03:51:07.2900848Z"
+      },
+      "image": "sha256:e508ef1e4be68087f720de622b91cbf1e32799a7aa96134b35e6f1a1d656db7a"
+    }
+  ],
+  "only_experiment_containers_stopped": true,
+  "final_processes": "PID                 COMMAND             COMMAND\n179787              docker-init         /sbin/docker-init -- sleep infinity\n179800              sleep               sleep infinity\n"
+}

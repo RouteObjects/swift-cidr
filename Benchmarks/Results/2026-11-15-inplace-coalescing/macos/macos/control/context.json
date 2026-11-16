@@ -1,0 +1,10 @@
+{
+  "root": "$EXPERIMENT/macos",
+  "previous_comparison": "$REFERENCES",
+  "previous_profile": "$DOWNLOADS/cidrmerge-profile-swift642-20261114T223116Z",
+  "inplace_coalescing_experiment": true,
+  "developer_dir": "/Applications/Xcode-27.2.0.app/Contents/Developer",
+  "baseline_commit": "8bba7629d7fc9c366ea47680ee6c38badd615092",
+  "upstream_baseline_commit": "5e4b3d2f881340a6ced05742429f1bd680dfd1e0",
+  "dependency_substitution": "Identical experiment-only local swift-cidr paths in B/C; seven remote pins unchanged."
+}

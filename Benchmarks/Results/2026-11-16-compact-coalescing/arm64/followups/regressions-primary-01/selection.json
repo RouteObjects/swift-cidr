@@ -1,0 +1,107 @@
+{
+  "cases": [
+    {
+      "suite": "split",
+      "case": "ipv4-disjoint",
+      "triggers": [
+        {
+          "round": 6,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 9.313678246833469,
+          "rss_change_pct": 0.018504811250918962,
+          "elapsed_difference_s": 0.031680039,
+          "rss_difference_mib": 0.0078125
+        }
+      ]
+    },
+    {
+      "suite": "split",
+      "case": "mixed-adjacent",
+      "triggers": [
+        {
+          "round": 6,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 5.389740663014697,
+          "rss_change_pct": 0.11738926279543094,
+          "elapsed_difference_s": 0.017761873,
+          "rss_difference_mib": 0.05859375
+        }
+      ]
+    },
+    {
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "triggers": [
+        {
+          "round": 5,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 20.094458710533857,
+          "rss_change_pct": -3.872616473363477,
+          "elapsed_difference_s": 0.085378534,
+          "rss_difference_mib": -1.5390625
+        }
+      ]
+    },
+    {
+      "suite": "split",
+      "case": "range-derived-mixed",
+      "triggers": [
+        {
+          "round": 5,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 10.77103058109059,
+          "rss_change_pct": -0.024026910139351987,
+          "elapsed_difference_s": 0.047758494,
+          "rss_difference_mib": -0.015625
+        }
+      ]
+    },
+    {
+      "suite": "native",
+      "case": "mixed-permuted",
+      "triggers": [
+        {
+          "round": 6,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 6.485485710029604,
+          "rss_change_pct": -4.487596395057136,
+          "elapsed_difference_s": 0.03719129,
+          "rss_difference_mib": -3.7734375
+        }
+      ]
+    },
+    {
+      "suite": "native",
+      "case": "mixed-overlap",
+      "triggers": [
+        {
+          "round": 3,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 5.913601633680909,
+          "rss_change_pct": -2.8063010501750307,
+          "elapsed_difference_s": 0.023559873,
+          "rss_difference_mib": -1.87890625
+        }
+      ]
+    }
+  ],
+  "primary_summary_sha256": "42228e239fd3a6ed55add20f15a5ddb4717f4c32f2f30f0cdcaee2b0a167d290"
+}

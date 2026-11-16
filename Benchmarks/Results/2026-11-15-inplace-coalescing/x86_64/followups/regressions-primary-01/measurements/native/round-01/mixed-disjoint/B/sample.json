@@ -1,0 +1,58 @@
+{
+  "suite": "native",
+  "case": "mixed-disjoint",
+  "tool": "B",
+  "started_at": "2026-11-15T23:19:48.287487+00:00",
+  "free_bytes_before": 3411644416,
+  "parts": [
+    {
+      "family": null,
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/fixtures/mixed-disjoint/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/followups/regressions-primary-01/measurements/native/round-01/mixed-disjoint/B/tmp-mixed/"
+      },
+      "input": "fixtures/mixed-disjoint/input.txt",
+      "output": "followups/regressions-primary-01/measurements/native/round-01/mixed-disjoint/B/mixed.stdout",
+      "stderr": "followups/regressions-primary-01/measurements/native/round-01/mixed-disjoint/B/mixed.stderr",
+      "started_at": "2026-11-15T23:19:48.288248+00:00",
+      "elapsed_ns": 1251796784,
+      "exit_code": 0,
+      "output_bytes": 17864212,
+      "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stderr_bytes": 0,
+      "wait4_rusage": {
+        "ru_utime": 1.144445,
+        "ru_stime": 0.10385799999999999,
+        "ru_maxrss": 79724,
+        "ru_minflt": 27927,
+        "ru_majflt": 0,
+        "ru_nswap": 0,
+        "ru_inblock": 0,
+        "ru_oublock": 34896,
+        "ru_nvcsw": 14,
+        "ru_nivcsw": 12
+      },
+      "peak_rss_bytes": 81637376,
+      "cpu_seconds": 1.248303,
+      "raw_metrics": "followups/regressions-primary-01/measurements/native/round-01/mixed-disjoint/B/mixed.rusage.json"
+    }
+  ],
+  "passed": true,
+  "elapsed_ns": 1251796784,
+  "peak_rss_bytes": 81637376,
+  "cpu_seconds": 1.248303,
+  "output_bytes": 17864212,
+  "matches_verified_warmup_bytes": true,
+  "finished_at": "2026-11-15T23:19:49.646585+00:00"
+}

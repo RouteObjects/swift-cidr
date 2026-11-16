@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-15T22:38:37.030724+00:00",
+  "command": [
+    "/usr/local/bin/docker",
+    "--config",
+    "EVIDENCE_ROOT/arm64/control/docker-config",
+    "--host",
+    "unix://LOCAL_HOME/.orbstack/run/docker.sock",
+    "exec",
+    "-d",
+    "cidrmerge-inplace-arm642-20261115T221013Z",
+    "/bin/sh",
+    "-c",
+    "exec /validation/python/bin/python3.12 /validation/control/phase_runner.py benchmark > /validation/logs/phase-benchmark.log 2>&1"
+  ],
+  "authorized_after": "Mac primary, scale and follow-up timing completed; no other task-owned builds/profiling",
+  "primary_samples": 132,
+  "warmups": 22
+}

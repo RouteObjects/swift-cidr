@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "artifact_count": 85,
+  "manifest_bytes": 48366,
+  "manifest_sha256": "7b6ee049c17ab35bfcdbe81a223a3025bb13a05a78f6dece03c2b3fb453f76eb",
+  "export_inventory_sha256": "8b5c4c5702b49d02fa5bc629f964eb1862b2903261eb8ad29ad1e9f47e5efb56",
+  "fingerprint_definition": "SHA-256 of compact sorted-key JSON mapping every exported artifact plus MANIFEST.json to its exported SHA-256; receipt excludes itself.",
+  "all_original_json_numeric_values_and_types_preserved": true,
+  "all_exported_summary_pairs_recomputed": true,
+  "all_exported_files_hash_verified": true,
+  "private_home_path_scan_passed": true,
+  "exporter_original_relative_path": "control/export_macos_compact.py",
+  "exporter_original_sha256": "9114f565819ba0b6ebdea0ae221e6919c87c4ab185d79f19a2a024abcfeb2253"
+}

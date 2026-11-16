@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "passed": true,
+  "reviewed_at_utc": "2026-11-16T04:07:03.741507+00:00",
+  "reviewer": "release_artifact_audit",
+  "scope": "Independent local static review of ordinary x86-64 ELF CLI binaries and retained disassembly; no target execution, remote access, builds or performance measurements.",
+  "source_freeze_sha256": "c63ac2f1242455b9ee1f7b5f3376c5cb126cfc6d958538be97b72a084bd23dab",
+  "review_json_sha256": "8f845d8637302ee0544e226fd008f37e927c22ba9473b69145abf8c9dc186b19",
+  "reviewed_gate_snapshot_sha256": "399785d356a266536679fe3ac17a0931b65348986013df9a5b8d81440bde7f70",
+  "all_gate_evidence_hashes_matched": true,
+  "variants": {
+    "B": {
+      "binary_sha256": "079d55abdfa5c88104adac1dbc1321ea3c39bcaff04a32996c4f658197aac0be",
+      "binary_bytes": 17727352,
+      "capture_sha256": "61620a199ebb0ba013142de23af68a1af479d33dd534802fe51b53fcb6118c0c",
+      "ordinary_release_build_receipt_sha256": "8665f3b621a9ae7ddd8de1582e63714fd2439dcd4a4652e5cca49b177c85ded2",
+      "captured_function_count": 29,
+      "captured_instruction_bytes_verified_against_actual_elf": 11575,
+      "all_captured_function_byte_ranges_complete": true,
+      "caller": "0x1df210",
+      "families": {
+        "V4": {
+          "coalescer": "0x1c0140",
+          "sort_dispatcher": "0x1c1730",
+          "capacity_helper": "0x1c1400",
+          "pointer_arguments": {
+            "rsi": {
+              "address": "0x1c34f0",
+              "name": "generic not re-abstracted specialization <CIDR.AF.V4, [CIDR.IPAddressRange<CIDR.AF.V4>]> of closure #1 (CIDR.IPAddressRange<A>, CIDR.IPAddressRange<A>) -> Swift.Bool in static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]"
+            },
+            "r8": {
+              "address": "0x1c1e40",
+              "name": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()"
+            },
+            "r9": {
+              "address": "0x1c2420",
+              "name": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V4>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()"
+            }
+          },
+          "observed_uniqueness_sites": 1
+        },
+        "V6": {
+          "coalescer": "0x1c0310",
+          "sort_dispatcher": "0x1c1730",
+          "capacity_helper": "0x1c12f0",
+          "pointer_arguments": {
+            "rsi": {
+              "address": "0x1c3460",
+              "name": "generic not re-abstracted specialization <CIDR.AF.V6, [CIDR.IPAddressRange<CIDR.AF.V6>]> of closure #1 (CIDR.IPAddressRange<A>, CIDR.IPAddressRange<A>) -> Swift.Bool in static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]"
+            },
+            "r8": {
+              "address": "0x1c1830",
+              "name": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()"
+            },
+            "r9": {
+              "address": "0x1c22f0",
+              "name": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V6>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()"
+            }
+          },
+          "observed_uniqueness_sites": 1
+        }
+      }
+    },
+    "C": {
+      "binary_sha256": "01c693caed015b1a3960777225d41f387949946cf1ee8c4656fa6dad05824fd5",
+      "binary_bytes": 17729816,
+      "capture_sha256": "0d387ca7d404755d428204c2e054425c4113c56f7da8ff42947a265efed82fab",
+      "ordinary_release_build_receipt_sha256": "853bd4b1c1a3e2f89e777106054e5e7a61127d84dc39bd6a05424c4833f677f3",
+      "captured_function_count": 29,
+      "captured_instruction_bytes_verified_against_actual_elf": 11708,
+      "all_captured_function_byte_ranges_complete": true,
+      "caller": "0x1df1c0",
+      "families": {
+        "V4": {
+          "coalescer": "0x1c0080",
+          "sort_dispatcher": "0x1c1810",
+          "capacity_helper": "0x1c1410",
+          "pointer_arguments": {
+            "rsi": {
+              "address": "0x1c3590",
+              "name": "generic not re-abstracted specialization <CIDR.AF.V4, [CIDR.IPAddressRange<CIDR.AF.V4>]> of closure #1 (CIDR.IPAddressRange<A>, CIDR.IPAddressRange<A>) -> Swift.Bool in static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]"
+            },
+            "r8": {
+              "address": "0x1c1f20",
+              "name": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()"
+            },
+            "r9": {
+              "address": "0x1c2500",
+              "name": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V4>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()"
+            }
+          },
+          "observed_uniqueness_sites": 3
+        },
+        "V6": {
+          "coalescer": "0x1c0290",
+          "sort_dispatcher": "0x1c1810",
+          "capacity_helper": "0x1c1300",
+          "pointer_arguments": {
+            "rsi": {
+              "address": "0x1c3540",
+              "name": "generic not re-abstracted specialization <CIDR.AF.V6, [CIDR.IPAddressRange<CIDR.AF.V6>]> of closure #1 (CIDR.IPAddressRange<A>, CIDR.IPAddressRange<A>) -> Swift.Bool in static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]"
+            },
+            "r8": {
+              "address": "0x1c1910",
+              "name": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()"
+            },
+            "r9": {
+              "address": "0x1c23d0",
+              "name": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V6>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()"
+            }
+          },
+          "observed_uniqueness_sites": 3
+        }
+      }
+    }
+  },
+  "actual_cli_call_edges": {
+    "B": {
+      "V4": "0x1df22d -> 0x1c0140",
+      "V6": "0x1df238 -> 0x1c0310"
+    },
+    "C": {
+      "V4": "0x1df1dd -> 0x1c0080",
+      "V6": "0x1df1e8 -> 0x1c0290"
+    }
+  },
+  "sort_pointer_flow": "Each arm supplies the matching family comparator in rsi, stable-sort helper in r8 and insertion helper in r9. Dispatcher saves these in -0x38/-0x48/-0x30(rbp). Insertion branch invokes saved r9; stable branch invokes saved r8; comparator is forwarded through rcx. Comparator bodies use fixed-width comparisons without calls; sorting helpers retain indirect comparator calls.",
+  "candidate_control_flow": {
+    "V4": {
+      "compaction": "0x1c0180/184 stores completed range at sorted rbx + rcx*8; 0x1c01cb/1cf stores final range.",
+      "count_branch": "0x1c01d4 forms completed count+1 in rsi; 0x1c01d8 compares sorted count from rdx; 0x1c01db branches to 0x1c0273 returning sorted rbx when count is unchanged.",
+      "fresh_result": "0x1c01e1 loads empty storage into rcx; edi=0/edx=0; 0x1c01ec calls capacity helper with resultCount in rsi.",
+      "copy": "0x1c0210 loads 8-byte records from sorted rdi; 0x1c022e writes new rax buffer. Counter r12 starts -1; increment/compare at 0x1c0234/23a copies completedCount+1 records.",
+      "ownership": "At 0x1c026b new result rax transfers to rbx; 0x1c026e releases sorted rdi; 0x1c0273 returns result."
+    },
+    "V6": {
+      "compaction": "0x1c03ee..401 completed and 0x1c0462..475 final stores use sorted rbx with index*32.",
+      "count_branch": "0x1c047a forms completed count+1 in r14; 0x1c047e compares sorted count; 0x1c0481 branches to 0x1c0554 returning sorted rbx when count is unchanged.",
+      "fresh_result": "0x1c0487 loads empty storage into rcx; edi=0/edx=0; r14 passes as rsi to capacity helper at 0x1c0498.",
+      "copy": "0x1c04c0..4cf loads four 8-byte words; 0x1c04ee..4fd writes new result. Offset advances32 and resultCount r14 decrements until zero at 0x1c0502..509.",
+      "ownership": "0x1c0549 saves sorted rbx in rdi; 0x1c054c assigns new result rax to rbx; 0x1c054f releases sorted; 0x1c0554 returns new result."
+    }
+  },
+  "baseline_contrast": "Both baseline families load sorted count into rsi before their first separate-result capacity helper (V4 0x1c01b6 -> call0x1c01cb; V6 0x1c037e -> call0x1c0397).",
+  "allocation_helper_observations": "The reduced-result call passes empty storage, resultCount and growForAppend=false. The helper selects max(requestedCount, sourceCount=0), allocates 8*count+32 bytes for V4 or 32*count+32 for V6, then derives capacity using malloc_usable_size. Copy/move branches and source release remain in the helper; coalescers retain conditional copy-on-write and append-capacity fallback branches.",
+  "limitations": [
+    "These findings cover the captured ordinary concrete Array CLI paths, not every generic caller.",
+    "Calls to release end this coalescer ownership; this does not prove immediate physical memory reclamation.",
+    "Requested allocation bytes and capacity rounding do not establish total live allocation count, RSS, steady-state memory, or throughput.",
+    "Input storage, sort scratch and allocator behavior remain separate.",
+    "Observed three candidate/one baseline uniqueness sites describe these exact frozen function bodies only."
+  ],
+  "storage_delta_review": {
+    "passed": true,
+    "protocol_sha256": "37ff5e441535ccf3af040234bc2149372c16ea7a5b9782673ca5cf9a0791eee7",
+    "all_listed_helper_hashes_verified": true,
+    "original_timing_drivers_byte_identical_to_previously_reviewed_versions": true,
+    "sparse_scope_and_independent_followup_selection_verified": true,
+    "unique_contents_recomputed": 22,
+    "unique_output_bytes_recomputed": 97934986,
+    "between_sample_storage_io_remains_disclosed": true
+  },
+  "material_findings": []
+}

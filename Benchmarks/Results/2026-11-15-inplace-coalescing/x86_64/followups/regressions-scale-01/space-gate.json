@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "free_bytes": 3407515648,
+  "additional_physical_stdout_budget_bytes": 22722657,
+  "logical_stdout_bytes": 24516268,
+  "minimum_free_bytes": 3221225472,
+  "at": "2026-11-15T23:20:12.115587+00:00"
+}

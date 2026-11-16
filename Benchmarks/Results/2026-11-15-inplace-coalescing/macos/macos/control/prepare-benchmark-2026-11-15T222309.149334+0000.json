@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-11-15T22:23:09.149334+00:00",
+  "stage": "benchmark",
+  "passed": true,
+  "frozen_files": 40,
+  "ready_for_matched_benchmarks": true,
+  "finished_at": "2026-11-15T22:23:11.361748+00:00"
+}

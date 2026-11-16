@@ -1,0 +1,308 @@
+{
+  "baseline_current_main": "8bba7629d7fc9c366ea47680ee6c38badd615092",
+  "records": [
+    {
+      "capture": "B-ipv6-disjoint-0320",
+      "passed": false,
+      "matches_reference": true,
+      "types": {
+        "Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>>": {
+          "blocks": 0,
+          "bytes": 0,
+          "sizes": []
+        },
+        "Swift._ContiguousArrayStorage<CIDR.IPNetwork<CIDR.AF.V6>>": {
+          "blocks": 0,
+          "bytes": 0,
+          "sizes": []
+        },
+        "NSConcreteData (Bytes Storage)": {
+          "blocks": 0,
+          "bytes": 0,
+          "sizes": []
+        }
+      },
+      "stack_anchors": [],
+      "artifacts": {
+        "macos/heap/B-ipv6-disjoint-0320/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "macos/heap/B-ipv6-disjoint-0320/sample.log": "828c4036b7c99b95e40b408dc7d2288961568d0d709b7b32a8dbbfec33c6e324",
+        "macos/heap/B-ipv6-disjoint-0320/heap.log": "1ff585cf74c7974ceed24568fbdad6f3d2da0b73677587d735692fab3ee6c571",
+        "macos/heap/B-ipv6-disjoint-0320/vmmap.log": "ae9522765b5f01faab991d64d0a6f7f77defbed15c24a81b82a9dbcf937b3a5d",
+        "macos/heap/B-ipv6-disjoint-0320/output.txt": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85",
+        "macos/heap/B-ipv6-disjoint-0320/receipt.json": "830fa8a9010a0a83cdfe47c533cb0b08ce1213d0da92e4bf493a91bab47ad248"
+      }
+    },
+    {
+      "capture": "B-ipv6-disjoint-0325",
+      "passed": true,
+      "matches_reference": true,
+      "types": {
+        "Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>>": {
+          "blocks": 1,
+          "bytes": 50331648,
+          "sizes": [
+            50331648
+          ]
+        },
+        "Swift._ContiguousArrayStorage<CIDR.IPNetwork<CIDR.AF.V6>>": {
+          "blocks": 0,
+          "bytes": 0,
+          "sizes": []
+        },
+        "NSConcreteData (Bytes Storage)": {
+          "blocks": 1,
+          "bytes": 65536,
+          "sizes": [
+            65536
+          ]
+        }
+      },
+      "stack_anchors": [
+        "879 specialized static TextInputLoader.consume(_:source:into:)  (in B-profile) + 484  [0x1045d38b0]  TextInput.swift:164"
+      ],
+      "artifacts": {
+        "macos/heap/B-ipv6-disjoint-0325/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "macos/heap/B-ipv6-disjoint-0325/sample.log": "89d320c39d18975f54bb86ebcb95ab7f894576987654fed5b13a7c63d7fe1c75",
+        "macos/heap/B-ipv6-disjoint-0325/heap.log": "f8d25e2f81ab1d13bb3d60e46fed052c7cb6ba8e4e2e4666c96939783bb4d27b",
+        "macos/heap/B-ipv6-disjoint-0325/vmmap.log": "d00cb8fd976d0925d0c0cb4f0aa1b683b9757b39f79f9c2089fd61b4de9ce15e",
+        "macos/heap/B-ipv6-disjoint-0325/output.txt": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85",
+        "macos/heap/B-ipv6-disjoint-0325/receipt.json": "b7616e968778bf7c0dee4d4c9a9717fae3bb591315fb85e62833a41510d949f9",
+        "macos/heap/B-ipv6-disjoint-0325/sample.txt": "5a802da10182390080317deba2a6a4b86baaa57a396762fb1fcd0154402ce42b"
+      }
+    },
+    {
+      "capture": "B-ipv6-disjoint-0350",
+      "passed": true,
+      "matches_reference": true,
+      "types": {
+        "Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>>": {
+          "blocks": 1,
+          "bytes": 50331648,
+          "sizes": [
+            50331648
+          ]
+        },
+        "Swift._ContiguousArrayStorage<CIDR.IPNetwork<CIDR.AF.V6>>": {
+          "blocks": 0,
+          "bytes": 0,
+          "sizes": []
+        },
+        "NSConcreteData (Bytes Storage)": {
+          "blocks": 1,
+          "bytes": 65536,
+          "sizes": [
+            65536
+          ]
+        }
+      },
+      "stack_anchors": [
+        "884 specialized static TextInputLoader.consume(_:source:into:)  (in B-profile) + 588  [0x100a63918]  TextInput.swift:164",
+        "884 specialized static TextInputLoader.consumeLine(_:source:lineNumber:into:)  (in B-profile) + 1064  [0x100a6342c]  TextInput.swift:285"
+      ],
+      "artifacts": {
+        "macos/heap/B-ipv6-disjoint-0350/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "macos/heap/B-ipv6-disjoint-0350/sample.log": "14232d70041aeb9a9cc5fae0766040767c9dbeb99c70688cf687005ff9f6dc37",
+        "macos/heap/B-ipv6-disjoint-0350/heap.log": "efc432b89555d692ecb3575b2ad5b17f49e8f089c5b37130a946b425637fdb6d",
+        "macos/heap/B-ipv6-disjoint-0350/vmmap.log": "333be50cf10823ae213650447faa46834e83eb0b47ad0cbc2dd3149e3dd4ca99",
+        "macos/heap/B-ipv6-disjoint-0350/output.txt": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85",
+        "macos/heap/B-ipv6-disjoint-0350/receipt.json": "a83c97b721209d86abf1dee1640c95be47f639b86539dac8a8b827bd8281448b",
+        "macos/heap/B-ipv6-disjoint-0350/sample.txt": "c9dab02c2e72ea5b5a147f535470f376f5f928f8e66ef65b79a76576f002c26d"
+      }
+    },
+    {
+      "capture": "B-ipv6-disjoint-0357",
+      "passed": true,
+      "matches_reference": true,
+      "types": {
+        "Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>>": {
+          "blocks": 2,
+          "bytes": 82345984,
+          "sizes": [
+            50331648,
+            32014336
+          ]
+        },
+        "Swift._ContiguousArrayStorage<CIDR.IPNetwork<CIDR.AF.V6>>": {
+          "blocks": 0,
+          "bytes": 0,
+          "sizes": []
+        },
+        "NSConcreteData (Bytes Storage)": {
+          "blocks": 0,
+          "bytes": 0,
+          "sizes": []
+        }
+      },
+      "stack_anchors": [
+        "799 specialized static IPAddressRange.coalescing<A>(_:)  (in B-profile) + 56  [0x1009fcef0]  /<compiler-generated>:0",
+        "799 specialized _ContiguousArrayBuffer._consumeAndCreateNew(bufferIsUnique:minimumCapacity:growForAppend:)  (in B-profile) + 224  [0x100a00278]  /<compiler-generated>:0"
+      ],
+      "artifacts": {
+        "macos/heap/B-ipv6-disjoint-0357/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "macos/heap/B-ipv6-disjoint-0357/sample.log": "a86e5fb84056bcb1a3432ec37a28cac835817a54c1ed6b113193aa0a95acfbcb",
+        "macos/heap/B-ipv6-disjoint-0357/heap.log": "9d55af094d8a9718cb26e6548f3f73132650c87017c47a250247afa90f186d68",
+        "macos/heap/B-ipv6-disjoint-0357/vmmap.log": "786f92db1d57ef8b0b2539963f8c46af02922bb119c461640b7ea89a67c323e7",
+        "macos/heap/B-ipv6-disjoint-0357/output.txt": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85",
+        "macos/heap/B-ipv6-disjoint-0357/receipt.json": "cd1d6f2f68aef43b86cdc2be3b6c47b3b1c318fbd02ac75e8d4b6e71d0961aea",
+        "macos/heap/B-ipv6-disjoint-0357/sample.txt": "2b72f23434827612edc59d4c7da41b2da8c20fe2196add29968570291e0d15b6"
+      }
+    },
+    {
+      "capture": "B-ipv6-disjoint-0360",
+      "passed": true,
+      "matches_reference": true,
+      "types": {
+        "Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>>": {
+          "blocks": 2,
+          "bytes": 75497472,
+          "sizes": [
+            50331648,
+            25165824
+          ]
+        },
+        "Swift._ContiguousArrayStorage<CIDR.IPNetwork<CIDR.AF.V6>>": {
+          "blocks": 0,
+          "bytes": 0,
+          "sizes": []
+        },
+        "NSConcreteData (Bytes Storage)": {
+          "blocks": 1,
+          "bytes": 65536,
+          "sizes": [
+            65536
+          ]
+        }
+      },
+      "stack_anchors": [
+        "799 specialized static TextInputLoader.consume(_:source:into:)  (in B-profile) + 588  [0x102b57918]  TextInput.swift:164",
+        "799 specialized static TextInputLoader.consumeLine(_:source:lineNumber:into:)  (in B-profile) + 1644  [0x102b57670]  TextInput.swift:319",
+        "799 specialized _ArrayBuffer._consumeAndCreateNew(bufferIsUnique:minimumCapacity:growForAppend:)  (in B-profile) + 208  [0x102b4c854]  /<compiler-generated>:0"
+      ],
+      "artifacts": {
+        "macos/heap/B-ipv6-disjoint-0360/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "macos/heap/B-ipv6-disjoint-0360/sample.log": "c41a4e8f52d7d8a29bcb6d8a5792d628177686c4a082ed27a420a8b0592e0688",
+        "macos/heap/B-ipv6-disjoint-0360/heap.log": "e94778e301b3bbf2e152dc8c3be0e3c9be124e1d1c2d7dfdf9a30ca8a1091c14",
+        "macos/heap/B-ipv6-disjoint-0360/vmmap.log": "78e4cc1801624f0676793c17a3d2c9493774ff8e1167545379327c0ad30b37db",
+        "macos/heap/B-ipv6-disjoint-0360/output.txt": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85",
+        "macos/heap/B-ipv6-disjoint-0360/receipt.json": "3fabe651818f35f8c99b92cd929e2c8c87bc50488234a75347828e5390e9881d",
+        "macos/heap/B-ipv6-disjoint-0360/sample.txt": "513a8528aa9eb21d2e400bb9aa851f4e2790a9ced9d4d1ca840e7702b6f7bd09"
+      }
+    },
+    {
+      "capture": "B-ipv6-disjoint-0365",
+      "passed": true,
+      "matches_reference": true,
+      "types": {
+        "Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>>": {
+          "blocks": 2,
+          "bytes": 82345984,
+          "sizes": [
+            50331648,
+            32014336
+          ]
+        },
+        "Swift._ContiguousArrayStorage<CIDR.IPNetwork<CIDR.AF.V6>>": {
+          "blocks": 1,
+          "bytes": 32014336,
+          "sizes": [
+            32014336
+          ]
+        },
+        "NSConcreteData (Bytes Storage)": {
+          "blocks": 0,
+          "bytes": 0,
+          "sizes": []
+        }
+      },
+      "stack_anchors": [
+        "798 specialized IPAddressCoverage.summarizedNetworks()  (in B-profile) + 76  [0x100940584]  /<compiler-generated>:0"
+      ],
+      "artifacts": {
+        "macos/heap/B-ipv6-disjoint-0365/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "macos/heap/B-ipv6-disjoint-0365/sample.log": "7d2890994f202de481a464e65cb3286ea288635234226badad0e2fe891e4daa4",
+        "macos/heap/B-ipv6-disjoint-0365/heap.log": "111d459a9ca196f5df291b2b2eaaeac2bac9721f538ce0cea7402b6c11236e00",
+        "macos/heap/B-ipv6-disjoint-0365/vmmap.log": "b5a0bf6cf0403b8bcd1a36bac982ede89d80c891f9068470e9aaeea044a64270",
+        "macos/heap/B-ipv6-disjoint-0365/output.txt": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85",
+        "macos/heap/B-ipv6-disjoint-0365/receipt.json": "b17230ded960dbf787bdf73bff2ffdddd9d6b204c9786fc99e531fb6e0dd713b",
+        "macos/heap/B-ipv6-disjoint-0365/sample.txt": "151900235b027716f4887eaa0b2eb5ad31d5138c53555a916658d53ba4743365"
+      }
+    },
+    {
+      "capture": "B-ipv6-disjoint-0373",
+      "passed": true,
+      "matches_reference": true,
+      "types": {
+        "Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>>": {
+          "blocks": 2,
+          "bytes": 82345984,
+          "sizes": [
+            50331648,
+            32014336
+          ]
+        },
+        "Swift._ContiguousArrayStorage<CIDR.IPNetwork<CIDR.AF.V6>>": {
+          "blocks": 1,
+          "bytes": 32014336,
+          "sizes": [
+            32014336
+          ]
+        },
+        "NSConcreteData (Bytes Storage)": {
+          "blocks": 0,
+          "bytes": 0,
+          "sizes": []
+        }
+      },
+      "stack_anchors": [
+        "799 specialized IPAddressCoverage.summarizedNetworks()  (in B-profile) + 60  [0x104ec0574]  /<compiler-generated>:0",
+        "specialized IPAddressCoverage.summarizedNetworks()  (in B-profile)        799"
+      ],
+      "artifacts": {
+        "macos/heap/B-ipv6-disjoint-0373/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "macos/heap/B-ipv6-disjoint-0373/sample.log": "74718bbbbebeb4bf7a52e265fa4f8a571be0963526bd413a140ceefb26eb8215",
+        "macos/heap/B-ipv6-disjoint-0373/heap.log": "8bb0a457e6491b11c6c164dab6c5fde8c7e1d0b33a5c543bd92df88fbc3dd731",
+        "macos/heap/B-ipv6-disjoint-0373/vmmap.log": "66a517c7a5e4c0265f15ba6c33661676395812387927d2235932496e2d02ae12",
+        "macos/heap/B-ipv6-disjoint-0373/output.txt": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85",
+        "macos/heap/B-ipv6-disjoint-0373/receipt.json": "940bd0a1a2ca8abf47ca467af9b2db5e91b36b62dafd39401e4605c18f4b1ccc",
+        "macos/heap/B-ipv6-disjoint-0373/sample.txt": "8a35d5a16b2d94fafcfd2e45b495e2dec38409a4030211655f3f422d4858c3f3"
+      }
+    },
+    {
+      "capture": "B-ipv6-disjoint-0385",
+      "passed": true,
+      "matches_reference": true,
+      "types": {
+        "Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>>": {
+          "blocks": 0,
+          "bytes": 0,
+          "sizes": []
+        },
+        "Swift._ContiguousArrayStorage<CIDR.IPNetwork<CIDR.AF.V6>>": {
+          "blocks": 1,
+          "bytes": 32014336,
+          "sizes": [
+            32014336
+          ]
+        },
+        "NSConcreteData (Bytes Storage)": {
+          "blocks": 0,
+          "bytes": 0,
+          "sizes": []
+        }
+      },
+      "stack_anchors": [
+        "882 specialized static OutputRenderer.appendText<A>(_:to:)  (in B-profile) + 96  [0x100203ef0]  OutputRenderer.swift:96"
+      ],
+      "artifacts": {
+        "macos/heap/B-ipv6-disjoint-0385/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "macos/heap/B-ipv6-disjoint-0385/sample.log": "3266fd9d5f86eb02c0f42c093a8cdc04eb8589f8b6a7065c55aa5655bbd6201c",
+        "macos/heap/B-ipv6-disjoint-0385/heap.log": "dcbdcf2bc7783e74af8da5fe5071d4f0fdc75f415eacb86d0511c2ee4865a195",
+        "macos/heap/B-ipv6-disjoint-0385/vmmap.log": "208877736f2cbeaa944aff29a260fa6139c22e2092cc663264a60df7c12d8787",
+        "macos/heap/B-ipv6-disjoint-0385/output.txt": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85",
+        "macos/heap/B-ipv6-disjoint-0385/receipt.json": "7426fc48d0cf5a41b057ec2779fa0b25698ac0a879db28ca886964868eda33f0",
+        "macos/heap/B-ipv6-disjoint-0385/sample.txt": "df625f5b493198beec9c7635b022325b2cc402a96de088ca890fd9125a1be227"
+      }
+    }
+  ],
+  "limitations": "Independent paused processes; stack identifies phase, not CPU proportions. Allocation sizes are live heap capacity, not RSS. Fresh captures do not establish three concurrent range arrays; source still explicitly creates a separate coalesced result."
+}

@@ -1,0 +1,151 @@
+{
+  "cases": [
+    {
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "pattern": "mixed-disjoint",
+      "input": "mixed-disjoint-1000/input.txt",
+      "input_bytes": 16140,
+      "input_sha256": "0c994d2830359c1823a6eea339afb9bf015e3af694c0d36407cc7fc8eb46e84d",
+      "output": "mixed-disjoint-1000/reference.txt",
+      "output_bytes": 16140,
+      "output_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "output_count": 1000
+    },
+    {
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "pattern": "mixed-disjoint",
+      "input": "mixed-disjoint-10000/input.txt",
+      "input_bytes": 169981,
+      "input_sha256": "11571040354a7f185755a0568f501c3a9331aedad488bca027c388c82e493010",
+      "output": "mixed-disjoint-10000/reference.txt",
+      "output_bytes": 169981,
+      "output_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "output_count": 10000
+    },
+    {
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "pattern": "mixed-disjoint",
+      "input": "mixed-disjoint-100000/input.txt",
+      "input_bytes": 1751137,
+      "input_sha256": "bf3116ff0af5923c221671ea35dd60b7622f13401a1a958b4abc604fb473e274",
+      "output": "mixed-disjoint-100000/reference.txt",
+      "output_bytes": 1751137,
+      "output_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "output_count": 100000
+    },
+    {
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "pattern": "mixed-permuted",
+      "input": "mixed-permuted-1000/input.txt",
+      "input_bytes": 17869,
+      "input_sha256": "a29a9498b4217e095ce993783611bec3ff388c181b4a548e67eb4a524a9eeefe",
+      "output": "mixed-permuted-1000/reference.txt",
+      "output_bytes": 17869,
+      "output_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "output_count": 1000
+    },
+    {
+      "case": "mixed-permuted-10000",
+      "entries": 10000,
+      "pattern": "mixed-permuted",
+      "input": "mixed-permuted-10000/input.txt",
+      "input_bytes": 178651,
+      "input_sha256": "db1b67661c99f7e123cb7c7e623f30a452bb973b2a82b55ec6303df852218a58",
+      "output": "mixed-permuted-10000/reference.txt",
+      "output_bytes": 178651,
+      "output_sha256": "6a31e3539f703d2509d3cd3789762673886d0cf32be6a1b15c98f0309a5d8f6d",
+      "output_count": 10000
+    },
+    {
+      "case": "mixed-permuted-100000",
+      "entries": 100000,
+      "pattern": "mixed-permuted",
+      "input": "mixed-permuted-100000/input.txt",
+      "input_bytes": 1786391,
+      "input_sha256": "e8027fb8786ce10594964faedaec6947a4f0f646e0014ccaefadd56fa44fd383",
+      "output": "mixed-permuted-100000/reference.txt",
+      "output_bytes": 1786391,
+      "output_sha256": "cffe8fc059474a546f4dc1bc019b65525dec193eaaaa369a71fb4c9759874d0d",
+      "output_count": 100000
+    },
+    {
+      "case": "mixed-overlap-1000",
+      "entries": 1000,
+      "pattern": "mixed-overlap",
+      "input": "mixed-overlap-1000/input.txt",
+      "input_bytes": 15791,
+      "input_sha256": "408fbb6eb1bdb013e7b50aae8653be2791154db38f5e032dc359a81afc012695",
+      "output": "mixed-overlap-1000/reference.txt",
+      "output_bytes": 25,
+      "output_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "output_count": 2
+    },
+    {
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "pattern": "mixed-overlap",
+      "input": "mixed-overlap-10000/input.txt",
+      "input_bytes": 162809,
+      "input_sha256": "7a68f6caa0e9a94ad190437120fb2c79361846a089fc2ec887256c88b7699207",
+      "output": "mixed-overlap-10000/reference.txt",
+      "output_bytes": 25,
+      "output_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "output_count": 2
+    },
+    {
+      "case": "mixed-overlap-100000",
+      "entries": 100000,
+      "pattern": "mixed-overlap",
+      "input": "mixed-overlap-100000/input.txt",
+      "input_bytes": 1698449,
+      "input_sha256": "dc1717658f3d40ebf235d6fb3f2cbc9fa0f03130a728c3ab878a176250682586",
+      "output": "mixed-overlap-100000/reference.txt",
+      "output_bytes": 25,
+      "output_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "output_count": 2
+    },
+    {
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "pattern": "mixed-adjacent",
+      "input": "mixed-adjacent-1000/input.txt",
+      "input_bytes": 15007,
+      "input_sha256": "3952779c8823a974967292f74bc262cbd7b70036d62cecca57da9d033ab1c472",
+      "output": "mixed-adjacent-1000/reference.txt",
+      "output_bytes": 179,
+      "output_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "output_count": 12
+    },
+    {
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "pattern": "mixed-adjacent",
+      "input": "mixed-adjacent-10000/input.txt",
+      "input_bytes": 155871,
+      "input_sha256": "dd226d7eee24ec7f33622522ac3612c04978b1d70940b7449b5b8dd96f4d8e46",
+      "output": "mixed-adjacent-10000/reference.txt",
+      "output_bytes": 152,
+      "output_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "output_count": 10
+    },
+    {
+      "case": "mixed-adjacent-100000",
+      "entries": 100000,
+      "pattern": "mixed-adjacent",
+      "input": "mixed-adjacent-100000/input.txt",
+      "input_bytes": 1645931,
+      "input_sha256": "bd7c148f44f9c9b2672b5913be5b30354b2bc11eef3b27bd2dccab846b77caad",
+      "output": "mixed-adjacent-100000/reference.txt",
+      "output_bytes": 187,
+      "output_sha256": "7a2de6bae1cc53a7bca155a5f0e48598b81c02cbe1fa2cc5999a29fbcf3f38ab",
+      "output_count": 12
+    }
+  ],
+  "parent_reference_sha256": "7bb293dc1d39510fd9d2ebb82ed08e0d0f8c9825ba4b522257393b65262b6246",
+  "trigger_summary_sha256": "56a0608f81c816086a7dc7211b6c823535b87c6b316aec80d85a22b59e4c9c58",
+  "purpose": "Separate fixed six-pair follow-up; no pooling with initial measurements."
+}

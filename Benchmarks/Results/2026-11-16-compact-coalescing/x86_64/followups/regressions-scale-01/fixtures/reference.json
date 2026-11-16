@@ -1,0 +1,20 @@
+{
+  "cases": [
+    {
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "pattern": "mixed-disjoint",
+      "input": "mixed-disjoint-100000/input.txt",
+      "input_bytes": 1751137,
+      "input_sha256": "bf3116ff0af5923c221671ea35dd60b7622f13401a1a958b4abc604fb473e274",
+      "output": "mixed-disjoint-100000/reference.txt",
+      "output_bytes": 1751137,
+      "output_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "output_count": 100000
+    }
+  ],
+  "method": "Python ipaddress.collapse_addresses, independent of Swift parser/coalescer",
+  "parent_fixture_root": "$REFERENCES/fixtures",
+  "original_reference_sha256": "7bb293dc1d39510fd9d2ebb82ed08e0d0f8c9825ba4b522257393b65262b6246",
+  "selection_source_sha256": "2243b839130b2027ce68e456011dc90554883b84fa379b17d752c6c945bd584e"
+}

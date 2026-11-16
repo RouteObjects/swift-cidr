@@ -1,0 +1,1551 @@
+{
+  "passed": true,
+  "samples": [
+    {
+      "round": 0,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-00/mixed-sparse-duplicate-10000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-00/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:52:37.496770+00:00",
+      "free_bytes_before": 5733032370176,
+      "directory": "round-00/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 16612625,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8142848,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8142848  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 702  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  26  involuntary context switches\n            99021145  instructions retired\n            29996171  cycles elapsed\n             3146184  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:37.514743+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-00/mixed-sparse-duplicate-10000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-00/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:52:37.515226+00:00",
+      "free_bytes_before": 5733032185856,
+      "directory": "round-00/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 17916584,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8159232,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8159232  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 704  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  26  involuntary context switches\n            99854957  instructions retired\n            31823765  cycles elapsed\n             3162568  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:37.534095+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-00/mixed-sparse-duplicate-1000000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-00/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:52:37.534637+00:00",
+      "free_bytes_before": 5733032001536,
+      "directory": "round-00/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 430393583,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 108281856,
+      "resources": {
+        "native_time": "real 0.42\nuser 0.33\nsys 0.01\n           108281856  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6815  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                 228  involuntary context switches\n          5629174402  instructions retired\n          1103302917  cycles elapsed\n           103334416  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:37.975491+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-00/mixed-sparse-duplicate-1000000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-00/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:52:37.976043+00:00",
+      "free_bytes_before": 5733013921792,
+      "directory": "round-00/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 361355000,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 107986944,
+      "resources": {
+        "native_time": "real 0.35\nuser 0.33\nsys 0.01\n           107986944  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6795  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                 177  involuntary context switches\n          5652525781  instructions retired\n          1099404767  cycles elapsed\n           103039504  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:38.347353+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-01/mixed-sparse-duplicate-10000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-01/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:52:38.348222+00:00",
+      "free_bytes_before": 5733000024064,
+      "directory": "round-01/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 16055083,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8159232,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8159232  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 704  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  19  involuntary context switches\n            99039488  instructions retired\n            29951353  cycles elapsed\n             3162568  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:38.365148+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-01/mixed-sparse-duplicate-10000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-01/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:52:38.365530+00:00",
+      "free_bytes_before": 5732999835648,
+      "directory": "round-01/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 15618708,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8175616,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8175616  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 703  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  19  involuntary context switches\n            99733063  instructions retired\n            30618697  cycles elapsed\n             3162544  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:38.381926+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-01/mixed-sparse-duplicate-1000000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-01/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:52:38.382350+00:00",
+      "free_bytes_before": 5732999651328,
+      "directory": "round-01/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 378934417,
+      "cpu_seconds": 0.35000000000000003,
+      "peak_rss_bytes": 107511808,
+      "resources": {
+        "native_time": "real 0.37\nuser 0.34\nsys 0.01\n           107511808  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6766  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                 221  involuntary context switches\n          5623540825  instructions retired\n          1101591996  cycles elapsed\n           102564368  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:38.771056+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-01/mixed-sparse-duplicate-1000000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-01/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:52:38.771725+00:00",
+      "free_bytes_before": 5732981473280,
+      "directory": "round-01/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 360959708,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 107085824,
+      "resources": {
+        "native_time": "real 0.35\nuser 0.33\nsys 0.01\n           107085824  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6741  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                 154  involuntary context switches\n          5649323812  instructions retired\n          1097701825  cycles elapsed\n           102138384  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:39.143219+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-02/mixed-sparse-duplicate-1000000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-02/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:52:39.143862+00:00",
+      "free_bytes_before": 5732963139584,
+      "directory": "round-02/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 360524125,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 106741760,
+      "resources": {
+        "native_time": "real 0.35\nuser 0.33\nsys 0.01\n           106741760  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6719  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                 169  involuntary context switches\n          5649226867  instructions retired\n          1096131139  cycles elapsed\n           101794320  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:39.514761+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-02/mixed-sparse-duplicate-1000000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-02/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:52:39.515299+00:00",
+      "free_bytes_before": 5732944523264,
+      "directory": "round-02/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 363221834,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 107986944,
+      "resources": {
+        "native_time": "real 0.35\nuser 0.33\nsys 0.01\n           107986944  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6795  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                 199  involuntary context switches\n          5629608354  instructions retired\n          1100100112  cycles elapsed\n           103039504  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:39.888628+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-02/mixed-sparse-duplicate-10000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-02/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:52:39.889467+00:00",
+      "free_bytes_before": 5732926341120,
+      "directory": "round-02/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 16926792,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8126464,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8126464  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 702  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  24  involuntary context switches\n            99784992  instructions retired\n            30995609  cycles elapsed\n             3129800  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:39.907446+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-02/mixed-sparse-duplicate-10000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-02/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:52:39.907873+00:00",
+      "free_bytes_before": 5732926152704,
+      "directory": "round-02/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 18212208,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8306688,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8306688  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 713  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  24  involuntary context switches\n            99368557  instructions retired\n            31346464  cycles elapsed\n             3310024  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:39.926912+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-03/mixed-sparse-duplicate-10000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-03/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:52:39.927432+00:00",
+      "free_bytes_before": 5732925972480,
+      "directory": "round-03/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 16137458,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8355840,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8355840  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 715  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  25  involuntary context switches\n            99106141  instructions retired\n            30089892  cycles elapsed\n             3359176  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:39.944486+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-03/mixed-sparse-duplicate-10000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-03/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:52:39.944916+00:00",
+      "free_bytes_before": 5732925779968,
+      "directory": "round-03/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 15860458,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8159232,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8159232  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 702  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  21  involuntary context switches\n            99783568  instructions retired\n            29672474  cycles elapsed\n             3162568  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:39.961633+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-03/mixed-sparse-duplicate-1000000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-03/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:52:39.962100+00:00",
+      "free_bytes_before": 5732925599744,
+      "directory": "round-03/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 361375458,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 108003328,
+      "resources": {
+        "native_time": "real 0.35\nuser 0.33\nsys 0.01\n           108003328  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6798  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   1  voluntary context switches\n                 160  involuntary context switches\n          5629294138  instructions retired\n          1101041642  cycles elapsed\n           103055888  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:40.333940+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-03/mixed-sparse-duplicate-1000000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-03/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:52:40.334753+00:00",
+      "free_bytes_before": 5732907737088,
+      "directory": "round-03/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 361849375,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 107069440,
+      "resources": {
+        "native_time": "real 0.35\nuser 0.33\nsys 0.01\n           107069440  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6741  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                 138  involuntary context switches\n          5652462991  instructions retired\n          1103940764  cycles elapsed\n           102122000  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:40.707389+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-04/mixed-sparse-duplicate-1000000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-04/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:52:40.708146+00:00",
+      "free_bytes_before": 5732889686016,
+      "directory": "round-04/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 361519042,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 107905024,
+      "resources": {
+        "native_time": "real 0.35\nuser 0.33\nsys 0.01\n           107905024  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6791  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                 166  involuntary context switches\n          5652214234  instructions retired\n          1102400485  cycles elapsed\n           102957584  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:41.079323+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-04/mixed-sparse-duplicate-1000000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-04/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:52:41.079836+00:00",
+      "free_bytes_before": 5732871376896,
+      "directory": "round-04/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 363657041,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 107397120,
+      "resources": {
+        "native_time": "real 0.35\nuser 0.33\nsys 0.01\n           107397120  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6760  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                 146  involuntary context switches\n          5634008588  instructions retired\n          1105315298  cycles elapsed\n           102449680  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:41.453673+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-04/mixed-sparse-duplicate-10000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-04/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:52:41.454417+00:00",
+      "free_bytes_before": 5732853485568,
+      "directory": "round-04/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 16982666,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8142848,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8142848  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 681  page reclaims\n                  24  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  19  involuntary context switches\n           101522867  instructions retired\n            30797754  cycles elapsed\n             3146184  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:41.472558+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-04/mixed-sparse-duplicate-10000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-04/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:52:41.472972+00:00",
+      "free_bytes_before": 5732853301248,
+      "directory": "round-04/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 15116792,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8159232,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8159232  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 702  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  21  involuntary context switches\n            98978261  instructions retired\n            28638879  cycles elapsed\n             3162568  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:41.488827+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-05/mixed-sparse-duplicate-10000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-05/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:52:41.489289+00:00",
+      "free_bytes_before": 5732853035008,
+      "directory": "round-05/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 15433833,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8175616,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8175616  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 703  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  17  involuntary context switches\n            98885338  instructions retired\n            29737314  cycles elapsed\n             3178952  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:41.505602+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-05/mixed-sparse-duplicate-10000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-05/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:52:41.506084+00:00",
+      "free_bytes_before": 5732852817920,
+      "directory": "round-05/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 16257083,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8142848,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8142848  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 701  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  20  involuntary context switches\n            99685091  instructions retired\n            28726507  cycles elapsed\n             3146184  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:41.523188+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-05/mixed-sparse-duplicate-1000000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-05/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:52:41.523643+00:00",
+      "free_bytes_before": 5732852584448,
+      "directory": "round-05/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 359909416,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 107102208,
+      "resources": {
+        "native_time": "real 0.35\nuser 0.33\nsys 0.01\n           107102208  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6742  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                 145  involuntary context switches\n          5628647337  instructions retired\n          1097011762  cycles elapsed\n           102154768  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:41.893749+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-05/mixed-sparse-duplicate-1000000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-05/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:52:41.894444+00:00",
+      "free_bytes_before": 5732826230784,
+      "directory": "round-05/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 361927042,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 107560960,
+      "resources": {
+        "native_time": "real 0.35\nuser 0.33\nsys 0.01\n           107560960  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6771  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                 157  involuntary context switches\n          5654156217  instructions retired\n          1102210004  cycles elapsed\n           102613520  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:42.266735+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-06/mixed-sparse-duplicate-1000000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-06/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:52:42.267591+00:00",
+      "free_bytes_before": 5732808351744,
+      "directory": "round-06/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 361542125,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 107954176,
+      "resources": {
+        "native_time": "real 0.35\nuser 0.33\nsys 0.01\n           107954176  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6794  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                 166  involuntary context switches\n          5654269473  instructions retired\n          1102192951  cycles elapsed\n           103006736  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:42.639289+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-06/mixed-sparse-duplicate-1000000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-06/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:52:42.639912+00:00",
+      "free_bytes_before": 5732790476800,
+      "directory": "round-06/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 359317584,
+      "cpu_seconds": 0.34,
+      "peak_rss_bytes": 107495424,
+      "resources": {
+        "native_time": "real 0.35\nuser 0.33\nsys 0.01\n           107495424  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                6766  page reclaims\n                   3  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   1  voluntary context switches\n                 148  involuntary context switches\n          5627999545  instructions retired\n          1095317644  cycles elapsed\n           102547984  peak memory footprint\n"
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:43.009717+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-06/mixed-sparse-duplicate-10000/C/time.txt",
+        "$EXPERIMENT/macos/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-06/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:52:43.010366+00:00",
+      "free_bytes_before": 5732772597760,
+      "directory": "round-06/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 16921917,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8175616,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8175616  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 700  page reclaims\n                   6  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  22  involuntary context switches\n            99979804  instructions retired\n            31124610  cycles elapsed\n             3178952  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:43.028100+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/usr/bin/time",
+        "-p",
+        "-l",
+        "-o",
+        "$EXPERIMENT/macos/sparse-measurements/round-06/mixed-sparse-duplicate-10000/B/time.txt",
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$EXPERIMENT/macos/sparse-measurements/round-06/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:52:43.028472+00:00",
+      "free_bytes_before": 5732772417536,
+      "directory": "round-06/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 17801375,
+      "cpu_seconds": 0.0,
+      "peak_rss_bytes": 8175616,
+      "resources": {
+        "native_time": "real 0.01\nuser 0.00\nsys 0.00\n             8175616  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n                 700  page reclaims\n                   6  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n                  26  involuntary context switches\n            99391750  instructions retired\n            32174900  cycles elapsed\n             3178952  peak memory footprint\n"
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:52:43.047389+00:00"
+    }
+  ],
+  "comparisons": [
+    {
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "pairs": [
+        {
+          "round": 1,
+          "elapsed_change_pct": -2.717986571604769,
+          "rss_change_pct": 0.20080321285140812
+        },
+        {
+          "round": 2,
+          "elapsed_change_pct": -7.0579909915371,
+          "rss_change_pct": -2.1696252465483234
+        },
+        {
+          "round": 3,
+          "elapsed_change_pct": -1.7165033055391965,
+          "rss_change_pct": -2.352941176470591
+        },
+        {
+          "round": 4,
+          "elapsed_change_pct": 12.343055325494978,
+          "rss_change_pct": -0.20080321285140812
+        },
+        {
+          "round": 5,
+          "elapsed_change_pct": 5.334060566808008,
+          "rss_change_pct": -0.4008016032064132
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": -4.940393649366969,
+          "rss_change_pct": 0.0
+        }
+      ],
+      "elapsed_change_pct": {
+        "median": -2.217244938571983,
+        "min": -7.0579909915371,
+        "max": 12.343055325494978
+      },
+      "rss_change_pct": {
+        "median": -0.3008024080289107,
+        "min": -2.352941176470591,
+        "max": 0.20080321285140812
+      },
+      "B": {
+        "elapsed_ns": 16096270.5,
+        "cpu_seconds": 0.0,
+        "peak_rss_bytes": 8175616.0
+      },
+      "C": {
+        "elapsed_ns": 16589500.0,
+        "cpu_seconds": 0.0,
+        "peak_rss_bytes": 8151040.0
+      }
+    },
+    {
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "pairs": [
+        {
+          "round": 1,
+          "elapsed_change_pct": -4.743488106017035,
+          "rss_change_pct": -0.3962206644315791
+        },
+        {
+          "round": 2,
+          "elapsed_change_pct": -0.7427166396610452,
+          "rss_change_pct": -1.1530875436200905
+        },
+        {
+          "round": 3,
+          "elapsed_change_pct": 0.13114255257478113,
+          "rss_change_pct": -0.8646844660194164
+        },
+        {
+          "round": 4,
+          "elapsed_change_pct": -0.5879162944627314,
+          "rss_change_pct": 0.472921434019824
+        },
+        {
+          "round": 5,
+          "elapsed_change_pct": 0.5605927242537057,
+          "rss_change_pct": 0.42833103870276723
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": 0.6191016245951309,
+          "rss_change_pct": 0.4267642127724347
+        }
+      ],
+      "elapsed_change_pct": {
+        "median": -0.22838687094397514,
+        "min": -4.743488106017035,
+        "max": 0.6191016245951309
+      },
+      "rss_change_pct": {
+        "median": 0.015271774170427799,
+        "min": -1.1530875436200905,
+        "max": 0.472921434019824
+      },
+      "B": {
+        "elapsed_ns": 362298646.0,
+        "cpu_seconds": 0.34,
+        "peak_rss_bytes": 107503616.0
+      },
+      "C": {
+        "elapsed_ns": 361530583.5,
+        "cpu_seconds": 0.34,
+        "peak_rss_bytes": 107323392.0
+      }
+    }
+  ],
+  "measured_samples": 24,
+  "excluded_warmups": 4,
+  "frozen_files_unchanged": true,
+  "finished_at": "2026-11-16T03:52:43.070487+00:00"
+}

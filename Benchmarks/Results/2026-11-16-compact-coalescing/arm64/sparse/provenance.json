@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "started_at": "2026-11-16T03:43:53.755830+00:00",
+  "finished_at": "2026-11-16T03:44:18.245341+00:00",
+  "python": "3.12.6 (v3.12.6:a4a2d2b0d85, Sep  6 2024, 16:08:03) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "generator_sha256": "c9ce9cada67388fa9e2d8f73b9af233339f10ee586d18210ee68e5f7798d3a46",
+  "original_freeze_sha256": "205320e58fc96fe67202b1f24b1c00a4ac79b0e3b2cebfe5124b9f183f61ecf2",
+  "reference_sha256": "e55c759160d197f233b7ce7175d3cf455a64dac152e7b56ad27ee15f20533e7d",
+  "records": [
+    {
+      "case": "mixed-sparse-duplicate-10000",
+      "base_prefix_bytes": 169981,
+      "base_prefix_sha256": "11571040354a7f185755a0568f501c3a9331aedad488bca027c388c82e493010",
+      "original_input": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-disjoint/input.txt",
+      "original_input_sha256": "8188c5b05fa642d50cf55ed9761117cc01ba37ad7229c55934d024ceb21ae7df",
+      "historical_reference": "LOCAL_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/scale/mixed-disjoint-10000/reference.txt",
+      "historical_reference_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "independent_collapse_matches_historical_bytes": true,
+      "duplicate_records": {
+        "4": "0.0.0.0/32",
+        "6": "2001:db8:0:1::/64"
+      }
+    },
+    {
+      "case": "mixed-sparse-duplicate-1000000",
+      "base_prefix_bytes": 17864212,
+      "base_prefix_sha256": "8188c5b05fa642d50cf55ed9761117cc01ba37ad7229c55934d024ceb21ae7df",
+      "original_input": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-disjoint/input.txt",
+      "original_input_sha256": "8188c5b05fa642d50cf55ed9761117cc01ba37ad7229c55934d024ceb21ae7df",
+      "historical_reference": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/native/mixed-disjoint/cidrmerge/mixed.stdout",
+      "historical_reference_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "independent_collapse_matches_historical_bytes": true,
+      "duplicate_records": {
+        "4": "0.0.0.0/32",
+        "6": "2001:db8:0:1::/64"
+      }
+    }
+  ],
+  "no_measurement_run": true
+}

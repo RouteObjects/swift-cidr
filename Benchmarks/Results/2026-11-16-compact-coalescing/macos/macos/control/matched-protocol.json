@@ -1,0 +1,48 @@
+{
+  "baseline": "bin/B",
+  "candidate": "bin/C",
+  "toolchain": "Apple Swift 6.4.2",
+  "comparison": "Matched cidrmerge main 8bba762 with upstream swift-cidr 5e4b3d2 versus sorted-buffer reuse with compact storage after merges; identical experimental local dependency manifests.",
+  "split_cases": [
+    "ipv4-disjoint",
+    "ipv6-disjoint",
+    "mixed-disjoint",
+    "mixed-permuted",
+    "mixed-overlap",
+    "mixed-adjacent",
+    "bgp-like-ipv4",
+    "range-derived-mixed"
+  ],
+  "native_cases": [
+    "mixed-disjoint",
+    "mixed-permuted",
+    "mixed-overlap"
+  ],
+  "measured_rounds": 6,
+  "excluded_warmup_rounds": 1,
+  "within_case_order": "B,C on odd measured rounds; C,B on even measured rounds",
+  "case_order": "rotate by measured round index; warmup original order",
+  "expected_measured_samples": 132,
+  "expected_measured_processes": 192,
+  "expected_warmup_samples": 22,
+  "expected_warmup_processes": 32,
+  "elapsed": "perf_counter_ns surrounding /usr/bin/time child; split sums family durations",
+  "peak_memory": "BSD time maximum resident set size bytes; split takes family maximum",
+  "cpu": "sum user+sys seconds from BSD time",
+  "coverage": "Every output must have exact bytes/hash of original independently verified cidrmerge warmup output",
+  "preservation": "all raw timing, stderr, stdout, failed records retained; no retries or outlier removal",
+  "per_process_timeout_seconds": 180,
+  "summary": "per-tool medians/min/max and paired per-round C/B percentage changes; no cross-toolchain pooling",
+  "run_preconditions": [
+    "parent freezes bin/B, bin/C and harness in control/pre-benchmark-freeze.json",
+    "all builds, tests, profiles and heavy analyses stopped",
+    "native BSD time requires host permission to read timing sysctl"
+  ],
+  "freeze_checks": [
+    "new run manifest before and after",
+    "original comparison freeze before and after",
+    "original verification receipts and full warmup output bytes before and after",
+    "compiler executable hashes and loaded runtime UUIDs",
+    "locked dependency revisions and clean checkout contents"
+  ]
+}

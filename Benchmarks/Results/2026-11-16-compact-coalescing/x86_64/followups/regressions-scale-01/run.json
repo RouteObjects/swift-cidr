@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/control/scale_bench_dedup.py",
+    "--root",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z",
+    "--fixtures",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures",
+    "--output",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements"
+  ],
+  "exit_code": 0,
+  "at": "2026-11-16T04:26:12.295218+00:00"
+}

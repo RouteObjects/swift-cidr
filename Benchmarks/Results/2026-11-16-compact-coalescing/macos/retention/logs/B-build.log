@@ -1,0 +1,2 @@
+warning: '--skip-update' option is deprecated and will be removed in a future release
+error: $EXPERIMENT/macos/cache is not accessible or not writable

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "at": "2026-11-16T03:46:10.722011+00:00",
+  "binary_sha256": {
+    "B": "ff8732fd3f3631c9d8a85814cac643a5cf700ba132c9368c5faa64d69da7a196",
+    "C": "ac6e8925e593916af4c5bcf49dd67659d2afc9ef6d333f2486045ed775745d53"
+  },
+  "evidence_files": {
+    "control/codegen/B-captures.json": "9ac73c87d9bfe77732d69a71bb262e59f6e85c0845cd9c162d46501809f10e5f",
+    "control/codegen/C-symbols.txt": "f667c5454c3f923d99ead8cd0632edd79af5d7da165e883313177e428386190d",
+    "control/codegen/C-captures.json": "ea2b8c695f844159905669e423b20f6fcb132f630292a32f009c554890194594",
+    "control/codegen/review.md": "c7fd3abb7a8e93e7d1ddeb7c132dee0e79584d1e2fbc6e8c46846eb31d68857f",
+    "control/codegen/review.json": "abf747a7bb00465ea55a3a16c8141fa9a5784702a45f927340b61606b4b4b4f0",
+    "control/codegen/B-symbols.txt": "cecdd89f22ff2dfb209e84d92a7e121742e5c4cb3344325e9cbe0e0877b5b964",
+    "control/capture_codegen.py": "ad5d58b298142cc43a112a3e86321ddff3bf9be35b32ec42369cbf98822f633b",
+    "control/review_codegen.py": "303a08d665bc49c73a95c3bceece9ee1ab27cb383cedbd4dc1c5fad5f6844b07"
+  },
+  "scope": "Read-only frozen ARM64 ELF inspection. Actual CLI call edges, concrete sorting function-pointer flow, and manually reviewed compact-copy control flow; no target execution.",
+  "limits": [
+    "The gate binds ordinary release binary hashes to actual CLI call edges, concrete sorting pointers, and manually reviewed compact-copy control flow.",
+    "Indexed compaction retains uniqueness checks and conditional copies. The copy path retains capacity checks and a potential growth fallback.",
+    "No dynamic allocation count, guaranteed exact capacity, zero allocation, or performance claim follows from static code generation."
+  ]
+}

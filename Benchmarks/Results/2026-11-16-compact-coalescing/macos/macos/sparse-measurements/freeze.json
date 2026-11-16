@@ -1,0 +1,19 @@
+{
+  "files": {
+    "$EXPERIMENT/control/scale_bench.py": "eec91e6d974e5d8ed44994b4665639dd9f4256a5d66887612fcee63627fc76a2",
+    "$EXPERIMENT/sparse/reference.json": "e55c759160d197f233b7ce7175d3cf455a64dac152e7b56ad27ee15f20533e7d",
+    "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/input.txt": "c7b98ccb1a499919a4d6726da858640abdd8ad738f5a1ec260e7c43d4f26a133",
+    "$EXPERIMENT/sparse/mixed-sparse-duplicate-10000/reference.txt": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+    "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/input.txt": "6abaaad6e5e2848b78c58aa3bfbf2f5e8d52f9a65a000e54b64922cdaf740af6",
+    "$EXPERIMENT/sparse/mixed-sparse-duplicate-1000000/reference.txt": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+    "$EXPERIMENT/macos/bin/B": "ef2d11b3ef86c5a0000b0eb7c03535ceb100df98ac4ae0931f2397e0d373a513",
+    "$EXPERIMENT/macos/bin/C": "68b74e413ff4ad73777f747f60a6ebaff721aee4caa2b2c40858c7b0da3f622e",
+    "$EXPERIMENT/macos/control/host-runtime.json": "b3df5573f12fec73d35fcf60421995283f13e46422ddb4b0b08acb908cbd1eb5",
+    "$EXPERIMENT/macos/control/pre-benchmark-freeze.json": "55ad3c539dd97553dffbe37aae00d0f9ab556b9e94d5dd56b26c7936521c4cff"
+  },
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "started_at": "2026-11-16T03:52:37.495870+00:00",
+  "protocol": "one excluded warmup per variant/case; six BC/CB alternating pairs; rotate cases; no outlier removal;180s owned process-group timeout",
+  "minimum_free_bytes": 3221225472,
+  "timeout_seconds": 180
+}

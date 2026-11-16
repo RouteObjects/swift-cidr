@@ -1,0 +1,115 @@
+{
+  "at": "2026-11-15T22:25:48.405899+00:00",
+  "scope": "Read-only frozen ARM64 ELF inspection. Actual CLI call edges and concrete sorting function-pointer flow; no target execution.",
+  "variants": {
+    "B": {
+      "binary_sha256": "0d1bf48dbdc5314b9748881077cabaffcfa2ef1b4d28e4c1490bcf7e98be38e5",
+      "matches_ordinary_release_build_receipt": true,
+      "caller": "0x195d18",
+      "families": {
+        "V4": {
+          "coalescing": "0x177b8c",
+          "sort_dispatcher": "0x178fd0",
+          "concrete_pointer_arguments": {
+            "x1": {
+              "address": "0x17a9ec",
+              "symbol": "generic not re-abstracted specialization <CIDR.AF.V4, [CIDR.IPAddressRange<CIDR.AF.V4>]> of closure #1 (CIDR.IPAddressRange<A>, CIDR.IPAddressRange<A>) -> Swift.Bool in static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]"
+            },
+            "x4": {
+              "address": "0x179588",
+              "symbol": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()"
+            },
+            "x5": {
+              "address": "0x179aa0",
+              "symbol": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V4>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()"
+            }
+          },
+          "uniqueness_call_sites": [
+            "177bb4: 97fb611b     \tbl\t0x50020 <swift_isUniquelyReferenced_nonNull_native@plt>"
+          ]
+        },
+        "V6": {
+          "coalescing": "0x177d2c",
+          "sort_dispatcher": "0x178fd0",
+          "concrete_pointer_arguments": {
+            "x1": {
+              "address": "0x17a984",
+              "symbol": "generic not re-abstracted specialization <CIDR.AF.V6, [CIDR.IPAddressRange<CIDR.AF.V6>]> of closure #1 (CIDR.IPAddressRange<A>, CIDR.IPAddressRange<A>) -> Swift.Bool in static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]"
+            },
+            "x4": {
+              "address": "0x1790f8",
+              "symbol": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()"
+            },
+            "x5": {
+              "address": "0x1799a8",
+              "symbol": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V6>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()"
+            }
+          },
+          "uniqueness_call_sites": [
+            "177d54: 97fb60b3     \tbl\t0x50020 <swift_isUniquelyReferenced_nonNull_native@plt>"
+          ]
+        }
+      }
+    },
+    "C": {
+      "binary_sha256": "e8efb3ba7c91ab2b1a4dd1e4a41d6e8a69b7d5e3a3357ff99f13e1a1cb305259",
+      "matches_ordinary_release_build_receipt": true,
+      "caller": "0x195db8",
+      "families": {
+        "V4": {
+          "coalescing": "0x177b4c",
+          "sort_dispatcher": "0x179020",
+          "concrete_pointer_arguments": {
+            "x1": {
+              "address": "0x17aa14",
+              "symbol": "generic not re-abstracted specialization <CIDR.AF.V4, [CIDR.IPAddressRange<CIDR.AF.V4>]> of closure #1 (CIDR.IPAddressRange<A>, CIDR.IPAddressRange<A>) -> Swift.Bool in static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]"
+            },
+            "x4": {
+              "address": "0x1795d8",
+              "symbol": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()"
+            },
+            "x5": {
+              "address": "0x179af0",
+              "symbol": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V4>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()"
+            }
+          },
+          "uniqueness_call_sites": [
+            "177b70: 97fb6122     \tbl\t0x4fff8 <swift_isUniquelyReferenced_nonNull_native@plt>",
+            "177c14: 97fb60f9     \tbl\t0x4fff8 <swift_isUniquelyReferenced_nonNull_native@plt>",
+            "177c54: 97fb60e9     \tbl\t0x4fff8 <swift_isUniquelyReferenced_nonNull_native@plt>"
+          ]
+        },
+        "V6": {
+          "coalescing": "0x177cc4",
+          "sort_dispatcher": "0x179020",
+          "concrete_pointer_arguments": {
+            "x1": {
+              "address": "0x17a9d4",
+              "symbol": "generic not re-abstracted specialization <CIDR.AF.V6, [CIDR.IPAddressRange<CIDR.AF.V6>]> of closure #1 (CIDR.IPAddressRange<A>, CIDR.IPAddressRange<A>) -> Swift.Bool in static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]"
+            },
+            "x4": {
+              "address": "0x179148",
+              "symbol": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()"
+            },
+            "x5": {
+              "address": "0x1799f8",
+              "symbol": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V6>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()"
+            }
+          },
+          "uniqueness_call_sites": [
+            "177cec: 97fb60c3     \tbl\t0x4fff8 <swift_isUniquelyReferenced_nonNull_native@plt>",
+            "177db8: 97fb6090     \tbl\t0x4fff8 <swift_isUniquelyReferenced_nonNull_native@plt>",
+            "177e04: 97fb607d     \tbl\t0x4fff8 <swift_isUniquelyReferenced_nonNull_native@plt>"
+          ]
+        }
+      }
+    }
+  },
+  "passed": true,
+  "limitations": [
+    "Names alone are insufficient: this gate checks the actual CLI branch targets and sort pointer arguments.",
+    "Candidate retains uniqueness checks at each completed-group store and final store, plus conditional copy fallbacks.",
+    "Sorting scratch, parsed input arrays, capacity retention and generic fallback implementations remain; no zero-allocation or throughput claim.",
+    "The initial capture binary_unchanged field is not used as a stability proof; current hashes are independently matched to pre-test ordinary-release build receipts here."
+  ]
+}

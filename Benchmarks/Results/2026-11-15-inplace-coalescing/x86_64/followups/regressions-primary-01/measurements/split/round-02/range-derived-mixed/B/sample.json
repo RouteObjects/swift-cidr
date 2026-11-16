@@ -1,0 +1,100 @@
+{
+  "suite": "split",
+  "case": "range-derived-mixed",
+  "tool": "B",
+  "started_at": "2026-11-15T23:19:06.073483+00:00",
+  "free_bytes_before": 3412168704,
+  "parts": [
+    {
+      "family": 4,
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/fixtures/range-derived-mixed/ipv4.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/B/tmp-4/"
+      },
+      "input": "fixtures/range-derived-mixed/ipv4.txt",
+      "output": "followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/B/4.stdout",
+      "stderr": "followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/B/4.stderr",
+      "started_at": "2026-11-15T23:19:06.074258+00:00",
+      "elapsed_ns": 431367166,
+      "exit_code": 0,
+      "output_bytes": 7553022,
+      "output_sha256": "53db427e9aee7d9817f2384521f688751c2cfff9c78f9156380a96441e242c8c",
+      "stderr_bytes": 0,
+      "wait4_rusage": {
+        "ru_utime": 0.395511,
+        "ru_stime": 0.033042,
+        "ru_maxrss": 34424,
+        "ru_minflt": 7596,
+        "ru_majflt": 0,
+        "ru_nswap": 0,
+        "ru_inblock": 0,
+        "ru_oublock": 14752,
+        "ru_nvcsw": 14,
+        "ru_nivcsw": 5
+      },
+      "peak_rss_bytes": 35250176,
+      "cpu_seconds": 0.428553,
+      "raw_metrics": "followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/B/4.rusage.json"
+    },
+    {
+      "family": 6,
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/fixtures/range-derived-mixed/ipv6.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/B/tmp-6/"
+      },
+      "input": "fixtures/range-derived-mixed/ipv6.txt",
+      "output": "followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/B/6.stdout",
+      "stderr": "followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/B/6.stderr",
+      "started_at": "2026-11-15T23:19:06.553510+00:00",
+      "elapsed_ns": 851770296,
+      "exit_code": 0,
+      "output_bytes": 10892816,
+      "output_sha256": "68d161443d998ee9008d43c58214729c163ccb94e6cf4724e6a3957c2896d2d6",
+      "stderr_bytes": 0,
+      "wait4_rusage": {
+        "ru_utime": 0.773484,
+        "ru_stime": 0.075047,
+        "ru_maxrss": 67904,
+        "ru_minflt": 23248,
+        "ru_majflt": 0,
+        "ru_nswap": 0,
+        "ru_inblock": 0,
+        "ru_oublock": 21280,
+        "ru_nvcsw": 13,
+        "ru_nivcsw": 16
+      },
+      "peak_rss_bytes": 69533696,
+      "cpu_seconds": 0.8485309999999999,
+      "raw_metrics": "followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/B/6.rusage.json"
+    }
+  ],
+  "passed": true,
+  "elapsed_ns": 1283137462,
+  "peak_rss_bytes": 69533696,
+  "cpu_seconds": 1.2770839999999999,
+  "output_bytes": 18445838,
+  "matches_verified_warmup_bytes": true,
+  "finished_at": "2026-11-15T23:19:07.471421+00:00"
+}

@@ -1,0 +1,235 @@
+{
+  "passed": true,
+  "at": "2026-11-16T04:17:03.181979+00:00",
+  "files": {
+    "test-bin/B/upstream/debug/swift-cidrPackageTests.xctest": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/B/upstream/x86_64-unknown-linux-gnu/debug/swift-cidrPackageTests.xctest",
+      "sha256": "2fd17c62a368b8a4f2eab699ad8c6060e3129b5cf945ead9bb8ff5372095d38e",
+      "bytes": 39867032
+    },
+    "test-bin/B/upstream/release/swift-cidrPackageTests.xctest": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/B/upstream/x86_64-unknown-linux-gnu/release/swift-cidrPackageTests.xctest",
+      "sha256": "90a8d40188c385e7180f8aaffeb44595f87d90d9d7937cc9db22cb2ca4550586",
+      "bytes": 23510976
+    },
+    "test-bin/B/cli/debug/cidrmergePackageTests.xctest": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/B/cli/x86_64-unknown-linux-gnu/debug/cidrmergePackageTests.xctest",
+      "sha256": "dec67715ec85918f9d8c2b8ea4e2862a91d7ffcf3690a8a9ef4174a7c3290f6c",
+      "bytes": 24346312
+    },
+    "test-bin/B/cli/debug/cidrmerge_CIDRMergeCLITests.resources/searchbot-projected.txt": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/B/cli/x86_64-unknown-linux-gnu/debug/cidrmerge_CIDRMergeCLITests.resources/searchbot-projected.txt",
+      "sha256": "95770e34a216953d38810547e6a0707c69f3633dde44739e67c6018f2aec550c",
+      "bytes": 43
+    },
+    "test-bin/B/cli/debug/cidrmerge_CIDRMergeCLITests.resources/searchbot-valid.json": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/B/cli/x86_64-unknown-linux-gnu/debug/cidrmerge_CIDRMergeCLITests.resources/searchbot-valid.json",
+      "sha256": "801d77680fa36e9dae3879217de1b16b3015d27d4adfc653dd522bc30d9a726b",
+      "bytes": 288
+    },
+    "test-bin/B/cli/release/cidrmergePackageTests.xctest": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/B/cli/x86_64-unknown-linux-gnu/release/cidrmergePackageTests.xctest",
+      "sha256": "b3c6d5e22762494b0a7805937d65aa434b09961e706c65e8d92c734600a31a11",
+      "bytes": 22223744
+    },
+    "test-bin/B/cli/release/cidrmerge_CIDRMergeCLITests.resources/searchbot-valid.json": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/B/cli/x86_64-unknown-linux-gnu/release/cidrmerge_CIDRMergeCLITests.resources/searchbot-valid.json",
+      "sha256": "801d77680fa36e9dae3879217de1b16b3015d27d4adfc653dd522bc30d9a726b",
+      "bytes": 288
+    },
+    "test-bin/B/cli/release/cidrmerge_CIDRMergeCLITests.resources/searchbot-projected.txt": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/B/cli/x86_64-unknown-linux-gnu/release/cidrmerge_CIDRMergeCLITests.resources/searchbot-projected.txt",
+      "sha256": "95770e34a216953d38810547e6a0707c69f3633dde44739e67c6018f2aec550c",
+      "bytes": 43
+    },
+    "test-bin/C/upstream/debug/swift-cidrPackageTests.xctest": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/C/upstream/x86_64-unknown-linux-gnu/debug/swift-cidrPackageTests.xctest",
+      "sha256": "2ed34d4a35981b6c2bff057385308ea1464df924fd0725e15675db67d9bd7e4f",
+      "bytes": 40237360
+    },
+    "test-bin/C/upstream/release/swift-cidrPackageTests.xctest": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/C/upstream/x86_64-unknown-linux-gnu/release/swift-cidrPackageTests.xctest",
+      "sha256": "126dbb4de165dad1dbae163e67535271f73db8792d850421ed3db886f16bad7b",
+      "bytes": 23958032
+    },
+    "test-bin/C/cli/debug/cidrmergePackageTests.xctest": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/C/cli/x86_64-unknown-linux-gnu/debug/cidrmergePackageTests.xctest",
+      "sha256": "95e2732db1e1ccec2fe5eec7a81513f8130f9bef4b77bf602870b7a8a68cf5b4",
+      "bytes": 24348304
+    },
+    "test-bin/C/cli/debug/cidrmerge_CIDRMergeCLITests.resources/searchbot-projected.txt": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/C/cli/x86_64-unknown-linux-gnu/debug/cidrmerge_CIDRMergeCLITests.resources/searchbot-projected.txt",
+      "sha256": "95770e34a216953d38810547e6a0707c69f3633dde44739e67c6018f2aec550c",
+      "bytes": 43
+    },
+    "test-bin/C/cli/debug/cidrmerge_CIDRMergeCLITests.resources/searchbot-valid.json": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/C/cli/x86_64-unknown-linux-gnu/debug/cidrmerge_CIDRMergeCLITests.resources/searchbot-valid.json",
+      "sha256": "801d77680fa36e9dae3879217de1b16b3015d27d4adfc653dd522bc30d9a726b",
+      "bytes": 288
+    },
+    "test-bin/C/cli/release/cidrmergePackageTests.xctest": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/C/cli/x86_64-unknown-linux-gnu/release/cidrmergePackageTests.xctest",
+      "sha256": "1caf1b64cdc7cd6f087a80df6f3f954bef239ade7792c15ba5e74f0191366ea5",
+      "bytes": 22230768
+    },
+    "test-bin/C/cli/release/cidrmerge_CIDRMergeCLITests.resources/searchbot-valid.json": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/C/cli/x86_64-unknown-linux-gnu/release/cidrmerge_CIDRMergeCLITests.resources/searchbot-valid.json",
+      "sha256": "801d77680fa36e9dae3879217de1b16b3015d27d4adfc653dd522bc30d9a726b",
+      "bytes": 288
+    },
+    "test-bin/C/cli/release/cidrmerge_CIDRMergeCLITests.resources/searchbot-projected.txt": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/C/cli/x86_64-unknown-linux-gnu/release/cidrmerge_CIDRMergeCLITests.resources/searchbot-projected.txt",
+      "sha256": "95770e34a216953d38810547e6a0707c69f3633dde44739e67c6018f2aec550c",
+      "bytes": 43
+    },
+    "test-bin/B/upstream/workspace-state.json": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/B/upstream/workspace-state.json",
+      "sha256": "c955012e53230f135436f776c691ef9868925e13c7109c2a99bbf9908fdd134a",
+      "bytes": 2748
+    },
+    "test-bin/B/cli/workspace-state.json": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/B/cli/workspace-state.json",
+      "sha256": "4a5b987617355d0c2883caacadfb24d66a69693863a14acae9c9b6c32e1b2471",
+      "bytes": 4269
+    },
+    "test-bin/C/upstream/workspace-state.json": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/C/upstream/workspace-state.json",
+      "sha256": "c955012e53230f135436f776c691ef9868925e13c7109c2a99bbf9908fdd134a",
+      "bytes": 2748
+    },
+    "test-bin/C/cli/workspace-state.json": {
+      "source": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/C/cli/workspace-state.json",
+      "sha256": "dcb1873d756518527eefcfaa8650fd5c501425fa9e8bca9976a02411f0eb1f11",
+      "bytes": 4269
+    },
+    "runtime-snapshot/c6aa1b71de9ca9d7c332b7570410fbd78824aa6a81f3d114a2fd4f8aed234495-libswiftCore.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftCore.so",
+      "sha256": "c6aa1b71de9ca9d7c332b7570410fbd78824aa6a81f3d114a2fd4f8aed234495",
+      "bytes": 10010352
+    },
+    "runtime-snapshot/28f659fac470ab439aa8a702b4f0c442b423b9ef407a276604d1fec64e23b49d-libswiftObservation.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftObservation.so",
+      "sha256": "28f659fac470ab439aa8a702b4f0c442b423b9ef407a276604d1fec64e23b49d",
+      "bytes": 248464
+    },
+    "runtime-snapshot/9674ef95465d75dcd9db322b9aaf2dd165dd3c1552ba4297f86984eb280a82f3-libswift_Concurrency.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_Concurrency.so",
+      "sha256": "9674ef95465d75dcd9db322b9aaf2dd165dd3c1552ba4297f86984eb280a82f3",
+      "bytes": 1074480
+    },
+    "runtime-snapshot/74d6f891a5e73ebe9495e14f99e9705324e8f74ba6e0c11ab1d41240b4a47b40-libswift_StringProcessing.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_StringProcessing.so",
+      "sha256": "74d6f891a5e73ebe9495e14f99e9705324e8f74ba6e0c11ab1d41240b4a47b40",
+      "bytes": 1171024
+    },
+    "runtime-snapshot/fec1ba16f36bddd0587160b58db8d83fa96ec4b389075a64085ff8dfe5ad9653-libswift_RegexParser.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_RegexParser.so",
+      "sha256": "fec1ba16f36bddd0587160b58db8d83fa96ec4b389075a64085ff8dfe5ad9653",
+      "bytes": 1619712
+    },
+    "runtime-snapshot/6785a4f432afb81dd71c5601546987738b263e7a6ac9b4b3729eec35afc11352-libswiftGlibc.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftGlibc.so",
+      "sha256": "6785a4f432afb81dd71c5601546987738b263e7a6ac9b4b3729eec35afc11352",
+      "bytes": 91080
+    },
+    "runtime-snapshot/63817f148114684199a286c14e91acc2685e18be54b0777ddd6f974f9c2d2498-libBlocksRuntime.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libBlocksRuntime.so",
+      "sha256": "63817f148114684199a286c14e91acc2685e18be54b0777ddd6f974f9c2d2498",
+      "bytes": 12968
+    },
+    "runtime-snapshot/28c33251625914f84eba5eac5251c046e4b48fd7aedb34aefe083802d5fb4f41-libdispatch.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libdispatch.so",
+      "sha256": "28c33251625914f84eba5eac5251c046e4b48fd7aedb34aefe083802d5fb4f41",
+      "bytes": 436272
+    },
+    "runtime-snapshot/ba854ffcd2471bb6b825ba31ab75d6bb4d4754f4368d6ec9c44dd90b4bf6327a-libswiftDispatch.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftDispatch.so",
+      "sha256": "ba854ffcd2471bb6b825ba31ab75d6bb4d4754f4368d6ec9c44dd90b4bf6327a",
+      "bytes": 347104
+    },
+    "runtime-snapshot/f9f6cdf28af10976349f6e19ce934d3c84255df3b5f51ad5284120cf0992613c-libFoundation.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libFoundation.so",
+      "sha256": "f9f6cdf28af10976349f6e19ce934d3c84255df3b5f51ad5284120cf0992613c",
+      "bytes": 8879584
+    },
+    "runtime-snapshot/859d4a1ed4be8f883fa2321afb239d505502137f4b570d73320c7836e1b3db8c-libFoundationEssentials.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libFoundationEssentials.so",
+      "sha256": "859d4a1ed4be8f883fa2321afb239d505502137f4b570d73320c7836e1b3db8c",
+      "bytes": 10720840
+    },
+    "runtime-snapshot/e001628d3341edaa5873d920bad73b3f9f4b77dcfeb95d99011d57926d2faee9-libFoundationInternationalization.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libFoundationInternationalization.so",
+      "sha256": "e001628d3341edaa5873d920bad73b3f9f4b77dcfeb95d99011d57926d2faee9",
+      "bytes": 3791928
+    },
+    "runtime-snapshot/fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0-libm.so.6": {
+      "source": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+      "sha256": "fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0",
+      "bytes": 952616
+    },
+    "runtime-snapshot/1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11-libstdc++.so.6": {
+      "source": "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33",
+      "sha256": "1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11",
+      "bytes": 2592224
+    },
+    "runtime-snapshot/d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb-libgcc_s.so.1": {
+      "source": "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1",
+      "sha256": "d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb",
+      "bytes": 183024
+    },
+    "runtime-snapshot/3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf-libc.so.6": {
+      "source": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "sha256": "3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf",
+      "bytes": 2129424
+    },
+    "runtime-snapshot/c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da-ld-linux-x86-64.so.2": {
+      "source": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+      "sha256": "c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da",
+      "bytes": 236616
+    },
+    "runtime-snapshot/21e198f17e8e4ae1b200dbef73e592d3aab82f08e8f19affd8c91c4adf5a8a44-libswift_Builtin_float.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_Builtin_float.so",
+      "sha256": "21e198f17e8e4ae1b200dbef73e592d3aab82f08e8f19affd8c91c4adf5a8a44",
+      "bytes": 16680
+    },
+    "runtime-snapshot/f42e81dc36a0e8c208e4de15b2b6a2cccfed6bc55a87472914708025728a584a-lib_FoundationICU.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/lib_FoundationICU.so",
+      "sha256": "f42e81dc36a0e8c208e4de15b2b6a2cccfed6bc55a87472914708025728a584a",
+      "bytes": 40468424
+    },
+    "runtime-snapshot/a603dace2ffbf26122e6b15d908e4e09ade945c4036fc251ef07f754ff83b3ea-libswiftSynchronization.so": {
+      "source": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftSynchronization.so",
+      "sha256": "a603dace2ffbf26122e6b15d908e4e09ade945c4036fc251ef07f754ff83b3ea",
+      "bytes": 126016
+    }
+  },
+  "total_bytes": 305846718,
+  "free_before": 5482516480,
+  "free_after": 5176500224,
+  "test_executables": 8,
+  "workspace_states": 4,
+  "runtime_mapping": {
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftCore.so": "runtime-snapshot/c6aa1b71de9ca9d7c332b7570410fbd78824aa6a81f3d114a2fd4f8aed234495-libswiftCore.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftObservation.so": "runtime-snapshot/28f659fac470ab439aa8a702b4f0c442b423b9ef407a276604d1fec64e23b49d-libswiftObservation.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_Concurrency.so": "runtime-snapshot/9674ef95465d75dcd9db322b9aaf2dd165dd3c1552ba4297f86984eb280a82f3-libswift_Concurrency.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_StringProcessing.so": "runtime-snapshot/74d6f891a5e73ebe9495e14f99e9705324e8f74ba6e0c11ab1d41240b4a47b40-libswift_StringProcessing.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_RegexParser.so": "runtime-snapshot/fec1ba16f36bddd0587160b58db8d83fa96ec4b389075a64085ff8dfe5ad9653-libswift_RegexParser.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftGlibc.so": "runtime-snapshot/6785a4f432afb81dd71c5601546987738b263e7a6ac9b4b3729eec35afc11352-libswiftGlibc.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libBlocksRuntime.so": "runtime-snapshot/63817f148114684199a286c14e91acc2685e18be54b0777ddd6f974f9c2d2498-libBlocksRuntime.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libdispatch.so": "runtime-snapshot/28c33251625914f84eba5eac5251c046e4b48fd7aedb34aefe083802d5fb4f41-libdispatch.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftDispatch.so": "runtime-snapshot/ba854ffcd2471bb6b825ba31ab75d6bb4d4754f4368d6ec9c44dd90b4bf6327a-libswiftDispatch.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libFoundation.so": "runtime-snapshot/f9f6cdf28af10976349f6e19ce934d3c84255df3b5f51ad5284120cf0992613c-libFoundation.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libFoundationEssentials.so": "runtime-snapshot/859d4a1ed4be8f883fa2321afb239d505502137f4b570d73320c7836e1b3db8c-libFoundationEssentials.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libFoundationInternationalization.so": "runtime-snapshot/e001628d3341edaa5873d920bad73b3f9f4b77dcfeb95d99011d57926d2faee9-libFoundationInternationalization.so",
+    "/lib/x86_64-linux-gnu/libm.so.6": "runtime-snapshot/fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0-libm.so.6",
+    "/lib/x86_64-linux-gnu/libstdc++.so.6": "runtime-snapshot/1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11-libstdc++.so.6",
+    "/lib/x86_64-linux-gnu/libgcc_s.so.1": "runtime-snapshot/d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb-libgcc_s.so.1",
+    "/lib/x86_64-linux-gnu/libc.so.6": "runtime-snapshot/3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf-libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2": "runtime-snapshot/c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da-ld-linux-x86-64.so.2",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswift_Builtin_float.so": "runtime-snapshot/21e198f17e8e4ae1b200dbef73e592d3aab82f08e8f19affd8c91c4adf5a8a44-libswift_Builtin_float.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/lib_FoundationICU.so": "runtime-snapshot/f42e81dc36a0e8c208e4de15b2b6a2cccfed6bc55a87472914708025728a584a-lib_FoundationICU.so",
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftSynchronization.so": "runtime-snapshot/a603dace2ffbf26122e6b15d908e4e09ade945c4036fc251ef07f754ff83b3ea-libswiftSynchronization.so"
+  },
+  "scratch_unchanged": true,
+  "no_cache_cleanup": true
+}

@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-15T22:46:31.570248+00:00",
+  "main_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 143,
+    "Error": "",
+    "StartedAt": "2026-11-15T22:19:04.132675071Z",
+    "FinishedAt": "2026-11-15T22:46:31.493470226Z"
+  },
+  "main_processes_before_stop": "PID                 COMMAND             COMMAND\n163585              docker-init         /sbin/docker-init -- sleep infinity\n163598              sleep               sleep infinity\n",
+  "floor_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 143,
+    "Error": "",
+    "StartedAt": "2026-11-15T22:26:34.374873101Z",
+    "FinishedAt": "2026-11-15T22:29:41.784966615Z"
+  },
+  "preexisting_containers_unchanged": true
+}

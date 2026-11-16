@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-15T22:45:16.834573+00:00",
+  "reason": "The source bind mount resolves /validation/sources to /sources in this container. Production verification already canonicalizes both paths; the independent auditor compared its expected unnormalized spelling with the canonical local dependency path.",
+  "preserved_failure": "control/evidence-audit.json",
+  "original_auditor_sha256": "4ae3f42221634468b29f1925ef38b7a7274b05117bb3e6c166689fbada30a876",
+  "corrected_auditor_sha256": "efc58ef8edeb5459fd0a55e3ce07556546b225fe13d92bde277d7c2aaa96e055",
+  "only_change": "Resolve the expected local dependency path before comparing. No binary, source, fixture, measurement, calculation or original frozen file changed.",
+  "observed_actual": "/sources/B/swift-cidr",
+  "command_spelling": "/validation/sources/B/cidrmerge"
+}

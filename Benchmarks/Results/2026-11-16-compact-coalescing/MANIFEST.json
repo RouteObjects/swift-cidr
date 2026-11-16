@@ -1,0 +1,1732 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-16T15:02:20.097882+00:00",
+  "status": "Accepted as-is on 2026-11-16; experiment closed. Signed-commit and branch-publication follow-up authorized; measured implementation and evidence unchanged.",
+  "artifacts": {
+    "REPRODUCE.md": {
+      "bytes": 9062,
+      "sha256": "af89ed7840f805b8950b3a023fd3238e3aeaee3f7d606ffe032d3953659ceb91"
+    },
+    "RESULTS.md": {
+      "bytes": 13193,
+      "sha256": "a99b4c35c41ecff9a3a5eae210ace0af5336582e8dfe92ca1e6f46789405c1f5"
+    },
+    "SOURCE_REVIEW.json": {
+      "bytes": 3152,
+      "sha256": "7f948f711388107dc2f83b5a566c962eff5d026f127f7a88b3148685589e7fd5"
+    },
+    "X86_EXPORT_REVIEW.json": {
+      "bytes": 4359,
+      "sha256": "95ed0a589d7da2c2e912803323d439f3295afa6cdd54962f5066d2a642b878e8"
+    },
+    "arm64/EXPORT_MANIFEST.json": {
+      "bytes": 23868,
+      "sha256": "6799a076f6f6b6487d93ddca0e497f66a27045d457e9fa4e8f6e9f1212b23ad8"
+    },
+    "arm64/TABLE.md": {
+      "bytes": 11063,
+      "sha256": "3e63b0eb30b3ea5e681414ad84ede173edf322640a05caaf0c07a941f11c2246"
+    },
+    "arm64/control/benchmark-launched.json": {
+      "bytes": 204,
+      "sha256": "18e307221709d151f04e97f44c9566c1a822d932e2b6630f7ca685ab5718bbb2"
+    },
+    "arm64/control/build-tests/summary.json": {
+      "bytes": 25800,
+      "sha256": "09e2540f034169b85cd3239620f5012f341679433affb9a4fc1188b5d3436b0d"
+    },
+    "arm64/control/codegen/B-captures.json": {
+      "bytes": 226020,
+      "sha256": "76ffc53f8b760ccf9555c561330bd79db8f42939ee88399394723d30a13d7cd8"
+    },
+    "arm64/control/codegen/C-captures.json": {
+      "bytes": 231331,
+      "sha256": "3948edc3d5d44566471071738dce6a11fce01cf7d6120815c9ca523825eb208d"
+    },
+    "arm64/control/codegen/review.json": {
+      "bytes": 10380,
+      "sha256": "abf747a7bb00465ea55a3a16c8141fa9a5784702a45f927340b61606b4b4b4f0"
+    },
+    "arm64/control/codegen/review.md": {
+      "bytes": 2012,
+      "sha256": "c7fd3abb7a8e93e7d1ddeb7c132dee0e79584d1e2fbc6e8c46846eb31d68857f"
+    },
+    "arm64/control/codegen-gate.json": {
+      "bytes": 1745,
+      "sha256": "d532f517d520e3ad33a9702d4caf1beff99eacfac4d1f4343cb4534439e0cac9"
+    },
+    "arm64/control/config.json": {
+      "bytes": 268,
+      "sha256": "beb55e41181ac6bcf4a9a410682b1c6b04a3566b0f63de6f140c93f6be47c972"
+    },
+    "arm64/control/containers-stopped-final.json": {
+      "bytes": 1358,
+      "sha256": "40a1b50fb8282b541c8b1a49cee95c219571dbfa1d4c71e676c5f6eefd4b11ac"
+    },
+    "arm64/control/correctness-gate.json": {
+      "bytes": 394,
+      "sha256": "e99a0b142bf004a876bfb2f9c8a9f2da20e9ae0e64b6fb1f85acd6f1b6fa889f"
+    },
+    "arm64/control/differential/summary.json": {
+      "bytes": 138158,
+      "sha256": "54435754e968f545e55fc569e3c9ef90486d47d03472fe485bc2608777e2a841"
+    },
+    "arm64/control/evidence-audit.json": {
+      "bytes": 14417,
+      "sha256": "2d4b9d86d12b861baf26553798d0a19a5de4f4ff2c65bc1f67f6da7dd05d15cb"
+    },
+    "arm64/control/final-platform-check.json": {
+      "bytes": 10713,
+      "sha256": "76846f1ceccf77a01a923a1aa56e33f7fb4d6cba65757f527dfe5a04623493ba"
+    },
+    "arm64/control/matched-protocol.json": {
+      "bytes": 1385,
+      "sha256": "677105ae24f6b1e303e6d0a06b5cc53a63555f853e0277b7d7b3dc6ab9dec939"
+    },
+    "arm64/control/pre-benchmark-freeze.json": {
+      "bytes": 28211,
+      "sha256": "e4612bb3727b00479b2fc7b071b905e991e805a683e0a4524287049341ed0914"
+    },
+    "arm64/control/preflight-6.4.2.json": {
+      "bytes": 2100,
+      "sha256": "8f3e37b69361c5e5217046cd5807d95020c98bde802db291de61e66fcdeb1f2a"
+    },
+    "arm64/control/reference.json": {
+      "bytes": 33441,
+      "sha256": "c8145ae01fb070e911b3f49be5f68f92757078220b233add68dfcd9fe36baa0c"
+    },
+    "arm64/control/runtime-linked-libraries.json": {
+      "bytes": 9857,
+      "sha256": "ebf87bc96c1d2adb320c7cc466aae4ddce05d8f44e36bd945e9714700bc3b19f"
+    },
+    "arm64/control/runtime-postcheck.json": {
+      "bytes": 2416,
+      "sha256": "07df4092623f7121a3ac8800b7a08cd008566ee1cc48ea0b488fbfc9d7d689f5"
+    },
+    "arm64/control/runtime.json": {
+      "bytes": 1053,
+      "sha256": "67842df9374876569b03fb04fd5a0f748819425fe484a1c560ab32ed22e355e8"
+    },
+    "arm64/control/scale-evidence-audit.json": {
+      "bytes": 445,
+      "sha256": "c10dba533836072541e28e20a4fba0223541b6967416426567e157bfc3699f88"
+    },
+    "arm64/control/scale-launched.json": {
+      "bytes": 306,
+      "sha256": "78c5d5aab94a014a2b71f97b476686ad62e3cc3264ccc7f12fa471da114b8cda"
+    },
+    "arm64/control/source-reference.json": {
+      "bytes": 38857,
+      "sha256": "b991a35da917383b245932d8f1b6233d8ede18da17549b37a1590e86699dea7a"
+    },
+    "arm64/control/sparse-evidence-audit.json": {
+      "bytes": 441,
+      "sha256": "ffa4938a410f89c8a4da61059068ae975f7046cf9e2e73456a2c9f6f7419d4f9"
+    },
+    "arm64/control/sparse-launched.json": {
+      "bytes": 309,
+      "sha256": "3ceebf1ba7b16881293a09b83fe14d912aba1530349c8293a649a142c9eae23c"
+    },
+    "arm64/control/sparse-preparation.json": {
+      "bytes": 873,
+      "sha256": "371b7fabdf9cb2bc838d29b5f7e3c315519b9ed14cbc839f8a5fbfcc4ddf5250"
+    },
+    "arm64/control/validation-complete-host-clear.json": {
+      "bytes": 1292,
+      "sha256": "8be46943e32678c95e0eb265857fe8ed046450e8036badd392d75a7ef5fb17c4"
+    },
+    "arm64/floor-6.2.4/control/preflight.json": {
+      "bytes": 2100,
+      "sha256": "28d509a50c9be1f45108619abf8eb5d0ee2036888d4f8357bd9de1af66afc93f"
+    },
+    "arm64/floor-6.2.4/control/runtime.json": {
+      "bytes": 1036,
+      "sha256": "5e8ca85cb729450712810406e0b7c550e9664e96dd924e0a7dec2ba47538796f"
+    },
+    "arm64/floor-6.2.4/control/summary.json": {
+      "bytes": 9083,
+      "sha256": "558ae5ddc2d0d76e9a1bb1f2a9f11c61ab4c529965669a40db9271ac5d795ec4"
+    },
+    "arm64/followups/complete.json": {
+      "bytes": 5800,
+      "sha256": "9d2d4f4a98fe47672ea3bb081b63a97fa69e0ea14b8b1931d9107d86fa5c10f5"
+    },
+    "arm64/followups/regressions-primary-01/evidence-audit.json": {
+      "bytes": 18881,
+      "sha256": "dbe9f1f0ecee5177cf22fd58c81f6a44ba598f3c50427889f3f205bf867b9cad"
+    },
+    "arm64/followups/regressions-primary-01/selection.json": {
+      "bytes": 2496,
+      "sha256": "0d2bc23dbecf0341436f7460fa2e5a3e9f221a02b303a1249e518d32310c554a"
+    },
+    "arm64/followups/regressions-primary-01/space-gate.json": {
+      "bytes": 179,
+      "sha256": "03a46b413ab4c5e2961e8063b2814915f55c0969c2759a8afe7e6234f3cb59f0"
+    },
+    "arm64/followups/regressions-primary-01/start.json": {
+      "bytes": 6222,
+      "sha256": "c1877e376e2abfa1d8b79097df94d5144a56f054740f166047c567b203729781"
+    },
+    "arm64/followups/regressions-primary-01/summary.json": {
+      "bytes": 260533,
+      "sha256": "bf62af131311d8728596eebdfc6dd0a6634f3c4e8a5715f5c9dbbada50e685d3"
+    },
+    "arm64/followups/regressions-scale-01/evidence-audit.json": {
+      "bytes": 442,
+      "sha256": "fc901a7c0a9d86d8bab916162ce167ea7f6958f5a46169341b28b6b51376084d"
+    },
+    "arm64/followups/regressions-scale-01/measurements/freeze.json": {
+      "bytes": 5718,
+      "sha256": "2dc0a07d358af76e03246cc47592d019712def29964bd2fba504a5efee1c52d4"
+    },
+    "arm64/followups/regressions-scale-01/measurements/summary.json": {
+      "bytes": 189403,
+      "sha256": "b11048c8ec467ca83aa6208190a023f400f97e7daea7fafdd757a6c71df138c2"
+    },
+    "arm64/followups/regressions-scale-01/space-gate.json": {
+      "bytes": 178,
+      "sha256": "d265bec3d5303048976bfebbef96051cc9bd8c18f0ca8be2334b35b3fa4594d2"
+    },
+    "arm64/followups/regressions-sparse-01/evidence-audit.json": {
+      "bytes": 441,
+      "sha256": "dd224134fdae5bd856eda6a9d6325e3fe20a206c5693850e0e47b0cd4f336ea3"
+    },
+    "arm64/followups/regressions-sparse-01/measurements/freeze.json": {
+      "bytes": 4165,
+      "sha256": "a3ed096bdef8b049b0396a782bb2b96e5939097678325d778901a258cffc1260"
+    },
+    "arm64/followups/regressions-sparse-01/measurements/summary.json": {
+      "bytes": 55973,
+      "sha256": "a9aa3ff38d2e567aaa1fef6cd62369e61cb58163457b6a286056ce2f84756af3"
+    },
+    "arm64/followups/regressions-sparse-01/space-gate.json": {
+      "bytes": 179,
+      "sha256": "282420747fab8c0c702eabfea381c1815697f4e186f7c9124cf5d27b31351cbf"
+    },
+    "arm64/followups/selection.json": {
+      "bytes": 5209,
+      "sha256": "e4f7e8898844d7f28d8bdb937f8ee978170fc02a857f1f2a73a5c369798db493"
+    },
+    "arm64/followups/sparse-complete.json": {
+      "bytes": 1304,
+      "sha256": "a1df4e799cfe475925b87cef38a8d5048f3fd9e2873403775c9ee545ffdb2039"
+    },
+    "arm64/followups/sparse-selection.json": {
+      "bytes": 1069,
+      "sha256": "6bf48659da86e069efc1e1d7a5f4e311da4cdeeb94ed81e39922a4d6c985cd9f"
+    },
+    "arm64/measurements/summary.json": {
+      "bytes": 469426,
+      "sha256": "42228e239fd3a6ed55add20f15a5ddb4717f4c32f2f30f0cdcaee2b0a167d290"
+    },
+    "arm64/scale-measurements/freeze.json": {
+      "bytes": 6468,
+      "sha256": "3bcab8cd1d7f9de403d56abae1a13511bc77e80ae88fc34b980c573d6751c11b"
+    },
+    "arm64/scale-measurements/summary.json": {
+      "bytes": 309129,
+      "sha256": "d635b92d6cf55db05c4dbd20040a7f23ef8d141297a3b4d4f7538cc5634e561e"
+    },
+    "arm64/sparse/provenance.json": {
+      "bytes": 2236,
+      "sha256": "424aaaf676ffe2389f09dabc0e7c606451572a8d5ed1ae54944831de90a3a055"
+    },
+    "arm64/sparse/reference.json": {
+      "bytes": 1485,
+      "sha256": "e55c759160d197f233b7ce7175d3cf455a64dac152e7b56ad27ee15f20533e7d"
+    },
+    "arm64/sparse-measurements/freeze.json": {
+      "bytes": 3995,
+      "sha256": "4f6a26f30baeb73ad6baa8f80952be88949b60f73a8586226049ae8893651fad"
+    },
+    "arm64/sparse-measurements/summary.json": {
+      "bytes": 53334,
+      "sha256": "f8aaa8145d63d7a0373cfa90ecbfe562753e1358c3354d155f0015dea7360857"
+    },
+    "full.patch": {
+      "bytes": 13397,
+      "sha256": "0dbe2a2c82a30f935518d14e11cc1f9074c35196c6f2c9e1abf23906b5b0ca43"
+    },
+    "macos/EXPORT_RECEIPT.json": {
+      "bytes": 793,
+      "sha256": "ffef8fe6bc8949e37c79d4e1bb898c7bd97f4f358c49f09f5dc5dc1bcf5ec888"
+    },
+    "macos/MANIFEST.json": {
+      "bytes": 48366,
+      "sha256": "7b6ee049c17ab35bfcdbe81a223a3025bb13a05a78f6dece03c2b3fb453f76eb"
+    },
+    "macos/MacTABLE.md": {
+      "bytes": 8946,
+      "sha256": "c95c3ea357ff71de2277257e67dcea80e8f5495ea003669fa98d06a83e406cc1"
+    },
+    "macos/README.md": {
+      "bytes": 1446,
+      "sha256": "30f4ac040352267c9dd6a7d183750d261f0086421df646ca8c5776cc62eedcf8"
+    },
+    "macos/control/dependency-normalization.json": {
+      "bytes": 4644,
+      "sha256": "53c0d69f75bc413243e3bd273eaf3640e45cd02b2ca2bbab0a1d044f848124c9"
+    },
+    "macos/control/export-attempt01-failed.json": {
+      "bytes": 6100,
+      "sha256": "ee25ec172bad977936d4ecadabc0d1c0c28642f21981675d69f6701459941f3e"
+    },
+    "macos/control/full-patch-validation.json": {
+      "bytes": 300,
+      "sha256": "8bc6c894fbcdaa19c10e2f525565addc7dfe37b221b4d348b09f5cd66a585c74"
+    },
+    "macos/control/full.patch": {
+      "bytes": 13397,
+      "sha256": "0dbe2a2c82a30f935518d14e11cc1f9074c35196c6f2c9e1abf23906b5b0ca43"
+    },
+    "macos/control/independent-macos-audit-01.json": {
+      "bytes": 87294,
+      "sha256": "7309943cf7f4fe28b73a15dd208e3ee136277d249f3769c3b9d0558a566927a5"
+    },
+    "macos/control/independent-macos-audit-01.md": {
+      "bytes": 1207,
+      "sha256": "a65f566948e4137b72cebd5ba4a247d8d7a319163f47f0e2c40cfec80b97ae7d"
+    },
+    "macos/control/prior-evidence-binding.json": {
+      "bytes": 558,
+      "sha256": "65e97177428ae0104b102627e2d58041826df75628c853283b558631367700be"
+    },
+    "macos/control/production.patch": {
+      "bytes": 2302,
+      "sha256": "5de1eedcf0e0f440927caa2cab2199b979189c5f3ede92e82616dc24314c0c20"
+    },
+    "macos/control/reused-scale-reference-provenance.json": {
+      "bytes": 425,
+      "sha256": "07d90a70abb6f8025d08a84b1704e10c8389cf3ab96bbbd5ad9b771ff51998fa"
+    },
+    "macos/macos/control/B-cidrmerge-build-release.json": {
+      "bytes": 1017,
+      "sha256": "2797c8fa2ba4eacbb8502429f352098775cbf6e33c618042d12e2a9088c5f829"
+    },
+    "macos/macos/control/B-cidrmerge-test-debug.json": {
+      "bytes": 988,
+      "sha256": "c5b500e1fb3ed8b370a54ad466f5d238d80bc130b8f8ed7e2a1af5278e554338"
+    },
+    "macos/macos/control/B-cidrmerge-test-release.json": {
+      "bytes": 990,
+      "sha256": "60818a91efc3bf663555de8efda80e78d389d39bc3fd00abe46f3d68366baec4"
+    },
+    "macos/macos/control/B-swift-cidr-test-debug.json": {
+      "bytes": 1061,
+      "sha256": "d3717afa1a4fd0e5a770a2fa60e4fd1154747a2eceaf49a3d36f1c31bbcf9489"
+    },
+    "macos/macos/control/B-swift-cidr-test-release.json": {
+      "bytes": 1063,
+      "sha256": "00d99c1fa5b98b5874496720bb9447015d5d6ffa43d3ad643ac8521a25ce5d9f"
+    },
+    "macos/macos/control/C-cidrmerge-build-release.json": {
+      "bytes": 1016,
+      "sha256": "11a7130e2feb2e1e0e679399bc6603f1f63dad1780ada79cb29c9fb8071a8753"
+    },
+    "macos/macos/control/C-cidrmerge-test-debug.json": {
+      "bytes": 988,
+      "sha256": "5df478733ad9f2c90c174b0959c1a36977b68bf6bc3b5f6a81bc21ea6c439941"
+    },
+    "macos/macos/control/C-cidrmerge-test-release.json": {
+      "bytes": 990,
+      "sha256": "b9d20753e3c3b787fa469d0774ee0aaeb85871c5bcb4fa04f6e5d34b60ea0be5"
+    },
+    "macos/macos/control/C-swift-cidr-test-debug.json": {
+      "bytes": 1062,
+      "sha256": "c7d22072334531faaff3d645c47ec68c6ed139f0b44d5de30bf4efde340ae931"
+    },
+    "macos/macos/control/C-swift-cidr-test-release.json": {
+      "bytes": 1063,
+      "sha256": "cb070832311b5ddbf1d0739a081aab9402bf9027a69954da323b61fe14e1194e"
+    },
+    "macos/macos/control/context.json": {
+      "bytes": 524,
+      "sha256": "e0503bbe1f38ce8ca365be4e26daac1786c3b8c1ca312f35464d9d2e71d9aae4"
+    },
+    "macos/macos/control/correctness-attempt-2026-11-16T034524.043619+0000.json": {
+      "bytes": 216,
+      "sha256": "52b5f350ed042986b7e04ee30ce3018275d270dafc76eed9a8e9700db2e437a8"
+    },
+    "macos/macos/control/correctness-gate.json": {
+      "bytes": 11847,
+      "sha256": "73fff1749e251fd9a4cd7159f134f72028f84358b365182e572ab5874f9b4a3c"
+    },
+    "macos/macos/control/dependency-freeze.json": {
+      "bytes": 5514,
+      "sha256": "3da4e357f3c657b15dee0cf9a6207801b39bb9977a38972c128d97cc87684cc5"
+    },
+    "macos/macos/control/followup-primary-driver.json": {
+      "bytes": 306,
+      "sha256": "861439a93598b6a0fa372c7dd46950d409d5c92c85dcf3629dfd318bcc91ebe9"
+    },
+    "macos/macos/control/followup-scale-driver.json": {
+      "bytes": 420,
+      "sha256": "cc5f722dd5892892614f0e3d5a10f97a137a52d20edc7aaab0c10a4ec441ff3d"
+    },
+    "macos/macos/control/followup-sparse-driver.json": {
+      "bytes": 422,
+      "sha256": "ee5aa0c881ea3580cf9d72d2290524683ec8159239e479ba454305cd7ffc14e6"
+    },
+    "macos/macos/control/host-runtime.json": {
+      "bytes": 9275,
+      "sha256": "4bf445d60c53198402aa5fd1065a7b3fddebc598ad7816dd5bacefadaabb20bc"
+    },
+    "macos/macos/control/matched-protocol.json": {
+      "bytes": 2095,
+      "sha256": "e3f17439070775dbbc44f1007dd2359c98542a8f47df0b1a92819a13d7c0a031"
+    },
+    "macos/macos/control/pre-benchmark-freeze.json": {
+      "bytes": 4490,
+      "sha256": "55ad3c539dd97553dffbe37aae00d0f9ab556b9e94d5dd56b26c7936521c4cff"
+    },
+    "macos/macos/control/prepare-benchmark-2026-11-16T034528.571864+0000.json": {
+      "bytes": 212,
+      "sha256": "1b760697ea32c299a6cf0ba7b025b1f84a6360277a2ef035a716e1d96d622619"
+    },
+    "macos/macos/control/prepare-inputs-2026-11-16T034245.649990+0000.json": {
+      "bytes": 377,
+      "sha256": "11265797db13fd1fb2360a325101cda6a4e599ad0795a1379b4593ccd5eb1879"
+    },
+    "macos/macos/control/prepare-sources-2026-11-16T034015.825784+0000.json": {
+      "bytes": 200,
+      "sha256": "e98343641aaeb8f256bf069c446e0c6ea0e1e0887541634e8ba043cd688b0098"
+    },
+    "macos/macos/control/primary-driver.json": {
+      "bytes": 263,
+      "sha256": "9d2971ae2e06b483c644aa8170994f4240c2b4627fbddb774a8af9ecf62984b8"
+    },
+    "macos/macos/control/reference-output-freeze.json": {
+      "bytes": 4941,
+      "sha256": "8585f1cb10d235101392428994b1dbafe70edaebeb2f85516c94f16c356b82f3"
+    },
+    "macos/macos/control/scale-driver.json": {
+      "bytes": 399,
+      "sha256": "107bfea99fd8545a7aed5283f675dac6c5d439130012ab954869829856ea1a66"
+    },
+    "macos/macos/control/source-freeze.json": {
+      "bytes": 305805,
+      "sha256": "c63ac2f1242455b9ee1f7b5f3376c5cb126cfc6d958538be97b72a084bd23dab"
+    },
+    "macos/macos/control/sparse-driver.json": {
+      "bytes": 401,
+      "sha256": "ab508cabef1bf9c851e4c4998690ab0388e9f34245730289e878ea9b941ae045"
+    },
+    "macos/macos/control/timing-orchestration-complete.json": {
+      "bytes": 8280,
+      "sha256": "42a148691c5c8c49ad0fef7b3fd3ca6bf313424c7fecb4316442805853ec18c8"
+    },
+    "macos/macos/control/timing-orchestration-start.json": {
+      "bytes": 945,
+      "sha256": "4bdd92333ef38b8533aa00393375f73914bf6b0ac430954f8fcbbfeb8e06274a"
+    },
+    "macos/macos/control/toolchain-freeze.json": {
+      "bytes": 647,
+      "sha256": "0cb57e7f3835738ba03399bba0168ed61c39f3a092ee81782e33b37bd99bd5ad"
+    },
+    "macos/macos/differential/summary.json": {
+      "bytes": 138791,
+      "sha256": "6dc9447b1e421c7fa9060d6050f82f9a1edbc775cdb7d6ba428dca59adefad34"
+    },
+    "macos/macos/followup-primary-01/protocol.json": {
+      "bytes": 2492,
+      "sha256": "527a6e2b072c40cda5a055d8fad768106da7b2764a32fb32eb80090c80ceca1d"
+    },
+    "macos/macos/followup-primary-01/start.json": {
+      "bytes": 225,
+      "sha256": "2d0ef6d182db473ca26f08f81c2a7de21646c775430e79fced8215449c1f0ec9"
+    },
+    "macos/macos/followup-primary-01/summary.json": {
+      "bytes": 95382,
+      "sha256": "16d1eda0eca96cf2fd1c7b5b78e0b37f67f058abff92fbdecbb28870118feca7"
+    },
+    "macos/macos/followup-scale-01/freeze.json": {
+      "bytes": 4560,
+      "sha256": "bf93b2daaad54fca73044d6e82214e9ff2ea496fd386959b3145e4756727d724"
+    },
+    "macos/macos/followup-scale-01/summary.json": {
+      "bytes": 399240,
+      "sha256": "086cd54cc187ec59340a8d5c08f0e800b68d9c45deb7d2a115fc1b6ed6e09236"
+    },
+    "macos/macos/followup-sparse-01/freeze.json": {
+      "bytes": 1329,
+      "sha256": "8c5d38976bf7eb2dc65b40af15f0053938dc846f247dcce0c82ad7402cfc6161"
+    },
+    "macos/macos/followup-sparse-01/summary.json": {
+      "bytes": 34194,
+      "sha256": "757577805d7bfb16495b9c74497b9ee0ec6b62e8664a1cfe3f9ec2c21e356fe7"
+    },
+    "macos/macos/measurements/start.json": {
+      "bytes": 225,
+      "sha256": "f0dd48df0ffa06bfecbf5f9572b156afb028ff2be0314712e23582905bd116df"
+    },
+    "macos/macos/measurements/summary.json": {
+      "bytes": 278104,
+      "sha256": "6d721b327af46211dc1eba558c9a66387d0e88dc8fda6401bace905da6d09c56"
+    },
+    "macos/macos/scale-followup-inputs/reference.json": {
+      "bytes": 6020,
+      "sha256": "b95265da0f9797c9ab7473eed6db26d179faf03cfbdab658f173fdc517359a97"
+    },
+    "macos/macos/scale-measurements/freeze.json": {
+      "bytes": 4010,
+      "sha256": "b1c0a9b0a5999a7790d10f206f844428ac25201bfe65ec8c4e6a0392101feddf"
+    },
+    "macos/macos/scale-measurements/summary.json": {
+      "bytes": 392097,
+      "sha256": "6b498f42513305ed48f5b6c8ca0e0166b816a8205dfbb9643aa6c810fd44a845"
+    },
+    "macos/macos/sparse-followup-inputs/reference.json": {
+      "bytes": 940,
+      "sha256": "7de919d199f9dc650fdf9670e623f097e689abde7b6a64b8ff5e7807e5b5a789"
+    },
+    "macos/macos/sparse-measurements/freeze.json": {
+      "bytes": 1537,
+      "sha256": "ae1ef0b6c48225e319d99dbc25af3d86c5ea81cea232f228a976f4e6bb96be51"
+    },
+    "macos/macos/sparse-measurements/summary.json": {
+      "bytes": 67376,
+      "sha256": "1ae0a5330f54e31560c82560b7ae057c8d6c3382737b52509ffd3eaaef606cc6"
+    },
+    "macos/retention/README.md": {
+      "bytes": 3568,
+      "sha256": "a5bd77420438a7bc971e50a5396737f72f706f8925ca44951f4a921748bd1e94"
+    },
+    "macos/retention/SUMMARY.md": {
+      "bytes": 3937,
+      "sha256": "afaa89b030ed30c9b8042b72a79ef958f562bad4a3c7ab977b83eb5c17921cb5"
+    },
+    "macos/retention/codegen/B-selected.txt": {
+      "bytes": 45019,
+      "sha256": "1f67b24394635fdc44b2e1c95ce4aab1f33a24a2817673422aac53f23bb0f1d0"
+    },
+    "macos/retention/codegen/C-selected.txt": {
+      "bytes": 47450,
+      "sha256": "eb4c273c00b5bcc54f183d4ebeb0f7d007e846b275c183e8a53565783748d508"
+    },
+    "macos/retention/codegen/SUMMARY.md": {
+      "bytes": 1640,
+      "sha256": "bb172bad5b1e490f71bec7998d4a06494d982ea8250bb09367d441a0c4f6ec97"
+    },
+    "macos/retention/codegen/summary.json": {
+      "bytes": 11400,
+      "sha256": "091d0f7131f534284e1ceaf45c8996b2a9b05f8028eb7b3e3bf1d8260fd4c03b"
+    },
+    "macos/retention/control/B-build-retry02.json": {
+      "bytes": 5044,
+      "sha256": "211b5d77807bfb4ca4de3fbb4eb5909f5987d568883e4f9bef89a78bfb330649"
+    },
+    "macos/retention/control/B-build.json": {
+      "bytes": 2162,
+      "sha256": "d00772b8b614acd501afafdfd8fc0223ac4da676abe1369635746032e6965afa"
+    },
+    "macos/retention/control/C-build-retry02.json": {
+      "bytes": 5044,
+      "sha256": "a64809e09229efc1e538903983262912903356b0e06cc3f23745f27b76c697c1"
+    },
+    "macos/retention/control/C-build.json": {
+      "bytes": 2162,
+      "sha256": "6e72f60bd99d91d6930c13c2f498bc23ed5b159c9b3f7db75140501f4b56c296"
+    },
+    "macos/retention/control/freeze.json": {
+      "bytes": 3077,
+      "sha256": "503e2c5ff42f6190aed98b42ada7b0f34499b5982aa980984a8a22a983ab24db"
+    },
+    "macos/retention/logs/B-build.log": {
+      "bytes": 151,
+      "sha256": "d9186dc6dd83486eaa48d51e7d53849a329fe677b60fb8e94a0b9478be8b5ec5"
+    },
+    "macos/retention/logs/C-build.log": {
+      "bytes": 151,
+      "sha256": "d9186dc6dd83486eaa48d51e7d53849a329fe677b60fb8e94a0b9478be8b5ec5"
+    },
+    "macos/retention/runs/2026-11-16T035358.854168+0000-B-overlap/receipt.json": {
+      "bytes": 2102,
+      "sha256": "e901c236434c1e7efb2ba03c3ed12b7370ecf91a419a500522fed30625368730"
+    },
+    "macos/retention/runs/2026-11-16T035401.794491+0000-C-overlap/receipt.json": {
+      "bytes": 2089,
+      "sha256": "1103d7f7366219bc2035b82c8a2ecf916684d5ce9bd0c90b9ffed2f3d83e72f5"
+    },
+    "macos/retention/runs/2026-11-16T035404.541671+0000-C-adjacent/receipt.json": {
+      "bytes": 2092,
+      "sha256": "a6e710622bd03ccdfbfa5a28fed10fd81c0251dc4badfde17daddb8182577eae"
+    },
+    "macos/retention/runs/2026-11-16T035407.419645+0000-B-adjacent/receipt.json": {
+      "bytes": 2105,
+      "sha256": "32767e68cf42edb26b2e8969078dd1b3ef9703907235b6c9ea07b2dc12285772"
+    },
+    "macos/retention/runs/2026-11-16T035410.268755+0000-B-disjoint/receipt.json": {
+      "bytes": 2111,
+      "sha256": "b2f7c958a51baa6e69b15dbf9143e7b7247f623a93cfe065133bccb9b8a6b2b2"
+    },
+    "macos/retention/runs/2026-11-16T035413.824435+0000-C-disjoint/receipt.json": {
+      "bytes": 2111,
+      "sha256": "2c76c4b1e172779f218915e2b0b2fe55f1e4d0fc393e2e02b09b184bdb488d11"
+    },
+    "macos/retention/runs/2026-11-16T035417.040850+0000-C-sparse/receipt.json": {
+      "bytes": 2105,
+      "sha256": "e4740929cb04f04aa09f576c9185ff5bb7f91c7b6d9c651fbd7715056a8034ce"
+    },
+    "macos/retention/runs/2026-11-16T035420.764551+0000-B-sparse/receipt.json": {
+      "bytes": 2105,
+      "sha256": "c14aa3f89e9296988909043476792d40c25c9b53c39002764f06a1f3ff3101af"
+    },
+    "macos/retention/source/main.swift": {
+      "bytes": 3690,
+      "sha256": "74c45690e01e7ffd676b38da8a334a1ac26cb0665db845de58ebf707e99e87fa"
+    },
+    "macos/retention/summary.json": {
+      "bytes": 23622,
+      "sha256": "6b05130c0d42c5cff9642a31716aee00c3786e0dce71dac96ed8f0dde70eb331"
+    },
+    "macos/scale/reference.json": {
+      "bytes": 5877,
+      "sha256": "ec9a6a0ff66433927ba827ef411faa9a5ba52019217221dd324e7155b9ca36c6"
+    },
+    "macos/sparse/prepare.py": {
+      "bytes": 5083,
+      "sha256": "bfdd89be0aaab1ca4bdedd7067944beeb45a77657edc8599f20f92028e474503"
+    },
+    "macos/sparse/provenance.json": {
+      "bytes": 2082,
+      "sha256": "cc5298f3191035623f265d0c4fe4d8c89c0651b74fa0e12ef1ea4ef37537e06a"
+    },
+    "macos/sparse/reference.json": {
+      "bytes": 1485,
+      "sha256": "e55c759160d197f233b7ce7175d3cf455a64dac152e7b56ad27ee15f20533e7d"
+    },
+    "production.patch": {
+      "bytes": 2302,
+      "sha256": "5de1eedcf0e0f440927caa2cab2199b979189c5f3ede92e82616dc24314c0c20"
+    },
+    "x86_64/EXPORT_RECEIPT.json": {
+      "bytes": 933,
+      "sha256": "fab5da76e4ce20459a067df62761cbc490246ffa8f0e941e421563d9458b2b5d"
+    },
+    "x86_64/MANIFEST.json": {
+      "bytes": 189657,
+      "sha256": "a458fc2619a48918cddd1b56d15293e8687d948a9d3142f7b75ccfac4b18faae"
+    },
+    "x86_64/README.md": {
+      "bytes": 736,
+      "sha256": "3d57574e95babc2ed7058d3698e4b44546fda10ec42829b298956e4c9156e468"
+    },
+    "x86_64/TABLE.md": {
+      "bytes": 8087,
+      "sha256": "59ae364d716de0a55cdeb6594af695437de66ff81dde8ba7ca30005f0195c471"
+    },
+    "x86_64/control/audit-batch.json": {
+      "bytes": 4725,
+      "sha256": "ce2c8e4c20d4a0a85bd0b04d775ae0d8da759bd1e1a763756860bdb4a9a88156"
+    },
+    "x86_64/control/build-memory-scope.json": {
+      "bytes": 646,
+      "sha256": "ad9b2045a4defdbff11907290601c3efca4de5b0c1d0fae2a2c3bc855a92342a"
+    },
+    "x86_64/control/build-tests/B-cli-build-release-started.json": {
+      "bytes": 1089,
+      "sha256": "86c8c2c397c872dcf533336b38244356148a34acbcf9c469b2a75755ca0d4a75"
+    },
+    "x86_64/control/build-tests/B-cli-build-release.json": {
+      "bytes": 4993,
+      "sha256": "5a3bc146b63eae2eec60da98e7ef5df04da7099b5389264d36a3f0f6e59098c0"
+    },
+    "x86_64/control/build-tests/B-cli-test-debug-started.json": {
+      "bytes": 1046,
+      "sha256": "4b7438d527b31e7bf8ca58bb00d63ff04a62288840a6e6318184bb3d8870754a"
+    },
+    "x86_64/control/build-tests/B-cli-test-debug.json": {
+      "bytes": 2351,
+      "sha256": "3533b667d7849fe61e07b47f56319c1e12ae8e766082e52e897e12223a52283b"
+    },
+    "x86_64/control/build-tests/B-cli-test-release-started.json": {
+      "bytes": 1052,
+      "sha256": "2a1a00bf48fb9852fcf7b54186968b083bc871b35dca20bf6f66232f44721ce7"
+    },
+    "x86_64/control/build-tests/B-cli-test-release.json": {
+      "bytes": 2356,
+      "sha256": "0a5061b6b3f91c1a87a9173c9ae4032904fdbca96e22063565602cc20ae55592"
+    },
+    "x86_64/control/build-tests/B-upstream-test-debug-started.json": {
+      "bytes": 1062,
+      "sha256": "d54ec63a92ec1ea392579a1998f559687fafc526f055a25c85d1c64719bc99e0"
+    },
+    "x86_64/control/build-tests/B-upstream-test-debug.json": {
+      "bytes": 2009,
+      "sha256": "9190dfd1b28205512ea6af2b91eb221fa2fe911abca794c9e64a2717e55d710d"
+    },
+    "x86_64/control/build-tests/B-upstream-test-release-started.json": {
+      "bytes": 1068,
+      "sha256": "28a715c4a2fc7b592112f35626c02df170fcfbf93a35e9174b8b4cc7d3891f8f"
+    },
+    "x86_64/control/build-tests/B-upstream-test-release.json": {
+      "bytes": 2014,
+      "sha256": "a439e5707347919f9f707dabae8036a3fd93d06bf2579b2e164a59ba2cad2b5f"
+    },
+    "x86_64/control/build-tests/C-cli-build-release-started.json": {
+      "bytes": 1089,
+      "sha256": "4a0a4df57055a78afc94cd48ea262d0e80ba25f39191e4f104aaabfa9336ecb8"
+    },
+    "x86_64/control/build-tests/C-cli-build-release.json": {
+      "bytes": 4993,
+      "sha256": "27125c778ebcfdf775106850f9f3f648a9d1c29451be21196918dce4ba72a9f5"
+    },
+    "x86_64/control/build-tests/C-cli-test-debug-started.json": {
+      "bytes": 1046,
+      "sha256": "d821f0ea98740ff2d21061feec0dcde0e9d26bc5db49e10dceaabf3097738dcc"
+    },
+    "x86_64/control/build-tests/C-cli-test-debug.json": {
+      "bytes": 2351,
+      "sha256": "d545f40114ad9d7fb3bf8be37aa3c6d1126179f38a9136b016fb2e4fc6dfc606"
+    },
+    "x86_64/control/build-tests/C-cli-test-release-started.json": {
+      "bytes": 1052,
+      "sha256": "1f8efb8f5ff0c7d706f7f40583559c1ad88a42e745ba85070139f6a163f2cea2"
+    },
+    "x86_64/control/build-tests/C-cli-test-release.json": {
+      "bytes": 2357,
+      "sha256": "d8ebe88f819b631445738efa5e626c9d1db56b64e4d5dbed66d7ae7ba30d6fa3"
+    },
+    "x86_64/control/build-tests/C-upstream-test-debug-started.json": {
+      "bytes": 1062,
+      "sha256": "5e7b1518475965704263cf16db84318679bcce1492a606a9dc96537b23970b51"
+    },
+    "x86_64/control/build-tests/C-upstream-test-debug.json": {
+      "bytes": 2009,
+      "sha256": "3990d342fc1717be7bac5ce5d82d0e30979fee277f1d02b687e88b67b965dbbc"
+    },
+    "x86_64/control/build-tests/C-upstream-test-release-started.json": {
+      "bytes": 1068,
+      "sha256": "2376fba8e6a316e59a59d24b1de75e11a737a88487250c0eebeaf10fb8ec479d"
+    },
+    "x86_64/control/build-tests/C-upstream-test-release.json": {
+      "bytes": 2015,
+      "sha256": "8befde1753fff7ba6fccbc3b4fbcfc7b5ce519366fd80d48f79e6440a3102eb8"
+    },
+    "x86_64/control/build-tests/start.json": {
+      "bytes": 7180,
+      "sha256": "b0c6ee547907a26270ab578a4765c203b4c67075ba344ed7c0e59c136cdf3f69"
+    },
+    "x86_64/control/build-tests/summary.json": {
+      "bytes": 30927,
+      "sha256": "a0059f32d3916278644510892f05ca2830e39468112db48291237f5ec38b2607"
+    },
+    "x86_64/control/codegen/review.json": {
+      "bytes": 13650,
+      "sha256": "8f845d8637302ee0544e226fd008f37e927c22ba9473b69145abf8c9dc186b19"
+    },
+    "x86_64/control/codegen/review.md": {
+      "bytes": 1077,
+      "sha256": "fef4f2be394cd3e438762d105a956a2de4dc24a4d4e38d716dd6f48bea72e4b0"
+    },
+    "x86_64/control/codegen-gate-before-independent.json": {
+      "bytes": 2201,
+      "sha256": "399785d356a266536679fe3ac17a0931b65348986013df9a5b8d81440bde7f70"
+    },
+    "x86_64/control/codegen-gate.json": {
+      "bytes": 2316,
+      "sha256": "335943bb0d403f3813d1beb95a2b00165b4d50c636b9dbe1844ce7e412c356cf"
+    },
+    "x86_64/control/codegen-independent-review.json": {
+      "bytes": 11398,
+      "sha256": "d0cf9a7c46030caeab399447345ce852a1d159475ae8d766b5c6bb87d660febe"
+    },
+    "x86_64/control/config.json": {
+      "bytes": 325,
+      "sha256": "364da16d91b85df992b07751afcea0c6a9d66d1eac77533818eba3dc731c0ee6"
+    },
+    "x86_64/control/correctness-gate.json": {
+      "bytes": 394,
+      "sha256": "221bdc3b8a2e88e6d0ed1211b1965ec63633ae4e543f4d1a59cd66e9ad80714b"
+    },
+    "x86_64/control/differential/summary.json": {
+      "bytes": 154720,
+      "sha256": "e14a32efcc76c197c6822e6392e45d99bd3aa496f5da680db79aa65010671354"
+    },
+    "x86_64/control/evidence-audit.json": {
+      "bytes": 14485,
+      "sha256": "2e758d09b040dee3bc099410f70ac17e4734e6acdb47bac2a9c2732072084eaf"
+    },
+    "x86_64/control/final-descriptive-before-audit.json": {
+      "bytes": 54304,
+      "sha256": "dcb09842b417e77caea68db592e54892f3e1e6574096e4ec781d8426cbafd06e"
+    },
+    "x86_64/control/matched-protocol.json": {
+      "bytes": 1403,
+      "sha256": "808ab2e5ccd2f3275e93a09052d0e576238d374fc203abf9342e8aefa388dde0"
+    },
+    "x86_64/control/measurement-space-gate.json": {
+      "bytes": 824,
+      "sha256": "601e2afde7980755a9647cd451372bc7b0ced325a93ba30d537ba09db77efce8"
+    },
+    "x86_64/control/native-preflight.json": {
+      "bytes": 1134,
+      "sha256": "7f172337fbd7c395fc27be155c14c033d1c4cdd5acd714a0adbe685c9d6ce6b4"
+    },
+    "x86_64/control/output-dedup/journal.jsonl": {
+      "bytes": 699536,
+      "sha256": "3860072df66be3b86bdca5dc034aa8ab858d528aeb59f8e655fcc2526fbf98e9"
+    },
+    "x86_64/control/output-dedup-audit.json": {
+      "bytes": 1486,
+      "sha256": "73cfa4afbde9b5171e3d6090f5a715f3856cfe17f5a53782a21d469a7ab31de9"
+    },
+    "x86_64/control/output-dedup-protocol.json": {
+      "bytes": 3718,
+      "sha256": "37ff5e441535ccf3af040234bc2149372c16ea7a5b9782673ca5cf9a0791eee7"
+    },
+    "x86_64/control/parent-source-freeze.json": {
+      "bytes": 305805,
+      "sha256": "c63ac2f1242455b9ee1f7b5f3376c5cb126cfc6d958538be97b72a084bd23dab"
+    },
+    "x86_64/control/pre-benchmark-freeze.json": {
+      "bytes": 30271,
+      "sha256": "ce435931194dbff11e38d57d91b326c9d4611ec542fc109d50d389d12a14f820"
+    },
+    "x86_64/control/primary-followup-audit.json": {
+      "bytes": 13022,
+      "sha256": "8fe8446671c3bab17071532db267d6c68c06e7297ed12d7b1e7dd526e5af3a02"
+    },
+    "x86_64/control/reference.json": {
+      "bytes": 32145,
+      "sha256": "0f7f30f5064035685d15ca65fbc4cf0d20fd95a243dd30e14e78eda7766f39b2"
+    },
+    "x86_64/control/retrieval/receipt.json": {
+      "bytes": 669,
+      "sha256": "ee53dd2f88e56eb2edadd7f06bc8888301ded7b649e371f051f13d146333686f"
+    },
+    "x86_64/control/retrieval/stream-receipt.json": {
+      "bytes": 379,
+      "sha256": "8b29d2561e68c5acfa15e37875ba7d8c76a9a4213023fd7c533822bcbe1f4cb5"
+    },
+    "x86_64/control/runtime-linked-libraries.json": {
+      "bytes": 12880,
+      "sha256": "e2047892167385df57f15f01e8fe7ce581dac8a659168cad06b2d9510178b1c1"
+    },
+    "x86_64/control/runtime-postcheck.json": {
+      "bytes": 3148,
+      "sha256": "9bf583e58e58b5566f43fd56c86299d3d68480fe382cf66231599ac8fdc1e35a"
+    },
+    "x86_64/control/runtime.json": {
+      "bytes": 1440,
+      "sha256": "60b925948495e80738276e101bcb573e2418f46503e097d53923b7b5d97862c9"
+    },
+    "x86_64/control/scale-evidence-audit.json": {
+      "bytes": 445,
+      "sha256": "0c061dfd8c9131221518d58dffbe7199cf004231f37f5fc8b1c4eeb51d358ac1"
+    },
+    "x86_64/control/scale-followup-audit.json": {
+      "bytes": 441,
+      "sha256": "2e553888f654b8f5ec8a91f43a85e1c8a476068fffa9721e1eb01a35af796d3f"
+    },
+    "x86_64/control/selected-source-parent-binding.json": {
+      "bytes": 12646,
+      "sha256": "6a06780ffc3230b3a5ef16cd67fffdb8d377db5a69a2eec68e50677c39f29bfe"
+    },
+    "x86_64/control/source-reference.json": {
+      "bytes": 38857,
+      "sha256": "b991a35da917383b245932d8f1b6233d8ede18da17549b37a1590e86699dea7a"
+    },
+    "x86_64/control/sparse-evidence-audit.json": {
+      "bytes": 962,
+      "sha256": "351064243f7a90a0933c98d8a4562182cdb22d766e28ce1e6f8e183b954bca50"
+    },
+    "x86_64/control/sparse-followup-audit.json": {
+      "bytes": 1313,
+      "sha256": "db0ce6a2d9490a2f74f69c2ee89c164d129e418b09464ca2723fb10cff4f841a"
+    },
+    "x86_64/control/test-artifact-preservation.json": {
+      "bytes": 17585,
+      "sha256": "91b6e8c3c8f79accfd7c9f0ae51b5ea386441ffe57dfc2a8008f53d1ff2df02e"
+    },
+    "x86_64/followups/complete.json": {
+      "bytes": 5552,
+      "sha256": "4352f59058757ca4141728e9374c7e7a8a96d539174f816a396a93ad8337842c"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/ipv4-disjoint/B/4.rusage.json": {
+      "bytes": 1600,
+      "sha256": "3a04981348939495d9a2ed1c850c022af2c775b759a78d9959ed1944966c836b"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/ipv4-disjoint/B/sample.json": {
+      "bytes": 2162,
+      "sha256": "2c7777ca108bccf4ccefb4535612502194d2ce4813b2f882e679a3ce8aa1cbae"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/ipv4-disjoint/C/4.rusage.json": {
+      "bytes": 1612,
+      "sha256": "f3b9d51fc2f720f2f6c0904faa6b1847f654d249e8bea947f1cdd1660d0319e5"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/ipv4-disjoint/C/sample.json": {
+      "bytes": 2174,
+      "sha256": "6fca74a04200dd9a125efccd003963c34d5b0540b5e927c1ab5a534f7281fda8"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/mixed-adjacent/B/4.rusage.json": {
+      "bytes": 1606,
+      "sha256": "4851b061d5d6c6fa2e1efcf3c4a90742f683fc59673580e4cbc92a2f8b518ef5"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/mixed-adjacent/B/6.rusage.json": {
+      "bytes": 1597,
+      "sha256": "c89f5f7da40fa3fbaec6d549176683957ac50ea63f6a44b6eef407d9b3ff49a6"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/mixed-adjacent/B/sample.json": {
+      "bytes": 3940,
+      "sha256": "c0b905ee10adde5f9d2d7574c54781949f959e01503e81a3bebb1524d2a0d126"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/mixed-adjacent/C/4.rusage.json": {
+      "bytes": 1606,
+      "sha256": "2899188d0de451d498f71af23b6a20156cba91236ff135310b9c9393e2e973e9"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/mixed-adjacent/C/6.rusage.json": {
+      "bytes": 1607,
+      "sha256": "aa0917071c11ebd6aa38d9e91c9379f3114867d937114fc109081ecba7c9ab43"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/mixed-adjacent/C/sample.json": {
+      "bytes": 3940,
+      "sha256": "6a829ee5009022bbfc1751fe581e55e49e897d896e5a73567d58192cd3455089"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/mixed-disjoint/B/4.rusage.json": {
+      "bytes": 1626,
+      "sha256": "6b6905eee7e7ac4adaaba8f11592183a351d3f6442b0dc18c70e610c003e3c42"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/mixed-disjoint/B/6.rusage.json": {
+      "bytes": 1618,
+      "sha256": "83bb2bfbfe620a33b3328982a897644c152e206d10d149330b9d1e050bdea27c"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/mixed-disjoint/B/sample.json": {
+      "bytes": 3977,
+      "sha256": "d829836163ceeccfc66d8390ac7170cfc13f413214b6fd5caf7aa8f8b74bf6e2"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/mixed-disjoint/C/4.rusage.json": {
+      "bytes": 1603,
+      "sha256": "d699f022f5c2bf10f43700b21f904074b08206b1aa903505fb40f11808a61409"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/mixed-disjoint/C/6.rusage.json": {
+      "bytes": 1627,
+      "sha256": "62329cf2a1683e7fce589536155b1a0b4cdccb84631713bfa2a3baf0f05aa78c"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/mixed-disjoint/C/sample.json": {
+      "bytes": 3973,
+      "sha256": "417a06b16915a6bfb8508d90e619393fba497deeed4b62e1b241bdf18acfd2fc"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/range-derived-mixed/B/4.rusage.json": {
+      "bytes": 1634,
+      "sha256": "3476d4bf41c47572dedb481251c4866f7e66c014ee6e1794e416234d74cd0099"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/range-derived-mixed/B/6.rusage.json": {
+      "bytes": 1636,
+      "sha256": "1ee359e06300489b07f5830fc4efdeb20dac09bfba0de8862d81be0758470150"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/range-derived-mixed/B/sample.json": {
+      "bytes": 4008,
+      "sha256": "cee2dbd9b63882915f816f47842b77150902cc9868f2cfbd083b91ca0db72bfb"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/range-derived-mixed/C/4.rusage.json": {
+      "bytes": 1633,
+      "sha256": "06ea12e213096f3a786c3253c3100a63a2b70954d28faa1abd69ca7a7c3c86c9"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/range-derived-mixed/C/6.rusage.json": {
+      "bytes": 1647,
+      "sha256": "fe0e183f0e4b962b1de3b23837b33347e99ccbb6aab1aa0ef165c3c7d8148e5e"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-01/range-derived-mixed/C/sample.json": {
+      "bytes": 4028,
+      "sha256": "9283543426bd7d9e019cbdcbac2fb7019c0df911a6982bbc5e86923246dbdfba"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/ipv4-disjoint/B/4.rusage.json": {
+      "bytes": 1599,
+      "sha256": "ec1d8ed51369fac36e1d6b4440f7391c639586fc9a1cef04ccfd5a43355900de"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/ipv4-disjoint/B/sample.json": {
+      "bytes": 2161,
+      "sha256": "c8b94e5ba35ccbf8a1fb16320e879b0db18a01fe004e33bb27367f75b893cda9"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/ipv4-disjoint/C/4.rusage.json": {
+      "bytes": 1612,
+      "sha256": "5faf99f31e19a26c5b73f51246e808f1dfbc05df0a3f1fb086138b12ea5b15fe"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/ipv4-disjoint/C/sample.json": {
+      "bytes": 2174,
+      "sha256": "f369a43b617c9f881f3c2bf21f28bbafba74d396e8591a507b644c35c23cf329"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/mixed-adjacent/B/4.rusage.json": {
+      "bytes": 1607,
+      "sha256": "f9f2893d4f19b0d88da0517119c8e08d8934d2b5024bf628006b0279ce43277e"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/mixed-adjacent/B/6.rusage.json": {
+      "bytes": 1594,
+      "sha256": "f3734103ed5e71023c5b2446f3b10ff5f710a02ad88c9d9659fab5538dd5fea5"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/mixed-adjacent/B/sample.json": {
+      "bytes": 3938,
+      "sha256": "c7274b886911da5ef4ec82a0589de63d0beec8ed22f3a26d6944bfb6fa96aec1"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/mixed-adjacent/C/4.rusage.json": {
+      "bytes": 1595,
+      "sha256": "f7dc5d29a8b1566a92952e4a899031e4d15007af49b0558270ea50854fb745a7"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/mixed-adjacent/C/6.rusage.json": {
+      "bytes": 1596,
+      "sha256": "4c9c3c29c363ea5ff79a68352cff4d7a5c838c327d43e491ac30c63aee514f1d"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/mixed-adjacent/C/sample.json": {
+      "bytes": 3918,
+      "sha256": "ea43e1dd1ff7ce178e01c828925db2032c540ac4d212a945e074a2e8c3c2fcd4"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/mixed-disjoint/B/4.rusage.json": {
+      "bytes": 1603,
+      "sha256": "5e80d6a1b99b2807ba45a91a4f860c3298812dc14146bd85981edf531ad9b632"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/mixed-disjoint/B/6.rusage.json": {
+      "bytes": 1606,
+      "sha256": "2e1090135f957777cef3468fd7cd622f8fe5b76e6ae22e2c12e9ddf5679b18f4"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/mixed-disjoint/B/sample.json": {
+      "bytes": 3952,
+      "sha256": "e3a06a646b9c84b8067fafae9ad9aef959af0d4c8c5e45815562271b913730aa"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/mixed-disjoint/C/4.rusage.json": {
+      "bytes": 1603,
+      "sha256": "79561b0470a68cb90febf966fd604e98e49cdae0e78f1e1cced8284041d6fecc"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/mixed-disjoint/C/6.rusage.json": {
+      "bytes": 1606,
+      "sha256": "2a98eaa89c03a5110b8644c6c462f23d5f2089b481decc6f745d661474c67322"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/mixed-disjoint/C/sample.json": {
+      "bytes": 3952,
+      "sha256": "e356b21264f3b28586371bd0e00d13bb2009801e0541f204ef1e4a66f702946b"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/B/4.rusage.json": {
+      "bytes": 1633,
+      "sha256": "46eb7bb533ae96dcfe347d3ef4b59e109bdf7297ec60058f9cd3f324c4b6c753"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/B/6.rusage.json": {
+      "bytes": 1658,
+      "sha256": "e7f5f1f481f740850d9f1428c5620b948b6d22ce75df9dc1940b9ccf08821498"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/B/sample.json": {
+      "bytes": 4039,
+      "sha256": "c1906a3e189f68c0ca9bb3a961ae6b2b8b2a9f0bf6ab72af4fa08ad1e4a142bf"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/C/4.rusage.json": {
+      "bytes": 1634,
+      "sha256": "8d8c3d5d4e3949151d6116131619762f976a4c1ac340abf4b6d2df6e008302ae"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/C/6.rusage.json": {
+      "bytes": 1656,
+      "sha256": "7317ae6a51c723fb50d00f94767e15fab4baa5008cfb48359dfe027add890ad5"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-02/range-derived-mixed/C/sample.json": {
+      "bytes": 4038,
+      "sha256": "f74297e08cf8708d697d2ce76fd7dcf96b77fa082b59ba7fa86b1e048718fb5a"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/ipv4-disjoint/B/4.rusage.json": {
+      "bytes": 1599,
+      "sha256": "79d4622b77e144aee8b1eb571466e56602a3f7277e03972993f22c7acc742383"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/ipv4-disjoint/B/sample.json": {
+      "bytes": 2161,
+      "sha256": "905222120822a6deb627eac131113815bc05b0120b97c30928edc75e183f7d82"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/ipv4-disjoint/C/4.rusage.json": {
+      "bytes": 1601,
+      "sha256": "94622cf8c30f571caaf8c1e13cbfdb4ee061534647e0d85f64b8a03c6be7fba1"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/ipv4-disjoint/C/sample.json": {
+      "bytes": 2163,
+      "sha256": "75697bcbc44f7a2f7bbd983531a6f15f7d3d4b96a084e276d0864790f84b4a86"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/mixed-adjacent/B/4.rusage.json": {
+      "bytes": 1606,
+      "sha256": "14a34fe3105c2cd37b05da9b81df577cf4f4a0ca9b70db3149171358aef7473d"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/mixed-adjacent/B/6.rusage.json": {
+      "bytes": 1598,
+      "sha256": "6dffcadfba187037e5c8bd5d59ff215775f70b4497712eb8e7540ab4c400e1ef"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/mixed-adjacent/B/sample.json": {
+      "bytes": 3941,
+      "sha256": "bc149425613981cde11449525a96f0a5d1477a8b6979c93fac07264c468858f6"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/mixed-adjacent/C/4.rusage.json": {
+      "bytes": 1617,
+      "sha256": "0df1a663e9bf73a245a216f46d50955f33e259337bf745790162ff5d6345bbf7"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/mixed-adjacent/C/6.rusage.json": {
+      "bytes": 1609,
+      "sha256": "c84af2104f935b1b77f02fddf1513f9a42efa5017b0576aeee0e752a3f96bb8c"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/mixed-adjacent/C/sample.json": {
+      "bytes": 3963,
+      "sha256": "91a9b416f902ca925561e04087744cfa702d9c09c2870743c4425f7aa34d19b4"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/mixed-disjoint/B/4.rusage.json": {
+      "bytes": 1603,
+      "sha256": "2e79519f03ecb9fc5e1764edcb431ad78814c8451076d19d5a446a7f93cbcc99"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/mixed-disjoint/B/6.rusage.json": {
+      "bytes": 1616,
+      "sha256": "ecf563554f4c24e7dfc92b36ed96ebac354ad64b7971787577e8ef3e6fb21859"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/mixed-disjoint/B/sample.json": {
+      "bytes": 3952,
+      "sha256": "0a2a7858e411c898b6f9060106ccb81ae49ce0a1eb42dfb03b5fd3bfba92ab18"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/mixed-disjoint/C/4.rusage.json": {
+      "bytes": 1613,
+      "sha256": "d5e6e000b86c0fa557a5cb808092148e35f6d94dc7430f4768cb0ba08ea441f4"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/mixed-disjoint/C/6.rusage.json": {
+      "bytes": 1626,
+      "sha256": "a4a1d7cd84285b28dae9f9214d8ce5ce78909f27ecd168df50abfe07d6c9283d"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/mixed-disjoint/C/sample.json": {
+      "bytes": 3982,
+      "sha256": "e6a3ce5d214986cfdb5637aa9ffeb546b529f48265c202e41e3ecf73849f1559"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/range-derived-mixed/B/4.rusage.json": {
+      "bytes": 1646,
+      "sha256": "902a4cdadb65b76facdf01a410d0edbceae445f9bb4d2d8b933913f865c4b22f"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/range-derived-mixed/B/6.rusage.json": {
+      "bytes": 1646,
+      "sha256": "77db7d4aebb104d6d82af643d9dfd0045927247d5ea4958681b5a0758eff6cfb"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/range-derived-mixed/B/sample.json": {
+      "bytes": 4030,
+      "sha256": "e3d24cc8708b54406f9add8b0af0b83a898575ed0b42fda82d18f92853e320a6"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/range-derived-mixed/C/4.rusage.json": {
+      "bytes": 1655,
+      "sha256": "9e0b8de3f4f6572c213f58d1737fdb0de81a74e6804ad9b0786c754db43debbc"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/range-derived-mixed/C/6.rusage.json": {
+      "bytes": 1656,
+      "sha256": "621427c918eae870dce66c58d9f3aa1cbca6eb83b288e5651c1567805adfaf48"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-03/range-derived-mixed/C/sample.json": {
+      "bytes": 4049,
+      "sha256": "63190a7ab06096b970a29508a5d0b9cd8ca432ae9d6216db8d75377979efbe58"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/ipv4-disjoint/B/4.rusage.json": {
+      "bytes": 1612,
+      "sha256": "1667915281f98cdb719013c82bc00106f0c4511007f5bb0962dcbcc7209337d8"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/ipv4-disjoint/B/sample.json": {
+      "bytes": 2174,
+      "sha256": "83274ed96bfb1b1b61e72c5dc281f68b3c7705db74d481d8185680210d1d2275"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/ipv4-disjoint/C/4.rusage.json": {
+      "bytes": 1600,
+      "sha256": "9c60dbf6ec10e5c6136b63e94a39770c7a3cb8ef9a052d8d0915d85bac8b855b"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/ipv4-disjoint/C/sample.json": {
+      "bytes": 2162,
+      "sha256": "bdc99be5265e4b89f29770160abbc414e5d0911e35ed895fd6b88b7e8b2c7b89"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/mixed-adjacent/B/4.rusage.json": {
+      "bytes": 1595,
+      "sha256": "0ad88dec8768956b94273e453ee4e7f9fcd22b2ef7531225611ee5183e094268"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/mixed-adjacent/B/6.rusage.json": {
+      "bytes": 1629,
+      "sha256": "dd142c3fc9bab6ce561f5b174d46e2c1748066e6994fd4b52636938dd7376bc7"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/mixed-adjacent/B/sample.json": {
+      "bytes": 3961,
+      "sha256": "747117b53ff82cbd554a02aa58ada4a8137c816520a22e1fbf9209d0b4adc033"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/mixed-adjacent/C/4.rusage.json": {
+      "bytes": 1606,
+      "sha256": "e0d8bd36ee91ad272938a73cdd6d332b44656d16a4066addf0137191b5f74e55"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/mixed-adjacent/C/6.rusage.json": {
+      "bytes": 1617,
+      "sha256": "1b0b6a92e56bea5a958a38001667c8021f869b46cfa58ca3d25dd58206669079"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/mixed-adjacent/C/sample.json": {
+      "bytes": 3960,
+      "sha256": "cda165334fd90a9781b25aa92d6a352caa391675c2c28de1b9a0fc12227233aa"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/mixed-disjoint/B/4.rusage.json": {
+      "bytes": 1626,
+      "sha256": "168fc27f7ce07430d2827cbd4d11ac52ccddae1afdcc3f327568ebc340d8f7a6"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/mixed-disjoint/B/6.rusage.json": {
+      "bytes": 1607,
+      "sha256": "dc624aeddbca6bc5ed85069590acf568d95b017fc31c5475f60a08bb28f7b221"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/mixed-disjoint/B/sample.json": {
+      "bytes": 3966,
+      "sha256": "74bdb05fed807dd67fdfc31778a427582302e39f1ee423564beb29932d111a87"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/mixed-disjoint/C/4.rusage.json": {
+      "bytes": 1604,
+      "sha256": "2417d75d7a2e1eefd425fa41eebf1eeee975fedc1184f74f078abc6ab4818086"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/mixed-disjoint/C/6.rusage.json": {
+      "bytes": 1617,
+      "sha256": "3fbeb51dd17586710f0df4cae5d559622cd0d525a20068f8fad1ace15a87b96c"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/mixed-disjoint/C/sample.json": {
+      "bytes": 3954,
+      "sha256": "e58b4e8401689d16fcdf1920ae9d347c65a6d681cd71cb59eee4fb5991986128"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/range-derived-mixed/B/4.rusage.json": {
+      "bytes": 1634,
+      "sha256": "ab30e078c5a8c543444e6dc5c083d0b3fa981c71ee1bfc2b7877a4033d36030d"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/range-derived-mixed/B/6.rusage.json": {
+      "bytes": 1636,
+      "sha256": "a6e5d675bc6dc3ab26fbd1856017c309ebcb54b86b7b026d460e8da313f3884f"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/range-derived-mixed/B/sample.json": {
+      "bytes": 4008,
+      "sha256": "616212e1546f858dd3afce07a5b257ad712dffcccb92a18e2f31e787d3fd191c"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/range-derived-mixed/C/4.rusage.json": {
+      "bytes": 1656,
+      "sha256": "fbc9b2d3bbc6fcba01999cce4bb296ab87da6670b11e3b6820d830a5b143e394"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/range-derived-mixed/C/6.rusage.json": {
+      "bytes": 1637,
+      "sha256": "ae690bb111c9dd22f1e55aea3f5e2bc82105e3ca5a0930ffb9b2f9f8f981f3da"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-04/range-derived-mixed/C/sample.json": {
+      "bytes": 4031,
+      "sha256": "ad69d6339f876d6bb3232b4057546f06dc776dc525316784795a61ef05f2dd98"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/ipv4-disjoint/B/4.rusage.json": {
+      "bytes": 1600,
+      "sha256": "02d27a5ed9bd5b6da9cc83844e8b8303592a1ecc93ef9992a0dacfd84cfd3964"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/ipv4-disjoint/B/sample.json": {
+      "bytes": 2162,
+      "sha256": "7a8a190ae9a58474398b7e1c1164b7b5df66258da0bfbb6185c6d04c19dd8846"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/ipv4-disjoint/C/4.rusage.json": {
+      "bytes": 1601,
+      "sha256": "e097dd5d2229ee0a5d4500cb24e33c44af6321aeddf00900cb047f81f0a1ecb3"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/ipv4-disjoint/C/sample.json": {
+      "bytes": 2163,
+      "sha256": "7c835f191d8e06af95fe12f1574b14600e71df19fd0df389909ed2d42627c5f5"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/mixed-adjacent/B/4.rusage.json": {
+      "bytes": 1606,
+      "sha256": "378f800772f0c85ed0f144b7d7b19b4e5a7605c73358f1c57e0e312151659166"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/mixed-adjacent/B/6.rusage.json": {
+      "bytes": 1597,
+      "sha256": "a694ad26bf1e127ca0f0a20b9ac99c841349bcc000f517ca9aa2a77403cf6d7c"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/mixed-adjacent/B/sample.json": {
+      "bytes": 3930,
+      "sha256": "c046df9c1c2e8177c00c00f77cf59081067e9b9d04f1e809c00b1f0f294fc836"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/mixed-adjacent/C/4.rusage.json": {
+      "bytes": 1607,
+      "sha256": "c808060342327fb95a5ed90167be080b94fa482ccdb364a996ba18a3bd2be435"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/mixed-adjacent/C/6.rusage.json": {
+      "bytes": 1617,
+      "sha256": "7bfe724015ebfa0cd662a027b4f6df08d08d1442de70b1986a954299117a4124"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/mixed-adjacent/C/sample.json": {
+      "bytes": 3962,
+      "sha256": "4ecc4e2a98ae5dcd6090baf3a31bb752fbfd03a7fe7733262fc9e3a271413e6a"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/mixed-disjoint/B/4.rusage.json": {
+      "bytes": 1603,
+      "sha256": "ca2106a1542d918db975203b21ef329ffa50a5305a3a4bb280e838d3ea4df9fd"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/mixed-disjoint/B/6.rusage.json": {
+      "bytes": 1637,
+      "sha256": "aa378dd83d0c129aa18020b33bb403052dc515f363f7d63a8f9b29b06f24b78d"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/mixed-disjoint/B/sample.json": {
+      "bytes": 3983,
+      "sha256": "7f05d69277cf5d012d25bde5ec3f42c6313b4a59ef7a46332a1d7389b9514746"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/mixed-disjoint/C/4.rusage.json": {
+      "bytes": 1615,
+      "sha256": "4f45a0c32b076412e0b3f4801b38aef7d957f810da06bccea01a41bdf222549e"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/mixed-disjoint/C/6.rusage.json": {
+      "bytes": 1606,
+      "sha256": "ed69451e2c50dd0549f7566b8e32c6d5185e1dc82b0584156b32cf0d48ee31c9"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/mixed-disjoint/C/sample.json": {
+      "bytes": 3964,
+      "sha256": "bf192330a4647468b82ff67017ef83bc99afd79625c5d1db1ec6ff182a091298"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/range-derived-mixed/B/4.rusage.json": {
+      "bytes": 1634,
+      "sha256": "04cdae25978db6af4f8ee5bf069131ad639341b2f1970eec52eecae3034c161f"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/range-derived-mixed/B/6.rusage.json": {
+      "bytes": 1657,
+      "sha256": "5483172f0453fa480bc1821acedf1c1a73715b3fed45c86809c361fb6bf477d8"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/range-derived-mixed/B/sample.json": {
+      "bytes": 4039,
+      "sha256": "163170eb5efb22e5a270af9759c1b67ad1b28eff2ab9b64d36663327998332b8"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/range-derived-mixed/C/4.rusage.json": {
+      "bytes": 1646,
+      "sha256": "f8f9662d6eb0276149fdd33f29e5647fea463883832f6b1c348fbc07ae9eb3aa"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/range-derived-mixed/C/6.rusage.json": {
+      "bytes": 1656,
+      "sha256": "09465d209b963265dd131d71b1dba279089e57e7f96e12998985c6400d30ebfa"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-05/range-derived-mixed/C/sample.json": {
+      "bytes": 4040,
+      "sha256": "3040e9bdf32a7929b92b07702df03d682d023f3ab62235b7fcba6cbff748fd1a"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/ipv4-disjoint/B/4.rusage.json": {
+      "bytes": 1621,
+      "sha256": "894e42dde4f3a8b42345c78b9495c223df38fd5ea1e0f7ba560b0bf32e31a634"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/ipv4-disjoint/B/sample.json": {
+      "bytes": 2193,
+      "sha256": "d6cb53aa0e898a77feff60d7364cf6d47a5843123cf8c12fb42462a7a11a0be1"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/ipv4-disjoint/C/4.rusage.json": {
+      "bytes": 1600,
+      "sha256": "9d11e1b2c92622a3095529cc6242bd8df09f91c0a43d18472eb78baf2c783b36"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/ipv4-disjoint/C/sample.json": {
+      "bytes": 2161,
+      "sha256": "3d5c5825b11d7e7ecbac461a8240a697aa747453373ec224d247aa1500f8f12f"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/mixed-adjacent/B/4.rusage.json": {
+      "bytes": 1607,
+      "sha256": "eab14a006cf54803307b8dddb8338225340395f970dcef82130132c62b133c87"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/mixed-adjacent/B/6.rusage.json": {
+      "bytes": 1597,
+      "sha256": "73f16d8cf6a7008f8f0d3a7941bd22bdd742ac5faf004afdbc57382c5dfce264"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/mixed-adjacent/B/sample.json": {
+      "bytes": 3932,
+      "sha256": "672f99f5a17302f8f350f13fa73712d41e9c2f43a1d844898638e951ecd6cddb"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/mixed-adjacent/C/4.rusage.json": {
+      "bytes": 1595,
+      "sha256": "972c4913fe13502f6de352b33a2ae16e1bc6ec03063b40429ae41ee5c2d5823d"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/mixed-adjacent/C/6.rusage.json": {
+      "bytes": 1607,
+      "sha256": "24729a02b25cac71a545a88445ef14814b8f4d21efaef6da0029a7a847f965fd"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/mixed-adjacent/C/sample.json": {
+      "bytes": 3930,
+      "sha256": "ac445bd4f25325bab89d3a2b296b5ec629e9189051f0e744b341847ee7d84165"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/B/4.rusage.json": {
+      "bytes": 1615,
+      "sha256": "49c4d98dfcfbc86cbabd1e22cb9f0c843c93fe67a3ff832ce63a533304ab1302"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/B/6.rusage.json": {
+      "bytes": 1616,
+      "sha256": "bf904aace1442d7285ca5eb82b455d1854a5dd746631f394694870062ffd216d"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/B/sample.json": {
+      "bytes": 3964,
+      "sha256": "0969a2d9d675509583cec1ccdb8cc877b67e0909b1b175a8a50110e20033042b"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/C/4.rusage.json": {
+      "bytes": 1604,
+      "sha256": "5aa7b0119f09361115870ec6f76585f2465cf5e07b274a130e2bc44ff2512b9c"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/C/6.rusage.json": {
+      "bytes": 1617,
+      "sha256": "016ae0e579f2f0fafc22cfbc991c8160ffd3bd87b4def1e90ecee869a2364d03"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/C/sample.json": {
+      "bytes": 3964,
+      "sha256": "e5cafd7548ed5a176185362561908f5b21984c0acfb1b9a16bbcd62f58df4e03"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/range-derived-mixed/B/4.rusage.json": {
+      "bytes": 1646,
+      "sha256": "c828fcf12f5bfbd8406965a93ed59f30d9244ae802652c4cb96363115502bca0"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/range-derived-mixed/B/6.rusage.json": {
+      "bytes": 1636,
+      "sha256": "e4a381ba2ef7599d2b0a351c59bf081837f8911e245a531ec817d37fcd48fcc6"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/range-derived-mixed/B/sample.json": {
+      "bytes": 4020,
+      "sha256": "0c9fda3bbd30f66116bb43b1f045714fc6290e980f331f8e78983928e61d689f"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/range-derived-mixed/C/4.rusage.json": {
+      "bytes": 1656,
+      "sha256": "45ff4fecc37f9d05f3d502621fee75bb52f969feeaf7305334d46f18adc7a31a"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/range-derived-mixed/C/6.rusage.json": {
+      "bytes": 1656,
+      "sha256": "f1ca97503f065fec16a1c3e2aa76870397dec34dcaac4a94e9f645c9932fe98e"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/round-06/range-derived-mixed/C/sample.json": {
+      "bytes": 4060,
+      "sha256": "b2472b51558d77334b91aaace815ac45bfe9dba564e2c3501dcddba6abcf95cc"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/ipv4-disjoint/B/4.rusage.json": {
+      "bytes": 1592,
+      "sha256": "6fa0adf18eee0335411d2688778c46eb84ed01a857e721b6a7438180e87c3e51"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/ipv4-disjoint/B/sample.json": {
+      "bytes": 2154,
+      "sha256": "016275666e3dffe5c5362c97c2cac9af47956ebecadbd10bd64665e82e4e6fdc"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/ipv4-disjoint/C/4.rusage.json": {
+      "bytes": 1612,
+      "sha256": "fc9d156782032f948136993900092b1e25e3e42ce21514bd8ce3ff7be3e06a34"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/ipv4-disjoint/C/sample.json": {
+      "bytes": 2184,
+      "sha256": "84b2cef4526e3c23a95a90a9d2bffc0e3edb338b1e8a6a469ffaa50c4c282cbc"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/mixed-adjacent/B/4.rusage.json": {
+      "bytes": 1587,
+      "sha256": "6168ac7ceddb64da1cb7df377e317d1763cf886da38255857545ab29bc22431c"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/mixed-adjacent/B/6.rusage.json": {
+      "bytes": 1589,
+      "sha256": "3984e477986a9958fad95c057e3090b13566298744abea754f3c94a1dec14f7c"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/mixed-adjacent/B/sample.json": {
+      "bytes": 3904,
+      "sha256": "8680e0c75f84ab0daf24dd4c325f0a19528bc3e96c01f0a9d77e9fc0f4e0203c"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/mixed-adjacent/C/4.rusage.json": {
+      "bytes": 1599,
+      "sha256": "83d6e7ce1a4cdf1169a73131edc4738ca4902006bbb5466243edd2f0bcb314e0"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/mixed-adjacent/C/6.rusage.json": {
+      "bytes": 1609,
+      "sha256": "669cc3f13923b4b45dcd96fff6b19cd19816f51c26c782208fa3d914acde2c0a"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/mixed-adjacent/C/sample.json": {
+      "bytes": 3946,
+      "sha256": "a20716457e83d0baa4f516f47b6333e0bfdffba89172ff9e0ec81662d5388914"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/B/4.rusage.json": {
+      "bytes": 1630,
+      "sha256": "e456c0bbe57dc95dc4086d8b62bd128727313e4960d4fb0777961168fa6e5e35"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/B/6.rusage.json": {
+      "bytes": 1629,
+      "sha256": "ed3dd9415e6f6327c3e0428d4a84108ab2c4cd3886ff7118f5ac9339945a28a4"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/B/sample.json": {
+      "bytes": 3992,
+      "sha256": "35c655bc0ad33476d535ba36f153f13f180efc88f45e0cba9107a7c974dc229b"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/C/4.rusage.json": {
+      "bytes": 1619,
+      "sha256": "41befa49579db67bd119041ae1929946c0fa64a73dd4c563247d1e846c9ff492"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/C/6.rusage.json": {
+      "bytes": 1598,
+      "sha256": "5b94f6954aaa4f6b204b7aeaa7ef31a14880d4708f4e4631ec24fc9d1d6dee84"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/mixed-disjoint/C/sample.json": {
+      "bytes": 3948,
+      "sha256": "e3a6762cb419b93a75d96a2a3f8f6bfc5af89ae6c129c78ec8c8ea9e4cef24b6"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/B/4.rusage.json": {
+      "bytes": 1626,
+      "sha256": "6078527c6c5657ba5d0e2565d1ecae085401eb503ab481c262c0318c86b2f440"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/B/6.rusage.json": {
+      "bytes": 1638,
+      "sha256": "cc2b89576648632133face3a00ef9a83379c007470215efe6b97f21a281b163e"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/B/sample.json": {
+      "bytes": 4012,
+      "sha256": "213cbf39937b055c6bb5520621dd4a66ce65e11e9c913a21db64bb494676427e"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/C/4.rusage.json": {
+      "bytes": 1626,
+      "sha256": "c753b44cd527ba631c97b562701093551c6ec6f676e33117b9b5d1de8db83d61"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/C/6.rusage.json": {
+      "bytes": 1629,
+      "sha256": "a13a94284fdfd0ceceec0b6bf184aa65aaaaa2ecd193216bcd83e2f36cbbfd3b"
+    },
+    "x86_64/followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/C/sample.json": {
+      "bytes": 3993,
+      "sha256": "c762ed2205fd1b5ddf7ebbc5636e0cc9355a6e7ba6572829f1338178eaab5904"
+    },
+    "x86_64/followups/regressions-primary-01/run.json": {
+      "bytes": 243,
+      "sha256": "26691d6f6fa62d970f2befb126edfb945f80818f0820092f0719787e469eb46b"
+    },
+    "x86_64/followups/regressions-primary-01/selection.json": {
+      "bytes": 3203,
+      "sha256": "77e12bf47a153f8eb4ea35833b9ca89b95ec56ffb072093b60f806e6484c6912"
+    },
+    "x86_64/followups/regressions-primary-01/space-gate.json": {
+      "bytes": 221,
+      "sha256": "96facb9d99e82a0e055e9886db906df1df479ab5b35557e2e7880c037de7c6b7"
+    },
+    "x86_64/followups/regressions-primary-01/start.json": {
+      "bytes": 7699,
+      "sha256": "03923bbc57134722fbc6e0ad1c5617fe4d51ef70b23b27f3030e2c2958d324b0"
+    },
+    "x86_64/followups/regressions-primary-01/summary.json": {
+      "bytes": 244044,
+      "sha256": "944fcfd5ee51880f2dade69cdf72cbb78874c7a70b345c47aa15c8a7c454812d"
+    },
+    "x86_64/followups/regressions-scale-01/fixtures/reference.json": {
+      "bytes": 843,
+      "sha256": "7f66008368af6b9af2749b95b53088d33a03a52c1d77a117a6844f1eb3546feb"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/freeze.json": {
+      "bytes": 5024,
+      "sha256": "21b07c0194a6245aa913119a85a7e4a6a781ab64ba89e315e5aad35a79949081"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-00/mixed-disjoint-100000/B/sample.json": {
+      "bytes": 1976,
+      "sha256": "087cc441fbccd6d51ddec7cb4abcad3b4d32316af4374b4e7515d0afb6c1f29e"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-00/mixed-disjoint-100000/C/sample.json": {
+      "bytes": 1955,
+      "sha256": "052467c60ce9be5112fd3e268dc019e5672b5bbcdd035572da9544ddc4662e95"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-01/mixed-disjoint-100000/B/sample.json": {
+      "bytes": 1966,
+      "sha256": "dde00573b948b74eea7b2591fdfd71f7e82529f34f0e8bde8d16bba6c2e95d19"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-01/mixed-disjoint-100000/C/sample.json": {
+      "bytes": 1955,
+      "sha256": "7cf5ee72ea805b62de3e65a7d26aea4ed0a95bed75cd381dfb6d5a332164cf04"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-02/mixed-disjoint-100000/B/sample.json": {
+      "bytes": 1955,
+      "sha256": "7d144af366473bfb475d234c1ed80231ab11a3b18bbaa6534100a6d30d30b1d3"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-02/mixed-disjoint-100000/C/sample.json": {
+      "bytes": 1955,
+      "sha256": "1e5154ffd197d31d9f7a7b51eb3ca203e20fd36308fcc1ec43ae4e792b2d3fbd"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-03/mixed-disjoint-100000/B/sample.json": {
+      "bytes": 1955,
+      "sha256": "3da36bb39385ae7d539fb287eda072553be8c0f431c3c077b87a48ea2778cb8a"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-03/mixed-disjoint-100000/C/sample.json": {
+      "bytes": 1977,
+      "sha256": "5e37d98a3af759dfb4af4e1458d4235b29d867363980473fbd5495d3e1aabad0"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-04/mixed-disjoint-100000/B/sample.json": {
+      "bytes": 1977,
+      "sha256": "89f704a7eb0fdb0575d43e1c02d29d8f1526f0ee51334a90564f82aca72b8b50"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-04/mixed-disjoint-100000/C/sample.json": {
+      "bytes": 1967,
+      "sha256": "294c957b859cbab5329b02672d34e4e520d30fe613e02ac5c5f435ad2a2554f0"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-05/mixed-disjoint-100000/B/sample.json": {
+      "bytes": 1966,
+      "sha256": "80a54fee47c46f5a0bb3b8d1328394f5f1497fab447d109f7befdbf5e493b036"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-05/mixed-disjoint-100000/C/sample.json": {
+      "bytes": 1954,
+      "sha256": "7bb925dfb3070c081e955c1a753be183616f5d92d42ad4a779c0704f8e20fc8a"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-06/mixed-disjoint-100000/B/sample.json": {
+      "bytes": 1967,
+      "sha256": "aad21545c418aa2634d63d393733dee3678492270463585a31871e3ee02f84e1"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/round-06/mixed-disjoint-100000/C/sample.json": {
+      "bytes": 1954,
+      "sha256": "286de9f63541cda96cc2a260941111b9dfdd9a5c59269168d9dd09208a6facb3"
+    },
+    "x86_64/followups/regressions-scale-01/measurements/summary.json": {
+      "bytes": 32674,
+      "sha256": "7cbb9fb9ca51a830b18fc642eb134ae24e25508c49d7944acfef5298a9fd8c47"
+    },
+    "x86_64/followups/regressions-scale-01/run.json": {
+      "bytes": 569,
+      "sha256": "658fbd70bcbd4e0966fcb291b37fcbb12d84a79f29771790d5a3422e129a935b"
+    },
+    "x86_64/followups/regressions-scale-01/space-gate.json": {
+      "bytes": 220,
+      "sha256": "3099f7ab179f3b886a4f07f5096e3b380bf7ec0face7d3d90047b2b9b11aa9f6"
+    },
+    "x86_64/followups/regressions-sparse-01/fixtures/reference.json": {
+      "bytes": 1681,
+      "sha256": "dcc6a3b2d964233ff6aa02f2696b0c0abe2f5789d805a77dfa45cdfbf8c7f6d3"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/freeze.json": {
+      "bytes": 5495,
+      "sha256": "25b947d1a673e4cc8b85d122bf2cb7ce5ff67eee2bae4f896bfa38a431a7ee7c"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-00/mixed-sparse-duplicate-10000/B/sample.json": {
+      "bytes": 1989,
+      "sha256": "5b0ef23678e9fe35f00ee0a6b37b20ad7257d34ca34dfa7021ebf2fe95127291"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-00/mixed-sparse-duplicate-10000/C/sample.json": {
+      "bytes": 1988,
+      "sha256": "8734fc355044f9bdabd767b914aebcf1cd55957faa0b208b368117e0493e2488"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-00/mixed-sparse-duplicate-1000000/B/sample.json": {
+      "bytes": 2009,
+      "sha256": "ddc1a5dbb26f817012d4f781d1ed681b05bacf4e75ed54461cb7b4b5722f67d9"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-00/mixed-sparse-duplicate-1000000/C/sample.json": {
+      "bytes": 2008,
+      "sha256": "7c71c755cbaddaaab69269986b28a9ccce4242cb5b1fea9461330ba56e254d50"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-01/mixed-sparse-duplicate-10000/B/sample.json": {
+      "bytes": 1989,
+      "sha256": "2b0e6205ef7b75b674697856a378e9f6675ff82dc902977f560eafc573db4a81"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-01/mixed-sparse-duplicate-10000/C/sample.json": {
+      "bytes": 1989,
+      "sha256": "6239b084eaedaeed43eb78ec666d5d60addadbf3d9bfa59bdbbfbc0084ff553f"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-01/mixed-sparse-duplicate-1000000/B/sample.json": {
+      "bytes": 2007,
+      "sha256": "9baab95ba15709e5222737c7a955b7e69ce62f02dec98ee4f4e845c521eba329"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-01/mixed-sparse-duplicate-1000000/C/sample.json": {
+      "bytes": 2020,
+      "sha256": "dff3a9cdd247042278ae7525c2aa57e6332e4135677095dab2c5efe66282c2b8"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-02/mixed-sparse-duplicate-10000/B/sample.json": {
+      "bytes": 2001,
+      "sha256": "b884e17a171f4242a119f5bac3837286f398f3c71658d37f4690c5df8948b654"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-02/mixed-sparse-duplicate-10000/C/sample.json": {
+      "bytes": 1989,
+      "sha256": "ee6f4c256c64dd3aa3cf56e54d38363599423b5c002b8da14c6e0e48d9c3e7b8"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-02/mixed-sparse-duplicate-1000000/B/sample.json": {
+      "bytes": 2009,
+      "sha256": "e765c6a117618e51c32812c1a61612142fe9c5d92117d8120ca5ed38e3b809b3"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-02/mixed-sparse-duplicate-1000000/C/sample.json": {
+      "bytes": 2020,
+      "sha256": "5a2920bc93650eddf6d30ebb170f25ebf96989e92d202f31a787d2550f78a24c"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-03/mixed-sparse-duplicate-10000/B/sample.json": {
+      "bytes": 2014,
+      "sha256": "d4cdeeb94d96c65bafb20b0f10b97a775b5481abe8d875d02bc0ece039680f5d"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-03/mixed-sparse-duplicate-10000/C/sample.json": {
+      "bytes": 1988,
+      "sha256": "9d2d7d5391fb5343080c75a9ed9b44ab01ae763f59c94254264b5bed837e7d57"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-03/mixed-sparse-duplicate-1000000/B/sample.json": {
+      "bytes": 2020,
+      "sha256": "99631eef3347b628bf1df41b5d594fe3d0fc3bc2aa6f03b74cd33fec2ebdf5f9"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-03/mixed-sparse-duplicate-1000000/C/sample.json": {
+      "bytes": 2009,
+      "sha256": "ebba5530f4e163e9cddf53a7ccbe80ad7d25cfe5a6ea822d35a046813783e1bc"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-04/mixed-sparse-duplicate-10000/B/sample.json": {
+      "bytes": 1988,
+      "sha256": "ae0bb2bbe3aeaabe7f6fd6246ef67d2b09102f75a60189d6b714f4deb8885ddc"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-04/mixed-sparse-duplicate-10000/C/sample.json": {
+      "bytes": 2001,
+      "sha256": "d0aaab24212734c8b841d4a7876b0aa8fdf6f22866a1f510d6a5c4d777af2d9e"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-04/mixed-sparse-duplicate-1000000/B/sample.json": {
+      "bytes": 2009,
+      "sha256": "331876192f0e001603fb244d86890e3fe43e2d34d47b2fed42956b8f8d5b6432"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-04/mixed-sparse-duplicate-1000000/C/sample.json": {
+      "bytes": 2007,
+      "sha256": "c6ef908269d3ad5ca400b6351fbfcb1b328d899da524d3bb1d3cc9662934ef92"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-05/mixed-sparse-duplicate-10000/B/sample.json": {
+      "bytes": 1989,
+      "sha256": "a0204df5b5491cb7a4f16312bc56f472d05d58e0720b7310b124c0254cc824fa"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-05/mixed-sparse-duplicate-10000/C/sample.json": {
+      "bytes": 2001,
+      "sha256": "5680c8a772a2ac0928218c1c475eb1ef4ac486e09ee19e9b9035b914ae9836fa"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-05/mixed-sparse-duplicate-1000000/B/sample.json": {
+      "bytes": 2009,
+      "sha256": "a689c3259f171d0f05e20f3756dd64a35872e2cb602f79b1c7c31b5366483de8"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-05/mixed-sparse-duplicate-1000000/C/sample.json": {
+      "bytes": 2009,
+      "sha256": "c5c29e04195a8c14208ecf11ca22bdc3a1aad43ed066de2fc348962bd00bb01d"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-06/mixed-sparse-duplicate-10000/B/sample.json": {
+      "bytes": 2013,
+      "sha256": "fda309087df7feacda504900654acfc0a22ad71ed7be465a209148b510b6239f"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-06/mixed-sparse-duplicate-10000/C/sample.json": {
+      "bytes": 2002,
+      "sha256": "ad88770fbbe27d9d77a5f6a46bec82afba3955cd8e84d21db23c21f4cd3ed4ae"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-06/mixed-sparse-duplicate-1000000/B/sample.json": {
+      "bytes": 2009,
+      "sha256": "cc9a752f179d3fbc3a48980d9e4752a9cff131e3cf6d4bf38c1df61e2985f969"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/round-06/mixed-sparse-duplicate-1000000/C/sample.json": {
+      "bytes": 2018,
+      "sha256": "8fd4ab3a61ddd1ca45978e7d18012f7ee131e9c9dd41fa50eaeef1e04dee8dc2"
+    },
+    "x86_64/followups/regressions-sparse-01/measurements/summary.json": {
+      "bytes": 66309,
+      "sha256": "0afb0a9da4c40645f2f63e79d4d95b41134481299bd0a510ba22f8e7959206d7"
+    },
+    "x86_64/followups/regressions-sparse-01/run.json": {
+      "bytes": 571,
+      "sha256": "c846c70276d6d53fe709394d22c5cf08d162ea0583ef8a1fb29dad5b61b900ed"
+    },
+    "x86_64/followups/regressions-sparse-01/space-gate.json": {
+      "bytes": 221,
+      "sha256": "7fbc78cbd8feb0a537da2722e5a6eed7cc5fc4a8df4af167297163f2387ad598"
+    },
+    "x86_64/followups/selection.json": {
+      "bytes": 5035,
+      "sha256": "880988ab6310be54309adfc1c4a3a24a7f56cff523ef594024056040cef8c5e0"
+    },
+    "x86_64/measurements/start.json": {
+      "bytes": 7390,
+      "sha256": "61e1a4d4dc45741d8121850860ebe85d91489315e7813c1595f11a53a4bb0893"
+    },
+    "x86_64/measurements/summary.json": {
+      "bytes": 530204,
+      "sha256": "7614058488a65541a13ee447e918a9e0933ae6f1f98e57bf17db043f7b1ee152"
+    },
+    "x86_64/scale/reference.json": {
+      "bytes": 5877,
+      "sha256": "ec9a6a0ff66433927ba827ef411faa9a5ba52019217221dd324e7155b9ca36c6"
+    },
+    "x86_64/scale-measurements/freeze.json": {
+      "bytes": 8918,
+      "sha256": "c0e155f0971230479ef7ceadfabe53e790be655d459e18f4e92a6ffa4acdc3c8"
+    },
+    "x86_64/scale-measurements/summary.json": {
+      "bytes": 372559,
+      "sha256": "b604625f552f4d669fc0229846eb8159e2030e5380a7e9b28d6061d67d9c24a5"
+    },
+    "x86_64/sparse/provenance.json": {
+      "bytes": 2082,
+      "sha256": "cc5298f3191035623f265d0c4fe4d8c89c0651b74fa0e12ef1ea4ef37537e06a"
+    },
+    "x86_64/sparse/reference.json": {
+      "bytes": 1485,
+      "sha256": "e55c759160d197f233b7ce7175d3cf455a64dac152e7b56ad27ee15f20533e7d"
+    },
+    "x86_64/sparse-measurements/freeze.json": {
+      "bytes": 5325,
+      "sha256": "5a9532bb2c6cc31280603afceae2088c8014f56ee4333946c303412ce850345a"
+    },
+    "x86_64/sparse-measurements/summary.json": {
+      "bytes": 63815,
+      "sha256": "9acc964a212f32791512cc314bae9e621c1d44080d2f686f6ff56b5ab0181525"
+    }
+  },
+  "scope": "This manifest binds the final portable report bundle. Per-platform manifests additionally bind raw original artifacts to exported bytes. Raw experiment evidence and earlier export revisions remain in Downloads."
+}

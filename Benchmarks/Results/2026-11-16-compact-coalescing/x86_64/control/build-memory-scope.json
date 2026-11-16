@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-16T03:58:19.290895+00:00",
+  "passed": true,
+  "command": [
+    "systemctl",
+    "--user",
+    "show",
+    "cidrmerge-compact-tests-20261116T033826Z.scope",
+    "--property=ActiveState",
+    "--property=MemoryMax",
+    "--property=MemorySwapMax",
+    "--property=ControlGroup"
+  ],
+  "exit_code": 0,
+  "properties": {
+    "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/cidrmerge-compact-tests-20261116T033826Z.scope",
+    "MemoryMax": "6442450944",
+    "MemorySwapMax": "0",
+    "ActiveState": "active"
+  },
+  "scope": "Untimed build/tests only; matched benchmark processes run outside this scope."
+}

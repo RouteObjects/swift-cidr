@@ -1,0 +1,68 @@
+{
+  "started_at": "2026-11-16T03:53:58.854168+00:00",
+  "variant": "B",
+  "case": "overlap",
+  "passed": true,
+  "command": [
+    "$EXPERIMENT/retention/bin/B-profile",
+    "overlap"
+  ],
+  "ordinary_binary_sha256": "33a88d93b6c3e121ba2a2437cefeb2af2413fda567188d17b5d7b0118f0514cc",
+  "profile_binary_sha256": "dcf068e05d2d105dc9ee5cd51d24199d88947712e58780ad083874a34e4e49eb",
+  "build_receipt_sha256": "b5c6089986edc6c81a7dd04ede94f48e3485214d57338e1bf820436abd5e3ea5",
+  "harness_sha256": "dff9b2340aa172c65fd91cca2d0783523e94d5d487852cf2607623d5978667bb",
+  "commands": [
+    {
+      "tool": "heap",
+      "command": [
+        "/usr/bin/heap",
+        "-s",
+        "--noContent",
+        "--addresses=all",
+        "8677"
+      ],
+      "exit_code": 0
+    },
+    {
+      "tool": "vmmap",
+      "command": [
+        "/usr/bin/vmmap",
+        "-summary",
+        "8677"
+      ],
+      "exit_code": 0
+    },
+    {
+      "tool": "vmmap-regions",
+      "command": [
+        "/usr/bin/vmmap",
+        "8677"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "measurement_scope": "One fresh result-only checkpoint; input function returned; no repeated calls. Elapsed/peak include inspection and are not performance benchmark samples.",
+  "checkpoint": {
+    "phase": "result-only",
+    "pid": 8677,
+    "case": "overlap",
+    "base_input_count": 1000000,
+    "input_count": 1000000,
+    "result_count": 1,
+    "capacity": 1000447,
+    "element_stride": 32,
+    "capacity_bytes": 32014304,
+    "element_address": "0x7c11410020",
+    "first_lower": "0",
+    "last_upper": "1000000"
+  },
+  "exit_code": 0,
+  "finished_at": "2026-11-16T03:54:01.745530+00:00",
+  "files": {
+    "vmmap-regions.txt": "046ead6981f3299b93374e2bfb1cda9bfc8c2572e672b3e069f210e782e6df8b",
+    "vmmap.txt": "cce0165588d9411e49601a98449bf1aec8a6e1b6493350f8974e9e306dd103dc",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout.jsonl": "b51a0ec5feae8d31a9f0b51f045369dcea64aef5bd19504acf9201aa09d35c51",
+    "heap.txt": "2eb75f2e14ca513a0c1666b0842a32757d04dfcf3ad4d2e408c846c9c231f819"
+  }
+}

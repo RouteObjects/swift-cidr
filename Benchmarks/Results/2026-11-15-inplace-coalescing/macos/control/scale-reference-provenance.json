@@ -1,0 +1,6 @@
+{
+  "python": "3.12.6 (v3.12.6:a4a2d2b0d85, Sep  6 2024, 16:08:03) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "generator_sha256": "ec299af844206db0a0d2804a3fe216e9af6f939d250bcac4673f17f78e1f9dd4",
+  "reference_sha256": "7bb293dc1d39510fd9d2ebb82ed08e0d0f8c9825ba4b522257393b65262b6246",
+  "method": "Prefix existing frozen input files at each size; independently collapse separately by address family using Python ipaddress"
+}

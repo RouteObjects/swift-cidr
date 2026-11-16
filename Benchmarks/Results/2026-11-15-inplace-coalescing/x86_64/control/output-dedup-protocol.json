@@ -1,0 +1,40 @@
+{
+  "created_at": "2026-11-15T22:58:41.295925+00:00",
+  "authorization": "Parent authorized deduplication of only new verified stdout artifacts to preserve all per-process paths and complete bytes without deleting old caches.",
+  "protocol": "After original run_one returns and its sample.json is written, recheck exit/status, full SHA and expected bytes; first content is hardlinked into readonly store; duplicates are byte-compared and atomically replaced by a hardlink. Each operation is journaled. No timed invocation/resource capture changes.",
+  "store": "output-store/<sha256>",
+  "timing_boundary": "All operations start after sample finished_at and original run_one return; warmups precede measured rounds. Additional between-sample I/O is disclosed.",
+  "old_evidence_modified": false,
+  "original_timing_driver_sha256": "732a252f2aa40e3ac9953282db2366abed0d43aa16bb5f5ddc9e4da76c6a89b3",
+  "files": {
+    "output_dedup.py": "f101d09c3df71521ae7fb3151b8b7031bfacb16bcce17338f1a474952ecc4f85",
+    "run_matched_dedup.py": "dde189834c862926abc574e67a1c56aac980a66d093b19ae4c883f39c75be5d7",
+    "phase_runner_dedup.py": "d3cdcc5761c89a7b6acccdd634288417d7ed00de85c1bf0e45f13c20ccb686f0",
+    "scale_bench_dedup.py": "79ed0213c65bf1883e7546763913f8b3f53e283417fd4ae19ae7bb0aaa6d3687",
+    "scale_bench.py": "eec91e6d974e5d8ed44994b4665639dd9f4256a5d66887612fcee63627fc76a2",
+    "linux_runner.py": "646868b94d723a7c0c2e622c95d7e1a3366e3f4473aea0a6eea13b192b7ca2ac",
+    "run_matched.py": "732a252f2aa40e3ac9953282db2366abed0d43aa16bb5f5ddc9e4da76c6a89b3",
+    "prepare_benchmark.py": "8e43db540b2df5178355d2fb886bc56323bfe41b3eec74554c37a1fdf875f91c",
+    "run_followup_dedup.py": "c3e3f7de76dd429c0195561b4f255e1c717c76a362dbc4c25beefcadae744df5"
+  },
+  "space_budget": {
+    "unique_primary_contents": 13,
+    "unique_primary_bytes": 94014299,
+    "largest_whole_sample_temporary_bytes": 21342471,
+    "store_plus_largest_sample_bytes": 115356770,
+    "original_raw_stdout_bytes": 1816398122,
+    "minimum_free_bytes": 3221225472,
+    "additional_metadata_margin_bytes": 20971520,
+    "unique_scale_bytes": 3920712,
+    "unique_scale_contents": 10
+  },
+  "scale_extension": "Same storage operation runs after run_sample returns and writes sample.json, with untouched timed run_sample body. Scale and follow-ups share the new task store.",
+  "followup_module_hashes": {
+    "followups/control/audit_primary_followup.py": "58bb42f14b489f14a28a64bf0eddfdeb5c0fdfcd384e9092f94bc7841c53ead4",
+    "followups/control/audit_scale_followup.py": "555d15798971005f7bee1c170765d9e63d2b62a06ac8bd2d5a8626b50ac48a1e",
+    "followups/control/followup_runner.py": "7ebf97bb6841e1424b682213ff66f5e1ec682419b5cc92f5a2b8aab35cdf0e92",
+    "followups/control/run_followups.py": "e5baa420f8ecc5da145e65e983c5c32a92e47df64b5e7e47cb8386ef74b5b782"
+  },
+  "followup_storage": "Fixed original-pair >5% selection, no recursive reruns; primary and scale reuse original validated store content after each sample. Fixture aliases are byte-identical copied directories to make exports portable.",
+  "scale_validation": "Full original premeasurement manifest, sources, fixtures and every runtime library validated before and after scale; timed run_sample remains unchanged."
+}

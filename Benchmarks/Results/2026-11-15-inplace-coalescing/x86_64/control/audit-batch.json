@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/control/audit_linux.py",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z",
+        "--output",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/control/evidence-audit.json",
+        "--check-runtime-files"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-11-15T23:21:43.229717+00:00",
+      "log": "logs/audit-0.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/control/audit_scale.py",
+        "--root",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z",
+        "--output",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/control/scale-evidence-audit.json"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-11-15T23:21:45.426961+00:00",
+      "log": "logs/audit-1.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/followups/control/audit_primary_followup.py",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z",
+        "regressions-primary-01",
+        "--output",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/control/primary-followup-audit.json",
+        "--check-runtime-files"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-11-15T23:21:52.877535+00:00",
+      "log": "logs/audit-2.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/followups/control/audit_scale_followup.py",
+        "--root",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z",
+        "--output",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/control/scale-followup-audit.json"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-11-15T23:21:54.359527+00:00",
+      "log": "logs/audit-3.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/control/audit_output_dedup.py",
+        "--root",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z",
+        "--output",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/control/output-dedup-audit.json"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-11-15T23:22:11.694761+00:00",
+      "log": "logs/audit-4.log"
+    }
+  ],
+  "all_timings_stopped_before_audit": true
+}

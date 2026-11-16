@@ -1,0 +1,1056 @@
+=== original B-assembly.txt lines 183891-183940 ===
+CIDRMergeCLI.ParsedInput.merged(representation: CIDRMergeCLI.OutputRepresentation) -> CIDRMergeCLI.MergeResult:
+00000001000afce4	stp	x26, x25, [sp, #-0x50]!
+00000001000afce8	stp	x24, x23, [sp, #0x10]
+00000001000afcec	stp	x22, x21, [sp, #0x20]
+00000001000afcf0	stp	x20, x19, [sp, #0x30]
+00000001000afcf4	stp	x29, x30, [sp, #0x40]
+00000001000afcf8	add	x29, sp, #0x40
+00000001000afcfc	mov	x21, x0
+00000001000afd00	mov	x19, x8
+00000001000afd04	and	w24, w0, #0xff
+00000001000afd08	ldp	x0, x23, [x20]
+00000001000afd0c	bl	generic specialization <CIDR.AF.V4, [CIDR.IPAddressRange<CIDR.AF.V4>]> of static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]
+00000001000afd10	mov	x22, x0
+00000001000afd14	mov	x0, x23
+00000001000afd18	bl	generic specialization <CIDR.AF.V6, [CIDR.IPAddressRange<CIDR.AF.V6>]> of static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]
+00000001000afd1c	cmp	w24, #0x1
+00000001000afd20	b.ne	0x1000afd60
+00000001000afd24	mov	x23, x0
+00000001000afd28	mov	x0, x22
+00000001000afd2c	bl	generic specialization <CIDR.AF.V4> of CIDR.IPAddressCoverage.summarizedNetworks() -> [CIDR.IPNetwork<A>]
+00000001000afd30	mov	x24, x0
+00000001000afd34	mov	x0, x23
+00000001000afd38	bl	generic specialization <CIDR.AF.V6> of CIDR.IPAddressCoverage.summarizedNetworks() -> [CIDR.IPNetwork<A>]
+00000001000afd3c	mov	x25, x0
+00000001000afd40	mov	x0, x23
+00000001000afd44	bl	0x1000be554 ; symbol stub for: _swift_bridgeObjectRelease
+00000001000afd48	mov	x0, x22
+00000001000afd4c	bl	0x1000be554 ; symbol stub for: _swift_bridgeObjectRelease
+00000001000afd50	mov	w8, #0x1
+00000001000afd54	mov	x0, x25
+00000001000afd58	mov	x22, x24
+00000001000afd5c	b	0x1000afd64
+00000001000afd60	mov	w8, #0x0
+00000001000afd64	ldr	x9, [x22, #0x10]
+00000001000afd68	ldr	x10, [x0, #0x10]
+00000001000afd6c	strb	w21, [x19]
+00000001000afd70	str	x22, [x19, #0x8]
+00000001000afd74	strb	w8, [x19, #0x10]
+00000001000afd78	str	x0, [x19, #0x18]
+00000001000afd7c	strb	w8, [x19, #0x20]
+00000001000afd80	strb	w21, [x19, #0x28]
+00000001000afd84	ldp	q0, q1, [x20, #0x10]
+00000001000afd88	stp	q0, q1, [x19, #0x30]
+00000001000afd8c	stp	x9, x10, [x19, #0x50]
+00000001000afd90	ldp	x29, x30, [sp, #0x40]
+00000001000afd94	ldp	x20, x19, [sp, #0x30]
+00000001000afd98	ldp	x22, x21, [sp, #0x20]
+00000001000afd9c	ldp	x24, x23, [sp, #0x10]
+00000001000afda0	ldp	x26, x25, [sp], #0x50
+00000001000afda4	ret
+
+=== original B-assembly.txt lines 185670-185940 ===
+generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ():
+00000001000b1818	sub	sp, sp, #0xa0
+00000001000b181c	str	x28, [sp, #0x40]
+00000001000b1820	stp	x27, x26, [sp, #0x50]
+00000001000b1824	stp	x25, x24, [sp, #0x60]
+00000001000b1828	stp	x23, x22, [sp, #0x70]
+00000001000b182c	stp	x20, x19, [sp, #0x80]
+00000001000b1830	stp	x29, x30, [sp, #0x90]
+00000001000b1834	add	x29, sp, #0x90
+00000001000b1838	mov	x19, x4
+00000001000b183c	mov	x22, x3
+00000001000b1840	mov	x20, x2
+00000001000b1844	str	x0, [sp, #0x20]
+00000001000b1848	adrp	x8, 56 ; 0x1000e9000
+00000001000b184c	ldr	x8, [x8, #0x568] ; literal pool symbol address: __swiftEmptyArrayStorage
+00000001000b1850	str	x8, [sp, #0x48]
+00000001000b1854	ldr	x25, [x2, #0x8]
+00000001000b1858	cmp	x25, #0x1
+00000001000b185c	str	x2, [sp, #0x28]
+00000001000b1860	b.lt	0x1000b1b04
+00000001000b1864	str	x5, [sp, #0x18]
+00000001000b1868	mov	x28, #0x0
+00000001000b186c	add	x27, x28, #0x1
+00000001000b1870	cmp	x27, x25
+00000001000b1874	b.ge	0x1000b191c
+00000001000b1878	ldr	x23, [x20]
+00000001000b187c	ldr	d1, [x23, x27, lsl #3]
+00000001000b1880	ldr	d0, [x23, x28, lsl #3]
+00000001000b1884	stp	d0, d1, [sp, #0x30]
+00000001000b1888	add	x0, sp, #0x38
+00000001000b188c	add	x1, sp, #0x30
+00000001000b1890	mov	x20, x19
+00000001000b1894	blr	x22
+00000001000b1898	cbnz	x21, 0x1000b1af8
+00000001000b189c	mov	x26, x0
+00000001000b18a0	sub	x24, x25, #0x1
+00000001000b18a4	cmp	x27, x24
+00000001000b18a8	b.eq	0x1000b18f4
+00000001000b18ac	add	x27, x28, #0x2
+00000001000b18b0	add	x8, x23, x28, lsl #3
+00000001000b18b4	add	x23, x8, #0x10
+00000001000b18b8	ldp	d1, d0, [x23, #-0x8]
+00000001000b18bc	stp	d1, d0, [sp, #0x30]
+00000001000b18c0	add	x0, sp, #0x38
+00000001000b18c4	add	x1, sp, #0x30
+00000001000b18c8	mov	x20, x19
+00000001000b18cc	blr	x22
+00000001000b18d0	cbnz	x21, 0x1000b1af8
+00000001000b18d4	and	w8, w0, #0x1
+00000001000b18d8	and	w9, w26, #0x1
+00000001000b18dc	cmp	w9, w8
+00000001000b18e0	b.ne	0x1000b1900
+00000001000b18e4	add	x23, x23, #0x8
+00000001000b18e8	add	x27, x27, #0x1
+00000001000b18ec	cmp	x25, x27
+00000001000b18f0	b.ne	0x1000b18b8
+00000001000b18f4	mov	x27, x25
+00000001000b18f8	tbnz	w26, #0x0, 0x1000b1908
+00000001000b18fc	b	0x1000b1918
+00000001000b1900	sub	x24, x27, #0x1
+00000001000b1904	tbz	w26, #0x0, 0x1000b1918
+00000001000b1908	cmp	x27, x28
+00000001000b190c	b.lt	0x1000b1c28
+00000001000b1910	cmp	x28, x24
+00000001000b1914	b.le	0x1000b1a5c
+00000001000b1918	ldr	x20, [sp, #0x28]
+00000001000b191c	ldr	x8, [x20, #0x8]
+00000001000b1920	cmp	x27, x8
+00000001000b1924	b.ge	0x1000b195c
+00000001000b1928	subs	x9, x27, x28
+00000001000b192c	b.vs	0x1000b1c1c
+00000001000b1930	ldr	x10, [sp, #0x18]
+00000001000b1934	cmp	x9, x10
+00000001000b1938	b.ge	0x1000b195c
+00000001000b193c	adds	x9, x28, x10
+00000001000b1940	b.vs	0x1000b1c20
+00000001000b1944	cmp	x9, x8
+00000001000b1948	csel	x9, x9, x8, lt
+00000001000b194c	cmp	x9, x28
+00000001000b1950	b.lt	0x1000b1c24
+00000001000b1954	cmp	x27, x9
+00000001000b1958	b.ne	0x1000b19d4
+00000001000b195c	cmp	x27, x28
+00000001000b1960	b.lt	0x1000b1c18
+00000001000b1964	mov	x23, x21
+00000001000b1968	ldr	x20, [sp, #0x48]
+00000001000b196c	mov	x0, x20
+00000001000b1970	bl	0x1000be728 ; symbol stub for: _swift_isUniquelyReferenced_nonNull_native
+00000001000b1974	tbz	w0, #0x0, 0x1000b1ab4
+00000001000b1978	mov	x21, x23
+00000001000b197c	ldp	x24, x8, [x20, #0x10]
+00000001000b1980	add	x26, x24, #0x1
+00000001000b1984	cmp	x24, x8, lsr #1
+00000001000b1988	b.hs	0x1000b1ad4
+00000001000b198c	str	x26, [x20, #0x10]
+00000001000b1990	add	x8, x20, x24, lsl #4
+00000001000b1994	stp	x28, x27, [x8, #0x20]
+00000001000b1998	str	x20, [sp, #0x48]
+00000001000b199c	ldr	x8, [sp, #0x20]
+00000001000b19a0	ldr	x1, [x8]
+00000001000b19a4	cbz	x1, 0x1000b1c48
+00000001000b19a8	add	x0, sp, #0x48
+00000001000b19ac	mov	x2, x22
+00000001000b19b0	mov	x3, x19
+00000001000b19b4	ldr	x20, [sp, #0x28]
+00000001000b19b8	bl	generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of Swift.UnsafeMutableBufferPointer._mergeTopRuns(_: inout [Swift.Range<Swift.Int>], buffer: Swift.UnsafeMutablePointer<A>, by: (A, A) throws -> Swift.Bool) throws -> Swift.Bool
+00000001000b19bc	cbnz	x21, 0x1000b1af8
+00000001000b19c0	ldr	x25, [x20, #0x8]
+00000001000b19c4	mov	x28, x27
+00000001000b19c8	cmp	x27, x25
+00000001000b19cc	b.lt	0x1000b186c
+00000001000b19d0	b	0x1000b1b04
+00000001000b19d4	ldr	x26, [x20]
+00000001000b19d8	add	x8, x26, x27, lsl #3
+00000001000b19dc	sub	x24, x8, #0x8
+00000001000b19e0	sub	x25, x28, x27
+00000001000b19e4	str	x9, [sp, #0x8]
+00000001000b19e8	ldr	d0, [x26, x27, lsl #3]
+00000001000b19ec	mov	x23, x25
+00000001000b19f0	str	x24, [sp, #0x10]
+00000001000b19f4	str	d0, [sp, #0x38]
+00000001000b19f8	ldr	d0, [x24]
+00000001000b19fc	str	d0, [sp, #0x30]
+00000001000b1a00	add	x0, sp, #0x38
+00000001000b1a04	add	x1, sp, #0x30
+00000001000b1a08	mov	x20, x19
+00000001000b1a0c	blr	x22
+00000001000b1a10	cbnz	x21, 0x1000b1af8
+00000001000b1a14	tbz	w0, #0x0, 0x1000b1a34
+00000001000b1a18	cbz	x26, 0x1000b1c3c
+00000001000b1a1c	ldr	x8, [x24]
+00000001000b1a20	ldr	d0, [x24, #0x8]
+00000001000b1a24	str	x8, [x24, #0x8]
+00000001000b1a28	str	d0, [x24], #-0x8
+00000001000b1a2c	adds	x23, x23, #0x1
+00000001000b1a30	b.lo	0x1000b19f4
+00000001000b1a34	add	x27, x27, #0x1
+00000001000b1a38	ldp	x9, x24, [sp, #0x8]
+00000001000b1a3c	add	x24, x24, #0x8
+00000001000b1a40	sub	x25, x25, #0x1
+00000001000b1a44	cmp	x27, x9
+00000001000b1a48	b.ne	0x1000b19e8
+00000001000b1a4c	mov	x27, x9
+00000001000b1a50	cmp	x27, x28
+00000001000b1a54	b.ge	0x1000b1964
+00000001000b1a58	b	0x1000b1c18
+00000001000b1a5c	ldr	x20, [sp, #0x28]
+00000001000b1a60	ldr	x8, [x20]
+00000001000b1a64	add	x9, x8, x27, lsl #3
+00000001000b1a68	sub	x9, x9, #0x8
+00000001000b1a6c	add	x10, x8, x28, lsl #3
+00000001000b1a70	mov	x11, x27
+00000001000b1a74	mov	x12, x28
+00000001000b1a78	b	0x1000b1aa0
+00000001000b1a7c	ldr	x13, [x9]
+00000001000b1a80	ldr	d0, [x10]
+00000001000b1a84	str	x13, [x10]
+00000001000b1a88	str	d0, [x9]
+00000001000b1a8c	add	x12, x12, #0x1
+00000001000b1a90	sub	x9, x9, #0x8
+00000001000b1a94	add	x10, x10, #0x8
+00000001000b1a98	cmp	x12, x11
+00000001000b1a9c	b.ge	0x1000b191c
+00000001000b1aa0	sub	x11, x11, #0x1
+00000001000b1aa4	cmp	x12, x11
+00000001000b1aa8	b.eq	0x1000b1a8c
+00000001000b1aac	cbnz	x8, 0x1000b1a7c
+00000001000b1ab0	b	0x1000b1c40
+00000001000b1ab4	ldr	x8, [x20, #0x10]
+00000001000b1ab8	add	x1, x8, #0x1
+00000001000b1abc	mov	w0, #0x0
+00000001000b1ac0	mov	w2, #0x1
+00000001000b1ac4	mov	x3, x20
+00000001000b1ac8	bl	generic specialization <serialized, Swift.Range<Swift.Int>> of Swift._ArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<A>
+00000001000b1acc	mov	x20, x0
+00000001000b1ad0	b	0x1000b1978
+00000001000b1ad4	cmp	x8, #0x1
+00000001000b1ad8	cset	w0, hi
+00000001000b1adc	mov	x1, x26
+00000001000b1ae0	mov	w2, #0x1
+00000001000b1ae4	mov	x3, x20
+00000001000b1ae8	bl	generic specialization <serialized, Swift.Range<Swift.Int>> of Swift._ArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<A>
+00000001000b1aec	mov	x21, x23
+00000001000b1af0	mov	x20, x0
+00000001000b1af4	b	0x1000b198c
+00000001000b1af8	mov	x25, x21
+00000001000b1afc	ldr	x24, [sp, #0x48]
+00000001000b1b00	b	0x1000b1be4
+00000001000b1b04	ldr	x8, [sp, #0x20]
+00000001000b1b08	ldr	x8, [x8]
+00000001000b1b0c	str	x8, [sp, #0x20]
+00000001000b1b10	cbz	x8, 0x1000b1c4c
+00000001000b1b14	mov	x25, x21
+00000001000b1b18	ldr	x24, [sp, #0x48]
+00000001000b1b1c	mov	x0, x24
+00000001000b1b20	bl	0x1000be728 ; symbol stub for: _swift_isUniquelyReferenced_nonNull_native
+00000001000b1b24	tbz	w0, #0x0, 0x1000b1c2c
+00000001000b1b28	str	x24, [sp, #0x48]
+00000001000b1b2c	ldr	x27, [x24, #0x10]
+00000001000b1b30	cmp	x27, #0x2
+00000001000b1b34	b.lo	0x1000b1be4
+00000001000b1b38	ldr	x8, [x20]
+00000001000b1b3c	cbz	x8, 0x1000b1c44
+00000001000b1b40	sub	x26, x27, #0x1
+00000001000b1b44	lsl	x9, x27, #4
+00000001000b1b48	ldr	x23, [x24, x9]
+00000001000b1b4c	add	x9, x24, x26, lsl #4
+00000001000b1b50	ldp	x9, x28, [x9, #0x20]
+00000001000b1b54	add	x0, x8, x23, lsl #3
+00000001000b1b58	add	x1, x8, x9, lsl #3
+00000001000b1b5c	add	x2, x8, x28, lsl #3
+00000001000b1b60	ldr	x3, [sp, #0x20]
+00000001000b1b64	mov	x4, x22
+00000001000b1b68	mov	x5, x19
+00000001000b1b6c	mov	x21, x25
+00000001000b1b70	bl	generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of Swift._merge<A>(low: Swift.UnsafeMutablePointer<A>, mid: Swift.UnsafeMutablePointer<A>, high: Swift.UnsafeMutablePointer<A>, buffer: Swift.UnsafeMutablePointer<A>, by: (A, A) throws -> Swift.Bool) throws -> Swift.Bool
+00000001000b1b74	cbnz	x21, 0x1000b1be0
+00000001000b1b78	cmp	x28, x23
+00000001000b1b7c	b.lt	0x1000b1c10
+00000001000b1b80	mov	x25, x21
+00000001000b1b84	mov	x0, x24
+00000001000b1b88	bl	0x1000be728 ; symbol stub for: _swift_isUniquelyReferenced_nonNull_native
+00000001000b1b8c	tbz	w0, #0x0, 0x1000b1bd0
+00000001000b1b90	sub	x8, x27, #0x2
+00000001000b1b94	ldr	x9, [x24, #0x10]
+00000001000b1b98	cmp	x8, x9
+00000001000b1b9c	b.hs	0x1000b1c14
+00000001000b1ba0	add	x8, x24, x27, lsl #4
+00000001000b1ba4	stp	x23, x28, [x8]
+00000001000b1ba8	str	x24, [sp, #0x48]
+00000001000b1bac	add	x20, sp, #0x48
+00000001000b1bb0	mov	x0, x26
+00000001000b1bb4	bl	generic specialization <serialized, Swift.Range<Swift.Int>> of Swift.Array.remove(at: Swift.Int) -> A
+00000001000b1bb8	ldr	x24, [sp, #0x48]
+00000001000b1bbc	ldr	x27, [x24, #0x10]
+00000001000b1bc0	cmp	x27, #0x1
+00000001000b1bc4	ldr	x20, [sp, #0x28]
+00000001000b1bc8	b.hi	0x1000b1b38
+00000001000b1bcc	b	0x1000b1be4
+00000001000b1bd0	mov	x0, x24
+00000001000b1bd4	bl	generic specialization <serialized, Swift.Range<Swift.Int>> of Swift._ArrayBuffer._consumeAndCreateNew() -> Swift._ArrayBuffer<A>
+00000001000b1bd8	mov	x24, x0
+00000001000b1bdc	b	0x1000b1b90
+00000001000b1be0	mov	x25, x21
+00000001000b1be4	mov	x0, x24
+00000001000b1be8	bl	0x1000be554 ; symbol stub for: _swift_bridgeObjectRelease
+00000001000b1bec	mov	x21, x25
+00000001000b1bf0	ldp	x29, x30, [sp, #0x90]
+00000001000b1bf4	ldp	x20, x19, [sp, #0x80]
+00000001000b1bf8	ldp	x23, x22, [sp, #0x70]
+00000001000b1bfc	ldp	x25, x24, [sp, #0x60]
+00000001000b1c00	ldp	x27, x26, [sp, #0x50]
+00000001000b1c04	ldr	x28, [sp, #0x40]
+00000001000b1c08	add	sp, sp, #0xa0
+00000001000b1c0c	ret
+00000001000b1c10	brk	#0x1
+00000001000b1c14	brk	#0x1
+00000001000b1c18	brk	#0x1
+00000001000b1c1c	brk	#0x1
+00000001000b1c20	brk	#0x1
+00000001000b1c24	brk	#0x1
+00000001000b1c28	brk	#0x1
+00000001000b1c2c	mov	x0, x24
+00000001000b1c30	bl	generic specialization <serialized, Swift.Range<Swift.Int>> of Swift._ArrayBuffer._consumeAndCreateNew() -> Swift._ArrayBuffer<A>
+00000001000b1c34	mov	x24, x0
+00000001000b1c38	b	0x1000b1b28
+00000001000b1c3c	brk	#0x1
+00000001000b1c40	brk	#0x1
+00000001000b1c44	brk	#0x1
+00000001000b1c48	brk	#0x1
+00000001000b1c4c	brk	#0x1
+
+=== original B-assembly.txt lines 186004-186056 ===
+generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V4>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ():
+00000001000b1d48	sub	sp, sp, #0x70
+00000001000b1d4c	str	x28, [sp, #0x10]
+00000001000b1d50	stp	x27, x26, [sp, #0x20]
+00000001000b1d54	stp	x25, x24, [sp, #0x30]
+00000001000b1d58	stp	x23, x22, [sp, #0x40]
+00000001000b1d5c	stp	x20, x19, [sp, #0x50]
+00000001000b1d60	stp	x29, x30, [sp, #0x60]
+00000001000b1d64	add	x29, sp, #0x60
+00000001000b1d68	cmp	x2, x1
+00000001000b1d6c	b.ne	0x1000b1d90
+00000001000b1d70	ldp	x29, x30, [sp, #0x60]
+00000001000b1d74	ldp	x20, x19, [sp, #0x50]
+00000001000b1d78	ldp	x23, x22, [sp, #0x40]
+00000001000b1d7c	ldp	x25, x24, [sp, #0x30]
+00000001000b1d80	ldp	x27, x26, [sp, #0x20]
+00000001000b1d84	ldr	x28, [sp, #0x10]
+00000001000b1d88	add	sp, sp, #0x70
+00000001000b1d8c	ret
+00000001000b1d90	mov	x8, x20
+00000001000b1d94	mov	x20, x4
+00000001000b1d98	mov	x19, x3
+00000001000b1d9c	mov	x22, x2
+00000001000b1da0	mov	x23, x1
+00000001000b1da4	ldr	x24, [x8]
+00000001000b1da8	add	x8, x24, x2, lsl #3
+00000001000b1dac	sub	x25, x8, #0x8
+00000001000b1db0	sub	x26, x0, x2
+00000001000b1db4	ldr	d0, [x24, x22, lsl #3]
+00000001000b1db8	mov	x27, x26
+00000001000b1dbc	mov	x28, x25
+00000001000b1dc0	str	d0, [sp, #0x18]
+00000001000b1dc4	ldr	d0, [x28]
+00000001000b1dc8	str	d0, [sp, #0x8]
+00000001000b1dcc	add	x0, sp, #0x18
+00000001000b1dd0	add	x1, sp, #0x8
+00000001000b1dd4	blr	x19
+00000001000b1dd8	cbnz	x21, 0x1000b1d70
+00000001000b1ddc	tbz	w0, #0x0, 0x1000b1dfc
+00000001000b1de0	cbz	x24, 0x1000b1e14
+00000001000b1de4	ldr	x8, [x28]
+00000001000b1de8	ldr	d0, [x28, #0x8]
+00000001000b1dec	str	x8, [x28, #0x8]
+00000001000b1df0	str	d0, [x28], #-0x8
+00000001000b1df4	adds	x27, x27, #0x1
+00000001000b1df8	b.lo	0x1000b1dc0
+00000001000b1dfc	add	x22, x22, #0x1
+00000001000b1e00	add	x25, x25, #0x8
+00000001000b1e04	sub	x26, x26, #0x1
+00000001000b1e08	cmp	x22, x23
+00000001000b1e0c	b.ne	0x1000b1db4
+00000001000b1e10	b	0x1000b1d70
+00000001000b1e14	brk	#0x1
+
+=== original B-assembly.txt lines 185191-185296 ===
+generic specialization <CIDR.AF.V4, [CIDR.IPAddressRange<CIDR.AF.V4>]> of static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]:
+00000001000b10a8	sub	sp, sp, #0x80
+00000001000b10ac	stp	x28, x27, [sp, #0x20]
+00000001000b10b0	stp	x26, x25, [sp, #0x30]
+00000001000b10b4	stp	x24, x23, [sp, #0x40]
+00000001000b10b8	stp	x22, x21, [sp, #0x50]
+00000001000b10bc	stp	x20, x19, [sp, #0x60]
+00000001000b10c0	stp	x29, x30, [sp, #0x70]
+00000001000b10c4	add	x29, sp, #0x70
+00000001000b10c8	mov	x19, x0
+00000001000b10cc	bl	0x1000be56c ; symbol stub for: _swift_bridgeObjectRetain
+00000001000b10d0	bl	0x1000be728 ; symbol stub for: _swift_isUniquelyReferenced_nonNull_native
+00000001000b10d4	tbnz	w0, #0x0, 0x1000b10e4
+00000001000b10d8	mov	x0, x19
+00000001000b10dc	bl	generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of Swift._ContiguousArrayBuffer._consumeAndCreateNew() -> Swift._ContiguousArrayBuffer<A>
+00000001000b10e0	mov	x19, x0
+00000001000b10e4	ldr	x8, [x19, #0x10]
+00000001000b10e8	add	x9, x19, #0x20
+00000001000b10ec	stp	x9, x8, [sp, #0x8]
+00000001000b10f0	adrp	x1, 1 ; 0x1000b2000
+00000001000b10f4	add	x1, x1, #0xbf8
+00000001000b10f8	adrp	x3, 61 ; 0x1000ee000
+00000001000b10fc	add	x3, x3, #0xec8
+00000001000b1100	adrp	x4, 21 ; 0x1000c6000
+00000001000b1104	add	x4, x4, #0x580
+00000001000b1108	adrp	x5, 0 ; 0x1000b1000
+00000001000b110c	add	x5, x5, #0x818
+00000001000b1110	adrp	x6, 0 ; 0x1000b1000
+00000001000b1114	add	x6, x6, #0xd48
+00000001000b1118	add	x8, sp, #0x1f
+00000001000b111c	add	x0, sp, #0x8
+00000001000b1120	mov	x2, #0x0
+00000001000b1124	mov	x21, #0x0
+00000001000b1128	bl	merged generic specialization <Swift.ContiguousArray<CIDR.IPAddressRange<CIDR.AF.V6>>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A.Swift.Sequence.Element>) throws -> () in (extension in Swift):Swift.MutableCollection< where A: Swift.RandomAccessCollection>.sort(by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()
+00000001000b112c	ldr	x1, [x19, #0x10]
+00000001000b1130	cmp	x1, #0x2
+00000001000b1134	b.lo	0x1000b118c
+00000001000b1138	adrp	x3, 56 ; 0x1000e9000
+00000001000b113c	ldr	x3, [x3, #0x568] ; literal pool symbol address: __swiftEmptyArrayStorage
+00000001000b1140	mov	w0, #0x0
+00000001000b1144	mov	w2, #0x0
+00000001000b1148	bl	generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of Swift._ArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<A>
+00000001000b114c	ldr	x8, [x19, #0x10]
+00000001000b1150	cbz	x8, 0x1000b1228
+00000001000b1154	mov	x20, x0
+00000001000b1158	ldp	w23, w22, [x19, #0x20]
+00000001000b115c	subs	x24, x8, #0x1
+00000001000b1160	b.ne	0x1000b11b0
+00000001000b1164	mov	x0, x19
+00000001000b1168	bl	0x1000be74c ; symbol stub for: _swift_release
+00000001000b116c	ldp	x21, x8, [x20, #0x10]
+00000001000b1170	add	x19, x21, #0x1
+00000001000b1174	cmp	x21, x8, lsr #1
+00000001000b1178	b.hs	0x1000b122c
+00000001000b117c	str	x19, [x20, #0x10]
+00000001000b1180	add	x8, x20, x21, lsl #3
+00000001000b1184	stp	w23, w22, [x8, #0x20]
+00000001000b1188	mov	x19, x20
+00000001000b118c	mov	x0, x19
+00000001000b1190	ldp	x29, x30, [sp, #0x70]
+00000001000b1194	ldp	x20, x19, [sp, #0x60]
+00000001000b1198	ldp	x22, x21, [sp, #0x50]
+00000001000b119c	ldp	x24, x23, [sp, #0x40]
+00000001000b11a0	ldp	x26, x25, [sp, #0x30]
+00000001000b11a4	ldp	x28, x27, [sp, #0x20]
+00000001000b11a8	add	sp, sp, #0x80
+00000001000b11ac	ret
+00000001000b11b0	add	x25, x19, #0x2c
+00000001000b11b4	b	0x1000b11cc
+00000001000b11b8	cmp	w26, w22
+00000001000b11bc	csel	w22, w26, w22, hi
+00000001000b11c0	add	x25, x25, #0x8
+00000001000b11c4	subs	x24, x24, #0x1
+00000001000b11c8	b.eq	0x1000b1164
+00000001000b11cc	ldp	w27, w26, [x25, #-0x4]
+00000001000b11d0	add	w8, w22, #0x1
+00000001000b11d4	cmp	w22, w27
+00000001000b11d8	ccmp	w8, w27, #0x4, lo
+00000001000b11dc	b.eq	0x1000b11b8
+00000001000b11e0	ldp	x28, x8, [x20, #0x10]
+00000001000b11e4	add	x21, x28, #0x1
+00000001000b11e8	cmp	x28, x8, lsr #1
+00000001000b11ec	b.hs	0x1000b1208
+00000001000b11f0	str	x21, [x20, #0x10]
+00000001000b11f4	add	x8, x20, x28, lsl #3
+00000001000b11f8	stp	w23, w22, [x8, #0x20]
+00000001000b11fc	mov	x22, x26
+00000001000b1200	mov	x23, x27
+00000001000b1204	b	0x1000b11c0
+00000001000b1208	cmp	x8, #0x1
+00000001000b120c	cset	w0, hi
+00000001000b1210	mov	x1, x21
+00000001000b1214	mov	w2, #0x1
+00000001000b1218	mov	x3, x20
+00000001000b121c	bl	generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of Swift._ArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<A>
+00000001000b1220	mov	x20, x0
+00000001000b1224	b	0x1000b11f0
+00000001000b1228	brk	#0x1
+00000001000b122c	cmp	x8, #0x1
+00000001000b1230	cset	w0, hi
+00000001000b1234	mov	x1, x19
+00000001000b1238	mov	w2, #0x1
+00000001000b123c	mov	x3, x20
+00000001000b1240	bl	generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of Swift._ArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<A>
+00000001000b1244	mov	x20, x0
+00000001000b1248	b	0x1000b117c
+
+=== original B-assembly.txt lines 185297-185374 ===
+merged generic specialization <Swift.ContiguousArray<CIDR.IPAddressRange<CIDR.AF.V6>>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A.Swift.Sequence.Element>) throws -> () in (extension in Swift):Swift.MutableCollection< where A: Swift.RandomAccessCollection>.sort(by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ():
+00000001000b124c	sub	sp, sp, #0x80
+00000001000b1250	str	x28, [sp, #0x20]
+00000001000b1254	stp	x27, x26, [sp, #0x30]
+00000001000b1258	stp	x25, x24, [sp, #0x40]
+00000001000b125c	stp	x23, x22, [sp, #0x50]
+00000001000b1260	stp	x20, x19, [sp, #0x60]
+00000001000b1264	stp	x29, x30, [sp, #0x70]
+00000001000b1268	add	x29, sp, #0x70
+00000001000b126c	mov	x26, x6
+00000001000b1270	str	x5, [sp, #0x8]
+00000001000b1274	mov	x28, x4
+00000001000b1278	mov	x23, x3
+00000001000b127c	mov	x24, x21
+00000001000b1280	mov	x19, x2
+00000001000b1284	mov	x22, x1
+00000001000b1288	mov	x20, x0
+00000001000b128c	ldr	x27, [x0, #0x8]
+00000001000b1290	mov	x0, x27
+00000001000b1294	bl	0x1000bdf3c ; symbol stub for: Swift._minimumMergeRunLength(Swift.Int) -> Swift.Int
+00000001000b1298	cmp	x0, x27
+00000001000b129c	b.ge	0x1000b12e0
+00000001000b12a0	cmn	x27, #0x1
+00000001000b12a4	b.lt	0x1000b1378
+00000001000b12a8	mov	x25, x0
+00000001000b12ac	add	x8, x27, x27, lsr #63
+00000001000b12b0	asr	x26, x8, #1
+00000001000b12b4	cmp	x27, #0x2
+00000001000b12b8	b.lt	0x1000b1308
+00000001000b12bc	mov	x0, x23
+00000001000b12c0	mov	x1, x28
+00000001000b12c4	bl	___swift_instantiateConcreteTypeFromMangledNameV2
+00000001000b12c8	mov	x1, x0
+00000001000b12cc	mov	x0, x26
+00000001000b12d0	bl	0x1000bdc84 ; symbol stub for: static Swift.ContiguousArray._allocateBufferUninitialized(minimumCapacity: Swift.Int) -> Swift._ContiguousArrayBuffer<A>
+00000001000b12d4	mov	x23, x0
+00000001000b12d8	str	x26, [x0, #0x10]
+00000001000b12dc	b	0x1000b1310
+00000001000b12e0	tbnz	x27, #0x3f, 0x1000b137c
+00000001000b12e4	cbz	x27, 0x1000b1354
+00000001000b12e8	mov	x0, #0x0
+00000001000b12ec	mov	x1, x27
+00000001000b12f0	mov	w2, #0x1
+00000001000b12f4	mov	x3, x22
+00000001000b12f8	mov	x4, x19
+00000001000b12fc	mov	x21, x24
+00000001000b1300	blr	x26
+00000001000b1304	b	0x1000b1358
+00000001000b1308	adrp	x23, 56 ; 0x1000e9000
+00000001000b130c	ldr	x23, [x23, #0x568] ; literal pool symbol address: __swiftEmptyArrayStorage
+00000001000b1310	add	x8, x23, #0x20
+00000001000b1314	stp	x8, x26, [sp, #0x10]
+00000001000b1318	add	x0, sp, #0x10
+00000001000b131c	add	x1, sp, #0x28
+00000001000b1320	mov	x2, x20
+00000001000b1324	mov	x3, x22
+00000001000b1328	mov	x4, x19
+00000001000b132c	mov	x5, x25
+00000001000b1330	mov	x21, x24
+00000001000b1334	ldr	x8, [sp, #0x8]
+00000001000b1338	blr	x8
+00000001000b133c	mov	x19, x21
+00000001000b1340	str	xzr, [x23, #0x10]
+00000001000b1344	mov	x0, x23
+00000001000b1348	bl	0x1000be74c ; symbol stub for: _swift_release
+00000001000b134c	mov	x21, x19
+00000001000b1350	b	0x1000b1358
+00000001000b1354	mov	x21, x24
+00000001000b1358	ldp	x29, x30, [sp, #0x70]
+00000001000b135c	ldp	x20, x19, [sp, #0x60]
+00000001000b1360	ldp	x23, x22, [sp, #0x50]
+00000001000b1364	ldp	x25, x24, [sp, #0x40]
+00000001000b1368	ldp	x27, x26, [sp, #0x30]
+00000001000b136c	ldr	x28, [sp, #0x20]
+00000001000b1370	add	sp, sp, #0x80
+00000001000b1374	ret
+00000001000b1378	brk	#0x1
+00000001000b137c	brk	#0x1
+
+=== original B-assembly.txt lines 185375-185669 ===
+generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ():
+00000001000b1380	sub	sp, sp, #0xd0
+00000001000b1384	str	x28, [sp, #0x70]
+00000001000b1388	stp	x27, x26, [sp, #0x80]
+00000001000b138c	stp	x25, x24, [sp, #0x90]
+00000001000b1390	stp	x23, x22, [sp, #0xa0]
+00000001000b1394	stp	x20, x19, [sp, #0xb0]
+00000001000b1398	stp	x29, x30, [sp, #0xc0]
+00000001000b139c	add	x29, sp, #0xc0
+00000001000b13a0	mov	x19, x4
+00000001000b13a4	mov	x22, x3
+00000001000b13a8	mov	x20, x2
+00000001000b13ac	str	x0, [sp, #0x20]
+00000001000b13b0	adrp	x8, 56 ; 0x1000e9000
+00000001000b13b4	ldr	x8, [x8, #0x568] ; literal pool symbol address: __swiftEmptyArrayStorage
+00000001000b13b8	stur	x8, [x29, #-0x48]
+00000001000b13bc	ldr	x25, [x2, #0x8]
+00000001000b13c0	cmp	x25, #0x1
+00000001000b13c4	str	x2, [sp, #0x28]
+00000001000b13c8	b.lt	0x1000b16cc
+00000001000b13cc	str	x5, [sp, #0x18]
+00000001000b13d0	mov	x28, #0x0
+00000001000b13d4	add	x27, x28, #0x1
+00000001000b13d8	cmp	x27, x25
+00000001000b13dc	b.ge	0x1000b14b4
+00000001000b13e0	ldr	x8, [x20]
+00000001000b13e4	add	x9, x8, x27, lsl #5
+00000001000b13e8	ldr	q0, [x9]
+00000001000b13ec	ldp	x10, x9, [x9, #0x10]
+00000001000b13f0	str	q0, [sp, #0x50]
+00000001000b13f4	stp	x10, x9, [sp, #0x60]
+00000001000b13f8	add	x24, x8, x28, lsl #5
+00000001000b13fc	ldr	q0, [x24]
+00000001000b1400	ldp	x8, x9, [x24, #0x10]
+00000001000b1404	str	q0, [sp, #0x30]
+00000001000b1408	stp	x8, x9, [sp, #0x40]
+00000001000b140c	add	x0, sp, #0x50
+00000001000b1410	add	x1, sp, #0x30
+00000001000b1414	mov	x20, x19
+00000001000b1418	blr	x22
+00000001000b141c	cbnz	x21, 0x1000b16c0
+00000001000b1420	mov	x26, x0
+00000001000b1424	sub	x23, x25, #0x1
+00000001000b1428	cmp	x27, x23
+00000001000b142c	b.eq	0x1000b148c
+00000001000b1430	add	x27, x28, #0x2
+00000001000b1434	add	x24, x24, #0x50
+00000001000b1438	ldur	q0, [x24, #-0x10]
+00000001000b143c	ldp	x8, x9, [x24]
+00000001000b1440	str	q0, [sp, #0x50]
+00000001000b1444	stp	x8, x9, [sp, #0x60]
+00000001000b1448	ldur	q0, [x24, #-0x30]
+00000001000b144c	ldp	x8, x9, [x24, #-0x20]
+00000001000b1450	str	q0, [sp, #0x30]
+00000001000b1454	stp	x8, x9, [sp, #0x40]
+00000001000b1458	add	x0, sp, #0x50
+00000001000b145c	add	x1, sp, #0x30
+00000001000b1460	mov	x20, x19
+00000001000b1464	blr	x22
+00000001000b1468	cbnz	x21, 0x1000b16c0
+00000001000b146c	and	w8, w0, #0x1
+00000001000b1470	and	w9, w26, #0x1
+00000001000b1474	cmp	w9, w8
+00000001000b1478	b.ne	0x1000b1498
+00000001000b147c	add	x27, x27, #0x1
+00000001000b1480	add	x24, x24, #0x20
+00000001000b1484	cmp	x25, x27
+00000001000b1488	b.ne	0x1000b1438
+00000001000b148c	mov	x27, x25
+00000001000b1490	tbnz	w26, #0x0, 0x1000b14a0
+00000001000b1494	b	0x1000b14b0
+00000001000b1498	sub	x23, x27, #0x1
+00000001000b149c	tbz	w26, #0x0, 0x1000b14b0
+00000001000b14a0	cmp	x27, x28
+00000001000b14a4	b.lt	0x1000b17f0
+00000001000b14a8	cmp	x28, x23
+00000001000b14ac	b.le	0x1000b1618
+00000001000b14b0	ldr	x20, [sp, #0x28]
+00000001000b14b4	ldr	x8, [x20, #0x8]
+00000001000b14b8	cmp	x27, x8
+00000001000b14bc	b.ge	0x1000b14f4
+00000001000b14c0	subs	x9, x27, x28
+00000001000b14c4	b.vs	0x1000b17e4
+00000001000b14c8	ldr	x10, [sp, #0x18]
+00000001000b14cc	cmp	x9, x10
+00000001000b14d0	b.ge	0x1000b14f4
+00000001000b14d4	adds	x9, x28, x10
+00000001000b14d8	b.vs	0x1000b17e8
+00000001000b14dc	cmp	x9, x8
+00000001000b14e0	csel	x9, x9, x8, lt
+00000001000b14e4	cmp	x9, x28
+00000001000b14e8	b.lt	0x1000b17ec
+00000001000b14ec	cmp	x27, x9
+00000001000b14f0	b.ne	0x1000b1568
+00000001000b14f4	cmp	x27, x28
+00000001000b14f8	b.lt	0x1000b17e0
+00000001000b14fc	mov	x23, x21
+00000001000b1500	ldur	x25, [x29, #-0x48]
+00000001000b1504	mov	x0, x25
+00000001000b1508	bl	0x1000be728 ; symbol stub for: _swift_isUniquelyReferenced_nonNull_native
+00000001000b150c	tbz	w0, #0x0, 0x1000b167c
+00000001000b1510	mov	x21, x23
+00000001000b1514	ldp	x24, x8, [x25, #0x10]
+00000001000b1518	add	x26, x24, #0x1
+00000001000b151c	cmp	x24, x8, lsr #1
+00000001000b1520	b.hs	0x1000b169c
+00000001000b1524	str	x26, [x25, #0x10]
+00000001000b1528	add	x8, x25, x24, lsl #4
+00000001000b152c	stp	x28, x27, [x8, #0x20]
+00000001000b1530	stur	x25, [x29, #-0x48]
+00000001000b1534	ldp	x8, x20, [sp, #0x20]
+00000001000b1538	ldr	x1, [x8]
+00000001000b153c	cbz	x1, 0x1000b1810
+00000001000b1540	sub	x0, x29, #0x48
+00000001000b1544	mov	x2, x22
+00000001000b1548	mov	x3, x19
+00000001000b154c	bl	generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of Swift.UnsafeMutableBufferPointer._mergeTopRuns(_: inout [Swift.Range<Swift.Int>], buffer: Swift.UnsafeMutablePointer<A>, by: (A, A) throws -> Swift.Bool) throws -> Swift.Bool
+00000001000b1550	cbnz	x21, 0x1000b16c0
+00000001000b1554	ldr	x25, [x20, #0x8]
+00000001000b1558	mov	x28, x27
+00000001000b155c	cmp	x27, x25
+00000001000b1560	b.lt	0x1000b13d4
+00000001000b1564	b	0x1000b16cc
+00000001000b1568	ldr	x25, [x20]
+00000001000b156c	add	x8, x25, x27, lsl #5
+00000001000b1570	sub	x24, x8, #0x20
+00000001000b1574	sub	x23, x28, x27
+00000001000b1578	str	x9, [sp, #0x8]
+00000001000b157c	add	x10, x25, x27, lsl #5
+00000001000b1580	ldp	x8, x9, [x10, #0x10]
+00000001000b1584	ldp	x10, x11, [x10]
+00000001000b1588	mov	x26, x23
+00000001000b158c	str	x24, [sp, #0x10]
+00000001000b1590	stp	x10, x11, [sp, #0x50]
+00000001000b1594	stp	x8, x9, [sp, #0x60]
+00000001000b1598	ldr	q0, [x24]
+00000001000b159c	ldp	x8, x9, [x24, #0x10]
+00000001000b15a0	str	q0, [sp, #0x30]
+00000001000b15a4	stp	x8, x9, [sp, #0x40]
+00000001000b15a8	add	x0, sp, #0x50
+00000001000b15ac	add	x1, sp, #0x30
+00000001000b15b0	mov	x20, x19
+00000001000b15b4	blr	x22
+00000001000b15b8	cbnz	x21, 0x1000b16c0
+00000001000b15bc	tbz	w0, #0x0, 0x1000b15f0
+00000001000b15c0	cbz	x25, 0x1000b1804
+00000001000b15c4	ldp	x8, x9, [x24, #0x30]
+00000001000b15c8	fmov	d0, x8
+00000001000b15cc	mov.d	v0[1], x9
+00000001000b15d0	ldp	x10, x11, [x24, #0x20]
+00000001000b15d4	fmov	d1, x10
+00000001000b15d8	mov.d	v1[1], x11
+00000001000b15dc	ldp	q2, q3, [x24]
+00000001000b15e0	stp	q2, q3, [x24, #0x20]
+00000001000b15e4	stp	q1, q0, [x24], #-0x20
+00000001000b15e8	adds	x26, x26, #0x1
+00000001000b15ec	b.lo	0x1000b1590
+00000001000b15f0	add	x27, x27, #0x1
+00000001000b15f4	ldp	x9, x24, [sp, #0x8]
+00000001000b15f8	add	x24, x24, #0x20
+00000001000b15fc	sub	x23, x23, #0x1
+00000001000b1600	cmp	x27, x9
+00000001000b1604	b.ne	0x1000b157c
+00000001000b1608	mov	x27, x9
+00000001000b160c	cmp	x27, x28
+00000001000b1610	b.ge	0x1000b14fc
+00000001000b1614	b	0x1000b17e0
+00000001000b1618	ldr	x20, [sp, #0x28]
+00000001000b161c	ldr	x8, [x20]
+00000001000b1620	lsl	x9, x27, #5
+00000001000b1624	lsl	x10, x28, #5
+00000001000b1628	mov	x11, x27
+00000001000b162c	mov	x12, x28
+00000001000b1630	b	0x1000b1668
+00000001000b1634	add	x13, x8, x10
+00000001000b1638	add	x14, x8, x9
+00000001000b163c	ldr	q0, [x13]
+00000001000b1640	ldp	x15, x16, [x13, #0x10]
+00000001000b1644	ldp	q2, q1, [x14, #-0x20]
+00000001000b1648	stp	q2, q1, [x13]
+00000001000b164c	stur	q0, [x14, #-0x20]
+00000001000b1650	stp	x15, x16, [x14, #-0x10]
+00000001000b1654	add	x12, x12, #0x1
+00000001000b1658	sub	x9, x9, #0x20
+00000001000b165c	add	x10, x10, #0x20
+00000001000b1660	cmp	x12, x11
+00000001000b1664	b.ge	0x1000b14b4
+00000001000b1668	sub	x11, x11, #0x1
+00000001000b166c	cmp	x12, x11
+00000001000b1670	b.eq	0x1000b1654
+00000001000b1674	cbnz	x8, 0x1000b1634
+00000001000b1678	b	0x1000b1808
+00000001000b167c	ldr	x8, [x25, #0x10]
+00000001000b1680	add	x1, x8, #0x1
+00000001000b1684	mov	w0, #0x0
+00000001000b1688	mov	w2, #0x1
+00000001000b168c	mov	x3, x25
+00000001000b1690	bl	generic specialization <serialized, Swift.Range<Swift.Int>> of Swift._ArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<A>
+00000001000b1694	mov	x25, x0
+00000001000b1698	b	0x1000b1510
+00000001000b169c	cmp	x8, #0x1
+00000001000b16a0	cset	w0, hi
+00000001000b16a4	mov	x1, x26
+00000001000b16a8	mov	w2, #0x1
+00000001000b16ac	mov	x3, x25
+00000001000b16b0	bl	generic specialization <serialized, Swift.Range<Swift.Int>> of Swift._ArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<A>
+00000001000b16b4	mov	x21, x23
+00000001000b16b8	mov	x25, x0
+00000001000b16bc	b	0x1000b1524
+00000001000b16c0	mov	x25, x21
+00000001000b16c4	ldur	x24, [x29, #-0x48]
+00000001000b16c8	b	0x1000b17ac
+00000001000b16cc	ldr	x8, [sp, #0x20]
+00000001000b16d0	ldr	x8, [x8]
+00000001000b16d4	str	x8, [sp, #0x20]
+00000001000b16d8	cbz	x8, 0x1000b1814
+00000001000b16dc	mov	x25, x21
+00000001000b16e0	ldur	x24, [x29, #-0x48]
+00000001000b16e4	mov	x0, x24
+00000001000b16e8	bl	0x1000be728 ; symbol stub for: _swift_isUniquelyReferenced_nonNull_native
+00000001000b16ec	tbz	w0, #0x0, 0x1000b17f4
+00000001000b16f0	stur	x24, [x29, #-0x48]
+00000001000b16f4	ldr	x27, [x24, #0x10]
+00000001000b16f8	cmp	x27, #0x2
+00000001000b16fc	b.lo	0x1000b17ac
+00000001000b1700	ldr	x8, [x20]
+00000001000b1704	cbz	x8, 0x1000b180c
+00000001000b1708	sub	x26, x27, #0x1
+00000001000b170c	lsl	x9, x27, #4
+00000001000b1710	ldr	x23, [x24, x9]
+00000001000b1714	add	x9, x24, x26, lsl #4
+00000001000b1718	ldp	x9, x28, [x9, #0x20]
+00000001000b171c	add	x0, x8, x23, lsl #5
+00000001000b1720	add	x1, x8, x9, lsl #5
+00000001000b1724	add	x2, x8, x28, lsl #5
+00000001000b1728	ldr	x3, [sp, #0x20]
+00000001000b172c	mov	x4, x22
+00000001000b1730	mov	x5, x19
+00000001000b1734	mov	x21, x25
+00000001000b1738	bl	generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of Swift._merge<A>(low: Swift.UnsafeMutablePointer<A>, mid: Swift.UnsafeMutablePointer<A>, high: Swift.UnsafeMutablePointer<A>, buffer: Swift.UnsafeMutablePointer<A>, by: (A, A) throws -> Swift.Bool) throws -> Swift.Bool
+00000001000b173c	cbnz	x21, 0x1000b17a8
+00000001000b1740	cmp	x28, x23
+00000001000b1744	b.lt	0x1000b17d8
+00000001000b1748	mov	x25, x21
+00000001000b174c	mov	x0, x24
+00000001000b1750	bl	0x1000be728 ; symbol stub for: _swift_isUniquelyReferenced_nonNull_native
+00000001000b1754	tbz	w0, #0x0, 0x1000b1798
+00000001000b1758	sub	x8, x27, #0x2
+00000001000b175c	ldr	x9, [x24, #0x10]
+00000001000b1760	cmp	x8, x9
+00000001000b1764	b.hs	0x1000b17dc
+00000001000b1768	add	x8, x24, x27, lsl #4
+00000001000b176c	stp	x23, x28, [x8]
+00000001000b1770	stur	x24, [x29, #-0x48]
+00000001000b1774	sub	x20, x29, #0x48
+00000001000b1778	mov	x0, x26
+00000001000b177c	bl	generic specialization <serialized, Swift.Range<Swift.Int>> of Swift.Array.remove(at: Swift.Int) -> A
+00000001000b1780	ldur	x24, [x29, #-0x48]
+00000001000b1784	ldr	x27, [x24, #0x10]
+00000001000b1788	cmp	x27, #0x1
+00000001000b178c	ldr	x20, [sp, #0x28]
+00000001000b1790	b.hi	0x1000b1700
+00000001000b1794	b	0x1000b17ac
+00000001000b1798	mov	x0, x24
+00000001000b179c	bl	generic specialization <serialized, Swift.Range<Swift.Int>> of Swift._ArrayBuffer._consumeAndCreateNew() -> Swift._ArrayBuffer<A>
+00000001000b17a0	mov	x24, x0
+00000001000b17a4	b	0x1000b1758
+00000001000b17a8	mov	x25, x21
+00000001000b17ac	mov	x0, x24
+00000001000b17b0	bl	0x1000be554 ; symbol stub for: _swift_bridgeObjectRelease
+00000001000b17b4	mov	x21, x25
+00000001000b17b8	ldp	x29, x30, [sp, #0xc0]
+00000001000b17bc	ldp	x20, x19, [sp, #0xb0]
+00000001000b17c0	ldp	x23, x22, [sp, #0xa0]
+00000001000b17c4	ldp	x25, x24, [sp, #0x90]
+00000001000b17c8	ldp	x27, x26, [sp, #0x80]
+00000001000b17cc	ldr	x28, [sp, #0x70]
+00000001000b17d0	add	sp, sp, #0xd0
+00000001000b17d4	ret
+00000001000b17d8	brk	#0x1
+00000001000b17dc	brk	#0x1
+00000001000b17e0	brk	#0x1
+00000001000b17e4	brk	#0x1
+00000001000b17e8	brk	#0x1
+00000001000b17ec	brk	#0x1
+00000001000b17f0	brk	#0x1
+00000001000b17f4	mov	x0, x24
+00000001000b17f8	bl	generic specialization <serialized, Swift.Range<Swift.Int>> of Swift._ArrayBuffer._consumeAndCreateNew() -> Swift._ArrayBuffer<A>
+00000001000b17fc	mov	x24, x0
+00000001000b1800	b	0x1000b16f0
+00000001000b1804	brk	#0x1
+00000001000b1808	brk	#0x1
+00000001000b180c	brk	#0x1
+00000001000b1810	brk	#0x1
+00000001000b1814	brk	#0x1
+
+=== original B-assembly.txt lines 185941-186003 ===
+generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V6>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ():
+00000001000b1c50	sub	sp, sp, #0xa0
+00000001000b1c54	str	x28, [sp, #0x40]
+00000001000b1c58	stp	x27, x26, [sp, #0x50]
+00000001000b1c5c	stp	x25, x24, [sp, #0x60]
+00000001000b1c60	stp	x23, x22, [sp, #0x70]
+00000001000b1c64	stp	x20, x19, [sp, #0x80]
+00000001000b1c68	stp	x29, x30, [sp, #0x90]
+00000001000b1c6c	add	x29, sp, #0x90
+00000001000b1c70	cmp	x2, x1
+00000001000b1c74	b.ne	0x1000b1c98
+00000001000b1c78	ldp	x29, x30, [sp, #0x90]
+00000001000b1c7c	ldp	x20, x19, [sp, #0x80]
+00000001000b1c80	ldp	x23, x22, [sp, #0x70]
+00000001000b1c84	ldp	x25, x24, [sp, #0x60]
+00000001000b1c88	ldp	x27, x26, [sp, #0x50]
+00000001000b1c8c	ldr	x28, [sp, #0x40]
+00000001000b1c90	add	sp, sp, #0xa0
+00000001000b1c94	ret
+00000001000b1c98	mov	x8, x20
+00000001000b1c9c	mov	x20, x4
+00000001000b1ca0	mov	x19, x3
+00000001000b1ca4	mov	x22, x2
+00000001000b1ca8	mov	x23, x1
+00000001000b1cac	ldr	x24, [x8]
+00000001000b1cb0	add	x8, x24, x2, lsl #5
+00000001000b1cb4	sub	x25, x8, #0x20
+00000001000b1cb8	sub	x26, x0, x2
+00000001000b1cbc	add	x10, x24, x22, lsl #5
+00000001000b1cc0	ldp	x8, x9, [x10, #0x10]
+00000001000b1cc4	ldp	x10, x11, [x10]
+00000001000b1cc8	mov	x27, x26
+00000001000b1ccc	mov	x28, x25
+00000001000b1cd0	stp	x10, x11, [sp, #0x20]
+00000001000b1cd4	stp	x8, x9, [sp, #0x30]
+00000001000b1cd8	ldr	q0, [x28]
+00000001000b1cdc	ldp	x8, x9, [x28, #0x10]
+00000001000b1ce0	str	q0, [sp]
+00000001000b1ce4	stp	x8, x9, [sp, #0x10]
+00000001000b1ce8	add	x0, sp, #0x20
+00000001000b1cec	mov	x1, sp
+00000001000b1cf0	blr	x19
+00000001000b1cf4	cbnz	x21, 0x1000b1c78
+00000001000b1cf8	tbz	w0, #0x0, 0x1000b1d2c
+00000001000b1cfc	cbz	x24, 0x1000b1d44
+00000001000b1d00	ldp	x8, x9, [x28, #0x30]
+00000001000b1d04	fmov	d0, x8
+00000001000b1d08	mov.d	v0[1], x9
+00000001000b1d0c	ldp	x10, x11, [x28, #0x20]
+00000001000b1d10	fmov	d1, x10
+00000001000b1d14	mov.d	v1[1], x11
+00000001000b1d18	ldp	q2, q3, [x28]
+00000001000b1d1c	stp	q2, q3, [x28, #0x20]
+00000001000b1d20	stp	q1, q0, [x28], #-0x20
+00000001000b1d24	adds	x27, x27, #0x1
+00000001000b1d28	b.lo	0x1000b1cd0
+00000001000b1d2c	add	x22, x22, #0x1
+00000001000b1d30	add	x25, x25, #0x20
+00000001000b1d34	sub	x26, x26, #0x1
+00000001000b1d38	cmp	x22, x23
+00000001000b1d3c	b.ne	0x1000b1cbc
+00000001000b1d40	b	0x1000b1c78
+00000001000b1d44	brk	#0x1
+
+=== original B-assembly.txt lines 185066-185190 ===
+generic specialization <CIDR.AF.V6, [CIDR.IPAddressRange<CIDR.AF.V6>]> of static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]:
+00000001000b0eb8	sub	sp, sp, #0xa0
+00000001000b0ebc	stp	x28, x27, [sp, #0x40]
+00000001000b0ec0	stp	x26, x25, [sp, #0x50]
+00000001000b0ec4	stp	x24, x23, [sp, #0x60]
+00000001000b0ec8	stp	x22, x21, [sp, #0x70]
+00000001000b0ecc	stp	x20, x19, [sp, #0x80]
+00000001000b0ed0	stp	x29, x30, [sp, #0x90]
+00000001000b0ed4	add	x29, sp, #0x90
+00000001000b0ed8	mov	x19, x0
+00000001000b0edc	bl	0x1000be56c ; symbol stub for: _swift_bridgeObjectRetain
+00000001000b0ee0	bl	0x1000be728 ; symbol stub for: _swift_isUniquelyReferenced_nonNull_native
+00000001000b0ee4	tbnz	w0, #0x0, 0x1000b0ef4
+00000001000b0ee8	mov	x0, x19
+00000001000b0eec	bl	generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of Swift._ContiguousArrayBuffer._consumeAndCreateNew() -> Swift._ContiguousArrayBuffer<A>
+00000001000b0ef0	mov	x19, x0
+00000001000b0ef4	ldr	x8, [x19, #0x10]
+00000001000b0ef8	add	x9, x19, #0x20
+00000001000b0efc	stp	x9, x8, [sp, #0x28]
+00000001000b0f00	adrp	x1, 2 ; 0x1000b2000
+00000001000b0f04	add	x1, x1, #0xb90
+00000001000b0f08	adrp	x3, 62 ; 0x1000ee000
+00000001000b0f0c	add	x3, x3, #0xeb0
+00000001000b0f10	adrp	x4, 22 ; 0x1000c6000
+00000001000b0f14	add	x4, x4, #0x268
+00000001000b0f18	adrp	x5, 1 ; 0x1000b1000
+00000001000b0f1c	add	x5, x5, #0x380
+00000001000b0f20	adrp	x6, 1 ; 0x1000b1000
+00000001000b0f24	add	x6, x6, #0xc50
+00000001000b0f28	add	x8, sp, #0x3f
+00000001000b0f2c	add	x0, sp, #0x28
+00000001000b0f30	mov	x2, #0x0
+00000001000b0f34	mov	x21, #0x0
+00000001000b0f38	bl	merged generic specialization <Swift.ContiguousArray<CIDR.IPAddressRange<CIDR.AF.V6>>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A.Swift.Sequence.Element>) throws -> () in (extension in Swift):Swift.MutableCollection< where A: Swift.RandomAccessCollection>.sort(by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()
+00000001000b0f3c	ldr	x1, [x19, #0x10]
+00000001000b0f40	cmp	x1, #0x2
+00000001000b0f44	b.lo	0x1000b0fb0
+00000001000b0f48	adrp	x3, 57 ; 0x1000e9000
+00000001000b0f4c	ldr	x3, [x3, #0x568] ; literal pool symbol address: __swiftEmptyArrayStorage
+00000001000b0f50	mov	w0, #0x0
+00000001000b0f54	mov	w2, #0x0
+00000001000b0f58	bl	generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of Swift._ArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<A>
+00000001000b0f5c	ldr	x8, [x19, #0x10]
+00000001000b0f60	cbz	x8, 0x1000b1084
+00000001000b0f64	mov	x21, x0
+00000001000b0f68	ldp	x11, x12, [x19, #0x20]
+00000001000b0f6c	ldp	x25, x24, [x19, #0x30]
+00000001000b0f70	subs	x26, x8, #0x1
+00000001000b0f74	str	x19, [sp, #0x18]
+00000001000b0f78	b.ne	0x1000b0fd4
+00000001000b0f7c	mov	x23, x12
+00000001000b0f80	mov	x22, x11
+00000001000b0f84	ldr	x0, [sp, #0x18]
+00000001000b0f88	bl	0x1000be74c ; symbol stub for: _swift_release
+00000001000b0f8c	ldp	x20, x8, [x21, #0x10]
+00000001000b0f90	add	x19, x20, #0x1
+00000001000b0f94	cmp	x20, x8, lsr #1
+00000001000b0f98	b.hs	0x1000b1088
+00000001000b0f9c	str	x19, [x21, #0x10]
+00000001000b0fa0	add	x8, x21, x20, lsl #5
+00000001000b0fa4	stp	x22, x23, [x8, #0x20]
+00000001000b0fa8	stp	x25, x24, [x8, #0x30]
+00000001000b0fac	mov	x19, x21
+00000001000b0fb0	mov	x0, x19
+00000001000b0fb4	ldp	x29, x30, [sp, #0x90]
+00000001000b0fb8	ldp	x20, x19, [sp, #0x80]
+00000001000b0fbc	ldp	x22, x21, [sp, #0x70]
+00000001000b0fc0	ldp	x24, x23, [sp, #0x60]
+00000001000b0fc4	ldp	x26, x25, [sp, #0x50]
+00000001000b0fc8	ldp	x28, x27, [sp, #0x40]
+00000001000b0fcc	add	sp, sp, #0xa0
+00000001000b0fd0	ret
+00000001000b0fd4	add	x27, x19, #0x50
+00000001000b0fd8	b	0x1000b0ff8
+00000001000b0fdc	cmp	x25, x22
+00000001000b0fe0	sbcs	xzr, x24, x23
+00000001000b0fe4	csel	x24, x23, x24, lo
+00000001000b0fe8	csel	x25, x22, x25, lo
+00000001000b0fec	add	x27, x27, #0x20
+00000001000b0ff0	subs	x26, x26, #0x1
+00000001000b0ff4	b.eq	0x1000b0f7c
+00000001000b0ff8	ldp	x19, x28, [x27, #-0x10]
+00000001000b0ffc	ldp	x22, x23, [x27]
+00000001000b1000	cmp	x25, x19
+00000001000b1004	sbcs	xzr, x24, x28
+00000001000b1008	cset	w10, hs
+00000001000b100c	adds	x8, x25, #0x1
+00000001000b1010	cinc	x9, x24, hs
+00000001000b1014	tbnz	w10, #0x0, 0x1000b0fdc
+00000001000b1018	cmp	x9, x28
+00000001000b101c	ccmp	x8, x19, #0x0, eq
+00000001000b1020	b.eq	0x1000b0fdc
+00000001000b1024	ldp	x20, x8, [x21, #0x10]
+00000001000b1028	mov	x3, x21
+00000001000b102c	add	x21, x20, #0x1
+00000001000b1030	cmp	x20, x8, lsr #1
+00000001000b1034	b.hs	0x1000b1060
+00000001000b1038	str	x21, [x3, #0x10]
+00000001000b103c	mov	x21, x3
+00000001000b1040	add	x8, x3, x20, lsl #5
+00000001000b1044	stp	x11, x12, [x8, #0x20]
+00000001000b1048	stp	x25, x24, [x8, #0x30]
+00000001000b104c	mov	x25, x22
+00000001000b1050	mov	x24, x23
+00000001000b1054	mov	x11, x19
+00000001000b1058	mov	x12, x28
+00000001000b105c	b	0x1000b0fec
+00000001000b1060	cmp	x8, #0x1
+00000001000b1064	cset	w0, hi
+00000001000b1068	mov	x1, x21
+00000001000b106c	mov	w2, #0x1
+00000001000b1070	stp	x12, x11, [sp, #0x8]
+00000001000b1074	bl	generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of Swift._ArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<A>
+00000001000b1078	ldp	x12, x11, [sp, #0x8]
+00000001000b107c	mov	x3, x0
+00000001000b1080	b	0x1000b1038
+00000001000b1084	brk	#0x1
+00000001000b1088	cmp	x8, #0x1
+00000001000b108c	cset	w0, hi
+00000001000b1090	mov	x1, x19
+00000001000b1094	mov	w2, #0x1
+00000001000b1098	mov	x3, x21
+00000001000b109c	bl	generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of Swift._ArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<A>
+00000001000b10a0	mov	x21, x0
+00000001000b10a4	b	0x1000b0f9c

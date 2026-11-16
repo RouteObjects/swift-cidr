@@ -1,0 +1,3191 @@
+{
+  "passed": true,
+  "completed_at": "2026-11-16T03:53:10.759688+00:00",
+  "samples": [
+    {
+      "round": 1,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:46.426702+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 161871083,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-01/mixed-permuted/B/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 33275904,
+          "bsd_time": {
+            "real": 0.15,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 298167250,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-01/mixed-permuted/B/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80756736,
+          "bsd_time": {
+            "real": 0.29,
+            "user": 0.27,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 460038333,
+      "peak_rss_bytes": 80756736,
+      "cpu_seconds": 0.42000000000000004,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:46.899161+00:00"
+    },
+    {
+      "round": 1,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:46.900097+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 170854625,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-01/mixed-permuted/C/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 34897920,
+          "bsd_time": {
+            "real": 0.16,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 308864708,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-01/mixed-permuted/C/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80740352,
+          "bsd_time": {
+            "real": 0.3,
+            "user": 0.28,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 479719333,
+      "peak_rss_bytes": 80740352,
+      "cpu_seconds": 0.43000000000000005,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:47.392509+00:00"
+    },
+    {
+      "round": 1,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:47.393228+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 371762333,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-01/bgp-like-ipv4/B/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 37797888,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.35,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 371762333,
+      "peak_rss_bytes": 37797888,
+      "cpu_seconds": 0.35,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:47.768257+00:00"
+    },
+    {
+      "round": 1,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:47.768755+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 430809334,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-01/bgp-like-ipv4/C/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 36929536,
+          "bsd_time": {
+            "real": 0.42,
+            "user": 0.35,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 430809334,
+      "peak_rss_bytes": 36929536,
+      "cpu_seconds": 0.35,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:48.202875+00:00"
+    },
+    {
+      "round": 2,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:48.203612+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 363951667,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-02/bgp-like-ipv4/C/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 36192256,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.34,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 363951667,
+      "peak_rss_bytes": 36192256,
+      "cpu_seconds": 0.34,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:48.570892+00:00"
+    },
+    {
+      "round": 2,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:48.571348+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 365715667,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-02/bgp-like-ipv4/B/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 36962304,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.34,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 365715667,
+      "peak_rss_bytes": 36962304,
+      "cpu_seconds": 0.34,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:48.944117+00:00"
+    },
+    {
+      "round": 2,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:48.944854+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 209954459,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-02/mixed-permuted/C/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 33521664,
+          "bsd_time": {
+            "real": 0.19,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 299468667,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-02/mixed-permuted/C/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80756736,
+          "bsd_time": {
+            "real": 0.29,
+            "user": 0.27,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 509423126,
+      "peak_rss_bytes": 80756736,
+      "cpu_seconds": 0.42000000000000004,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:49.466291+00:00"
+    },
+    {
+      "round": 2,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:49.466843+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 161566667,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-02/mixed-permuted/B/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 33275904,
+          "bsd_time": {
+            "real": 0.15,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 299111167,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-02/mixed-permuted/B/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80789504,
+          "bsd_time": {
+            "real": 0.29,
+            "user": 0.27,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 460677834,
+      "peak_rss_bytes": 80789504,
+      "cpu_seconds": 0.42000000000000004,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:49.938804+00:00"
+    },
+    {
+      "round": 3,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:49.939644+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 158919750,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-03/mixed-permuted/B/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 33259520,
+          "bsd_time": {
+            "real": 0.15,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 297503125,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-03/mixed-permuted/B/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80773120,
+          "bsd_time": {
+            "real": 0.29,
+            "user": 0.27,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 456422875,
+      "peak_rss_bytes": 80773120,
+      "cpu_seconds": 0.42000000000000004,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:50.407174+00:00"
+    },
+    {
+      "round": 3,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:50.407659+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 159838541,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-03/mixed-permuted/C/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 33718272,
+          "bsd_time": {
+            "real": 0.15,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 294530125,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-03/mixed-permuted/C/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80723968,
+          "bsd_time": {
+            "real": 0.29,
+            "user": 0.27,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 454368666,
+      "peak_rss_bytes": 80723968,
+      "cpu_seconds": 0.42000000000000004,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:50.873347+00:00"
+    },
+    {
+      "round": 3,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:50.873998+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 361332500,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-03/bgp-like-ipv4/B/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 36995072,
+          "bsd_time": {
+            "real": 0.35,
+            "user": 0.34,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 361332500,
+      "peak_rss_bytes": 36995072,
+      "cpu_seconds": 0.34,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:51.238769+00:00"
+    },
+    {
+      "round": 3,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:51.239312+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 360703208,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-03/bgp-like-ipv4/C/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 36519936,
+          "bsd_time": {
+            "real": 0.35,
+            "user": 0.34,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 360703208,
+      "peak_rss_bytes": 36519936,
+      "cpu_seconds": 0.34,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:51.603439+00:00"
+    },
+    {
+      "round": 4,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:51.604141+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 367831958,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-04/bgp-like-ipv4/C/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 36913152,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.35,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 367831958,
+      "peak_rss_bytes": 36913152,
+      "cpu_seconds": 0.35,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:51.975069+00:00"
+    },
+    {
+      "round": 4,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:51.975535+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 371228709,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-04/bgp-like-ipv4/B/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 37715968,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.34,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 371228709,
+      "peak_rss_bytes": 37715968,
+      "cpu_seconds": 0.34,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:52.350194+00:00"
+    },
+    {
+      "round": 4,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:52.351031+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 160761916,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-04/mixed-permuted/C/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 33685504,
+          "bsd_time": {
+            "real": 0.15,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 295657833,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-04/mixed-permuted/C/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80740352,
+          "bsd_time": {
+            "real": 0.29,
+            "user": 0.27,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 456419749,
+      "peak_rss_bytes": 80740352,
+      "cpu_seconds": 0.42000000000000004,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:52.819056+00:00"
+    },
+    {
+      "round": 4,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:52.819669+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 160600125,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-04/mixed-permuted/B/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 32948224,
+          "bsd_time": {
+            "real": 0.15,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 300343042,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-04/mixed-permuted/B/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80789504,
+          "bsd_time": {
+            "real": 0.29,
+            "user": 0.27,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 460943167,
+      "peak_rss_bytes": 80789504,
+      "cpu_seconds": 0.42000000000000004,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:53.292709+00:00"
+    },
+    {
+      "round": 5,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:53.293518+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 165511666,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-05/mixed-permuted/B/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 34521088,
+          "bsd_time": {
+            "real": 0.16,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 304996250,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-05/mixed-permuted/B/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80822272,
+          "bsd_time": {
+            "real": 0.3,
+            "user": 0.28,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 470507916,
+      "peak_rss_bytes": 80822272,
+      "cpu_seconds": 0.43000000000000005,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:53.775799+00:00"
+    },
+    {
+      "round": 5,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:53.776354+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 166287208,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-05/mixed-permuted/C/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 33226752,
+          "bsd_time": {
+            "real": 0.16,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 305728458,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-05/mixed-permuted/C/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80773120,
+          "bsd_time": {
+            "real": 0.3,
+            "user": 0.27,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 472015666,
+      "peak_rss_bytes": 80773120,
+      "cpu_seconds": 0.42000000000000004,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:54.260361+00:00"
+    },
+    {
+      "round": 5,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:54.261157+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 366142667,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-05/bgp-like-ipv4/B/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 37732352,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.34,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 366142667,
+      "peak_rss_bytes": 37732352,
+      "cpu_seconds": 0.35000000000000003,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:54.630610+00:00"
+    },
+    {
+      "round": 5,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:54.631073+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 364893792,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-05/bgp-like-ipv4/C/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 36126720,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.34,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 364893792,
+      "peak_rss_bytes": 36126720,
+      "cpu_seconds": 0.34,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:54.999246+00:00"
+    },
+    {
+      "round": 6,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:55.000014+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 365212000,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-06/bgp-like-ipv4/C/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 39092224,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.34,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 365212000,
+      "peak_rss_bytes": 39092224,
+      "cpu_seconds": 0.34,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:55.368474+00:00"
+    },
+    {
+      "round": 6,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:55.368955+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 366599959,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-06/bgp-like-ipv4/B/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 37781504,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.34,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 366599959,
+      "peak_rss_bytes": 37781504,
+      "cpu_seconds": 0.34,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:55.738931+00:00"
+    },
+    {
+      "round": 6,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:55.739708+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 159775416,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-06/mixed-permuted/C/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 35094528,
+          "bsd_time": {
+            "real": 0.15,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 305285834,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-06/mixed-permuted/C/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80756736,
+          "bsd_time": {
+            "real": 0.3,
+            "user": 0.28,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 465061250,
+      "peak_rss_bytes": 80756736,
+      "cpu_seconds": 0.43000000000000005,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:56.216166+00:00"
+    },
+    {
+      "round": 6,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:56.216703+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 167982875,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-06/mixed-permuted/B/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 33308672,
+          "bsd_time": {
+            "real": 0.16,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 304755958,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/round-06/mixed-permuted/B/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80773120,
+          "bsd_time": {
+            "real": 0.3,
+            "user": 0.27,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 472738833,
+      "peak_rss_bytes": 80773120,
+      "cpu_seconds": 0.42000000000000004,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:56.701402+00:00"
+    },
+    {
+      "round": 1,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:58.403552+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 427033792,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-01/mixed-disjoint/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 108773376,
+          "bsd_time": {
+            "real": 0.42,
+            "user": 0.35,
+            "sys": 0.02
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 427033792,
+      "peak_rss_bytes": 108773376,
+      "cpu_seconds": 0.37,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:58.840539+00:00"
+    },
+    {
+      "round": 1,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:58.841210+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 366093292,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-01/mixed-disjoint/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 109133824,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.33,
+            "sys": 0.02
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 366093292,
+      "peak_rss_bytes": 109133824,
+      "cpu_seconds": 0.35000000000000003,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:59.217158+00:00"
+    },
+    {
+      "round": 1,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:59.218023+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 484782042,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-01/mixed-permuted/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 107233280,
+          "bsd_time": {
+            "real": 0.48,
+            "user": 0.42,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 484782042,
+      "peak_rss_bytes": 107233280,
+      "cpu_seconds": 0.43,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:59.712840+00:00"
+    },
+    {
+      "round": 1,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:59.713501+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 457167125,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-01/mixed-permuted/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 108396544,
+          "bsd_time": {
+            "real": 0.45,
+            "user": 0.42,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 457167125,
+      "peak_rss_bytes": 108396544,
+      "cpu_seconds": 0.43,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:00.180520+00:00"
+    },
+    {
+      "round": 2,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:53:00.181238+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 463222334,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-02/mixed-permuted/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 109133824,
+          "bsd_time": {
+            "real": 0.45,
+            "user": 0.43,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 463222334,
+      "peak_rss_bytes": 109133824,
+      "cpu_seconds": 0.44,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:00.654421+00:00"
+    },
+    {
+      "round": 2,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:53:00.655088+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 455947708,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-02/mixed-permuted/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 107626496,
+          "bsd_time": {
+            "real": 0.45,
+            "user": 0.42,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 455947708,
+      "peak_rss_bytes": 107626496,
+      "cpu_seconds": 0.43,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:01.120913+00:00"
+    },
+    {
+      "round": 2,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "C",
+      "started_at": "2026-11-16T03:53:01.121714+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 362580250,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-02/mixed-disjoint/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 108003328,
+          "bsd_time": {
+            "real": 0.35,
+            "user": 0.33,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 362580250,
+      "peak_rss_bytes": 108003328,
+      "cpu_seconds": 0.34,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:01.494230+00:00"
+    },
+    {
+      "round": 2,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "B",
+      "started_at": "2026-11-16T03:53:01.494871+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 364755042,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-02/mixed-disjoint/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 106774528,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.33,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 364755042,
+      "peak_rss_bytes": 106774528,
+      "cpu_seconds": 0.34,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:01.869442+00:00"
+    },
+    {
+      "round": 3,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "B",
+      "started_at": "2026-11-16T03:53:01.870324+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 357796959,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-03/mixed-disjoint/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 108331008,
+          "bsd_time": {
+            "real": 0.35,
+            "user": 0.33,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 357796959,
+      "peak_rss_bytes": 108331008,
+      "cpu_seconds": 0.34,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:02.238113+00:00"
+    },
+    {
+      "round": 3,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "C",
+      "started_at": "2026-11-16T03:53:02.238603+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 361033125,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-03/mixed-disjoint/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 108019712,
+          "bsd_time": {
+            "real": 0.35,
+            "user": 0.33,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 361033125,
+      "peak_rss_bytes": 108019712,
+      "cpu_seconds": 0.34,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:02.609531+00:00"
+    },
+    {
+      "round": 3,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:53:02.610413+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 453458041,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-03/mixed-permuted/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 106741760,
+          "bsd_time": {
+            "real": 0.45,
+            "user": 0.42,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 453458041,
+      "peak_rss_bytes": 106741760,
+      "cpu_seconds": 0.43,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:03.073866+00:00"
+    },
+    {
+      "round": 3,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:53:03.074478+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 455258541,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-03/mixed-permuted/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 107610112,
+          "bsd_time": {
+            "real": 0.45,
+            "user": 0.42,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 455258541,
+      "peak_rss_bytes": 107610112,
+      "cpu_seconds": 0.43,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:03.539804+00:00"
+    },
+    {
+      "round": 4,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:53:03.540581+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 455820791,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-04/mixed-permuted/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 108707840,
+          "bsd_time": {
+            "real": 0.45,
+            "user": 0.42,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 455820791,
+      "peak_rss_bytes": 108707840,
+      "cpu_seconds": 0.43,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:04.006254+00:00"
+    },
+    {
+      "round": 4,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:53:04.006842+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 454869375,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-04/mixed-permuted/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 108003328,
+          "bsd_time": {
+            "real": 0.45,
+            "user": 0.42,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 454869375,
+      "peak_rss_bytes": 108003328,
+      "cpu_seconds": 0.43,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:04.471207+00:00"
+    },
+    {
+      "round": 4,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "C",
+      "started_at": "2026-11-16T03:53:04.471837+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 363973333,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-04/mixed-disjoint/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 107986944,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.33,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 363973333,
+      "peak_rss_bytes": 107986944,
+      "cpu_seconds": 0.34,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:04.845847+00:00"
+    },
+    {
+      "round": 4,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "B",
+      "started_at": "2026-11-16T03:53:04.846329+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 364913334,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-04/mixed-disjoint/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 107560960,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.33,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 364913334,
+      "peak_rss_bytes": 107560960,
+      "cpu_seconds": 0.34,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:05.220999+00:00"
+    },
+    {
+      "round": 5,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "B",
+      "started_at": "2026-11-16T03:53:05.222036+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 361864417,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-05/mixed-disjoint/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 107986944,
+          "bsd_time": {
+            "real": 0.35,
+            "user": 0.33,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 361864417,
+      "peak_rss_bytes": 107986944,
+      "cpu_seconds": 0.34,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:05.594032+00:00"
+    },
+    {
+      "round": 5,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "C",
+      "started_at": "2026-11-16T03:53:05.595556+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 362811959,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-05/mixed-disjoint/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 109117440,
+          "bsd_time": {
+            "real": 0.35,
+            "user": 0.33,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 362811959,
+      "peak_rss_bytes": 109117440,
+      "cpu_seconds": 0.34,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:05.968242+00:00"
+    },
+    {
+      "round": 5,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:53:05.968903+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 455862417,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-05/mixed-permuted/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 107560960,
+          "bsd_time": {
+            "real": 0.45,
+            "user": 0.42,
+            "sys": 0.02
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 455862417,
+      "peak_rss_bytes": 107560960,
+      "cpu_seconds": 0.44,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:06.434659+00:00"
+    },
+    {
+      "round": 5,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:53:06.435331+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 463684167,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-05/mixed-permuted/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 108199936,
+          "bsd_time": {
+            "real": 0.45,
+            "user": 0.43,
+            "sys": 0.02
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 463684167,
+      "peak_rss_bytes": 108199936,
+      "cpu_seconds": 0.45,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:06.909581+00:00"
+    },
+    {
+      "round": 6,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:53:06.910390+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 454763250,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-06/mixed-permuted/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 107970560,
+          "bsd_time": {
+            "real": 0.45,
+            "user": 0.42,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 454763250,
+      "peak_rss_bytes": 107970560,
+      "cpu_seconds": 0.43,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:07.375313+00:00"
+    },
+    {
+      "round": 6,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:53:07.375950+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 490948875,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-06/mixed-permuted/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 109150208,
+          "bsd_time": {
+            "real": 0.48,
+            "user": 0.43,
+            "sys": 0.02
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 490948875,
+      "peak_rss_bytes": 109150208,
+      "cpu_seconds": 0.45,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:07.879901+00:00"
+    },
+    {
+      "round": 6,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "C",
+      "started_at": "2026-11-16T03:53:07.881374+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 454476792,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-06/mixed-disjoint/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 108068864,
+          "bsd_time": {
+            "real": 0.45,
+            "user": 0.36,
+            "sys": 0.02
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 454476792,
+      "peak_rss_bytes": 108068864,
+      "cpu_seconds": 0.38,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:08.345792+00:00"
+    },
+    {
+      "round": 6,
+      "order": [
+        "C",
+        "B"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "B",
+      "started_at": "2026-11-16T03:53:08.346405+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 371123000,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/round-06/mixed-disjoint/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 106807296,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.33,
+            "sys": 0.02
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 371123000,
+      "peak_rss_bytes": 106807296,
+      "cpu_seconds": 0.35000000000000003,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:53:08.727566+00:00"
+    }
+  ],
+  "warmup_samples": [
+    {
+      "round": 0,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:44.743180+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 159240541,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/warmup/mixed-permuted/B/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 33275904,
+          "bsd_time": {
+            "real": 0.15,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 298264042,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/warmup/mixed-permuted/B/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80789504,
+          "bsd_time": {
+            "real": 0.29,
+            "user": 0.27,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 457504583,
+      "peak_rss_bytes": 80789504,
+      "cpu_seconds": 0.42000000000000004,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:45.212298+00:00"
+    },
+    {
+      "round": 0,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:45.212844+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv4.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv4.txt",
+          "elapsed_ns": 161076458,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/warmup/mixed-permuted/C/4.stdout",
+          "output_bytes": 7399156,
+          "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 33243136,
+          "bsd_time": {
+            "real": 0.15,
+            "user": 0.14,
+            "sys": 0.0
+          }
+        },
+        {
+          "family": 6,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/ipv6.txt"
+          ],
+          "input": "fixtures/mixed-permuted/ipv6.txt",
+          "elapsed_ns": 298776833,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/warmup/mixed-permuted/C/6.stdout",
+          "output_bytes": 10465056,
+          "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 80756736,
+          "bsd_time": {
+            "real": 0.29,
+            "user": 0.27,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 459853291,
+      "peak_rss_bytes": 80756736,
+      "cpu_seconds": 0.42000000000000004,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:45.683796+00:00"
+    },
+    {
+      "round": 0,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:45.684480+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 364643958,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/warmup/bgp-like-ipv4/B/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 37748736,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.34,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 364643958,
+      "peak_rss_bytes": 37748736,
+      "cpu_seconds": 0.34,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:46.053365+00:00"
+    },
+    {
+      "round": 0,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:46.056335+00:00",
+      "parts": [
+        {
+          "family": 4,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/bgp-like-ipv4/ipv4.txt"
+          ],
+          "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+          "elapsed_ns": 364816167,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/split/warmup/bgp-like-ipv4/C/4.stdout",
+          "output_bytes": 3691176,
+          "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 36929536,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.34,
+            "sys": 0.0
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 364816167,
+      "peak_rss_bytes": 36929536,
+      "cpu_seconds": 0.34,
+      "output_bytes": 3691176,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:46.425906+00:00"
+    },
+    {
+      "round": 0,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:56.702144+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 373001833,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/warmup/mixed-disjoint/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 107364352,
+          "bsd_time": {
+            "real": 0.36,
+            "user": 0.34,
+            "sys": 0.02
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 373001833,
+      "peak_rss_bytes": 107364352,
+      "cpu_seconds": 0.36000000000000004,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:57.085488+00:00"
+    },
+    {
+      "round": 0,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:57.086295+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-disjoint/input.txt"
+          ],
+          "input": "fixtures/mixed-disjoint/input.txt",
+          "elapsed_ns": 361349541,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/warmup/mixed-disjoint/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 107167744,
+          "bsd_time": {
+            "real": 0.35,
+            "user": 0.33,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 361349541,
+      "peak_rss_bytes": 107167744,
+      "cpu_seconds": 0.34,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:57.457498+00:00"
+    },
+    {
+      "round": 0,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "started_at": "2026-11-16T03:52:57.458489+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/B",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 458112167,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/warmup/mixed-permuted/B/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 107986944,
+          "bsd_time": {
+            "real": 0.45,
+            "user": 0.42,
+            "sys": 0.01
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 458112167,
+      "peak_rss_bytes": 107986944,
+      "cpu_seconds": 0.43,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:57.926658+00:00"
+    },
+    {
+      "round": 0,
+      "order": [
+        "B",
+        "C"
+      ],
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "started_at": "2026-11-16T03:52:57.927326+00:00",
+      "parts": [
+        {
+          "family": null,
+          "command": [
+            "$EXPERIMENT/macos/bin/C",
+            "--raw",
+            "--representation",
+            "cidr",
+            "$EXPERIMENT/macos/fixtures/mixed-permuted/input.txt"
+          ],
+          "input": "fixtures/mixed-permuted/input.txt",
+          "elapsed_ns": 465480958,
+          "exit_code": 0,
+          "output": "followup-primary-01/measurements/native/warmup/mixed-permuted/C/mixed.stdout",
+          "output_bytes": 17864212,
+          "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+          "stderr_bytes": 0,
+          "peak_rss_bytes": 108756992,
+          "bsd_time": {
+            "real": 0.46,
+            "user": 0.42,
+            "sys": 0.02
+          }
+        }
+      ],
+      "passed": true,
+      "elapsed_ns": 465480958,
+      "peak_rss_bytes": 108756992,
+      "cpu_seconds": 0.44,
+      "output_bytes": 17864212,
+      "matches_verified_warmup_bytes": true,
+      "finished_at": "2026-11-16T03:52:58.402811+00:00"
+    }
+  ],
+  "groups": [
+    {
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "n": 6,
+      "elapsed_median_s": 0.4608105005,
+      "elapsed_min_s": 0.456422875,
+      "elapsed_max_s": 0.472738833,
+      "peak_rss_median_mib": 77.0390625,
+      "peak_rss_min_mib": 77.015625,
+      "peak_rss_max_mib": 77.078125,
+      "cpu_median_s": 0.42000000000000004
+    },
+    {
+      "suite": "split",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "n": 6,
+      "elapsed_median_s": 0.468538458,
+      "elapsed_min_s": 0.454368666,
+      "elapsed_max_s": 0.509423126,
+      "peak_rss_median_mib": 77.0078125,
+      "peak_rss_min_mib": 76.984375,
+      "peak_rss_max_mib": 77.03125,
+      "cpu_median_s": 0.42000000000000004
+    },
+    {
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "B",
+      "n": 6,
+      "elapsed_median_s": 0.366371313,
+      "elapsed_min_s": 0.3613325,
+      "elapsed_max_s": 0.371762333,
+      "peak_rss_median_mib": 35.9765625,
+      "peak_rss_min_mib": 35.25,
+      "peak_rss_max_mib": 36.046875,
+      "cpu_median_s": 0.34
+    },
+    {
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "tool": "C",
+      "n": 6,
+      "elapsed_median_s": 0.365052896,
+      "elapsed_min_s": 0.360703208,
+      "elapsed_max_s": 0.430809334,
+      "peak_rss_median_mib": 35.015625,
+      "peak_rss_min_mib": 34.453125,
+      "peak_rss_max_mib": 37.28125,
+      "cpu_median_s": 0.34
+    },
+    {
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "B",
+      "n": 6,
+      "elapsed_median_s": 0.364834188,
+      "elapsed_min_s": 0.357796959,
+      "elapsed_max_s": 0.427033792,
+      "peak_rss_median_mib": 102.78125,
+      "peak_rss_min_mib": 101.828125,
+      "peak_rss_max_mib": 103.734375,
+      "cpu_median_s": 0.34
+    },
+    {
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "tool": "C",
+      "n": 6,
+      "elapsed_median_s": 0.363392646,
+      "elapsed_min_s": 0.361033125,
+      "elapsed_max_s": 0.454476792,
+      "peak_rss_median_mib": 103.0390625,
+      "peak_rss_min_mib": 102.984375,
+      "peak_rss_max_mib": 104.078125,
+      "cpu_median_s": 0.34
+    },
+    {
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "B",
+      "n": 6,
+      "elapsed_median_s": 0.4559050625,
+      "elapsed_min_s": 0.453458041,
+      "elapsed_max_s": 0.490948875,
+      "peak_rss_median_mib": 102.609375,
+      "peak_rss_min_mib": 101.796875,
+      "peak_rss_max_mib": 104.09375,
+      "cpu_median_s": 0.43
+    },
+    {
+      "suite": "native",
+      "case": "mixed-permuted",
+      "tool": "C",
+      "n": 6,
+      "elapsed_median_s": 0.45649395800000003,
+      "elapsed_min_s": 0.45476325,
+      "elapsed_max_s": 0.463684167,
+      "peak_rss_median_mib": 103.28125,
+      "peak_rss_min_mib": 102.625,
+      "peak_rss_max_mib": 104.078125,
+      "cpu_median_s": 0.43
+    }
+  ],
+  "comparisons": [
+    {
+      "suite": "split",
+      "case": "mixed-permuted",
+      "n_pairs": 6,
+      "paired_elapsed_change_median_pct": -0.06480774379526433,
+      "paired_elapsed_change_min_pct": -1.6240643805963795,
+      "paired_elapsed_change_max_pct": 10.581210642750394,
+      "paired_rss_change_median_pct": -0.05068732206044979,
+      "paired_rss_change_min_pct": -0.06085192697768971,
+      "paired_rss_change_max_pct": -0.020283975659229903,
+      "paired_rss_difference_median_mib": -0.0390625,
+      "pairs": [
+        {
+          "round": 1,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 4.278121753823494,
+          "rss_change_pct": -0.0202880908906522,
+          "elapsed_difference_s": 0.019681,
+          "rss_difference_mib": -0.015625
+        },
+        {
+          "round": 2,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 10.581210642750394,
+          "rss_change_pct": -0.04055972419387821,
+          "elapsed_difference_s": 0.048745292,
+          "rss_difference_mib": -0.03125
+        },
+        {
+          "round": 3,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": -0.4500670567836873,
+          "rss_change_pct": -0.06085192697768971,
+          "elapsed_difference_s": -0.002054209,
+          "rss_difference_mib": -0.046875
+        },
+        {
+          "round": 4,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": -0.9813396366064375,
+          "rss_change_pct": -0.060839586290817316,
+          "elapsed_difference_s": -0.004523418,
+          "rss_difference_mib": -0.046875
+        },
+        {
+          "round": 5,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 0.32045156919315865,
+          "rss_change_pct": -0.06081491992702137,
+          "elapsed_difference_s": 0.00150775,
+          "rss_difference_mib": -0.046875
+        },
+        {
+          "round": 6,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": -1.6240643805963795,
+          "rss_change_pct": -0.020283975659229903,
+          "elapsed_difference_s": -0.007677583,
+          "rss_difference_mib": -0.015625
+        }
+      ]
+    },
+    {
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "n_pairs": 6,
+      "paired_elapsed_change_median_pct": -0.35984643631742363,
+      "paired_elapsed_change_min_pct": -0.9150022392260593,
+      "paired_elapsed_change_max_pct": 15.88299721585833,
+      "paired_rss_change_median_pct": -2.1059585867361728,
+      "paired_rss_change_min_pct": -4.255319148936165,
+      "paired_rss_change_max_pct": 3.4692107545533313,
+      "paired_rss_difference_median_mib": -0.75,
+      "pairs": [
+        {
+          "round": 1,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 15.88299721585833,
+          "rss_change_pct": -2.297355873428697,
+          "elapsed_difference_s": 0.059047001,
+          "rss_difference_mib": -0.828125
+        },
+        {
+          "round": 2,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": -0.48234192821714483,
+          "rss_change_pct": -2.083333333333337,
+          "elapsed_difference_s": -0.001764,
+          "rss_difference_mib": -0.734375
+        },
+        {
+          "round": 3,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": -0.1741587042405568,
+          "rss_change_pct": -1.2843224092116912,
+          "elapsed_difference_s": -0.000629292,
+          "rss_difference_mib": -0.453125
+        },
+        {
+          "round": 4,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": -0.9150022392260593,
+          "rss_change_pct": -2.128583840139009,
+          "elapsed_difference_s": -0.003396751,
+          "rss_difference_mib": -0.765625
+        },
+        {
+          "round": 5,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": -0.3410897206361341,
+          "rss_change_pct": -4.255319148936165,
+          "elapsed_difference_s": -0.001248875,
+          "rss_difference_mib": -1.53125
+        },
+        {
+          "round": 6,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": -0.3786031519987132,
+          "rss_change_pct": 3.4692107545533313,
+          "elapsed_difference_s": -0.001387959,
+          "rss_difference_mib": 1.25
+        }
+      ]
+    },
+    {
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "n_pairs": 6,
+      "paired_elapsed_change_median_pct": 0.0021271611532092116,
+      "paired_elapsed_change_min_pct": -14.270650506271876,
+      "paired_elapsed_change_max_pct": 22.459883111529066,
+      "paired_rss_change_median_pct": 0.7214608579656279,
+      "paired_rss_change_min_pct": -0.2873563218390829,
+      "paired_rss_change_max_pct": 1.181162755023779,
+      "paired_rss_difference_median_mib": 0.7421875,
+      "pairs": [
+        {
+          "round": 1,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": -14.270650506271876,
+          "rss_change_pct": 0.33137520710950774,
+          "elapsed_difference_s": -0.0609405,
+          "rss_difference_mib": 0.34375
+        },
+        {
+          "round": 2,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": -0.5962335676226282,
+          "rss_change_pct": 1.150836274359368,
+          "elapsed_difference_s": -0.002174792,
+          "rss_difference_mib": 1.171875
+        },
+        {
+          "round": 3,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 0.9044699566605363,
+          "rss_change_pct": -0.2873563218390829,
+          "elapsed_difference_s": 0.003236166,
+          "rss_difference_mib": -0.296875
+        },
+        {
+          "round": 4,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": -0.25759568434953195,
+          "rss_change_pct": 0.3960396039603964,
+          "elapsed_difference_s": -0.000940001,
+          "rss_difference_mib": 0.40625
+        },
+        {
+          "round": 5,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 0.2618500066559504,
+          "rss_change_pct": 1.0468821119708593,
+          "elapsed_difference_s": 0.000947542,
+          "rss_difference_mib": 1.078125
+        },
+        {
+          "round": 6,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 22.459883111529066,
+          "rss_change_pct": 1.181162755023779,
+          "elapsed_difference_s": 0.083353792,
+          "rss_difference_mib": 1.203125
+        }
+      ]
+    },
+    {
+      "suite": "native",
+      "case": "mixed-permuted",
+      "n_pairs": 6,
+      "paired_elapsed_change_median_pct": 0.3031111779323137,
+      "paired_elapsed_change_min_pct": -7.370548511797692,
+      "paired_elapsed_change_max_pct": 1.7158137429872822,
+      "paired_rss_change_median_pct": 0.7329065580549687,
+      "paired_rss_change_min_pct": -1.0807565295707033,
+      "paired_rss_change_max_pct": 1.4005175825848593,
+      "paired_rss_difference_median_mib": 0.75,
+      "pairs": [
+        {
+          "round": 1,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": -5.696357250791073,
+          "rss_change_pct": 1.084797555385797,
+          "elapsed_difference_s": -0.027614917,
+          "rss_difference_mib": 1.109375
+        },
+        {
+          "round": 2,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 1.595495683465531,
+          "rss_change_pct": 1.4005175825848593,
+          "elapsed_difference_s": 0.007274626,
+          "rss_difference_mib": 1.4375
+        },
+        {
+          "round": 3,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 0.3970598902666822,
+          "rss_change_pct": 0.8135072908672214,
+          "elapsed_difference_s": 0.0018005,
+          "rss_difference_mib": 0.828125
+        },
+        {
+          "round": 4,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 0.20916246559794516,
+          "rss_change_pct": 0.6523058252427161,
+          "elapsed_difference_s": 0.000951416,
+          "rss_difference_mib": 0.671875
+        },
+        {
+          "round": 5,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 1.7158137429872822,
+          "rss_change_pct": 0.5940594059405946,
+          "elapsed_difference_s": 0.00782175,
+          "rss_difference_mib": 0.609375
+        },
+        {
+          "round": 6,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": -7.370548511797692,
+          "rss_change_pct": -1.0807565295707033,
+          "elapsed_difference_s": -0.036185625,
+          "rss_difference_mib": -1.125
+        }
+      ]
+    }
+  ],
+  "measured_samples": 48,
+  "measured_processes": 60,
+  "excluded_warmup_samples": 8,
+  "excluded_warmup_processes": 10,
+  "all_outputs_retained": true,
+  "no_samples_removed_or_retried": true,
+  "all_outputs_match_original_independent_coverage": true,
+  "separate_from_primary": true,
+  "pooled_with_primary": false,
+  "validation_before": {
+    "new_run_files": 41,
+    "source_files": 1781,
+    "previous_comparison_files": 53,
+    "reference_output_files": 39,
+    "toolchain_files": 3
+  },
+  "validation_after": {
+    "new_run_files": 41,
+    "source_files": 1781,
+    "previous_comparison_files": 53,
+    "reference_output_files": 39,
+    "toolchain_files": 3
+  },
+  "protocol_sha256": "527a6e2b072c40cda5a055d8fad768106da7b2764a32fb32eb80090c80ceca1d",
+  "primary_summary_sha256": "42b57d5c26a1dfd70bae1454e9641382d11ee7cfa23ff9bbefb3938af5c55e92"
+}

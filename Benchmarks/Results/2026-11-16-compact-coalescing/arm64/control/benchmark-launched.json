@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-16T03:55:07.611687+00:00",
+  "command": [
+    "/validation/python/bin/python3.12",
+    "/validation/control/phase_runner.py",
+    "benchmark"
+  ],
+  "log": "logs/phase-benchmark.log"
+}

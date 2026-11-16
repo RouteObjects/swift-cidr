@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "at": "2026-11-16T03:57:30.803397+00:00",
+  "binary_sha256": {
+    "B": "079d55abdfa5c88104adac1dbc1321ea3c39bcaff04a32996c4f658197aac0be",
+    "C": "01c693caed015b1a3960777225d41f387949946cf1ee8c4656fa6dad05824fd5"
+  },
+  "evidence_files": {
+    "control/codegen/B-captures.json": "61620a199ebb0ba013142de23af68a1af479d33dd534802fe51b53fcb6118c0c",
+    "control/codegen/B-nm.txt": "a26e60d4afa18e8f65bfe19775b46966a102401d336f1718a0a1345465f6982c",
+    "control/codegen/B-symbols.txt": "15361097c99008b1930acd2a2cf318e3656949e33c37e0b47418c1474948ac5e",
+    "control/codegen/C-captures.json": "0d387ca7d404755d428204c2e054425c4113c56f7da8ff42947a265efed82fab",
+    "control/codegen/C-nm.txt": "469844e524a4d8910991b8822a2c1b8f4f5c293104bc9b51bee35042e3c7aba7",
+    "control/codegen/C-symbols.txt": "616a2a8a310c387f0216777ebf38453adb827b273dea99d6ff3fa88c1764e8cf",
+    "control/codegen/review.json": "8f845d8637302ee0544e226fd008f37e927c22ba9473b69145abf8c9dc186b19",
+    "control/codegen/review.md": "fef4f2be394cd3e438762d105a956a2de4dc24a4d4e38d716dd6f48bea72e4b0",
+    "control/capture_codegen.py": "6518ae6cc8275e0bbff653a3598d5f636908124fbf48dc559a6442b851c32be8",
+    "control/review_codegen.py": "9ec1fa8f3e11314b51b53c0afd7bb5f581200bf63335612c6293c310995bb5a6"
+  },
+  "scope": "Static native x86-64 frozen ordinary Release CLI code paths; no target execution or allocation/timing inference.",
+  "limits": [
+    "This is the concrete Array caller path; generic fallbacks also remain.",
+    "Comparator dispatch through supplied helper pointers remains indirect; it is not fully inlined/devirtualized.",
+    "Candidate retains three observed uniqueness check sites and conditional whole-buffer copy fallbacks; baseline retains one observed site. Counts describe these frozen bodies only.",
+    "Capacity helper allocates stride*requestedCapacity plus array header and uses allocator usable-size rounding; reserve is not an exact allocation-byte guarantee.",
+    "Reduced-result storage owns copied fixed-width values and releases sorted storage, but other input/sort/allocator storage remains. No dynamic allocation count, RSS savings or throughput is inferred."
+  ]
+}

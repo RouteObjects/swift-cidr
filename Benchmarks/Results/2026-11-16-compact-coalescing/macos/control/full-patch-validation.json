@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "patch_sha256": "0dbe2a2c82a30f935518d14e11cc1f9074c35196c6f2c9e1abf23906b5b0ca43",
+  "prior_artifact_preserved": "control/full-before-header-fix.patch",
+  "correction": "Repository-relative new-test diff header only; no source or binary change.",
+  "baseline_apply_check": 0
+}

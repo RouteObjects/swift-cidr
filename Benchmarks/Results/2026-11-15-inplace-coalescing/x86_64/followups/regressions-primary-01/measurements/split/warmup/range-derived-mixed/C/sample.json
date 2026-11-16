@@ -1,0 +1,100 @@
+{
+  "suite": "split",
+  "case": "range-derived-mixed",
+  "tool": "C",
+  "started_at": "2026-11-15T23:18:54.236141+00:00",
+  "free_bytes_before": 3412332544,
+  "parts": [
+    {
+      "family": 4,
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/fixtures/range-derived-mixed/ipv4.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/C/tmp-4/"
+      },
+      "input": "fixtures/range-derived-mixed/ipv4.txt",
+      "output": "followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/C/4.stdout",
+      "stderr": "followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/C/4.stderr",
+      "started_at": "2026-11-15T23:18:54.236931+00:00",
+      "elapsed_ns": 430612711,
+      "exit_code": 0,
+      "output_bytes": 7553022,
+      "output_sha256": "53db427e9aee7d9817f2384521f688751c2cfff9c78f9156380a96441e242c8c",
+      "stderr_bytes": 0,
+      "wait4_rusage": {
+        "ru_utime": 0.39086499999999996,
+        "ru_stime": 0.036892,
+        "ru_maxrss": 34600,
+        "ru_minflt": 7107,
+        "ru_majflt": 0,
+        "ru_nswap": 0,
+        "ru_inblock": 0,
+        "ru_oublock": 14752,
+        "ru_nvcsw": 14,
+        "ru_nivcsw": 6
+      },
+      "peak_rss_bytes": 35430400,
+      "cpu_seconds": 0.42775699999999994,
+      "raw_metrics": "followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/C/4.rusage.json"
+    },
+    {
+      "family": 6,
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/fixtures/range-derived-mixed/ipv6.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/C/tmp-6/"
+      },
+      "input": "fixtures/range-derived-mixed/ipv6.txt",
+      "output": "followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/C/6.stdout",
+      "stderr": "followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/C/6.stderr",
+      "started_at": "2026-11-15T23:18:54.715123+00:00",
+      "elapsed_ns": 890253139,
+      "exit_code": 0,
+      "output_bytes": 10892816,
+      "output_sha256": "68d161443d998ee9008d43c58214729c163ccb94e6cf4724e6a3957c2896d2d6",
+      "stderr_bytes": 0,
+      "wait4_rusage": {
+        "ru_utime": 0.805551,
+        "ru_stime": 0.081954,
+        "ru_maxrss": 75584,
+        "ru_minflt": 21293,
+        "ru_majflt": 0,
+        "ru_nswap": 0,
+        "ru_inblock": 0,
+        "ru_oublock": 21280,
+        "ru_nvcsw": 13,
+        "ru_nivcsw": 9
+      },
+      "peak_rss_bytes": 77398016,
+      "cpu_seconds": 0.887505,
+      "raw_metrics": "followups/regressions-primary-01/measurements/split/warmup/range-derived-mixed/C/6.rusage.json"
+    }
+  ],
+  "passed": true,
+  "elapsed_ns": 1320865850,
+  "peak_rss_bytes": 77398016,
+  "cpu_seconds": 1.315262,
+  "output_bytes": 18445838,
+  "matches_verified_warmup_bytes": true,
+  "finished_at": "2026-11-15T23:18:55.671889+00:00"
+}

@@ -1,0 +1,62 @@
+{
+  "round": 6,
+  "variant": "B",
+  "case": "mixed-sparse-duplicate-1000000",
+  "entries": 1000002,
+  "order": [
+    "C",
+    "B"
+  ],
+  "command": [
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+    "--raw",
+    "--representation",
+    "cidr",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+  ],
+  "actual_command": [
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+    "--raw",
+    "--representation",
+    "cidr",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+  ],
+  "environment": {
+    "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+    "LANG": "C",
+    "LC_ALL": "C",
+    "TZ": "UTC",
+    "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+    "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-sparse-01/measurements/round-06/mixed-sparse-duplicate-1000000/B"
+  },
+  "started_at": "2026-11-16T04:26:39.750646+00:00",
+  "free_bytes_before": 5029203968,
+  "directory": "round-06/mixed-sparse-duplicate-1000000/B",
+  "passed": true,
+  "exit_code": 0,
+  "elapsed_ns": 1281133122,
+  "cpu_seconds": 1.277969,
+  "peak_rss_bytes": 81596416,
+  "resources": {
+    "ru_idrss": 0,
+    "ru_inblock": 0,
+    "ru_isrss": 0,
+    "ru_ixrss": 0,
+    "ru_majflt": 0,
+    "ru_maxrss": 79684,
+    "ru_minflt": 27926,
+    "ru_msgrcv": 0,
+    "ru_msgsnd": 0,
+    "ru_nivcsw": 14,
+    "ru_nsignals": 0,
+    "ru_nswap": 0,
+    "ru_nvcsw": 14,
+    "ru_oublock": 34896,
+    "ru_stime": 0.109997,
+    "ru_utime": 1.167972
+  },
+  "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+  "stdout_bytes": 17864212,
+  "stderr_bytes": 0,
+  "finished_at": "2026-11-16T04:26:41.138329+00:00"
+}

@@ -1,0 +1,175 @@
+{
+  "passed": true,
+  "source_freeze_sha256": "c63ac2f1242455b9ee1f7b5f3376c5cb126cfc6d958538be97b72a084bd23dab",
+  "variants": {
+    "B": {
+      "binary_sha256": "ef2d11b3ef86c5a0000b0eb7c03535ceb100df98ac4ae0931f2397e0d373a513",
+      "cli_mangled_symbol": "_$s12CIDRMergeCLI11ParsedInputV6merged14representationAA11MergeResultVAA20OutputRepresentationO_tF",
+      "cli_assembly_line": 183891,
+      "families": {
+        "V4": {
+          "address": "0x1000b10a8",
+          "mangled_symbol": "_$s4CIDR14IPAddressRangeV10coalescingySayACyxGGqd__STRd__AE7ElementRtd__lFZAA2AFO2V4O_SayACyALGGTt0g5",
+          "demangled_symbol": "generic specialization <CIDR.AF.V4, [CIDR.IPAddressRange<CIDR.AF.V4>]> of static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]",
+          "assembly_line": 185191,
+          "sort_wrapper": "_$sSMsSkRzrlE4sort2byySb7ElementSTQz_ADtKXE_tKFySryADGzKXEfU_s15ContiguousArrayVy4CIDR14IPAddressRangeVyAH2AFO2V6OGG_Tg5Tm",
+          "callbacks": {
+            "stable_sort": {
+              "address": "0x1000b1818",
+              "mangled_symbol": "_$sSr15_stableSortImpl2byySbx_xtKXE_tKFySryxGz_SiztKXEfU_4CIDR14IPAddressRangeVyAD2AFO2V4OG_Tg5",
+              "demangled_symbol": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()",
+              "assembly_line": 185670
+            },
+            "insertion_sort": {
+              "address": "0x1000b1d48",
+              "mangled_symbol": "_$sSMsSKRzrlE14_insertionSort6within9sortedEnd2byySny5IndexSlQzG_AFSb7ElementSTQz_AItKXEtKFSry4CIDR14IPAddressRangeVyAJ2AFO2V4OGG_Tg5",
+              "demangled_symbol": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V4>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()",
+              "assembly_line": 186004
+            }
+          }
+        },
+        "V6": {
+          "address": "0x1000b0eb8",
+          "mangled_symbol": "_$s4CIDR14IPAddressRangeV10coalescingySayACyxGGqd__STRd__AE7ElementRtd__lFZAA2AFO2V6O_SayACyALGGTt0g5",
+          "demangled_symbol": "generic specialization <CIDR.AF.V6, [CIDR.IPAddressRange<CIDR.AF.V6>]> of static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]",
+          "assembly_line": 185066,
+          "sort_wrapper": "_$sSMsSkRzrlE4sort2byySb7ElementSTQz_ADtKXE_tKFySryADGzKXEfU_s15ContiguousArrayVy4CIDR14IPAddressRangeVyAH2AFO2V6OGG_Tg5Tm",
+          "callbacks": {
+            "stable_sort": {
+              "address": "0x1000b1380",
+              "mangled_symbol": "_$sSr15_stableSortImpl2byySbx_xtKXE_tKFySryxGz_SiztKXEfU_4CIDR14IPAddressRangeVyAD2AFO2V6OG_Tg5",
+              "demangled_symbol": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()",
+              "assembly_line": 185375
+            },
+            "insertion_sort": {
+              "address": "0x1000b1c50",
+              "mangled_symbol": "_$sSMsSKRzrlE14_insertionSort6within9sortedEnd2byySny5IndexSlQzG_AFSb7ElementSTQz_AItKXEtKFSry4CIDR14IPAddressRangeVyAJ2AFO2V6OGG_Tg5",
+              "demangled_symbol": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V6>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()",
+              "assembly_line": 185941
+            }
+          }
+        }
+      },
+      "selected_sha256": "1f67b24394635fdc44b2e1c95ce4aab1f33a24a2817673422aac53f23bb0f1d0",
+      "captures": {
+        "B-assembly.txt": {
+          "bytes": 9019687,
+          "sha256": "bee83feea01e2a588e5964e095ef79a867b0595c0a2192c5146cc891157e0ce2"
+        },
+        "B-mangled-symbols.txt": {
+          "bytes": 909624,
+          "sha256": "17aad59cadb622206daa3e5d499364910949bff02fbd15913abdbc8185e297a3"
+        },
+        "B-mangled-assembly.txt": {
+          "bytes": 8162844,
+          "sha256": "71843b6f36c6979ecdbb9284012988ce030e97a4e13826d83bd89f6fb76eb499"
+        },
+        "B-selected.txt": {
+          "bytes": 45019,
+          "sha256": "1f67b24394635fdc44b2e1c95ce4aab1f33a24a2817673422aac53f23bb0f1d0"
+        },
+        "B-symbols.txt": {
+          "bytes": 1487286,
+          "sha256": "5ccf8258b712c1a47f5f0e03995f83ca86181b1830294f04733768a45ab5660b"
+        }
+      }
+    },
+    "C": {
+      "binary_sha256": "68b74e413ff4ad73777f747f60a6ebaff721aee4caa2b2c40858c7b0da3f622e",
+      "cli_mangled_symbol": "_$s12CIDRMergeCLI11ParsedInputV6merged14representationAA11MergeResultVAA20OutputRepresentationO_tF",
+      "cli_assembly_line": 184027,
+      "families": {
+        "V4": {
+          "address": "0x1000b1330",
+          "mangled_symbol": "_$s4CIDR14IPAddressRangeV10coalescingySayACyxGGqd__STRd__AE7ElementRtd__lFZAA2AFO2V4O_SayACyALGGTt0g5",
+          "demangled_symbol": "generic specialization <CIDR.AF.V4, [CIDR.IPAddressRange<CIDR.AF.V4>]> of static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]",
+          "assembly_line": 185358,
+          "sort_wrapper": "_$sSMsSkRzrlE4sort2byySb7ElementSTQz_ADtKXE_tKFySryADGzKXEfU_s15ContiguousArrayVy4CIDR14IPAddressRangeVyAH2AFO2V6OGG_Tg5Tm",
+          "callbacks": {
+            "stable_sort": {
+              "address": "0x1000b1b58",
+              "mangled_symbol": "_$sSr15_stableSortImpl2byySbx_xtKXE_tKFySryxGz_SiztKXEfU_4CIDR14IPAddressRangeVyAD2AFO2V4OG_Tg5",
+              "demangled_symbol": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()",
+              "assembly_line": 185886
+            },
+            "insertion_sort": {
+              "address": "0x1000b2088",
+              "mangled_symbol": "_$sSMsSKRzrlE14_insertionSort6within9sortedEnd2byySny5IndexSlQzG_AFSb7ElementSTQz_AItKXEtKFSry4CIDR14IPAddressRangeVyAJ2AFO2V4OGG_Tg5",
+              "demangled_symbol": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V4>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()",
+              "assembly_line": 186220
+            }
+          }
+        },
+        "V6": {
+          "address": "0x1000b10c4",
+          "mangled_symbol": "_$s4CIDR14IPAddressRangeV10coalescingySayACyxGGqd__STRd__AE7ElementRtd__lFZAA2AFO2V6O_SayACyALGGTt0g5",
+          "demangled_symbol": "generic specialization <CIDR.AF.V6, [CIDR.IPAddressRange<CIDR.AF.V6>]> of static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]",
+          "assembly_line": 185202,
+          "sort_wrapper": "_$sSMsSkRzrlE4sort2byySb7ElementSTQz_ADtKXE_tKFySryADGzKXEfU_s15ContiguousArrayVy4CIDR14IPAddressRangeVyAH2AFO2V6OGG_Tg5Tm",
+          "callbacks": {
+            "stable_sort": {
+              "address": "0x1000b16c0",
+              "mangled_symbol": "_$sSr15_stableSortImpl2byySbx_xtKXE_tKFySryxGz_SiztKXEfU_4CIDR14IPAddressRangeVyAD2AFO2V6OG_Tg5",
+              "demangled_symbol": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()",
+              "assembly_line": 185591
+            },
+            "insertion_sort": {
+              "address": "0x1000b1f90",
+              "mangled_symbol": "_$sSMsSKRzrlE14_insertionSort6within9sortedEnd2byySny5IndexSlQzG_AFSb7ElementSTQz_AItKXEtKFSry4CIDR14IPAddressRangeVyAJ2AFO2V6OGG_Tg5",
+              "demangled_symbol": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V6>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()",
+              "assembly_line": 186157
+            }
+          }
+        }
+      },
+      "selected_sha256": "eb4c273c00b5bcc54f183d4ebeb0f7d007e846b275c183e8a53565783748d508",
+      "captures": {
+        "C-assembly.txt": {
+          "bytes": 9029633,
+          "sha256": "fed4e69117e77f6d057217c7ee37c040f5823c8fc3adee327af96e95fd7aec34"
+        },
+        "C-mangled-assembly.txt": {
+          "bytes": 8172037,
+          "sha256": "bfbf044a17b162da85518eb2abe0185f968c76a9b5911a88af4a141acc6b18af"
+        },
+        "C-mangled-symbols.txt": {
+          "bytes": 910253,
+          "sha256": "d6201cd018a06776cb3797d3e0ada9d5244125a0a0a6310ff270f16a9464ddaa"
+        },
+        "C-symbols.txt": {
+          "bytes": 1488097,
+          "sha256": "ddca3ad427ced9e9675d101636457745125672dd25e59e8f14582606201cf88a"
+        },
+        "C-selected.txt": {
+          "bytes": 47450,
+          "sha256": "eb4c273c00b5bcc54f183d4ebeb0f7d007e846b275c183e8a53565783748d508"
+        }
+      }
+    }
+  },
+  "limits": [
+    "Static ordinary CLI code-generation evidence only; not a dynamic call-count or allocation measurement.",
+    "The shared sort wrapper has a merged V6 symbol name but receives family-specific stable-sort and insertion-sort callbacks.",
+    "Sorted-buffer copy-on-write checks and sort scratch allocations remain; no zero-allocation claim.",
+    "Current addresses and instructions are observations, not cross-version opcode requirements."
+  ],
+  "candidate_compact_path": {
+    "V4": {
+      "result_count_compare": "0x1000b1470",
+      "unchanged_count_branch": "0x1000b1474 -> 0x1000b14f8",
+      "empty_storage_load": "0x1000b147c",
+      "fresh_buffer_minimum_capacity_result_count": "0x1000b1484 -> 0x1000b148c",
+      "prefix_copy_loop": "0x1000b14a4..0x1000b14d0",
+      "sorted_release": "0x1000b1508"
+    },
+    "V6": {
+      "result_count_compare": "0x1000b1240",
+      "unchanged_count_branch": "0x1000b1244 -> 0x1000b12d8",
+      "empty_storage_load": "0x1000b124c",
+      "fresh_buffer_minimum_capacity_result_count": "0x1000b1254 -> 0x1000b125c",
+      "prefix_copy_loop": "0x1000b1278..0x1000b12b0",
+      "sorted_release": "0x1000b12e8"
+    }
+  },
+  "analyzer_sha256": "ea2681baa0ebca354fb82c4c1976373b4c74f661dd7d15d5a32386a9d808be31"
+}

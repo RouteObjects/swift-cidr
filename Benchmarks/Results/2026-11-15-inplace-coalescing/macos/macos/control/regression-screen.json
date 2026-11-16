@@ -1,0 +1,36 @@
+[
+  {
+    "suite": "split",
+    "case": "mixed-adjacent",
+    "pairs": [
+      {
+        "round": 4,
+        "order": [
+          "C",
+          "B"
+        ],
+        "elapsed_change_pct": 5.235661462250429,
+        "rss_change_pct": 0.20289119959422397,
+        "elapsed_difference_s": 0.014097001,
+        "rss_difference_mib": 0.125
+      }
+    ]
+  },
+  {
+    "suite": "native",
+    "case": "mixed-disjoint",
+    "pairs": [
+      {
+        "round": 1,
+        "order": [
+          "B",
+          "C"
+        ],
+        "elapsed_change_pct": 6.785975268317812,
+        "rss_change_pct": 0.10747735298632932,
+        "elapsed_difference_s": 0.023763083,
+        "rss_difference_mib": 0.109375
+      }
+    ]
+  }
+]

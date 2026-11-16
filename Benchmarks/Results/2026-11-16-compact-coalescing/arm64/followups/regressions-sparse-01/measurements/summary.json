@@ -1,0 +1,1859 @@
+{
+  "passed": true,
+  "samples": [
+    {
+      "round": 0,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-00/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:09.290422+00:00",
+      "free_bytes_before": 5727618498560,
+      "directory": "round-00/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10519665,
+      "cpu_seconds": 0.009905,
+      "peak_rss_bytes": 21241856,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20744,
+        "ru_minflt": 853,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 1,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.0029709999999999997,
+        "ru_utime": 0.006934
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:09.301795+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-00/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:09.302304+00:00",
+      "free_bytes_before": 5727618318336,
+      "directory": "round-00/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10032332,
+      "cpu_seconds": 0.009890999999999999,
+      "peak_rss_bytes": 21229568,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20732,
+        "ru_minflt": 859,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.0039559999999999994,
+        "ru_utime": 0.005934999999999999
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:09.313360+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-00/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:57:09.314146+00:00",
+      "free_bytes_before": 5727618138112,
+      "directory": "round-00/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 456465957,
+      "cpu_seconds": 0.45625499999999997,
+      "peak_rss_bytes": 80351232,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78468,
+        "ru_minflt": 7577,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 1,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.020010999999999998,
+        "ru_utime": 0.43624399999999997
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:09.789982+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-00/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:57:09.790795+00:00",
+      "free_bytes_before": 5727600259072,
+      "directory": "round-00/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 508040452,
+      "cpu_seconds": 0.5062519999999999,
+      "peak_rss_bytes": 80302080,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78420,
+        "ru_minflt": 7573,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 8,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.024496,
+        "ru_utime": 0.48175599999999996
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:10.313881+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-01/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:10.314851+00:00",
+      "free_bytes_before": 5727582363648,
+      "directory": "round-01/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10012207,
+      "cpu_seconds": 0.009849,
+      "peak_rss_bytes": 21229568,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20732,
+        "ru_minflt": 860,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.0,
+        "ru_utime": 0.009849
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:10.325857+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-01/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:10.326392+00:00",
+      "free_bytes_before": 5727582183424,
+      "directory": "round-01/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10276041,
+      "cpu_seconds": 0.010103999999999998,
+      "peak_rss_bytes": 21233664,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20736,
+        "ru_minflt": 860,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.003031,
+        "ru_utime": 0.007072999999999999
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:10.337617+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-01/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:57:10.338392+00:00",
+      "free_bytes_before": 5727582007296,
+      "directory": "round-01/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 443771125,
+      "cpu_seconds": 0.44352,
+      "peak_rss_bytes": 80314368,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78432,
+        "ru_minflt": 7570,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.020977,
+        "ru_utime": 0.422543
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:10.798470+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-01/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:57:10.799066+00:00",
+      "free_bytes_before": 5727564132352,
+      "directory": "round-01/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 476028830,
+      "cpu_seconds": 0.475782,
+      "peak_rss_bytes": 80322560,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78440,
+        "ru_minflt": 7572,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 4,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.021303,
+        "ru_utime": 0.45447899999999997
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:11.291214+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-02/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:57:11.292065+00:00",
+      "free_bytes_before": 5727546740736,
+      "directory": "round-02/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 681483185,
+      "cpu_seconds": 0.6810889999999999,
+      "peak_rss_bytes": 80363520,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78480,
+        "ru_minflt": 7577,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 19,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.026003,
+        "ru_utime": 0.655086
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:11.989599+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-02/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:57:11.990208+00:00",
+      "free_bytes_before": 5727526293504,
+      "directory": "round-02/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 445826000,
+      "cpu_seconds": 0.44558499999999995,
+      "peak_rss_bytes": 80367616,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78484,
+        "ru_minflt": 7578,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 3,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.02098,
+        "ru_utime": 0.42460499999999995
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:12.452743+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-02/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:12.453577+00:00",
+      "free_bytes_before": 5727508418560,
+      "directory": "round-02/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10464124,
+      "cpu_seconds": 0.010263999999999999,
+      "peak_rss_bytes": 21237760,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20740,
+        "ru_minflt": 855,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 1,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.002799,
+        "ru_utime": 0.007464999999999999
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:12.465071+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-02/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:12.465601+00:00",
+      "free_bytes_before": 5727508238336,
+      "directory": "round-02/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9923458,
+      "cpu_seconds": 0.009811,
+      "peak_rss_bytes": 21233664,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20736,
+        "ru_minflt": 857,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.0019619999999999998,
+        "ru_utime": 0.007849
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:12.476441+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-03/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:12.477180+00:00",
+      "free_bytes_before": 5727508062208,
+      "directory": "round-03/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10126874,
+      "cpu_seconds": 0.009985,
+      "peak_rss_bytes": 21237760,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20740,
+        "ru_minflt": 855,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.003994,
+        "ru_utime": 0.005991
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:12.488206+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-03/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:12.488756+00:00",
+      "free_bytes_before": 5727507877888,
+      "directory": "round-03/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9960207,
+      "cpu_seconds": 0.009784,
+      "peak_rss_bytes": 21229568,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20732,
+        "ru_minflt": 860,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.000978,
+        "ru_utime": 0.008806
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:12.499708+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-03/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:57:12.500326+00:00",
+      "free_bytes_before": 5727507701760,
+      "directory": "round-03/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 451736290,
+      "cpu_seconds": 0.451578,
+      "peak_rss_bytes": 80306176,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78424,
+        "ru_minflt": 7571,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.022978,
+        "ru_utime": 0.4286
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:12.967202+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-03/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:57:12.967899+00:00",
+      "free_bytes_before": 5727489826816,
+      "directory": "round-03/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 449423041,
+      "cpu_seconds": 0.449168,
+      "peak_rss_bytes": 80433152,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78548,
+        "ru_minflt": 7579,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 3,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.017044,
+        "ru_utime": 0.432124
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:13.433100+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-04/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:57:13.433948+00:00",
+      "free_bytes_before": 5727471951872,
+      "directory": "round-04/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 455285457,
+      "cpu_seconds": 0.455011,
+      "peak_rss_bytes": 80310272,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78428,
+        "ru_minflt": 7575,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 6,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.016999999999999998,
+        "ru_utime": 0.438011
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:13.905276+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-04/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:57:13.905962+00:00",
+      "free_bytes_before": 5727454081024,
+      "directory": "round-04/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 461556915,
+      "cpu_seconds": 0.461358,
+      "peak_rss_bytes": 80355328,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78472,
+        "ru_minflt": 7576,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.030022999999999998,
+        "ru_utime": 0.43133499999999997
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:14.384658+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-04/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:14.385465+00:00",
+      "free_bytes_before": 5727436144640,
+      "directory": "round-04/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10381416,
+      "cpu_seconds": 0.010223,
+      "peak_rss_bytes": 21225472,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20728,
+        "ru_minflt": 861,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.004089,
+        "ru_utime": 0.006134
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:14.396758+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-04/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:14.397271+00:00",
+      "free_bytes_before": 5727435964416,
+      "directory": "round-04/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9700583,
+      "cpu_seconds": 0.009548999999999998,
+      "peak_rss_bytes": 21233664,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20736,
+        "ru_minflt": 860,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.0021219999999999998,
+        "ru_utime": 0.007427
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:14.407831+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-05/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:14.408603+00:00",
+      "free_bytes_before": 5727435788288,
+      "directory": "round-05/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9863333,
+      "cpu_seconds": 0.009714,
+      "peak_rss_bytes": 21237760,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20740,
+        "ru_minflt": 858,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.004857,
+        "ru_utime": 0.004857
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:14.419400+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-05/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:14.420090+00:00",
+      "free_bytes_before": 5727435608064,
+      "directory": "round-05/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10659458,
+      "cpu_seconds": 0.010518,
+      "peak_rss_bytes": 21225472,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20728,
+        "ru_minflt": 859,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.004207,
+        "ru_utime": 0.006311
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:14.431851+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-05/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:57:14.432560+00:00",
+      "free_bytes_before": 5727435431936,
+      "directory": "round-05/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 450567041,
+      "cpu_seconds": 0.45040499999999994,
+      "peak_rss_bytes": 80289792,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78408,
+        "ru_minflt": 7574,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.020971999999999998,
+        "ru_utime": 0.42943299999999995
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:14.900564+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-05/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:57:14.901157+00:00",
+      "free_bytes_before": 5727417548800,
+      "directory": "round-05/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 447693291,
+      "cpu_seconds": 0.44748499999999997,
+      "peak_rss_bytes": 80367616,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78484,
+        "ru_minflt": 7578,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.026028,
+        "ru_utime": 0.42145699999999997
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:15.364794+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-06/mixed-sparse-duplicate-1000000/C"
+      },
+      "started_at": "2026-11-16T03:57:15.365725+00:00",
+      "free_bytes_before": 5727399673856,
+      "directory": "round-06/mixed-sparse-duplicate-1000000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 447127208,
+      "cpu_seconds": 0.446785,
+      "peak_rss_bytes": 80351232,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78468,
+        "ru_minflt": 7577,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 12,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.023988,
+        "ru_utime": 0.422797
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:15.830001+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-1000000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-06/mixed-sparse-duplicate-1000000/B"
+      },
+      "started_at": "2026-11-16T03:57:15.830673+00:00",
+      "free_bytes_before": 5727380512768,
+      "directory": "round-06/mixed-sparse-duplicate-1000000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 440962791,
+      "cpu_seconds": 0.44079999999999997,
+      "peak_rss_bytes": 80302080,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 78420,
+        "ru_minflt": 7569,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34891,
+        "ru_stime": 0.020989999999999998,
+        "ru_utime": 0.41980999999999996
+      },
+      "stdout_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+      "stdout_bytes": 17864212,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:16.288734+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "C",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-06/mixed-sparse-duplicate-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:16.289491+00:00",
+      "free_bytes_before": 5727362617344,
+      "directory": "round-06/mixed-sparse-duplicate-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10572166,
+      "cpu_seconds": 0.010409,
+      "peak_rss_bytes": 21241856,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20744,
+        "ru_minflt": 853,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.0037849999999999997,
+        "ru_utime": 0.006624
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:16.300965+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "B",
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-sparse-01/fixtures/mixed-sparse-duplicate-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-sparse-01/measurements/round-06/mixed-sparse-duplicate-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:16.301521+00:00",
+      "free_bytes_before": 5727362441216,
+      "directory": "round-06/mixed-sparse-duplicate-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10543957,
+      "cpu_seconds": 0.010413,
+      "peak_rss_bytes": 21237760,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20740,
+        "ru_minflt": 855,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.00284,
+        "ru_utime": 0.007573
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:16.313055+00:00"
+    }
+  ],
+  "comparisons": [
+    {
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "pairs": [
+        {
+          "round": 1,
+          "elapsed_change_pct": 2.6351233049816125,
+          "rss_change_pct": 0.019293845263357312
+        },
+        {
+          "round": 2,
+          "elapsed_change_pct": 5.448362858995326,
+          "rss_change_pct": 0.01929012345678327
+        },
+        {
+          "round": 3,
+          "elapsed_change_pct": -1.6457892139272179,
+          "rss_change_pct": -0.038572806171643936
+        },
+        {
+          "round": 4,
+          "elapsed_change_pct": 7.018475075157848,
+          "rss_change_pct": -0.03858024691357764
+        },
+        {
+          "round": 5,
+          "elapsed_change_pct": 8.07156161107001,
+          "rss_change_pct": -0.057859209257471456
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": 0.26753713050993166,
+          "rss_change_pct": 0.019286403085816417
+        }
+      ],
+      "elapsed_change_pct": {
+        "median": 4.04174308198847,
+        "min": -1.6457892139272179,
+        "max": 8.07156161107001
+      },
+      "rss_change_pct": {
+        "median": -0.00964320154291376,
+        "min": -0.057859209257471456,
+        "max": 0.019293845263357312
+      },
+      "B": {
+        "elapsed_ns": 9967832.5,
+        "cpu_seconds": 0.00983,
+        "peak_rss_bytes": 21235712.0
+      },
+      "C": {
+        "elapsed_ns": 10422770.0,
+        "cpu_seconds": 0.0102435,
+        "peak_rss_bytes": 21231616.0
+      }
+    },
+    {
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "pairs": [
+        {
+          "round": 1,
+          "elapsed_change_pct": 7.268995926672783,
+          "rss_change_pct": 0.01019991840065515
+        },
+        {
+          "round": 2,
+          "elapsed_change_pct": 52.85855580428238,
+          "rss_change_pct": -0.005096580194685618
+        },
+        {
+          "round": 3,
+          "elapsed_change_pct": -0.5120795143556012,
+          "rss_change_pct": 0.15811486279710962
+        },
+        {
+          "round": 4,
+          "elapsed_change_pct": -1.3587615733153924,
+          "rss_change_pct": -0.05607095524517991
+        },
+        {
+          "round": 5,
+          "elapsed_change_pct": -0.6378074156560443,
+          "rss_change_pct": 0.0969288848076788
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": 1.3979449345421058,
+          "rss_change_pct": 0.0612088752869111
+        }
+      ],
+      "elapsed_change_pct": {
+        "median": 0.4429327100932523,
+        "min": -1.3587615733153924,
+        "max": 52.85855580428238
+      },
+      "rss_change_pct": {
+        "median": 0.035704396843783126,
+        "min": -0.05607095524517991,
+        "max": 0.15811486279710962
+      },
+      "B": {
+        "elapsed_ns": 448196520.5,
+        "cpu_seconds": 0.4479949999999999,
+        "peak_rss_bytes": 80310272.0
+      },
+      "C": {
+        "elapsed_ns": 452354249.0,
+        "cpu_seconds": 0.45208950000000003,
+        "peak_rss_bytes": 80357376.0
+      }
+    }
+  ],
+  "measured_samples": 24,
+  "excluded_warmups": 4,
+  "frozen_files_unchanged": true,
+  "finished_at": "2026-11-16T03:57:16.409642+00:00"
+}

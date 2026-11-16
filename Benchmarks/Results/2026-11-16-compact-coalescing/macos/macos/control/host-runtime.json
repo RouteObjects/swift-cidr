@@ -1,0 +1,129 @@
+{
+  "at": "2026-11-16T03:42:49.320525+00:00",
+  "commands": {
+    "os": {
+      "command": [
+        "sw_vers"
+      ],
+      "exit_code": 0,
+      "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t27.2.1\nBuildVersion:\t\t26B131\n",
+      "stderr": ""
+    },
+    "toolchain": {
+      "command": [
+        "/Applications/Xcode-27.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0\n",
+      "stderr": "swift-driver version: 1.168.6 "
+    },
+    "xcode": {
+      "command": [
+        "xcodebuild",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "Xcode 27.2\nBuild version 27B52\n",
+      "stderr": ""
+    },
+    "hardware": {
+      "command": [
+        "sysctl",
+        "hw.model",
+        "hw.memsize",
+        "hw.ncpu",
+        "machdep.cpu.brand_string"
+      ],
+      "exit_code": 0,
+      "stdout": "hw.model: MacBookPro18,2\nhw.memsize: 68719476736\nhw.ncpu: 10\nmachdep.cpu.brand_string: Apple M1 Max\n",
+      "stderr": ""
+    },
+    "power": {
+      "command": [
+        "pmset",
+        "-g",
+        "batt"
+      ],
+      "exit_code": 0,
+      "stdout": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=45744227)\t80%; AC attached; not charging present: true\n",
+      "stderr": ""
+    },
+    "thermal": {
+      "command": [
+        "pmset",
+        "-g",
+        "therm"
+      ],
+      "exit_code": 0,
+      "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded\n",
+      "stderr": ""
+    },
+    "binary_linkage_B": {
+      "command": [
+        "otool",
+        "-L",
+        "$EXPERIMENT/macos/bin/B"
+      ],
+      "exit_code": 0,
+      "stdout": "$EXPERIMENT/macos/bin/B:\n\t/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.1.8)\n\t/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.40.3)\n\t/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit (compatibility version 1.0.0, current version 1.0.0)\n\t/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2200.32.0)\n\t/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0, weak)\n\t/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 428.40.1)\n\t/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 1605.40.4, weak)\n\t/usr/lib/swift/libswiftIOKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)\n\t/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 973.1.0, weak)\n\t/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 167.0.2, weak)\n\t/usr/lib/swift/libswift_Builtin_float.dylib (compatibility version 0.0.0, current version 0.0.0, weak)\n\t/usr/lib/swift/libswift_Concurrency.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswift_StringProcessing.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1090.40.3, weak)\n\t/usr/lib/swift/libswift_stdio.dylib (compatibility version 1.0.0, current version 428.40.1)\n",
+      "stderr": ""
+    },
+    "binary_linkage_C": {
+      "command": [
+        "otool",
+        "-L",
+        "$EXPERIMENT/macos/bin/C"
+      ],
+      "exit_code": 0,
+      "stdout": "$EXPERIMENT/macos/bin/C:\n\t/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.1.8)\n\t/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.40.3)\n\t/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit (compatibility version 1.0.0, current version 1.0.0)\n\t/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2200.32.0)\n\t/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0, weak)\n\t/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 428.40.1)\n\t/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 1605.40.4, weak)\n\t/usr/lib/swift/libswiftIOKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)\n\t/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 973.1.0, weak)\n\t/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 167.0.2, weak)\n\t/usr/lib/swift/libswift_Builtin_float.dylib (compatibility version 0.0.0, current version 0.0.0, weak)\n\t/usr/lib/swift/libswift_Concurrency.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswift_StringProcessing.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1090.40.3, weak)\n\t/usr/lib/swift/libswift_stdio.dylib (compatibility version 1.0.0, current version 428.40.1)\n",
+      "stderr": ""
+    },
+    "runtime": {
+      "command": [
+        "xcrun",
+        "dyld_info",
+        "-uuid",
+        "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/swift/libswiftCore.dylib",
+        "/usr/lib/swift/libswiftCoreFoundation.dylib",
+        "/usr/lib/swift/libswiftDarwin.dylib",
+        "/usr/lib/swift/libswiftDispatch.dylib",
+        "/usr/lib/swift/libswiftIOKit.dylib",
+        "/usr/lib/swift/libswiftObjectiveC.dylib",
+        "/usr/lib/swift/libswiftXPC.dylib",
+        "/usr/lib/swift/libswift_Builtin_float.dylib",
+        "/usr/lib/swift/libswift_Concurrency.dylib",
+        "/usr/lib/swift/libswift_StringProcessing.dylib",
+        "/usr/lib/swift/libswift_stdio.dylib",
+        "/usr/lib/swift/libswiftos.dylib"
+      ],
+      "exit_code": 0,
+      "stdout": "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit [arm64e]:\n    -uuid:\n        E7C4045B-9A81-31A0-AABB-09293F8B48C6\n/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation [arm64e]:\n    -uuid:\n        3F6D1ACE-7756-3B52-A297-8E7ADA36194F\n/usr/lib/libSystem.B.dylib [arm64e]:\n    -uuid:\n        DEAF2098-8EDD-3E5D-A821-F63A14D6C055\n/usr/lib/libc++.1.dylib [arm64e]:\n    -uuid:\n        29FF7149-AB23-3DEC-8DA3-39E2CB145F89\n/usr/lib/libobjc.A.dylib [arm64e]:\n    -uuid:\n        1FF743DE-675D-30F9-82EC-A3B6801513D7\n/usr/lib/swift/libswiftCore.dylib [arm64e]:\n    -uuid:\n        EC0C27EC-C327-3027-80FA-2F2FF76C4D52\n/usr/lib/swift/libswiftCoreFoundation.dylib [arm64e]:\n    -uuid:\n        9089145C-1294-3880-9DA4-A3F5CA934103\n/usr/lib/swift/libswiftDarwin.dylib [arm64e]:\n    -uuid:\n        D8ED1CC1-69DC-368C-9E7C-6B408E8403D8\n/usr/lib/swift/libswiftDispatch.dylib [arm64e]:\n    -uuid:\n        F3FC740F-4CE6-361E-AD75-89F813C49949\n/usr/lib/swift/libswiftIOKit.dylib [arm64e]:\n    -uuid:\n        5E463932-B509-3BB9-8457-FBD9508E555E\n/usr/lib/swift/libswiftObjectiveC.dylib [arm64e]:\n    -uuid:\n        F8D80D8B-FAC5-31E3-8CD0-7EEAA5A60B53\n/usr/lib/swift/libswiftXPC.dylib [arm64e]:\n    -uuid:\n        88295802-0089-3B7F-8AB2-6406B73A0720\n/usr/lib/swift/libswift_Builtin_float.dylib [arm64e]:\n    -uuid:\n        4310F8AA-3ADE-338B-A529-CC91AFF61D23\n/usr/lib/swift/libswift_Concurrency.dylib [arm64e]:\n    -uuid:\n        2249664D-2D56-3C9B-A6C9-CD03B6B6A793\n/usr/lib/swift/libswift_StringProcessing.dylib [arm64e]:\n    -uuid:\n        41BE15D1-2323-37FC-BF67-8413FC453DD4\n/usr/lib/swift/libswift_stdio.dylib [arm64e]:\n    -uuid:\n        8A1C9F5A-7373-37D5-8F43-7351A74A2DC0\n/usr/lib/swift/libswiftos.dylib [arm64e]:\n    -uuid:\n        309CE1B1-E511-3672-A989-35EABD87C7D3\n",
+      "stderr": ""
+    }
+  },
+  "runtime_libraries": [
+    "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+    "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+    "/usr/lib/libSystem.B.dylib",
+    "/usr/lib/libc++.1.dylib",
+    "/usr/lib/libobjc.A.dylib",
+    "/usr/lib/swift/libswiftCore.dylib",
+    "/usr/lib/swift/libswiftCoreFoundation.dylib",
+    "/usr/lib/swift/libswiftDarwin.dylib",
+    "/usr/lib/swift/libswiftDispatch.dylib",
+    "/usr/lib/swift/libswiftIOKit.dylib",
+    "/usr/lib/swift/libswiftObjectiveC.dylib",
+    "/usr/lib/swift/libswiftXPC.dylib",
+    "/usr/lib/swift/libswift_Builtin_float.dylib",
+    "/usr/lib/swift/libswift_Concurrency.dylib",
+    "/usr/lib/swift/libswift_StringProcessing.dylib",
+    "/usr/lib/swift/libswift_stdio.dylib",
+    "/usr/lib/swift/libswiftos.dylib"
+  ]
+}

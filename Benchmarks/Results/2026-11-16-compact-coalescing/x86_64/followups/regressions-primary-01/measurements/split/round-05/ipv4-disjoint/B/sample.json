@@ -1,0 +1,58 @@
+{
+  "suite": "split",
+  "case": "ipv4-disjoint",
+  "tool": "B",
+  "started_at": "2026-11-16T04:25:36.604399+00:00",
+  "free_bytes_before": 5070106624,
+  "parts": [
+    {
+      "family": 4,
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/fixtures/ipv4-disjoint/ipv4.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-primary-01/measurements/split/round-05/ipv4-disjoint/B/tmp-4/"
+      },
+      "input": "fixtures/ipv4-disjoint/ipv4.txt",
+      "output": "followups/regressions-primary-01/measurements/split/round-05/ipv4-disjoint/B/4.stdout",
+      "stderr": "followups/regressions-primary-01/measurements/split/round-05/ipv4-disjoint/B/4.stderr",
+      "started_at": "2026-11-16T04:25:36.605136+00:00",
+      "elapsed_ns": 787081482,
+      "exit_code": 0,
+      "output_bytes": 14806125,
+      "output_sha256": "cfe05140183d748b0ecf27f40a5f9240cc8929188c3fb7b2ba9e0c13ebb462d7",
+      "stderr_bytes": 0,
+      "wait4_rusage": {
+        "ru_utime": 0.722397,
+        "ru_stime": 0.062034,
+        "ru_maxrss": 44528,
+        "ru_minflt": 14314,
+        "ru_majflt": 0,
+        "ru_nswap": 0,
+        "ru_inblock": 0,
+        "ru_oublock": 28920,
+        "ru_nvcsw": 14,
+        "ru_nivcsw": 7
+      },
+      "peak_rss_bytes": 45596672,
+      "cpu_seconds": 0.784431,
+      "raw_metrics": "followups/regressions-primary-01/measurements/split/round-05/ipv4-disjoint/B/4.rusage.json"
+    }
+  ],
+  "passed": true,
+  "elapsed_ns": 787081482,
+  "peak_rss_bytes": 45596672,
+  "cpu_seconds": 0.784431,
+  "output_bytes": 14806125,
+  "matches_verified_warmup_bytes": true,
+  "finished_at": "2026-11-16T04:25:37.482317+00:00"
+}

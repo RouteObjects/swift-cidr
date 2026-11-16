@@ -1,0 +1,111 @@
+{
+  "cases": [
+    {
+      "suite": "split",
+      "case": "ipv6-disjoint",
+      "triggers": [
+        {
+          "round": 6,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 5.170369103648165,
+          "rss_change_pct": -0.17067223963775913,
+          "elapsed_difference_s": 0.088725691,
+          "rss_difference_mib": -0.19140625
+        }
+      ]
+    },
+    {
+      "suite": "split",
+      "case": "range-derived-mixed",
+      "triggers": [
+        {
+          "round": 1,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": -2.3106617583017686,
+          "rss_change_pct": 11.775490891885498,
+          "elapsed_difference_s": -0.030343776,
+          "rss_difference_mib": 7.77734375
+        },
+        {
+          "round": 2,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 0.569163836982356,
+          "rss_change_pct": 11.528940233408003,
+          "elapsed_difference_s": 0.007318113,
+          "rss_difference_mib": 7.640625
+        },
+        {
+          "round": 3,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 5.433469861803508,
+          "rss_change_pct": 11.438679245283012,
+          "elapsed_difference_s": 0.070841506,
+          "rss_difference_mib": 7.578125
+        },
+        {
+          "round": 4,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 0.9484054626592409,
+          "rss_change_pct": 11.553855208946429,
+          "elapsed_difference_s": 0.012329688,
+          "rss_difference_mib": 7.66796875
+        },
+        {
+          "round": 5,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 0.3901093533690725,
+          "rss_change_pct": 11.561579257513266,
+          "elapsed_difference_s": 0.005040557,
+          "rss_difference_mib": 7.6640625
+        },
+        {
+          "round": 6,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": -0.011071983301635946,
+          "rss_change_pct": 11.929803828882068,
+          "elapsed_difference_s": -0.000140895,
+          "rss_difference_mib": 7.88671875
+        }
+      ]
+    },
+    {
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "triggers": [
+        {
+          "round": 5,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 5.21458056506543,
+          "rss_change_pct": -0.050180650341224986,
+          "elapsed_difference_s": 0.065763192,
+          "rss_difference_mib": -0.0390625
+        }
+      ]
+    }
+  ],
+  "primary_summary_sha256": "366b4ee87e6286689e090c1c3f0f4b894e5694cb603525786528eb46b936ca10"
+}

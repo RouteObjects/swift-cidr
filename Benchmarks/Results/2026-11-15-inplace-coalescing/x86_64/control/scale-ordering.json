@@ -1,0 +1,7 @@
+{
+  "at": "2026-11-15T23:11:26.574632+00:00",
+  "ordering": "scale before primary due pending old-cache approval and persistent-space budget; primary observations will remain separate",
+  "authorization": "Parent permitted the independent scale suite after tests/codegen/runtime freezes while primary awaits capacity",
+  "free_bytes": 3517231104,
+  "task_workers_before": []
+}

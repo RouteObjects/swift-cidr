@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "free_bytes": 5752534413312,
+  "expected_retained_stdout_bytes": 508341050,
+  "minimum_free_bytes": 3221225472,
+  "at": "2026-11-15T22:41:35.934358+00:00"
+}

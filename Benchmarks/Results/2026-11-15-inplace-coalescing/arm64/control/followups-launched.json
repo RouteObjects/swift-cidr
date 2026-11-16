@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-15T22:41:35.890041+00:00",
+  "command": [
+    "/usr/local/bin/docker",
+    "--config",
+    "EVIDENCE_ROOT/arm64/control/docker-config",
+    "--host",
+    "unix://LOCAL_HOME/.orbstack/run/docker.sock",
+    "exec",
+    "-d",
+    "cidrmerge-inplace-arm642-20261115T221013Z",
+    "/bin/sh",
+    "-c",
+    "exec /validation/python/bin/python3.12 /validation/followups/control/run_followups.py > /validation/logs/followups.log 2>&1"
+  ],
+  "selection_rule": "Any individual original pair with >5% elapsed or RSS regression; one fixed six-pair follow-up per affected case",
+  "separate_no_pooling": true
+}

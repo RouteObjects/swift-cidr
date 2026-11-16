@@ -1,0 +1,4867 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "started_at": "2026-11-16T03:45:25.609456+00:00",
+  "script_sha256": "d2e1cf3555283dfa25bc346b5bff85a131d047ae5f337ce1d27a5d634f2d420c",
+  "binaries": {
+    "baseline": {
+      "path": "$EXPERIMENT/macos/bin/B",
+      "sha256": "ef2d11b3ef86c5a0000b0eb7c03535ceb100df98ac4ae0931f2397e0d373a513"
+    },
+    "candidate": {
+      "path": "$EXPERIMENT/macos/bin/C",
+      "sha256": "68b74e413ff4ad73777f747f60a6ebaff721aee4caa2b2c40858c7b0da3f622e"
+    }
+  },
+  "environment": {
+    "PATH": "/usr/bin:/bin",
+    "LD_LIBRARY_PATH": null,
+    "LANG": "C",
+    "LC_ALL": "C",
+    "TZ": "UTC"
+  },
+  "fixture_count": 60,
+  "case_count": 77,
+  "process_count": 154,
+  "fixtures": {
+    "mixed-forms": {
+      "file": "fixtures/mixed-forms.txt",
+      "bytes": 116,
+      "sha256": "abf7ac40806e5904050b81f5f49327458a64b5647cedba16ce259566805f7454",
+      "expected_success": true
+    },
+    "empty": {
+      "file": "fixtures/empty.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_success": true
+    },
+    "comments-only": {
+      "file": "fixtures/comments-only.txt",
+      "bytes": 24,
+      "sha256": "702a624d7013bbc8babaea8108b086905014912017c2390397cef31f060af2af",
+      "expected_success": true
+    },
+    "ascii-edges": {
+      "file": "fixtures/ascii-edges.txt",
+      "bytes": 24,
+      "sha256": "bdffcad0514ca324ee9a45e85e5ebb8982ab8ea4e89c6f7d7e36e16523b4babb",
+      "expected_success": true
+    },
+    "ascii-comment-delimiters": {
+      "file": "fixtures/ascii-comment-delimiters.txt",
+      "bytes": 31,
+      "sha256": "159a9bb153e50a143c27fa6f875d81cc1ac79760a4c654cd84793201b670fe44",
+      "expected_success": true
+    },
+    "unicode-edges": {
+      "file": "fixtures/unicode-edges.txt",
+      "bytes": 27,
+      "sha256": "35aa6eabfb23b40af5dc386cf74aca37a01812f8652d21c7464e809ead23c0c6",
+      "expected_success": true
+    },
+    "unicode-comment": {
+      "file": "fixtures/unicode-comment.txt",
+      "bytes": 26,
+      "sha256": "f54b0341507424f79d21cf5bbce7e301f59bb7159b82df70bf0f5a1bff9d56ef",
+      "expected_success": true
+    },
+    "bom-first": {
+      "file": "fixtures/bom-first.txt",
+      "bytes": 14,
+      "sha256": "8269552ef08c002e5ec261710e682509e99685ba5dc02bfa1d56288f0eb4c50f",
+      "expected_success": true
+    },
+    "bom-only": {
+      "file": "fixtures/bom-only.txt",
+      "bytes": 3,
+      "sha256": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5",
+      "expected_success": true
+    },
+    "bom-later": {
+      "file": "fixtures/bom-later.txt",
+      "bytes": 23,
+      "sha256": "36ae9090be83e2107603eedda205b00049947ea1c4f8c76f59bef3bcd00d8b48",
+      "expected_success": null
+    },
+    "bom-double": {
+      "file": "fixtures/bom-double.txt",
+      "bytes": 16,
+      "sha256": "676f10e3f7cc2be393bbb9841a6d73a1434118ad9e995944f487de66a1e57259",
+      "expected_success": null
+    },
+    "bom-after-space": {
+      "file": "fixtures/bom-after-space.txt",
+      "bytes": 14,
+      "sha256": "0fc7ee56093cb61f283e5fd7a9571cfe0f5ecd4e9e6630adfa075544cb9bf00c",
+      "expected_success": false
+    },
+    "bom-interior": {
+      "file": "fixtures/bom-interior.txt",
+      "bytes": 13,
+      "sha256": "ccb6766789da792e8f13c09c48601502c5e14c91c0a6015b9f6d134c2577800a",
+      "expected_success": false
+    },
+    "eof": {
+      "file": "fixtures/eof.txt",
+      "bytes": 12,
+      "sha256": "e336915ff179f536c8e8fff8480a5293f82e4db826367068433f337aa7c94601",
+      "expected_success": true
+    },
+    "repeated-cr": {
+      "file": "fixtures/repeated-cr.txt",
+      "bytes": 19,
+      "sha256": "e2f5cfeb717a86febb052cd2b5d825080d94dc92104f194b7bcfc98409faffb9",
+      "expected_success": true
+    },
+    "delimiter-range-first": {
+      "file": "fixtures/delimiter-range-first.txt",
+      "bytes": 25,
+      "sha256": "c4cbd09d87816ca11376f1acc46261e137f15b0e8c7c7d9c62865dea112cd8e3",
+      "expected_success": false
+    },
+    "delimiter-network-first": {
+      "file": "fixtures/delimiter-network-first.txt",
+      "bytes": 25,
+      "sha256": "8b6d3d96bdc9c40711b59f81be8e5aaede4e2c9a7dd89aae4eb06204f5262211",
+      "expected_success": false
+    },
+    "additional-columns": {
+      "file": "fixtures/additional-columns.txt",
+      "bytes": 41,
+      "sha256": "629393242bd8ccc2ed4434e4ec3182610d9210da9ee2d946d9070de6ba0f2fa7",
+      "expected_success": false
+    },
+    "interior-tab": {
+      "file": "fixtures/interior-tab.txt",
+      "bytes": 24,
+      "sha256": "22d7a362d7e96d6ec8eff136422273a23d02461545a6a5780d99882280ab6f8d",
+      "expected_success": false
+    },
+    "interior-unicode-space": {
+      "file": "fixtures/interior-unicode-space.txt",
+      "bytes": 21,
+      "sha256": "53b6aa58a7464a95a8e099f4b5476647519309eec6c63f3b7a18475ca2098eae",
+      "expected_success": false
+    },
+    "nul-interior": {
+      "file": "fixtures/nul-interior.txt",
+      "bytes": 11,
+      "sha256": "2582a6dd554f1aa3f43cf84d6f2beb198be6823a752773da6e0a20e3ff5c6e0f",
+      "expected_success": false
+    },
+    "hash-combining": {
+      "file": "fixtures/hash-combining.txt",
+      "bytes": 22,
+      "sha256": "1e111975948a1a76cfd119bf9157ee19a74bdc5a32604474ab13bad73d8bf398",
+      "expected_success": false
+    },
+    "hash-keycap": {
+      "file": "fixtures/hash-keycap.txt",
+      "bytes": 26,
+      "sha256": "ae8faf07acd8b3321561e7b5e1b79b3b2f4bb4a547d77e7e43e7ce8416d23433",
+      "expected_success": false
+    },
+    "comment-only-combining": {
+      "file": "fixtures/comment-only-combining.txt",
+      "bytes": 12,
+      "sha256": "6c867a0ffb0c447ef917809a891211c7d160310500892756610ed19a50681e2f",
+      "expected_success": false
+    },
+    "invalid-utf8-token": {
+      "file": "fixtures/invalid-utf8-token.txt",
+      "bytes": 15,
+      "sha256": "3518208a474ee83bf70b445cdac7305a406e1c6526c76af17c2acb5638de6eba",
+      "expected_success": false
+    },
+    "invalid-utf8-comment": {
+      "file": "fixtures/invalid-utf8-comment.txt",
+      "bytes": 16,
+      "sha256": "ba2caf6dc5039c607cd38761ad4cea92a96a07d8e7daebc43163bebb7c522e72",
+      "expected_success": false
+    },
+    "invalid-utf8-precedence": {
+      "file": "fixtures/invalid-utf8-precedence.txt",
+      "bytes": 8,
+      "sha256": "9599660b9242f6bc5ebe7575249e87cec5e53d410c1b5bd54e8ff2bbacedfaa0",
+      "expected_success": false
+    },
+    "truncated-utf8-comment": {
+      "file": "fixtures/truncated-utf8-comment.txt",
+      "bytes": 13,
+      "sha256": "7be6a7f342195f9effe4c69bd39f727018b34a841f2d77e792c9ccac78826c3c",
+      "expected_success": false
+    },
+    "surrogate-comment": {
+      "file": "fixtures/surrogate-comment.txt",
+      "bytes": 15,
+      "sha256": "48cb630277095420bac42464ba358d6baf2ea6003d2b50adcd3d731643a3da22",
+      "expected_success": false
+    },
+    "chunk-crlf": {
+      "file": "fixtures/chunk-crlf.txt",
+      "bytes": 65550,
+      "sha256": "396d809f70df35a38de23d79fc08bbd043fa0e6701cef9aaa5363be83510765b",
+      "expected_success": true
+    },
+    "chunk-unicode": {
+      "file": "fixtures/chunk-unicode.txt",
+      "bytes": 65552,
+      "sha256": "e7cc6a3198ae53d0958287ca78d11de2f36b2f2fbd292a5065356791616cc703",
+      "expected_success": true
+    },
+    "chunk-invalid-comment": {
+      "file": "fixtures/chunk-invalid-comment.txt",
+      "bytes": 65552,
+      "sha256": "764cd5da0c1d4a99e66b6a4256e291597bfe665c90137b6df8d90d9331e65a08",
+      "expected_success": false
+    },
+    "control-00": {
+      "file": "fixtures/control-00.txt",
+      "bytes": 12,
+      "sha256": "963f8f9788005c2254ca03cac403be8496bbd70cb5d4a0df02f701b8e5d5a880",
+      "expected_success": false
+    },
+    "control-01": {
+      "file": "fixtures/control-01.txt",
+      "bytes": 12,
+      "sha256": "a547a72d7dfb08004f27d9d165f14c3a166bb6303ad0bd568269b8002790032a",
+      "expected_success": false
+    },
+    "control-02": {
+      "file": "fixtures/control-02.txt",
+      "bytes": 12,
+      "sha256": "eb2713538bf9f0ccd2496416143306a2e314ac95e549934859f249a3afe98444",
+      "expected_success": false
+    },
+    "control-03": {
+      "file": "fixtures/control-03.txt",
+      "bytes": 12,
+      "sha256": "2139b5b682e811afd1eb84dd9ab61f2f808d7f7572fbade87d67dffce2a19af3",
+      "expected_success": false
+    },
+    "control-04": {
+      "file": "fixtures/control-04.txt",
+      "bytes": 12,
+      "sha256": "c6aa0515e3de517ff71b8b41a4c322f5e47b0174b9cb0b7664fc350aed711417",
+      "expected_success": false
+    },
+    "control-05": {
+      "file": "fixtures/control-05.txt",
+      "bytes": 12,
+      "sha256": "194c6a2a9fd72ee4b01aa4c60816a036da84306aaf6b18bc39ac4131868a267c",
+      "expected_success": false
+    },
+    "control-06": {
+      "file": "fixtures/control-06.txt",
+      "bytes": 12,
+      "sha256": "8cbcd70007f9078e6c6942288bd240ee1419f9978a0370cb69e40abdea74ec0a",
+      "expected_success": false
+    },
+    "control-07": {
+      "file": "fixtures/control-07.txt",
+      "bytes": 12,
+      "sha256": "cb3c94be7cb136a3fc8b941a6a11ebdd1e3ee342497d102596752937d553868d",
+      "expected_success": false
+    },
+    "control-08": {
+      "file": "fixtures/control-08.txt",
+      "bytes": 12,
+      "sha256": "295b3708ee6d4d59447969b67b34f1a2ff4529e79d7e4a600770a3f070283576",
+      "expected_success": false
+    },
+    "control-0e": {
+      "file": "fixtures/control-0e.txt",
+      "bytes": 12,
+      "sha256": "4180176f3d2dfe27d0c68fc49c9705002df1d4c825a84a65491fbe2a25206678",
+      "expected_success": false
+    },
+    "control-0f": {
+      "file": "fixtures/control-0f.txt",
+      "bytes": 12,
+      "sha256": "b7d8019a6a56c69316fd956554ba4c47403b307c4ff318ded88627e8e5cec3ab",
+      "expected_success": false
+    },
+    "control-10": {
+      "file": "fixtures/control-10.txt",
+      "bytes": 12,
+      "sha256": "41780994f031cecdf7943f387b707028b71098294ed53a607e87507170a39a52",
+      "expected_success": false
+    },
+    "control-11": {
+      "file": "fixtures/control-11.txt",
+      "bytes": 12,
+      "sha256": "971d94d23e89515611241af581af7d99cf13b3d58ce5b1fa866b481f3aa2f2aa",
+      "expected_success": false
+    },
+    "control-12": {
+      "file": "fixtures/control-12.txt",
+      "bytes": 12,
+      "sha256": "1c630d9933a8c8b69072d730a02e9b89cb0aaa30fbfcb0c3b5ff8f99d046a57f",
+      "expected_success": false
+    },
+    "control-13": {
+      "file": "fixtures/control-13.txt",
+      "bytes": 12,
+      "sha256": "ec0002640441174d99ef30c873c490300e7c0b37ba882b5b76dc834aafef69de",
+      "expected_success": false
+    },
+    "control-14": {
+      "file": "fixtures/control-14.txt",
+      "bytes": 12,
+      "sha256": "a5ca6730ee756daf10de106ff7d2b7b0b421849e538ce403c7979b4bac69cd4d",
+      "expected_success": false
+    },
+    "control-15": {
+      "file": "fixtures/control-15.txt",
+      "bytes": 12,
+      "sha256": "f183396721ea046440412dcd9e76dc3352da41ba71a2d901d2a4e3bb1b31a805",
+      "expected_success": false
+    },
+    "control-16": {
+      "file": "fixtures/control-16.txt",
+      "bytes": 12,
+      "sha256": "eb027b651370da1b03c1db57f2ea640b394bf703445b89ceebb2be4a56a54162",
+      "expected_success": false
+    },
+    "control-17": {
+      "file": "fixtures/control-17.txt",
+      "bytes": 12,
+      "sha256": "7f00df1080e53868171fd7b96ab377d7396df50b8be2016a71f9599cfe01b12b",
+      "expected_success": false
+    },
+    "control-18": {
+      "file": "fixtures/control-18.txt",
+      "bytes": 12,
+      "sha256": "722625fca31bf0b155e265a4276da278d6219068e1e1cda946dd7a1c45c8e82a",
+      "expected_success": false
+    },
+    "control-19": {
+      "file": "fixtures/control-19.txt",
+      "bytes": 12,
+      "sha256": "de00b960885a112e632bd49d00c20ff0bfad2bc01eb4f11465ba28d65a6d2831",
+      "expected_success": false
+    },
+    "control-1a": {
+      "file": "fixtures/control-1a.txt",
+      "bytes": 12,
+      "sha256": "9870722fc56718157435ff34b3c6a2d71c92d39708060a14756e146d6b55275a",
+      "expected_success": false
+    },
+    "control-1b": {
+      "file": "fixtures/control-1b.txt",
+      "bytes": 12,
+      "sha256": "ee4f44f91902a535caa292537fbbe099a092240f98a8067aa336049976f9eb42",
+      "expected_success": false
+    },
+    "control-1c": {
+      "file": "fixtures/control-1c.txt",
+      "bytes": 12,
+      "sha256": "a722707083e73759bed2d2362b3ab87de0709e166e603c32700036b6c82a21f1",
+      "expected_success": false
+    },
+    "control-1d": {
+      "file": "fixtures/control-1d.txt",
+      "bytes": 12,
+      "sha256": "24e070dbbe7d63d028f5a3caa53725e8d605b54de2bf54045ab132fdf85e6197",
+      "expected_success": false
+    },
+    "control-1e": {
+      "file": "fixtures/control-1e.txt",
+      "bytes": 12,
+      "sha256": "b5792580b1464ed87e664a3231f8752c8014dccda1d47a2a0949bf31d3af096c",
+      "expected_success": false
+    },
+    "control-1f": {
+      "file": "fixtures/control-1f.txt",
+      "bytes": 12,
+      "sha256": "851cd847f60e37474d99ea6b854747a80023f79f2093576789575223b0d6048e",
+      "expected_success": false
+    },
+    "control-7f": {
+      "file": "fixtures/control-7f.txt",
+      "bytes": 12,
+      "sha256": "5626395e81d0103b99d1665006c72f5ef39a7037ab9c795f4a2200b225a9998f",
+      "expected_success": false
+    }
+  },
+  "cases": [
+    {
+      "id": "mixed-forms-file",
+      "fixture": "mixed-forms",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 172,
+          "sha256": "a1a910319d6ad955498eb75e190356115ad03900b52b1effc8d3aa7ba35ccefb"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "1f75cd46855a5259c205e8fa67db12f53a63a587c42ad8ab845b4f484b6e6d69"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 172,
+          "sha256": "a1a910319d6ad955498eb75e190356115ad03900b52b1effc8d3aa7ba35ccefb"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "1f75cd46855a5259c205e8fa67db12f53a63a587c42ad8ab845b4f484b6e6d69"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "empty-file",
+      "fixture": "empty",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/empty.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 114,
+          "sha256": "438d02b2c6d613fa0878d0d5605e87e80dc08d36049f46099285ed6556c2b231"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/empty.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 114,
+          "sha256": "438d02b2c6d613fa0878d0d5605e87e80dc08d36049f46099285ed6556c2b231"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "comments-only-file",
+      "fixture": "comments-only",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/comments-only.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 114,
+          "sha256": "438d02b2c6d613fa0878d0d5605e87e80dc08d36049f46099285ed6556c2b231"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/comments-only.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 114,
+          "sha256": "438d02b2c6d613fa0878d0d5605e87e80dc08d36049f46099285ed6556c2b231"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "ascii-edges-file",
+      "fixture": "ascii-edges",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/ascii-edges.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 24,
+          "sha256": "4fadfa35475984133bb25b33cbb5e793e475888f0c2f1d1347f4df2c7b06f52e"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 112,
+          "sha256": "562c937b9535e9cb89522b29206e860c2f844e84a44d270a16eaed700558abdc"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/ascii-edges.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 24,
+          "sha256": "4fadfa35475984133bb25b33cbb5e793e475888f0c2f1d1347f4df2c7b06f52e"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 112,
+          "sha256": "562c937b9535e9cb89522b29206e860c2f844e84a44d270a16eaed700558abdc"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "ascii-comment-delimiters-file",
+      "fixture": "ascii-comment-delimiters",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/ascii-comment-delimiters.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 24,
+          "sha256": "4fadfa35475984133bb25b33cbb5e793e475888f0c2f1d1347f4df2c7b06f52e"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 112,
+          "sha256": "562c937b9535e9cb89522b29206e860c2f844e84a44d270a16eaed700558abdc"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/ascii-comment-delimiters.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 24,
+          "sha256": "4fadfa35475984133bb25b33cbb5e793e475888f0c2f1d1347f4df2c7b06f52e"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 112,
+          "sha256": "562c937b9535e9cb89522b29206e860c2f844e84a44d270a16eaed700558abdc"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "unicode-edges-file",
+      "fixture": "unicode-edges",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/unicode-edges.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 24,
+          "sha256": "4fadfa35475984133bb25b33cbb5e793e475888f0c2f1d1347f4df2c7b06f52e"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 112,
+          "sha256": "562c937b9535e9cb89522b29206e860c2f844e84a44d270a16eaed700558abdc"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/unicode-edges.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 24,
+          "sha256": "4fadfa35475984133bb25b33cbb5e793e475888f0c2f1d1347f4df2c7b06f52e"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 112,
+          "sha256": "562c937b9535e9cb89522b29206e860c2f844e84a44d270a16eaed700558abdc"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "unicode-comment-file",
+      "fixture": "unicode-comment",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/unicode-comment.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 24,
+          "sha256": "4fadfa35475984133bb25b33cbb5e793e475888f0c2f1d1347f4df2c7b06f52e"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 112,
+          "sha256": "562c937b9535e9cb89522b29206e860c2f844e84a44d270a16eaed700558abdc"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/unicode-comment.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 24,
+          "sha256": "4fadfa35475984133bb25b33cbb5e793e475888f0c2f1d1347f4df2c7b06f52e"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 112,
+          "sha256": "562c937b9535e9cb89522b29206e860c2f844e84a44d270a16eaed700558abdc"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "bom-first-file",
+      "fixture": "bom-first",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/bom-first.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 22,
+          "sha256": "37ffe4b6eb1dbfdac19cad6a0aeda3f698ca9b174d291fcf78c958c8b6066451"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 110,
+          "sha256": "2dbbcac7d085790ecc7d85dc601385c738eb9c367165b10b2e6fa7d494d8a33b"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/bom-first.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 22,
+          "sha256": "37ffe4b6eb1dbfdac19cad6a0aeda3f698ca9b174d291fcf78c958c8b6066451"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 110,
+          "sha256": "2dbbcac7d085790ecc7d85dc601385c738eb9c367165b10b2e6fa7d494d8a33b"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "bom-only-file",
+      "fixture": "bom-only",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/bom-only.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 114,
+          "sha256": "438d02b2c6d613fa0878d0d5605e87e80dc08d36049f46099285ed6556c2b231"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/bom-only.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 114,
+          "sha256": "438d02b2c6d613fa0878d0d5605e87e80dc08d36049f46099285ed6556c2b231"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "bom-later-file",
+      "fixture": "bom-later",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/bom-later.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 22,
+          "sha256": "c60ba8a9d14619179d56835d87eac0248ece8c6c8bde35dd2b8572edab903a74"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 116,
+          "sha256": "0dff000f9b4042d1d46962ed9178f95c0dbcb5bd7412edcf011804c7ebc10b15"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/bom-later.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 22,
+          "sha256": "c60ba8a9d14619179d56835d87eac0248ece8c6c8bde35dd2b8572edab903a74"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 116,
+          "sha256": "0dff000f9b4042d1d46962ed9178f95c0dbcb5bd7412edcf011804c7ebc10b15"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "bom-double-file",
+      "fixture": "bom-double",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/bom-double.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 22,
+          "sha256": "37ffe4b6eb1dbfdac19cad6a0aeda3f698ca9b174d291fcf78c958c8b6066451"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 110,
+          "sha256": "2dbbcac7d085790ecc7d85dc601385c738eb9c367165b10b2e6fa7d494d8a33b"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/bom-double.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 22,
+          "sha256": "37ffe4b6eb1dbfdac19cad6a0aeda3f698ca9b174d291fcf78c958c8b6066451"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 110,
+          "sha256": "2dbbcac7d085790ecc7d85dc601385c738eb9c367165b10b2e6fa7d494d8a33b"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "bom-after-space-file",
+      "fixture": "bom-after-space",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/bom-after-space.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 198,
+          "sha256": "8f13e4cde952e3949d1a7a95b75b6843e3612818d26454489937e7c60d1040bf"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/bom-after-space.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 198,
+          "sha256": "8f13e4cde952e3949d1a7a95b75b6843e3612818d26454489937e7c60d1040bf"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "bom-interior-file",
+      "fixture": "bom-interior",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/bom-interior.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 195,
+          "sha256": "90967615d0a09a219d7d56f0e28b6d39c8d0c1b349f1b20f9bbfd8919d14907f"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/bom-interior.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 195,
+          "sha256": "90967615d0a09a219d7d56f0e28b6d39c8d0c1b349f1b20f9bbfd8919d14907f"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "eof-file",
+      "fixture": "eof",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/eof.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 24,
+          "sha256": "4fadfa35475984133bb25b33cbb5e793e475888f0c2f1d1347f4df2c7b06f52e"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 112,
+          "sha256": "562c937b9535e9cb89522b29206e860c2f844e84a44d270a16eaed700558abdc"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/eof.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 24,
+          "sha256": "4fadfa35475984133bb25b33cbb5e793e475888f0c2f1d1347f4df2c7b06f52e"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 112,
+          "sha256": "562c937b9535e9cb89522b29206e860c2f844e84a44d270a16eaed700558abdc"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "repeated-cr-file",
+      "fixture": "repeated-cr",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/repeated-cr.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 24,
+          "sha256": "4fadfa35475984133bb25b33cbb5e793e475888f0c2f1d1347f4df2c7b06f52e"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 112,
+          "sha256": "562c937b9535e9cb89522b29206e860c2f844e84a44d270a16eaed700558abdc"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/repeated-cr.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 24,
+          "sha256": "4fadfa35475984133bb25b33cbb5e793e475888f0c2f1d1347f4df2c7b06f52e"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 112,
+          "sha256": "562c937b9535e9cb89522b29206e860c2f844e84a44d270a16eaed700558abdc"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "delimiter-range-first-file",
+      "fixture": "delimiter-range-first",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/delimiter-range-first.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 216,
+          "sha256": "06e2962d3bebf0395b60312dd9cf2aef7cb622d7372b30bd7eed9b8dccb3ec4f"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/delimiter-range-first.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 216,
+          "sha256": "06e2962d3bebf0395b60312dd9cf2aef7cb622d7372b30bd7eed9b8dccb3ec4f"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "delimiter-network-first-file",
+      "fixture": "delimiter-network-first",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/delimiter-network-first.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 218,
+          "sha256": "f578d1713a9bac0f42878d3a11d5401252fc666b088845de5b5256b75d53fa2d"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/delimiter-network-first.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 218,
+          "sha256": "f578d1713a9bac0f42878d3a11d5401252fc666b088845de5b5256b75d53fa2d"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "additional-columns-file",
+      "fixture": "additional-columns",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/additional-columns.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 207,
+          "sha256": "4e0abf43f46c1f891436e5f695f927ef9f2c2ecffb4ff633d02c0615f28dbbad"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/additional-columns.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 207,
+          "sha256": "4e0abf43f46c1f891436e5f695f927ef9f2c2ecffb4ff633d02c0615f28dbbad"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "interior-tab-file",
+      "fixture": "interior-tab",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/interior-tab.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 207,
+          "sha256": "444c95fa82065b2be4ce340e6a944308a5c83fe401103b451c15ed0c2710b765"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/interior-tab.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 207,
+          "sha256": "444c95fa82065b2be4ce340e6a944308a5c83fe401103b451c15ed0c2710b765"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "interior-unicode-space-file",
+      "fixture": "interior-unicode-space",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/interior-unicode-space.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 213,
+          "sha256": "cb79c2ddaf74b076335d5b29f594ff0f0305c07f8a07d846e8f43d8a65890e62"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/interior-unicode-space.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 213,
+          "sha256": "cb79c2ddaf74b076335d5b29f594ff0f0305c07f8a07d846e8f43d8a65890e62"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "nul-interior-file",
+      "fixture": "nul-interior",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/nul-interior.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 194,
+          "sha256": "ae44383e4a5103e338e76b50ec880b9417d26616df317916a036d22ea40021f5"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/nul-interior.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 194,
+          "sha256": "ae44383e4a5103e338e76b50ec880b9417d26616df317916a036d22ea40021f5"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "hash-combining-file",
+      "fixture": "hash-combining",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/hash-combining.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 206,
+          "sha256": "49c93cfc00ad6bd1c9ba6886d8fefc23b64b2b7413b163cb9716b473c2de2f85"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/hash-combining.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 206,
+          "sha256": "49c93cfc00ad6bd1c9ba6886d8fefc23b64b2b7413b163cb9716b473c2de2f85"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "hash-keycap-file",
+      "fixture": "hash-keycap",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/hash-keycap.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 207,
+          "sha256": "d1e9b7ca0fb249c44e82a4eea2ee378d777282d3d7c2a52e7eaf8f3484a1f2fe"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/hash-keycap.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 207,
+          "sha256": "d1e9b7ca0fb249c44e82a4eea2ee378d777282d3d7c2a52e7eaf8f3484a1f2fe"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "comment-only-combining-file",
+      "fixture": "comment-only-combining",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/comment-only-combining.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 204,
+          "sha256": "3dd0805143135c5e91645d0c16e7da55e527cb156483aaec3670c21de849f793"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/comment-only-combining.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 204,
+          "sha256": "3dd0805143135c5e91645d0c16e7da55e527cb156483aaec3670c21de849f793"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "invalid-utf8-token-file",
+      "fixture": "invalid-utf8-token",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/invalid-utf8-token.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 173,
+          "sha256": "47088307a7a4fa4936e2c97cfc77a8d7a0052155965d1ec287a8a9690bea66d9"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/invalid-utf8-token.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 173,
+          "sha256": "47088307a7a4fa4936e2c97cfc77a8d7a0052155965d1ec287a8a9690bea66d9"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "invalid-utf8-comment-file",
+      "fixture": "invalid-utf8-comment",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/invalid-utf8-comment.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 175,
+          "sha256": "123aff251a7fc57056787e4248af99ac7e79ec13dbcb21559cb6f6c7a975b60c"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/invalid-utf8-comment.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 175,
+          "sha256": "123aff251a7fc57056787e4248af99ac7e79ec13dbcb21559cb6f6c7a975b60c"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "invalid-utf8-precedence-file",
+      "fixture": "invalid-utf8-precedence",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/invalid-utf8-precedence.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 178,
+          "sha256": "7b2d4aacd0421aa8c1df2ee1b9e33a903192f44253c35e662986cb967a4df88e"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/invalid-utf8-precedence.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 178,
+          "sha256": "7b2d4aacd0421aa8c1df2ee1b9e33a903192f44253c35e662986cb967a4df88e"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "truncated-utf8-comment-file",
+      "fixture": "truncated-utf8-comment",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/truncated-utf8-comment.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 177,
+          "sha256": "df17413bd9f5c47030efd3f1a89ec5f763ab30477af4783ba7350f39576c93fd"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/truncated-utf8-comment.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 177,
+          "sha256": "df17413bd9f5c47030efd3f1a89ec5f763ab30477af4783ba7350f39576c93fd"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "surrogate-comment-file",
+      "fixture": "surrogate-comment",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/surrogate-comment.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 172,
+          "sha256": "7622edf60e37fa946d7af1db29f2e274bfa290d64bc27b2bc96ed116b4aac7e5"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/surrogate-comment.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 172,
+          "sha256": "7622edf60e37fa946d7af1db29f2e274bfa290d64bc27b2bc96ed116b4aac7e5"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "chunk-crlf-file",
+      "fixture": "chunk-crlf",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/chunk-crlf.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 76,
+          "sha256": "8ec59392090610edec4b6b7208a80ec9e2e1c946371af4742925818f74fca2e7"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "9970543694bafba44034d5eb71f4f060cbe2c2a6e2acdc48906d5dca059f6c3d"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/chunk-crlf.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 76,
+          "sha256": "8ec59392090610edec4b6b7208a80ec9e2e1c946371af4742925818f74fca2e7"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "9970543694bafba44034d5eb71f4f060cbe2c2a6e2acdc48906d5dca059f6c3d"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "chunk-unicode-file",
+      "fixture": "chunk-unicode",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/chunk-unicode.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 76,
+          "sha256": "8ec59392090610edec4b6b7208a80ec9e2e1c946371af4742925818f74fca2e7"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "9970543694bafba44034d5eb71f4f060cbe2c2a6e2acdc48906d5dca059f6c3d"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/chunk-unicode.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 76,
+          "sha256": "8ec59392090610edec4b6b7208a80ec9e2e1c946371af4742925818f74fca2e7"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "9970543694bafba44034d5eb71f4f060cbe2c2a6e2acdc48906d5dca059f6c3d"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "chunk-invalid-comment-file",
+      "fixture": "chunk-invalid-comment",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/chunk-invalid-comment.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 176,
+          "sha256": "decfebe0ae6ddfaf74b119b99801b42854c87950aa3bf99cb328cdb50ed8e5b8"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/chunk-invalid-comment.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 176,
+          "sha256": "decfebe0ae6ddfaf74b119b99801b42854c87950aa3bf99cb328cdb50ed8e5b8"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-00-file",
+      "fixture": "control-00",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-00.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 194,
+          "sha256": "f94e07c28408ad55eee1f9d4d8320e1deffd5841c9431478f0d36149e42d5823"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-00.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 194,
+          "sha256": "f94e07c28408ad55eee1f9d4d8320e1deffd5841c9431478f0d36149e42d5823"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-01-file",
+      "fixture": "control-01",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-01.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "9a8c4db6c69dd2febe2cae5f2abd91e4464fb064fb036fec9f7248eedbf3bb56"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-01.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "9a8c4db6c69dd2febe2cae5f2abd91e4464fb064fb036fec9f7248eedbf3bb56"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-02-file",
+      "fixture": "control-02",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-02.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "831e88373cb71ccd86eade880b4935b81fc7ce46181fdd8fb8ccb10704c79ca5"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-02.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "831e88373cb71ccd86eade880b4935b81fc7ce46181fdd8fb8ccb10704c79ca5"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-03-file",
+      "fixture": "control-03",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-03.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "fe9c7b14707f2459ab143f5625b32cf41e90d548bb8049d7f7f399ba164023e5"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-03.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "fe9c7b14707f2459ab143f5625b32cf41e90d548bb8049d7f7f399ba164023e5"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-04-file",
+      "fixture": "control-04",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-04.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "38bd487120f8b5c9b4e296370377bffc8ed97e7c42cc58f6f55f90c34c4b248a"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-04.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "38bd487120f8b5c9b4e296370377bffc8ed97e7c42cc58f6f55f90c34c4b248a"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-05-file",
+      "fixture": "control-05",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-05.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "1912ec54251a6e0416a1e89fa8f1325766bd4a12b1dbe55c1d1bd6037292665f"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-05.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "1912ec54251a6e0416a1e89fa8f1325766bd4a12b1dbe55c1d1bd6037292665f"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-06-file",
+      "fixture": "control-06",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-06.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "b5677bb1e106b7947bb76c0f6fb826ce28dafa25eafa34753615fda220ad0303"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-06.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "b5677bb1e106b7947bb76c0f6fb826ce28dafa25eafa34753615fda220ad0303"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-07-file",
+      "fixture": "control-07",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-07.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "fff0bbc3383a0cf02b95b2773d7114457bf26f20290de6a6ced27f14e557cf99"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-07.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "fff0bbc3383a0cf02b95b2773d7114457bf26f20290de6a6ced27f14e557cf99"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-08-file",
+      "fixture": "control-08",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-08.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "7d7eff45a1f2e74a91a319be8a36a1dfb614babee768dc15291dfbdcd56da2a3"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-08.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "7d7eff45a1f2e74a91a319be8a36a1dfb614babee768dc15291dfbdcd56da2a3"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-0e-file",
+      "fixture": "control-0e",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-0e.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "4e3c3fb1a7f7267dabd756330c971ecdcdac4965e5c1d10882e3804502101da0"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-0e.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "4e3c3fb1a7f7267dabd756330c971ecdcdac4965e5c1d10882e3804502101da0"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-0f-file",
+      "fixture": "control-0f",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-0f.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "c3ef34cca3b4788079a2e762ec732ad078b53f8b68d37d5ac61e4d33a533a9b8"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-0f.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "c3ef34cca3b4788079a2e762ec732ad078b53f8b68d37d5ac61e4d33a533a9b8"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-10-file",
+      "fixture": "control-10",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-10.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "ec0d218869be347f984bf55dd3fa1bd69531e72a8f085fea09a57355fa98fa32"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-10.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "ec0d218869be347f984bf55dd3fa1bd69531e72a8f085fea09a57355fa98fa32"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-11-file",
+      "fixture": "control-11",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-11.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "cd2d1319a551d157baf002798537bbbfce932ea936fdffe5cf515b76936aa663"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-11.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "cd2d1319a551d157baf002798537bbbfce932ea936fdffe5cf515b76936aa663"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-12-file",
+      "fixture": "control-12",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-12.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "1eab655ae4db79b6d7949e8e97b4aa9ff92df52e9572f0079469b1e90c3d10dd"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-12.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "1eab655ae4db79b6d7949e8e97b4aa9ff92df52e9572f0079469b1e90c3d10dd"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-13-file",
+      "fixture": "control-13",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-13.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "fa1adee86b9101017d256d0df63e0e323bc3bb4150334657b9c437cb71a5114a"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-13.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "fa1adee86b9101017d256d0df63e0e323bc3bb4150334657b9c437cb71a5114a"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-14-file",
+      "fixture": "control-14",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-14.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "3f9e89ac4f1054cf4ba7268f1d272f239e4205fdce6579699e51ee701fd0aba3"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-14.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "3f9e89ac4f1054cf4ba7268f1d272f239e4205fdce6579699e51ee701fd0aba3"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-15-file",
+      "fixture": "control-15",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-15.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "ff02417aea993c6b8ef44c1db2465c3de966944cdf7a37bc64bb78ae70bfec6b"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-15.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "ff02417aea993c6b8ef44c1db2465c3de966944cdf7a37bc64bb78ae70bfec6b"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-16-file",
+      "fixture": "control-16",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-16.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "a4179510054a49d040f8dbab30b8cb1d9b9a3ed89c76ac25a9a2c868a8beb654"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-16.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "a4179510054a49d040f8dbab30b8cb1d9b9a3ed89c76ac25a9a2c868a8beb654"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-17-file",
+      "fixture": "control-17",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-17.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "142066b271439b6d5eaae7d9bbba1115692f4c6b5f463b8ed903019c30406efd"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-17.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "142066b271439b6d5eaae7d9bbba1115692f4c6b5f463b8ed903019c30406efd"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-18-file",
+      "fixture": "control-18",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-18.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "97a93ff9cbbfa33a27697900165c769b62b65f3a6f3f3642f35c7ed7a364814d"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-18.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "97a93ff9cbbfa33a27697900165c769b62b65f3a6f3f3642f35c7ed7a364814d"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-19-file",
+      "fixture": "control-19",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-19.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "2305178b2dd1fce0bd75a2911f2ee4842a8d36e48deea6b5f574e6b2cc565910"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-19.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "2305178b2dd1fce0bd75a2911f2ee4842a8d36e48deea6b5f574e6b2cc565910"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-1a-file",
+      "fixture": "control-1a",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-1a.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "ed2c34ce773f2c03bf12654e779f1d4f07156e8f1f4e668ce929ffcd594a0d90"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-1a.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "ed2c34ce773f2c03bf12654e779f1d4f07156e8f1f4e668ce929ffcd594a0d90"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-1b-file",
+      "fixture": "control-1b",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-1b.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "a1736848f195bc3865886800319934e9964b10b5e23d21a37fcd49a29fddc2b1"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-1b.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "a1736848f195bc3865886800319934e9964b10b5e23d21a37fcd49a29fddc2b1"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-1c-file",
+      "fixture": "control-1c",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-1c.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "63027d8737ac95686e572d5309ecdf7b674418e5559f205c19e0bb50f74e927a"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-1c.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "63027d8737ac95686e572d5309ecdf7b674418e5559f205c19e0bb50f74e927a"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-1d-file",
+      "fixture": "control-1d",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-1d.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "9b651c329d7a4ac5d6823e3268b21a696af5ee5daf4c233aea7fed60ffc8f604"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-1d.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "9b651c329d7a4ac5d6823e3268b21a696af5ee5daf4c233aea7fed60ffc8f604"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-1e-file",
+      "fixture": "control-1e",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-1e.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "405d204382b8a1183279207f10b6944620f5749334cbdcaa39a79477e58c0543"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-1e.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "405d204382b8a1183279207f10b6944620f5749334cbdcaa39a79477e58c0543"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-1f-file",
+      "fixture": "control-1f",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-1f.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "3c74d6cdfef510cd36ffd23a8128218f8c1602d4909ea100dea87ad768f7971c"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-1f.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "3c74d6cdfef510cd36ffd23a8128218f8c1602d4909ea100dea87ad768f7971c"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "control-7f-file",
+      "fixture": "control-7f",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-7f.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "64092ba8f2870059ffe759afde98f473bac421aed32b4811b058f673e40a0588"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/control-7f.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 202,
+          "sha256": "64092ba8f2870059ffe759afde98f473bac421aed32b4811b058f673e40a0588"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "mixed-forms-stdin",
+      "fixture": "mixed-forms",
+      "stdin": true,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 172,
+          "sha256": "a1a910319d6ad955498eb75e190356115ad03900b52b1effc8d3aa7ba35ccefb"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "1f75cd46855a5259c205e8fa67db12f53a63a587c42ad8ab845b4f484b6e6d69"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 172,
+          "sha256": "a1a910319d6ad955498eb75e190356115ad03900b52b1effc8d3aa7ba35ccefb"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "1f75cd46855a5259c205e8fa67db12f53a63a587c42ad8ab845b4f484b6e6d69"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "comments-only-stdin",
+      "fixture": "comments-only",
+      "stdin": true,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 114,
+          "sha256": "438d02b2c6d613fa0878d0d5605e87e80dc08d36049f46099285ed6556c2b231"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 114,
+          "sha256": "438d02b2c6d613fa0878d0d5605e87e80dc08d36049f46099285ed6556c2b231"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "hash-combining-stdin",
+      "fixture": "hash-combining",
+      "stdin": true,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 98,
+          "sha256": "e0176a0b048ad196d79f9c580747dceb3cf0e1c449d526030b2709c5005640e1"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 98,
+          "sha256": "e0176a0b048ad196d79f9c580747dceb3cf0e1c449d526030b2709c5005640e1"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "hash-keycap-stdin",
+      "fixture": "hash-keycap",
+      "stdin": true,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 102,
+          "sha256": "a17c60833d34e7c0e98a962feb60ca7e6b923b2758bc64641a41cbaf3700fc85"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 102,
+          "sha256": "a17c60833d34e7c0e98a962feb60ca7e6b923b2758bc64641a41cbaf3700fc85"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "invalid-utf8-comment-stdin",
+      "fixture": "invalid-utf8-comment",
+      "stdin": true,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 61,
+          "sha256": "311a93c59e2d4553d9fa77d635ce56fdaa072049341c3d132fab09291182e9ef"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 61,
+          "sha256": "311a93c59e2d4553d9fa77d635ce56fdaa072049341c3d132fab09291182e9ef"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "invalid-utf8-precedence-stdin",
+      "fixture": "invalid-utf8-precedence",
+      "stdin": true,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 61,
+          "sha256": "c41f9c31c07a4f9730b68bff974b1a0d23c39f3d52161af60eb9f3048a8ace6b"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 61,
+          "sha256": "c41f9c31c07a4f9730b68bff974b1a0d23c39f3d52161af60eb9f3048a8ace6b"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "chunk-unicode-stdin",
+      "fixture": "chunk-unicode",
+      "stdin": true,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 76,
+          "sha256": "8ec59392090610edec4b6b7208a80ec9e2e1c946371af4742925818f74fca2e7"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "9970543694bafba44034d5eb71f4f060cbe2c2a6e2acdc48906d5dca059f6c3d"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 76,
+          "sha256": "8ec59392090610edec4b6b7208a80ec9e2e1c946371af4742925818f74fca2e7"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "9970543694bafba44034d5eb71f4f060cbe2c2a6e2acdc48906d5dca059f6c3d"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "chunk-invalid-comment-stdin",
+      "fixture": "chunk-invalid-comment",
+      "stdin": true,
+      "flags": [
+        "--raw",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 61,
+          "sha256": "311a93c59e2d4553d9fa77d635ce56fdaa072049341c3d132fab09291182e9ef"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--stats",
+          "-"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 61,
+          "sha256": "311a93c59e2d4553d9fa77d635ce56fdaa072049341c3d132fab09291182e9ef"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "mixed-ranges-raw",
+      "fixture": "mixed-forms",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--representation",
+        "ranges",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--representation",
+          "ranges",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 172,
+          "sha256": "a1a910319d6ad955498eb75e190356115ad03900b52b1effc8d3aa7ba35ccefb"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "1f75cd46855a5259c205e8fa67db12f53a63a587c42ad8ab845b4f484b6e6d69"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--representation",
+          "ranges",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 172,
+          "sha256": "a1a910319d6ad955498eb75e190356115ad03900b52b1effc8d3aa7ba35ccefb"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "1f75cd46855a5259c205e8fa67db12f53a63a587c42ad8ab845b4f484b6e6d69"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "checksum-ranges-raw",
+      "fixture": "mixed-forms",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--representation",
+        "ranges",
+        "--stats",
+        "--checksum",
+        "--output",
+        "output.txt"
+      ],
+      "checksum": true,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--representation",
+          "ranges",
+          "--stats",
+          "--checksum",
+          "--output",
+          "output.txt",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "1f75cd46855a5259c205e8fa67db12f53a63a587c42ad8ab845b4f484b6e6d69"
+        },
+        "output_files": {
+          "output.txt": {
+            "bytes": 172,
+            "sha256": "a1a910319d6ad955498eb75e190356115ad03900b52b1effc8d3aa7ba35ccefb"
+          },
+          "output.txt.sha256": {
+            "bytes": 77,
+            "sha256": "508624ee09c85204cdcd9573631e7b89d977ea61d8f64e6ea85812b31637bdee"
+          }
+        }
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--representation",
+          "ranges",
+          "--stats",
+          "--checksum",
+          "--output",
+          "output.txt",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "1f75cd46855a5259c205e8fa67db12f53a63a587c42ad8ab845b4f484b6e6d69"
+        },
+        "output_files": {
+          "output.txt": {
+            "bytes": 172,
+            "sha256": "a1a910319d6ad955498eb75e190356115ad03900b52b1effc8d3aa7ba35ccefb"
+          },
+          "output.txt.sha256": {
+            "bytes": 77,
+            "sha256": "508624ee09c85204cdcd9573631e7b89d977ea61d8f64e6ea85812b31637bdee"
+          }
+        }
+      }
+    },
+    {
+      "id": "mixed-ranges-json",
+      "fixture": "mixed-forms",
+      "stdin": false,
+      "flags": [
+        "--json",
+        "--representation",
+        "ranges",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--json",
+          "--representation",
+          "ranges",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 282,
+          "sha256": "17eab9ef9eb728f2aef9f40cf4b5a652e3a1daeb028a36467003b25a97e708af"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "1f75cd46855a5259c205e8fa67db12f53a63a587c42ad8ab845b4f484b6e6d69"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--json",
+          "--representation",
+          "ranges",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 282,
+          "sha256": "17eab9ef9eb728f2aef9f40cf4b5a652e3a1daeb028a36467003b25a97e708af"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "1f75cd46855a5259c205e8fa67db12f53a63a587c42ad8ab845b4f484b6e6d69"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "checksum-ranges-json",
+      "fixture": "mixed-forms",
+      "stdin": false,
+      "flags": [
+        "--json",
+        "--representation",
+        "ranges",
+        "--stats",
+        "--checksum",
+        "--output",
+        "output.txt"
+      ],
+      "checksum": true,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--json",
+          "--representation",
+          "ranges",
+          "--stats",
+          "--checksum",
+          "--output",
+          "output.txt",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "1f75cd46855a5259c205e8fa67db12f53a63a587c42ad8ab845b4f484b6e6d69"
+        },
+        "output_files": {
+          "output.txt": {
+            "bytes": 282,
+            "sha256": "17eab9ef9eb728f2aef9f40cf4b5a652e3a1daeb028a36467003b25a97e708af"
+          },
+          "output.txt.sha256": {
+            "bytes": 77,
+            "sha256": "bbe3a5e2aaa5fc3e40540858e32119bc50d06a921404b74ae2dc8ec6c87ce1b9"
+          }
+        }
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--json",
+          "--representation",
+          "ranges",
+          "--stats",
+          "--checksum",
+          "--output",
+          "output.txt",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 115,
+          "sha256": "1f75cd46855a5259c205e8fa67db12f53a63a587c42ad8ab845b4f484b6e6d69"
+        },
+        "output_files": {
+          "output.txt": {
+            "bytes": 282,
+            "sha256": "17eab9ef9eb728f2aef9f40cf4b5a652e3a1daeb028a36467003b25a97e708af"
+          },
+          "output.txt.sha256": {
+            "bytes": 77,
+            "sha256": "bbe3a5e2aaa5fc3e40540858e32119bc50d06a921404b74ae2dc8ec6c87ce1b9"
+          }
+        }
+      }
+    },
+    {
+      "id": "mixed-cidr-raw",
+      "fixture": "mixed-forms",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--representation",
+        "cidr",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--representation",
+          "cidr",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 156,
+          "sha256": "1f290dce2c99d3b9525999b966aa0a88bcec81fa73808b105ef157c648324eff"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 122,
+          "sha256": "d0e68619e832c84dccf72f03a7588104f26d4082b4aad5de14e1058bd8235940"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--representation",
+          "cidr",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 156,
+          "sha256": "1f290dce2c99d3b9525999b966aa0a88bcec81fa73808b105ef157c648324eff"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 122,
+          "sha256": "d0e68619e832c84dccf72f03a7588104f26d4082b4aad5de14e1058bd8235940"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "checksum-cidr-raw",
+      "fixture": "mixed-forms",
+      "stdin": false,
+      "flags": [
+        "--raw",
+        "--representation",
+        "cidr",
+        "--stats",
+        "--checksum",
+        "--output",
+        "output.txt"
+      ],
+      "checksum": true,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--raw",
+          "--representation",
+          "cidr",
+          "--stats",
+          "--checksum",
+          "--output",
+          "output.txt",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 122,
+          "sha256": "d0e68619e832c84dccf72f03a7588104f26d4082b4aad5de14e1058bd8235940"
+        },
+        "output_files": {
+          "output.txt": {
+            "bytes": 156,
+            "sha256": "1f290dce2c99d3b9525999b966aa0a88bcec81fa73808b105ef157c648324eff"
+          },
+          "output.txt.sha256": {
+            "bytes": 77,
+            "sha256": "d247966b5e4bfa37b4a4c3550000c9cf47c118f987ff8b7ccb44bcb12c1b72b0"
+          }
+        }
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--raw",
+          "--representation",
+          "cidr",
+          "--stats",
+          "--checksum",
+          "--output",
+          "output.txt",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 122,
+          "sha256": "d0e68619e832c84dccf72f03a7588104f26d4082b4aad5de14e1058bd8235940"
+        },
+        "output_files": {
+          "output.txt": {
+            "bytes": 156,
+            "sha256": "1f290dce2c99d3b9525999b966aa0a88bcec81fa73808b105ef157c648324eff"
+          },
+          "output.txt.sha256": {
+            "bytes": 77,
+            "sha256": "d247966b5e4bfa37b4a4c3550000c9cf47c118f987ff8b7ccb44bcb12c1b72b0"
+          }
+        }
+      }
+    },
+    {
+      "id": "mixed-cidr-json",
+      "fixture": "mixed-forms",
+      "stdin": false,
+      "flags": [
+        "--json",
+        "--representation",
+        "cidr",
+        "--stats"
+      ],
+      "checksum": false,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--json",
+          "--representation",
+          "cidr",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 292,
+          "sha256": "a60dae868ae337ff6975260712c7df33720c91855b36a5f2302b2e21c358e707"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 122,
+          "sha256": "d0e68619e832c84dccf72f03a7588104f26d4082b4aad5de14e1058bd8235940"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--json",
+          "--representation",
+          "cidr",
+          "--stats",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 292,
+          "sha256": "a60dae868ae337ff6975260712c7df33720c91855b36a5f2302b2e21c358e707"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 122,
+          "sha256": "d0e68619e832c84dccf72f03a7588104f26d4082b4aad5de14e1058bd8235940"
+        },
+        "output_files": {}
+      }
+    },
+    {
+      "id": "checksum-cidr-json",
+      "fixture": "mixed-forms",
+      "stdin": false,
+      "flags": [
+        "--json",
+        "--representation",
+        "cidr",
+        "--stats",
+        "--checksum",
+        "--output",
+        "output.txt"
+      ],
+      "checksum": true,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--json",
+          "--representation",
+          "cidr",
+          "--stats",
+          "--checksum",
+          "--output",
+          "output.txt",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 122,
+          "sha256": "d0e68619e832c84dccf72f03a7588104f26d4082b4aad5de14e1058bd8235940"
+        },
+        "output_files": {
+          "output.txt": {
+            "bytes": 292,
+            "sha256": "a60dae868ae337ff6975260712c7df33720c91855b36a5f2302b2e21c358e707"
+          },
+          "output.txt.sha256": {
+            "bytes": 77,
+            "sha256": "b53b8b81f831b1b99d5c343f6872c2b5652c92380f3dd074127ec3938c819031"
+          }
+        }
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--json",
+          "--representation",
+          "cidr",
+          "--stats",
+          "--checksum",
+          "--output",
+          "output.txt",
+          "$EXPERIMENT/macos/differential/fixtures/mixed-forms.txt"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 122,
+          "sha256": "d0e68619e832c84dccf72f03a7588104f26d4082b4aad5de14e1058bd8235940"
+        },
+        "output_files": {
+          "output.txt": {
+            "bytes": 292,
+            "sha256": "a60dae868ae337ff6975260712c7df33720c91855b36a5f2302b2e21c358e707"
+          },
+          "output.txt.sha256": {
+            "bytes": 77,
+            "sha256": "b53b8b81f831b1b99d5c343f6872c2b5652c92380f3dd074127ec3938c819031"
+          }
+        }
+      }
+    },
+    {
+      "id": "invalid-checksum-output",
+      "fixture": "invalid-utf8-comment",
+      "stdin": false,
+      "flags": [
+        "--stats",
+        "--checksum",
+        "--output",
+        "output.txt"
+      ],
+      "checksum": true,
+      "passed": true,
+      "exactly_equal": true,
+      "baseline_contract_passed": true,
+      "checksum_verified": true,
+      "baseline": {
+        "command": [
+          "$EXPERIMENT/macos/bin/B",
+          "--stats",
+          "--checksum",
+          "--output",
+          "output.txt",
+          "$EXPERIMENT/macos/differential/fixtures/invalid-utf8-comment.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 175,
+          "sha256": "123aff251a7fc57056787e4248af99ac7e79ec13dbcb21559cb6f6c7a975b60c"
+        },
+        "output_files": {}
+      },
+      "candidate": {
+        "command": [
+          "$EXPERIMENT/macos/bin/C",
+          "--stats",
+          "--checksum",
+          "--output",
+          "output.txt",
+          "$EXPERIMENT/macos/differential/fixtures/invalid-utf8-comment.txt"
+        ],
+        "returncode": 1,
+        "timed_out": false,
+        "stdout": {
+          "file": "stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "stderr.bin",
+          "bytes": 175,
+          "sha256": "123aff251a7fc57056787e4248af99ac7e79ec13dbcb21559cb6f6c7a975b60c"
+        },
+        "output_files": {}
+      }
+    }
+  ],
+  "binary_hashes_unchanged": true,
+  "fixture_hashes_unchanged": true,
+  "finished_at": "2026-11-16T03:45:27.434402+00:00"
+}

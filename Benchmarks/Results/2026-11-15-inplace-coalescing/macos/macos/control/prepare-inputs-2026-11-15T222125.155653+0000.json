@@ -1,0 +1,7 @@
+{
+  "started_at": "2026-11-15T22:21:25.155653+00:00",
+  "stage": "inputs",
+  "passed": false,
+  "error": "RuntimeError(\"Command failed: {'command': ['sysctl', 'hw.model', 'hw.memsize', 'hw.ncpu', 'machdep.cpu.brand_string'], 'exit_code': 1, 'stdout': '', 'stderr': 'sysctl: sysctl fmt -1 1024 1: Operation not permitted\\\\n'}\")",
+  "finished_at": "2026-11-15T22:21:28.524821+00:00"
+}
