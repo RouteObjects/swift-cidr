@@ -1,0 +1,344 @@
+Swift version 6.2.4 (swift-6.2.4-RELEASE)
+Target: aarch64-unknown-linux-gnu
+Fetching https://github.com/apple/swift-nio.git
+Fetching https://github.com/apple/swift-atomics.git
+Fetching https://github.com/apple/swift-argument-parser.git
+Fetching https://github.com/apple/swift-collections.git
+Fetching https://github.com/apple/swift-system.git
+[1/1927] Fetching swift-atomics
+Fetched https://github.com/apple/swift-atomics.git from cache (0.44s)
+[1/7578] Fetching swift-system
+[1214/26983] Fetching swift-system, swift-argument-parser
+[11210/57087] Fetching swift-system, swift-argument-parser, swift-collections
+Fetched https://github.com/apple/swift-argument-parser.git from cache (0.95s)
+[14502/37682] Fetching swift-system, swift-collections
+[27749/124593] Fetching swift-system, swift-collections, swift-nio
+Fetched https://github.com/apple/swift-system.git from cache (1.91s)
+Fetched https://github.com/apple/swift-collections.git from cache (1.91s)
+[407/86911] Fetching swift-nio
+Fetched https://github.com/apple/swift-nio.git from cache (136.35s)
+Creating working copy for https://github.com/apple/swift-nio.git
+Creating working copy for https://github.com/apple/swift-atomics.git
+Creating working copy for https://github.com/apple/swift-system.git
+Creating working copy for https://github.com/apple/swift-argument-parser.git
+Creating working copy for https://github.com/apple/swift-collections.git
+Working copy of https://github.com/apple/swift-atomics.git resolved at 1.3.0
+Working copy of https://github.com/apple/swift-argument-parser.git resolved at 1.8.2
+Working copy of https://github.com/apple/swift-system.git resolved at 1.6.4
+Working copy of https://github.com/apple/swift-nio.git resolved at 2.101.0
+Working copy of https://github.com/apple/swift-collections.git resolved at 1.5.0
+Building for debugging...
+[0/2] Write sources
+[1/2] Write swift-version-24593BA9C3E375BF.txt
+[3/30] Emitting module CIDR
+[4/32] Compiling CIDR IPMulticast.swift
+[5/32] Compiling CIDR IPNetwork+Addresses.swift
+[6/32] Compiling CIDR IPNetwork.swift
+[7/32] Compiling CIDR IPAddressParsingPolicy.swift
+[8/32] Compiling CIDR IPAddressRange.swift
+[9/32] Compiling CIDR IPEndpoint.swift
+[10/32] Compiling CIDR IPPrefix.swift
+[11/32] Compiling CIDR IPPrefixSubnets.swift
+[12/32] Compiling CIDR IPv6ZeroSequenceFinder.swift
+[13/32] Compiling CIDR NetworkPrefixRange.swift
+[14/32] Compiling CIDR PrefixLength.swift
+[15/32] Compiling CIDR AF+IPv6Parsing.swift
+[16/32] Compiling CIDR AF+MAC.swift
+[17/32] Compiling CIDR AddressFamily.swift
+[18/32] Compiling CIDR AF+ASNParsing.swift
+[19/32] Compiling CIDR AF+Formatting.swift
+[20/32] Compiling CIDR AF+IPv4Parsing.swift
+[21/32] Compiling CIDR IPAddress.swift
+[22/32] Compiling CIDR IPAddressCoverage.swift
+[23/32] Compiling CIDR IPAddressFamily.swift
+[24/32] Compiling CIDR AnyIP.swift
+[25/32] Compiling CIDR AutonomousSystemNumber.swift
+[26/32] Compiling CIDR CIDRBlock.swift
+[27/32] Compiling CIDR CIDRForm.swift
+[28/32] Compiling CIDR CIDRTextStyle.swift
+[29/32] Compiling CIDR CIDRUTF8Formatting.swift
+[30/32] Compiling CIDR CIDRUTF8Writer.swift
+[31/32] Compiling CIDR FixedWidthInteger+NetworkMask.swift
+[32/32] Compiling CIDR IPAddress+Octets.swift
+Build of target: 'CIDR' complete! (140.76s)
+[0/1] Planning build
+Building for debugging...
+[0/3] Write sources
+[3/4] Write swift-version-24593BA9C3E375BF.txt
+[5/6] Compiling ArgumentParserToolInfo ToolInfo.swift
+[6/6] Emitting module ArgumentParserToolInfo
+[8/55] Compiling ArgumentParser ArgumentHelp.swift
+[9/55] Compiling ArgumentParser ArgumentVisibility.swift
+[10/55] Compiling ArgumentParser CompletionKind.swift
+[11/55] Compiling ArgumentParser Errors.swift
+[12/55] Compiling ArgumentParser Flag.swift
+[13/55] Compiling ArgumentParser NameSpecification.swift
+[14/60] Compiling ArgumentParser CommandGroup.swift
+[15/60] Compiling ArgumentParser EnumerableFlag.swift
+[16/60] Compiling ArgumentParser ExpressibleByArgument.swift
+[17/60] Compiling ArgumentParser ParsableArguments.swift
+[18/60] Compiling ArgumentParser ParsableCommand.swift
+[19/60] Emitting module ArgumentParser
+[20/60] Compiling ArgumentParser CodingKeyValidator.swift
+[21/60] Compiling ArgumentParser NonsenseFlagsValidator.swift
+[22/60] Compiling ArgumentParser ParsableArgumentsValidation.swift
+[23/60] Compiling ArgumentParser PositionalArgumentsValidator.swift
+[24/60] Compiling ArgumentParser UniqueNamesValidator.swift
+[25/60] Compiling ArgumentParser BashCompletionsGenerator.swift
+[26/60] Compiling ArgumentParser CompletionsGenerator.swift
+[27/60] Compiling ArgumentParser FishCompletionsGenerator.swift
+[28/60] Compiling ArgumentParser ZshCompletionsGenerator.swift
+[29/60] Compiling ArgumentParser Argument.swift
+[30/60] Compiling ArgumentParser ArgumentDiscussion.swift
+[31/60] Compiling ArgumentParser Option.swift
+[32/60] Compiling ArgumentParser OptionGroup.swift
+[33/60] Compiling ArgumentParser ParentCommand.swift
+[34/60] Compiling ArgumentParser AsyncParsableCommand.swift
+[35/60] Compiling ArgumentParser CommandConfiguration.swift
+[36/60] Compiling ArgumentParser SequenceExtensions.swift
+[37/60] Compiling ArgumentParser StringExtensions.swift
+[38/60] Compiling ArgumentParser SwiftExtensions.swift
+[39/60] Compiling ArgumentParser Tree.swift
+[40/60] Compiling ArgumentParser AsyncCompletionsValidator.swift
+[41/60] Compiling ArgumentParser SplitArguments.swift
+[42/60] Compiling ArgumentParser DumpHelpGenerator.swift
+[43/60] Compiling ArgumentParser HelpCommand.swift
+[44/60] Compiling ArgumentParser HelpGenerator.swift
+[45/60] Compiling ArgumentParser MessageInfo.swift
+[46/60] Compiling ArgumentParser UsageGenerator.swift
+[47/60] Compiling ArgumentParser CollectionExtensions.swift
+[48/60] Compiling ArgumentParser Foundation.swift
+[49/60] Compiling ArgumentParser Mutex.swift
+[50/60] Compiling ArgumentParser Platform.swift
+[51/60] Compiling ArgumentParser ArgumentDecoder.swift
+[52/60] Compiling ArgumentParser ArgumentDefinition.swift
+[53/60] Compiling ArgumentParser ArgumentSet.swift
+[54/60] Compiling ArgumentParser CommandParser.swift
+[55/60] Compiling ArgumentParser InputKey.swift
+[56/60] Compiling ArgumentParser InputOrigin.swift
+[57/60] Compiling ArgumentParser Name.swift
+[58/60] Compiling ArgumentParser Parsed.swift
+[59/60] Compiling ArgumentParser ParsedValues.swift
+[60/60] Compiling ArgumentParser ParserError.swift
+[62/63] Emitting module CIDRArgumentParser
+[63/63] Compiling CIDRArgumentParser CIDRArgumentParser.swift
+Build of target: 'CIDRArgumentParser' complete! (3.64s)
+Building for debugging...
+[0/2] Write sources
+[1/2] Write swift-version-24593BA9C3E375BF.txt
+[3/4] Emitting module CIDRPOSIX
+[4/4] Compiling CIDRPOSIX CIDRPOSIX.swift
+Build of target: 'CIDRPOSIX' complete! (0.31s)
+[0/1] Planning build
+Building for debugging...
+[0/21] Write sources
+[8/21] Write swift-version-24593BA9C3E375BF.txt
+[9/21] Compiling CNIODarwin shim.c
+[10/21] Compiling CNIOWindows WSAStartup.c
+[11/21] Compiling CNIOWindows shim.c
+[12/21] Compiling CNIOWASI CNIOWASI.c
+[13/21] Compiling CNIOOpenBSD shim.c
+[13/21] Write sources
+[15/21] Compiling CNIOLinux liburing_shims.c
+[16/21] Compiling CNIOFreeBSD shim.c
+[17/21] Compiling _AtomicsShims.c
+[18/65] Compiling CNIOLinux shim.c
+[20/65] Compiling Atomics PointerConformances.swift
+[21/65] Compiling Atomics Primitives.native.swift
+[22/66] Compiling Atomics OptionalRawRepresentable.swift
+[23/66] Compiling Atomics RawRepresentable.swift
+[24/66] Compiling InternalCollectionsUtilities _UniqueCollection.swift
+[25/66] Compiling Atomics UnsafeAtomicLazyReference.swift
+[26/66] Compiling Atomics IntegerOperations.swift
+[27/66] Compiling Atomics ManagedAtomicLazyReference.swift
+[28/66] Compiling Atomics UnsafeAtomic.swift
+[29/67] Compiling Atomics AtomicInteger.swift
+[30/67] Compiling Atomics AtomicOptionalWrappable.swift
+[33/67] Compiling Atomics AtomicValue.swift
+[34/67] Compiling Atomics AtomicMemoryOrderings.swift
+[39/67] Compiling Atomics DoubleWord.swift
+[40/67] Compiling Atomics ManagedAtomic.swift
+[41/67] Compiling Atomics AtomicBool.swift
+[42/67] Compiling Atomics IntegerConformances.swift
+[43/67] Compiling Atomics Unmanaged extensions.swift
+[46/67] Emitting module _NIOBase64
+[47/67] Compiling _NIOBase64 Base64.swift
+[49/68] Compiling _NIODataStructures _TinyArray.swift
+[50/68] Compiling _NIODataStructures Heap.swift
+[51/68] Emitting module _NIODataStructures
+[52/68] Compiling _NIODataStructures PriorityQueue.swift
+[54/69] Compiling Atomics AtomicReference.swift
+[55/69] Compiling Atomics AtomicStorage.swift
+[60/69] Emitting module InternalCollectionsUtilities
+[64/107] Compiling ContainersPreview BorrowingIteratorProtocol+Filter.swift
+[65/107] Compiling ContainersPreview BorrowingIteratorProtocol+Map.swift
+[66/107] Compiling ContainersPreview BorrowingIteratorProtocol+Reduce.swift
+[67/107] Compiling ContainersPreview BorrowingIteratorProtocol+SpanwiseZip.swift
+[68/110] Compiling ContainersPreview Producer.swift
+[69/110] Compiling ContainersPreview InputSpan.swift
+[70/110] Compiling ContainersPreview MutableRef.swift
+[71/110] Compiling ContainersPreview Ref.swift
+[72/110] Compiling ContainersPreview Container.swift
+[73/110] Compiling ContainersPreview ContainerIterator.swift
+[74/110] Compiling ContainersPreview DynamicContainer.swift
+[75/110] Compiling ContainersPreview MutableContainer.swift
+[76/110] Compiling ContainersPreview PermutableContainer.swift
+[77/110] Compiling ContainersPreview RandomAccessContainer.swift
+[78/110] Compiling ContainersPreview RangeExpression2.swift
+[79/110] Compiling ContainersPreview RangeReplaceableContainer.swift
+[80/110] Compiling ContainersPreview Producer+Collect.swift
+[81/110] Compiling ContainersPreview Producer+Filter.swift
+[82/110] Compiling ContainersPreview Producer+Map.swift
+[83/110] Compiling ContainersPreview Producer+Reduce.swift
+[84/110] Compiling ContainersPreview Strideable+Limits.swift
+[85/110] Compiling ContainersPreview Drain+Map.swift
+[86/110] Compiling ContainersPreview Drain+Reduce.swift
+[87/110] Compiling ContainersPreview Drain.swift
+[88/110] Compiling ContainersPreview BorrowingIteratorProtocol.swift
+[89/110] Compiling ContainersPreview BorrowingSequence+Algorithms.swift
+[90/110] Compiling ContainersPreview BorrowingSequence+Standard Conformances.swift
+[91/110] Compiling ContainersPreview BorrowingSequence+Utilities.swift
+[92/110] Compiling ContainersPreview BorrowingSequence.swift
+[93/110] Compiling ContainersPreview BidirectionalContainer.swift
+[94/110] Compiling ContainersPreview Container+Filter.swift
+[95/110] Compiling ContainersPreview Container+SpanwiseZip.swift
+[96/110] Compiling ContainersPreview OutputSpan+Extras.swift
+[97/110] Compiling ContainersPreview TemporaryAllocation.swift
+[98/110] Compiling ContainersPreview BorrowingIteratorProtocol+Copy.swift
+[99/110] Compiling ContainersPreview BorrowingIteratorProtocol+ElementsEqual.swift
+[100/110] Emitting module ContainersPreview
+[101/110] Compiling ContainersPreview Shared.swift
+[102/110] Compiling ContainersPreview SpanIterator.swift
+[103/110] Compiling ContainersPreview UniqueBox.swift
+[105/153] Compiling DequeModule RigidDeque+Append.swift
+[106/153] Compiling DequeModule Deque+Codable.swift
+[107/153] Compiling DequeModule Deque+Collection.swift
+[108/153] Compiling DequeModule Deque+CustomReflectable.swift
+[109/153] Compiling DequeModule UniqueDeque+Equatable.swift
+[110/153] Compiling DequeModule UniqueDeque+Experimental.swift
+[111/153] Compiling DequeModule UniqueDeque+Hashable.swift
+[112/153] Compiling DequeModule UniqueDeque+Initializers.swift
+[113/157] Compiling DequeModule RigidDeque+Replacements.swift
+[114/157] Compiling DequeModule RigidDeque+Testing.swift
+[115/157] Compiling DequeModule RigidDeque.swift
+[116/157] Compiling DequeModule UniqueDeque+Append.swift
+[117/157] Emitting module Atomics
+[118/158] Compiling DequeModule UniqueDeque+Insertions.swift
+[119/158] Compiling DequeModule UniqueDeque+Prepend.swift
+[120/158] Compiling DequeModule UniqueDeque+Removals.swift
+[121/158] Compiling DequeModule UniqueDeque+Replacements.swift
+[123/158] Compiling DequeModule UniqueDeque+Consumption.swift
+[124/158] Compiling DequeModule UniqueDeque+Container.swift
+[125/158] Compiling DequeModule UniqueDeque+Deprecated.swift
+[126/158] Compiling DequeModule UniqueDeque+Descriptions.swift
+[127/158] Compiling DequeModule RigidDeque+Consumption.swift
+[128/158] Compiling DequeModule RigidDeque+Container.swift
+[129/158] Compiling DequeModule RigidDeque+Descriptions.swift
+[130/158] Compiling DequeModule RigidDeque+Equatable.swift
+[131/158] Compiling DequeModule RigidDeque+Experimental.swift
+[132/158] Compiling DequeModule RigidDeque+Hashable.swift
+[133/158] Compiling DequeModule RigidDeque+Initializers.swift
+[134/158] Compiling DequeModule RigidDeque+Insertions.swift
+[135/158] Compiling DequeModule RigidDeque+Prepend.swift
+[136/158] Compiling DequeModule RigidDeque+Removals.swift
+[137/158] Compiling DequeModule Deque._UnsafeHandle.swift
+[138/158] Compiling DequeModule Deque.swift
+[139/158] Compiling DequeModule _DequeBuffer.swift
+[140/158] Compiling DequeModule _DequeBufferHeader.swift
+[145/158] Compiling DequeModule Deque+Descriptions.swift
+[146/158] Compiling DequeModule Deque+Equatable.swift
+[147/158] Compiling DequeModule Deque+ExpressibleByArrayLiteral.swift
+[148/158] Compiling DequeModule Deque+Extras.swift
+[149/158] Compiling DequeModule Deque+Hashable.swift
+[150/158] Compiling DequeModule Deque+Testing.swift
+[151/158] Compiling DequeModule Deque._Storage.swift
+[151/158] Compiling c-nioatomics.c
+[152/158] Compiling c-atomics.c
+[154/165] Compiling NIOConcurrencyHelpers NIOThreadPoolWorkAvailable.swift
+[155/165] Compiling NIOConcurrencyHelpers NIOLock.swift
+[156/165] Compiling NIOConcurrencyHelpers NIOAtomic.swift
+[157/165] Emitting module DequeModule
+[158/165] Compiling NIOConcurrencyHelpers lock.swift
+[159/165] Emitting module NIOConcurrencyHelpers
+[160/165] Compiling NIOConcurrencyHelpers atomics.swift
+[161/165] Compiling NIOConcurrencyHelpers NIOLockedValueBox.swift
+[163/166] Compiling DequeModule UniqueDeque.swift
+[164/166] Compiling DequeModule _DequeSlot.swift
+[165/166] Compiling DequeModule _UnsafeDequeHandle.swift
+[166/166] Compiling DequeModule _UnsafeDequeSegments.swift
+[168/232] Compiling NIOCore MarkedCircularBuffer.swift
+[169/232] Compiling NIOCore MulticastChannel.swift
+[170/232] Compiling NIOCore NIOAny.swift
+[171/232] Compiling NIOCore NIOCloseOnErrorHandler.swift
+[172/232] Compiling NIOCore NIOCoreSendableMetatype.swift
+[173/232] Compiling NIOCore NIODecodedAsyncSequence.swift
+[174/232] Compiling NIOCore NIOLoopBound.swift
+[175/232] Compiling NIOCore NIOPooledRecvBufferAllocator.swift
+[176/232] Compiling NIOCore NIOScheduledCallback.swift
+[177/232] Compiling NIOCore NIOSendable.swift
+[178/232] Compiling NIOCore NIOSplitLinesMessageDecoder.swift
+[179/232] Compiling NIOCore NIOTransportAccessibleChannelCore.swift
+[180/232] Compiling NIOCore RecvByteBufferAllocator.swift
+[181/232] Compiling NIOCore SingleStepByteToMessageDecoder.swift
+[182/239] Compiling NIOCore EventLoopFuture+Deprecated.swift
+[183/239] Compiling NIOCore EventLoopFuture+WithEventLoop.swift
+[184/239] Compiling NIOCore EventLoopFuture.swift
+[185/239] Compiling NIOCore FileDescriptor.swift
+[186/239] Compiling NIOCore FileHandle.swift
+[187/239] Compiling NIOCore FileRegion.swift
+[188/239] Compiling NIOCore GlobalSingletons.swift
+[189/239] Compiling NIOCore IO.swift
+[190/239] Compiling NIOCore IOData.swift
+[191/239] Compiling NIOCore IPProtocol.swift
+[192/239] Compiling NIOCore IntegerBitPacking.swift
+[193/239] Compiling NIOCore IntegerTypes.swift
+[194/239] Compiling NIOCore Interfaces.swift
+[195/239] Compiling NIOCore Linux.swift
+[196/239] Compiling NIOCore SocketAddresses.swift
+[197/239] Compiling NIOCore SocketOptionProvider.swift
+[198/239] Compiling NIOCore SystemCallHelpers.swift
+[199/239] Compiling NIOCore TimeAmount+Duration.swift
+[200/239] Compiling NIOCore TypeAssistedChannelHandler.swift
+[201/239] Compiling NIOCore UniversalBootstrapSupport.swift
+[202/239] Compiling NIOCore Utilities.swift
+[203/239] Compiling NIOCore ConvenienceOptionSupport.swift
+[204/239] Compiling NIOCore DeadChannel.swift
+[205/239] Compiling NIOCore DispatchQueue+WithFuture.swift
+[206/239] Compiling NIOCore EventLoop+Deprecated.swift
+[207/239] Compiling NIOCore EventLoop+SerialExecutor.swift
+[208/239] Compiling NIOCore EventLoop.swift
+[209/239] Compiling NIOCore EventLoopFuture+AssumeIsolated.swift
+[210/239] Compiling NIOCore ChannelHandler.swift
+[211/239] Compiling NIOCore ChannelHandlers.swift
+[212/239] Compiling NIOCore ChannelInvoker.swift
+[213/239] Compiling NIOCore ChannelOption.swift
+[214/239] Compiling NIOCore ChannelPipeline.swift
+[215/239] Compiling NIOCore CircularBuffer.swift
+[216/239] Compiling NIOCore Codec.swift
+[217/239] Compiling NIOCore AddressedEnvelope.swift
+[218/239] Compiling NIOCore AsyncAwaitSupport.swift
+[219/239] Compiling NIOCore AsyncChannel.swift
+[220/239] Compiling NIOCore AsyncChannelHandler.swift
+[221/239] Compiling NIOCore AsyncChannelInboundStream.swift
+[222/239] Compiling NIOCore AsyncChannelOutboundWriter.swift
+[223/239] Compiling NIOCore NIOAsyncSequenceProducer.swift
+[224/239] Compiling NIOCore NIOAsyncSequenceProducerStrategies.swift
+[225/239] Compiling NIOCore NIOAsyncWriter.swift
+[226/239] Compiling NIOCore NIOThrowingAsyncSequenceProducer.swift
+[227/239] Compiling NIOCore BSDSocketAPI.swift
+[228/239] Compiling NIOCore ByteBuffer-aux.swift
+[229/239] Compiling NIOCore ByteBuffer-binaryEncodedLengthPrefix.swift
+[230/239] Compiling NIOCore ByteBuffer-conversions.swift
+[231/239] Compiling NIOCore ByteBuffer-core.swift
+[232/239] Compiling NIOCore ByteBuffer-hex.swift
+[233/239] Compiling NIOCore ByteBuffer-int.swift
+[234/239] Compiling NIOCore ByteBuffer-lengthPrefix.swift
+[235/239] Compiling NIOCore ByteBuffer-multi-int.swift
+[236/239] Compiling NIOCore ByteBuffer-quicBinaryEncodingStrategy.swift
+[237/239] Compiling NIOCore ByteBuffer-views.swift
+[238/239] Compiling NIOCore Channel.swift
+[239/239] Emitting module NIOCore
+[241/243] Compiling CIDRNIO SocketAddress+CIDR.swift
+[242/243] Compiling CIDRNIO CIDRNIO.swift
+[243/243] Emitting module CIDRNIO
+Build of target: 'CIDRNIO' complete! (9.62s)

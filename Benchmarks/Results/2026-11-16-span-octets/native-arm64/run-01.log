@@ -1,0 +1,88 @@
+Building for debugging...
+[Computing dependencies]
+[Using on-disk description]
+[16 / 103]
+[30 / 101] ArgumentParserToolInfo
+[43 / 102] Atomics
+[57 / 86] MallocInterposerSwift
+[66 / 77] Benchmark
+[82 / 92] Benchmark
+[85 / 90] Benchmark
+[86 / 90] BenchmarkTool-product
+[97 / 101] BenchmarkTool-product
+[98 / 101] BenchmarkTool-product
+[100 / 101] BenchmarkTool-product
+Build complete! (2.83 sec)
+/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/CIDRBenchmarkTarget/CIDRBenchmarkTarget.swift:896:35: warning: 'contains' is deprecated: Checks address bits only. Use contains(address:) for hierarchical containment, or addresses.contains(_:) on IPNetwork for exact element membership. [#DeprecatedDeclaration]
+ 894 |     ) { benchmark in
+ 895 |         for _ in benchmark.scaledIterations {
+ 896 |             blackHole(ipv4Network.contains(ipv4Host))
+     |                                   `- warning: 'contains' is deprecated: Checks address bits only. Use contains(address:) for hierarchical containment, or addresses.contains(_:) on IPNetwork for exact element membership. [#DeprecatedDeclaration]
+ 897 |         }
+ 898 |     }
+
+/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/CIDRBenchmarkTarget/CIDRBenchmarkTarget.swift:905:35: warning: 'contains' is deprecated: Checks address bits only. Use contains(address:) for hierarchical containment, or addresses.contains(_:) on IPNetwork for exact element membership. [#DeprecatedDeclaration]
+ 903 |     ) { benchmark in
+ 904 |         for _ in benchmark.scaledIterations {
+ 905 |             blackHole(ipv6Network.contains(ipv6Host))
+     |                                   `- warning: 'contains' is deprecated: Checks address bits only. Use contains(address:) for hierarchical containment, or addresses.contains(_:) on IPNetwork for exact element membership. [#DeprecatedDeclaration]
+ 906 |         }
+ 907 |     }
+
+/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/CIDRBenchmarkTarget/CIDRBenchmarkTarget.swift:1044:38: warning: 'contains' is deprecated: Checks address bits only. Use contains(address:) for hierarchical containment, or the concrete network's addresses view for exact membership. [#DeprecatedDeclaration]
+1042 |     ) { benchmark in
+1043 |         for _ in benchmark.scaledIterations {
+1044 |             blackHole(anyIPv4Network.contains(anyIPv4Address))
+     |                                      `- warning: 'contains' is deprecated: Checks address bits only. Use contains(address:) for hierarchical containment, or the concrete network's addresses view for exact membership. [#DeprecatedDeclaration]
+1045 |         }
+1046 |     }
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.offset1.wallClock.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.offset1.retainCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.offset1.releaseCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.offset1.objectAllocCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.offset1.mallocCountTotal.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.offset1.mallocCountSmall.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.offset1.mallocCountLarge.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.offset1.retainReleaseDelta.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.aligned.wallClock.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.aligned.retainCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.aligned.releaseCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.aligned.objectAllocCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.aligned.mallocCountTotal.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.aligned.mallocCountSmall.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.aligned.mallocCountLarge.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.aligned.retainReleaseDelta.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctets.wallClock.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctets.retainCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctets.releaseCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctets.objectAllocCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctets.mallocCountTotal.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctets.mallocCountSmall.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctets.mallocCountLarge.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctets.retainReleaseDelta.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.aligned.wallClock.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.aligned.retainCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.aligned.releaseCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.aligned.objectAllocCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.aligned.mallocCountTotal.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.aligned.mallocCountSmall.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.aligned.mallocCountLarge.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctetSpan.aligned.retainReleaseDelta.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.offset1.wallClock.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.offset1.retainCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.offset1.releaseCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.offset1.objectAllocCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.offset1.mallocCountTotal.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.offset1.mallocCountSmall.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.offset1.mallocCountLarge.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v6.initOctetSpan.offset1.retainReleaseDelta.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctets.wallClock.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctets.retainCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctets.releaseCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctets.objectAllocCount.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctets.mallocCountTotal.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctets.mallocCountSmall.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctets.mallocCountLarge.histogram.samples.tsv
+Writing to /Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Benchmarks/Results/2026-11-16-span-octets/native-arm64/run-01/Current_run.CIDRBenchmarkTarget.currency.ipAddress.v4.initOctets.retainReleaseDelta.histogram.samples.tsv

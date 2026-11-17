@@ -1,0 +1,336 @@
+warning: /Users/craig/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/craig/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+warning: /Users/craig/Library/Caches/org.swift.swiftpm is not accessible or not writable, disabling user-level cache features.
+warning: 'swift-cidr': failed storing manifest for 'swift-cidr' in cache: attempt to write a readonly database
+warning: 'swift-argument-parser': failed storing manifest for 'swift-argument-parser' in cache: attempt to write a readonly database
+warning: 'swift-nio': failed storing manifest for 'swift-nio' in cache: attempt to write a readonly database
+warning: 'swift-atomics': failed storing manifest for 'swift-atomics' in cache: attempt to write a readonly database
+warning: 'swift-system': failed storing manifest for 'swift-system' in cache: attempt to write a readonly database
+warning: 'swift-collections': failed storing manifest for 'swift-collections' in cache: attempt to write a readonly database
+Building for debugging...
+[Computing dependencies]
+[Pre-planning 1 / 890]
+[Planning deferred tasks]
+[2 / 32] CIDR
+[4 / 34] CIDR
+[15 / 51] CIDRPOSIX
+[25 / 59] CIDRPOSIXTests-product
+[32 / 56] CIDRArgumentParserTests-product
+[39 / 56] CIDRNIO-product
+[40 / 57] CIDRPOSIXTests-product
+[45 / 61] CIDRArgumentParserTests-product
+[46 / 61] CIDRNIOTests-product
+[48 / 58] CIDRNIOTests-product
+[50 / 58] CIDRNIOTests-product
+[52 / 59] CIDRTests-product
+/Users/craig/Developer/Route Objects/Example Framework/Packages/swift-cidr/Tests/CIDRTests/IPAddressCoalescingSequenceTests.swift:38:13: warning: no calls to throwing functions occur within 'try' expression [#UnnecessaryEffectMarker]
+36 | 
+37 |         func range(_ lower: Family.Storage, _ upper: Family.Storage) throws -> Range {
+38 |             try #require(
+   |             `- warning: no calls to throwing functions occur within 'try' expression [#UnnecessaryEffectMarker]
+39 |                 Range(
+40 |                     lowerBound: IPAddress<Family>(address: lower),
+
+[#UnnecessaryEffectMarker]: <https://docs.swift.org/compiler/documentation/diagnostics/unnecessary-effect-marker>
+Build complete! (4.14 sec)
+􀟈  Test run started.
+􀄵  Testing Library Version: 2403
+􀄵  Target Platform: arm64e-apple-macos14.0
+􀟈  Suite "IPAddress Octet Adapter Tests" started.
+􀟈  Test "IPv6 network byte order preserves every distinct octet position" started.
+􀟈  Test "IPv4 zero and maximum values preserve every octet" started.
+􀟈  Test "IPv6 spans decode independent network-order fixtures with host-length context" started.
+􀟈  Test "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test "Span construction produces owned addresses that outlive the borrowed storage" started.
+􀟈  Test "IPv6 zero and maximum values preserve every octet" started.
+􀟈  Test "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test "IPv4 spans decode independent network-order fixtures with host-length context" started.
+􀟈  Test "IPv4 network-order octets construct and project a known address" started.
+􀟈  Test "Span constructors require exactly the address-family byte count" started.
+􀟈  Test "IPv4 octets preserve host bits instead of canonicalizing a network" started.
+􀟈  Test "IPv4 octets are independent of explicit prefix context" started.
+􀟈  Test "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test "Octet round trips retain the caller-supplied prefix context" started.
+􀟈  Test "IPv6 octets are independent of explicit prefix context" started.
+􀟈  Test "IPv6 network-order octets construct and project a known address" started.
+􀟈  Test case passing 1 argument offset → 0 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 1 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 3 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 4 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 0 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 5 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 1 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 6 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 2 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 7 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 3 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 8 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 9 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 10 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 6 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 11 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 7 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 12 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 8 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 13 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 9 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 14 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 10 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 15 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 11 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 2 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 12 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 17 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 13 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 18 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 14 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 19 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 15 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 16 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 21 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 22 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 17 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 18 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 19 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 20 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 23 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 24 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 25 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 21 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 26 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 22 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 27 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 23 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 4 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 24 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 29 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 25 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 30 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 26 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 16 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 31 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 27 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 28 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 29 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 30 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 31 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 32 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 20 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument count → 0 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 1 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 2 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 3 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 4 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument offset → 28 to "IPv6 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument count → 5 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 6 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 8 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 9 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 10 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 5 to "IPv4 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument count → 11 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 12 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 13 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 14 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 15 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 16 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 17 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 18 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 19 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 20 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 21 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 0 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument count → 22 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 1 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument count → 23 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 2 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument count → 24 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 25 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 3 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument count → 26 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 4 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument count → 27 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 5 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument count → 28 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 7 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument count → 29 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 7 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument count → 30 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 8 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument count → 31 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 9 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument count → 32 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 10 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument count → 64 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 11 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument count → 4096 to "Span constructors require exactly the address-family byte count" started.
+􀟈  Test case passing 1 argument length → 12 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 13 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 14 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 15 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 16 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 0 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 17 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 1 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 18 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 2 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 19 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 20 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 21 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 22 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 23 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 25 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 26 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 27 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 28 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 29 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 30 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 31 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 32 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 33 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 34 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 35 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 36 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 37 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 38 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 39 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 40 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 41 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 42 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 43 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 44 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 45 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 46 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 47 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 48 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 49 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 50 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 51 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 52 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 53 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 6 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 55 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 56 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 57 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 59 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 60 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 58 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 54 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􁁛  Test "IPv6 network byte order preserves every distinct octet position" passed after 0.005 seconds.
+􀟈  Test case passing 1 argument length → 61 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 24 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 62 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 64 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 65 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 66 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 67 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 3 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 68 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􁁛  Test "IPv4 zero and maximum values preserve every octet" passed after 0.005 seconds.
+􀟈  Test case passing 1 argument offset → 5 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 69 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 6 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 9 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 63 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 10 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 11 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 71 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 4 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 12 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 70 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 13 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 15 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 72 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 16 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 8 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 17 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 14 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 18 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 19 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 73 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 20 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 74 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 22 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 23 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 25 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 21 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 75 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 27 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 29 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 28 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 26 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 76 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 7 to "IPv4 span slices accept arbitrary byte offsets" started.
+􁁛  Test "IPv6 zero and maximum values preserve every octet" passed after 0.005 seconds.
+􀟈  Test case passing 1 argument length → 77 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􁁛  Test "IPv6 spans decode independent network-order fixtures with host-length context" passed after 0.005 seconds.
+􀟈  Test case passing 1 argument length → 78 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􁁛  Test "Span construction produces owned addresses that outlive the borrowed storage" passed after 0.005 seconds.
+􁁛  Test "IPv6 span slices accept arbitrary byte offsets" with 32 test cases passed after 0.005 seconds.
+􀟈  Test case passing 1 argument length → 79 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 24 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument offset → 30 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 80 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 81 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􁁛  Test "IPv4 spans preserve every legal prefix and all host bits" with 33 test cases passed after 0.005 seconds.
+􀟈  Test case passing 1 argument length → 84 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 85 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 83 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 86 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 88 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 89 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 90 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 91 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 93 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument offset → 31 to "IPv4 span slices accept arbitrary byte offsets" started.
+􀟈  Test case passing 1 argument length → 94 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 95 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 92 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 96 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 98 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 99 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 97 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 102 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 103 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 87 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 101 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 100 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 82 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 105 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 104 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 106 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 107 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 108 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 111 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 112 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 110 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 113 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 109 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 115 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 116 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 117 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 118 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 114 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 119 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 120 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 121 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 122 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 123 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 124 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 125 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 127 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 128 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􀟈  Test case passing 1 argument length → 126 to "IPv6 spans preserve every legal prefix and all host bits" started.
+􁁛  Test "IPv4 octets are independent of explicit prefix context" passed after 0.005 seconds.
+􁁛  Test "Octet round trips retain the caller-supplied prefix context" passed after 0.006 seconds.
+􁁛  Test "Span constructors require exactly the address-family byte count" with 35 test cases passed after 0.005 seconds.
+􁁛  Test "IPv6 octets are independent of explicit prefix context" passed after 0.004 seconds.
+􁁛  Test "IPv6 network-order octets construct and project a known address" passed after 0.004 seconds.
+􁁛  Test "IPv4 octets preserve host bits instead of canonicalizing a network" passed after 0.005 seconds.
+􁁛  Test "IPv4 network-order octets construct and project a known address" passed after 0.005 seconds.
+􁁛  Test "IPv4 span slices accept arbitrary byte offsets" with 32 test cases passed after 0.005 seconds.
+􁁛  Test "IPv4 spans decode independent network-order fixtures with host-length context" passed after 0.005 seconds.
+􁁛  Test "IPv6 spans preserve every legal prefix and all host bits" with 129 test cases passed after 0.005 seconds.
+􁁛  Suite "IPAddress Octet Adapter Tests" passed after 0.007 seconds.
+􁁛  Test run with 17 tests in 1 suite passed after 0.007 seconds.

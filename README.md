@@ -248,7 +248,7 @@ Argument Parser. No modules are underscored re-exports.
   - iOS 18
 
 The Apple platform minimums come from this toolchain's built-in `UInt128`
-availability. The `InlineArray` octet adapters require macOS 26, iOS 26,
+availability. The `InlineArray` and `Span` octet adapters require macOS 26, iOS 26,
 tvOS 26, watchOS 26, or visionOS 26; existing APIs retain the package's lower
 deployment targets. Linux validation is handled in CI, including the Swift 6.2
 minimum toolchain.
@@ -312,7 +312,8 @@ if let host = IPv4Address("192.0.2.1/24"),
 
 On Swift 6.2 or later, `IPv4Address` and `IPv6Address` can exchange address bits
 with packet, protocol, and FFI boundaries through fixed-size `InlineArray`
-values. On Apple platforms these APIs require macOS 26, iOS 26, tvOS 26,
+values and construct addresses from borrowed `Span<UInt8>` values. On Apple
+platforms these APIs require macOS 26, iOS 26, tvOS 26,
 watchOS 26, or visionOS 26.
 
 ```swift
@@ -337,6 +338,43 @@ math representation. This adapter is an exact, allocation-free, text-free
 interoperability boundary; it does not replace integer storage or model a
 borrowed `View`.
 
+The failable Span constructors accept exactly four bytes for IPv4 or sixteen
+bytes for IPv6. Empty, shorter, and longer spans return `nil`. Slices may start
+at any byte offset; no integer alignment is required. The bytes are copied into
+an owned address value without allocating, and the address retains no borrowed
+storage. Both constructor forms preserve every address bit and the supplied
+prefix context; omitted prefixes default to `/32` or `/128`.
+
+```swift
+let packet: InlineArray<6, UInt8> = [0xAA, 192, 0, 2, 129, 0xBB]
+let addressBytes = packet.span.extracting(1..<5)
+
+if let prefix = IPv4PrefixLength(24),
+   let address = IPv4Address(octets: addressBytes, prefixLength: prefix) {
+    print(address.description)
+    // 192.0.2.129/24 — host bits are preserved
+}
+
+let invalid = IPv4Address(octets: packet.span)
+// nil: the complete packet has six bytes, not four
+
+let ipv6Bytes: InlineArray<16, UInt8> = [
+    0x20, 0x01, 0x0D, 0xB8, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 1,
+]
+if let address = IPv6Address(octets: ipv6Bytes.span) {
+    print(address.description)
+    // 2001:db8::1/128
+}
+```
+
+The Span constructors validate the length before reading. With a Swift 6.4 or
+newer compiler, they use safe `RawSpan.load` and explicitly convert from network
+byte order. Swift 6.2 and 6.3 compilers reuse the fixed-size octet constructors
+through safe indexed reads. The `#if compiler(>=6.4)` selection preserves the
+package's Swift 6.2 minimum and the same OS 26 availability. Both paths perform
+allocation-free, fixed-size copying, not zero-copy conversion.
+
 Four locked currency benchmarks cover IPv4 and IPv6 octet projection and
 reconstruction. Their configured p50, p75, and p90 gates require zero mallocs,
 object allocations, retains, and releases; see the
@@ -356,6 +394,12 @@ borrowed `View`. The allocation-free evidence above applies to the octet
 projection itself; it is not a claim that constructing a SwiftNIO
 `SocketAddress` performs no allocations. Integer-backed address identity and
 CIDR math remain canonical in every case.
+
+A future opt-in `CIDRNetworkingTypes` module could use this octet boundary to
+bridge with `swift-networking-types`. The
+[bridge proposal](Documentation/Proposals/CIDRNetworkingTypes.md) records the
+six conversion shapes, explicit prefix-context loss, and the upstream Swift 6.4
+requirement. That module is not implemented or included as a package dependency.
 
 ### Subnet Math
 
