@@ -1,0 +1,29 @@
+warning: /Users/craig/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/craig/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+warning: /Users/craig/Library/Caches/org.swift.swiftpm is not accessible or not writable, disabling user-level cache features.
+warning: 'swift-cidr': failed storing manifest for 'swift-cidr' in cache: attempt to write a readonly database
+warning: 'swift-argument-parser': failed storing manifest for 'swift-argument-parser' in cache: attempt to write a readonly database
+warning: 'swift-nio': failed storing manifest for 'swift-nio' in cache: attempt to write a readonly database
+warning: 'swift-atomics': failed storing manifest for 'swift-atomics' in cache: attempt to write a readonly database
+warning: 'swift-system': failed storing manifest for 'swift-system' in cache: attempt to write a readonly database
+warning: 'swift-collections': failed storing manifest for 'swift-collections' in cache: attempt to write a readonly database
+Building for debugging...
+[Computing dependencies]
+[Pre-planning 1 / 540]
+[Planning deferred tasks]
+[22 / 65] InternalCollectionsUtilities
+[39 / 79] CNIOAtomics
+[44 / 79] _NIODataStructures
+[52 / 82]
+[60 / 82] ContainersPreview
+[62 / 83] ContainersPreview
+[62 / 83] NIOConcurrencyHelpers
+[67 / 73] CNIOLinux
+[68 / 80] NIOCore
+[77 / 91] NIOCore
+[79 / 91] NIOCore
+[83 / 94] CIDRNIO
+[87 / 98] CNIOAtomics
+[89 / 94] CIDRNIO
+[90 / 94] CNIOAtomics
+Build complete! (6.45 sec)

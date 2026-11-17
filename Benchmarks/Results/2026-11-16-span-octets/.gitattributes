@@ -1,0 +1,2 @@
+# Preserve compiler output verbatim, including spaces after diagnostic source-line markers.
+*.log -whitespace

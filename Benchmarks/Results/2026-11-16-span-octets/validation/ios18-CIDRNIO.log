@@ -1,0 +1,49 @@
+warning: /Users/craig/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/craig/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+warning: /Users/craig/Library/Caches/org.swift.swiftpm is not accessible or not writable, disabling user-level cache features.
+warning: 'swift-cidr': failed storing manifest for 'swift-cidr' in cache: attempt to write a readonly database
+warning: 'swift-argument-parser': failed storing manifest for 'swift-argument-parser' in cache: attempt to write a readonly database
+warning: 'swift-nio': failed storing manifest for 'swift-nio' in cache: attempt to write a readonly database
+warning: 'swift-atomics': failed storing manifest for 'swift-atomics' in cache: attempt to write a readonly database
+warning: 'swift-system': failed storing manifest for 'swift-system' in cache: attempt to write a readonly database
+warning: 'swift-collections': failed storing manifest for 'swift-collections' in cache: attempt to write a readonly database
+Building for debugging...
+[Computing dependencies]
+[Pre-planning 1 / 540]
+[Planning deferred tasks]
+[58 / 185] CNIOFreeBSD
+[104 / 189]
+[115 / 200]
+[121 / 211] InternalCollectionsUtilities
+[128 / 223]
+[135 / 223] _NIOBase64
+[143 / 223] _AtomicsShims
+[155 / 223] _AtomicsShims
+[166 / 223]
+[175 / 224]
+[190 / 250]
+[202 / 261] InternalCollectionsUtilities
+[208 / 284]
+[225 / 284] ContainersPreview
+[233 / 285]
+[243 / 296] DequeModule
+[244 / 296]
+[249 / 296] DequeModule
+[251 / 296] Atomics
+[252 / 296] CNIODarwin
+[255 / 296] Atomics
+[259 / 296] Atomics
+[262 / 296]
+[262 / 296] Atomics
+[270 / 296] DequeModule
+[279 / 297] NIOCore
+[289 / 309] NIOCore
+[290 / 309] NIOCore
+[291 / 309] NIOCore
+[291 / 309] CNIOAtomics
+[291 / 309] NIOCore
+[299 / 310] CIDRNIO
+[302 / 313] CIDRNIO
+[308 / 313] CIDRNIO
+[310 / 313] CNIOAtomics
+Build complete! (9.17 sec)

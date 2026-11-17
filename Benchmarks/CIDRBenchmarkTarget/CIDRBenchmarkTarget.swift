@@ -97,6 +97,25 @@ private func benchmarkAddressRange<Family: IPAddressFamily>(
     return range
 }
 
+private func benchmarkOctetSpanPacketBytes(addressByteCount: Int, offset: Int) -> [UInt8] {
+    // CHANGE: Keep 128 varying address fields in 32-byte records so offset zero is aligned
+    // and offset one exercises an unaligned packet field without timing fixture allocation.
+    var bytes = [UInt8](repeating: 0, count: 128 * 32)
+    for record in 0..<128 {
+        for octet in 0..<addressByteCount {
+            bytes[record * 32 + offset + octet] = UInt8(truncatingIfNeeded: record * 37 + octet * 17)
+        }
+    }
+
+    // Array<UInt8> promises only byte alignment. Verify the actual fixture's alignment instead
+    // of inferring it; the immutable captured owner keeps this storage alive during each run.
+    bytes.withUnsafeBufferPointer { buffer in
+        precondition(Int(bitPattern: buffer.baseAddress!) % 16 == 0,
+                     "Span benchmark fixture requires a 16-byte-aligned base address.")
+    }
+    return bytes
+}
+
 // CHANGE: Match the runner's nonisolated registration hook with an immutable Sendable closure.
 let benchmarks: @Sendable () -> Void = {
     let parserMetrics: [BenchmarkMetric] = [
@@ -798,6 +817,37 @@ let benchmarks: @Sendable () -> Void = {
         ) { benchmark in
             for _ in benchmark.scaledIterations {
                 blackHole(IPv6Address(octets: opaqueIPv6HostOctets, prefixLength: ipv6Prefix))
+            }
+        }
+
+        for (offset, alignment) in [(0, "aligned"), (1, "offset1")] {
+            let ipv4PacketBytes = identity(benchmarkOctetSpanPacketBytes(addressByteCount: 4, offset: offset))
+            let ipv6PacketBytes = identity(benchmarkOctetSpanPacketBytes(addressByteCount: 16, offset: offset))
+
+            Benchmark(
+                "currency.ipAddress.v4.initOctetSpan.\(alignment)",
+                configuration: currencyConfiguration(tags: ["family": "v4", "kind": "initOctetSpan"])
+            ) { benchmark in
+                // CHANGE: Borrow inside the measured closure; an escaping benchmark cannot
+                // capture a Span. Cycling records prevents folding one invariant address result.
+                let packet = ipv4PacketBytes.span
+                for iteration in benchmark.scaledIterations {
+                    let start = (iteration & 127) * 32 + offset
+                    let octets = packet.extracting(start..<(start + 4))
+                    blackHole(IPv4Address(octets: octets, prefixLength: ipv4Prefix))
+                }
+            }
+
+            Benchmark(
+                "currency.ipAddress.v6.initOctetSpan.\(alignment)",
+                configuration: currencyConfiguration(tags: ["family": "v6", "kind": "initOctetSpan"])
+            ) { benchmark in
+                let packet = ipv6PacketBytes.span
+                for iteration in benchmark.scaledIterations {
+                    let start = (iteration & 127) * 32 + offset
+                    let octets = packet.extracting(start..<(start + 16))
+                    blackHole(IPv6Address(octets: octets, prefixLength: ipv6Prefix))
+                }
             }
         }
     }

@@ -1,0 +1,43 @@
+warning: /Users/craig/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/craig/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+warning: /Users/craig/Library/Caches/org.swift.swiftpm is not accessible or not writable, disabling user-level cache features.
+warning: 'swift-cidr': failed storing manifest for 'swift-cidr' in cache: attempt to write a readonly database
+Fetching https://github.com/apple/swift-system.git
+Fetching https://github.com/apple/swift-atomics.git
+Fetching https://github.com/apple/swift-collections.git
+Fetching https://github.com/apple/swift-argument-parser.git
+Fetching https://github.com/apple/swift-nio.git
+[1/1927] Fetching swift-atomics
+[1928/9505] Fetching swift-atomics, swift-system
+[1929/28910] Fetching swift-atomics, swift-system, swift-argument-parser
+[12140/59014] Fetching swift-atomics, swift-system, swift-argument-parser, swift-collections
+[29658/145925] Fetching swift-atomics, swift-system, swift-argument-parser, swift-collections, swift-nio
+Fetched https://github.com/apple/swift-argument-parser.git (2.71s)
+Fetched https://github.com/apple/swift-system.git (2.71s)
+[98084/118942] Fetching swift-atomics, swift-collections, swift-nio
+Fetched https://github.com/apple/swift-collections.git (5.39s)
+Fetched https://github.com/apple/swift-atomics.git (5.39s)
+Fetched https://github.com/apple/swift-nio.git (5.39s)
+Creating working copy for https://github.com/apple/swift-collections.git
+Creating working copy for https://github.com/apple/swift-argument-parser.git
+Creating working copy for https://github.com/apple/swift-atomics.git
+Creating working copy for https://github.com/apple/swift-system.git
+Creating working copy for https://github.com/apple/swift-nio.git
+Working copy of https://github.com/apple/swift-system.git resolved at 1.6.4
+Working copy of https://github.com/apple/swift-atomics.git resolved at 1.3.0
+Working copy of https://github.com/apple/swift-argument-parser.git resolved at 1.8.2
+Working copy of https://github.com/apple/swift-nio.git resolved at 2.101.0
+Working copy of https://github.com/apple/swift-collections.git resolved at 1.5.0
+warning: 'swift-argument-parser': failed storing manifest for 'swift-argument-parser' in cache: attempt to write a readonly database
+warning: 'swift-nio': failed storing manifest for 'swift-nio' in cache: attempt to write a readonly database
+warning: 'swift-atomics': failed storing manifest for 'swift-atomics' in cache: attempt to write a readonly database
+warning: 'swift-system': failed storing manifest for 'swift-system' in cache: attempt to write a readonly database
+warning: 'swift-collections': failed storing manifest for 'swift-collections' in cache: attempt to write a readonly database
+Building for debugging...
+[Planning deferred tasks]
+[18 / 26]
+[19 / 27] CIDR
+[32 / 40] CIDR
+[38 / 40] CIDR
+[40 / 40] CIDR
+Build complete! (2.33 sec)

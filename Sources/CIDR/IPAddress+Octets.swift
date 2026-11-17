@@ -13,6 +13,32 @@
 
 @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
 extension IPAddress where Family == AF.V4 {
+    /// Creates an IPv4 address from exactly four borrowed network-byte-order octets.
+    ///
+    /// Returns `nil` unless the span contains exactly four octets. The input may begin at any
+    /// byte offset; no integer alignment is required. Construction copies the address bits into
+    /// the owned value without allocating or retaining the borrowed storage.
+    ///
+    /// The octets carry no prefix context. An omitted `prefixLength` supplies `/32`; an explicit
+    /// prefix is preserved along with every address bit, including host bits.
+    @inlinable
+    public init?(
+        octets: Span<UInt8>,
+        prefixLength: IPv4PrefixLength = .maximum
+    ) {
+        // Check the width before either compiler-specific conversion reads the span.
+        guard octets.count == 4 else { return nil }
+        #if compiler(>=6.4)
+        let networkOrder = octets.bytes.load(fromByteOffset: 0, as: UInt32.self)
+        self.init(address: UInt32(bigEndian: networkOrder), prefixLength: prefixLength)
+        #else
+        let ownedOctets: InlineArray<4, UInt8> = [
+            octets[0], octets[1], octets[2], octets[3],
+        ]
+        self.init(octets: ownedOctets, prefixLength: prefixLength)
+        #endif
+    }
+
     /// Creates an IPv4 address from four network-byte-order octets.
     ///
     /// The octets contain address bits only, with the most-significant octet first. They do not
@@ -53,6 +79,35 @@ extension IPAddress where Family == AF.V4 {
 
 @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
 extension IPAddress where Family == AF.V6 {
+    /// Creates an IPv6 address from exactly sixteen borrowed network-byte-order octets.
+    ///
+    /// Returns `nil` unless the span contains exactly sixteen octets. The input may begin at any
+    /// byte offset; no integer alignment is required. Construction copies the address bits into
+    /// the owned value without allocating or retaining the borrowed storage.
+    ///
+    /// The octets carry no prefix context or IPv6 scope. An omitted `prefixLength` supplies
+    /// `/128`; an explicit prefix is preserved along with every address bit, including host bits.
+    @inlinable
+    public init?(
+        octets: Span<UInt8>,
+        prefixLength: IPv6PrefixLength = .maximum
+    ) {
+        // Check the width before either compiler-specific conversion reads the span.
+        guard octets.count == 16 else { return nil }
+        #if compiler(>=6.4)
+        let networkOrder = octets.bytes.load(fromByteOffset: 0, as: UInt128.self)
+        self.init(address: UInt128(bigEndian: networkOrder), prefixLength: prefixLength)
+        #else
+        let ownedOctets: InlineArray<16, UInt8> = [
+            octets[0], octets[1], octets[2], octets[3],
+            octets[4], octets[5], octets[6], octets[7],
+            octets[8], octets[9], octets[10], octets[11],
+            octets[12], octets[13], octets[14], octets[15],
+        ]
+        self.init(octets: ownedOctets, prefixLength: prefixLength)
+        #endif
+    }
+
     /// Creates an IPv6 address from sixteen network-byte-order octets.
     ///
     /// The octets contain address bits only, with the most-significant octet first. They do not

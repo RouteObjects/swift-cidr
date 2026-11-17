@@ -1,0 +1,1622 @@
+{
+  "currency.ipAddress.v4.initOctetSpan.aligned": {
+    "median_batch_mean_ns_per_iteration": 1.979391,
+    "run_median_range_ns": [
+      1.977343,
+      1.982463
+    ],
+    "batch_samples_per_run": [
+      1006,
+      1009,
+      1008
+    ],
+    "metrics_per_run": {
+      "mallocCountLarge": [
+        {
+          "run": "run-01",
+          "samples": 1006,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        },
+        {
+          "run": "run-03",
+          "samples": 1008,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        }
+      ],
+      "mallocCountSmall": [
+        {
+          "run": "run-01",
+          "samples": 1006,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        },
+        {
+          "run": "run-03",
+          "samples": 1008,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        }
+      ],
+      "mallocCountTotal": [
+        {
+          "run": "run-01",
+          "samples": 1006,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        },
+        {
+          "run": "run-03",
+          "samples": 1008,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        }
+      ],
+      "objectAllocCount": [
+        {
+          "run": "run-01",
+          "samples": 1006,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        },
+        {
+          "run": "run-03",
+          "samples": 1008,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        }
+      ],
+      "releaseCount": [
+        {
+          "run": "run-01",
+          "samples": 1006,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        },
+        {
+          "run": "run-03",
+          "samples": 1008,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        }
+      ],
+      "retainCount": [
+        {
+          "run": "run-01",
+          "samples": 1006,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        },
+        {
+          "run": "run-03",
+          "samples": 1008,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        }
+      ],
+      "retainReleaseDelta": [
+        {
+          "run": "run-01",
+          "samples": 1006,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        },
+        {
+          "run": "run-03",
+          "samples": 1008,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        }
+      ],
+      "wallClock": [
+        {
+          "run": "run-01",
+          "samples": 1006,
+          "p50": 1982463,
+          "p75": 2015231,
+          "p90": 2047999,
+          "max": 2340863,
+          "nonzero_samples": 1006,
+          "unit": "Time (wall clock) (ns)"
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 1977343,
+          "p75": 2012159,
+          "p90": 2044927,
+          "max": 2213887,
+          "nonzero_samples": 1009,
+          "unit": "Time (wall clock) (ns)"
+        },
+        {
+          "run": "run-03",
+          "samples": 1008,
+          "p50": 1979391,
+          "p75": 2011135,
+          "p90": 2046975,
+          "max": 2328575,
+          "nonzero_samples": 1008,
+          "unit": "Time (wall clock) (ns)"
+        }
+      ]
+    }
+  },
+  "currency.ipAddress.v4.initOctetSpan.offset1": {
+    "median_batch_mean_ns_per_iteration": 1.972223,
+    "run_median_range_ns": [
+      1.972223,
+      1.975295
+    ],
+    "batch_samples_per_run": [
+      1010,
+      1009,
+      997
+    ],
+    "metrics_per_run": {
+      "mallocCountLarge": [
+        {
+          "run": "run-01",
+          "samples": 1010,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        },
+        {
+          "run": "run-03",
+          "samples": 997,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        }
+      ],
+      "mallocCountSmall": [
+        {
+          "run": "run-01",
+          "samples": 1010,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        },
+        {
+          "run": "run-03",
+          "samples": 997,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        }
+      ],
+      "mallocCountTotal": [
+        {
+          "run": "run-01",
+          "samples": 1010,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        },
+        {
+          "run": "run-03",
+          "samples": 997,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        }
+      ],
+      "objectAllocCount": [
+        {
+          "run": "run-01",
+          "samples": 1010,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        },
+        {
+          "run": "run-03",
+          "samples": 997,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        }
+      ],
+      "releaseCount": [
+        {
+          "run": "run-01",
+          "samples": 1010,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        },
+        {
+          "run": "run-03",
+          "samples": 997,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        }
+      ],
+      "retainCount": [
+        {
+          "run": "run-01",
+          "samples": 1010,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        },
+        {
+          "run": "run-03",
+          "samples": 997,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        }
+      ],
+      "retainReleaseDelta": [
+        {
+          "run": "run-01",
+          "samples": 1010,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        },
+        {
+          "run": "run-03",
+          "samples": 997,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        }
+      ],
+      "wallClock": [
+        {
+          "run": "run-01",
+          "samples": 1010,
+          "p50": 1972223,
+          "p75": 2004991,
+          "p90": 2036735,
+          "max": 3108863,
+          "nonzero_samples": 1010,
+          "unit": "Time (wall clock) (ns)"
+        },
+        {
+          "run": "run-02",
+          "samples": 1009,
+          "p50": 1975295,
+          "p75": 2006015,
+          "p90": 2039807,
+          "max": 2699263,
+          "nonzero_samples": 1009,
+          "unit": "Time (wall clock) (ns)"
+        },
+        {
+          "run": "run-03",
+          "samples": 997,
+          "p50": 1972223,
+          "p75": 2007039,
+          "p90": 2045951,
+          "max": 11829247,
+          "nonzero_samples": 997,
+          "unit": "Time (wall clock) (ns)"
+        }
+      ]
+    }
+  },
+  "currency.ipAddress.v4.initOctets": {
+    "median_batch_mean_ns_per_iteration": 1.930239,
+    "run_median_range_ns": [
+      1.924095,
+      1.930239
+    ],
+    "batch_samples_per_run": [
+      1033,
+      1017,
+      1016
+    ],
+    "metrics_per_run": {
+      "mallocCountLarge": [
+        {
+          "run": "run-01",
+          "samples": 1033,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        },
+        {
+          "run": "run-02",
+          "samples": 1017,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        },
+        {
+          "run": "run-03",
+          "samples": 1016,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        }
+      ],
+      "mallocCountSmall": [
+        {
+          "run": "run-01",
+          "samples": 1033,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        },
+        {
+          "run": "run-02",
+          "samples": 1017,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        },
+        {
+          "run": "run-03",
+          "samples": 1016,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        }
+      ],
+      "mallocCountTotal": [
+        {
+          "run": "run-01",
+          "samples": 1033,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        },
+        {
+          "run": "run-02",
+          "samples": 1017,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        },
+        {
+          "run": "run-03",
+          "samples": 1016,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        }
+      ],
+      "objectAllocCount": [
+        {
+          "run": "run-01",
+          "samples": 1033,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        },
+        {
+          "run": "run-02",
+          "samples": 1017,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        },
+        {
+          "run": "run-03",
+          "samples": 1016,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        }
+      ],
+      "releaseCount": [
+        {
+          "run": "run-01",
+          "samples": 1033,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        },
+        {
+          "run": "run-02",
+          "samples": 1017,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        },
+        {
+          "run": "run-03",
+          "samples": 1016,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        }
+      ],
+      "retainCount": [
+        {
+          "run": "run-01",
+          "samples": 1033,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        },
+        {
+          "run": "run-02",
+          "samples": 1017,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        },
+        {
+          "run": "run-03",
+          "samples": 1016,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        }
+      ],
+      "retainReleaseDelta": [
+        {
+          "run": "run-01",
+          "samples": 1033,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        },
+        {
+          "run": "run-02",
+          "samples": 1017,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        },
+        {
+          "run": "run-03",
+          "samples": 1016,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        }
+      ],
+      "wallClock": [
+        {
+          "run": "run-01",
+          "samples": 1033,
+          "p50": 1924095,
+          "p75": 1948671,
+          "p90": 1979391,
+          "max": 2342911,
+          "nonzero_samples": 1033,
+          "unit": "Time (wall clock) (ns)"
+        },
+        {
+          "run": "run-02",
+          "samples": 1017,
+          "p50": 1930239,
+          "p75": 1956863,
+          "p90": 1991679,
+          "max": 9699327,
+          "nonzero_samples": 1017,
+          "unit": "Time (wall clock) (ns)"
+        },
+        {
+          "run": "run-03",
+          "samples": 1016,
+          "p50": 1930239,
+          "p75": 1963007,
+          "p90": 1999871,
+          "max": 8364031,
+          "nonzero_samples": 1016,
+          "unit": "Time (wall clock) (ns)"
+        }
+      ]
+    }
+  },
+  "currency.ipAddress.v6.initOctetSpan.aligned": {
+    "median_batch_mean_ns_per_iteration": 2.092031,
+    "run_median_range_ns": [
+      2.088959,
+      2.093055
+    ],
+    "batch_samples_per_run": [
+      950,
+      953,
+      947
+    ],
+    "metrics_per_run": {
+      "mallocCountLarge": [
+        {
+          "run": "run-01",
+          "samples": 950,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        },
+        {
+          "run": "run-02",
+          "samples": 953,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        },
+        {
+          "run": "run-03",
+          "samples": 947,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        }
+      ],
+      "mallocCountSmall": [
+        {
+          "run": "run-01",
+          "samples": 950,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        },
+        {
+          "run": "run-02",
+          "samples": 953,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        },
+        {
+          "run": "run-03",
+          "samples": 947,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        }
+      ],
+      "mallocCountTotal": [
+        {
+          "run": "run-01",
+          "samples": 950,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        },
+        {
+          "run": "run-02",
+          "samples": 953,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        },
+        {
+          "run": "run-03",
+          "samples": 947,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        }
+      ],
+      "objectAllocCount": [
+        {
+          "run": "run-01",
+          "samples": 950,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        },
+        {
+          "run": "run-02",
+          "samples": 953,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        },
+        {
+          "run": "run-03",
+          "samples": 947,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        }
+      ],
+      "releaseCount": [
+        {
+          "run": "run-01",
+          "samples": 950,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        },
+        {
+          "run": "run-02",
+          "samples": 953,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        },
+        {
+          "run": "run-03",
+          "samples": 947,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        }
+      ],
+      "retainCount": [
+        {
+          "run": "run-01",
+          "samples": 950,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        },
+        {
+          "run": "run-02",
+          "samples": 953,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        },
+        {
+          "run": "run-03",
+          "samples": 947,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        }
+      ],
+      "retainReleaseDelta": [
+        {
+          "run": "run-01",
+          "samples": 950,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        },
+        {
+          "run": "run-02",
+          "samples": 953,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        },
+        {
+          "run": "run-03",
+          "samples": 947,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        }
+      ],
+      "wallClock": [
+        {
+          "run": "run-01",
+          "samples": 950,
+          "p50": 2093055,
+          "p75": 2125823,
+          "p90": 2162687,
+          "max": 2480127,
+          "nonzero_samples": 950,
+          "unit": "Time (wall clock) (ns)"
+        },
+        {
+          "run": "run-02",
+          "samples": 953,
+          "p50": 2088959,
+          "p75": 2117631,
+          "p90": 2150399,
+          "max": 2260991,
+          "nonzero_samples": 953,
+          "unit": "Time (wall clock) (ns)"
+        },
+        {
+          "run": "run-03",
+          "samples": 947,
+          "p50": 2092031,
+          "p75": 2123775,
+          "p90": 2162687,
+          "max": 3837951,
+          "nonzero_samples": 947,
+          "unit": "Time (wall clock) (ns)"
+        }
+      ]
+    }
+  },
+  "currency.ipAddress.v6.initOctetSpan.offset1": {
+    "median_batch_mean_ns_per_iteration": 2.092031,
+    "run_median_range_ns": [
+      2.082815,
+      2.094079
+    ],
+    "batch_samples_per_run": [
+      949,
+      955,
+      926
+    ],
+    "metrics_per_run": {
+      "mallocCountLarge": [
+        {
+          "run": "run-01",
+          "samples": 949,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        },
+        {
+          "run": "run-02",
+          "samples": 955,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        },
+        {
+          "run": "run-03",
+          "samples": 926,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        }
+      ],
+      "mallocCountSmall": [
+        {
+          "run": "run-01",
+          "samples": 949,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        },
+        {
+          "run": "run-02",
+          "samples": 955,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        },
+        {
+          "run": "run-03",
+          "samples": 926,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        }
+      ],
+      "mallocCountTotal": [
+        {
+          "run": "run-01",
+          "samples": 949,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        },
+        {
+          "run": "run-02",
+          "samples": 955,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        },
+        {
+          "run": "run-03",
+          "samples": 926,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        }
+      ],
+      "objectAllocCount": [
+        {
+          "run": "run-01",
+          "samples": 949,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        },
+        {
+          "run": "run-02",
+          "samples": 955,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        },
+        {
+          "run": "run-03",
+          "samples": 926,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        }
+      ],
+      "releaseCount": [
+        {
+          "run": "run-01",
+          "samples": 949,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        },
+        {
+          "run": "run-02",
+          "samples": 955,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        },
+        {
+          "run": "run-03",
+          "samples": 926,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        }
+      ],
+      "retainCount": [
+        {
+          "run": "run-01",
+          "samples": 949,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        },
+        {
+          "run": "run-02",
+          "samples": 955,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        },
+        {
+          "run": "run-03",
+          "samples": 926,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        }
+      ],
+      "retainReleaseDelta": [
+        {
+          "run": "run-01",
+          "samples": 949,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        },
+        {
+          "run": "run-02",
+          "samples": 955,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        },
+        {
+          "run": "run-03",
+          "samples": 926,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        }
+      ],
+      "wallClock": [
+        {
+          "run": "run-01",
+          "samples": 949,
+          "p50": 2092031,
+          "p75": 2127871,
+          "p90": 2162687,
+          "max": 2369535,
+          "nonzero_samples": 949,
+          "unit": "Time (wall clock) (ns)"
+        },
+        {
+          "run": "run-02",
+          "samples": 955,
+          "p50": 2082815,
+          "p75": 2109439,
+          "p90": 2140159,
+          "max": 2721791,
+          "nonzero_samples": 955,
+          "unit": "Time (wall clock) (ns)"
+        },
+        {
+          "run": "run-03",
+          "samples": 926,
+          "p50": 2094079,
+          "p75": 2127871,
+          "p90": 2170879,
+          "max": 11517951,
+          "nonzero_samples": 926,
+          "unit": "Time (wall clock) (ns)"
+        }
+      ]
+    }
+  },
+  "currency.ipAddress.v6.initOctets": {
+    "median_batch_mean_ns_per_iteration": 1.926143,
+    "run_median_range_ns": [
+      1.924095,
+      1.929215
+    ],
+    "batch_samples_per_run": [
+      1032,
+      1029,
+      1031
+    ],
+    "metrics_per_run": {
+      "mallocCountLarge": [
+        {
+          "run": "run-01",
+          "samples": 1032,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        },
+        {
+          "run": "run-02",
+          "samples": 1029,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        },
+        {
+          "run": "run-03",
+          "samples": 1031,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Malloc (large) "
+        }
+      ],
+      "mallocCountSmall": [
+        {
+          "run": "run-01",
+          "samples": 1032,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        },
+        {
+          "run": "run-02",
+          "samples": 1029,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        },
+        {
+          "run": "run-03",
+          "samples": 1031,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (small) "
+        }
+      ],
+      "mallocCountTotal": [
+        {
+          "run": "run-01",
+          "samples": 1032,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        },
+        {
+          "run": "run-02",
+          "samples": 1029,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        },
+        {
+          "run": "run-03",
+          "samples": 1031,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 1,
+          "nonzero_samples": 1,
+          "unit": "Malloc (total) "
+        }
+      ],
+      "objectAllocCount": [
+        {
+          "run": "run-01",
+          "samples": 1032,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        },
+        {
+          "run": "run-02",
+          "samples": 1029,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        },
+        {
+          "run": "run-03",
+          "samples": 1031,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Object allocs "
+        }
+      ],
+      "releaseCount": [
+        {
+          "run": "run-01",
+          "samples": 1032,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        },
+        {
+          "run": "run-02",
+          "samples": 1029,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        },
+        {
+          "run": "run-03",
+          "samples": 1031,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Releases "
+        }
+      ],
+      "retainCount": [
+        {
+          "run": "run-01",
+          "samples": 1032,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        },
+        {
+          "run": "run-02",
+          "samples": 1029,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        },
+        {
+          "run": "run-03",
+          "samples": 1031,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "Retains "
+        }
+      ],
+      "retainReleaseDelta": [
+        {
+          "run": "run-01",
+          "samples": 1032,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        },
+        {
+          "run": "run-02",
+          "samples": 1029,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        },
+        {
+          "run": "run-03",
+          "samples": 1031,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0,
+          "max": 0,
+          "nonzero_samples": 0,
+          "unit": "(Alloc + Retain) - Release \u0394 "
+        }
+      ],
+      "wallClock": [
+        {
+          "run": "run-01",
+          "samples": 1032,
+          "p50": 1926143,
+          "p75": 1952767,
+          "p90": 1985535,
+          "max": 2578431,
+          "nonzero_samples": 1032,
+          "unit": "Time (wall clock) (ns)"
+        },
+        {
+          "run": "run-02",
+          "samples": 1029,
+          "p50": 1924095,
+          "p75": 1954815,
+          "p90": 2008063,
+          "max": 2314239,
+          "nonzero_samples": 1029,
+          "unit": "Time (wall clock) (ns)"
+        },
+        {
+          "run": "run-03",
+          "samples": 1031,
+          "p50": 1929215,
+          "p75": 1955839,
+          "p90": 1987583,
+          "max": 2369535,
+          "nonzero_samples": 1031,
+          "unit": "Time (wall clock) (ns)"
+        }
+      ]
+    }
+  }
+}

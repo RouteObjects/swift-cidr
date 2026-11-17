@@ -1,0 +1,13 @@
+warning: /Users/craig/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/craig/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+warning: /Users/craig/Library/Caches/org.swift.swiftpm is not accessible or not writable, disabling user-level cache features.
+warning: 'swift-cidr': failed storing manifest for 'swift-cidr' in cache: attempt to write a readonly database
+warning: 'swift-argument-parser': failed storing manifest for 'swift-argument-parser' in cache: attempt to write a readonly database
+warning: 'swift-nio': failed storing manifest for 'swift-nio' in cache: attempt to write a readonly database
+warning: 'swift-atomics': failed storing manifest for 'swift-atomics' in cache: attempt to write a readonly database
+warning: 'swift-system': failed storing manifest for 'swift-system' in cache: attempt to write a readonly database
+warning: 'swift-collections': failed storing manifest for 'swift-collections' in cache: attempt to write a readonly database
+Building for debugging...
+[2 / 6] CIDR
+[4 / 8] CIDR
+Build complete! (1.01 sec)
