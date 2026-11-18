@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-11-16T04:31:32.492055+00:00",
+  "transport": "gzip tar streamed through SSH; no remote archive file",
+  "sha256": "db240b0efa25986ed0b899a7b9ffea3ee80f50b1e62aef9b1500a6edb666e569",
+  "bytes": 580662494,
+  "files": 2871,
+  "manifest_sha256": "7c2fd529ce0ffeae8a9e6738a13b69e4edaf2c15093b93b08b2bf6f50afb1a3a",
+  "inventory_rechecked_after_stream": true
+}

@@ -1,0 +1,9 @@
+{
+  "scope_exit": 0,
+  "scope_properties": "ControlGroup=/user.slice/user-1000.slice/user@1000.service/app.slice/cidrmerge-inplace-tests-20261115T221013Z.scope\nMemoryCurrent=326868992\nMemoryMax=6442450944\nMemorySwapMax=0\nActiveState=active\nSubState=running\n",
+  "scope_stderr": "",
+  "phase_log_tail": "START B-cli-build-release\n",
+  "phase_started": true,
+  "phase_complete": false,
+  "phase_failed": false
+}

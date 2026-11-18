@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "base_entries": 10000,
+      "duplicates_added": {
+        "ipv4": 1,
+        "ipv6": 1
+      },
+      "pattern": "mixed-disjoint plus one duplicate per family",
+      "input": "mixed-sparse-duplicate-10000/input.txt",
+      "input_bytes": 170010,
+      "input_sha256": "c7b98ccb1a499919a4d6726da858640abdd8ad738f5a1ec260e7c43d4f26a133",
+      "output": "mixed-sparse-duplicate-10000/reference.txt",
+      "output_bytes": 169981,
+      "output_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "output_count": 10000
+    }
+  ],
+  "parent_reference_sha256": "e55c759160d197f233b7ce7175d3cf455a64dac152e7b56ad27ee15f20533e7d",
+  "trigger_summary_sha256": "85a4b79169623130f8015ef75e553a3b64f1c21414c975ab1621621f4964551d",
+  "purpose": "Separate fixed six-pair follow-up; no pooling with initial measurements."
+}

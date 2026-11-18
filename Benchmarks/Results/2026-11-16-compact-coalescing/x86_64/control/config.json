@@ -1,0 +1,16 @@
+{
+  "swift": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+  "jobs": 2,
+  "platform_label": "native x86-64 Linux swift-dev (LXC)",
+  "expected_tests": {
+    "B": {
+      "upstream": 298,
+      "cli": 72
+    },
+    "C": {
+      "upstream": 303,
+      "cli": 72
+    }
+  },
+  "require_codegen_gate": true
+}

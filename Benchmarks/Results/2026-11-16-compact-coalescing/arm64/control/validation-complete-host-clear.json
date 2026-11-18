@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-16T03:51:07.335717+00:00",
+  "main_tests_passed": true,
+  "floor_tests_passed": true,
+  "floor_test_executions": 750,
+  "correctness_freeze_passed": true,
+  "floor_container_stopped": true,
+  "process_checks": [
+    {
+      "command": [
+        "/usr/local/bin/docker",
+        "--config",
+        "EVIDENCE_ROOT/arm64/control/docker-config",
+        "--host",
+        "unix://LOCAL_HOME/.orbstack/run/docker.sock",
+        "top",
+        "cidrmerge-compact-arm642-20261116T033826Z",
+        "-eo",
+        "pid,comm,args"
+      ],
+      "stdout": "PID                 COMMAND             COMMAND\n179787              docker-init         /sbin/docker-init -- sleep infinity\n179800              sleep               sleep infinity\n"
+    },
+    {
+      "command": [
+        "/usr/local/bin/docker",
+        "--config",
+        "EVIDENCE_ROOT/arm64/control/docker-config",
+        "--host",
+        "unix://LOCAL_HOME/.orbstack/run/docker.sock",
+        "top",
+        "cidrmerge-compact-arm624-20261116T033826Z",
+        "-eo",
+        "pid,comm,args"
+      ],
+      "stdout": "PID                 COMMAND             COMMAND\n187567              docker-init         /sbin/docker-init -- sleep infinity\n187580              sleep               sleep infinity\n"
+    }
+  ]
+}

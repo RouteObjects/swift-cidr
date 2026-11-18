@@ -1,0 +1,99 @@
+{
+  "purpose": "Retained independent six-pair follow-up for every selected primary >5% individual elapsed/RSS regression. No pooling with primary.",
+  "schedule": [
+    [
+      "split",
+      [
+        "mixed-permuted",
+        "bgp-like-ipv4"
+      ]
+    ],
+    [
+      "native",
+      [
+        "mixed-disjoint",
+        "mixed-permuted"
+      ]
+    ]
+  ],
+  "selected_cases": [
+    [
+      "native",
+      "mixed-disjoint"
+    ],
+    [
+      "native",
+      "mixed-permuted"
+    ],
+    [
+      "split",
+      "bgp-like-ipv4"
+    ],
+    [
+      "split",
+      "mixed-permuted"
+    ]
+  ],
+  "all_primary_triggers": [
+    {
+      "suite": "split",
+      "case": "mixed-permuted",
+      "round": 2,
+      "metrics_over_5pct": {
+        "elapsed_change_pct": 5.587830545149641
+      }
+    },
+    {
+      "suite": "split",
+      "case": "mixed-permuted",
+      "round": 4,
+      "metrics_over_5pct": {
+        "elapsed_change_pct": 5.510698400699177
+      }
+    },
+    {
+      "suite": "split",
+      "case": "bgp-like-ipv4",
+      "round": 4,
+      "metrics_over_5pct": {
+        "rss_change_pct": 6.025697828976528
+      }
+    },
+    {
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "round": 1,
+      "metrics_over_5pct": {
+        "elapsed_change_pct": 29.37972542177367
+      }
+    },
+    {
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "round": 5,
+      "metrics_over_5pct": {
+        "elapsed_change_pct": 5.066372327545232
+      }
+    },
+    {
+      "suite": "native",
+      "case": "mixed-permuted",
+      "round": 1,
+      "metrics_over_5pct": {
+        "elapsed_change_pct": 6.564698468858854
+      }
+    }
+  ],
+  "measured_rounds": 6,
+  "excluded_warmup_rounds": 1,
+  "order": "B,C odd rounds; C,B even rounds; original warmup order; rotate subset case order per round",
+  "timing_and_output_checker": "The same unmodified base_runner.run_one as the primary run.",
+  "minimum_free_bytes": 3221225472,
+  "bindings": {
+    "control/mac_followup.py": "908ed6c7ec07f41469f93366005248516133d205a4e24054d4a4de6719a93a5e",
+    "macos/control/run_matched.py": "4c51efca113d29942dba8c605262ade53095415315f7326f449da2483f177d9a",
+    "macos/control/base_runner.py": "3017fc1ad92ad99928e9503c7d7a462d1436becf0730eded9e278a0e58319f96",
+    "macos/control/pre-benchmark-freeze.json": "55ad3c539dd97553dffbe37aae00d0f9ab556b9e94d5dd56b26c7936521c4cff",
+    "macos/measurements/summary.json": "42b57d5c26a1dfd70bae1454e9641382d11ee7cfa23ff9bbefb3938af5c55e92"
+  }
+}

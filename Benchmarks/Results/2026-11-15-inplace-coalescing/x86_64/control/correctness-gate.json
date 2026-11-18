@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "binary_sha256": {
+    "B": "e56b27050ccae259bf82d2530b2d0bc25ee0882f82974f44daf57314c219b08b",
+    "C": "9a7d5b88bf8f42b5aa3a6b1c19ffa449d142b57fb7852a02255f7f5e6c3d12d1"
+  },
+  "differential_summary_sha256": "c996516ada052dac782c0aee4c5c5dc332ca977925cc20c96d764f4e26bb2191",
+  "test_summary_sha256": "8362efaea59918fc35e1c2b7c64af1fe1d1c475922b4398daccb9baf987134d2"
+}

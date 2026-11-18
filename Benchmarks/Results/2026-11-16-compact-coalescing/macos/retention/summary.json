@@ -1,0 +1,499 @@
+{
+  "created_at": "2026-11-16T03:55:29.413666+00:00",
+  "passed": true,
+  "scope": "Eight fresh result-only retention checkpoints; no timed throughput samples.",
+  "platform": "macOS 27.2.1 (26B131), ARM64, VM page size 16384 bytes",
+  "toolchain": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0\n",
+  "client_source_sha256": "74c45690e01e7ffd676b38da8a334a1ac26cb0665db845de58ebf707e99e87fa",
+  "production_patch_sha256": "5de1eedcf0e0f440927caa2cab2199b979189c5f3ede92e82616dc24314c0c20",
+  "probe_preparation_freeze_sha256": "503e2c5ff42f6190aed98b42ada7b0f34499b5982aa980984a8a22a983ab24db",
+  "summarizer_sha256": "957e16146315eddcca701a25f5904abf17e5bd9dfd3ad5e35079b0747bc29775",
+  "observations": [
+    {
+      "variant": "B",
+      "case": "overlap",
+      "passed": true,
+      "evidence_directory": "runs/2026-11-16T035358.854168+0000-B-overlap",
+      "checkpoint": {
+        "phase": "result-only",
+        "pid": 8677,
+        "case": "overlap",
+        "base_input_count": 1000000,
+        "input_count": 1000000,
+        "result_count": 1,
+        "capacity": 1000447,
+        "element_stride": 32,
+        "capacity_bytes": 32014304,
+        "element_address": "0x7c11410020",
+        "first_lower": "0",
+        "last_upper": "1000000"
+      },
+      "typed_live_array_count": 1,
+      "allocation": {
+        "start": "0x7c11410000",
+        "bytes": 32014336,
+        "element_offset_bytes": 32,
+        "raw_heap_line": "0x7c11410000: Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>> (32014336 bytes)"
+      },
+      "result_region": {
+        "region_kind": "Malloc Large",
+        "start": "0x7c11400000",
+        "end": "0x7c13298000",
+        "virtual_extent_bytes": 32079872,
+        "virtual_size_display": "30.6M",
+        "resident_display": "16K",
+        "dirty_display": "16K",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large               7c11400000-7c13298000   [ 30.6M    16K    16K     0K] rw-/rwx SM=COW          DefaultMallocZone_0x1009c8000",
+        "exclusive_to_array": null
+      },
+      "malloc_large_empty": {
+        "virtual_size_display": "76.4M",
+        "resident_display": "61.1M",
+        "dirty_display": "61.1M",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large (empty)              76.4M    61.1M    61.1M       0K       0K       0K       0K        3         see MALLOC ZONE table below"
+      },
+      "physical_footprint_display": "62.8M",
+      "ordinary_binary_sha256": "33a88d93b6c3e121ba2a2437cefeb2af2413fda567188d17b5d7b0118f0514cc",
+      "profile_binary_sha256": "dcf068e05d2d105dc9ee5cd51d24199d88947712e58780ad083874a34e4e49eb",
+      "build_receipt_sha256": "b5c6089986edc6c81a7dd04ede94f48e3485214d57338e1bf820436abd5e3ea5",
+      "raw_file_sha256": {
+        "vmmap-regions.txt": "046ead6981f3299b93374e2bfb1cda9bfc8c2572e672b3e069f210e782e6df8b",
+        "vmmap.txt": "cce0165588d9411e49601a98449bf1aec8a6e1b6493350f8974e9e306dd103dc",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.jsonl": "b51a0ec5feae8d31a9f0b51f045369dcea64aef5bd19504acf9201aa09d35c51",
+        "heap.txt": "2eb75f2e14ca513a0c1666b0842a32757d04dfcf3ad4d2e408c846c9c231f819"
+      },
+      "receipt_sha256": "4da66a6c776828a74a89614e8970c838bb0978628231dc9026ffa980419facaa"
+    },
+    {
+      "variant": "C",
+      "case": "overlap",
+      "passed": true,
+      "evidence_directory": "runs/2026-11-16T035401.794491+0000-C-overlap",
+      "checkpoint": {
+        "phase": "result-only",
+        "pid": 8721,
+        "case": "overlap",
+        "base_input_count": 1000000,
+        "input_count": 1000000,
+        "result_count": 1,
+        "capacity": 1,
+        "element_stride": 32,
+        "capacity_bytes": 32,
+        "element_address": "0x1018a3580",
+        "first_lower": "0",
+        "last_upper": "1000000"
+      },
+      "typed_live_array_count": 1,
+      "allocation": {
+        "start": "0x1018a3560",
+        "bytes": 64,
+        "element_offset_bytes": 32,
+        "raw_heap_line": "0x1018a3560: Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>> (64 bytes)"
+      },
+      "result_region": {
+        "region_kind": "Malloc Tiny",
+        "start": "0x101888000",
+        "end": "0x101c88000",
+        "virtual_extent_bytes": 4194304,
+        "virtual_size_display": "4096K",
+        "resident_display": "64K",
+        "dirty_display": "64K",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Tiny                 101888000-101c88000    [ 4096K    64K    64K     0K] rw-/rwx SM=PRV          DefaultMallocZone_0x1016c8000",
+        "exclusive_to_array": false
+      },
+      "malloc_large_empty": {
+        "virtual_size_display": "76.4M",
+        "resident_display": "61.1M",
+        "dirty_display": "61.1M",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large (empty)              76.4M    61.1M    61.1M       0K       0K       0K       0K        3         see MALLOC ZONE table below"
+      },
+      "physical_footprint_display": "62.8M",
+      "ordinary_binary_sha256": "b366a7b592b88fb00c2c0132d847bf86e89c95fcaf730a76f54c94451c8ff6ee",
+      "profile_binary_sha256": "37a1cdf3b300e04391d6ab3a57b6cd1f422164b469dc4deb81adc25a6b0e3add",
+      "build_receipt_sha256": "48c0b42b6196cf600cdc412a757b83afe03e3b4632114f40b3a92f6ecb111c95",
+      "raw_file_sha256": {
+        "vmmap-regions.txt": "48cfda1b8a161df45374682728d0e641bf9c4d65d76596427a74b9ba4348ae8f",
+        "vmmap.txt": "df7fd43fac70c34bc167ef991429d5ef6968b4fd874644aef90ada0252af1759",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.jsonl": "f93a765299f3329376808e036fa4fec57492dfedad3b2e3ee1027bb78b3424be",
+        "heap.txt": "12de109e60d234fded33451a46e870bdcb99eed6bf1084f9d8c833b93603c122"
+      },
+      "receipt_sha256": "269eb61427be6f1b36d4a4104f33eee28a66de4dd19b0fa55222ba6be1d221cd"
+    },
+    {
+      "variant": "C",
+      "case": "adjacent",
+      "passed": true,
+      "evidence_directory": "runs/2026-11-16T035404.541671+0000-C-adjacent",
+      "checkpoint": {
+        "phase": "result-only",
+        "pid": 8798,
+        "case": "adjacent",
+        "base_input_count": 1000000,
+        "input_count": 1000000,
+        "result_count": 1,
+        "capacity": 1,
+        "element_stride": 32,
+        "capacity_bytes": 32,
+        "element_address": "0x102e4b580",
+        "first_lower": "0",
+        "last_upper": "1999999"
+      },
+      "typed_live_array_count": 1,
+      "allocation": {
+        "start": "0x102e4b560",
+        "bytes": 64,
+        "element_offset_bytes": 32,
+        "raw_heap_line": "0x102e4b560: Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>> (64 bytes)"
+      },
+      "result_region": {
+        "region_kind": "Malloc Tiny",
+        "start": "0x102e30000",
+        "end": "0x103230000",
+        "virtual_extent_bytes": 4194304,
+        "virtual_size_display": "4096K",
+        "resident_display": "64K",
+        "dirty_display": "64K",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Tiny                 102e30000-103230000    [ 4096K    64K    64K     0K] rw-/rwx SM=PRV          DefaultMallocZone_0x102c3c000",
+        "exclusive_to_array": false
+      },
+      "malloc_large_empty": {
+        "virtual_size_display": "76.4M",
+        "resident_display": "61.1M",
+        "dirty_display": "61.1M",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large (empty)              76.4M    61.1M    61.1M       0K       0K       0K       0K        3         see MALLOC ZONE table below"
+      },
+      "physical_footprint_display": "62.8M",
+      "ordinary_binary_sha256": "b366a7b592b88fb00c2c0132d847bf86e89c95fcaf730a76f54c94451c8ff6ee",
+      "profile_binary_sha256": "37a1cdf3b300e04391d6ab3a57b6cd1f422164b469dc4deb81adc25a6b0e3add",
+      "build_receipt_sha256": "48c0b42b6196cf600cdc412a757b83afe03e3b4632114f40b3a92f6ecb111c95",
+      "raw_file_sha256": {
+        "vmmap-regions.txt": "c025d056e7ff0f74555cf630a4a3240d9d82db5e3f25429d1c641db99f4358ce",
+        "vmmap.txt": "719ada6a48a57d6b8caf589376895b5cf29c201953a691359cb438e5e4b37417",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.jsonl": "4281db70fc8ae9b4605235075603f7fef1222679507604473d9614f9ef36600a",
+        "heap.txt": "3a57616ab9e6635319341ffc15fcb6e5f6dedf79e46835cb3d5781aa88ec8803"
+      },
+      "receipt_sha256": "02af68805ef2e7587bf670c3d2d11c0065dfe8f6d56eabdaeccfbc464e6edf62"
+    },
+    {
+      "variant": "B",
+      "case": "adjacent",
+      "passed": true,
+      "evidence_directory": "runs/2026-11-16T035407.419645+0000-B-adjacent",
+      "checkpoint": {
+        "phase": "result-only",
+        "pid": 8835,
+        "case": "adjacent",
+        "base_input_count": 1000000,
+        "input_count": 1000000,
+        "result_count": 1,
+        "capacity": 1000447,
+        "element_stride": 32,
+        "capacity_bytes": 32014304,
+        "element_address": "0x71d3410020",
+        "first_lower": "0",
+        "last_upper": "1999999"
+      },
+      "typed_live_array_count": 1,
+      "allocation": {
+        "start": "0x71d3410000",
+        "bytes": 32014336,
+        "element_offset_bytes": 32,
+        "raw_heap_line": "0x71d3410000: Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>> (32014336 bytes)"
+      },
+      "result_region": {
+        "region_kind": "Malloc Large",
+        "start": "0x71d3400000",
+        "end": "0x71d5298000",
+        "virtual_extent_bytes": 32079872,
+        "virtual_size_display": "30.6M",
+        "resident_display": "16K",
+        "dirty_display": "16K",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large               71d3400000-71d5298000   [ 30.6M    16K    16K     0K] rw-/rwx SM=COW          DefaultMallocZone_0x102c40000",
+        "exclusive_to_array": null
+      },
+      "malloc_large_empty": {
+        "virtual_size_display": "76.4M",
+        "resident_display": "61.1M",
+        "dirty_display": "61.1M",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large (empty)              76.4M    61.1M    61.1M       0K       0K       0K       0K        3         see MALLOC ZONE table below"
+      },
+      "physical_footprint_display": "62.8M",
+      "ordinary_binary_sha256": "33a88d93b6c3e121ba2a2437cefeb2af2413fda567188d17b5d7b0118f0514cc",
+      "profile_binary_sha256": "dcf068e05d2d105dc9ee5cd51d24199d88947712e58780ad083874a34e4e49eb",
+      "build_receipt_sha256": "b5c6089986edc6c81a7dd04ede94f48e3485214d57338e1bf820436abd5e3ea5",
+      "raw_file_sha256": {
+        "vmmap-regions.txt": "f2b0392b3d36b2bfebf7ddaac665d966c08ea2779623c6f463d7589073c5734d",
+        "vmmap.txt": "150e21d350474c4b23fc4778cf6b5d319bc44c887a0daa01b091098246fbdb7e",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.jsonl": "524877dfa7b3002e63233da35d0f47ee3e44c087aa3f0a1219a8d20c64b82d97",
+        "heap.txt": "f9e8a018c241e4915ddb01edddc753435b64dbba02932b858f6378c35c8e3092"
+      },
+      "receipt_sha256": "0f72037bb6b9a616a8f6f4d932947ab7f0f9f9d3addb5b46bc7508d25491150f"
+    },
+    {
+      "variant": "B",
+      "case": "disjoint",
+      "passed": true,
+      "evidence_directory": "runs/2026-11-16T035410.268755+0000-B-disjoint",
+      "checkpoint": {
+        "phase": "result-only",
+        "pid": 8897,
+        "case": "disjoint",
+        "base_input_count": 1000000,
+        "input_count": 1000000,
+        "result_count": 1000000,
+        "capacity": 1000447,
+        "element_stride": 32,
+        "capacity_bytes": 32014304,
+        "element_address": "0x74c1410020",
+        "first_lower": "0",
+        "last_upper": "3999997"
+      },
+      "typed_live_array_count": 1,
+      "allocation": {
+        "start": "0x74c1410000",
+        "bytes": 32014336,
+        "element_offset_bytes": 32,
+        "raw_heap_line": "0x74c1410000: Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>> (32014336 bytes)"
+      },
+      "result_region": {
+        "region_kind": "Malloc Large",
+        "start": "0x74c1400000",
+        "end": "0x74c3298000",
+        "virtual_extent_bytes": 32079872,
+        "virtual_size_display": "30.6M",
+        "resident_display": "30.5M",
+        "dirty_display": "30.5M",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large               74c1400000-74c3298000   [ 30.6M  30.5M  30.5M     0K] rw-/rwx SM=COW          DefaultMallocZone_0x10468c000",
+        "exclusive_to_array": null
+      },
+      "malloc_large_empty": {
+        "virtual_size_display": "76.4M",
+        "resident_display": "61.1M",
+        "dirty_display": "61.1M",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large (empty)              76.4M    61.1M    61.1M       0K       0K       0K       0K        3         see MALLOC ZONE table below"
+      },
+      "physical_footprint_display": "93.4M",
+      "ordinary_binary_sha256": "33a88d93b6c3e121ba2a2437cefeb2af2413fda567188d17b5d7b0118f0514cc",
+      "profile_binary_sha256": "dcf068e05d2d105dc9ee5cd51d24199d88947712e58780ad083874a34e4e49eb",
+      "build_receipt_sha256": "b5c6089986edc6c81a7dd04ede94f48e3485214d57338e1bf820436abd5e3ea5",
+      "raw_file_sha256": {
+        "vmmap-regions.txt": "7eb3de41c680d0634fe2d8b7b851753160697926995be19af3b8fc4032596873",
+        "vmmap.txt": "62d11890a8cb8d675fd70378baee93cab4d2a10a272fbca2f71898ec2a73e24a",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.jsonl": "6c063b8ee77f339d27462f3c5be8ddf81cdbcdc5246c7c60c867f665376b6153",
+        "heap.txt": "41958295ceef935e9e27da72f9bcdfab38eba4c95229e7ea69aa7dbd6fcbff0d"
+      },
+      "receipt_sha256": "28b2264a19d3eb50d85e3dea788dd84f5a6cb70998d39ff611602427f5fa4891"
+    },
+    {
+      "variant": "C",
+      "case": "disjoint",
+      "passed": true,
+      "evidence_directory": "runs/2026-11-16T035413.824435+0000-C-disjoint",
+      "checkpoint": {
+        "phase": "result-only",
+        "pid": 8937,
+        "case": "disjoint",
+        "base_input_count": 1000000,
+        "input_count": 1000000,
+        "result_count": 1000000,
+        "capacity": 1000447,
+        "element_stride": 32,
+        "capacity_bytes": 32014304,
+        "element_address": "0x7206408020",
+        "first_lower": "0",
+        "last_upper": "3999997"
+      },
+      "typed_live_array_count": 1,
+      "allocation": {
+        "start": "0x7206408000",
+        "bytes": 32014336,
+        "element_offset_bytes": 32,
+        "raw_heap_line": "0x7206408000: Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>> (32014336 bytes)"
+      },
+      "result_region": {
+        "region_kind": "Malloc Large",
+        "start": "0x7206400000",
+        "end": "0x7208290000",
+        "virtual_extent_bytes": 32047104,
+        "virtual_size_display": "30.6M",
+        "resident_display": "30.5M",
+        "dirty_display": "30.5M",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large               7206400000-7208290000   [ 30.6M  30.5M  30.5M     0K] rw-/rwx SM=COW          DefaultMallocZone_0x101308000",
+        "exclusive_to_array": null
+      },
+      "malloc_large_empty": {
+        "virtual_size_display": "45.9M",
+        "resident_display": "30.5M",
+        "dirty_display": "30.5M",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large (empty)              45.9M    30.5M    30.5M       0K       0K       0K       0K        2         see MALLOC ZONE table below"
+      },
+      "physical_footprint_display": "62.8M",
+      "ordinary_binary_sha256": "b366a7b592b88fb00c2c0132d847bf86e89c95fcaf730a76f54c94451c8ff6ee",
+      "profile_binary_sha256": "37a1cdf3b300e04391d6ab3a57b6cd1f422164b469dc4deb81adc25a6b0e3add",
+      "build_receipt_sha256": "48c0b42b6196cf600cdc412a757b83afe03e3b4632114f40b3a92f6ecb111c95",
+      "raw_file_sha256": {
+        "vmmap-regions.txt": "0fea4a78014b6e5f39ee1f37b01d0567e5355bcbb31f8ea3999d70902ecbe79b",
+        "vmmap.txt": "e91b03e61622112c782d796ab3b5cc58af7f770052ecc981c4e77042745339e2",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.jsonl": "00e0e9cdd56b1bf27900095163478941964cb8eb02b593be0e7aee2f00e16f87",
+        "heap.txt": "bb2bac46561f7fb90fa5dac01b99829d0225da734391486b113e027c1ef585b6"
+      },
+      "receipt_sha256": "0f90bc1aa29a37f9ff25f0f354f860768932b37748519ab79664dd5ee579f742"
+    },
+    {
+      "variant": "C",
+      "case": "sparse",
+      "passed": true,
+      "evidence_directory": "runs/2026-11-16T035417.040850+0000-C-sparse",
+      "checkpoint": {
+        "phase": "result-only",
+        "pid": 9001,
+        "case": "sparse",
+        "base_input_count": 1000000,
+        "input_count": 1000001,
+        "result_count": 1000000,
+        "capacity": 1000447,
+        "element_stride": 32,
+        "capacity_bytes": 32014304,
+        "element_address": "0x769d410020",
+        "first_lower": "0",
+        "last_upper": "3999997"
+      },
+      "typed_live_array_count": 1,
+      "allocation": {
+        "start": "0x769d410000",
+        "bytes": 32014336,
+        "element_offset_bytes": 32,
+        "raw_heap_line": "0x769d410000: Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>> (32014336 bytes)"
+      },
+      "result_region": {
+        "region_kind": "Malloc Large",
+        "start": "0x769d400000",
+        "end": "0x769f298000",
+        "virtual_extent_bytes": 32079872,
+        "virtual_size_display": "30.6M",
+        "resident_display": "30.5M",
+        "dirty_display": "30.5M",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large               769d400000-769f298000   [ 30.6M  30.5M  30.5M     0K] rw-/rwx SM=COW          DefaultMallocZone_0x1027d8000",
+        "exclusive_to_array": null
+      },
+      "malloc_large_empty": {
+        "virtual_size_display": "76.4M",
+        "resident_display": "61.1M",
+        "dirty_display": "61.1M",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large (empty)              76.4M    61.1M    61.1M       0K       0K       0K       0K        3         see MALLOC ZONE table below"
+      },
+      "physical_footprint_display": "93.3M",
+      "ordinary_binary_sha256": "b366a7b592b88fb00c2c0132d847bf86e89c95fcaf730a76f54c94451c8ff6ee",
+      "profile_binary_sha256": "37a1cdf3b300e04391d6ab3a57b6cd1f422164b469dc4deb81adc25a6b0e3add",
+      "build_receipt_sha256": "48c0b42b6196cf600cdc412a757b83afe03e3b4632114f40b3a92f6ecb111c95",
+      "raw_file_sha256": {
+        "vmmap-regions.txt": "bdb98376d9e0d351e79950f61bfc9cc9a81de3682b09edc927663c631a39d52b",
+        "vmmap.txt": "7ca1969addede7fd4de5b5859bf605eed24adc40f511a3884a985365662e69f1",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.jsonl": "4224628745c85f4d0d49b9c1bceb2f9e8e94455c0d07dc4d25de62229779bd56",
+        "heap.txt": "4ea87bf6f94ef0369e406ff8120e24bf293ead905b9d6a602405a5aee37b1f45"
+      },
+      "receipt_sha256": "ae324290cc4bacc83e0ea29c7a71446bc2b5e25b5968fd6a9bb97ba9e2b63076"
+    },
+    {
+      "variant": "B",
+      "case": "sparse",
+      "passed": true,
+      "evidence_directory": "runs/2026-11-16T035420.764551+0000-B-sparse",
+      "checkpoint": {
+        "phase": "result-only",
+        "pid": 9067,
+        "case": "sparse",
+        "base_input_count": 1000000,
+        "input_count": 1000001,
+        "result_count": 1000000,
+        "capacity": 1000447,
+        "element_stride": 32,
+        "capacity_bytes": 32014304,
+        "element_address": "0x7b7d410020",
+        "first_lower": "0",
+        "last_upper": "3999997"
+      },
+      "typed_live_array_count": 1,
+      "allocation": {
+        "start": "0x7b7d410000",
+        "bytes": 32014336,
+        "element_offset_bytes": 32,
+        "raw_heap_line": "0x7b7d410000: Swift._ContiguousArrayStorage<CIDR.IPAddressRange<CIDR.AF.V6>> (32014336 bytes)"
+      },
+      "result_region": {
+        "region_kind": "Malloc Large",
+        "start": "0x7b7d400000",
+        "end": "0x7b7f298000",
+        "virtual_extent_bytes": 32079872,
+        "virtual_size_display": "30.6M",
+        "resident_display": "30.5M",
+        "dirty_display": "30.5M",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large               7b7d400000-7b7f298000   [ 30.6M  30.5M  30.5M     0K] rw-/rwx SM=COW          DefaultMallocZone_0x1045ac000",
+        "exclusive_to_array": null
+      },
+      "malloc_large_empty": {
+        "virtual_size_display": "76.4M",
+        "resident_display": "61.1M",
+        "dirty_display": "61.1M",
+        "swap_display": "0K",
+        "raw_vmmap_line": "Malloc Large (empty)              76.4M    61.1M    61.1M       0K       0K       0K       0K        3         see MALLOC ZONE table below"
+      },
+      "physical_footprint_display": "93.4M",
+      "ordinary_binary_sha256": "33a88d93b6c3e121ba2a2437cefeb2af2413fda567188d17b5d7b0118f0514cc",
+      "profile_binary_sha256": "dcf068e05d2d105dc9ee5cd51d24199d88947712e58780ad083874a34e4e49eb",
+      "build_receipt_sha256": "b5c6089986edc6c81a7dd04ede94f48e3485214d57338e1bf820436abd5e3ea5",
+      "raw_file_sha256": {
+        "vmmap-regions.txt": "6b01a94cce102f0b72aadabb1e653cc8d5a8d2b63acec06410d71ea68ae73591",
+        "vmmap.txt": "1173779032a180cc527583637677bac9f3c673be747d704c2a15bcdf77711689",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.jsonl": "42eb306a5931b54ea3324d1834fb67e696ea73e0eb4692d6c463a933f8d11405",
+        "heap.txt": "6dc5a9b6a9441a0bcd202f6a5d8e05611bd389b894c797d8224dc3d6ba854602"
+      },
+      "receipt_sha256": "1d4a2e4906731a10ad346aaad609a72c5a9ede98ff0dd34c7a0520cb95e259ee"
+    }
+  ],
+  "limits": [
+    "One fresh process per variant/case, not a repeated memory benchmark, throughput timing, allocation counter, or Linux retention result.",
+    "Every pointer is a borrowed numeric element address inside withExtendedLifetime(result); makeResult has returned and the source Array does not escape. Heap detects one live typed range Array.",
+    "Array capacity and exact heap allocation bytes are observed for this toolchain/allocator, not public API guarantees; reserveCapacity may round capacity.",
+    "The candidate collapse Array is in a shared Malloc Tiny region. The region's 64K resident/dirty total includes unrelated allocations and cannot be attributed to the 64-byte Array.",
+    "VM displays are rounded; no precise per-object resident-page count is claimed. Whole-process physical footprint is not RSS and includes empty allocator regions.",
+    "No memory-pressure, long-term reuse, concurrent workload, or allocator-reclamation experiment was performed. Inspection uses a separately ad-hoc signed copy whose executable sections match the ordinary Release binary."
+  ],
+  "preserved_build_failures": [
+    {
+      "variant": "B",
+      "receipt_sha256": "31920d1c53120aa2539feedb0fe9543187ca3e239c77022faeec987ced50f5c0",
+      "log_sha256": "a9092da25c094de4b3fff1a2bc92bd1f5bb559942aaeea944b6fb73cc7e76d52",
+      "reason": "Existing macOS dependency cache outside initial child sandbox write grant; compiler never started."
+    },
+    {
+      "variant": "C",
+      "receipt_sha256": "fe2e60db62f3e3eab6d08a05db0a1eb99abf2aabc0f1e6a89dc385d837d1ac2a",
+      "log_sha256": "a9092da25c094de4b3fff1a2bc92bd1f5bb559942aaeea944b6fb73cc7e76d52",
+      "reason": "Existing macOS dependency cache outside initial child sandbox write grant; compiler never started."
+    }
+  ]
+}

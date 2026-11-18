@@ -1,0 +1,133 @@
+{
+  "variant": "C",
+  "started_at": "2026-11-15T22:28:04.688977+00:00",
+  "passed": true,
+  "source_sha256": "988a79302379177cb4a56aec194b197aa054293b7c0177d647fe429c5bfb815c",
+  "manifest_sha256": "5cfa3cd0de11ba8549084bb23ccf896dfc2dfd5461afbfe61695d2ec6518be59",
+  "input_lock_sha256": "192209f525224dc9dbe1bd2cd699494d6b7e3093cdb8cbafd29bbce129bfa12e",
+  "expected_pins": {
+    "swift-argument-parser": {
+      "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+      "version": "1.8.2"
+    },
+    "swift-atomics": {
+      "revision": "b601256eab081c0f92f059e12818ac1d4f178ff7",
+      "version": "1.3.0"
+    },
+    "swift-collections": {
+      "revision": "03cc312c2c933ed87abace34044a5dff7a3117c1",
+      "version": "1.5.0"
+    },
+    "swift-nio": {
+      "revision": "77b84ac2cd2ac9e4ac67d19f045fd5b434f56967",
+      "version": "2.101.0"
+    },
+    "swift-system": {
+      "revision": "7c6ad0fc39d0763e0b699210e4124afd5041c5df",
+      "version": "1.6.4"
+    }
+  },
+  "upstream_source_freeze_sha256": "11b551b445a5133e1804d5c8c4ea2d199f8b08c127541377b7b633139fa096a5",
+  "commands": [
+    {
+      "command": [
+        "/Applications/Xcode-27.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift",
+        "build",
+        "--package-path",
+        "$EXPERIMENT/retention/C",
+        "--scratch-path",
+        "$EXPERIMENT/retention/build/C",
+        "--cache-path",
+        "$EXPERIMENT/macos/cache",
+        "--config-path",
+        "$EXPERIMENT/retention/config",
+        "--security-path",
+        "$EXPERIMENT/retention/security",
+        "--disable-netrc",
+        "--disable-sandbox",
+        "--skip-update",
+        "-c",
+        "release",
+        "-j",
+        "4",
+        "--product",
+        "RetentionProbe"
+      ],
+      "exit_code": 0,
+      "log_sha256": "5a02f6550995e976a3cc89ee7956211d25ccbfe347d2fdc50b98f626ee3b3174"
+    },
+    {
+      "command": [
+        "/usr/bin/codesign",
+        "--force",
+        "--sign",
+        "-",
+        "--entitlements",
+        "$EXPERIMENT/control/profile.entitlements",
+        "$EXPERIMENT/retention/bin/C-profile"
+      ],
+      "exit_code": 0,
+      "log_sha256": "95214a2584a80f17aaf1b00af836ae5dfa0fed8bf144cdc861cb256ba270428b"
+    }
+  ],
+  "toolchain": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0\n",
+  "resolved_lock_sha256": "192209f525224dc9dbe1bd2cd699494d6b7e3093cdb8cbafd29bbce129bfa12e",
+  "resolved_pins": {
+    "swift-argument-parser": {
+      "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+      "version": "1.8.2"
+    },
+    "swift-atomics": {
+      "revision": "b601256eab081c0f92f059e12818ac1d4f178ff7",
+      "version": "1.3.0"
+    },
+    "swift-collections": {
+      "revision": "03cc312c2c933ed87abace34044a5dff7a3117c1",
+      "version": "1.5.0"
+    },
+    "swift-nio": {
+      "revision": "77b84ac2cd2ac9e4ac67d19f045fd5b434f56967",
+      "version": "2.101.0"
+    },
+    "swift-system": {
+      "revision": "7c6ad0fc39d0763e0b699210e4124afd5041c5df",
+      "version": "1.6.4"
+    }
+  },
+  "checkouts": {
+    "swift-argument-parser": {
+      "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+      "status": ""
+    },
+    "swift-atomics": {
+      "revision": "b601256eab081c0f92f059e12818ac1d4f178ff7",
+      "status": ""
+    },
+    "swift-collections": {
+      "revision": "03cc312c2c933ed87abace34044a5dff7a3117c1",
+      "status": ""
+    },
+    "swift-nio": {
+      "revision": "77b84ac2cd2ac9e4ac67d19f045fd5b434f56967",
+      "status": ""
+    },
+    "swift-system": {
+      "revision": "7c6ad0fc39d0763e0b699210e4124afd5041c5df",
+      "status": ""
+    }
+  },
+  "ordinary_binary_sha256": "28c758ab4f822e6873aac5fdfff74189a51c7eb290024e55d99ba3ee3885cd80",
+  "profile_binary_sha256": "bc1324068f8c304717eb314ad54f29181bfa6ad85a86028db1d10204956ff5f0",
+  "code_sections": {
+    "__TEXT,__text": {
+      "bytes": 178464,
+      "sha256": "6e43e36af27818dfb52ad1a5de786276546ada7c10aacfff482fc27ccd935363"
+    },
+    "__TEXT,__stubs": {
+      "bytes": 2064,
+      "sha256": "70cdeefc70a43cd9bcebd91fa30c05a4aa42d830fda6e61a01809f0ca72fdeff"
+    }
+  },
+  "linkage": "$EXPERIMENT/retention/bin/C:\n\t/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.1.8)\n\t/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.40.3)\n\t/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswift_Builtin_float.dylib (compatibility version 0.0.0, current version 0.0.0, weak)\n\t/usr/lib/swift/libswift_Concurrency.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswift_StringProcessing.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswift_errno.dylib (compatibility version 1.0.0, current version 428.40.1)\n",
+  "finished_at": "2026-11-15T22:28:24.383577+00:00"
+}

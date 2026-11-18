@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "started_at": "2026-11-16T04:29:08.303041+00:00",
+  "scope": "Native evidence-only byte/inode/journal audit; no target execution.",
+  "outputs_verified": 560,
+  "journal_events": 1120,
+  "unique_contents": 22,
+  "logical_stdout_bytes": 3116391572,
+  "unique_stdout_bytes": 97934986,
+  "unique_allocated_payload_bytes": 97992704,
+  "all_original_paths_retained": true,
+  "all_sample_json_unchanged": true,
+  "all_operations_after_sample_finish": true,
+  "all_native_inode_mappings_verified": true,
+  "summary_hashes": {
+    "measurements/summary.json": "d36b7de6c8be643fe2ba5f67c8ff9746f46bcb111b490044220f382c09ca54d8",
+    "scale-measurements/summary.json": "2243b839130b2027ce68e456011dc90554883b84fa379b17d752c6c945bd584e",
+    "sparse-measurements/summary.json": "3408c54de226e059e4b85a8d7c0a42eab832ae8ec7cfa0fc83644a1f5275da55",
+    "followups/regressions-primary-01/summary.json": "411678dd919bc7a7a6938847598c512f734b0f86ae266d596709ddfcff472d8a",
+    "followups/regressions-scale-01/measurements/summary.json": "c13a62edce45af8a873b253f431a536997c19f7f24f00122ad1e45321473958d",
+    "followups/regressions-sparse-01/measurements/summary.json": "5861e870efd34c6b8cca6ffef5957393ffb9d87901e58fabd11c80d48bd2e252"
+  },
+  "journal_sha256": "3860072df66be3b86bdca5dc034aa8ab858d528aeb59f8e655fcc2526fbf98e9",
+  "storage_protocol_sha256": "37ff5e441535ccf3af040234bc2149372c16ea7a5b9782673ca5cf9a0791eee7",
+  "finished_at": "2026-11-16T04:29:28.159925+00:00"
+}

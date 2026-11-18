@@ -1,0 +1,111 @@
+{
+  "cases": [
+    {
+      "suite": "split",
+      "case": "mixed-permuted",
+      "triggers": [
+        {
+          "round": 2,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 6.028670217863552,
+          "rss_change_pct": -0.005384449709244787,
+          "elapsed_difference_s": 0.03136352,
+          "rss_difference_mib": -0.00390625
+        }
+      ]
+    },
+    {
+      "suite": "split",
+      "case": "range-derived-mixed",
+      "triggers": [
+        {
+          "round": 1,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": -6.680249364798385,
+          "rss_change_pct": 11.722315637761227,
+          "elapsed_difference_s": -0.031080039,
+          "rss_difference_mib": 7.625
+        },
+        {
+          "round": 2,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": -0.4133743874936924,
+          "rss_change_pct": 11.685582177385445,
+          "elapsed_difference_s": -0.001806991,
+          "rss_difference_mib": 7.6015625
+        },
+        {
+          "round": 3,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 2.316054725227956,
+          "rss_change_pct": 11.798258781146798,
+          "elapsed_difference_s": 0.010002596,
+          "rss_difference_mib": 7.67578125
+        },
+        {
+          "round": 4,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 2.401237886314189,
+          "rss_change_pct": 11.72761664564943,
+          "elapsed_difference_s": 0.010344769,
+          "rss_difference_mib": 7.62890625
+        },
+        {
+          "round": 5,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 3.608367730078621,
+          "rss_change_pct": 11.73573573573574,
+          "elapsed_difference_s": 0.015833159,
+          "rss_difference_mib": 7.6328125
+        },
+        {
+          "round": 6,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": -1.4205387657393431,
+          "rss_change_pct": 11.7523420610137,
+          "elapsed_difference_s": -0.006240194,
+          "rss_difference_mib": 7.64453125
+        }
+      ]
+    },
+    {
+      "suite": "native",
+      "case": "mixed-overlap",
+      "triggers": [
+        {
+          "round": 1,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 7.839883042353102,
+          "rss_change_pct": -2.8967768257853965,
+          "elapsed_difference_s": 0.030126456,
+          "rss_difference_mib": -1.94140625
+        }
+      ]
+    }
+  ],
+  "primary_summary_sha256": "a6d252d83fb5607125af5c68e918a9c05e8fc9f4777099373154696eb924f851"
+}

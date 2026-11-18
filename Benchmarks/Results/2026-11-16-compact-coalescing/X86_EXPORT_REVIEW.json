@@ -1,0 +1,118 @@
+{
+  "original_artifact": "x86_64/control/export-independent-review.json",
+  "original_bytes": 3931,
+  "original_sha256": "d15f7dc5cd21f8aed21e9d15d748dbe69f08559ed872258210d30a19fff26d39",
+  "receipt": {
+    "schema": 1,
+    "passed": true,
+    "reviewed_at_utc": "2026-11-16T04:35:33.968616+00:00",
+    "reviewer": "release_artifact_audit",
+    "scope": "Independent local portable-file hashes and original bindings, numeric preservation, raw-resource-derived metrics, table values, counts and required audit inventory; no target execution, remote access, new measurements or duplicate full archive hashing.",
+    "export": {
+      "artifact_count": 280,
+      "manifest_sha256": "a458fc2619a48918cddd1b56d15293e8687d948a9d3142f7b75ccfac4b18faae",
+      "export_inventory_sha256": "afb0868e26bab7b3af5c6937f74729161466cd9038d8189464e61812fcd5cb35",
+      "exact_file_inventory_verified": true
+    },
+    "numeric_preservation": {
+      "json_files_verified": 276,
+      "numeric_leaves_verified": 21659,
+      "jsonl_rows_verified": 1120,
+      "integer_and_float_types_preserved": true,
+      "float_values_bit_exact": true,
+      "numeric_fingerprints_verified": true,
+      "private_home_path_scan_passed": true
+    },
+    "measurements": {
+      "measured_samples": 384,
+      "excluded_warmups": 64,
+      "timed_child_outputs": 560,
+      "table_rows_recomputed": 32,
+      "all_unrounded_cpu_timing_rss_derived_rows_recomputed": true,
+      "all_followup_selections_recomputed": true,
+      "matrices": [
+        {
+          "summary": "measurements/summary.json",
+          "measured": 132,
+          "warmups": 22,
+          "comparisons": 11
+        },
+        {
+          "summary": "scale-measurements/summary.json",
+          "measured": 144,
+          "warmups": 24,
+          "comparisons": 12
+        },
+        {
+          "summary": "sparse-measurements/summary.json",
+          "measured": 24,
+          "warmups": 4,
+          "comparisons": 2
+        },
+        {
+          "summary": "followups/regressions-primary-01/summary.json",
+          "measured": 48,
+          "warmups": 8,
+          "comparisons": 4
+        },
+        {
+          "summary": "followups/regressions-scale-01/measurements/summary.json",
+          "measured": 12,
+          "warmups": 2,
+          "comparisons": 1
+        },
+        {
+          "summary": "followups/regressions-sparse-01/measurements/summary.json",
+          "measured": 24,
+          "warmups": 4,
+          "comparisons": 2
+        }
+      ]
+    },
+    "tests": {
+      "executions": 1490,
+      "configurations": 8
+    },
+    "required_audits": [
+      "control/evidence-audit.json",
+      "control/scale-evidence-audit.json",
+      "control/sparse-evidence-audit.json",
+      "control/primary-followup-audit.json",
+      "control/scale-followup-audit.json",
+      "control/sparse-followup-audit.json",
+      "control/output-dedup-audit.json"
+    ],
+    "required_evidence_present": [
+      "control/evidence-audit.json",
+      "control/scale-evidence-audit.json",
+      "control/sparse-evidence-audit.json",
+      "control/primary-followup-audit.json",
+      "control/scale-followup-audit.json",
+      "control/sparse-followup-audit.json",
+      "control/output-dedup-audit.json",
+      "control/audit-batch.json",
+      "control/correctness-gate.json",
+      "control/codegen-gate.json",
+      "control/codegen-gate-before-independent.json",
+      "control/codegen-independent-review.json",
+      "sparse/provenance.json",
+      "sparse/reference.json",
+      "control/retrieval/receipt.json",
+      "control/retrieval/stream-receipt.json",
+      "control/final-descriptive-before-audit.json"
+    ],
+    "native_audits_passed": 7,
+    "retrieval": {
+      "archive_sha256": "db240b0efa25986ed0b899a7b9ffea3ee80f50b1e62aef9b1500a6edb666e569",
+      "archive_bytes": 580662494,
+      "archive_files": 2871,
+      "native_payload_verification_receipt_passed": true,
+      "full_archive_rehashed_by_this_review": false
+    },
+    "material_findings": [],
+    "limits": [
+      "Native audits and retrieval receipt supply complete raw payload verification; this review independently checks the portable selection and numeric derivations.",
+      "Performance interpretation remains workload/toolchain-specific; static code does not establish dynamic allocation or memory savings."
+    ]
+  }
+}

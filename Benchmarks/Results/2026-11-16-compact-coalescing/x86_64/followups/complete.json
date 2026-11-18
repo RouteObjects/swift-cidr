@@ -1,0 +1,183 @@
+{
+  "passed": true,
+  "at": "2026-11-16T04:26:45.153738+00:00",
+  "selection": {
+    "at": "2026-11-16T04:24:35.998500+00:00",
+    "rule": "Any individual original pair with elapsed or RSS change greater than +5%; one fixed follow-up only, no pooling or recursive reruns",
+    "primary": [
+      {
+        "suite": "split",
+        "case": "ipv4-disjoint",
+        "triggers": [
+          {
+            "round": 1,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 9.61486241834415,
+            "rss_change_pct": 0.1976107069074029,
+            "elapsed_difference_s": 0.077730115,
+            "rss_difference_mib": 0.0859375
+          },
+          {
+            "round": 4,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 5.3283934145356815,
+            "rss_change_pct": 0.46821537907437705,
+            "elapsed_difference_s": 0.042353629,
+            "rss_difference_mib": 0.203125
+          },
+          {
+            "round": 5,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 9.186165111182731,
+            "rss_change_pct": -0.018006662465108736,
+            "elapsed_difference_s": 0.072660915,
+            "rss_difference_mib": -0.0078125
+          }
+        ]
+      },
+      {
+        "suite": "split",
+        "case": "mixed-disjoint",
+        "triggers": [
+          {
+            "round": 1,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 7.844976130696679,
+            "rss_change_pct": -0.15306723183798887,
+            "elapsed_difference_s": 0.096624974,
+            "rss_difference_mib": -0.1015625
+          },
+          {
+            "round": 4,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 5.935202769323089,
+            "rss_change_pct": -0.1410603032796498,
+            "elapsed_difference_s": 0.072930241,
+            "rss_difference_mib": -0.09375
+          }
+        ]
+      },
+      {
+        "suite": "split",
+        "case": "mixed-adjacent",
+        "triggers": [
+          {
+            "round": 4,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 5.512233419849943,
+            "rss_change_pct": -0.19089798411728864,
+            "elapsed_difference_s": 0.052884818,
+            "rss_difference_mib": -0.09765625
+          },
+          {
+            "round": 5,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 5.388578696689805,
+            "rss_change_pct": -0.3427526848960305,
+            "elapsed_difference_s": 0.050506331,
+            "rss_difference_mib": -0.17578125
+          },
+          {
+            "round": 6,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 5.541408810723247,
+            "rss_change_pct": 0.34416826003824674,
+            "elapsed_difference_s": 0.052626554,
+            "rss_difference_mib": 0.17578125
+          }
+        ]
+      },
+      {
+        "suite": "split",
+        "case": "range-derived-mixed",
+        "triggers": [
+          {
+            "round": 2,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 5.588544752848268,
+            "rss_change_pct": 0.17704337562702843,
+            "elapsed_difference_s": 0.072109915,
+            "rss_difference_mib": 0.1171875
+          }
+        ]
+      }
+    ],
+    "scale": [
+      {
+        "case": "mixed-disjoint-100000",
+        "entries": 100000,
+        "triggers": [
+          {
+            "round": 1,
+            "elapsed_change_pct": 7.400882051441449,
+            "rss_change_pct": -0.6153846153846176
+          }
+        ]
+      }
+    ],
+    "sparse": [
+      {
+        "case": "mixed-sparse-duplicate-10000",
+        "entries": 10002,
+        "triggers": [
+          {
+            "round": 6,
+            "elapsed_change_pct": 5.31357799894181,
+            "rss_change_pct": -0.6675085693667704
+          }
+        ]
+      },
+      {
+        "case": "mixed-sparse-duplicate-1000000",
+        "entries": 1000002,
+        "triggers": [
+          {
+            "round": 5,
+            "elapsed_change_pct": 7.513029896061929,
+            "rss_change_pct": 0.17583521728208318
+          }
+        ]
+      }
+    ],
+    "sparse_summary_sha256": "3408c54de226e059e4b85a8d7c0a42eab832ae8ec7cfa0fc83644a1f5275da55",
+    "primary_summary_sha256": "d36b7de6c8be643fe2ba5f67c8ff9746f46bcb111b490044220f382c09ca54d8",
+    "scale_summary_sha256": "2243b839130b2027ce68e456011dc90554883b84fa379b17d752c6c945bd584e",
+    "module_hashes": {
+      "followups/control/run_followups.py": "477319b645e03ff72a0c8919428ceb3d9a2b8d3b7477ad7c7b335ea720d1eec5",
+      "followups/control/followup_runner.py": "7ebf97bb6841e1424b682213ff66f5e1ec682419b5cc92f5a2b8aab35cdf0e92",
+      "control/run_followup_dedup.py": "c3e3f7de76dd429c0195561b4f255e1c717c76a362dbc4c25beefcadae744df5",
+      "control/output_dedup.py": "8164bfd6b023550607f87f537cc019cab898509ee759ad951f5a8a641e17b5db",
+      "control/scale_bench_dedup.py": "79ed0213c65bf1883e7546763913f8b3f53e283417fd4ae19ae7bb0aaa6d3687",
+      "control/output-dedup-protocol.json": "37ff5e441535ccf3af040234bc2149372c16ea7a5b9782673ca5cf9a0791eee7"
+    }
+  },
+  "fixed_six_pairs_per_selected_case": true,
+  "separate_results_not_pooled": true
+}

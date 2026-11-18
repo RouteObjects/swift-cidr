@@ -1,0 +1,780 @@
+{
+  "inputs": {
+    "fixtures/ipv4-disjoint/input.txt": {
+      "lines": 1000000,
+      "bytes": 14806125,
+      "sha256": "cfe05140183d748b0ecf27f40a5f9240cc8929188c3fb7b2ba9e0c13ebb462d7"
+    },
+    "fixtures/ipv4-disjoint/ipv4.txt": {
+      "lines": 1000000,
+      "bytes": 14806125,
+      "sha256": "cfe05140183d748b0ecf27f40a5f9240cc8929188c3fb7b2ba9e0c13ebb462d7"
+    },
+    "fixtures/ipv4-disjoint/ipv6.txt": {
+      "lines": 0,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "fixtures/ipv6-disjoint/input.txt": {
+      "lines": 1000000,
+      "bytes": 21342471,
+      "sha256": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85"
+    },
+    "fixtures/ipv6-disjoint/ipv4.txt": {
+      "lines": 0,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "fixtures/ipv6-disjoint/ipv6.txt": {
+      "lines": 1000000,
+      "bytes": 21342471,
+      "sha256": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85"
+    },
+    "fixtures/mixed-disjoint/input.txt": {
+      "lines": 1000000,
+      "bytes": 17864212,
+      "sha256": "8188c5b05fa642d50cf55ed9761117cc01ba37ad7229c55934d024ceb21ae7df"
+    },
+    "fixtures/mixed-disjoint/ipv4.txt": {
+      "lines": 500000,
+      "bytes": 7399156,
+      "sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
+    },
+    "fixtures/mixed-disjoint/ipv6.txt": {
+      "lines": 500000,
+      "bytes": 10465056,
+      "sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd"
+    },
+    "fixtures/mixed-permuted/input.txt": {
+      "lines": 1000000,
+      "bytes": 17864212,
+      "sha256": "8cf4de70c72d98e5b54e217b6f0f532ddaaab18919e95c9103cf26b2cab7ca61"
+    },
+    "fixtures/mixed-permuted/ipv4.txt": {
+      "lines": 500000,
+      "bytes": 7399156,
+      "sha256": "a5d1910f2eb68ad35664f3680d41b9de0c972364fddef6b22e1b4aa8996949c7"
+    },
+    "fixtures/mixed-permuted/ipv6.txt": {
+      "lines": 500000,
+      "bytes": 10465056,
+      "sha256": "c1f373b9257707946597e2c29dab7a0d442658db58f9f486e81d72fe9ed9a7af"
+    },
+    "fixtures/mixed-overlap/input.txt": {
+      "lines": 1000000,
+      "bytes": 17315741,
+      "sha256": "fef0a6ab45ff93141a9d95eb867b8ce28e8a237a67bc01fa7ea4ca88dc49ae01"
+    },
+    "fixtures/mixed-overlap/ipv4.txt": {
+      "lines": 500000,
+      "bytes": 7275958,
+      "sha256": "591a9e86c965dca39473f7958f0dde8e5aef4f9a4ff122fc1fc2823016832a3a"
+    },
+    "fixtures/mixed-overlap/ipv6.txt": {
+      "lines": 500000,
+      "bytes": 10039783,
+      "sha256": "43a1abca074298cb2e1d3cc0acae1026477fe616396274ca6d6e1a974eae8164"
+    },
+    "fixtures/mixed-adjacent/input.txt": {
+      "lines": 1000000,
+      "bytes": 17393831,
+      "sha256": "97a9a7086f737ae188e2dc49888e13943f9a8490074703756e405c651ab9bdce"
+    },
+    "fixtures/mixed-adjacent/ipv4.txt": {
+      "lines": 500000,
+      "bytes": 7059848,
+      "sha256": "d4165228a09cc2a6db8d68193754cfdd17dfe420dce171f8919c98de2332ab13"
+    },
+    "fixtures/mixed-adjacent/ipv6.txt": {
+      "lines": 500000,
+      "bytes": 10333983,
+      "sha256": "64654afabdfadbd219b871dead8001fdfdc9da961f755836ec61d25f34e0f482"
+    },
+    "fixtures/bgp-like-ipv4/input.txt": {
+      "lines": 1000000,
+      "bytes": 15911042,
+      "sha256": "580b51a0c723a6d372f105f757b42775d657cfcdaf0ad1c3327057e22b21e7e1"
+    },
+    "fixtures/bgp-like-ipv4/ipv4.txt": {
+      "lines": 1000000,
+      "bytes": 15911042,
+      "sha256": "580b51a0c723a6d372f105f757b42775d657cfcdaf0ad1c3327057e22b21e7e1"
+    },
+    "fixtures/bgp-like-ipv4/ipv6.txt": {
+      "lines": 0,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "fixtures/range-derived-mixed/input.txt": {
+      "lines": 1000000,
+      "bytes": 18445838,
+      "sha256": "f5ffadd5048313e0c43d08efa2ec6553d29806c3d7dedfbc534f10611d5751cf"
+    },
+    "fixtures/range-derived-mixed/ipv4.txt": {
+      "lines": 500000,
+      "bytes": 7553022,
+      "sha256": "53db427e9aee7d9817f2384521f688751c2cfff9c78f9156380a96441e242c8c"
+    },
+    "fixtures/range-derived-mixed/ipv6.txt": {
+      "lines": 500000,
+      "bytes": 10892816,
+      "sha256": "68d161443d998ee9008d43c58214729c163ccb94e6cf4724e6a3957c2896d2d6"
+    }
+  },
+  "expected": {
+    "split": {
+      "ipv4-disjoint": {
+        "parts": [
+          {
+            "family": 4,
+            "input": "fixtures/ipv4-disjoint/ipv4.txt",
+            "output_bytes": 14806125,
+            "output_sha256": "cfe05140183d748b0ecf27f40a5f9240cc8929188c3fb7b2ba9e0c13ebb462d7"
+          }
+        ],
+        "coverage_receipt": {
+          "passed": true,
+          "fixture": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/ipv4-disjoint",
+          "started_at": "2026-11-14T21:17:44.870710+00:00",
+          "expected_sha256": "1e318342d3b4fec026cf4a9e849329c1263df01ce974e3e2fadc8d8ca6fb6233",
+          "output_files": [
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/ipv4-disjoint/cidrmerge/4.stdout",
+              "bytes": 14806125,
+              "line_count": 1000000,
+              "blank_lines": 0,
+              "sha256": "cfe05140183d748b0ecf27f40a5f9240cc8929188c3fb7b2ba9e0c13ebb462d7"
+            }
+          ],
+          "actual": {
+            "input_count": 1000000,
+            "family_counts": {
+              "ipv4": 1000000,
+              "ipv6": 0
+            },
+            "coverage_sha256": "cb99f73e676decc558271dea259da1aa13347bb0bccde3a039f74274799d066e",
+            "coverage_serialization": "concatenated records: family uint8 (4 or 6), start uint128 big-endian, end uint128 big-endian; IPv4 records first, sorted/coalesced per family",
+            "range_count": 1000000,
+            "range_count_by_family": {
+              "ipv4": 1000000,
+              "ipv6": 0
+            },
+            "minimal_cidr_count": 1000000,
+            "minimal_cidr_count_by_family": {
+              "ipv4": 1000000,
+              "ipv6": 0
+            },
+            "addresses_covered": {
+              "ipv4": "1000000",
+              "ipv6": "0"
+            }
+          },
+          "expected_coverage_sha256": "cb99f73e676decc558271dea259da1aa13347bb0bccde3a039f74274799d066e",
+          "expected_minimal_cidr_count": 1000000,
+          "finished_at": "2026-11-14T21:17:49.242783+00:00"
+        }
+      },
+      "ipv6-disjoint": {
+        "parts": [
+          {
+            "family": 6,
+            "input": "fixtures/ipv6-disjoint/ipv6.txt",
+            "output_bytes": 21342471,
+            "output_sha256": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85"
+          }
+        ],
+        "coverage_receipt": {
+          "passed": true,
+          "fixture": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/ipv6-disjoint",
+          "started_at": "2026-11-14T21:18:16.532613+00:00",
+          "expected_sha256": "321417e238cde81b5e15666ea6dcee69542a2efcdca0bbd849301c0ff24121cf",
+          "output_files": [
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/ipv6-disjoint/cidrmerge/6.stdout",
+              "bytes": 21342471,
+              "line_count": 1000000,
+              "blank_lines": 0,
+              "sha256": "970a3eea2cb210a9e3e1957e7f1837ddc36f0e3f78e5261f2188d571f2fdbf85"
+            }
+          ],
+          "actual": {
+            "input_count": 1000000,
+            "family_counts": {
+              "ipv4": 0,
+              "ipv6": 1000000
+            },
+            "coverage_sha256": "7569660dd4e371291c04d2b10870e55560001a75756b7be41d5b88bb9a2647bd",
+            "coverage_serialization": "concatenated records: family uint8 (4 or 6), start uint128 big-endian, end uint128 big-endian; IPv4 records first, sorted/coalesced per family",
+            "range_count": 1000000,
+            "range_count_by_family": {
+              "ipv4": 0,
+              "ipv6": 1000000
+            },
+            "minimal_cidr_count": 1000000,
+            "minimal_cidr_count_by_family": {
+              "ipv4": 0,
+              "ipv6": 1000000
+            },
+            "addresses_covered": {
+              "ipv4": "0",
+              "ipv6": "1000000"
+            }
+          },
+          "expected_coverage_sha256": "7569660dd4e371291c04d2b10870e55560001a75756b7be41d5b88bb9a2647bd",
+          "expected_minimal_cidr_count": 1000000,
+          "finished_at": "2026-11-14T21:18:23.088586+00:00"
+        }
+      },
+      "mixed-disjoint": {
+        "parts": [
+          {
+            "family": 4,
+            "input": "fixtures/mixed-disjoint/ipv4.txt",
+            "output_bytes": 7399156,
+            "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
+          },
+          {
+            "family": 6,
+            "input": "fixtures/mixed-disjoint/ipv6.txt",
+            "output_bytes": 10465056,
+            "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd"
+          }
+        ],
+        "coverage_receipt": {
+          "passed": true,
+          "fixture": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-disjoint",
+          "started_at": "2026-11-14T21:19:00.388765+00:00",
+          "expected_sha256": "2d88b6e30a35ea7c9813839551d2c2171e61b7b4cfc1ee13202f815cf28c5bae",
+          "output_files": [
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-disjoint/cidrmerge/4.stdout",
+              "bytes": 7399156,
+              "line_count": 500000,
+              "blank_lines": 0,
+              "sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
+            },
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-disjoint/cidrmerge/6.stdout",
+              "bytes": 10465056,
+              "line_count": 500000,
+              "blank_lines": 0,
+              "sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd"
+            }
+          ],
+          "actual": {
+            "input_count": 1000000,
+            "family_counts": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "coverage_sha256": "f774655f3baf3e1a545e7b80e472d6203efa990d4a442e57080b74fe0a19f329",
+            "coverage_serialization": "concatenated records: family uint8 (4 or 6), start uint128 big-endian, end uint128 big-endian; IPv4 records first, sorted/coalesced per family",
+            "range_count": 1000000,
+            "range_count_by_family": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "minimal_cidr_count": 1000000,
+            "minimal_cidr_count_by_family": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "addresses_covered": {
+              "ipv4": "500000",
+              "ipv6": "9223372036854775808000000"
+            }
+          },
+          "expected_coverage_sha256": "f774655f3baf3e1a545e7b80e472d6203efa990d4a442e57080b74fe0a19f329",
+          "expected_minimal_cidr_count": 1000000,
+          "finished_at": "2026-11-14T21:19:05.935676+00:00"
+        }
+      },
+      "mixed-permuted": {
+        "parts": [
+          {
+            "family": 4,
+            "input": "fixtures/mixed-permuted/ipv4.txt",
+            "output_bytes": 7399156,
+            "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
+          },
+          {
+            "family": 6,
+            "input": "fixtures/mixed-permuted/ipv6.txt",
+            "output_bytes": 10465056,
+            "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd"
+          }
+        ],
+        "coverage_receipt": {
+          "passed": true,
+          "fixture": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-permuted",
+          "started_at": "2026-11-14T21:19:38.720864+00:00",
+          "expected_sha256": "8678e5e11814c126818422278c6341ca9af41b7f1d6275e46a8da3331f735bc2",
+          "output_files": [
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-permuted/cidrmerge/4.stdout",
+              "bytes": 7399156,
+              "line_count": 500000,
+              "blank_lines": 0,
+              "sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e"
+            },
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-permuted/cidrmerge/6.stdout",
+              "bytes": 10465056,
+              "line_count": 500000,
+              "blank_lines": 0,
+              "sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd"
+            }
+          ],
+          "actual": {
+            "input_count": 1000000,
+            "family_counts": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "coverage_sha256": "f774655f3baf3e1a545e7b80e472d6203efa990d4a442e57080b74fe0a19f329",
+            "coverage_serialization": "concatenated records: family uint8 (4 or 6), start uint128 big-endian, end uint128 big-endian; IPv4 records first, sorted/coalesced per family",
+            "range_count": 1000000,
+            "range_count_by_family": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "minimal_cidr_count": 1000000,
+            "minimal_cidr_count_by_family": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "addresses_covered": {
+              "ipv4": "500000",
+              "ipv6": "9223372036854775808000000"
+            }
+          },
+          "expected_coverage_sha256": "f774655f3baf3e1a545e7b80e472d6203efa990d4a442e57080b74fe0a19f329",
+          "expected_minimal_cidr_count": 1000000,
+          "finished_at": "2026-11-14T21:19:44.127013+00:00"
+        }
+      },
+      "mixed-overlap": {
+        "parts": [
+          {
+            "family": 4,
+            "input": "fixtures/mixed-overlap/ipv4.txt",
+            "output_bytes": 11,
+            "output_sha256": "9b4e456139331a2ec582ecfbc9ccf436bd32b34742440d649f0f086b0ea84df0"
+          },
+          {
+            "family": 6,
+            "input": "fixtures/mixed-overlap/ipv6.txt",
+            "output_bytes": 14,
+            "output_sha256": "986242db0490c02b38325ff8a1789a24612f4c4281233867b7764a69060e2bb7"
+          }
+        ],
+        "coverage_receipt": {
+          "passed": true,
+          "fixture": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-overlap",
+          "started_at": "2026-11-14T21:20:23.285469+00:00",
+          "expected_sha256": "df4d5bff67b41ec08fb5db793e84a837cd7ab214fbf2c954441f46b733dba864",
+          "output_files": [
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-overlap/cidrmerge/4.stdout",
+              "bytes": 11,
+              "line_count": 1,
+              "blank_lines": 0,
+              "sha256": "9b4e456139331a2ec582ecfbc9ccf436bd32b34742440d649f0f086b0ea84df0"
+            },
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-overlap/cidrmerge/6.stdout",
+              "bytes": 14,
+              "line_count": 1,
+              "blank_lines": 0,
+              "sha256": "986242db0490c02b38325ff8a1789a24612f4c4281233867b7764a69060e2bb7"
+            }
+          ],
+          "actual": {
+            "input_count": 2,
+            "family_counts": {
+              "ipv4": 1,
+              "ipv6": 1
+            },
+            "coverage_sha256": "d5abf69f7b997011affb11ca5d9bae4ca1d3b5435ce79a73394dabe4273cbc41",
+            "coverage_serialization": "concatenated records: family uint8 (4 or 6), start uint128 big-endian, end uint128 big-endian; IPv4 records first, sorted/coalesced per family",
+            "range_count": 2,
+            "range_count_by_family": {
+              "ipv4": 1,
+              "ipv6": 1
+            },
+            "minimal_cidr_count": 2,
+            "minimal_cidr_count_by_family": {
+              "ipv4": 1,
+              "ipv6": 1
+            },
+            "addresses_covered": {
+              "ipv4": "16777216",
+              "ipv6": "79228162514264337593543950336"
+            }
+          },
+          "expected_coverage_sha256": "d5abf69f7b997011affb11ca5d9bae4ca1d3b5435ce79a73394dabe4273cbc41",
+          "expected_minimal_cidr_count": 2,
+          "finished_at": "2026-11-14T21:20:23.297357+00:00"
+        }
+      },
+      "mixed-adjacent": {
+        "parts": [
+          {
+            "family": 4,
+            "input": "fixtures/mixed-adjacent/ipv4.txt",
+            "output_bytes": 83,
+            "output_sha256": "7f39dfd925b900c038386ce3c211b0ee72dc62875e751e82dbfc6d5a748c36a0"
+          },
+          {
+            "family": 6,
+            "input": "fixtures/mixed-adjacent/ipv6.txt",
+            "output_bytes": 132,
+            "output_sha256": "b8a2b2728c96407d642e4885f5d0c2a41d450cdb43c5bb0f209206da2341d0a1"
+          }
+        ],
+        "coverage_receipt": {
+          "passed": true,
+          "fixture": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-adjacent",
+          "started_at": "2026-11-14T21:20:35.206060+00:00",
+          "expected_sha256": "248040536f81f3c90e370d1ad543f0146a903da4e68c99716c63095766b9d2e5",
+          "output_files": [
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-adjacent/cidrmerge/4.stdout",
+              "bytes": 83,
+              "line_count": 7,
+              "blank_lines": 0,
+              "sha256": "7f39dfd925b900c038386ce3c211b0ee72dc62875e751e82dbfc6d5a748c36a0"
+            },
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/mixed-adjacent/cidrmerge/6.stdout",
+              "bytes": 132,
+              "line_count": 7,
+              "blank_lines": 0,
+              "sha256": "b8a2b2728c96407d642e4885f5d0c2a41d450cdb43c5bb0f209206da2341d0a1"
+            }
+          ],
+          "actual": {
+            "input_count": 14,
+            "family_counts": {
+              "ipv4": 7,
+              "ipv6": 7
+            },
+            "coverage_sha256": "5752e52176ff29565b7e11d5f6549244de095c540624fdd183e80129256dd3f2",
+            "coverage_serialization": "concatenated records: family uint8 (4 or 6), start uint128 big-endian, end uint128 big-endian; IPv4 records first, sorted/coalesced per family",
+            "range_count": 2,
+            "range_count_by_family": {
+              "ipv4": 1,
+              "ipv6": 1
+            },
+            "minimal_cidr_count": 14,
+            "minimal_cidr_count_by_family": {
+              "ipv4": 7,
+              "ipv6": 7
+            },
+            "addresses_covered": {
+              "ipv4": "500000",
+              "ipv6": "500000"
+            }
+          },
+          "expected_coverage_sha256": "5752e52176ff29565b7e11d5f6549244de095c540624fdd183e80129256dd3f2",
+          "expected_minimal_cidr_count": 14,
+          "finished_at": "2026-11-14T21:20:35.217561+00:00"
+        }
+      },
+      "bgp-like-ipv4": {
+        "parts": [
+          {
+            "family": 4,
+            "input": "fixtures/bgp-like-ipv4/ipv4.txt",
+            "output_bytes": 3691176,
+            "output_sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01"
+          }
+        ],
+        "coverage_receipt": {
+          "passed": true,
+          "fixture": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/bgp-like-ipv4",
+          "started_at": "2026-11-14T21:20:44.384303+00:00",
+          "expected_sha256": "2b43575b733a10a022970d56e0b7e3457e31f559b66286dd434a5a087bdc5bff",
+          "output_files": [
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/bgp-like-ipv4/cidrmerge/4.stdout",
+              "bytes": 3691176,
+              "line_count": 233532,
+              "blank_lines": 0,
+              "sha256": "23e12791525edcd3c6bd2b372e2684713c5c1550811530a3f4357991c2f8ea01"
+            }
+          ],
+          "actual": {
+            "input_count": 233532,
+            "family_counts": {
+              "ipv4": 233532,
+              "ipv6": 0
+            },
+            "coverage_sha256": "4f674a8e92ed5bfbc5771b2cd93f1eb541a0d7ed97d238fe04ebd2ad4180415f",
+            "coverage_serialization": "concatenated records: family uint8 (4 or 6), start uint128 big-endian, end uint128 big-endian; IPv4 records first, sorted/coalesced per family",
+            "range_count": 193255,
+            "range_count_by_family": {
+              "ipv4": 193255,
+              "ipv6": 0
+            },
+            "minimal_cidr_count": 233532,
+            "minimal_cidr_count_by_family": {
+              "ipv4": 233532,
+              "ipv6": 0
+            },
+            "addresses_covered": {
+              "ipv4": "3379002069",
+              "ipv6": "0"
+            }
+          },
+          "expected_coverage_sha256": "4f674a8e92ed5bfbc5771b2cd93f1eb541a0d7ed97d238fe04ebd2ad4180415f",
+          "expected_minimal_cidr_count": 233532,
+          "finished_at": "2026-11-14T21:20:45.412410+00:00"
+        }
+      },
+      "range-derived-mixed": {
+        "parts": [
+          {
+            "family": 4,
+            "input": "fixtures/range-derived-mixed/ipv4.txt",
+            "output_bytes": 7553022,
+            "output_sha256": "53db427e9aee7d9817f2384521f688751c2cfff9c78f9156380a96441e242c8c"
+          },
+          {
+            "family": 6,
+            "input": "fixtures/range-derived-mixed/ipv6.txt",
+            "output_bytes": 10892816,
+            "output_sha256": "68d161443d998ee9008d43c58214729c163ccb94e6cf4724e6a3957c2896d2d6"
+          }
+        ],
+        "coverage_receipt": {
+          "passed": true,
+          "fixture": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/range-derived-mixed",
+          "started_at": "2026-11-14T21:21:16.779190+00:00",
+          "expected_sha256": "07d5afa1559620724634f64cbece5dc4b5e691d84b85ec7279673b92da23f797",
+          "output_files": [
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/range-derived-mixed/cidrmerge/4.stdout",
+              "bytes": 7553022,
+              "line_count": 500000,
+              "blank_lines": 0,
+              "sha256": "53db427e9aee7d9817f2384521f688751c2cfff9c78f9156380a96441e242c8c"
+            },
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/split/range-derived-mixed/cidrmerge/6.stdout",
+              "bytes": 10892816,
+              "line_count": 500000,
+              "blank_lines": 0,
+              "sha256": "68d161443d998ee9008d43c58214729c163ccb94e6cf4724e6a3957c2896d2d6"
+            }
+          ],
+          "actual": {
+            "input_count": 1000000,
+            "family_counts": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "coverage_sha256": "076c8dc1f981a852d8edd4682510b0aed325665c79482c3cf5ac379c8b5e8986",
+            "coverage_serialization": "concatenated records: family uint8 (4 or 6), start uint128 big-endian, end uint128 big-endian; IPv4 records first, sorted/coalesced per family",
+            "range_count": 500000,
+            "range_count_by_family": {
+              "ipv4": 250000,
+              "ipv6": 250000
+            },
+            "minimal_cidr_count": 1000000,
+            "minimal_cidr_count_by_family": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "addresses_covered": {
+              "ipv4": "1500000",
+              "ipv6": "1500000"
+            }
+          },
+          "expected_coverage_sha256": "076c8dc1f981a852d8edd4682510b0aed325665c79482c3cf5ac379c8b5e8986",
+          "expected_minimal_cidr_count": 1000000,
+          "finished_at": "2026-11-14T21:21:22.191462+00:00"
+        }
+      }
+    },
+    "native": {
+      "mixed-disjoint": {
+        "parts": [
+          {
+            "family": null,
+            "input": "fixtures/mixed-disjoint/input.txt",
+            "output_bytes": 17864212,
+            "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c"
+          }
+        ],
+        "coverage_receipt": {
+          "passed": true,
+          "fixture": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-disjoint",
+          "started_at": "2026-11-14T21:22:06.838782+00:00",
+          "expected_sha256": "2d88b6e30a35ea7c9813839551d2c2171e61b7b4cfc1ee13202f815cf28c5bae",
+          "output_files": [
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/native/mixed-disjoint/cidrmerge/mixed.stdout",
+              "bytes": 17864212,
+              "line_count": 1000000,
+              "blank_lines": 0,
+              "sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c"
+            }
+          ],
+          "actual": {
+            "input_count": 1000000,
+            "family_counts": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "coverage_sha256": "f774655f3baf3e1a545e7b80e472d6203efa990d4a442e57080b74fe0a19f329",
+            "coverage_serialization": "concatenated records: family uint8 (4 or 6), start uint128 big-endian, end uint128 big-endian; IPv4 records first, sorted/coalesced per family",
+            "range_count": 1000000,
+            "range_count_by_family": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "minimal_cidr_count": 1000000,
+            "minimal_cidr_count_by_family": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "addresses_covered": {
+              "ipv4": "500000",
+              "ipv6": "9223372036854775808000000"
+            }
+          },
+          "expected_coverage_sha256": "f774655f3baf3e1a545e7b80e472d6203efa990d4a442e57080b74fe0a19f329",
+          "expected_minimal_cidr_count": 1000000,
+          "finished_at": "2026-11-14T21:22:12.184113+00:00"
+        }
+      },
+      "mixed-permuted": {
+        "parts": [
+          {
+            "family": null,
+            "input": "fixtures/mixed-permuted/input.txt",
+            "output_bytes": 17864212,
+            "output_sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c"
+          }
+        ],
+        "coverage_receipt": {
+          "passed": true,
+          "fixture": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-permuted",
+          "started_at": "2026-11-14T21:22:38.831121+00:00",
+          "expected_sha256": "8678e5e11814c126818422278c6341ca9af41b7f1d6275e46a8da3331f735bc2",
+          "output_files": [
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/native/mixed-permuted/cidrmerge/mixed.stdout",
+              "bytes": 17864212,
+              "line_count": 1000000,
+              "blank_lines": 0,
+              "sha256": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c"
+            }
+          ],
+          "actual": {
+            "input_count": 1000000,
+            "family_counts": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "coverage_sha256": "f774655f3baf3e1a545e7b80e472d6203efa990d4a442e57080b74fe0a19f329",
+            "coverage_serialization": "concatenated records: family uint8 (4 or 6), start uint128 big-endian, end uint128 big-endian; IPv4 records first, sorted/coalesced per family",
+            "range_count": 1000000,
+            "range_count_by_family": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "minimal_cidr_count": 1000000,
+            "minimal_cidr_count_by_family": {
+              "ipv4": 500000,
+              "ipv6": 500000
+            },
+            "addresses_covered": {
+              "ipv4": "500000",
+              "ipv6": "9223372036854775808000000"
+            }
+          },
+          "expected_coverage_sha256": "f774655f3baf3e1a545e7b80e472d6203efa990d4a442e57080b74fe0a19f329",
+          "expected_minimal_cidr_count": 1000000,
+          "finished_at": "2026-11-14T21:22:44.157231+00:00"
+        }
+      },
+      "mixed-overlap": {
+        "parts": [
+          {
+            "family": null,
+            "input": "fixtures/mixed-overlap/input.txt",
+            "output_bytes": 25,
+            "output_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac"
+          }
+        ],
+        "coverage_receipt": {
+          "passed": true,
+          "fixture": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/fixtures/mixed-overlap",
+          "started_at": "2026-11-14T21:23:15.252254+00:00",
+          "expected_sha256": "df4d5bff67b41ec08fb5db793e84a837cd7ab214fbf2c954441f46b733dba864",
+          "output_files": [
+            {
+              "path": "LOCAL_HOME/Downloads/cidrmerge-competitors-20261114T210745Z/warmup/native/mixed-overlap/cidrmerge/mixed.stdout",
+              "bytes": 25,
+              "line_count": 2,
+              "blank_lines": 0,
+              "sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac"
+            }
+          ],
+          "actual": {
+            "input_count": 2,
+            "family_counts": {
+              "ipv4": 1,
+              "ipv6": 1
+            },
+            "coverage_sha256": "d5abf69f7b997011affb11ca5d9bae4ca1d3b5435ce79a73394dabe4273cbc41",
+            "coverage_serialization": "concatenated records: family uint8 (4 or 6), start uint128 big-endian, end uint128 big-endian; IPv4 records first, sorted/coalesced per family",
+            "range_count": 2,
+            "range_count_by_family": {
+              "ipv4": 1,
+              "ipv6": 1
+            },
+            "minimal_cidr_count": 2,
+            "minimal_cidr_count_by_family": {
+              "ipv4": 1,
+              "ipv6": 1
+            },
+            "addresses_covered": {
+              "ipv4": "16777216",
+              "ipv6": "79228162514264337593543950336"
+            }
+          },
+          "expected_coverage_sha256": "d5abf69f7b997011affb11ca5d9bae4ca1d3b5435ce79a73394dabe4273cbc41",
+          "expected_minimal_cidr_count": 2,
+          "finished_at": "2026-11-14T21:23:15.262254+00:00"
+        }
+      }
+    }
+  },
+  "original_reference_files": {
+    "warmup/split/ipv4-disjoint/cidrmerge/sample.json": "11436944d472e20990e691b5f61103c9b7ca9e361fefd17c843a7de468ff8a5e",
+    "warmup/split/ipv4-disjoint/cidrmerge/coverage.json": "cd5f0e3a7b4150cfb75b7a46b24d77962d13e8c48ac20de1138c2b26fb64bcca",
+    "warmup/split/ipv6-disjoint/cidrmerge/sample.json": "172fdf8140442c04c72512cda5484d820f130a18f25fbb70219bb1bb4d41a42f",
+    "warmup/split/ipv6-disjoint/cidrmerge/coverage.json": "22ed42b4517cf1aadef0bd038c416f24320cf38a320890a79ded420b3938c6b0",
+    "warmup/split/mixed-disjoint/cidrmerge/sample.json": "8d26645be04049fdc5a64dbc1e9bfc2d875cdf11facbdc0fccb2f237783bef6d",
+    "warmup/split/mixed-disjoint/cidrmerge/coverage.json": "156a38e1ec6d6178d0d605b5a882ba56ba823b571dd64a65fc4f44bbb2c75a89",
+    "warmup/split/mixed-permuted/cidrmerge/sample.json": "3673f0d6db703bb70358b37fd69d37c9ba6fc984c7b2abc93cabb5f2990a164c",
+    "warmup/split/mixed-permuted/cidrmerge/coverage.json": "64bb1b061313909c8c45a0afde5f825dae6be8cb74be4e598aeffb706024abf9",
+    "warmup/split/mixed-overlap/cidrmerge/sample.json": "58240c0bdc77cff4b1767bdd9694442be571931c5a2e1187fcd65430c7c4a3ee",
+    "warmup/split/mixed-overlap/cidrmerge/coverage.json": "5098f7055ab8c897be5bae628e6283afebf0e88c22eb32d079f9099a9b1128c2",
+    "warmup/split/mixed-adjacent/cidrmerge/sample.json": "11d6b768f2cf43c9cf17c78c22e1d3a13f3448617590daac923700628ebd60a0",
+    "warmup/split/mixed-adjacent/cidrmerge/coverage.json": "192018637b0d7d61c57a8f78535610d1ff43313b35c939d3d68adc35ef65e25f",
+    "warmup/split/bgp-like-ipv4/cidrmerge/sample.json": "2361587b402e83a4c895765a8e687e6a5c1d91bcd160735fc5147f85d2aeaadb",
+    "warmup/split/bgp-like-ipv4/cidrmerge/coverage.json": "635c38afc86c855d7f6cc687f3e7f5ae5ac747d8967c5646f27aeeba6dce8a73",
+    "warmup/split/range-derived-mixed/cidrmerge/sample.json": "107b7409740e60460d13b36c7b2f5ce36a06016e508121c9317f2c6ed28d61f3",
+    "warmup/split/range-derived-mixed/cidrmerge/coverage.json": "5795ac193d40bd682b71fbddf2a4fe3362ef2b49526f38670594f73c08564e68",
+    "warmup/native/mixed-disjoint/cidrmerge/sample.json": "0c98bb94beebc7784db01cc717dea1931068582847cfaf7ff1c7eec2c5e7c299",
+    "warmup/native/mixed-disjoint/cidrmerge/coverage.json": "5fcc7e2b4add33a500176064266559e51f5d0ef7d80b4332b7019c4a43f1eccd",
+    "warmup/native/mixed-permuted/cidrmerge/sample.json": "37887a160ee9770a4bc65d887e64d1fbe6c7be55113a13dc4008f79ee62d45e1",
+    "warmup/native/mixed-permuted/cidrmerge/coverage.json": "4fbad117975218a24e2532cfa9c93f12369c078c86ac8d10427aa3ba78bd59ee",
+    "warmup/native/mixed-overlap/cidrmerge/sample.json": "cf1ba4a9d0064d84777144bb43121e64643bea473ac12735d9aebd6fb96815b5",
+    "warmup/native/mixed-overlap/cidrmerge/coverage.json": "497fbe9660ee41673317b4b7862fb7c6efbe0c0392eb2fa6c6c9c393dbde9384"
+  }
+}

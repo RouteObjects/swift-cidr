@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-15",
+  "reviewer": "release_artifact_audit",
+  "passed": true,
+  "scope": "Independent read-only review of retained x86-64 assembly and local frozen ordinary release binary bytes. No target execution, remote access, builds, or source changes.",
+  "provenance": {
+    "local_gate_evidence_files_checked": 10,
+    "all_local_gate_evidence_file_hashes_match": true,
+    "selected_disassemblies_per_variant": 22,
+    "ordinary_build_configuration": "Swift 6.4.2, swift build -c release -j 2 --product cidrmerge",
+    "ordinary_build_receipts_exit_code": 0,
+    "earlier_missing_local_binary_and_build_receipt_limitation": "Resolved after local retrieval; both binary byte streams were independently hashed and matched to the captures, original ordinary release build receipts, and gate."
+  },
+  "variants": {
+    "B": {
+      "binary_path": "bin/B",
+      "binary_bytes": 17727360,
+      "binary_sha256": "e56b27050ccae259bf82d2530b2d0bc25ee0882f82974f44daf57314c219b08b",
+      "capture_path": "control/codegen/B-captures.json",
+      "capture_file_sha256": "7aa302747255dc79d9db7ef588ce95c64210865df1aa679c11aa6cad36cbf65d",
+      "build_receipt_path": "control/build-tests/B-cli-build-release.json",
+      "binary_hash_matches_capture_build_receipt_and_gate": true,
+      "cli_caller_address": "0x1df210",
+      "direct_cli_calls": {
+        "V4": {
+          "call_site": "0x1df22d",
+          "target": "0x1c0140"
+        },
+        "V6": {
+          "call_site": "0x1df238",
+          "target": "0x1c0310"
+        }
+      },
+      "sort_dispatcher": "0x1c1730",
+      "pointer_arguments": {
+        "V4": {
+          "rsi_comparator": "0x1c34f0",
+          "r8_stable_sort": "0x1c1e40",
+          "r9_insertion_sort": "0x1c2420"
+        },
+        "V6": {
+          "rsi_comparator": "0x1c3460",
+          "r8_stable_sort": "0x1c1830",
+          "r9_insertion_sort": "0x1c22f0"
+        }
+      },
+      "coalescing_uniqueness_call_sites_per_family": 1,
+      "separate_result_reserve_and_growth_signature_present": true
+    },
+    "C": {
+      "binary_path": "bin/C",
+      "binary_bytes": 17731656,
+      "binary_sha256": "9a7d5b88bf8f42b5aa3a6b1c19ffa449d142b57fb7852a02255f7f5e6c3d12d1",
+      "capture_path": "control/codegen/C-captures.json",
+      "capture_file_sha256": "50a4ebf8bb89af9ed9526089ec3f0007972192da01f0c928e896986bed3addf6",
+      "build_receipt_path": "control/build-tests/C-cli-build-release.json",
+      "binary_hash_matches_capture_build_receipt_and_gate": true,
+      "cli_caller_address": "0x1df2b0",
+      "direct_cli_calls": {
+        "V4": {
+          "call_site": "0x1df2cd",
+          "target": "0x1c0140"
+        },
+        "V6": {
+          "call_site": "0x1df2d8",
+          "target": "0x1c02c0"
+        }
+      },
+      "sort_dispatcher": "0x1c1770",
+      "pointer_arguments": {
+        "V4": {
+          "rsi_comparator": "0x1c34f0",
+          "r8_stable_sort": "0x1c1e80",
+          "r9_insertion_sort": "0x1c2460"
+        },
+        "V6": {
+          "rsi_comparator": "0x1c34a0",
+          "r8_stable_sort": "0x1c1870",
+          "r9_insertion_sort": "0x1c2330"
+        }
+      },
+      "coalescing_uniqueness_call_sites_per_family": 3,
+      "separate_result_reserve_and_growth_signature_present_in_coalescing_bodies": false,
+      "in_place_completed_group_and_final_stores_confirmed": true,
+      "specialized_empty_collection_suffix_replacement_confirmed": true
+    }
+  },
+  "pointer_flow_findings": [
+    "Both actual ParsedInput.merged callers directly invoke the concrete V4/Array and V6/Array coalescing bodies.",
+    "Each coalescing body loads family-correct comparator, stable-sort, and insertion-sort addresses into rsi, r8, and r9 without intervening pointer clobbers before its dispatcher call.",
+    "The shared dispatcher saves rsi at rbp-0x38, r8 at rbp-0x48, and r9 at rbp-0x30. The small-sort branch invokes the saved insertion-sort pointer; the large-sort branch invokes the saved stable-sort pointer.",
+    "The comparator is forwarded from rbp-0x38 through rcx to the selected helper. The helpers save and invoke that comparator pointer indirectly.",
+    "Comparator bodies themselves are call-free fixed-width comparison code. The merged dispatcher's V6 symbol label does not cause V4 inputs to use a V6 layout."
+  ],
+  "candidate_vs_baseline_findings": [
+    "Candidate writes completed groups and the final group into its sorted array buffer, with element strides of 8 bytes for V4 and 32 bytes for V6, then calls specialized replaceSubrange with an EmptyCollection to remove the suffix.",
+    "Baseline creates a separate result buffer through minimumCapacity reserve/growth helpers and appends its completed groups.",
+    "Candidate coalescing bodies contain initial, completed-group, and final uniqueness checks with conditional copy fallbacks; baseline bodies contain the initial uniqueness check. These are static call-site counts, not measured invocation counts."
+  ],
+  "limits": [
+    "This review establishes the inspected concrete Array CLI path and its retained evidence bindings; it does not prove behavior of all generic callers.",
+    "Sort helpers retain indirect comparator calls. This is not evidence of fully inlined or fully devirtualized comparator dispatch.",
+    "Sorting scratch allocation, input storage, retained capacity, and conditional copy paths remain. No allocation-free claim is supported.",
+    "No throughput, dynamic allocation, correctness-test completion, or cross-platform performance conclusion is derived from this assembly review."
+  ],
+  "supporting_gate": "control/codegen-gate.json",
+  "supporting_retrieval_record": "control/frozen-binary-retrieval.json"
+}

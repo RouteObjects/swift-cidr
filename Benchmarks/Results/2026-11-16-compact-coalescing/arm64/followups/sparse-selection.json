@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-16T03:57:09.162856+00:00",
+  "rule": "Any individual original pair with elapsed or RSS change greater than +5%; one fixed follow-up only, no pooling or recursive reruns",
+  "primary": [],
+  "scale": [
+    {
+      "case": "mixed-sparse-duplicate-10000",
+      "entries": 10002,
+      "triggers": [
+        {
+          "round": 5,
+          "elapsed_change_pct": 7.4097182850219045,
+          "rss_change_pct": -0.05788153579008304
+        }
+      ]
+    },
+    {
+      "case": "mixed-sparse-duplicate-1000000",
+      "entries": 1000002,
+      "triggers": [
+        {
+          "round": 5,
+          "elapsed_change_pct": 10.273166591717796,
+          "rss_change_pct": 0.08161183371588887
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": 7.844554000610104,
+          "rss_change_pct": -0.06626567438067221
+        }
+      ]
+    }
+  ],
+  "primary_summary_sha256": "42228e239fd3a6ed55add20f15a5ddb4717f4c32f2f30f0cdcaee2b0a167d290",
+  "scale_summary_sha256": "f8aaa8145d63d7a0373cfa90ecbfe562753e1358c3354d155f0015dea7360857"
+}

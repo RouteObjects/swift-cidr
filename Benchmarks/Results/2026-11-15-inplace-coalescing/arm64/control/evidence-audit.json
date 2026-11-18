@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "platform_root": "/validation",
+  "started_at": "2026-11-15T22:44:13.095795+00:00",
+  "scope": "Independent evidence-only audit; no harness imports or benchmark execution.",
+  "errors": [
+    {
+      "exception": "AssertionError('correct variant local dependency: B-cli-build-release')",
+      "traceback": "Traceback (most recent call last):\n  File \"/validation/control/audit_linux.py\", line 128, in audit\n    check(local['swift-cidr'] == str(expected_local), 'correct variant local dependency: ' + label)\n  File \"/validation/control/audit_linux.py\", line 41, in check\n    raise AssertionError(label)\nAssertionError: correct variant local dependency: B-cli-build-release\n"
+    }
+  ],
+  "summary_sha256": "a6d252d83fb5607125af5c68e918a9c05e8fc9f4777099373154696eb924f851",
+  "frozen_files_verified": 213,
+  "source_files_verified": 179,
+  "fixtures_verified": 24,
+  "runtime_arch": "aarch64",
+  "runtime_libraries_verified": 20,
+  "binary_sha256": {
+    "B": "0d1bf48dbdc5314b9748881077cabaffcfa2ef1b4d28e4c1490bcf7e98be38e5",
+    "C": "e8efb3ba7c91ab2b1a4dd1e4a41d6e8a69b7d5e3a3357ff99f13e1a1cb305259"
+  },
+  "correctness_gate_verified": true,
+  "codegen_evidence_files_verified": 8,
+  "checks": {
+    "files_hashed": 451,
+    "bytes_hashed": 445865348,
+    "assertions": 490
+  },
+  "completed_at": "2026-11-15T22:44:13.479135+00:00"
+}

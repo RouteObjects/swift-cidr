@@ -1,0 +1,184 @@
+{
+  "at": "2026-11-16T03:57:30.803397+00:00",
+  "scope": "Static native x86-64 frozen ordinary Release CLI code paths; no target execution or allocation/timing inference.",
+  "variants": {
+    "B": {
+      "binary_sha256": "079d55abdfa5c88104adac1dbc1321ea3c39bcaff04a32996c4f658197aac0be",
+      "ordinary_release_receipt_sha256": "8665f3b621a9ae7ddd8de1582e63714fd2439dcd4a4652e5cca49b177c85ded2",
+      "caller": "0x1df210",
+      "captured_functions": 29,
+      "families": {
+        "V4": {
+          "coalescer": "0x1c0140",
+          "bytes": 452,
+          "sort_dispatcher": "0x1c1730",
+          "pointer_arguments": {
+            "rsi": {
+              "address": "0x1c34f0",
+              "name": "generic not re-abstracted specialization <CIDR.AF.V4, [CIDR.IPAddressRange<CIDR.AF.V4>]> of closure #1 (CIDR.IPAddressRange<A>, CIDR.IPAddressRange<A>) -> Swift.Bool in static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]"
+            },
+            "r8": {
+              "address": "0x1c1e40",
+              "name": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()"
+            },
+            "r9": {
+              "address": "0x1c2420",
+              "name": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V4>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()"
+            }
+          },
+          "observed_dispatcher_slots": {
+            "rsi": "-0x38(%rbp)",
+            "r8": "-0x48(%rbp)",
+            "r9": "-0x30(%rbp)"
+          },
+          "capacity_helper": "0x1c1400",
+          "uniqueness_call_sites": [
+            "1c015c:\te8 cf df e8 ff       \tcall   4e130 <swift_isUniquelyReferenced_nonNull_native@plt>"
+          ],
+          "uniqueness_site_count": 1,
+          "capacity_helper_calls": [
+            "1c01cb:\te8 30 12 00 00       \tcall   1c1400 <generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of Swift._ContiguousArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<A>>",
+            "1c02cc:\te8 2f 11 00 00       \tcall   1c1400 <generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of Swift._ContiguousArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<A>>",
+            "1c02fa:\te8 01 11 00 00       \tcall   1c1400 <generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of Swift._ContiguousArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<A>>"
+          ],
+          "reserve_basis": "original sorted array count loaded into rsi before initial capacity call"
+        },
+        "V6": {
+          "coalescer": "0x1c0310",
+          "bytes": 585,
+          "sort_dispatcher": "0x1c1730",
+          "pointer_arguments": {
+            "rsi": {
+              "address": "0x1c3460",
+              "name": "generic not re-abstracted specialization <CIDR.AF.V6, [CIDR.IPAddressRange<CIDR.AF.V6>]> of closure #1 (CIDR.IPAddressRange<A>, CIDR.IPAddressRange<A>) -> Swift.Bool in static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]"
+            },
+            "r8": {
+              "address": "0x1c1830",
+              "name": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()"
+            },
+            "r9": {
+              "address": "0x1c22f0",
+              "name": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V6>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()"
+            }
+          },
+          "observed_dispatcher_slots": {
+            "rsi": "-0x38(%rbp)",
+            "r8": "-0x48(%rbp)",
+            "r9": "-0x30(%rbp)"
+          },
+          "capacity_helper": "0x1c12f0",
+          "uniqueness_call_sites": [
+            "1c032c:\te8 ff dd e8 ff       \tcall   4e130 <swift_isUniquelyReferenced_nonNull_native@plt>"
+          ],
+          "uniqueness_site_count": 1,
+          "capacity_helper_calls": [
+            "1c0397:\te8 54 0f 00 00       \tcall   1c12f0 <generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of Swift._ContiguousArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<A>>",
+            "1c051d:\te8 ce 0d 00 00       \tcall   1c12f0 <generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of Swift._ContiguousArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<A>>",
+            "1c054f:\te8 9c 0d 00 00       \tcall   1c12f0 <generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of Swift._ContiguousArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<A>>"
+          ],
+          "reserve_basis": "original sorted array count loaded into rsi before initial capacity call"
+        }
+      }
+    },
+    "C": {
+      "binary_sha256": "01c693caed015b1a3960777225d41f387949946cf1ee8c4656fa6dad05824fd5",
+      "ordinary_release_receipt_sha256": "853bd4b1c1a3e2f89e777106054e5e7a61127d84dc39bd6a05424c4833f677f3",
+      "caller": "0x1df1c0",
+      "captured_functions": 29,
+      "families": {
+        "V4": {
+          "coalescer": "0x1c0080",
+          "bytes": 527,
+          "sort_dispatcher": "0x1c1810",
+          "pointer_arguments": {
+            "rsi": {
+              "address": "0x1c3590",
+              "name": "generic not re-abstracted specialization <CIDR.AF.V4, [CIDR.IPAddressRange<CIDR.AF.V4>]> of closure #1 (CIDR.IPAddressRange<A>, CIDR.IPAddressRange<A>) -> Swift.Bool in static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]"
+            },
+            "r8": {
+              "address": "0x1c1f20",
+              "name": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()"
+            },
+            "r9": {
+              "address": "0x1c2500",
+              "name": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V4>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()"
+            }
+          },
+          "observed_dispatcher_slots": {
+            "rsi": "-0x38(%rbp)",
+            "r8": "-0x48(%rbp)",
+            "r9": "-0x30(%rbp)"
+          },
+          "capacity_helper": "0x1c1410",
+          "uniqueness_call_sites": [
+            "1c009c:\te8 df df e8 ff       \tcall   4e080 <swift_isUniquelyReferenced_nonNull_native@plt>",
+            "1c014e:\te8 2d df e8 ff       \tcall   4e080 <swift_isUniquelyReferenced_nonNull_native@plt>",
+            "1c019b:\te8 e0 de e8 ff       \tcall   4e080 <swift_isUniquelyReferenced_nonNull_native@plt>"
+          ],
+          "uniqueness_site_count": 3,
+          "capacity_helper_calls": [
+            "1c01ec:\te8 1f 12 00 00       \tcall   1c1410 <generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of Swift._ContiguousArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<A>>",
+            "1c025a:\te8 b1 11 00 00       \tcall   1c1410 <generic specialization <CIDR.IPAddressRange<CIDR.AF.V4>> of Swift._ContiguousArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<A>>"
+          ],
+          "completed_store": "0x1c0180",
+          "final_store": "0x1c01cb",
+          "result_count": "rcx completed count + 1 -> rsi at 0x1c01d4",
+          "unchanged_count_branch": "0x1c01db -> 0x1c0273 returns sorted rbx, skipping compact reserve/copy",
+          "compact_reserve": "0x1c01ec uses resultCount rsi, empty source rcx, no-grow edx=0",
+          "copy_loop": "8-byte load/store; counter starts -1, executes through completed count, exactly resultCount elements",
+          "ownership": "rdi retains sorted storage address; new result rax moved to rbx, sorted rdi released at 0x1c026e, result returned"
+        },
+        "V6": {
+          "coalescer": "0x1c0290",
+          "bytes": 736,
+          "sort_dispatcher": "0x1c1810",
+          "pointer_arguments": {
+            "rsi": {
+              "address": "0x1c3540",
+              "name": "generic not re-abstracted specialization <CIDR.AF.V6, [CIDR.IPAddressRange<CIDR.AF.V6>]> of closure #1 (CIDR.IPAddressRange<A>, CIDR.IPAddressRange<A>) -> Swift.Bool in static CIDR.IPAddressRange.coalescing<A where A1: Swift.Sequence, A1.Element == CIDR.IPAddressRange<A>>(A1) -> [CIDR.IPAddressRange<A>]"
+            },
+            "r8": {
+              "address": "0x1c1910",
+              "name": "generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of closure #1 (inout Swift.UnsafeMutableBufferPointer<A>, inout Swift.Int) throws -> () in Swift.UnsafeMutableBufferPointer._stableSortImpl(by: (A, A) throws -> Swift.Bool) throws -> ()"
+            },
+            "r9": {
+              "address": "0x1c23d0",
+              "name": "generic specialization <Swift.UnsafeMutableBufferPointer<CIDR.IPAddressRange<CIDR.AF.V6>>> of (extension in Swift):Swift.MutableCollection< where A: Swift.BidirectionalCollection>._insertionSort(within: Swift.Range<A.Swift.Collection.Index>, sortedEnd: A.Swift.Collection.Index, by: (A.Swift.Sequence.Element, A.Swift.Sequence.Element) throws -> Swift.Bool) throws -> ()"
+            }
+          },
+          "observed_dispatcher_slots": {
+            "rsi": "-0x38(%rbp)",
+            "r8": "-0x48(%rbp)",
+            "r9": "-0x30(%rbp)"
+          },
+          "capacity_helper": "0x1c1300",
+          "uniqueness_call_sites": [
+            "1c02ac:\te8 cf dd e8 ff       \tcall   4e080 <swift_isUniquelyReferenced_nonNull_native@plt>",
+            "1c03a8:\te8 d3 dc e8 ff       \tcall   4e080 <swift_isUniquelyReferenced_nonNull_native@plt>",
+            "1c0429:\te8 52 dc e8 ff       \tcall   4e080 <swift_isUniquelyReferenced_nonNull_native@plt>"
+          ],
+          "uniqueness_site_count": 3,
+          "capacity_helper_calls": [
+            "1c0498:\te8 63 0e 00 00       \tcall   1c1300 <generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of Swift._ContiguousArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<A>>",
+            "1c0532:\te8 c9 0d 00 00       \tcall   1c1300 <generic specialization <CIDR.IPAddressRange<CIDR.AF.V6>> of Swift._ContiguousArrayBuffer._consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<A>>"
+          ],
+          "completed_store": "0x1c03ee..0x1c0401",
+          "final_store": "0x1c0462..0x1c0475",
+          "result_count": "rdx completed count + 1 -> r14 at 0x1c047a",
+          "unchanged_count_branch": "0x1c0481 -> 0x1c0554 returns sorted rbx, skipping compact reserve/copy",
+          "compact_reserve": "0x1c0498 uses resultCount r14->rsi, empty source rcx, no-grow edx=0",
+          "copy_loop": "four 8-byte loads/stores, +32 offset, resultCount r14 decremented to zero",
+          "ownership": "sorted rbx moved to rdi, new result rax moved to rbx; sorted released at 0x1c054f before returning result"
+        }
+      }
+    }
+  },
+  "passed": true,
+  "limitations": [
+    "This is the concrete Array caller path; generic fallbacks also remain.",
+    "Comparator dispatch through supplied helper pointers remains indirect; it is not fully inlined/devirtualized.",
+    "Candidate retains three observed uniqueness check sites and conditional whole-buffer copy fallbacks; baseline retains one observed site. Counts describe these frozen bodies only.",
+    "Capacity helper allocates stride*requestedCapacity plus array header and uses allocator usable-size rounding; reserve is not an exact allocation-byte guarantee.",
+    "Reduced-result storage owns copied fixed-width values and releases sorted storage, but other input/sort/allocator storage remains. No dynamic allocation count, RSS savings or throughput is inferred."
+  ]
+}

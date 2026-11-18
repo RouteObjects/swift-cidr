@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-11-16T03:52:12.308663+00:00",
+  "authorization": "Parent authorized new-task-only post-sample hardlinks, same measurement/resource capture and fixed six-pair matrices; old results and caches remain untouched.",
+  "protocol": "After original run_one/run_sample returns and sample.json is written, verify passed status, unchanged sample receipt, full SHA, bytes and reference; preserve every stdout path via readonly task-owned content store and journal. Byte-compare before replacing duplicates atomically.",
+  "store": "output-store/<sha256>",
+  "timing_boundary": "All operations occur after sample finished_at and timed function return; warmups precede measured rounds. Additional between-sample hashing/cmp/fsync I/O is disclosed.",
+  "old_evidence_modified": false,
+  "original_timing_driver_sha256": "732a252f2aa40e3ac9953282db2366abed0d43aa16bb5f5ddc9e4da76c6a89b3",
+  "files": {
+    "output_dedup.py": "8164bfd6b023550607f87f537cc019cab898509ee759ad951f5a8a641e17b5db",
+    "run_matched_dedup.py": "dde189834c862926abc574e67a1c56aac980a66d093b19ae4c883f39c75be5d7",
+    "phase_runner_dedup.py": "d3cdcc5761c89a7b6acccdd634288417d7ed00de85c1bf0e45f13c20ccb686f0",
+    "scale_bench_dedup.py": "79ed0213c65bf1883e7546763913f8b3f53e283417fd4ae19ae7bb0aaa6d3687",
+    "scale_bench.py": "eec91e6d974e5d8ed44994b4665639dd9f4256a5d66887612fcee63627fc76a2",
+    "linux_runner.py": "646868b94d723a7c0c2e622c95d7e1a3366e3f4473aea0a6eea13b192b7ca2ac",
+    "run_matched.py": "732a252f2aa40e3ac9953282db2366abed0d43aa16bb5f5ddc9e4da76c6a89b3",
+    "prepare_benchmark.py": "b6c1c576d7ac51f4fafdeafd06ac8e24309a24c19b0d31803eaa8cd640def95d",
+    "run_followup_dedup.py": "c3e3f7de76dd429c0195561b4f255e1c717c76a362dbc4c25beefcadae744df5",
+    "audit_output_dedup.py": "030fd2b15efe4f7288f495fe516f471771894b7a2e565f56e8ede761886eac46",
+    "audit_scale.py": "434e05dde16c41d4c72f58914d70421dfe9a8a5c99eaf9c390cf41227ee4f7fd",
+    "audit_sparse.py": "bd5bd433b78659c70028a79ed71575ad2cfa54408a068b6bed38438ebbccace5"
+  },
+  "followup_module_hashes": {
+    "followups/control/audit_primary_followup.py": "58bb42f14b489f14a28a64bf0eddfdeb5c0fdfcd384e9092f94bc7841c53ead4",
+    "followups/control/audit_scale_followup.py": "555d15798971005f7bee1c170765d9e63d2b62a06ac8bd2d5a8626b50ac48a1e",
+    "followups/control/audit_sparse_followup.py": "1fcb29c33ba54ec4394cb6d5606c804381f96f788454a2f11283a06b908f1c50",
+    "followups/control/followup_runner.py": "7ebf97bb6841e1424b682213ff66f5e1ec682419b5cc92f5a2b8aab35cdf0e92",
+    "followups/control/run_followups.py": "477319b645e03ff72a0c8919428ceb3d9a2b8d3b7477ad7c7b335ea720d1eec5"
+  },
+  "space_budget": {
+    "unique_all_contents": 22,
+    "unique_all_bytes": 97934986,
+    "unique_primary_bytes": 94014299,
+    "largest_whole_sample_temporary_bytes": 21342471,
+    "logical_primary_stdout_bytes": 1816398122,
+    "minimum_free_bytes": 3221225472,
+    "additional_metadata_margin_bytes": 67108864,
+    "supplementary": {
+      "scale": {
+        "cases": 12,
+        "measured": 144,
+        "warmups": 24,
+        "logical_stdout_bytes": 54890668,
+        "fixture_bytes": 11540716
+      },
+      "sparse": {
+        "cases": 2,
+        "measured": 24,
+        "warmups": 4,
+        "logical_stdout_bytes": 252478702,
+        "fixture_bytes": 36077318
+      }
+    }
+  },
+  "followup_storage": "Select once independently from each original primary/scale/sparse matrix when any individual elapsed or RSS pair exceeds +5%; one separate fixed six-pair set, no pooling or recursive reruns. Copied fixture bytes and store entries revalidated before space charging.",
+  "source_freeze_sha256": "c63ac2f1242455b9ee1f7b5f3376c5cb126cfc6d958538be97b72a084bd23dab"
+}

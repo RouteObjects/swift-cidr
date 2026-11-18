@@ -1,0 +1,100 @@
+{
+  "suite": "split",
+  "case": "mixed-disjoint",
+  "tool": "C",
+  "started_at": "2026-11-16T04:25:48.083592+00:00",
+  "free_bytes_before": 5069885440,
+  "parts": [
+    {
+      "family": 4,
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/fixtures/mixed-disjoint/ipv4.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/C/tmp-4/"
+      },
+      "input": "fixtures/mixed-disjoint/ipv4.txt",
+      "output": "followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/C/4.stdout",
+      "stderr": "followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/C/4.stderr",
+      "started_at": "2026-11-16T04:25:48.084406+00:00",
+      "elapsed_ns": 408912857,
+      "exit_code": 0,
+      "output_bytes": 7399156,
+      "output_sha256": "0c5bc7e05c757270e6cbb6256f71f9595e8173b193470b0efc3efc897aab427e",
+      "stderr_bytes": 0,
+      "wait4_rusage": {
+        "ru_utime": 0.369247,
+        "ru_stime": 0.037024,
+        "ru_maxrss": 32716,
+        "ru_minflt": 6611,
+        "ru_majflt": 0,
+        "ru_nswap": 0,
+        "ru_inblock": 0,
+        "ru_oublock": 14456,
+        "ru_nvcsw": 14,
+        "ru_nivcsw": 7
+      },
+      "peak_rss_bytes": 33501184,
+      "cpu_seconds": 0.406271,
+      "raw_metrics": "followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/C/4.rusage.json"
+    },
+    {
+      "family": 6,
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/fixtures/mixed-disjoint/ipv6.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/C/tmp-6/"
+      },
+      "input": "fixtures/mixed-disjoint/ipv6.txt",
+      "output": "followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/C/6.stdout",
+      "stderr": "followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/C/6.stderr",
+      "started_at": "2026-11-16T04:25:48.540410+00:00",
+      "elapsed_ns": 828221650,
+      "exit_code": 0,
+      "output_bytes": 10465056,
+      "output_sha256": "2e1b4cfc8201858191fb1f709188a0dc7b751d4d85cf3065936f3fb637ab74bd",
+      "stderr_bytes": 0,
+      "wait4_rusage": {
+        "ru_utime": 0.745501,
+        "ru_stime": 0.079946,
+        "ru_maxrss": 67752,
+        "ru_minflt": 19267,
+        "ru_majflt": 0,
+        "ru_nswap": 0,
+        "ru_inblock": 0,
+        "ru_oublock": 20440,
+        "ru_nvcsw": 13,
+        "ru_nivcsw": 12
+      },
+      "peak_rss_bytes": 69378048,
+      "cpu_seconds": 0.8254469999999999,
+      "raw_metrics": "followups/regressions-primary-01/measurements/split/round-06/mixed-disjoint/C/6.rusage.json"
+    }
+  ],
+  "passed": true,
+  "elapsed_ns": 1237134507,
+  "peak_rss_bytes": 69378048,
+  "cpu_seconds": 1.2317179999999999,
+  "output_bytes": 17864212,
+  "matches_verified_warmup_bytes": true,
+  "finished_at": "2026-11-16T04:25:49.433624+00:00"
+}

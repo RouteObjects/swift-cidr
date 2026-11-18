@@ -1,0 +1,58 @@
+{
+  "original_artifact": "control/final-source-check-2026-11-16T043628.852888+0000.json",
+  "original_bytes": 2739,
+  "original_sha256": "c4c01b9bd9f881511f28923d946fd64dfec4ba51845b772c52c39d127b654093",
+  "path_transformation": "Home-directory paths replaced with $HOME. Numeric and boolean values are unchanged.",
+  "receipt": {
+    "passed": true,
+    "checked_at": "2026-11-16T04:36:28.852888+00:00",
+    "repos": {
+      "swift-cidr": {
+        "original_tracked_files_checked": 636,
+        "allowed_production_paths": [
+          "Sources/CIDR/IPAddressRange.swift"
+        ],
+        "main_and_HEAD_unchanged": true,
+        "index_empty": true,
+        "older_untracked_paths_still_present": [
+          "Benchmarks/Results/2026-11-06-family-format-dispatch/",
+          "Benchmarks/Results/2026-11-07-family-dispatch-fixes/",
+          "Benchmarks/Results/2026-11-07-ipv6-formatting-investigation/",
+          "Benchmarks/Results/2026-11-07-performance-investigation/",
+          "Benchmarks/Results/2026-11-07-release-0.9.0/",
+          "Benchmarks/Results/2026-11-15-inplace-coalescing/",
+          "Tests/CIDRTests/InPlaceCoalescingTests.swift"
+        ],
+        "status": "## perf/coalescing-compact-storage\n M Sources/CIDR/IPAddressRange.swift\n?? Benchmarks/Results/2026-11-06-family-format-dispatch/\n?? Benchmarks/Results/2026-11-07-family-dispatch-fixes/\n?? Benchmarks/Results/2026-11-07-ipv6-formatting-investigation/\n?? Benchmarks/Results/2026-11-07-performance-investigation/\n?? Benchmarks/Results/2026-11-07-release-0.9.0/\n?? Benchmarks/Results/2026-11-15-inplace-coalescing/\n?? Tests/CIDRTests/InPlaceCoalescingTests.swift\n"
+      },
+      "cidrmerge": {
+        "original_tracked_files_checked": 254,
+        "allowed_production_paths": [],
+        "main_and_HEAD_unchanged": true,
+        "index_empty": true,
+        "older_untracked_paths_still_present": [
+          "Benchmarks/Results/2026-11-15-inplace-coalescing/"
+        ],
+        "status": "## perf/coalescing-compact-storage\n?? Benchmarks/Results/2026-11-15-inplace-coalescing/\n"
+      }
+    },
+    "previous_report_artifacts_verified_per_repo": 320,
+    "previous_report_manifest_sha256": "97410662142aff988676414f7a5ce697c388e0b63efa40bc29479228efbbeb2f",
+    "new_test_sha256": "d17b7297664d3682a87e98356641b44120048a2f54e1fcd57f3d8d96a87581b6",
+    "focused_format": {
+      "command": [
+        "xcrun",
+        "swift-format",
+        "lint",
+        "--configuration",
+        "$HOME/Developer/Route Objects/.swift-format.json",
+        "$HOME/Developer/Route Objects/Example Framework/Packages/swift-cidr/Sources/CIDR/IPAddressRange.swift",
+        "$HOME/Developer/Route Objects/Example Framework/Packages/swift-cidr/Tests/CIDRTests/InPlaceCoalescingTests.swift"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "limitations": "Original tracked files are hash-checked. The previous in-place report is fully hash-verified in both repositories. Other older untracked benchmark directories are present and were not targets of any write; no full before/after content claim is made for those other directories."
+  }
+}

@@ -1,0 +1,935 @@
+{
+  "passed": true,
+  "samples": [
+    {
+      "round": 0,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-00/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T04:26:06.068306+00:00",
+      "free_bytes_before": 5065875456,
+      "directory": "round-00/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 143396741,
+      "cpu_seconds": 0.14060099999999998,
+      "peak_rss_bytes": 27922432,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 27268,
+        "ru_minflt": 3706,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 1,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 14,
+        "ru_oublock": 3424,
+        "ru_stime": 0.02094,
+        "ru_utime": 0.11966099999999999
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:06.223727+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-00/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T04:26:06.276919+00:00",
+      "free_bytes_before": 5065850880,
+      "directory": "round-00/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 144452351,
+      "cpu_seconds": 0.142344,
+      "peak_rss_bytes": 27795456,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 27144,
+        "ru_minflt": 3317,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 13,
+        "ru_oublock": 3424,
+        "ru_stime": 0.022053,
+        "ru_utime": 0.120291
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:06.433285+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-01/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T04:26:06.481631+00:00",
+      "free_bytes_before": 5065842688,
+      "directory": "round-01/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 149013788,
+      "cpu_seconds": 0.146663,
+      "peak_rss_bytes": 27947008,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 27292,
+        "ru_minflt": 3704,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 13,
+        "ru_oublock": 3424,
+        "ru_stime": 0.019819,
+        "ru_utime": 0.12684399999999998
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:06.642747+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-01/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T04:26:06.691303+00:00",
+      "free_bytes_before": 5065826304,
+      "directory": "round-01/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 143514448,
+      "cpu_seconds": 0.140862,
+      "peak_rss_bytes": 27852800,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 27200,
+        "ru_minflt": 3319,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 4,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 14,
+        "ru_oublock": 3424,
+        "ru_stime": 0.014985,
+        "ru_utime": 0.125877
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:06.847060+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-02/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T04:26:06.895140+00:00",
+      "free_bytes_before": 5065814016,
+      "directory": "round-02/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 142757966,
+      "cpu_seconds": 0.140424,
+      "peak_rss_bytes": 27643904,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 26996,
+        "ru_minflt": 3314,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 1,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 13,
+        "ru_oublock": 3424,
+        "ru_stime": 0.017051,
+        "ru_utime": 0.123373
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:07.050038+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-02/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T04:26:07.098215+00:00",
+      "free_bytes_before": 5065797632,
+      "directory": "round-02/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 141388564,
+      "cpu_seconds": 0.139216,
+      "peak_rss_bytes": 27983872,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 27328,
+        "ru_minflt": 3709,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 1,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 13,
+        "ru_oublock": 3424,
+        "ru_stime": 0.020031,
+        "ru_utime": 0.119185
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:07.251711+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-03/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T04:26:07.300182+00:00",
+      "free_bytes_before": 5065789440,
+      "directory": "round-03/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 142252940,
+      "cpu_seconds": 0.139739,
+      "peak_rss_bytes": 27734016,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 27084,
+        "ru_minflt": 3706,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 1,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 14,
+        "ru_oublock": 3424,
+        "ru_stime": 0.022794,
+        "ru_utime": 0.116945
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:07.454341+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-03/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T04:26:07.502276+00:00",
+      "free_bytes_before": 5065768960,
+      "directory": "round-03/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 144588834,
+      "cpu_seconds": 0.14209399999999997,
+      "peak_rss_bytes": 27783168,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 27132,
+        "ru_minflt": 3317,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 1,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 13,
+        "ru_oublock": 3424,
+        "ru_stime": 0.011007,
+        "ru_utime": 0.13108699999999998
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:07.658833+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-04/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T04:26:07.707072+00:00",
+      "free_bytes_before": 5065760768,
+      "directory": "round-04/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 142856075,
+      "cpu_seconds": 0.140545,
+      "peak_rss_bytes": 27754496,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 27104,
+        "ru_minflt": 3318,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 4,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 13,
+        "ru_oublock": 3424,
+        "ru_stime": 0.013049999999999999,
+        "ru_utime": 0.127495
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:07.862032+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-04/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T04:26:07.910679+00:00",
+      "free_bytes_before": 5065744384,
+      "directory": "round-04/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 142789146,
+      "cpu_seconds": 0.14013599999999998,
+      "peak_rss_bytes": 27844608,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 27192,
+        "ru_minflt": 3706,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 1,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 14,
+        "ru_oublock": 3424,
+        "ru_stime": 0.014013,
+        "ru_utime": 0.12612299999999999
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:08.065362+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-05/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T04:26:08.114037+00:00",
+      "free_bytes_before": 5065732096,
+      "directory": "round-05/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 148732070,
+      "cpu_seconds": 0.146057,
+      "peak_rss_bytes": 27729920,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 27080,
+        "ru_minflt": 3703,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 13,
+        "ru_oublock": 3424,
+        "ru_stime": 0.022008,
+        "ru_utime": 0.12404899999999999
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:08.274871+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-05/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T04:26:08.323346+00:00",
+      "free_bytes_before": 5065715712,
+      "directory": "round-05/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 144667711,
+      "cpu_seconds": 0.142619,
+      "peak_rss_bytes": 27762688,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 27112,
+        "ru_minflt": 3316,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 1,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 13,
+        "ru_oublock": 3424,
+        "ru_stime": 0.016069,
+        "ru_utime": 0.12655
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:08.480180+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-06/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T04:26:08.528732+00:00",
+      "free_bytes_before": 5065707520,
+      "directory": "round-06/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 143133609,
+      "cpu_seconds": 0.140814,
+      "peak_rss_bytes": 27611136,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 26964,
+        "ru_minflt": 3313,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 14,
+        "ru_oublock": 3424,
+        "ru_stime": 0.020824,
+        "ru_utime": 0.11999
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:08.684043+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/regressions-scale-01/measurements/round-06/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T04:26:08.732298+00:00",
+      "free_bytes_before": 5065687040,
+      "directory": "round-06/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 142815278,
+      "cpu_seconds": 0.140405,
+      "peak_rss_bytes": 27869184,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 27216,
+        "ru_minflt": 3707,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 13,
+        "ru_oublock": 3424,
+        "ru_stime": 0.016045999999999998,
+        "ru_utime": 0.124359
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T04:26:08.887500+00:00"
+    }
+  ],
+  "comparisons": [
+    {
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "pairs": [
+        {
+          "round": 1,
+          "elapsed_change_pct": -3.6904907081484306,
+          "rss_change_pct": -0.3370951194489269
+        },
+        {
+          "round": 2,
+          "elapsed_change_pct": 0.9685380212221428,
+          "rss_change_pct": -1.2148711943793966
+        },
+        {
+          "round": 3,
+          "elapsed_change_pct": 1.6420708071130274,
+          "rss_change_pct": 0.17722640673460965
+        },
+        {
+          "round": 4,
+          "elapsed_change_pct": 0.04687261033131662,
+          "rss_change_pct": -0.3236245954692518
+        },
+        {
+          "round": 5,
+          "elapsed_change_pct": -2.7326715751350705,
+          "rss_change_pct": 0.11816838995568624
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": 0.222897020863555,
+          "rss_change_pct": -0.92592592592593
+        }
+      ],
+      "elapsed_change_pct": {
+        "median": 0.13488481559743581,
+        "min": -3.6904907081484306,
+        "max": 1.6420708071130274
+      },
+      "rss_change_pct": {
+        "median": -0.33035985745908936,
+        "min": -1.2148711943793966,
+        "max": 0.17722640673460965
+      },
+      "B": {
+        "elapsed_ns": 142802212.0,
+        "cpu_seconds": 0.1402705,
+        "peak_rss_bytes": 27856896.0
+      },
+      "C": {
+        "elapsed_ns": 143324028.5,
+        "cpu_seconds": 0.140838,
+        "peak_rss_bytes": 27758592.0
+      }
+    }
+  ],
+  "measured_samples": 12,
+  "excluded_warmups": 2,
+  "frozen_files_unchanged": true,
+  "finished_at": "2026-11-16T04:26:12.280440+00:00"
+}

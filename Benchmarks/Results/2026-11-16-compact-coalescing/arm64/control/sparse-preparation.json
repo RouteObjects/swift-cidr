@@ -1,0 +1,14 @@
+{
+  "files": {
+    "sparse/provenance.json": "8e86a464d4f2954efd39b2b2f636355f2b3d148cdfa6e325524089d798338985",
+    "sparse/reference.json": "e55c759160d197f233b7ce7175d3cf455a64dac152e7b56ad27ee15f20533e7d",
+    "sparse/prepare.py": "c9ce9cada67388fa9e2d8f73b9af233339f10ee586d18210ee68e5f7798d3a46",
+    "sparse/mixed-sparse-duplicate-10000/reference.txt": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+    "sparse/mixed-sparse-duplicate-10000/input.txt": "c7b98ccb1a499919a4d6726da858640abdd8ad738f5a1ec260e7c43d4f26a133",
+    "sparse/mixed-sparse-duplicate-1000000/reference.txt": "b0194fd5feaaaa11937718ff0ecce4b50590ab4dd41d47111ca559e02f0b067c",
+    "sparse/mixed-sparse-duplicate-1000000/input.txt": "6abaaad6e5e2848b78c58aa3bfbf2f5e8d52f9a65a000e54b64922cdaf740af6"
+  },
+  "separate_matrix": true,
+  "measured_samples": 24,
+  "warmups": 4
+}

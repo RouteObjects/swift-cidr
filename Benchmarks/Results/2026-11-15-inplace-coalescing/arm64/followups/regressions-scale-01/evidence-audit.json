@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "started_at": "2026-11-15T22:44:14.822054+00:00",
+  "measured_samples": 108,
+  "excluded_warmups": 18,
+  "outputs_verified": 126,
+  "all_observations_accounted_for": true,
+  "primary_frozen_files_verified": 213,
+  "scale_frozen_files_verified": 45,
+  "comparisons_recomputed": 9,
+  "summary_sha256": "25435065ef8ea358c2179329c3c10c38bee11c9545d353f40958a4811a9cf6ae",
+  "finished_at": "2026-11-15T22:44:15.042620+00:00"
+}

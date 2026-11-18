@@ -1,0 +1,146 @@
+{
+  "at": "2026-11-15T23:18:44.767772+00:00",
+  "rule": "Any individual original pair with elapsed or RSS change greater than +5%; one fixed follow-up only, no pooling or recursive reruns",
+  "primary": [
+    {
+      "suite": "split",
+      "case": "ipv6-disjoint",
+      "triggers": [
+        {
+          "round": 6,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 5.170369103648165,
+          "rss_change_pct": -0.17067223963775913,
+          "elapsed_difference_s": 0.088725691,
+          "rss_difference_mib": -0.19140625
+        }
+      ]
+    },
+    {
+      "suite": "split",
+      "case": "range-derived-mixed",
+      "triggers": [
+        {
+          "round": 1,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": -2.3106617583017686,
+          "rss_change_pct": 11.775490891885498,
+          "elapsed_difference_s": -0.030343776,
+          "rss_difference_mib": 7.77734375
+        },
+        {
+          "round": 2,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 0.569163836982356,
+          "rss_change_pct": 11.528940233408003,
+          "elapsed_difference_s": 0.007318113,
+          "rss_difference_mib": 7.640625
+        },
+        {
+          "round": 3,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 5.433469861803508,
+          "rss_change_pct": 11.438679245283012,
+          "elapsed_difference_s": 0.070841506,
+          "rss_difference_mib": 7.578125
+        },
+        {
+          "round": 4,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": 0.9484054626592409,
+          "rss_change_pct": 11.553855208946429,
+          "elapsed_difference_s": 0.012329688,
+          "rss_difference_mib": 7.66796875
+        },
+        {
+          "round": 5,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 0.3901093533690725,
+          "rss_change_pct": 11.561579257513266,
+          "elapsed_difference_s": 0.005040557,
+          "rss_difference_mib": 7.6640625
+        },
+        {
+          "round": 6,
+          "order": [
+            "C",
+            "B"
+          ],
+          "elapsed_change_pct": -0.011071983301635946,
+          "rss_change_pct": 11.929803828882068,
+          "elapsed_difference_s": -0.000140895,
+          "rss_difference_mib": 7.88671875
+        }
+      ]
+    },
+    {
+      "suite": "native",
+      "case": "mixed-disjoint",
+      "triggers": [
+        {
+          "round": 5,
+          "order": [
+            "B",
+            "C"
+          ],
+          "elapsed_change_pct": 5.21458056506543,
+          "rss_change_pct": -0.050180650341224986,
+          "elapsed_difference_s": 0.065763192,
+          "rss_difference_mib": -0.0390625
+        }
+      ]
+    }
+  ],
+  "scale": [
+    {
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "triggers": [
+        {
+          "round": 4,
+          "elapsed_change_pct": 6.578310724599223,
+          "rss_change_pct": -0.35144237809342505
+        }
+      ]
+    },
+    {
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "triggers": [
+        {
+          "round": 5,
+          "elapsed_change_pct": 6.419936664599057,
+          "rss_change_pct": 0.0
+        }
+      ]
+    }
+  ],
+  "primary_summary_sha256": "366b4ee87e6286689e090c1c3f0f4b894e5694cb603525786528eb46b936ca10",
+  "scale_summary_sha256": "889808904b359800a4cb159761f834037b70225a70d5baad5c7831b48c7abac6",
+  "module_hashes": {
+    "followups/control/run_followups.py": "e5baa420f8ecc5da145e65e983c5c32a92e47df64b5e7e47cb8386ef74b5b782",
+    "followups/control/followup_runner.py": "7ebf97bb6841e1424b682213ff66f5e1ec682419b5cc92f5a2b8aab35cdf0e92",
+    "control/run_followup_dedup.py": "c3e3f7de76dd429c0195561b4f255e1c717c76a362dbc4c25beefcadae744df5",
+    "control/output_dedup.py": "f101d09c3df71521ae7fb3151b8b7031bfacb16bcce17338f1a474952ecc4f85",
+    "control/scale_bench_dedup.py": "79ed0213c65bf1883e7546763913f8b3f53e283417fd4ae19ae7bb0aaa6d3687",
+    "control/output-dedup-protocol.json": "65d4ed5cecc8e01759f5b87ad3a87a35386783b364ddbb4e53bccee7babd4552"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "started_at": "2026-11-16T04:28:32.803611+00:00",
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/control/audit_linux.py",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z",
+        "--output",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/control/evidence-audit.json",
+        "--check-runtime-files"
+      ],
+      "started_at": "2026-11-16T04:28:32.803736+00:00",
+      "finished_at": "2026-11-16T04:28:46.784001+00:00",
+      "exit_code": 0,
+      "receipt": "control/evidence-audit.json",
+      "log": "logs/audit-audit_linux.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/control/audit_scale.py",
+        "--root",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z",
+        "--output",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/control/scale-evidence-audit.json"
+      ],
+      "started_at": "2026-11-16T04:28:46.785004+00:00",
+      "finished_at": "2026-11-16T04:28:48.986733+00:00",
+      "exit_code": 0,
+      "receipt": "control/scale-evidence-audit.json",
+      "log": "logs/audit-audit_scale.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/control/audit_sparse.py",
+        "--root",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z",
+        "--output",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/control/sparse-evidence-audit.json"
+      ],
+      "started_at": "2026-11-16T04:28:48.987330+00:00",
+      "finished_at": "2026-11-16T04:28:54.378851+00:00",
+      "exit_code": 0,
+      "receipt": "control/sparse-evidence-audit.json",
+      "log": "logs/audit-audit_sparse.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/control/audit_primary_followup.py",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z",
+        "regressions-primary-01",
+        "--check-runtime-files",
+        "--output",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/control/primary-followup-audit.json"
+      ],
+      "started_at": "2026-11-16T04:28:54.379466+00:00",
+      "finished_at": "2026-11-16T04:29:01.375151+00:00",
+      "exit_code": 0,
+      "receipt": "control/primary-followup-audit.json",
+      "log": "logs/audit-audit_primary_followup.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/control/audit_scale_followup.py",
+        "--root",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z",
+        "--output",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/control/scale-followup-audit.json"
+      ],
+      "started_at": "2026-11-16T04:29:01.375984+00:00",
+      "finished_at": "2026-11-16T04:29:02.836806+00:00",
+      "exit_code": 0,
+      "receipt": "control/scale-followup-audit.json",
+      "log": "logs/audit-audit_scale_followup.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/followups/control/audit_sparse_followup.py",
+        "--root",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z",
+        "--output",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/control/sparse-followup-audit.json"
+      ],
+      "started_at": "2026-11-16T04:29:02.837397+00:00",
+      "finished_at": "2026-11-16T04:29:08.243086+00:00",
+      "exit_code": 0,
+      "receipt": "control/sparse-followup-audit.json",
+      "log": "logs/audit-audit_sparse_followup.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/control/audit_output_dedup.py",
+        "--root",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z",
+        "--output",
+        "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/control/output-dedup-audit.json"
+      ],
+      "started_at": "2026-11-16T04:29:08.243699+00:00",
+      "finished_at": "2026-11-16T04:29:28.171978+00:00",
+      "exit_code": 0,
+      "receipt": "control/output-dedup-audit.json",
+      "log": "logs/audit-audit_output_dedup.log"
+    }
+  ],
+  "finished_at": "2026-11-16T04:29:28.172534+00:00"
+}

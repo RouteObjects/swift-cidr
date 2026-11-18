@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "completed_at": "2026-11-16T04:31:40.298641+00:00",
+  "archive_sha256": "db240b0efa25986ed0b899a7b9ffea3ee80f50b1e62aef9b1500a6edb666e569",
+  "files_verified": 2871,
+  "fixture_files_verified": 24,
+  "raw_outputs_retained": true,
+  "sources_retained": true,
+  "runtime_bytes_retained": true,
+  "test_binaries_retained": true,
+  "test_binary_count": 8,
+  "primary_child_output_count": 224,
+  "scale_child_output_count": 168,
+  "sparse_child_output_count": 28,
+  "all_archive_payloads_verified": true,
+  "retrieval_performed_no_writes_to_old_experiments": true,
+  "selected_inventory_rechecked": true,
+  "duplicate_archive_members_rejected": true
+}

@@ -1,0 +1,15 @@
+{
+  "started_at": "2026-11-16T03:53:15.440147+00:00",
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3",
+    "$EXPERIMENT/control/scale_bench.py",
+    "--root",
+    "$EXPERIMENT/macos",
+    "--fixtures",
+    "$EXPERIMENT/macos/sparse-followup-inputs",
+    "--output",
+    "$EXPERIMENT/macos/followup-sparse-01"
+  ],
+  "exit_code": 0,
+  "finished_at": "2026-11-16T03:53:15.754332+00:00"
+}

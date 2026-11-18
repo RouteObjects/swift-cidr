@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "scope": "Independent native sparse evidence audit; no harness imports or target execution",
+  "started_at": "2026-11-16T04:29:02.907890+00:00",
+  "original_sparse_summary_sha256": "3408c54de226e059e4b85a8d7c0a42eab832ae8ec7cfa0fc83644a1f5275da55",
+  "selected_cases": [
+    "mixed-sparse-duplicate-10000",
+    "mixed-sparse-duplicate-1000000"
+  ],
+  "separate_followup_not_pooled": true,
+  "selection_rule": "Any original individual elapsed or RSS pair >+5%; one fixed six-pair follow-up only",
+  "binary_sha256": {
+    "B": "079d55abdfa5c88104adac1dbc1321ea3c39bcaff04a32996c4f658197aac0be",
+    "C": "01c693caed015b1a3960777225d41f387949946cf1ee8c4656fa6dad05824fd5"
+  },
+  "source_files_verified": 179,
+  "runtime_libraries_verified": 20,
+  "auditor_sha256": "1fcb29c33ba54ec4394cb6d5606c804381f96f788454a2f11283a06b908f1c50",
+  "reference_sha256": "dcc6a3b2d964233ff6aa02f2696b0c0abe2f5789d805a77dfa45cdfbf8c7f6d3",
+  "measured_samples": 24,
+  "excluded_warmups": 4,
+  "outputs_verified": 28,
+  "all_observations_accounted_for": true,
+  "primary_frozen_files_verified": 235,
+  "sparse_frozen_files_verified": 31,
+  "comparisons_recomputed": 2,
+  "summary_sha256": "5861e870efd34c6b8cca6ffef5957393ffb9d87901e58fabd11c80d48bd2e252",
+  "finished_at": "2026-11-16T04:29:08.231453+00:00"
+}

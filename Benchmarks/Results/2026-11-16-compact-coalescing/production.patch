@@ -1,0 +1,53 @@
+diff --git a/Sources/CIDR/IPAddressRange.swift b/Sources/CIDR/IPAddressRange.swift
+index 35c4e2e..e71d0d7 100644
+--- a/Sources/CIDR/IPAddressRange.swift
++++ b/Sources/CIDR/IPAddressRange.swift
+@@ -158,7 +158,7 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
+     @inlinable
+     public static func coalescing<Ranges: Sequence>(_ ranges: Ranges) -> [Self]
+     where Ranges.Element == Self {
+-        let sorted = ranges.sorted { lhs, rhs in
++        var sorted = ranges.sorted { lhs, rhs in
+             if lhs.lowerAddress == rhs.lowerAddress {
+                 return lhs.upperAddress > rhs.upperAddress
+             }
+@@ -166,11 +166,12 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
+         }
+         guard sorted.count > 1 else { return sorted }
+ 
+-        var result: [Self] = []
+-        result.reserveCapacity(sorted.count)
++        // CHANGE: Compact the sorted buffer without retaining an iterator during mutation.
++        var writeIndex = 0
+         var current = sorted[0]
+ 
+-        for range in sorted.dropFirst() {
++        for readIndex in 1..<sorted.count {
++            let range = sorted[readIndex]
+             // Sorted input only needs a forward boundary comparison. Keeping one active
+             // interval avoids repeated result-array mutation for heavily subsumed data.
+             if current.connectsToFollowing(range) {
+@@ -179,12 +180,21 @@ public struct IPAddressRange<Family: IPAddressFamily>: Sendable, Hashable,
+                     upperAddress: max(current.upperAddress, range.upperAddress)
+                 )
+             } else {
+-                result.append(current)
++                sorted[writeIndex] = current
++                writeIndex += 1
+                 current = range
+             }
+         }
+-        result.append(current)
++        sorted[writeIndex] = current
++        let resultCount = writeIndex + 1
++        guard resultCount < sorted.count else { return sorted }
+ 
++        // CHANGE: Copy merged output into fresh storage so it does not retain the populated input buffer.
++        var result: [Self] = []
++        result.reserveCapacity(resultCount)
++        for index in 0..<resultCount {
++            result.append(sorted[index])
++        }
+         return result
+     }
+ 

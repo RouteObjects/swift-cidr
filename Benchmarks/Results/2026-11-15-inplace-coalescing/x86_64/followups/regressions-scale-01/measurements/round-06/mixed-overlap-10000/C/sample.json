@@ -1,0 +1,62 @@
+{
+  "round": 6,
+  "variant": "C",
+  "case": "mixed-overlap-10000",
+  "entries": 10000,
+  "order": [
+    "C",
+    "B"
+  ],
+  "command": [
+    "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/bin/C",
+    "--raw",
+    "--representation",
+    "cidr",
+    "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+  ],
+  "actual_command": [
+    "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/bin/C",
+    "--raw",
+    "--representation",
+    "cidr",
+    "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+  ],
+  "environment": {
+    "PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin:/usr/bin:/bin",
+    "LANG": "C",
+    "LC_ALL": "C",
+    "TZ": "UTC",
+    "LD_LIBRARY_PATH": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+    "TMPDIR": "$LINUX_HOME/Downloads/cidrmerge-inplace-coalescing-20261115T221013Z/followups/regressions-scale-01/measurements/round-06/mixed-overlap-10000/C"
+  },
+  "started_at": "2026-11-15T23:20:18.580708+00:00",
+  "free_bytes_before": 3407192064,
+  "directory": "round-06/mixed-overlap-10000/C",
+  "passed": true,
+  "exit_code": 0,
+  "elapsed_ns": 31266394,
+  "cpu_seconds": 0.029383999999999997,
+  "peak_rss_bytes": 22351872,
+  "resources": {
+    "ru_idrss": 0,
+    "ru_inblock": 0,
+    "ru_isrss": 0,
+    "ru_ixrss": 0,
+    "ru_majflt": 0,
+    "ru_maxrss": 21828,
+    "ru_minflt": 978,
+    "ru_msgrcv": 0,
+    "ru_msgsnd": 0,
+    "ru_nivcsw": 2,
+    "ru_nsignals": 0,
+    "ru_nswap": 0,
+    "ru_nvcsw": 13,
+    "ru_oublock": 8,
+    "ru_stime": 0.0048969999999999994,
+    "ru_utime": 0.024487
+  },
+  "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+  "stdout_bytes": 25,
+  "stderr_bytes": 0,
+  "finished_at": "2026-11-15T23:20:18.612825+00:00"
+}

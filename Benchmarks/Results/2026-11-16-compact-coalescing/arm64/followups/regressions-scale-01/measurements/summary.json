@@ -1,0 +1,6479 @@
+{
+  "passed": true,
+  "samples": [
+    {
+      "round": 0,
+      "variant": "B",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-disjoint-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.503323+00:00",
+      "free_bytes_before": 5727648550912,
+      "directory": "round-00/mixed-disjoint-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6124625,
+      "cpu_seconds": 0.005719999999999999,
+      "peak_rss_bytes": 20738048,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20252,
+        "ru_minflt": 785,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.0028599999999999997,
+        "ru_utime": 0.0028599999999999997
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.510016+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "C",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-disjoint-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.510556+00:00",
+      "free_bytes_before": 5727648522240,
+      "directory": "round-00/mixed-disjoint-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6280999,
+      "cpu_seconds": 0.006141000000000001,
+      "peak_rss_bytes": 20865024,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20376,
+        "ru_minflt": 788,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.001023,
+        "ru_utime": 0.005118
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.517492+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "B",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-disjoint-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.518090+00:00",
+      "free_bytes_before": 5727648501760,
+      "directory": "round-00/mixed-disjoint-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9598541,
+      "cpu_seconds": 0.009455,
+      "peak_rss_bytes": 21233664,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20736,
+        "ru_minflt": 860,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.00105,
+        "ru_utime": 0.008405
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.528618+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "C",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-disjoint-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.529048+00:00",
+      "free_bytes_before": 5727648325632,
+      "directory": "round-00/mixed-disjoint-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9716541,
+      "cpu_seconds": 0.009587,
+      "peak_rss_bytes": 21024768,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20532,
+        "ru_minflt": 852,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.001065,
+        "ru_utime": 0.008522
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.539822+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.540466+00:00",
+      "free_bytes_before": 5727648145408,
+      "directory": "round-00/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 48702953,
+      "cpu_seconds": 0.048554999999999994,
+      "peak_rss_bytes": 26566656,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25944,
+        "ru_minflt": 1511,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.005945,
+        "ru_utime": 0.042609999999999995
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.592184+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.592713+00:00",
+      "free_bytes_before": 5727646388224,
+      "directory": "round-00/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 50304787,
+      "cpu_seconds": 0.050158999999999995,
+      "peak_rss_bytes": 26488832,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25868,
+        "ru_minflt": 1419,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.0049169999999999995,
+        "ru_utime": 0.045242
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.645996+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "B",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-permuted-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.646796+00:00",
+      "free_bytes_before": 5727644631040,
+      "directory": "round-00/mixed-permuted-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6258624,
+      "cpu_seconds": 0.0061259999999999995,
+      "peak_rss_bytes": 20762624,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20276,
+        "ru_minflt": 788,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.0017499999999999998,
+        "ru_utime": 0.004376
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.653715+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "C",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-permuted-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.654333+00:00",
+      "free_bytes_before": 5727644598272,
+      "directory": "round-00/mixed-permuted-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6276999,
+      "cpu_seconds": 0.0060079999999999995,
+      "peak_rss_bytes": 20742144,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20256,
+        "ru_minflt": 788,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 1,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.0030039999999999997,
+        "ru_utime": 0.0030039999999999997
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.661383+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "B",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-overlap-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.662022+00:00",
+      "free_bytes_before": 5727644573696,
+      "directory": "round-00/mixed-overlap-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9100041,
+      "cpu_seconds": 0.008908,
+      "peak_rss_bytes": 20848640,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20360,
+        "ru_minflt": 830,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0009889999999999999,
+        "ru_utime": 0.007918999999999999
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.671984+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "C",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-overlap-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.672613+00:00",
+      "free_bytes_before": 5727644565504,
+      "directory": "round-00/mixed-overlap-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9247124,
+      "cpu_seconds": 0.009059999999999999,
+      "peak_rss_bytes": 20987904,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20496,
+        "ru_minflt": 825,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.002013,
+        "ru_utime": 0.0070469999999999994
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.682574+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "B",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-adjacent-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.683224+00:00",
+      "free_bytes_before": 5727644557312,
+      "directory": "round-00/mixed-adjacent-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6209166,
+      "cpu_seconds": 0.005984999999999999,
+      "peak_rss_bytes": 20762624,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20276,
+        "ru_minflt": 783,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.001995,
+        "ru_utime": 0.00399
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.690116+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "C",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-adjacent-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.690619+00:00",
+      "free_bytes_before": 5727644545024,
+      "directory": "round-00/mixed-adjacent-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6159833,
+      "cpu_seconds": 0.006018,
+      "peak_rss_bytes": 20742144,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20256,
+        "ru_minflt": 783,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.002006,
+        "ru_utime": 0.004012
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.697512+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "B",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-adjacent-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.698187+00:00",
+      "free_bytes_before": 5727644536832,
+      "directory": "round-00/mixed-adjacent-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 8705499,
+      "cpu_seconds": 0.008561,
+      "peak_rss_bytes": 20844544,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20356,
+        "ru_minflt": 826,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.00214,
+        "ru_utime": 0.006421
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.707606+00:00"
+    },
+    {
+      "round": 0,
+      "variant": "C",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-00/mixed-adjacent-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.708711+00:00",
+      "free_bytes_before": 5727644528640,
+      "directory": "round-00/mixed-adjacent-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 8651625,
+      "cpu_seconds": 0.008487,
+      "peak_rss_bytes": 21020672,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20528,
+        "ru_minflt": 828,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0,
+        "ru_utime": 0.008487
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.718312+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "B",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-disjoint-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.719265+00:00",
+      "free_bytes_before": 5727644512256,
+      "directory": "round-01/mixed-disjoint-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6500374,
+      "cpu_seconds": 0.006356,
+      "peak_rss_bytes": 20758528,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20272,
+        "ru_minflt": 783,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.0,
+        "ru_utime": 0.006356
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.726583+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "C",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-disjoint-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.727177+00:00",
+      "free_bytes_before": 5727644491776,
+      "directory": "round-01/mixed-disjoint-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5739249,
+      "cpu_seconds": 0.005593,
+      "peak_rss_bytes": 20754432,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20268,
+        "ru_minflt": 787,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.001864,
+        "ru_utime": 0.0037289999999999997
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.733639+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "B",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-disjoint-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.734215+00:00",
+      "free_bytes_before": 5727644471296,
+      "directory": "round-01/mixed-disjoint-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10209957,
+      "cpu_seconds": 0.010058000000000001,
+      "peak_rss_bytes": 21225472,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20728,
+        "ru_minflt": 861,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.0020109999999999998,
+        "ru_utime": 0.008047
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.745509+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "C",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-disjoint-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.746038+00:00",
+      "free_bytes_before": 5727644291072,
+      "directory": "round-01/mixed-disjoint-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9615958,
+      "cpu_seconds": 0.009479,
+      "peak_rss_bytes": 21024768,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20532,
+        "ru_minflt": 852,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.0,
+        "ru_utime": 0.009479
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.756600+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.757348+00:00",
+      "free_bytes_before": 5727644114944,
+      "directory": "round-01/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 48499120,
+      "cpu_seconds": 0.048354999999999995,
+      "peak_rss_bytes": 26562560,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25940,
+        "ru_minflt": 1513,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.008059,
+        "ru_utime": 0.040296
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.809029+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.809602+00:00",
+      "free_bytes_before": 5727642357760,
+      "directory": "round-01/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 49017954,
+      "cpu_seconds": 0.048864,
+      "peak_rss_bytes": 26492928,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25872,
+        "ru_minflt": 1420,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.001994,
+        "ru_utime": 0.046869999999999995
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.861700+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "B",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-permuted-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.862316+00:00",
+      "free_bytes_before": 5727640596480,
+      "directory": "round-01/mixed-permuted-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6821416,
+      "cpu_seconds": 0.006685,
+      "peak_rss_bytes": 20873216,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20384,
+        "ru_minflt": 786,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.002865,
+        "ru_utime": 0.0038199999999999996
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.869792+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "C",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-permuted-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.870360+00:00",
+      "free_bytes_before": 5727640571904,
+      "directory": "round-01/mixed-permuted-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6884999,
+      "cpu_seconds": 0.006732,
+      "peak_rss_bytes": 20758528,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20272,
+        "ru_minflt": 790,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.001923,
+        "ru_utime": 0.004809
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.877900+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "B",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-overlap-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.878519+00:00",
+      "free_bytes_before": 5727640547328,
+      "directory": "round-01/mixed-overlap-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9626333,
+      "cpu_seconds": 0.009475,
+      "peak_rss_bytes": 20856832,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20368,
+        "ru_minflt": 829,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.002842,
+        "ru_utime": 0.006633
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.888797+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "C",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-overlap-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.889331+00:00",
+      "free_bytes_before": 5727640522752,
+      "directory": "round-01/mixed-overlap-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10579458,
+      "cpu_seconds": 0.010412,
+      "peak_rss_bytes": 20996096,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20504,
+        "ru_minflt": 824,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.004164999999999999,
+        "ru_utime": 0.006247
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.900640+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "B",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-adjacent-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.901324+00:00",
+      "free_bytes_before": 5727640514560,
+      "directory": "round-01/mixed-adjacent-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6107374,
+      "cpu_seconds": 0.005967,
+      "peak_rss_bytes": 20762624,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20276,
+        "ru_minflt": 783,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.001989,
+        "ru_utime": 0.003978
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.908091+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "C",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-adjacent-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.908860+00:00",
+      "free_bytes_before": 5727640506368,
+      "directory": "round-01/mixed-adjacent-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5985499,
+      "cpu_seconds": 0.00584,
+      "peak_rss_bytes": 20742144,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20256,
+        "ru_minflt": 785,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0035039999999999997,
+        "ru_utime": 0.002336
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.915508+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "B",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-adjacent-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.916123+00:00",
+      "free_bytes_before": 5727640494080,
+      "directory": "round-01/mixed-adjacent-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 8379957,
+      "cpu_seconds": 0.008202,
+      "peak_rss_bytes": 20897792,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20408,
+        "ru_minflt": 826,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0010249999999999999,
+        "ru_utime": 0.007176999999999999
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.925189+00:00"
+    },
+    {
+      "round": 1,
+      "variant": "C",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-01/mixed-adjacent-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.925660+00:00",
+      "free_bytes_before": 5727640485888,
+      "directory": "round-01/mixed-adjacent-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 8556874,
+      "cpu_seconds": 0.008424000000000001,
+      "peak_rss_bytes": 20992000,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20500,
+        "ru_minflt": 826,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.003744,
+        "ru_utime": 0.00468
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.934811+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "C",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-disjoint-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.935482+00:00",
+      "free_bytes_before": 5727640477696,
+      "directory": "round-02/mixed-disjoint-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10408416,
+      "cpu_seconds": 0.010266999999999998,
+      "peak_rss_bytes": 21016576,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20524,
+        "ru_minflt": 850,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.0020529999999999997,
+        "ru_utime": 0.008213999999999999
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.946884+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "B",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-disjoint-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:07.947452+00:00",
+      "free_bytes_before": 5727640297472,
+      "directory": "round-02/mixed-disjoint-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9965499,
+      "cpu_seconds": 0.009770000000000001,
+      "peak_rss_bytes": 21209088,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20712,
+        "ru_minflt": 861,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.001954,
+        "ru_utime": 0.007816
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:07.958389+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T03:57:07.958968+00:00",
+      "free_bytes_before": 5727640121344,
+      "directory": "round-02/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 50232620,
+      "cpu_seconds": 0.050073,
+      "peak_rss_bytes": 26460160,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25840,
+        "ru_minflt": 1425,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.0030039999999999997,
+        "ru_utime": 0.047069
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.011891+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.012443+00:00",
+      "free_bytes_before": 5727638364160,
+      "directory": "round-02/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 52908495,
+      "cpu_seconds": 0.052738999999999994,
+      "peak_rss_bytes": 26574848,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25952,
+        "ru_minflt": 1521,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.00199,
+        "ru_utime": 0.050748999999999996
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.069402+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "C",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-permuted-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.070234+00:00",
+      "free_bytes_before": 5727636606976,
+      "directory": "round-02/mixed-permuted-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6509374,
+      "cpu_seconds": 0.006334,
+      "peak_rss_bytes": 20746240,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20260,
+        "ru_minflt": 785,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.002111,
+        "ru_utime": 0.004223
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.077761+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "B",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-permuted-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.078469+00:00",
+      "free_bytes_before": 5727636578304,
+      "directory": "round-02/mixed-permuted-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6488041,
+      "cpu_seconds": 0.006259,
+      "peak_rss_bytes": 20729856,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20244,
+        "ru_minflt": 787,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.003577,
+        "ru_utime": 0.002682
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.085683+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "C",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-overlap-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.086383+00:00",
+      "free_bytes_before": 5727636553728,
+      "directory": "round-02/mixed-overlap-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10201916,
+      "cpu_seconds": 0.010058,
+      "peak_rss_bytes": 21004288,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20512,
+        "ru_minflt": 828,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0030169999999999997,
+        "ru_utime": 0.0070409999999999995
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.097375+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "B",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-overlap-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.097953+00:00",
+      "free_bytes_before": 5727636541440,
+      "directory": "round-02/mixed-overlap-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9200707,
+      "cpu_seconds": 0.009054,
+      "peak_rss_bytes": 20873216,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20384,
+        "ru_minflt": 825,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.002012,
+        "ru_utime": 0.007042
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.107829+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "C",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-adjacent-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.108437+00:00",
+      "free_bytes_before": 5727636529152,
+      "directory": "round-02/mixed-adjacent-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6196541,
+      "cpu_seconds": 0.006032999999999999,
+      "peak_rss_bytes": 20750336,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20264,
+        "ru_minflt": 785,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.001005,
+        "ru_utime": 0.0050279999999999995
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.115233+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "B",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-adjacent-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.115766+00:00",
+      "free_bytes_before": 5727636516864,
+      "directory": "round-02/mixed-adjacent-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5803207,
+      "cpu_seconds": 0.0056619999999999995,
+      "peak_rss_bytes": 20750336,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20264,
+        "ru_minflt": 784,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0028309999999999997,
+        "ru_utime": 0.0028309999999999997
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.122153+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "C",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-adjacent-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.122776+00:00",
+      "free_bytes_before": 5727636508672,
+      "directory": "round-02/mixed-adjacent-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 8333041,
+      "cpu_seconds": 0.008187,
+      "peak_rss_bytes": 20979712,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20488,
+        "ru_minflt": 826,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0018189999999999999,
+        "ru_utime": 0.0063679999999999995
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.131817+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "B",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-adjacent-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.132353+00:00",
+      "free_bytes_before": 5727636496384,
+      "directory": "round-02/mixed-adjacent-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 8665041,
+      "cpu_seconds": 0.008525,
+      "peak_rss_bytes": 20856832,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20368,
+        "ru_minflt": 827,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0018939999999999999,
+        "ru_utime": 0.006631
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.141678+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "C",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-disjoint-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.142292+00:00",
+      "free_bytes_before": 5727636488192,
+      "directory": "round-02/mixed-disjoint-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6332666,
+      "cpu_seconds": 0.00618,
+      "peak_rss_bytes": 20754432,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20268,
+        "ru_minflt": 786,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.0041199999999999995,
+        "ru_utime": 0.0020599999999999998
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.149243+00:00"
+    },
+    {
+      "round": 2,
+      "variant": "B",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-02/mixed-disjoint-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.149773+00:00",
+      "free_bytes_before": 5727634952192,
+      "directory": "round-02/mixed-disjoint-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6082707,
+      "cpu_seconds": 0.005931,
+      "peak_rss_bytes": 20750336,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20264,
+        "ru_minflt": 786,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.000988,
+        "ru_utime": 0.0049429999999999995
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.156505+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.157260+00:00",
+      "free_bytes_before": 5727634927616,
+      "directory": "round-03/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 55030162,
+      "cpu_seconds": 0.054856999999999996,
+      "peak_rss_bytes": 26628096,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 26004,
+        "ru_minflt": 1520,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.0039889999999999995,
+        "ru_utime": 0.050868
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.215413+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.216016+00:00",
+      "free_bytes_before": 5727633166336,
+      "directory": "round-03/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 50342704,
+      "cpu_seconds": 0.050183,
+      "peak_rss_bytes": 26492928,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25872,
+        "ru_minflt": 1420,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.002007,
+        "ru_utime": 0.048176
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.269281+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "B",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-permuted-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.269953+00:00",
+      "free_bytes_before": 5727631409152,
+      "directory": "round-03/mixed-permuted-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6432874,
+      "cpu_seconds": 0.006305999999999999,
+      "peak_rss_bytes": 20881408,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20392,
+        "ru_minflt": 785,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.0021019999999999997,
+        "ru_utime": 0.004203999999999999
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.277123+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "C",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-permuted-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.277624+00:00",
+      "free_bytes_before": 5727631380480,
+      "directory": "round-03/mixed-permuted-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6035041,
+      "cpu_seconds": 0.005918,
+      "peak_rss_bytes": 20746240,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20260,
+        "ru_minflt": 788,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.000986,
+        "ru_utime": 0.004932
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.284266+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "B",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-overlap-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.284863+00:00",
+      "free_bytes_before": 5727631355904,
+      "directory": "round-03/mixed-overlap-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9130874,
+      "cpu_seconds": 0.008985,
+      "peak_rss_bytes": 20987904,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20496,
+        "ru_minflt": 830,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0,
+        "ru_utime": 0.008985
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.294664+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "C",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-overlap-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.295276+00:00",
+      "free_bytes_before": 5727631347712,
+      "directory": "round-03/mixed-overlap-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9937416,
+      "cpu_seconds": 0.009774999999999999,
+      "peak_rss_bytes": 20992000,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20500,
+        "ru_minflt": 823,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0019549999999999997,
+        "ru_utime": 0.007819999999999999
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.305960+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "B",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-adjacent-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.306652+00:00",
+      "free_bytes_before": 5727631327232,
+      "directory": "round-03/mixed-adjacent-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 7312958,
+      "cpu_seconds": 0.00715,
+      "peak_rss_bytes": 20750336,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20264,
+        "ru_minflt": 783,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.002043,
+        "ru_utime": 0.0051069999999999996
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.314685+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "C",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-adjacent-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.315419+00:00",
+      "free_bytes_before": 5727631310848,
+      "directory": "round-03/mixed-adjacent-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6014333,
+      "cpu_seconds": 0.005872,
+      "peak_rss_bytes": 20750336,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20264,
+        "ru_minflt": 782,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.000978,
+        "ru_utime": 0.004894
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.322075+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "B",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-adjacent-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.322733+00:00",
+      "free_bytes_before": 5727631302656,
+      "directory": "round-03/mixed-adjacent-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9556291,
+      "cpu_seconds": 0.009382,
+      "peak_rss_bytes": 20844544,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20356,
+        "ru_minflt": 827,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.001042,
+        "ru_utime": 0.00834
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.333044+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "C",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-adjacent-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.333565+00:00",
+      "free_bytes_before": 5727631298560,
+      "directory": "round-03/mixed-adjacent-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9242999,
+      "cpu_seconds": 0.00909,
+      "peak_rss_bytes": 21135360,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20640,
+        "ru_minflt": 825,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.00202,
+        "ru_utime": 0.00707
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.343624+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "B",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-disjoint-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.344551+00:00",
+      "free_bytes_before": 5727631290368,
+      "directory": "round-03/mixed-disjoint-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6663833,
+      "cpu_seconds": 0.006493,
+      "peak_rss_bytes": 20758528,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20272,
+        "ru_minflt": 788,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.0037099999999999998,
+        "ru_utime": 0.002783
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.352005+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "C",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-disjoint-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.352647+00:00",
+      "free_bytes_before": 5727631265792,
+      "directory": "round-03/mixed-disjoint-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6845583,
+      "cpu_seconds": 0.0066949999999999996,
+      "peak_rss_bytes": 20750336,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20264,
+        "ru_minflt": 785,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.002869,
+        "ru_utime": 0.003826
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.360233+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "B",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-disjoint-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.360863+00:00",
+      "free_bytes_before": 5727631241216,
+      "directory": "round-03/mixed-disjoint-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 11236416,
+      "cpu_seconds": 0.011078,
+      "peak_rss_bytes": 21245952,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20748,
+        "ru_minflt": 854,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.0020139999999999997,
+        "ru_utime": 0.009064
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.373093+00:00"
+    },
+    {
+      "round": 3,
+      "variant": "C",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-03/mixed-disjoint-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.373634+00:00",
+      "free_bytes_before": 5727631060992,
+      "directory": "round-03/mixed-disjoint-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10932248,
+      "cpu_seconds": 0.010776999999999998,
+      "peak_rss_bytes": 21012480,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20520,
+        "ru_minflt": 853,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.001959,
+        "ru_utime": 0.008818
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.385501+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "C",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-permuted-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.386210+00:00",
+      "free_bytes_before": 5727630884864,
+      "directory": "round-04/mixed-permuted-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5960333,
+      "cpu_seconds": 0.0058059999999999995,
+      "peak_rss_bytes": 20746240,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20260,
+        "ru_minflt": 785,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.0029029999999999998,
+        "ru_utime": 0.0029029999999999998
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.392805+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "B",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-permuted-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.393409+00:00",
+      "free_bytes_before": 5727630856192,
+      "directory": "round-04/mixed-permuted-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6081624,
+      "cpu_seconds": 0.005946,
+      "peak_rss_bytes": 20738048,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20252,
+        "ru_minflt": 785,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.001982,
+        "ru_utime": 0.003964
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.400105+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "C",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-overlap-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.400916+00:00",
+      "free_bytes_before": 5727630831616,
+      "directory": "round-04/mixed-overlap-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 8958457,
+      "cpu_seconds": 0.008817,
+      "peak_rss_bytes": 20963328,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20472,
+        "ru_minflt": 828,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0,
+        "ru_utime": 0.008817
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.410502+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "B",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-overlap-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.410964+00:00",
+      "free_bytes_before": 5727630823424,
+      "directory": "round-04/mixed-overlap-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9637958,
+      "cpu_seconds": 0.009489999999999998,
+      "peak_rss_bytes": 20848640,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20360,
+        "ru_minflt": 830,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.006326999999999999,
+        "ru_utime": 0.003163
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.421250+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "C",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-adjacent-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.421895+00:00",
+      "free_bytes_before": 5727630811136,
+      "directory": "round-04/mixed-adjacent-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5666832,
+      "cpu_seconds": 0.005503999999999999,
+      "peak_rss_bytes": 20742144,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20256,
+        "ru_minflt": 782,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0,
+        "ru_utime": 0.005503999999999999
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.428134+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "B",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-adjacent-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.428705+00:00",
+      "free_bytes_before": 5727630802944,
+      "directory": "round-04/mixed-adjacent-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5674750,
+      "cpu_seconds": 0.005534,
+      "peak_rss_bytes": 20770816,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20284,
+        "ru_minflt": 784,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.002767,
+        "ru_utime": 0.002767
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.435038+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "C",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-adjacent-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.435591+00:00",
+      "free_bytes_before": 5727630794752,
+      "directory": "round-04/mixed-adjacent-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9665666,
+      "cpu_seconds": 0.009481999999999999,
+      "peak_rss_bytes": 20979712,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20488,
+        "ru_minflt": 827,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.003793,
+        "ru_utime": 0.005689
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.445999+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "B",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-adjacent-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.446561+00:00",
+      "free_bytes_before": 5727630782464,
+      "directory": "round-04/mixed-adjacent-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9722415,
+      "cpu_seconds": 0.009538,
+      "peak_rss_bytes": 20840448,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20352,
+        "ru_minflt": 830,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.004769,
+        "ru_utime": 0.004769
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.457051+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "C",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-disjoint-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.457835+00:00",
+      "free_bytes_before": 5727630774272,
+      "directory": "round-04/mixed-disjoint-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 7084999,
+      "cpu_seconds": 0.006852,
+      "peak_rss_bytes": 20754432,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20268,
+        "ru_minflt": 789,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.003426,
+        "ru_utime": 0.003426
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.465631+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "B",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-disjoint-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.467051+00:00",
+      "free_bytes_before": 5727630749696,
+      "directory": "round-04/mixed-disjoint-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 7229208,
+      "cpu_seconds": 0.006874,
+      "peak_rss_bytes": 20738048,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20252,
+        "ru_minflt": 786,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.003928,
+        "ru_utime": 0.002946
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.475251+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "C",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-disjoint-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.476349+00:00",
+      "free_bytes_before": 5727630725120,
+      "directory": "round-04/mixed-disjoint-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10932541,
+      "cpu_seconds": 0.010742,
+      "peak_rss_bytes": 21008384,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20516,
+        "ru_minflt": 854,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.0039059999999999997,
+        "ru_utime": 0.006836
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.488397+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "B",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-disjoint-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.488941+00:00",
+      "free_bytes_before": 5727630548992,
+      "directory": "round-04/mixed-disjoint-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9922332,
+      "cpu_seconds": 0.009766,
+      "peak_rss_bytes": 21229568,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20732,
+        "ru_minflt": 859,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.001085,
+        "ru_utime": 0.008681
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.499817+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.500434+00:00",
+      "free_bytes_before": 5727630372864,
+      "directory": "round-04/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 49537287,
+      "cpu_seconds": 0.049377,
+      "peak_rss_bytes": 26460160,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25840,
+        "ru_minflt": 1426,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.00403,
+        "ru_utime": 0.045347
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.552791+00:00"
+    },
+    {
+      "round": 4,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-04/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.553384+00:00",
+      "free_bytes_before": 5727628607488,
+      "directory": "round-04/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 49315953,
+      "cpu_seconds": 0.049149,
+      "peak_rss_bytes": 26497024,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25876,
+        "ru_minflt": 1521,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.0050149999999999995,
+        "ru_utime": 0.044134
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.605634+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "B",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-overlap-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.606394+00:00",
+      "free_bytes_before": 5727626850304,
+      "directory": "round-05/mixed-overlap-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9822332,
+      "cpu_seconds": 0.009661,
+      "peak_rss_bytes": 20856832,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20368,
+        "ru_minflt": 828,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.002898,
+        "ru_utime": 0.006763
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.616862+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "C",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-overlap-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.617366+00:00",
+      "free_bytes_before": 5727626842112,
+      "directory": "round-05/mixed-overlap-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9599750,
+      "cpu_seconds": 0.009429,
+      "peak_rss_bytes": 21127168,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20632,
+        "ru_minflt": 822,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.003143,
+        "ru_utime": 0.006286
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.627866+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "B",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-adjacent-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.628599+00:00",
+      "free_bytes_before": 5727626829824,
+      "directory": "round-05/mixed-adjacent-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5639083,
+      "cpu_seconds": 0.0055179999999999995,
+      "peak_rss_bytes": 20873216,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20384,
+        "ru_minflt": 788,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0027589999999999997,
+        "ru_utime": 0.0027589999999999997
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.634757+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "C",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-adjacent-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.635228+00:00",
+      "free_bytes_before": 5727626821632,
+      "directory": "round-05/mixed-adjacent-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5967916,
+      "cpu_seconds": 0.0058379999999999994,
+      "peak_rss_bytes": 20754432,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20268,
+        "ru_minflt": 786,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0019459999999999998,
+        "ru_utime": 0.0038919999999999996
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.641765+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "B",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-adjacent-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.642309+00:00",
+      "free_bytes_before": 5727626809344,
+      "directory": "round-05/mixed-adjacent-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 8651458,
+      "cpu_seconds": 0.008502,
+      "peak_rss_bytes": 20975616,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20484,
+        "ru_minflt": 829,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0021249999999999997,
+        "ru_utime": 0.006377
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.651599+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "C",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-adjacent-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.652099+00:00",
+      "free_bytes_before": 5727626797056,
+      "directory": "round-05/mixed-adjacent-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 8340583,
+      "cpu_seconds": 0.008173999999999999,
+      "peak_rss_bytes": 20975616,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20484,
+        "ru_minflt": 826,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.001021,
+        "ru_utime": 0.007153
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.661275+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "B",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-disjoint-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.662181+00:00",
+      "free_bytes_before": 5727626788864,
+      "directory": "round-05/mixed-disjoint-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6533374,
+      "cpu_seconds": 0.006338,
+      "peak_rss_bytes": 20762624,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20276,
+        "ru_minflt": 786,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 2,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.006338,
+        "ru_utime": 0.0
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.669536+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "C",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-disjoint-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.670062+00:00",
+      "free_bytes_before": 5727626768384,
+      "directory": "round-05/mixed-disjoint-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6611041,
+      "cpu_seconds": 0.006359999999999999,
+      "peak_rss_bytes": 20738048,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20252,
+        "ru_minflt": 787,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 29,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.0031799999999999997,
+        "ru_utime": 0.0031799999999999997
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.677507+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "B",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-disjoint-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.678338+00:00",
+      "free_bytes_before": 5727626747904,
+      "directory": "round-05/mixed-disjoint-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10914249,
+      "cpu_seconds": 0.010667999999999999,
+      "peak_rss_bytes": 21241856,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20744,
+        "ru_minflt": 854,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 1,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.001939,
+        "ru_utime": 0.008728999999999999
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.690265+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "C",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-disjoint-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.690856+00:00",
+      "free_bytes_before": 5727626567680,
+      "directory": "round-05/mixed-disjoint-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 10603707,
+      "cpu_seconds": 0.010412,
+      "peak_rss_bytes": 21114880,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20620,
+        "ru_minflt": 851,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.003123,
+        "ru_utime": 0.0072889999999999995
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.702550+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.703256+00:00",
+      "free_bytes_before": 5727626391552,
+      "directory": "round-05/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 51126412,
+      "cpu_seconds": 0.05096,
+      "peak_rss_bytes": 26599424,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25976,
+        "ru_minflt": 1517,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.0059949999999999995,
+        "ru_utime": 0.044965
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.759378+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.760142+00:00",
+      "free_bytes_before": 5727624630272,
+      "directory": "round-05/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 48967954,
+      "cpu_seconds": 0.048807,
+      "peak_rss_bytes": 26464256,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25844,
+        "ru_minflt": 1424,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.0059759999999999995,
+        "ru_utime": 0.042831
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.811980+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "B",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-permuted-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.812680+00:00",
+      "free_bytes_before": 5727622860800,
+      "directory": "round-05/mixed-permuted-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5832082,
+      "cpu_seconds": 0.005665,
+      "peak_rss_bytes": 20754432,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20268,
+        "ru_minflt": 787,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.001888,
+        "ru_utime": 0.003777
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.819156+00:00"
+    },
+    {
+      "round": 5,
+      "variant": "C",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "B",
+        "C"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-05/mixed-permuted-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.819660+00:00",
+      "free_bytes_before": 5727622836224,
+      "directory": "round-05/mixed-permuted-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6104374,
+      "cpu_seconds": 0.005947999999999999,
+      "peak_rss_bytes": 20750336,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20264,
+        "ru_minflt": 786,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.000991,
+        "ru_utime": 0.004957
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.826430+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "C",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-adjacent-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.827178+00:00",
+      "free_bytes_before": 5727622811648,
+      "directory": "round-06/mixed-adjacent-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5743749,
+      "cpu_seconds": 0.005607,
+      "peak_rss_bytes": 20881408,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20392,
+        "ru_minflt": 783,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.003738,
+        "ru_utime": 0.001869
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.833673+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "B",
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-adjacent-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.834145+00:00",
+      "free_bytes_before": 5727622799360,
+      "directory": "round-06/mixed-adjacent-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5560832,
+      "cpu_seconds": 0.005422,
+      "peak_rss_bytes": 20766720,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20280,
+        "ru_minflt": 784,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.002169,
+        "ru_utime": 0.003253
+      },
+      "stdout_sha256": "f96c95b5a8965b9e9926776b695e805a2fa655a90f275427548b170d77d751f3",
+      "stdout_bytes": 179,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.840360+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "C",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-adjacent-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.840994+00:00",
+      "free_bytes_before": 5727622791168,
+      "directory": "round-06/mixed-adjacent-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 8899666,
+      "cpu_seconds": 0.008754999999999999,
+      "peak_rss_bytes": 21127168,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20632,
+        "ru_minflt": 828,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.001094,
+        "ru_utime": 0.007660999999999999
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.850520+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "B",
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-adjacent-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-adjacent-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.850963+00:00",
+      "free_bytes_before": 5727622782976,
+      "directory": "round-06/mixed-adjacent-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 8680290,
+      "cpu_seconds": 0.008535,
+      "peak_rss_bytes": 20860928,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20372,
+        "ru_minflt": 828,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.0,
+        "ru_utime": 0.008535
+      },
+      "stdout_sha256": "cdf82e1048acb286e43712107f74d8522907bf95156cd44f664294db78c72b9c",
+      "stdout_bytes": 152,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.860349+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "C",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-disjoint-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.861066+00:00",
+      "free_bytes_before": 5727622770688,
+      "directory": "round-06/mixed-disjoint-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5724541,
+      "cpu_seconds": 0.005581,
+      "peak_rss_bytes": 20754432,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20268,
+        "ru_minflt": 786,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.0018599999999999999,
+        "ru_utime": 0.003721
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.867645+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "B",
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-disjoint-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.868196+00:00",
+      "free_bytes_before": 5727622746112,
+      "directory": "round-06/mixed-disjoint-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 7165874,
+      "cpu_seconds": 0.00699,
+      "peak_rss_bytes": 20742144,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20256,
+        "ru_minflt": 786,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 31,
+        "ru_stime": 0.001997,
+        "ru_utime": 0.004993
+      },
+      "stdout_sha256": "f24c83bc54d42887aecb1c2292decf62231fc2ac33948264014ddd8232c9f097",
+      "stdout_bytes": 16140,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.876156+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "C",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-disjoint-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.876958+00:00",
+      "free_bytes_before": 5727622721536,
+      "directory": "round-06/mixed-disjoint-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 11052290,
+      "cpu_seconds": 0.01089,
+      "peak_rss_bytes": 21028864,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20536,
+        "ru_minflt": 850,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.00396,
+        "ru_utime": 0.0069299999999999995
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.889346+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "B",
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-disjoint-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.889951+00:00",
+      "free_bytes_before": 5727622545408,
+      "directory": "round-06/mixed-disjoint-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 11167124,
+      "cpu_seconds": 0.010981999999999999,
+      "peak_rss_bytes": 21225472,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20728,
+        "ru_minflt": 858,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 331,
+        "ru_stime": 0.002995,
+        "ru_utime": 0.007987
+      },
+      "stdout_sha256": "ca36ed4822dc1c9125e7c2453588c6c0e9a95395f719ae345063b338c3c8ab84",
+      "stdout_bytes": 169981,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.902275+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "C",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-disjoint-100000/C"
+      },
+      "started_at": "2026-11-16T03:57:08.902930+00:00",
+      "free_bytes_before": 5727622365184,
+      "directory": "round-06/mixed-disjoint-100000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 48840995,
+      "cpu_seconds": 0.048618999999999996,
+      "peak_rss_bytes": 26529792,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25908,
+        "ru_minflt": 1426,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.003038,
+        "ru_utime": 0.045580999999999997
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:08.954895+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "B",
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-disjoint-100000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-disjoint-100000/B"
+      },
+      "started_at": "2026-11-16T03:57:08.955514+00:00",
+      "free_bytes_before": 5727620608000,
+      "directory": "round-06/mixed-disjoint-100000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 49261787,
+      "cpu_seconds": 0.049098,
+      "peak_rss_bytes": 26570752,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 25948,
+        "ru_minflt": 1512,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 3420,
+        "ru_stime": 0.003006,
+        "ru_utime": 0.046092
+      },
+      "stdout_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "stdout_bytes": 1751137,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:09.007413+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "C",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-permuted-1000/C"
+      },
+      "started_at": "2026-11-16T03:57:09.008152+00:00",
+      "free_bytes_before": 5727618838528,
+      "directory": "round-06/mixed-permuted-1000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 6261792,
+      "cpu_seconds": 0.006097,
+      "peak_rss_bytes": 20877312,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20388,
+        "ru_minflt": 789,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.004065,
+        "ru_utime": 0.002032
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:09.015045+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "B",
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-permuted-1000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-permuted-1000/B"
+      },
+      "started_at": "2026-11-16T03:57:09.015524+00:00",
+      "free_bytes_before": 5727618809856,
+      "directory": "round-06/mixed-permuted-1000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 5505666,
+      "cpu_seconds": 0.005362,
+      "peak_rss_bytes": 20746240,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20260,
+        "ru_minflt": 785,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 34,
+        "ru_stime": 0.002681,
+        "ru_utime": 0.002681
+      },
+      "stdout_sha256": "d913bd19461a2692cf2942863ad9339330c871211a3fd03e92f53f1080ce1dd4",
+      "stdout_bytes": 17869,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:09.021624+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "C",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/C",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-overlap-10000/C"
+      },
+      "started_at": "2026-11-16T03:57:09.022210+00:00",
+      "free_bytes_before": 5727618785280,
+      "directory": "round-06/mixed-overlap-10000/C",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9091833,
+      "cpu_seconds": 0.008937,
+      "peak_rss_bytes": 20987904,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20496,
+        "ru_minflt": 828,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.003972,
+        "ru_utime": 0.004965
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:09.032085+00:00"
+    },
+    {
+      "round": 6,
+      "variant": "B",
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "order": [
+        "C",
+        "B"
+      ],
+      "command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "actual_command": [
+        "/validation/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "/validation/followups/regressions-scale-01/fixtures/mixed-overlap-10000/input.txt"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC",
+        "LD_LIBRARY_PATH": "/usr/lib/swift/linux",
+        "TMPDIR": "/validation/followups/regressions-scale-01/measurements/round-06/mixed-overlap-10000/B"
+      },
+      "started_at": "2026-11-16T03:57:09.032601+00:00",
+      "free_bytes_before": 5727618777088,
+      "directory": "round-06/mixed-overlap-10000/B",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_ns": 9323124,
+      "cpu_seconds": 0.009166,
+      "peak_rss_bytes": 20975616,
+      "resources": {
+        "ru_idrss": 0,
+        "ru_inblock": 0,
+        "ru_isrss": 0,
+        "ru_ixrss": 0,
+        "ru_majflt": 0,
+        "ru_maxrss": 20484,
+        "ru_minflt": 830,
+        "ru_msgrcv": 0,
+        "ru_msgsnd": 0,
+        "ru_nivcsw": 0,
+        "ru_nsignals": 0,
+        "ru_nswap": 0,
+        "ru_nvcsw": 1,
+        "ru_oublock": 0,
+        "ru_stime": 0.003055,
+        "ru_utime": 0.006111
+      },
+      "stdout_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "stdout_bytes": 25,
+      "stderr_bytes": 0,
+      "finished_at": "2026-11-16T03:57:09.042539+00:00"
+    }
+  ],
+  "comparisons": [
+    {
+      "case": "mixed-disjoint-1000",
+      "entries": 1000,
+      "pairs": [
+        {
+          "round": 1,
+          "elapsed_change_pct": -11.708941670125439,
+          "rss_change_pct": -0.019731649565901677
+        },
+        {
+          "round": 2,
+          "elapsed_change_pct": 4.109338161446874,
+          "rss_change_pct": 0.019739439399923953
+        },
+        {
+          "round": 3,
+          "elapsed_change_pct": 2.7274092853167176,
+          "rss_change_pct": -0.03946329913180335
+        },
+        {
+          "round": 4,
+          "elapsed_change_pct": -1.994810496530186,
+          "rss_change_pct": 0.07900454276121849
+        },
+        {
+          "round": 5,
+          "elapsed_change_pct": 1.188773212738159,
+          "rss_change_pct": -0.11836654172420191
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": -20.113847940949004,
+          "rss_change_pct": 0.05924170616113944
+        }
+      ],
+      "elapsed_change_pct": {
+        "median": -0.40301864189601355,
+        "min": -20.113847940949004,
+        "max": 4.109338161446874
+      },
+      "rss_change_pct": {
+        "median": 3.894917011137977e-06,
+        "min": -0.11836654172420191,
+        "max": 0.07900454276121849
+      },
+      "B": {
+        "elapsed_ns": 6598603.5,
+        "cpu_seconds": 0.0064245,
+        "peak_rss_bytes": 20754432.0
+      },
+      "C": {
+        "elapsed_ns": 6471853.5,
+        "cpu_seconds": 0.0062699999999999995,
+        "peak_rss_bytes": 20754432.0
+      }
+    },
+    {
+      "case": "mixed-disjoint-10000",
+      "entries": 10000,
+      "pairs": [
+        {
+          "round": 1,
+          "elapsed_change_pct": -5.81784036896531,
+          "rss_change_pct": -0.945580856812045
+        },
+        {
+          "round": 2,
+          "elapsed_change_pct": 4.444503983192405,
+          "rss_change_pct": -0.9076863653920464
+        },
+        {
+          "round": 3,
+          "elapsed_change_pct": -2.70698414868229,
+          "rss_change_pct": -1.098901098901095
+        },
+        {
+          "round": 4,
+          "elapsed_change_pct": 10.18116507288811,
+          "rss_change_pct": -1.0418676442214947
+        },
+        {
+          "round": 5,
+          "elapsed_change_pct": -2.8452896759089907,
+          "rss_change_pct": -0.5977632086386464
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": -1.0283220639441315,
+          "rss_change_pct": -0.9262832883056737
+        }
+      ],
+      "elapsed_change_pct": {
+        "median": -1.8676531063132107,
+        "min": -5.81784036896531,
+        "max": 10.18116507288811
+      },
+      "rss_change_pct": {
+        "median": -0.9359320725588594,
+        "min": -1.098901098901095,
+        "max": -0.5977632086386464
+      },
+      "B": {
+        "elapsed_ns": 10562103.0,
+        "cpu_seconds": 0.010363,
+        "peak_rss_bytes": 21227520.0
+      },
+      "C": {
+        "elapsed_ns": 10767977.5,
+        "cpu_seconds": 0.010577,
+        "peak_rss_bytes": 21020672.0
+      }
+    },
+    {
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "pairs": [
+        {
+          "round": 1,
+          "elapsed_change_pct": 1.0697802351877783,
+          "rss_change_pct": -0.26214340786430146
+        },
+        {
+          "round": 2,
+          "elapsed_change_pct": -5.05755266710951,
+          "rss_change_pct": -0.4315659679408168
+        },
+        {
+          "round": 3,
+          "elapsed_change_pct": -8.517979649051366,
+          "rss_change_pct": -0.5076142131979711
+        },
+        {
+          "round": 4,
+          "elapsed_change_pct": 0.44880811691907496,
+          "rss_change_pct": -0.13912505796876973
+        },
+        {
+          "round": 5,
+          "elapsed_change_pct": -4.2218061380876915,
+          "rss_change_pct": -0.5081613797351392
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": -0.8541955654186917,
+          "rss_change_pct": -0.15415446277169398
+        }
+      ],
+      "elapsed_change_pct": {
+        "median": -2.538000851753192,
+        "min": -8.517979649051366,
+        "max": 1.0697802351877783
+      },
+      "rss_change_pct": {
+        "median": -0.34685468790255913,
+        "min": -0.5081613797351392,
+        "max": -0.13912505796876973
+      },
+      "B": {
+        "elapsed_ns": 50221182.5,
+        "cpu_seconds": 0.0500545,
+        "peak_rss_bytes": 26572800.0
+      },
+      "C": {
+        "elapsed_ns": 49277620.5,
+        "cpu_seconds": 0.0491205,
+        "peak_rss_bytes": 26478592.0
+      }
+    },
+    {
+      "case": "mixed-permuted-1000",
+      "entries": 1000,
+      "pairs": [
+        {
+          "round": 1,
+          "elapsed_change_pct": 0.9321085240952875,
+          "rss_change_pct": -0.5494505494505475
+        },
+        {
+          "round": 2,
+          "elapsed_change_pct": 0.3288049505235868,
+          "rss_change_pct": 0.0790357636830663
+        },
+        {
+          "round": 3,
+          "elapsed_change_pct": -6.184374200396281,
+          "rss_change_pct": -0.6473126716359356
+        },
+        {
+          "round": 4,
+          "elapsed_change_pct": -1.9943850524136275,
+          "rss_change_pct": 0.039502271380609244
+        },
+        {
+          "round": 5,
+          "elapsed_change_pct": 4.668864395253691,
+          "rss_change_pct": -0.0197355437142277
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": 13.733597352254922,
+          "rss_change_pct": 0.631786771964471
+        }
+      ],
+      "elapsed_change_pct": {
+        "median": 0.6304567373094372,
+        "min": -6.184374200396281,
+        "max": 13.733597352254922
+      },
+      "rss_change_pct": {
+        "median": 0.009883363833190772,
+        "min": -0.6473126716359356,
+        "max": 0.631786771964471
+      },
+      "B": {
+        "elapsed_ns": 6257249.0,
+        "cpu_seconds": 0.0061025,
+        "peak_rss_bytes": 20750336.0
+      },
+      "C": {
+        "elapsed_ns": 6183083.0,
+        "cpu_seconds": 0.0060225,
+        "peak_rss_bytes": 20748288.0
+      }
+    },
+    {
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "pairs": [
+        {
+          "round": 1,
+          "elapsed_change_pct": 9.90122614706972,
+          "rss_change_pct": 0.6677140612725951
+        },
+        {
+          "round": 2,
+          "elapsed_change_pct": 10.881870273664829,
+          "rss_change_pct": 0.6279434850863463
+        },
+        {
+          "round": 3,
+          "elapsed_change_pct": 8.8331303224642,
+          "rss_change_pct": 0.01951600312255497
+        },
+        {
+          "round": 4,
+          "elapsed_change_pct": -7.050258986395253,
+          "rss_change_pct": 0.550098231827123
+        },
+        {
+          "round": 5,
+          "elapsed_change_pct": -2.2660810080538885,
+          "rss_change_pct": 1.2961508248232612
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": -2.480831532434835,
+          "rss_change_pct": 0.05858230814295151
+        }
+      ],
+      "elapsed_change_pct": {
+        "median": 3.283524657205156,
+        "min": -7.050258986395253,
+        "max": 10.881870273664829
+      },
+      "rss_change_pct": {
+        "median": 0.5890208584567347,
+        "min": 0.01951600312255497,
+        "max": 1.2961508248232612
+      },
+      "B": {
+        "elapsed_ns": 9474728.5,
+        "cpu_seconds": 0.0093205,
+        "peak_rss_bytes": 20865024.0
+      },
+      "C": {
+        "elapsed_ns": 9768583.0,
+        "cpu_seconds": 0.009602,
+        "peak_rss_bytes": 20994048.0
+      }
+    },
+    {
+      "case": "mixed-adjacent-1000",
+      "entries": 1000,
+      "pairs": [
+        {
+          "round": 1,
+          "elapsed_change_pct": -1.9955385080396293,
+          "rss_change_pct": -0.09863878477016641
+        },
+        {
+          "round": 2,
+          "elapsed_change_pct": 6.77787299332937,
+          "rss_change_pct": 0.0
+        },
+        {
+          "round": 3,
+          "elapsed_change_pct": -17.757862140053316,
+          "rss_change_pct": 0.0
+        },
+        {
+          "round": 4,
+          "elapsed_change_pct": -0.13953037578747773,
+          "rss_change_pct": -0.13803983435219935
+        },
+        {
+          "round": 5,
+          "elapsed_change_pct": 5.831320446959198,
+          "rss_change_pct": -0.5690737833594972
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": 3.2893818766688065,
+          "rss_change_pct": 0.5522682445759264
+        }
+      ],
+      "elapsed_change_pct": {
+        "median": 1.5749257504406644,
+        "min": -17.757862140053316,
+        "max": 6.77787299332937
+      },
+      "rss_change_pct": {
+        "median": -0.049319392385083205,
+        "min": -0.5690737833594972,
+        "max": 0.5522682445759264
+      },
+      "B": {
+        "elapsed_ns": 5738978.5,
+        "cpu_seconds": 0.005598,
+        "peak_rss_bytes": 20764672.0
+      },
+      "C": {
+        "elapsed_ns": 5976707.5,
+        "cpu_seconds": 0.005839,
+        "peak_rss_bytes": 20750336.0
+      }
+    },
+    {
+      "case": "mixed-adjacent-10000",
+      "entries": 10000,
+      "pairs": [
+        {
+          "round": 1,
+          "elapsed_change_pct": 2.1111922173347564,
+          "rss_change_pct": 0.4508036064288623
+        },
+        {
+          "round": 2,
+          "elapsed_change_pct": -3.831487929485855,
+          "rss_change_pct": 0.5891594658287591
+        },
+        {
+          "round": 3,
+          "elapsed_change_pct": -3.2783848880282074,
+          "rss_change_pct": 1.3951660444095015
+        },
+        {
+          "round": 4,
+          "elapsed_change_pct": -0.5836924262130339,
+          "rss_change_pct": 0.6682389937106903
+        },
+        {
+          "round": 5,
+          "elapsed_change_pct": -3.5933249632605246,
+          "rss_change_pct": 0.0
+        },
+        {
+          "round": 6,
+          "elapsed_change_pct": 2.5272888348200295,
+          "rss_change_pct": 1.2762615354408036
+        }
+      ],
+      "elapsed_change_pct": {
+        "median": -1.9310386571206206,
+        "min": -3.831487929485855,
+        "max": 2.5272888348200295
+      },
+      "rss_change_pct": {
+        "median": 0.6286992297697247,
+        "min": 0.0,
+        "max": 1.3951660444095015
+      },
+      "B": {
+        "elapsed_ns": 8672665.5,
+        "cpu_seconds": 0.00853,
+        "peak_rss_bytes": 20858880.0
+      },
+      "C": {
+        "elapsed_ns": 8728270.0,
+        "cpu_seconds": 0.0085895,
+        "peak_rss_bytes": 20985856.0
+      }
+    }
+  ],
+  "measured_samples": 84,
+  "excluded_warmups": 14,
+  "frozen_files_unchanged": true,
+  "finished_at": "2026-11-16T03:57:09.117726+00:00"
+}

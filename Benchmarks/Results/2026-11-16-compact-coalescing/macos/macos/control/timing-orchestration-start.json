@@ -1,0 +1,13 @@
+{
+  "started_at": "2026-11-16T03:51:29.483710+00:00",
+  "bindings": {
+    "control/orchestrate_macos_timing.py": "2dbfac2adea3d8edafec3aa30efc83081a01888ed7adfda7931f707d300948fa",
+    "control/scale_bench.py": "eec91e6d974e5d8ed44994b4665639dd9f4256a5d66887612fcee63627fc76a2",
+    "control/mac_followup.py": "908ed6c7ec07f41469f93366005248516133d205a4e24054d4a4de6719a93a5e",
+    "macos/control/run_matched.py": "4c51efca113d29942dba8c605262ade53095415315f7326f449da2483f177d9a",
+    "macos/control/pre-benchmark-freeze.json": "55ad3c539dd97553dffbe37aae00d0f9ab556b9e94d5dd56b26c7936521c4cff",
+    "scale/reference.json": "7bb293dc1d39510fd9d2ebb82ed08e0d0f8c9825ba4b522257393b65262b6246",
+    "sparse/reference.json": "e55c759160d197f233b7ce7175d3cf455a64dac152e7b56ad27ee15f20533e7d"
+  },
+  "selection": "All cases with any individual elapsed/RSS pair above +5%; fixed six pairs with excluded warmup. No recursive follow-ups or pooling."
+}

@@ -1,0 +1,32 @@
+{
+  "compiler": "Swift version 6.2.4 (swift-6.2.4-RELEASE)\nTarget: aarch64-unknown-linux-gnu\n",
+  "target_info": {
+    "compilerVersion": "Swift version 6.2.4 (swift-6.2.4-RELEASE)",
+    "swiftCompilerTag": "swift-6.2.4-RELEASE",
+    "target": {
+      "triple": "aarch64-unknown-linux-gnu",
+      "unversionedTriple": "aarch64-unknown-linux-gnu",
+      "moduleTriple": "aarch64-unknown-linux-gnu",
+      "platform": "linux",
+      "arch": "aarch64",
+      "pointerWidthInBits": 64,
+      "pointerWidthInBytes": 8,
+      "compatibilityLibraries": [],
+      "openbsdBTCFIEnabled": false,
+      "librariesRequireRPath": false
+    },
+    "paths": {
+      "runtimeLibraryPaths": [
+        "/usr/lib/swift/linux"
+      ],
+      "runtimeLibraryImportPaths": [
+        "/usr/lib/swift/linux",
+        "/usr/lib/swift/linux/aarch64"
+      ],
+      "runtimeResourcePath": "/usr/lib/swift"
+    }
+  },
+  "libswiftCore_sha256": {
+    "/usr/lib/swift/linux/libswiftCore.so": "8fdbbfbf6cda36870e97fe46af2bf21eff39253d97e878aaae003f5be0127f92"
+  }
+}

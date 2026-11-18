@@ -1,0 +1,16 @@
+{
+  "swift": "/usr/bin/swift",
+  "jobs": 8,
+  "platform_label": "native ARM64 Linux OrbStack",
+  "expected_tests": {
+    "B": {
+      "upstream": 298,
+      "cli": 72
+    },
+    "C": {
+      "upstream": 302,
+      "cli": 72
+    }
+  },
+  "require_codegen_gate": true
+}

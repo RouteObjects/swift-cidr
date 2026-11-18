@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "at": "2026-11-15T23:11:26.455198+00:00",
+  "free_bytes": 3517235200,
+  "conservative_required_free_bytes": 3419146607,
+  "minimum_free_bytes": 3221225472,
+  "unique_primary_bytes": 94014299,
+  "unique_scale_bytes": 3920712,
+  "largest_whole_sample_temporary_bytes": 21342471,
+  "maximum_followup_fixture_copy_bytes": 11534789,
+  "metadata_margin_bytes": 67108864,
+  "task_workers": [],
+  "storage": "Only new verified completed stdout files share readonly content; all per-process paths and bytes preserved",
+  "old_cache_cleanup_executed": false
+}

@@ -1,0 +1,7 @@
+{
+  "finished_at": "2026-11-15T22:31:28.986137+00:00",
+  "error": "RuntimeError('B/ipv4-disjoint: nonzero exit or unexpected stderr')",
+  "completed_measured_samples": 0,
+  "completed_warmup_samples": 0,
+  "no_retry_performed": true
+}

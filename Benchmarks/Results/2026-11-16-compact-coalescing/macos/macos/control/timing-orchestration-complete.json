@@ -1,0 +1,301 @@
+{
+  "passed": true,
+  "completed_at": "2026-11-16T03:53:15.755536+00:00",
+  "bindings": {
+    "control/orchestrate_macos_timing.py": "2dbfac2adea3d8edafec3aa30efc83081a01888ed7adfda7931f707d300948fa",
+    "control/scale_bench.py": "eec91e6d974e5d8ed44994b4665639dd9f4256a5d66887612fcee63627fc76a2",
+    "control/mac_followup.py": "908ed6c7ec07f41469f93366005248516133d205a4e24054d4a4de6719a93a5e",
+    "macos/control/run_matched.py": "4c51efca113d29942dba8c605262ade53095415315f7326f449da2483f177d9a",
+    "macos/control/pre-benchmark-freeze.json": "55ad3c539dd97553dffbe37aae00d0f9ab556b9e94d5dd56b26c7936521c4cff",
+    "scale/reference.json": "7bb293dc1d39510fd9d2ebb82ed08e0d0f8c9825ba4b522257393b65262b6246",
+    "sparse/reference.json": "e55c759160d197f233b7ce7175d3cf455a64dac152e7b56ad27ee15f20533e7d"
+  },
+  "selected_followups": {
+    "primary": [
+      {
+        "suite": "split",
+        "case": "mixed-permuted",
+        "pairs_over_5pct": [
+          {
+            "round": 2,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 5.587830545149641,
+            "rss_change_pct": 0.0,
+            "elapsed_difference_s": 0.027028334,
+            "rss_difference_mib": 0.0
+          },
+          {
+            "round": 4,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 5.510698400699177,
+            "rss_change_pct": 0.0,
+            "elapsed_difference_s": 0.027478124,
+            "rss_difference_mib": 0.0
+          }
+        ]
+      },
+      {
+        "suite": "split",
+        "case": "bgp-like-ipv4",
+        "pairs_over_5pct": [
+          {
+            "round": 4,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": -0.6738770778390135,
+            "rss_change_pct": 6.025697828976528,
+            "elapsed_difference_s": -0.002451749,
+            "rss_difference_mib": 2.125
+          }
+        ]
+      },
+      {
+        "suite": "native",
+        "case": "mixed-disjoint",
+        "pairs_over_5pct": [
+          {
+            "round": 1,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 29.37972542177367,
+            "rss_change_pct": -1.8165440624530849,
+            "elapsed_difference_s": 0.105673792,
+            "rss_difference_mib": -1.890625
+          },
+          {
+            "round": 5,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 5.066372327545232,
+            "rss_change_pct": -1.0435571687840262,
+            "elapsed_difference_s": 0.018287833,
+            "rss_difference_mib": -1.078125
+          }
+        ]
+      },
+      {
+        "suite": "native",
+        "case": "mixed-permuted",
+        "pairs_over_5pct": [
+          {
+            "round": 1,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 6.564698468858854,
+            "rss_change_pct": 0.3314750640349473,
+            "elapsed_difference_s": 0.029931584,
+            "rss_difference_mib": 0.34375
+          }
+        ]
+      }
+    ],
+    "scale": [
+      {
+        "case": "mixed-disjoint-1000",
+        "pairs_over_5pct": [
+          {
+            "round": 1,
+            "elapsed_change_pct": 9.775721588696351,
+            "rss_change_pct": -0.4444444444444473
+          },
+          {
+            "round": 6,
+            "elapsed_change_pct": 6.834847555843271,
+            "rss_change_pct": -0.8830022075055233
+          }
+        ]
+      },
+      {
+        "case": "mixed-disjoint-10000",
+        "pairs_over_5pct": [
+          {
+            "round": 3,
+            "elapsed_change_pct": 6.555824639841035,
+            "rss_change_pct": -0.39215686274509665
+          },
+          {
+            "round": 6,
+            "elapsed_change_pct": 12.61490541448449,
+            "rss_change_pct": -2.1526418786692814
+          }
+        ]
+      },
+      {
+        "case": "mixed-disjoint-100000",
+        "pairs_over_5pct": [
+          {
+            "round": 1,
+            "elapsed_change_pct": 6.64592408401905,
+            "rss_change_pct": 2.5432349949135347
+          },
+          {
+            "round": 3,
+            "elapsed_change_pct": 2.012144151869122,
+            "rss_change_pct": 14.867617107942976
+          }
+        ]
+      },
+      {
+        "case": "mixed-permuted-1000",
+        "pairs_over_5pct": [
+          {
+            "round": 4,
+            "elapsed_change_pct": 7.474132470049866,
+            "rss_change_pct": -1.106194690265483
+          }
+        ]
+      },
+      {
+        "case": "mixed-permuted-10000",
+        "pairs_over_5pct": [
+          {
+            "round": 1,
+            "elapsed_change_pct": 6.559361799755714,
+            "rss_change_pct": 0.20080321285140812
+          }
+        ]
+      },
+      {
+        "case": "mixed-permuted-100000",
+        "pairs_over_5pct": [
+          {
+            "round": 3,
+            "elapsed_change_pct": 47.491693676124754,
+            "rss_change_pct": 3.737373737373728
+          }
+        ]
+      },
+      {
+        "case": "mixed-overlap-1000",
+        "pairs_over_5pct": [
+          {
+            "round": 4,
+            "elapsed_change_pct": 8.15683473627351,
+            "rss_change_pct": -0.6726457399103158
+          }
+        ]
+      },
+      {
+        "case": "mixed-overlap-10000",
+        "pairs_over_5pct": [
+          {
+            "round": 2,
+            "elapsed_change_pct": 7.41900799401618,
+            "rss_change_pct": -0.40567951318458695
+          },
+          {
+            "round": 5,
+            "elapsed_change_pct": 6.592111206977891,
+            "rss_change_pct": -1.0224948875255602
+          },
+          {
+            "round": 6,
+            "elapsed_change_pct": 6.6915187975126855,
+            "rss_change_pct": -1.0288065843621408
+          }
+        ]
+      },
+      {
+        "case": "mixed-overlap-100000",
+        "pairs_over_5pct": [
+          {
+            "round": 2,
+            "elapsed_change_pct": -1.1299709819704185,
+            "rss_change_pct": 8.098591549295776
+          },
+          {
+            "round": 3,
+            "elapsed_change_pct": 2.052114085054013,
+            "rss_change_pct": 9.787735849056611
+          },
+          {
+            "round": 5,
+            "elapsed_change_pct": 1.3396332637772623,
+            "rss_change_pct": 7.9903147699757815
+          }
+        ]
+      },
+      {
+        "case": "mixed-adjacent-1000",
+        "pairs_over_5pct": [
+          {
+            "round": 4,
+            "elapsed_change_pct": 33.25417390405128,
+            "rss_change_pct": -1.3303769401330379
+          },
+          {
+            "round": 5,
+            "elapsed_change_pct": 7.429837096866265,
+            "rss_change_pct": -1.118568232662187
+          }
+        ]
+      },
+      {
+        "case": "mixed-adjacent-10000",
+        "pairs_over_5pct": [
+          {
+            "round": 1,
+            "elapsed_change_pct": 10.752834621539709,
+            "rss_change_pct": -0.8048289738430636
+          },
+          {
+            "round": 6,
+            "elapsed_change_pct": 5.6600518148658185,
+            "rss_change_pct": -1.2048192771084376
+          }
+        ]
+      },
+      {
+        "case": "mixed-adjacent-100000",
+        "pairs_over_5pct": [
+          {
+            "round": 2,
+            "elapsed_change_pct": 6.9341022379378,
+            "rss_change_pct": -5.371428571428572
+          },
+          {
+            "round": 4,
+            "elapsed_change_pct": 2.0104413071575955,
+            "rss_change_pct": 5.454545454545445
+          },
+          {
+            "round": 6,
+            "elapsed_change_pct": -4.787220931689173,
+            "rss_change_pct": 5.562273276904484
+          }
+        ]
+      }
+    ],
+    "sparse": [
+      {
+        "case": "mixed-sparse-duplicate-10000",
+        "pairs_over_5pct": [
+          {
+            "round": 4,
+            "elapsed_change_pct": 12.343055325494978,
+            "rss_change_pct": -0.20080321285140812
+          },
+          {
+            "round": 5,
+            "elapsed_change_pct": 5.334060566808008,
+            "rss_change_pct": -0.4008016032064132
+          }
+        ]
+      }
+    ]
+  }
+}

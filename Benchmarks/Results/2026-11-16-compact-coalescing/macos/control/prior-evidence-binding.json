@@ -1,0 +1,10 @@
+{
+  "previous_root": "$DOWNLOADS/cidrmerge-inplace-coalescing-20261115T221013Z",
+  "previous_main_report_sha256": "ea82f8bf0f5a2dbd11240f4fc7ecda62af14473b909aefc8844ae846d9637796",
+  "previous_production_patch_sha256": "ba8bd486eabaa4ea4bc622fa50c7a64fe406d66c01f49c6c986d2222f92491fc",
+  "baseline_archives_sha256": {
+    "cidrmerge-main.tar": "19447576347ef1a26ce17869a1329ede5f1f69fcf8b55cc32ce1024e79b0b357",
+    "swift-cidr-main.tar": "72b12e701ec0d74c172fea7f69205063b2f62929bfd2c963ec9b55b6e5d0ad88"
+  },
+  "initial_available_bytes": 5734400000000
+}

@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-16T03:42:28.499388+00:00",
+  "architecture": "aarch64",
+  "kernel": "7.2.12-orbstack-00394-gbecdd6130068",
+  "toolchain": "Swift version 6.4.2 (swift-6.4.2-RELEASE)\nTarget: aarch64-unknown-linux-gnu\n",
+  "image": "sha256:23d9b28ad97fb1cf1999edc3a0cb265ee915ed42299a9344e7173d5a6d2b05f4",
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "load": [
+    0.0947265625,
+    0.0732421875,
+    0.01416015625
+  ],
+  "memory": "MemTotal:       16424796 kB\nMemFree:        13547344 kB\nMemAvailable:   15091456 kB\nBuffers:             128 kB\nCached:           627592 kB\nSwapCached:            0 kB\nActive:           570368 kB\nInactive:         709064 kB\nActive(anon):     536496 kB\nInactive(anon):   162588 kB\nActive(file):      33872 kB\nInactive(file):   546476 kB\nUnevictable:           0 kB\nMlocked:               0 kB\nSwapTotal:      17473364 kB\nSwapFree:       17473364 kB\nDirty:               152 kB\nWriteback:             0 kB\nAnonPages:        629316 kB\nMapped:           132380 kB\nShmem:             47380 kB\nKReclaimable:    1220944 kB\nSlab:            1374032 kB\nSReclaimable:    1220944 kB\nSUnreclaim:       153088 kB\nKernelStack:       10416 kB\nPageTables:        16496 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    25685760 kB\nCommitted_AS:   11030212 kB\nVmallocTotal:   135288315904 kB\nVmallocUsed:       73052 kB\nVmallocChunk:          0 kB\nPercpu:             7800 kB\nAnonHugePages:     75776 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\n",
+  "free_bytes": 5739249614848,
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "runtime_library_paths": [
+    "/usr/lib/swift/linux"
+  ],
+  "libswiftCore_sha256": {
+    "/usr/lib/swift/linux/libswiftCore.so": "247baf3da05c8a44b7fdcbdcc841ff6c2f2747392a7524ee00e2ecd667645f55"
+  }
+}

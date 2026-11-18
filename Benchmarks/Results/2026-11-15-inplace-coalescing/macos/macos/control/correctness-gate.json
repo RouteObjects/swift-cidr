@@ -1,0 +1,422 @@
+{
+  "passed": true,
+  "started_at": "2026-11-15T22:22:17.073408+00:00",
+  "completed_at": "2026-11-15T22:22:21.428277+00:00",
+  "platform": "macOS ARM64",
+  "toolchain": "Apple Swift 6.4.2",
+  "expected_tests": {
+    "B": {
+      "cidrmerge": 72,
+      "swift-cidr": 298
+    },
+    "C": {
+      "cidrmerge": 72,
+      "swift-cidr": 302
+    }
+  },
+  "test_receipts": [
+    {
+      "variant": "B",
+      "package": "cidrmerge",
+      "configuration": "debug",
+      "tests": 72,
+      "test_summaries": [
+        [
+          "7",
+          "1"
+        ],
+        [
+          "65",
+          "8"
+        ]
+      ],
+      "receipt": "control/B-cidrmerge-test-debug.json",
+      "receipt_sha256": "1a56ecd10417b3bf903c1362aac1f24b79c52fb251b2a27d3de6dd5dbf265431",
+      "log": "logs/B-cidrmerge-test-debug.log",
+      "log_sha256": "929165dba1b296277512abb20a468a8fff54127d8c524db518458bbba37cbe23"
+    },
+    {
+      "variant": "B",
+      "package": "cidrmerge",
+      "configuration": "release",
+      "tests": 72,
+      "test_summaries": [
+        [
+          "7",
+          "1"
+        ],
+        [
+          "65",
+          "8"
+        ]
+      ],
+      "receipt": "control/B-cidrmerge-test-release.json",
+      "receipt_sha256": "b383f996e6b3c845f7084bc3aaaf584bc2cebd2d0cc42690ef67b706d361f5f2",
+      "log": "logs/B-cidrmerge-test-release.log",
+      "log_sha256": "f6e933bfccba106d9de1a7b8633262ce91bcb117bc5a32d778156b1d525c55b9"
+    },
+    {
+      "variant": "B",
+      "package": "swift-cidr",
+      "configuration": "debug",
+      "tests": 298,
+      "test_summaries": [
+        [
+          "233",
+          "31"
+        ],
+        [
+          "3",
+          "1"
+        ],
+        [
+          "23",
+          "1"
+        ],
+        [
+          "39",
+          "1"
+        ]
+      ],
+      "receipt": "control/B-swift-cidr-test-debug.json",
+      "receipt_sha256": "c6f1ba1aade90d4409ef99bfa06fb20df0c374588a2214ae3ecce6a9a2cb296e",
+      "log": "logs/B-swift-cidr-test-debug.log",
+      "log_sha256": "f77033b7493e874c2dea4a0f8272d763beb7d20592868aaf47e0d67126781199"
+    },
+    {
+      "variant": "B",
+      "package": "swift-cidr",
+      "configuration": "release",
+      "tests": 298,
+      "test_summaries": [
+        [
+          "233",
+          "31"
+        ],
+        [
+          "3",
+          "1"
+        ],
+        [
+          "23",
+          "1"
+        ],
+        [
+          "39",
+          "1"
+        ]
+      ],
+      "receipt": "control/B-swift-cidr-test-release.json",
+      "receipt_sha256": "ab0a08c34141ef671ddf4dfc4c72eaaedfe6160f0b0c12727e63012f4ce030c5",
+      "log": "logs/B-swift-cidr-test-release.log",
+      "log_sha256": "df0cad58d7ac18e85185e9bf7b3e99f44b6d9eeff15ff24ec2f93dc07470704c"
+    },
+    {
+      "variant": "C",
+      "package": "cidrmerge",
+      "configuration": "debug",
+      "tests": 72,
+      "test_summaries": [
+        [
+          "7",
+          "1"
+        ],
+        [
+          "65",
+          "8"
+        ]
+      ],
+      "receipt": "control/C-cidrmerge-test-debug.json",
+      "receipt_sha256": "66bea7d4c38556941b5ae0cad0b1ea3a56e3b1ff9dec2fece5049e1776e2a3bd",
+      "log": "logs/C-cidrmerge-test-debug.log",
+      "log_sha256": "a7bd29faec2905befbe05238d342c60e02669bfc17538ef23214b38287797bc3"
+    },
+    {
+      "variant": "C",
+      "package": "cidrmerge",
+      "configuration": "release",
+      "tests": 72,
+      "test_summaries": [
+        [
+          "7",
+          "1"
+        ],
+        [
+          "65",
+          "8"
+        ]
+      ],
+      "receipt": "control/C-cidrmerge-test-release.json",
+      "receipt_sha256": "5eb23738ce40460b5519784c9164c550b5cf5e1bda4d6afe6759d69d77008913",
+      "log": "logs/C-cidrmerge-test-release.log",
+      "log_sha256": "dfa3a8289924e8bcc6126621610fddb4ec2cc67f67f76f80b68b08c59dd1d9dd"
+    },
+    {
+      "variant": "C",
+      "package": "swift-cidr",
+      "configuration": "debug",
+      "tests": 302,
+      "test_summaries": [
+        [
+          "237",
+          "32"
+        ],
+        [
+          "3",
+          "1"
+        ],
+        [
+          "23",
+          "1"
+        ],
+        [
+          "39",
+          "1"
+        ]
+      ],
+      "receipt": "control/C-swift-cidr-test-debug.json",
+      "receipt_sha256": "06c62645a32c7f2d37c467b13a754e86ba2e65778effd520f4f92c8174943858",
+      "log": "logs/C-swift-cidr-test-debug.log",
+      "log_sha256": "3d72952a552261a85e83721e025d23908ca7c07d30da73aaaa943e207150b555"
+    },
+    {
+      "variant": "C",
+      "package": "swift-cidr",
+      "configuration": "release",
+      "tests": 302,
+      "test_summaries": [
+        [
+          "237",
+          "32"
+        ],
+        [
+          "3",
+          "1"
+        ],
+        [
+          "23",
+          "1"
+        ],
+        [
+          "39",
+          "1"
+        ]
+      ],
+      "receipt": "control/C-swift-cidr-test-release.json",
+      "receipt_sha256": "83a15444201d50c7c5de685e8c95e34745a6a6c90a89fb1911704375cb9db1a0",
+      "log": "logs/C-swift-cidr-test-release.log",
+      "log_sha256": "9830307d7600000620407a5c9aeeec22982820e1e5e7b7e5e94092e92b8ff4fb"
+    }
+  ],
+  "full_suite_test_executions": 1488,
+  "full_suite_runs": 8,
+  "differential_cases": 77,
+  "differential_children": 154,
+  "differential_summary_sha256": "7cc4ee7274853e9dcafd660c06d8a6e8bb9cd35b811dfa909a9bc4fbf0892ed9",
+  "differential_script_sha256": "d2e1cf3555283dfa25bc346b5bff85a131d047ae5f337ce1d27a5d634f2d420c",
+  "binary_sha256": {
+    "B": "cd9da16ea944344d3b0186c68df33c78d925589d54c16d2a96429ebc82df99be",
+    "C": "f421c6b5d1e73521b0e0bffd000078fabd2eea1e151bdb820eea7b260cfada92"
+  },
+  "ordinary_binaries_unchanged_after_tests": true,
+  "source_files_unchanged": true,
+  "source_file_count": 1781,
+  "source_freeze_sha256": "11b551b445a5133e1804d5c8c4ea2d199f8b08c127541377b7b633139fa096a5",
+  "dependencies": {
+    "original_cli_pins": {
+      "swift-argument-parser": {
+        "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+        "version": "1.8.2"
+      },
+      "swift-asn1": {
+        "revision": "a9a5efd40eaf558a2bcd48d64b1d1646be686008",
+        "version": "1.7.1"
+      },
+      "swift-atomics": {
+        "revision": "0442cb5a3f98ab802acb777929fdb446bda11a34",
+        "version": "1.3.1"
+      },
+      "swift-cidr": {
+        "revision": "5e4b3d2f881340a6ced05742429f1bd680dfd1e0",
+        "version": "0.10.1"
+      },
+      "swift-collections": {
+        "revision": "a0cb0954ecb21e4e31b0070e6ed5674e8556685a",
+        "version": "1.6.0"
+      },
+      "swift-crypto": {
+        "revision": "f8fad2f95ad67b45f6340c0960e2396094d67e07",
+        "version": "5.1.1"
+      },
+      "swift-nio": {
+        "revision": "cd3e1152083706d77b223fb29110e590efcc70c0",
+        "version": "2.101.2"
+      },
+      "swift-system": {
+        "revision": "b5544ba79a70a0cb3563e75bf26dc198d6b40ed3",
+        "version": "1.7.4"
+      }
+    },
+    "experimental_cli_pins": {
+      "swift-argument-parser": {
+        "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+        "version": "1.8.2"
+      },
+      "swift-asn1": {
+        "revision": "a9a5efd40eaf558a2bcd48d64b1d1646be686008",
+        "version": "1.7.1"
+      },
+      "swift-atomics": {
+        "revision": "0442cb5a3f98ab802acb777929fdb446bda11a34",
+        "version": "1.3.1"
+      },
+      "swift-collections": {
+        "revision": "a0cb0954ecb21e4e31b0070e6ed5674e8556685a",
+        "version": "1.6.0"
+      },
+      "swift-crypto": {
+        "revision": "f8fad2f95ad67b45f6340c0960e2396094d67e07",
+        "version": "5.1.1"
+      },
+      "swift-nio": {
+        "revision": "cd3e1152083706d77b223fb29110e590efcc70c0",
+        "version": "2.101.2"
+      },
+      "swift-system": {
+        "revision": "b5544ba79a70a0cb3563e75bf26dc198d6b40ed3",
+        "version": "1.7.4"
+      }
+    },
+    "packages": {
+      "B/cidrmerge": {
+        "swift-argument-parser": {
+          "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+          "version": "1.8.2",
+          "status": ""
+        },
+        "swift-asn1": {
+          "revision": "a9a5efd40eaf558a2bcd48d64b1d1646be686008",
+          "version": "1.7.1",
+          "status": ""
+        },
+        "swift-atomics": {
+          "revision": "0442cb5a3f98ab802acb777929fdb446bda11a34",
+          "version": "1.3.1",
+          "status": ""
+        },
+        "swift-collections": {
+          "revision": "a0cb0954ecb21e4e31b0070e6ed5674e8556685a",
+          "version": "1.6.0",
+          "status": ""
+        },
+        "swift-crypto": {
+          "revision": "f8fad2f95ad67b45f6340c0960e2396094d67e07",
+          "version": "5.1.1",
+          "status": ""
+        },
+        "swift-nio": {
+          "revision": "cd3e1152083706d77b223fb29110e590efcc70c0",
+          "version": "2.101.2",
+          "status": ""
+        },
+        "swift-system": {
+          "revision": "b5544ba79a70a0cb3563e75bf26dc198d6b40ed3",
+          "version": "1.7.4",
+          "status": ""
+        }
+      },
+      "C/cidrmerge": {
+        "swift-argument-parser": {
+          "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+          "version": "1.8.2",
+          "status": ""
+        },
+        "swift-asn1": {
+          "revision": "a9a5efd40eaf558a2bcd48d64b1d1646be686008",
+          "version": "1.7.1",
+          "status": ""
+        },
+        "swift-atomics": {
+          "revision": "0442cb5a3f98ab802acb777929fdb446bda11a34",
+          "version": "1.3.1",
+          "status": ""
+        },
+        "swift-collections": {
+          "revision": "a0cb0954ecb21e4e31b0070e6ed5674e8556685a",
+          "version": "1.6.0",
+          "status": ""
+        },
+        "swift-crypto": {
+          "revision": "f8fad2f95ad67b45f6340c0960e2396094d67e07",
+          "version": "5.1.1",
+          "status": ""
+        },
+        "swift-nio": {
+          "revision": "cd3e1152083706d77b223fb29110e590efcc70c0",
+          "version": "2.101.2",
+          "status": ""
+        },
+        "swift-system": {
+          "revision": "b5544ba79a70a0cb3563e75bf26dc198d6b40ed3",
+          "version": "1.7.4",
+          "status": ""
+        }
+      },
+      "B/swift-cidr": {
+        "swift-argument-parser": {
+          "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+          "version": "1.8.2",
+          "status": ""
+        },
+        "swift-atomics": {
+          "revision": "b601256eab081c0f92f059e12818ac1d4f178ff7",
+          "version": "1.3.0",
+          "status": ""
+        },
+        "swift-collections": {
+          "revision": "03cc312c2c933ed87abace34044a5dff7a3117c1",
+          "version": "1.5.0",
+          "status": ""
+        },
+        "swift-nio": {
+          "revision": "77b84ac2cd2ac9e4ac67d19f045fd5b434f56967",
+          "version": "2.101.0",
+          "status": ""
+        },
+        "swift-system": {
+          "revision": "7c6ad0fc39d0763e0b699210e4124afd5041c5df",
+          "version": "1.6.4",
+          "status": ""
+        }
+      },
+      "C/swift-cidr": {
+        "swift-argument-parser": {
+          "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+          "version": "1.8.2",
+          "status": ""
+        },
+        "swift-atomics": {
+          "revision": "b601256eab081c0f92f059e12818ac1d4f178ff7",
+          "version": "1.3.0",
+          "status": ""
+        },
+        "swift-collections": {
+          "revision": "03cc312c2c933ed87abace34044a5dff7a3117c1",
+          "version": "1.5.0",
+          "status": ""
+        },
+        "swift-nio": {
+          "revision": "77b84ac2cd2ac9e4ac67d19f045fd5b434f56967",
+          "version": "2.101.0",
+          "status": ""
+        },
+        "swift-system": {
+          "revision": "7c6ad0fc39d0763e0b699210e4124afd5041c5df",
+          "version": "1.6.4",
+          "status": ""
+        }
+      }
+    }
+  },
+  "supplemental_checks": "Recorded separately by the parent; this gate covers full tests and exact CLI parity."
+}

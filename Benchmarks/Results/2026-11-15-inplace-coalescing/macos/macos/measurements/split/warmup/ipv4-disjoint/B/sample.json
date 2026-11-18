@@ -1,0 +1,28 @@
+{
+  "suite": "split",
+  "case": "ipv4-disjoint",
+  "tool": "B",
+  "started_at": "2026-11-15T22:31:28.740134+00:00",
+  "parts": [
+    {
+      "family": 4,
+      "command": [
+        "$EXPERIMENT/macos/bin/B",
+        "--raw",
+        "--representation",
+        "cidr",
+        "$EXPERIMENT/macos/fixtures/ipv4-disjoint/ipv4.txt"
+      ],
+      "input": "fixtures/ipv4-disjoint/ipv4.txt",
+      "elapsed_ns": 237763500,
+      "exit_code": 1,
+      "output": "measurements/split/warmup/ipv4-disjoint/B/4.stdout",
+      "output_bytes": 14806125,
+      "output_sha256": "cfe05140183d748b0ecf27f40a5f9240cc8929188c3fb7b2ba9e0c13ebb462d7",
+      "stderr_bytes": 53
+    }
+  ],
+  "passed": false,
+  "error": "RuntimeError('B/ipv4-disjoint: nonzero exit or unexpected stderr')",
+  "finished_at": "2026-11-15T22:31:28.985805+00:00"
+}

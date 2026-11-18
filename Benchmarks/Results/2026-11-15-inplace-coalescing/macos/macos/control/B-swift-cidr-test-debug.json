@@ -1,0 +1,47 @@
+{
+  "command": [
+    "/Applications/Xcode-27.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift",
+    "test",
+    "--package-path",
+    "$EXPERIMENT/sources/B/swift-cidr",
+    "--scratch-path",
+    "$EXPERIMENT/macos/build/B/swift-cidr",
+    "--cache-path",
+    "$EXPERIMENT/macos/cache",
+    "--config-path",
+    "$EXPERIMENT/macos/config",
+    "--security-path",
+    "$EXPERIMENT/macos/security",
+    "--disable-netrc",
+    "--disable-sandbox",
+    "--only-use-versions-from-resolved-file",
+    "--skip-update",
+    "-c",
+    "debug",
+    "-j",
+    "8"
+  ],
+  "started_at": "2026-11-15T22:18:25.497717+00:00",
+  "toolchain": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0\n",
+  "exit_code": 0,
+  "elapsed_s": 30.349942874978296,
+  "log_sha256": "f77033b7493e874c2dea4a0f8272d763beb7d20592868aaf47e0d67126781199",
+  "test_summaries": [
+    [
+      "233",
+      "31"
+    ],
+    [
+      "3",
+      "1"
+    ],
+    [
+      "23",
+      "1"
+    ],
+    [
+      "39",
+      "1"
+    ]
+  ]
+}

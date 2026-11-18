@@ -1,0 +1,36 @@
+{
+  "swift": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+  "toolchain_bin": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin",
+  "library_paths": [
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux"
+  ],
+  "target_info": {
+    "compilerVersion": "Swift version 6.4.2 (swift-6.4.2-RELEASE)",
+    "swiftCompilerTag": "swift-6.4.2-RELEASE",
+    "target": {
+      "triple": "x86_64-unknown-linux-gnu",
+      "unversionedTriple": "x86_64-unknown-linux-gnu",
+      "moduleTriple": "x86_64-unknown-linux-gnu",
+      "platform": "linux",
+      "arch": "x86_64",
+      "pointerWidthInBits": 64,
+      "pointerWidthInBytes": 8,
+      "compatibilityLibraries": [],
+      "openbsdBTCFIEnabled": false,
+      "librariesRequireRPath": false
+    },
+    "paths": {
+      "runtimeLibraryPaths": [
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux"
+      ],
+      "runtimeLibraryImportPaths": [
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux",
+        "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/x86_64"
+      ],
+      "runtimeResourcePath": "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift"
+    }
+  },
+  "libswiftCore_sha256": {
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/lib/swift/linux/libswiftCore.so": "c6aa1b71de9ca9d7c332b7570410fbd78824aa6a81f3d114a2fd4f8aed234495"
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "passed": true,
+  "at": "2026-11-15T22:41:58.190962+00:00",
+  "selection": {
+    "at": "2026-11-15T22:41:35.932448+00:00",
+    "rule": "Any individual original pair with elapsed or RSS change greater than +5%; one fixed follow-up only, no pooling or recursive reruns",
+    "primary": [
+      {
+        "suite": "split",
+        "case": "mixed-permuted",
+        "triggers": [
+          {
+            "round": 2,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 6.028670217863552,
+            "rss_change_pct": -0.005384449709244787,
+            "elapsed_difference_s": 0.03136352,
+            "rss_difference_mib": -0.00390625
+          }
+        ]
+      },
+      {
+        "suite": "split",
+        "case": "range-derived-mixed",
+        "triggers": [
+          {
+            "round": 1,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": -6.680249364798385,
+            "rss_change_pct": 11.722315637761227,
+            "elapsed_difference_s": -0.031080039,
+            "rss_difference_mib": 7.625
+          },
+          {
+            "round": 2,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": -0.4133743874936924,
+            "rss_change_pct": 11.685582177385445,
+            "elapsed_difference_s": -0.001806991,
+            "rss_difference_mib": 7.6015625
+          },
+          {
+            "round": 3,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 2.316054725227956,
+            "rss_change_pct": 11.798258781146798,
+            "elapsed_difference_s": 0.010002596,
+            "rss_difference_mib": 7.67578125
+          },
+          {
+            "round": 4,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 2.401237886314189,
+            "rss_change_pct": 11.72761664564943,
+            "elapsed_difference_s": 0.010344769,
+            "rss_difference_mib": 7.62890625
+          },
+          {
+            "round": 5,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 3.608367730078621,
+            "rss_change_pct": 11.73573573573574,
+            "elapsed_difference_s": 0.015833159,
+            "rss_difference_mib": 7.6328125
+          },
+          {
+            "round": 6,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": -1.4205387657393431,
+            "rss_change_pct": 11.7523420610137,
+            "elapsed_difference_s": -0.006240194,
+            "rss_difference_mib": 7.64453125
+          }
+        ]
+      },
+      {
+        "suite": "native",
+        "case": "mixed-overlap",
+        "triggers": [
+          {
+            "round": 1,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 7.839883042353102,
+            "rss_change_pct": -2.8967768257853965,
+            "elapsed_difference_s": 0.030126456,
+            "rss_difference_mib": -1.94140625
+          }
+        ]
+      }
+    ],
+    "scale": [
+      {
+        "case": "mixed-disjoint-1000",
+        "entries": 1000,
+        "triggers": [
+          {
+            "round": 2,
+            "elapsed_change_pct": 8.113022150228177,
+            "rss_change_pct": -0.11836654172420191
+          },
+          {
+            "round": 4,
+            "elapsed_change_pct": 13.048051434568663,
+            "rss_change_pct": 0.6712734452122504
+          },
+          {
+            "round": 6,
+            "elapsed_change_pct": 5.729930983959619,
+            "rss_change_pct": -0.03946329913180335
+          }
+        ]
+      },
+      {
+        "case": "mixed-disjoint-10000",
+        "entries": 10000,
+        "triggers": [
+          {
+            "round": 3,
+            "elapsed_change_pct": 5.137260107292407,
+            "rss_change_pct": -0.9255688391824113
+          }
+        ]
+      },
+      {
+        "case": "mixed-permuted-1000",
+        "entries": 1000,
+        "triggers": [
+          {
+            "round": 2,
+            "elapsed_change_pct": 6.117098671243304,
+            "rss_change_pct": -0.07892659826361781
+          },
+          {
+            "round": 4,
+            "elapsed_change_pct": 9.610176296381434,
+            "rss_change_pct": -0.07889546351085297
+          }
+        ]
+      },
+      {
+        "case": "mixed-permuted-10000",
+        "entries": 10000,
+        "triggers": [
+          {
+            "round": 3,
+            "elapsed_change_pct": 5.792399657154634,
+            "rss_change_pct": -1.1376783648283872
+          }
+        ]
+      },
+      {
+        "case": "mixed-overlap-1000",
+        "entries": 1000,
+        "triggers": [
+          {
+            "round": 2,
+            "elapsed_change_pct": 10.680831980357652,
+            "rss_change_pct": 0.0197277569540244
+          },
+          {
+            "round": 4,
+            "elapsed_change_pct": 6.845222382683858,
+            "rss_change_pct": -0.5692972124067497
+          },
+          {
+            "round": 6,
+            "elapsed_change_pct": 9.20254110496046,
+            "rss_change_pct": -0.07892659826361781
+          }
+        ]
+      },
+      {
+        "case": "mixed-overlap-10000",
+        "entries": 10000,
+        "triggers": [
+          {
+            "round": 2,
+            "elapsed_change_pct": 11.111241574811803,
+            "rss_change_pct": -0.01952362358453863
+          }
+        ]
+      },
+      {
+        "case": "mixed-overlap-100000",
+        "entries": 100000,
+        "triggers": [
+          {
+            "round": 5,
+            "elapsed_change_pct": 25.551388988637335,
+            "rss_change_pct": 0.08103727714747766
+          }
+        ]
+      },
+      {
+        "case": "mixed-adjacent-1000",
+        "entries": 1000,
+        "triggers": [
+          {
+            "round": 4,
+            "elapsed_change_pct": 5.703152666515199,
+            "rss_change_pct": -0.07891102781614201
+          }
+        ]
+      },
+      {
+        "case": "mixed-adjacent-100000",
+        "entries": 100000,
+        "triggers": [
+          {
+            "round": 1,
+            "elapsed_change_pct": 6.98508294575928,
+            "rss_change_pct": -0.11697860962567308
+          },
+          {
+            "round": 3,
+            "elapsed_change_pct": 7.759002181085761,
+            "rss_change_pct": 0.10035122930256435
+          },
+          {
+            "round": 6,
+            "elapsed_change_pct": 5.368444775659498,
+            "rss_change_pct": -0.05015883631499518
+          }
+        ]
+      }
+    ],
+    "primary_summary_sha256": "a6d252d83fb5607125af5c68e918a9c05e8fc9f4777099373154696eb924f851",
+    "scale_summary_sha256": "42c097e5c715397ed63df946b938ba2feb6d2d7bab868820e6e04104b3155545"
+  },
+  "fixed_six_pairs_per_selected_case": true,
+  "separate_results_not_pooled": true
+}

@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-16T03:56:23.427144+00:00",
+  "command": [
+    "/validation/python/bin/python3.12",
+    "/validation/control/scale_bench.py",
+    "--root",
+    "/validation",
+    "--fixtures",
+    "/validation/sparse",
+    "--output",
+    "/validation/sparse-measurements"
+  ],
+  "log": "logs/sparse.log"
+}

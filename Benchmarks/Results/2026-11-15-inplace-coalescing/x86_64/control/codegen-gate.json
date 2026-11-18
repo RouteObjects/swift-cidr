@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "at": "2026-11-15T22:43:56.775620+00:00",
+  "binary_sha256": {
+    "B": "e56b27050ccae259bf82d2530b2d0bc25ee0882f82974f44daf57314c219b08b",
+    "C": "9a7d5b88bf8f42b5aa3a6b1c19ffa449d142b57fb7852a02255f7f5e6c3d12d1"
+  },
+  "evidence_files": {
+    "control/codegen/B-captures.json": "7aa302747255dc79d9db7ef588ce95c64210865df1aa679c11aa6cad36cbf65d",
+    "control/codegen/B-nm.txt": "a26e60d4afa18e8f65bfe19775b46966a102401d336f1718a0a1345465f6982c",
+    "control/codegen/B-symbols.txt": "15361097c99008b1930acd2a2cf318e3656949e33c37e0b47418c1474948ac5e",
+    "control/codegen/C-captures.json": "50a4ebf8bb89af9ed9526089ec3f0007972192da01f0c928e896986bed3addf6",
+    "control/codegen/C-nm.txt": "ceee5a2259412f9031b389e736a2ab0959f6342cbd987b597a2d0b2e6ce8e26e",
+    "control/codegen/C-symbols.txt": "40efb4469bbb47015526c4eddb062e758ea8352293efaa8e5530b1fbd9e63510",
+    "control/codegen/review.json": "220114d02a73c8e9413b39ef96a3baa8f687f04198e03e9be4d522aaf4246ad4",
+    "control/codegen/review.md": "149baaaf679e4b0d83a376b858fec6995afaaeeb02ee36afceda956b21e4900d",
+    "control/capture_codegen.py": "420424aaf862a746846804285181651c708001d38140acc10c7dd2b4a5f1b5b3",
+    "control/review_codegen.py": "8de6392611cd10aef9512739aa9f38d1c81645d43a1a0eb77c7f49ae5106e420"
+  },
+  "scope": "Read-only native x86-64 ELF inspection of frozen ordinary release binaries; actual CLI edges and sorting pointer flow. No target execution.",
+  "limits": [
+    "Assertions bind actual CLI direct calls and concrete sorting pointer arguments, not only symbol names.",
+    "Candidate has uniqueness checks at completed-group and final writes, plus conditional copy fallbacks.",
+    "Sorting scratch, parsed input arrays and retained capacity remain. This is not a dynamic allocation measurement or a throughput result.",
+    "Generic fallback implementations remain in the binary; these conclusions apply to the inspected concrete Array CLI path."
+  ]
+}

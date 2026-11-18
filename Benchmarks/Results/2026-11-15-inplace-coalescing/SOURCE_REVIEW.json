@@ -1,0 +1,52 @@
+{
+  "original_artifact": "control/final-source-check-2026-11-15T232805.801649+0000.json",
+  "original_bytes": 2190,
+  "original_sha256": "839b8a0c7bb766d0af75b7ef7078dd4a451dda9f9720d1c6db1d87c592751a78",
+  "path_transformation": "Home-directory paths replaced with $HOME. Numeric and boolean values are unchanged.",
+  "receipt": {
+    "passed": true,
+    "checked_at": "2026-11-15T23:28:05.801649+00:00",
+    "repos": {
+      "cidrmerge": {
+        "original_tracked_files_checked": 254,
+        "allowed_production_paths": [],
+        "main_and_HEAD_unchanged": true,
+        "index_empty": true,
+        "older_untracked_paths_still_present": [],
+        "status": "## perf/inplace-coalescing\n"
+      },
+      "swift-cidr": {
+        "original_tracked_files_checked": 636,
+        "allowed_production_paths": [
+          "Sources/CIDR/IPAddressRange.swift"
+        ],
+        "main_and_HEAD_unchanged": true,
+        "index_empty": true,
+        "older_untracked_paths_still_present": [
+          "Benchmarks/Results/2026-11-06-family-format-dispatch/",
+          "Benchmarks/Results/2026-11-07-family-dispatch-fixes/",
+          "Benchmarks/Results/2026-11-07-ipv6-formatting-investigation/",
+          "Benchmarks/Results/2026-11-07-performance-investigation/",
+          "Benchmarks/Results/2026-11-07-release-0.9.0/"
+        ],
+        "status": "## perf/inplace-coalescing\n M Sources/CIDR/IPAddressRange.swift\n?? Benchmarks/Results/2026-11-06-family-format-dispatch/\n?? Benchmarks/Results/2026-11-07-family-dispatch-fixes/\n?? Benchmarks/Results/2026-11-07-ipv6-formatting-investigation/\n?? Benchmarks/Results/2026-11-07-performance-investigation/\n?? Benchmarks/Results/2026-11-07-release-0.9.0/\n?? Tests/CIDRTests/InPlaceCoalescingTests.swift\n"
+      }
+    },
+    "new_test_sha256": "245f2b24763961985ccf6eaf04f4473ea0dc61d6b73a72c83f2081543f5f478f",
+    "focused_format": {
+      "command": [
+        "xcrun",
+        "swift-format",
+        "lint",
+        "--configuration",
+        "$HOME/Developer/Route Objects/.swift-format.json",
+        "$HOME/Developer/Route Objects/Example Framework/Packages/swift-cidr/Sources/CIDR/IPAddressRange.swift",
+        "$HOME/Developer/Route Objects/Example Framework/Packages/swift-cidr/Tests/CIDRTests/InPlaceCoalescingTests.swift"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "limitations": "Original tracked files are hash-checked. Older untracked benchmark directories are present and were not targets of any write; no full before/after content claim is made for untracked directories."
+  }
+}

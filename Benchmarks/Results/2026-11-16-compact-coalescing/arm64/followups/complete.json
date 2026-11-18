@@ -1,0 +1,220 @@
+{
+  "passed": true,
+  "at": "2026-11-16T03:57:09.127020+00:00",
+  "selection": {
+    "at": "2026-11-16T03:56:30.520522+00:00",
+    "rule": "Any individual original pair with elapsed or RSS change greater than +5%; one fixed follow-up only, no pooling or recursive reruns",
+    "primary": [
+      {
+        "suite": "split",
+        "case": "ipv4-disjoint",
+        "triggers": [
+          {
+            "round": 6,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 9.313678246833469,
+            "rss_change_pct": 0.018504811250918962,
+            "elapsed_difference_s": 0.031680039,
+            "rss_difference_mib": 0.0078125
+          }
+        ]
+      },
+      {
+        "suite": "split",
+        "case": "mixed-adjacent",
+        "triggers": [
+          {
+            "round": 6,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 5.389740663014697,
+            "rss_change_pct": 0.11738926279543094,
+            "elapsed_difference_s": 0.017761873,
+            "rss_difference_mib": 0.05859375
+          }
+        ]
+      },
+      {
+        "suite": "split",
+        "case": "bgp-like-ipv4",
+        "triggers": [
+          {
+            "round": 5,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 20.094458710533857,
+            "rss_change_pct": -3.872616473363477,
+            "elapsed_difference_s": 0.085378534,
+            "rss_difference_mib": -1.5390625
+          }
+        ]
+      },
+      {
+        "suite": "split",
+        "case": "range-derived-mixed",
+        "triggers": [
+          {
+            "round": 5,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 10.77103058109059,
+            "rss_change_pct": -0.024026910139351987,
+            "elapsed_difference_s": 0.047758494,
+            "rss_difference_mib": -0.015625
+          }
+        ]
+      },
+      {
+        "suite": "native",
+        "case": "mixed-permuted",
+        "triggers": [
+          {
+            "round": 6,
+            "order": [
+              "C",
+              "B"
+            ],
+            "elapsed_change_pct": 6.485485710029604,
+            "rss_change_pct": -4.487596395057136,
+            "elapsed_difference_s": 0.03719129,
+            "rss_difference_mib": -3.7734375
+          }
+        ]
+      },
+      {
+        "suite": "native",
+        "case": "mixed-overlap",
+        "triggers": [
+          {
+            "round": 3,
+            "order": [
+              "B",
+              "C"
+            ],
+            "elapsed_change_pct": 5.913601633680909,
+            "rss_change_pct": -2.8063010501750307,
+            "elapsed_difference_s": 0.023559873,
+            "rss_difference_mib": -1.87890625
+          }
+        ]
+      }
+    ],
+    "scale": [
+      {
+        "case": "mixed-disjoint-1000",
+        "entries": 1000,
+        "triggers": [
+          {
+            "round": 2,
+            "elapsed_change_pct": 8.712203091078518,
+            "rss_change_pct": 0.09819324430480059
+          }
+        ]
+      },
+      {
+        "case": "mixed-disjoint-10000",
+        "entries": 10000,
+        "triggers": [
+          {
+            "round": 5,
+            "elapsed_change_pct": 57.303517571338226,
+            "rss_change_pct": -0.9457633661455356
+          }
+        ]
+      },
+      {
+        "case": "mixed-disjoint-100000",
+        "entries": 100000,
+        "triggers": [
+          {
+            "round": 4,
+            "elapsed_change_pct": 7.966509209277994,
+            "rss_change_pct": -0.18521376755672447
+          },
+          {
+            "round": 5,
+            "elapsed_change_pct": 8.741155063362926,
+            "rss_change_pct": -0.21611608521148185
+          }
+        ]
+      },
+      {
+        "case": "mixed-permuted-1000",
+        "entries": 1000,
+        "triggers": [
+          {
+            "round": 4,
+            "elapsed_change_pct": 5.07820161080017,
+            "rss_change_pct": -0.019743336623889718
+          }
+        ]
+      },
+      {
+        "case": "mixed-overlap-10000",
+        "entries": 10000,
+        "triggers": [
+          {
+            "round": 3,
+            "elapsed_change_pct": 10.10564952340356,
+            "rss_change_pct": 1.1379242691779368
+          },
+          {
+            "round": 5,
+            "elapsed_change_pct": 9.811814734539336,
+            "rss_change_pct": 0.5104043973301886
+          },
+          {
+            "round": 6,
+            "elapsed_change_pct": 38.09339240199328,
+            "rss_change_pct": 0.6874877234334997
+          }
+        ]
+      },
+      {
+        "case": "mixed-adjacent-1000",
+        "entries": 1000,
+        "triggers": [
+          {
+            "round": 1,
+            "elapsed_change_pct": 5.4297152127682935,
+            "rss_change_pct": 0.019739439399923953
+          },
+          {
+            "round": 2,
+            "elapsed_change_pct": 8.253491390265722,
+            "rss_change_pct": 0.631786771964471
+          },
+          {
+            "round": 6,
+            "elapsed_change_pct": 8.321380012024227,
+            "rss_change_pct": -0.01972386587770769
+          }
+        ]
+      },
+      {
+        "case": "mixed-adjacent-10000",
+        "entries": 10000,
+        "triggers": [
+          {
+            "round": 1,
+            "elapsed_change_pct": 6.36782449603428,
+            "rss_change_pct": 0.608678578441002
+          }
+        ]
+      }
+    ],
+    "primary_summary_sha256": "42228e239fd3a6ed55add20f15a5ddb4717f4c32f2f30f0cdcaee2b0a167d290",
+    "scale_summary_sha256": "d635b92d6cf55db05c4dbd20040a7f23ef8d141297a3b4d4f7538cc5634e561e"
+  },
+  "fixed_six_pairs_per_selected_case": true,
+  "separate_results_not_pooled": true
+}

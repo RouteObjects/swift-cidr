@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "at": "2026-11-15T22:25:48.405899+00:00",
+  "binary_sha256": {
+    "B": "0d1bf48dbdc5314b9748881077cabaffcfa2ef1b4d28e4c1490bcf7e98be38e5",
+    "C": "e8efb3ba7c91ab2b1a4dd1e4a41d6e8a69b7d5e3a3357ff99f13e1a1cb305259"
+  },
+  "evidence_files": {
+    "control/codegen/B-captures.json": "b871683c119254c9d4e7a5b550665258d2068fb80ebcb23359713aedf2855ac2",
+    "control/codegen/C-symbols.txt": "59903d6549f4d8b1d8b5bab54a412f8e6eb7144ae77650bb29a0cebe5b10260e",
+    "control/codegen/review-script.py": "116be111ced7c7b376c58d55fbe7afe15e2bb7044194843492c19f8a8756e6b2",
+    "control/codegen/C-captures.json": "cd9343bfcf58cb359ccc9b60dd32e3e69bea82e9ae9f4f6fde419326ebd40c90",
+    "control/codegen/review.md": "59cd8edb93dba79022bd2ce555734c2bea18db090c8bb3315a60d28131f8ebb6",
+    "control/codegen/review.json": "480effc4178ff8d1342733e3efd38376622bce7e2386fec18ada594453cb3c55",
+    "control/codegen/B-symbols.txt": "cecdd89f22ff2dfb209e84d92a7e121742e5c4cb3344325e9cbe0e0877b5b964",
+    "control/codegen/capture-script.py": "a5b00654f610d2313146e4b700b975d04fad1ad52b0b7a8bfc4c7f17283c290a"
+  },
+  "scope": "Read-only frozen ARM64 ELF inspection. Actual CLI call edges and concrete sorting function-pointer flow; no target execution.",
+  "limits": [
+    "Names alone are insufficient: this gate checks the actual CLI branch targets and sort pointer arguments.",
+    "Candidate retains uniqueness checks at each completed-group store and final store, plus conditional copy fallbacks.",
+    "Sorting scratch, parsed input arrays, capacity retention and generic fallback implementations remain; no zero-allocation or throughput claim.",
+    "The initial capture binary_unchanged field is not used as a stability proof; current hashes are independently matched to pre-test ordinary-release build receipts here."
+  ]
+}

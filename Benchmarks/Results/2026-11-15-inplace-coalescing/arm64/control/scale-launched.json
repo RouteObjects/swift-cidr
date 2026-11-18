@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-15T22:40:46.411163+00:00",
+  "command": [
+    "/usr/local/bin/docker",
+    "--config",
+    "EVIDENCE_ROOT/arm64/control/docker-config",
+    "--host",
+    "unix://LOCAL_HOME/.orbstack/run/docker.sock",
+    "exec",
+    "-d",
+    "cidrmerge-inplace-arm642-20261115T221013Z",
+    "/bin/sh",
+    "-c",
+    "exec /validation/python/bin/python3.12 /validation/control/scale_bench.py --root /validation --fixtures /validation/scale --output /validation/scale-measurements > /validation/logs/scale-benchmark.log 2>&1"
+  ],
+  "primary_timing_complete": true,
+  "measured_samples": 144,
+  "warmups": 24
+}

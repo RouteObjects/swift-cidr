@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-11-16T03:51:29.484361+00:00",
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3",
+    "$EXPERIMENT/macos/control/run_matched.py"
+  ],
+  "exit_code": 0,
+  "finished_at": "2026-11-16T03:52:32.663738+00:00"
+}

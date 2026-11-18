@@ -1,0 +1,9 @@
+{
+  "reason": "Sandbox prevents /usr/bin/time reading kern.clockrate; first warmup failed before any valid measured samples. All first-attempt files remain in measurements. Retry uses approved native execution and a new directory measurements-02.",
+  "files": {
+    "macos/control/run_matched.py": "4c51efca113d29942dba8c605262ade53095415315f7326f449da2483f177d9a",
+    "macos/control/run_matched_02.py": "cc76894b5d19fe1740a3b03b5b4b2c798898ea2741c26174b5273c899a6c3656",
+    "macos/control/pre-benchmark-freeze.json": "6571b67f12f1f28221fe0fda5899a0caa11c25ac48ed9d0421f458e3b7bf0cd7",
+    "macos/measurements/failed.json": "172173bbb92cdfcd793d09271d3c0c8cc269ce70e5811281294b11e7e4077323"
+  }
+}

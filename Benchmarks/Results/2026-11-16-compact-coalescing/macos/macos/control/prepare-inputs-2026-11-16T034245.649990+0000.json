@@ -1,0 +1,12 @@
+{
+  "started_at": "2026-11-16T03:42:45.649990+00:00",
+  "stage": "inputs",
+  "passed": true,
+  "binary_sha256": {
+    "B": "ef2d11b3ef86c5a0000b0eb7c03535ceb100df98ac4ae0931f2397e0d373a513",
+    "C": "68b74e413ff4ad73777f747f60a6ebaff721aee4caa2b2c40858c7b0da3f622e"
+  },
+  "source_files": 1781,
+  "prepared_inputs": true,
+  "finished_at": "2026-11-16T03:42:49.914704+00:00"
+}

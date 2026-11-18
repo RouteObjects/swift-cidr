@@ -1,0 +1,33 @@
+{
+  "variant": "B",
+  "package": "upstream",
+  "action": "test",
+  "configuration": "debug",
+  "command": [
+    "$LINUX_HOME/.local/share/swiftly/toolchains/6.4.2/usr/bin/swift",
+    "test",
+    "--package-path",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/sources/B/swift-cidr",
+    "--scratch-path",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/build/B/upstream",
+    "--cache-path",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/cache",
+    "--config-path",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/config",
+    "--security-path",
+    "$LINUX_HOME/Downloads/cidrmerge-compact-coalescing-20261116T033826Z/security",
+    "--disable-netrc",
+    "--skip-update",
+    "--only-use-versions-from-resolved-file",
+    "--disable-sandbox",
+    "--build-system",
+    "native",
+    "-c",
+    "debug",
+    "-j",
+    "2"
+  ],
+  "started_at": "2026-11-16T03:54:15.009123+00:00",
+  "free_bytes_before": 5493968896,
+  "log": "logs/B-upstream-test-debug.log"
+}

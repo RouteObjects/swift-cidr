@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "mixed-disjoint-100000",
+      "entries": 100000,
+      "pattern": "mixed-disjoint",
+      "input": "mixed-disjoint-100000/input.txt",
+      "input_bytes": 1751137,
+      "input_sha256": "bf3116ff0af5923c221671ea35dd60b7622f13401a1a958b4abc604fb473e274",
+      "output": "mixed-disjoint-100000/reference.txt",
+      "output_bytes": 1751137,
+      "output_sha256": "5e197d3f63130d1c0d2bb1fd3b7b3048a27f2bef488711bb46157a0c194e0c59",
+      "output_count": 100000
+    },
+    {
+      "case": "mixed-overlap-10000",
+      "entries": 10000,
+      "pattern": "mixed-overlap",
+      "input": "mixed-overlap-10000/input.txt",
+      "input_bytes": 162809,
+      "input_sha256": "7a68f6caa0e9a94ad190437120fb2c79361846a089fc2ec887256c88b7699207",
+      "output": "mixed-overlap-10000/reference.txt",
+      "output_bytes": 25,
+      "output_sha256": "dd3b6a74f444a73621f3f19674e0c3083f9b202efc2923f82c82b3dfe1dcabac",
+      "output_count": 2
+    }
+  ],
+  "method": "Python ipaddress.collapse_addresses, independent of Swift parser/coalescer",
+  "parent_fixture_root": "$REFERENCES/fixtures",
+  "original_reference_sha256": "7bb293dc1d39510fd9d2ebb82ed08e0d0f8c9825ba4b522257393b65262b6246",
+  "selection_source_sha256": "889808904b359800a4cb159761f834037b70225a70d5baad5c7831b48c7abac6"
+}
